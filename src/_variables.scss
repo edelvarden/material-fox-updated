@@ -1,0 +1,163 @@
+// prefix for css variables
+$prefix: mf;
+
+$dark-mode: (
+  "accent-color": AccentColor,
+  // UI background colors
+  "bgcolor-0": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 0%, #202020),
+  "bgcolor-50": color-mix(in srgb, white 5.12%, #{var(--#{$prefix}-bgcolor-0)}),
+  "bgcolor-100": color-mix(in srgb, white 6.05%, #{var(--#{$prefix}-bgcolor-0)}),
+  // UI text
+  "text-primary-rgb":
+    (
+      255,
+      255,
+      255,
+    ),
+  "text-primary": rgb(#{var(--#{$prefix}-text-primary-rgb)}),
+  "text-secondary": color-mix(in srgb, white 7.86%, #{var(--#{$prefix}-text-primary)}),
+  "text-disabled": color-mix(in srgb, white 3.628%, #{var(--#{$prefix}-text-primary)}),
+  // Link text color
+  "text-accent-primary": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 80%, white),
+  "text-accent-secondary": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 80%, white),
+  // Primary button text color
+  "text-on-accent-primary": #000,
+  // Button, Dropdown, Search inputs
+  "control-bgcolor": color-mix(in srgb, white 6.05%, #{var(--#{$prefix}-bgcolor-0)}),
+  "control-bgcolor-secondary": color-mix(in srgb, white 8.37%, #{var(--#{$prefix}-bgcolor-0)}),
+  "control-bgcolor-disabled": color-mix(in srgb, white 4.19%, #{var(--#{$prefix}-bgcolor-0)}),
+  // Tab bar
+  "tab-separator-color-rgb":
+    (
+      255,
+      255,
+      255,
+    ),
+  "tab-separator-opacity": 0.0837,
+  // Tab outline
+  "tab-outline-color-rgb":
+    (
+      0,
+      0,
+      0,
+    ),
+  "tab-outline-opacity": 0.1,
+);
+
+$light-mode: (
+  "accent-color": AccentColor,
+  // UI background colors
+  "bgcolor-0": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 0%, #202020),
+  "bgcolor-50": color-mix(in srgb, white 5.12%, #{var(--#{$prefix}-bgcolor-0)}),
+  "bgcolor-100": color-mix(in srgb, white 6.05%, #{var(--#{$prefix}-bgcolor-0)}),
+  // UI text
+  "text-primary-rgb":
+    (
+      0,
+      0,
+      0,
+    ),
+  "text-primary": rgb(#{var(--#{$prefix}-text-primary-rgb)}),
+  "text-secondary": color-mix(in srgb, white 7.86%, #{var(--#{$prefix}-text-primary)}),
+  "text-disabled": color-mix(in srgb, white 3.628%, #{var(--#{$prefix}-text-primary)}),
+  // Link text color
+  "text-accent-primary": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 80%, white),
+  "text-accent-secondary": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 80%, white),
+  // Primary button text color
+  "text-on-accent-primary": #000,
+  // Button, Dropdown, Search inputs
+  "control-bgcolor": color-mix(in srgb, white 6.05%, #{var(--#{$prefix}-bgcolor-0)}),
+  "control-bgcolor-secondary": color-mix(in srgb, white 8.37%, #{var(--#{$prefix}-bgcolor-0)}),
+  "control-bgcolor-disabled": color-mix(in srgb, white 4.19%, #{var(--#{$prefix}-bgcolor-0)}),
+  // Tab bar
+  "tab-separator-color-rgb":
+    (
+      0,
+      0,
+      0,
+    ),
+  "tab-separator-opacity": 0.0803,
+  // Tab outline
+  "tab-outline-color-rgb":
+    (
+      0,
+      0,
+      0,
+    ),
+  "tab-outline-opacity": 0.0578,
+);
+
+$animation: (
+  // Fast Invoke
+  // Direct and subtle
+  // Usage: Transitions that are functional and utilitarian should use this curve.
+  // Position, Scale, Rotation
+  // Timing: 187, 333, 500
+  "fast-invoke": cubic-bezier(0, 0, 0, 1),
+  // Strong Invoke
+  // Bold and emphasizing
+  // Usage: Transitions that call attention or reinforce an action should use this curve.
+  // Position, Scale
+  // Timing: 667
+  "strong-invoke": cubic-bezier(0.13, 1.62, 0, 0.92),
+  // Fast Dismiss
+  // Direct and subtle
+  // Usage: Transitions that dismiss a surface without going off screen or within the same area should use this curve combined with a fade out.
+  // Position, Scale
+  // Timing: 187, 333, 500
+  "fast-dismiss": cubic-bezier(0, 0, 0, 1),
+  // Soft Dismiss
+  // Gentle and mellow
+  // Usage: Transitions that dismiss a surface off screen while confirming a user action should use this curve.
+  // Scale
+  // Timing: 167
+  "soft-dismiss": cubic-bezier(1, 0, 1, 1),
+  // Point to Point
+  // Direct and guiding
+  // Usage: Transitions that keep the same element on screen going from one place to another should use this curve.
+  // Position, Scale, Rotation
+  // Timing: 187, 333, 500
+  "point-to-point": cubic-bezier(0.55, 0.55, 0, 1),
+  // Fade in Out
+  // Quick and efficient
+  // Usage: Transitions that keep the same element on screen going from one place to another should use this curve.
+  // Opacity
+  // Timing: 83
+  "fade-in-out": linear
+);
+
+$shadow: (
+  "shadow-color-rgb": (
+    0,
+    0,
+    0,
+  ),
+  "elevation-1": (
+    rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.3) 0 1px 2px 0,
+    rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.15) 0 1px 3px 1px,
+  ),
+  "elevation-2": (
+    rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.3) 0 1px 2px 0,
+    rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.15) 0 2px 6px 2px,
+  ),
+  "elevation-3": (
+    rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.3) 0 1px 2px 0,
+    rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.15) 0 4px 8px 3px,
+  ),
+  "elevation-4": (
+    rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.3) 0 1px 2px 0,
+    rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.15) 0 6px 10px 4px,
+  ),
+  "elevation-5": (
+    rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.3) 0 1px 2px 0,
+    rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.15) 0 8px 12px 6px,
+  ),
+  "light-shadow": (
+    0px 32px 64px rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.1876),
+    0px 2px 21px rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.1474),
+  ),
+  "dark-shadow": (
+    0px 32px 64px rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.1876),
+    0px 2px 21px rgba(#{var(--#{$prefix}-shadow-color-rgb)}, 0.37),
+  ),
+);

@@ -1,0 +1,11 @@
+@import "variables";
+@import "user-chrome/global/normalize";
+@import "user-chrome/global/variables-local";
+@import "user-chrome/global/icons";
+@import "user-chrome/tabbar/index";
+@import "user-chrome/components/menupopup";
+
+
+:-moz-any(*, *::before, *::after) {
+    font-family: Roboto, sans-serif !important;
+}

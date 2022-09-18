@@ -1,0 +1,75 @@
+@import "font/font.css";
+@import "user-chrome.css";
+
+
+/* make window titlebar like mac os (only for windows or linux) */
+@supports -moz-bool-pref("userChrome.MacOsTitlebar"){
+    @media not (-moz-platform: macos) {
+        .titlebar-button {
+            --uc-caption-color: #F6BE4F;
+            --uc-border-color: #D6A243;
+        }
+    
+        .titlebar-min {
+            --uc-caption-color: #62C554;
+            --uc-border-color: #58A942;
+        }
+    
+        .titlebar-close {
+            --uc-caption-color: #ED6A5E;
+            --uc-border-color: #CE5347;
+        }
+    
+        .titlebar-button {
+            background: transparent !important;
+            padding: 0 !important;
+            padding-inline: 4px !important;
+        }
+    
+        .titlebar-close {
+            padding-left: 13px !important;
+        }
+    
+        .titlebar-close>.toolbarbutton-icon,
+        .titlebar-restore>.toolbarbutton-icon,
+        .titlebar-max>.toolbarbutton-icon,
+        .titlebar-min>.toolbarbutton-icon {
+            list-style-image: none !important;
+            border-radius: 50% !important;
+            background: var(--uc-caption-color) !important;
+            border: 1px solid !important;
+            border-color: var(--uc-border-color) !important;
+    
+            transform: scale(1);
+            transition: transform .3s !important;
+        }
+    
+        .titlebar-close:hover>.toolbarbutton-icon,
+        .titlebar-restore:hover>.toolbarbutton-icon,
+        .titlebar-max:hover>.toolbarbutton-icon,
+        .titlebar-min:hover>.toolbarbutton-icon {
+    
+            transform: scale(0.8);
+        }
+    
+        /* move window nav to left */
+        .titlebar-buttonbox-container {
+            -moz-box-ordinal-group: 0 !important;
+        }
+    
+        /* reverse buttons */
+        .titlebar-buttonbox {
+            display: flex !important;
+            flex-direction: row-reverse !important;
+        }
+    
+        /* added missing width to right spacer */
+        :is(.titlebar-placeholder, .titlebar-spacer)[type="post-tabs"] {
+            width: 117px !important;
+            /* 138(win titlebar width) - 69(mac titlebar width) = 69; 48(right spacer width) + 69(empty width) = 117 */
+        }
+    }
+}
+
+
+

@@ -1,0 +1,78 @@
+:is(html, body) {
+  @each $key, $value in $animation {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $shadow {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :is(html, body) {
+    @each $key, $value in $dark-mode {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+    //----------------------------------------------------------------------
+    // --   Firefox vars
+    // ----------------------------------------------------------------------
+    --arrowpanel-background: var(--mf-bgcolor-50) !important;
+    --arrowpanel-border-color: var(--mf-border-color) !important;
+    --arrowpanel-color: var(--mf-text-primary) !important;
+    --arrowpanel-dimmed-further: color-mix(in srgb, currentColor 14%, transparent);
+
+    --autocomplete-popup-highlight-background: var(--mf-bgcolor-50) !important;
+    --autocomplete-popup-separator-color: var(--mf-border-color) !important;
+
+    --button-active-bgcolor: var(--mf-control-bgcolor) !important;
+    --button-bgcolor: var(--mf-control-bgcolor) !important;
+    --button-hover-bgcolor: var(--mf-control-bgcolor) !important;
+
+    --button-primary-active-bgcolor: var(--mf-accent) !important;
+    --button-primary-bgcolor: var(--mf-accent) !important;
+    --button-primary-color: var(--mf-text-on-accent-primary) !important; // text on accent
+    --button-primary-hover-bgcolor: var(--mf-accent) !important;
+
+    --chrome-content-separator-color: rgb(12, 12, 13);
+    --error-text-color: rgb(255, 154, 162);
+
+    --input-bgcolor: var(--mf-input-bgcolor) !important;
+    --input-border-color: var(--mf-border-color) !important;
+    --input-color: var(--mf-text-primary) !important;
+
+    --lwt-accent-color: var(--mf-bgcolor-0) !important;
+    --lwt-selected-tab-background-color: var(--mf-bgcolor-50) !important;
+    --lwt-tab-text: var(--mf-text-primary) !important;
+    --lwt-text-color: var(--mf-text-primary) !important;
+
+    --panel-banner-item-info-icon-bgcolor: var(--mf-accent) !important;
+    --panel-banner-item-update-supported-bgcolor: rgb(84, 255, 189);
+    --panel-description-color: rgba(251, 251, 254, 0.7);
+    --panel-disabled-color: rgba(251, 251, 254, 0.5);
+    --panel-item-active-bgcolor: color-mix(in srgb, currentColor 25%, transparent);
+    --panel-item-hover-bgcolor: color-mix(in srgb, currentColor 9%, transparent);
+    --panel-separator-zap-gradient: linear-gradient(90deg, #9059ff 0%, #ff4aa2 52.08%, #ffbd4f 100%);
+
+    --tab-icon-overlay-fill: rgb(251, 251, 254) !important;
+    --tab-icon-overlay-stroke: var(--mf-bgcolor-50) !important;
+
+    --tabpanel-background-color: var(--mf-bgcolor-50) !important;
+
+    --toolbar-bgcolor: var(--mf-bgcolor-50) !important;
+    --toolbar-color: var(--mf-text-primary) !important;
+    --toolbar-field-background-color: var(--mf-bgcolor-0) !important;
+    --toolbar-field-border-color: var(--mf-border-color) !important;
+    --toolbar-field-color: var(--mf-text-primary) !important;
+    --toolbar-field-focus-background-color: var(--mf-bgcolor-0) !important;
+    --toolbar-field-focus-color: var(--mf-text-primary) !important;
+    --toolbarbutton-icon-fill: rgb(251, 251, 254);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :is(html, body) {
+    @each $key, $value in $light-mode {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+}

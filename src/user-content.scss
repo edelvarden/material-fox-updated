@@ -1,0 +1,11 @@
+@import "variables";
+@import "user-content/fix-firefox-youtube";
+@import "user-content/fix-fonts";
+
+// @-moz-document url-prefix("about:"),
+// url-prefix("chrome:") {
+//     @import "user-content/global/color";
+//     @import "user-content/global/icons";
+//     @import "user-content/global/page";
+//     @import "user-content/global/new-tab-page";
+// }

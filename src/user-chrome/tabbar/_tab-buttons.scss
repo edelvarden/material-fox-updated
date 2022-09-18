@@ -1,0 +1,89 @@
+// buttons at center
+#tabbrowser-arrowscrollbox-periphery {
+  display: flex !important;
+  align-items: center !important;
+}
+
+
+// tabs manipulate buttons
+:is(#tabs-newtab-button, #new-tab-button, #alltabs-button) {
+  min-width: 40px !important;
+  min-height: var(--tab-min-height) !important;
+  max-width: 40px !important;
+  max-height: var(--tab-min-height) !important;
+  margin: 0 !important;
+  // transform: translateY(3px) !important;
+
+  & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+    padding: 6px 9px !important;
+    margin: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 4px !important;
+    transition: background-color 83ms linear !important;
+  }
+
+  &:hover {
+    & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+      background: rgba(255, 255, 255, 0.0605) !important;
+      outline: 1px solid rgba(255, 255, 255, 0.0605) !important;
+      outline-offset: -1px !important;
+    }
+  }
+}
+
+// tab close
+.tab-close-button {
+  width: auto !important;
+  height: 22px !important;
+  padding: 6px 9px !important;
+
+  transition: background-color 83ms linear !important;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.0605) !important;
+    outline: 1px solid rgba(255, 255, 255, 0.0605) !important;
+    outline-offset: -1px !important;
+  }
+}
+
+// all tabs button
+@media (-moz-platform: windows) {
+  // hide spacer between tabs & window nav
+  .titlebar-spacer[type="post-tabs"] {
+    display: none !important;
+  }
+
+  #alltabs-button {
+    display: flex !important;
+    visibility: visible !important;
+    height: 100% !important;
+    min-height: var(--tab-min-height) !important;
+    padding: 0 !important;
+
+    --margin-left: 48px;
+    margin: 0 0 0 var(--margin-left) !important;
+
+    & > stack {
+      padding: 8px 17px !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+    }
+  }
+
+  @media (max-width: 700px) {
+    #alltabs-button {
+      --margin-left: 8px !important;
+    }
+  }
+
+  @media (max-width: 500px) {
+    #alltabs-button {
+      --margin-left: 0px !important;
+    }
+  }
+}
+
+// light/dark colors
+@media (prefers-color-scheme: dark) {
+}

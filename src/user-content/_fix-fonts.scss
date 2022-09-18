@@ -1,0 +1,15 @@
+@-moz-document regexp("^((?!fonts.google.com).)*$") {
+  :not(
+      i,  .fa, .lg-icon, .icon, .docon,[class*=".picto"]::before , /* disable for icon fonts */
+      pre, code, /* disable for code blocks */
+      img, picture, svg, path, g, circle /* disable for images */
+      script, style) /* disable for other not text components */ {
+    font-family: Roboto, sans-serif !important;
+  }
+}
+
+html {
+  font-smooth: always !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}

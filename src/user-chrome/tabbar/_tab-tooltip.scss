@@ -1,0 +1,47 @@
+// hide old tooltip
+#tabbrowser-tab-tooltip {
+    display: none !important;
+}
+
+// show new tooltip like chrome
+.tabbrowser-tab::after {
+    content: attr(label) !important;
+    display: block !important;
+    position: fixed !important;
+    overflow: hidden !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    opacity: 0;
+
+    width: 255px;
+    max-width: 255px;
+    margin: var(--tab-min-height) 0 0 -10px;
+    padding: 16px 19px;
+    border-radius: 8px;
+
+    font-family: Roboto, sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    line-height: 20.02px !important;
+
+    color: var(--arrowpanel-color) !important;
+    background: var(--arrowpanel-background) !important;
+    box-shadow: var(--mf-dark-shadow) !important;
+}
+
+.tabbrowser-tab:hover::after {
+    animation: show-tooltip 333ms var(--mf-point-to-point) forwards;
+    animation-delay: .75s;
+}
+
+@keyframes show-tooltip {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

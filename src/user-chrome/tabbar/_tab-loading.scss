@@ -1,0 +1,82 @@
+// hide default loading animation
+.tab-loading-burst[bursting]::before,
+.tab-throbber::before {
+    display: none !important;
+}
+
+// added spinner animation
+.tab-throbber {
+    -moz-context-properties: fill !important;
+    fill: AccentColor !important;
+    background-image: url('icons/spinner-busy.svg') !important;
+    transform-origin: center !important;
+    animation: rotate-360 1.333s linear infinite reverse !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.tab-throbber[progress] {
+    background-image: url('icons/spinner-progress.svg') !important;
+    animation-direction: normal !important;
+}
+
+@keyframes rotate-360 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+// icon animation when loading
+.tabbrowser-tab {
+
+    .tab-icon-image {
+        display: block !important;
+        visibility: visible !important;
+        overflow: visible !important;
+        max-width: none !important;
+        max-height: none !important;
+    }
+
+    &[busy] {
+        .tab-icon-image {
+            transform: scale(0.5);
+        }
+    }
+
+    &:not([busy]) {
+        .tab-icon-image {
+            animation: set-scale 187ms var(--#{$prefix}-point-to-point);
+        }
+    }
+}
+
+@keyframes set-scale {
+    0% {
+        transform: scale(0.5);
+        border-radius: 100px !important;
+    }
+
+    100% {
+        transform: scale(1);
+        border-radius: 0 !important;
+    }
+}
+
+
+
+.tab-icon-stack {
+    max-width: 16px !important;
+    max-height: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+    overflow: visible !important;
+}
+
+.tab-icon-stack * {
+    margin: 0 !important;
+}
