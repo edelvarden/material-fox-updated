@@ -1,57 +1,56 @@
 .tab-content {
-    position: relative !important;
-    overflow: hidden !important;
+  position: relative !important;
+  overflow: hidden !important;
 
-    &::before,
-    &::after {
-        content: '' !important;
-        display: block !important;
-        position: absolute !important;
-        background-color: rgba(var(--#{$prefix}-tab-separator-color-rgb), var(--#{$prefix}-tab-separator-opacity)) !important;
-        width: 1px !important;
-        height: 20px !important;
-        transform: translateY(-10px) !important;
-        opacity: 0 !important;
-        transition: opacity 0.2s var(--ease-basic) !important;
-    }
+  &::before,
+  &::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    background-color: rgba(var(--#{$prefix}-tab-separator-color-rgb), var(--#{$prefix}-tab-separator-opacity)) !important;
+    width: 1px !important;
+    height: 20px !important;
+    transform: translateY(-10px) !important;
+    opacity: 0 !important;
+    transition: opacity 0.2s var(--ease-basic) !important;
+  }
 
-    &::before {
-        left: 0 !important;
-    }
+  &::before {
+    left: 0 !important;
+  }
 
-    &::after {
-        right: 0 !important;
-    }
+  &::after {
+    right: 0 !important;
+  }
 }
 
 .tabbrowser-tab {
-    &[visuallyselected][style*=transform]+.tabbrowser-tab[style*=transform] .tab-content::after {
-        opacity: var(--tab-separator-opacity) !important;
-    }
+  &[visuallyselected][style*="transform"] + .tabbrowser-tab[style*="transform"] .tab-content::after {
+    opacity: var(--tab-separator-opacity) !important;
+  }
 
-    &[style*=transform] {
-
-        &:not([visuallyselected]) .tab-content::before,
-        +.tabbrowser-tab:not([visuallyselected]) .tab-content::before {
-            opacity: var(--tab-separator-opacity) !important;
-        }
+  &[style*="transform"] {
+    &:not([visuallyselected]) .tab-content::before,
+    + .tabbrowser-tab:not([visuallyselected]) .tab-content::before {
+      opacity: var(--tab-separator-opacity) !important;
     }
+  }
 
-    &:not([visuallyselected]):not(:hover):not([multiselected])+.tabbrowser-tab:not([visuallyselected]):not(:hover):not([multiselected]) .tab-content::before {
-        opacity: var(--tab-separator-opacity) !important;
-    }
+  &:not([visuallyselected]):not(:hover):not([multiselected]) + .tabbrowser-tab:not([visuallyselected]):not(:hover):not([multiselected]) .tab-content::before {
+    opacity: var(--tab-separator-opacity) !important;
+  }
 }
 
 #tabbrowser-tabs {
-    &[hasadjacentnewtabbutton]:not([overflow]) .tabbrowser-tab[last-visible-tab]:not([visuallyselected]):not(:hover):not([multiselected]) .tab-content::after {
-        opacity: var(--tab-separator-opacity) !important;
-    }
+  &[hasadjacentnewtabbutton]:not([overflow]) .tabbrowser-tab[last-visible-tab]:not([visuallyselected]):not(:hover):not([multiselected]) .tab-content::after {
+    opacity: var(--tab-separator-opacity) !important;
+  }
 
-    &[overflow] .tabbrowser-tab[pinned]+.tabbrowser-tab:not([pinned]) .tab-content::before {
-        opacity: 0 !important;
-    }
+  &[overflow] .tabbrowser-tab[pinned] + .tabbrowser-tab:not([pinned]) .tab-content::before {
+    opacity: 0 !important;
+  }
 }
 
 .tabbrowser-tab[visuallyselected] {
-    --tab-transition-duration: 0s;
+  --tab-transition-duration: 0s;
 }

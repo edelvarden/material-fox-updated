@@ -50,7 +50,7 @@
 
     &:not([busy]) {
         .tab-icon-image {
-            animation: set-scale 187ms var(--#{$prefix}-point-to-point);
+            animation: set-scale 333ms ease-in-out;
         }
     }
 }
@@ -59,6 +59,10 @@
     0% {
         transform: scale(0.5);
         border-radius: 100px !important;
+    }
+
+    50% {
+        transform: scale(1.1);
     }
 
     100% {

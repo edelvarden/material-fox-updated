@@ -4,7 +4,6 @@
   align-items: center !important;
 }
 
-
 // tabs manipulate buttons
 :is(#tabs-newtab-button, #new-tab-button, #alltabs-button) {
   min-width: 40px !important;
@@ -36,7 +35,7 @@
 .tab-close-button {
   width: auto !important;
   height: 22px !important;
-  padding: 6px 9px !important;
+  padding: 4px 6px !important;
 
   transition: background-color 83ms linear !important;
 
