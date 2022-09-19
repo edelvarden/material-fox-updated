@@ -2,8 +2,10 @@
 @import "user-chrome/global/normalize";
 @import "user-chrome/global/variables-local";
 @import "user-chrome/global/icons";
+@import "user-chrome/global/extension-icons";
 @import "user-chrome/tabbar/index";
 @import "user-chrome/components/menupopup";
+@import "user-chrome/components/findbar";
 
 
 :-moz-any(*, *::before, *::after) {
