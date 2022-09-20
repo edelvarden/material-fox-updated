@@ -1,6 +1,9 @@
 :-moz-any(html, body) {
   // tabbar
   --no-src-icon: url("icons/no-src.svg");
+  --audio-icon: url("icons/audio.svg");
+  --audio-muted-icon: url("icons/audio-muted.svg");
+  --audio-blocked-icon: url("icons/audio-blocked.svg");
   --close-tab-icon: url("icons/close-tab.svg");
   --new-tab-icon: url("icons/new-tab.svg");
 
@@ -231,19 +234,15 @@ menuitem[checked="true"] > .menu-iconic-left {
   background-image: var(--check-icon) !important;
 }
 
-
-
-.tab-icon-overlay[soundplaying],
+:-moz-any(.all-tabs-secondary-button, .tab-icon-overlay)[soundplaying],
 .tab-icon-sound {
-  list-style-image: url("icons/audio.svg") !important;
+  list-style-image: var(--audio-icon) !important;
 }
 
-.tab-icon-overlay[muted],
-.tab-icon-sound[muted] {
-  list-style-image: url("icons/audio-muted.svg") !important;
+:-moz-any(.all-tabs-secondary-button, .tab-icon-overlay, .tab-icon-sound)[muted] {
+  list-style-image: var(--audio-muted-icon) !important;
 }
 
-.tab-icon-overlay[activemedia-blocked],
-.tab-icon-sound[activemedia-blocked] {
-  list-style-image: url("icons/media-blocked.svg") !important;
+:-moz-any(.all-tabs-secondary-button, .tab-icon-overlay, .tab-icon-sound)[activemedia-blocked] {
+  list-style-image: var(--audio-muted-icon) !important;
 }

@@ -35,7 +35,7 @@
   }
 
   &:not([visuallyselected]) {
-    color: rgba(var(--#{$prefix}-text-primary-rgb), 0.786) !important; //var(--toolbar-color-unselected) !important;
+    color: rvar(--#{$prefix}-text-secondary) !important; //var(--toolbar-color-unselected) !important;
   }
 }
 
@@ -125,7 +125,7 @@
 .tabbrowser-tab[multiselected]:not([selected="true"]),
 :-moz-any(#TabsToolbar[brighttext]) .tabbrowser-tab:not([selected="true"]):hover,
 :-moz-any(#TabsToolbar[brighttext]) .tabbrowser-tab[multiselected]:not([selected="true"]) {
-  --tab-opacity: 0.5;
+  --tab-opacity: var(--#{$prefix}-tab-opacity-hover);
 }
 :-moz-any(#TabsToolbar) {
   .tabbrowser-tab[visuallyselected] {

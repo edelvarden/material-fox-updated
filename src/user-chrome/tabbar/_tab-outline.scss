@@ -2,7 +2,7 @@
 #nav-bar {
   margin-top: -1px !important;
   border-top: 1px solid !important;
-  border-color: rgba(var(--#{$prefix}-tab-outline-color-rgb), var(--#{$prefix}-tab-outline-opacity)) !important;
+  border-color: var(--#{$prefix}-tab-outline-color) !important;
 }
 
 .tabbrowser-tab[visuallyselected] {
@@ -10,7 +10,7 @@
   .tab-background::before,
   .tab-background::after {
     outline: 1px solid !important;
-    outline-color: rgba(var(--#{$prefix}-tab-outline-color-rgb), var(--#{$prefix}-tab-outline-opacity)) !important;
+    outline-color: var(--#{$prefix}-tab-outline-color) !important;
     outline-offset: 0 !important;
   }
 }

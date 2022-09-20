@@ -24,8 +24,9 @@
 
   &:hover {
     & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-      background: rgba(255, 255, 255, 0.0605) !important;
-      outline: 1px solid rgba(255, 255, 255, 0.0605) !important;
+      background: var(--#{$prefix}-control-bgcolor) !important;
+      outline: 1px solid transparent !important;
+      outline-color: var(--#{$prefix}-control-border-color) !important;
       outline-offset: -1px !important;
     }
   }

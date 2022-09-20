@@ -8,25 +8,24 @@ $dark-mode: (
   "bgcolor-50": color-mix(in srgb, white 5.12%, #{var(--#{$prefix}-bgcolor-0)}),
   "bgcolor-100": color-mix(in srgb, white 6.05%, #{var(--#{$prefix}-bgcolor-0)}),
   // UI text
-  "text-primary-rgb": "255, 255, 255",
-  "text-primary": rgb(#{var(--#{$prefix}-text-primary-rgb)}),
-  "text-secondary": color-mix(in srgb, white 7.86%, #{var(--#{$prefix}-text-primary)}),
-  "text-disabled": color-mix(in srgb, white 3.628%, #{var(--#{$prefix}-text-primary)}),
+  "text-primary": white,
+  "text-secondary": color-mix(in srgb, #{var(--#{$prefix}-text-primary)} 7.86%, transparent),
+  "text-disabled": color-mix(in srgb, #{var(--#{$prefix}-text-primary)} 3.628%, transparent),
   // Link text color
   "text-accent-primary": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 80%, white),
   "text-accent-secondary": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 80%, white),
   // Primary button text color
-  "text-on-accent-primary": #000,
+  "text-on-accent-primary": black,
   // Button, Dropdown, Search inputs
-  "control-bgcolor": color-mix(in srgb, white 6.05%, #{var(--#{$prefix}-bgcolor-0)}),
+  "control-bgcolor": color-mix(in srgb, white 6.05%, transparent),
+  "control-border-color": color-mix(in srgb, white 6.05%, transparent),
   "control-bgcolor-secondary": color-mix(in srgb, white 8.37%, #{var(--#{$prefix}-bgcolor-0)}),
   "control-bgcolor-disabled": color-mix(in srgb, white 4.19%, #{var(--#{$prefix}-bgcolor-0)}),
   // Tab bar
-  "tab-separator-color-rgb": "255, 255, 255",
-  "tab-separator-opacity": 0.0837,
+  "tab-separator-color": color-mix(in srgb, white 8.37%, transparent),
   // Tab outline
-  "tab-outline-color-rgb": "0,0,0",
-  "tab-outline-opacity": 0.1,
+  "tab-outline-color": color-mix(in srgb, black 10%, transparent),
+  "tab-opacity-hover": 0.5,
 );
 
 $light-mode: (
@@ -36,25 +35,24 @@ $light-mode: (
   "bgcolor-50": color-mix(in srgb, white 5.12%, #{var(--#{$prefix}-bgcolor-0)}),
   "bgcolor-100": color-mix(in srgb, white 6.05%, #{var(--#{$prefix}-bgcolor-0)}),
   // UI text
-  "text-primary-rgb": "0,0,0",
-  "text-primary": rgb(#{var(--#{$prefix}-text-primary-rgb)}),
-  "text-secondary": color-mix(in srgb, white 7.86%, #{var(--#{$prefix}-text-primary)}),
-  "text-disabled": color-mix(in srgb, white 3.628%, #{var(--#{$prefix}-text-primary)}),
+  "text-primary": black,
+  "text-secondary": color-mix(in srgb, #{var(--#{$prefix}-text-primary)} 7.86%, transparent),
+  "text-disabled": color-mix(in srgb, #{var(--#{$prefix}-text-primary)} 3.628%, transparent),
   // Link text color
   "text-accent-primary": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 80%, white),
   "text-accent-secondary": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 80%, white),
   // Primary button text color
-  "text-on-accent-primary": #000,
+  "text-on-accent-primary": black,
   // Button, Dropdown, Search inputs
-  "control-bgcolor": color-mix(in srgb, white 6.05%, #{var(--#{$prefix}-bgcolor-0)}),
+  "control-bgcolor": color-mix(in srgb, black 3.73%, transparent),
+  "control-border-color": color-mix(in srgb, black 3.73%, transparent),
   "control-bgcolor-secondary": color-mix(in srgb, white 8.37%, #{var(--#{$prefix}-bgcolor-0)}),
   "control-bgcolor-disabled": color-mix(in srgb, white 4.19%, #{var(--#{$prefix}-bgcolor-0)}),
   // Tab bar
-  "tab-separator-color-rgb": "0,0,0",
-  "tab-separator-opacity": 0.0803,
+  "tab-separator-color": color-mix(in srgb, black 8.03%, transparent),
   // Tab outline
-  "tab-outline-color-rgb": "0,0,0",
-  "tab-outline-opacity": 0.0578,
+  "tab-outline-color": color-mix(in srgb, black 5.78%, transparent),
+  "tab-opacity-hover": 0.1,
 );
 
 $animation: (
