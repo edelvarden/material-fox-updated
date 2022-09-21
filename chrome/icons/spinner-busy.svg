@@ -24,5 +24,5 @@
 			animation: stroke-rotate 1.333s cubic-bezier(.35, 0, .25, 1) both;
 		}
 	</style>
-	<circle cx="50%" cy="50%" r="37.5%"/>
+	<circle cx="50%" cy="50%" r="37.5%" />
 </svg>

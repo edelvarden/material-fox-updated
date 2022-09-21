@@ -1,0 +1,39 @@
+// change icons position
+#urlbar-input-container {
+  display: flex !important;
+  align-items: center !important;
+}
+
+
+#urlbar-zoom-button {
+  order: 100 !important;
+}
+
+#page-action-buttons {
+  order: 99 !important;
+}
+
+#tracking-protection-icon-container {
+  order: 98 !important;
+}
+
+.urlbar-input-box {
+  flex: 1 1 auto !important;
+}
+
+.urlbar-page-action:is(#reader-mode-button, #pageActionButton, #pocket-button-box, #pageAction-urlbar-screenshots_mozilla_org, #pageAction-urlbar-sendToDevice, #pageAction-urlbar-emailLink, #pageAction-urlbar-copyURL, #pageAction-urlbar-shareURL, #pageAction-urlbar-addSearchEngine) {
+  transition: background-color 0.2s ease, margin 0.15s ease-in, opacity 0.15s ease, visibility 0s 4s !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  margin-inline-start: -32px !important;
+}
+
+#urlbar {
+  &:hover {
+    .urlbar-page-action:is(#reader-mode-button, #pageActionButton, #pocket-button-box, #pageAction-urlbar-screenshots_mozilla_org, #pageAction-urlbar-sendToDevice, #pageAction-urlbar-emailLink, #pageAction-urlbar-copyURL, #pageAction-urlbar-shareURL, #pageAction-urlbar-addSearchEngine) {
+      opacity: 1 !important;
+      visibility: visible !important;
+      margin-inline-start: 0 !important;
+    }
+  }
+}

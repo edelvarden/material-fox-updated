@@ -1,0 +1,46 @@
+// url bar size
+#urlbar {
+  // default
+  // --urlbar-height: 32.00px;
+  // --urlbar-toolbar-height: 40.00px;
+  --urlbar-height: 28px !important;
+  --urlbar-toolbar-height: 36px !important;
+}
+
+#urlbar-container {
+  // default
+  // --urlbar-container-height: 40.00px;
+  --urlbar-container-height: 36px !important;
+}
+
+:is(html, body) {
+  // default
+  // --urlbar-min-height: 32px;
+  // --urlbar-icon-border-radius: calc(var(--toolbarbutton-border-radius) - 1px);
+  // --toolbarbutton-border-radius: 4px;
+  // --urlbar-container-padding: 1px;
+  // --toolbarbutton-inner-padding: 8px;
+  --toolbarbutton-inner-padding: 6px !important;
+  --urlbar-min-height: 28px !important;
+  --urlbar-icon-border-radius: 100px !important;
+  --toolbarbutton-border-radius: 100px !important;
+  --toolbarbutton-height: 28px !important;
+  --urlbar-container-padding: 2px !important;
+}
+
+// fix icons sizes after url bar size changed
+:is(.identity-box-button, #notification-popup-box, #tracking-protection-icon-container, .urlbar-page-action, #urlbar-go-button, .search-go-button) {
+  width: auto !important;
+  height: calc(var(--urlbar-height) - var(--urlbar-container-padding) * 2) !important;
+  border-radius: var(--urlbar-icon-border-radius) !important;
+  padding: 0 8px !important;
+  -moz-box-pack: center !important;
+}
+
+#urlbar[open] {
+  #urlbar-background,
+  #searchbar {
+    border-radius: 4px !important;
+    border: none !important;
+  }
+}

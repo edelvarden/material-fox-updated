@@ -24,10 +24,9 @@
 
   &:hover {
     & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-      background: var(--#{$prefix}-control-bgcolor) !important;
+      background: val(control-bgcolor) !important;
       outline: 1px solid transparent !important;
-      outline-color: var(--#{$prefix}-control-border-color) !important;
-      outline-offset: -1px !important;
+      outline-color: val(control-border-color) !important;
     }
   }
 }
@@ -35,15 +34,15 @@
 // tab close
 .tab-close-button {
   width: auto !important;
-  height: 22px !important;
-  padding: 4px 6px !important;
+  height: 23px !important;
+  padding: 5px 7px !important;
 
   transition: background-color 83ms linear !important;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.0605) !important;
-    outline: 1px solid rgba(255, 255, 255, 0.0605) !important;
-    outline-offset: -1px !important;
+    background: val(control-bgcolor) !important;
+    outline: 1px solid transparent !important;
+    outline-color: val(control-border-color) !important;
   }
 }
 

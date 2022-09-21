@@ -13,6 +13,11 @@
     @each $key, $value in $dark-mode {
       --#{$prefix}-#{$key}: #{$value};
     }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :is(html, body) {
     //----------------------------------------------------------------------
     // --   Firefox vars
     // ----------------------------------------------------------------------
@@ -61,7 +66,8 @@
     --toolbar-bgcolor: var(--mf-bgcolor-50) !important;
     --toolbar-color: var(--mf-text-primary) !important;
     --toolbar-field-background-color: var(--mf-bgcolor-0) !important;
-    --toolbar-field-border-color: var(--mf-border-color) !important;
+    --toolbar-field-border-color: transparent !important;
+    --toolbar-field-focus-border-color: #{val(accent-color)} !important;
     --toolbar-field-color: var(--mf-text-primary) !important;
     --toolbar-field-focus-background-color: var(--mf-bgcolor-0) !important;
     --toolbar-field-focus-color: var(--mf-text-primary) !important;

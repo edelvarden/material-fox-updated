@@ -7,7 +7,7 @@
     content: "" !important;
     display: block !important;
     position: absolute !important;
-    background-color: var(--#{$prefix}-tab-separator-color) !important;
+    background-color: val(tab-separator-color) !important;
     width: 1px !important;
     height: 20px !important;
     transform: translateY(-10px) !important;

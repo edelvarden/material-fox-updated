@@ -147,19 +147,12 @@
 
 // lock (secure)
 #identity-box[pageproxystate="valid"] {
-  &.verifiedDomain #identity-icon,
-  &.mixedActiveBlocked #identity-icon {
+  &:-moz-any(.verifiedDomain, .mixedActiveBlocked) #identity-icon {
     list-style-image: var(--lock-icon) !important;
   }
 
-  &.notSecure #identity-icon,
-  &.mixedActiveContent #identity-icon,
-  &.httpsOnlyErrorPage #identity-icon,
-  &.weakCipher #identity-icon,
-  &.mixedDisplayContent #identity-icon,
-  &.mixedDisplayContentLoadedActiveBlocked #identity-icon,
-  &.certUserOverridden #identity-icon,
-  &.certErrorPage #identity-icon {
+  &:-moz-any(.notSecure, .mixedActiveContent, .httpsOnlyErrorPage, .weakCipher, .mixedDisplayContent, .mixedDisplayContentLoadedActiveBlocked, .certUserOverridden, &.certErrorPage)
+    #identity-icon {
     list-style-image: var(--warning-icon) !important;
   }
 }
@@ -167,7 +160,8 @@
   background-image: var(--lock-icon) !important;
 }
 
-#identity-popup[connection^="not-secure"] .identity-popup-security-connection {
+#identity-popup:-moz-any([connection="secure-cert-user-overridden"], [connection="cert-error-page"], [connection^="not-secure"])
+  .identity-popup-security-connection {
   background-image: var(--warning-icon) !important;
   // fill: var(--error-text-color) !important;
 }

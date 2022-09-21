@@ -141,10 +141,7 @@
     visibility: visible !important;
   }
 }
-.tabbrowser-tab .tab-icon-overlay:not([pinned]),
-.tabbrowser-tab .tab-icon-stack {
-  z-index: -1 !important;
-}
+
 #tabbrowser-tabs {
   #tabs-newtab-button {
     margin-inline-start: 6px !important;

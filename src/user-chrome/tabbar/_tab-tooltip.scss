@@ -30,7 +30,7 @@
 }
 
 .tabbrowser-tab:hover::after {
-    animation: show-tooltip 333ms var(--mf-point-to-point) forwards;
+    animation: show-tooltip 333ms val(point-to-point) forwards;
     animation-delay: .75s;
 }
 
