@@ -38,7 +38,7 @@
     --button-primary-color: var(--mf-text-on-accent-primary) !important; // text on accent
     --button-primary-hover-bgcolor: var(--mf-accent) !important;
 
-    --chrome-content-separator-color: rgb(12, 12, 13);
+    --chrome-content-separator-color: #{val(tab-outline-color)} !important;
     --error-text-color: rgb(255, 154, 162);
 
     --input-bgcolor: var(--mf-input-bgcolor) !important;

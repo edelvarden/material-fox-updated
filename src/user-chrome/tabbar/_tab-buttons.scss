@@ -4,7 +4,7 @@
   align-items: center !important;
 }
 
-// tabs manipulate buttons
+// new tab button & all tabs button
 :is(#tabs-newtab-button, #new-tab-button, #alltabs-button) {
   min-width: 40px !important;
   min-height: var(--tab-min-height) !important;

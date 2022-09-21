@@ -15,7 +15,7 @@ $prefix: mf;
 $dark-mode: (
   "accent-color": AccentColor,
   // UI background colors
-  "bgcolor-0": cm(#202020, val(accent-color), 0),
+  "bgcolor-0": cm(#202020, val(accent-color), 0.03628),
   "bgcolor-50": cm(val(bgcolor-0), white, 0.0512),
   "bgcolor-100": cm(val(bgcolor-0), white, 0.0605),
   // UI text
@@ -41,27 +41,27 @@ $dark-mode: (
 $light-mode: (
   "accent-color": AccentColor,
   // UI background colors
-  "bgcolor-0": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 0%, #202020),
-  "bgcolor-50": color-mix(in srgb, white 5.12%, #{var(--#{$prefix}-bgcolor-0)}),
-  "bgcolor-100": color-mix(in srgb, white 6.05%, #{var(--#{$prefix}-bgcolor-0)}),
+  "bgcolor-0": cm(#202020, val(accent-color), 0),
+  "bgcolor-50": cm(val(bgcolor-0), white, 0.0512),
+  "bgcolor-100": cm(val(bgcolor-0), white, 0.0605),
   // UI text
   "text-primary": black,
-  "text-secondary": color-mix(in srgb, #{var(--#{$prefix}-text-primary)} 7.86%, transparent),
-  "text-disabled": color-mix(in srgb, #{var(--#{$prefix}-text-primary)} 3.628%, transparent),
+  "text-secondary": cm(transparent, val(text-primary), 0.0786),
+  "text-disabled": cm(transparent, val(text-primary), 0.03628),
   // Link text color
-  "text-accent-primary": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 80%, white),
-  "text-accent-secondary": color-mix(in srgb, #{var(--#{$prefix}-accent-color)} 80%, white),
+  "text-accent-primary": cm(white, val(text-primary), 0.8),
+  "text-accent-secondary": cm(white, val(text-primary), 0.8),
   // Primary button text color
   "text-on-accent-primary": black,
   // Button, Dropdown, Search inputs
-  "control-bgcolor": color-mix(in srgb, black 3.73%, transparent),
-  "control-border-color": color-mix(in srgb, black 3.73%, transparent),
-  "control-bgcolor-secondary": color-mix(in srgb, white 8.37%, #{var(--#{$prefix}-bgcolor-0)}),
-  "control-bgcolor-disabled": color-mix(in srgb, white 4.19%, #{var(--#{$prefix}-bgcolor-0)}),
+  "control-bgcolor": cm(transparent, black, 0.0373),
+  "control-border-color": cm(transparent, black, 0.0373),
+  "control-bgcolor-secondary": cm(val(bgcolor-0), white, 0.0837),
+  "control-bgcolor-disabled": cm(val(bgcolor-0), white, 0.0419),
+
   // Tab bar
-  "tab-separator-color": color-mix(in srgb, black 8.03%, transparent),
-  // Tab outline
-  "tab-outline-color": color-mix(in srgb, black 5.78%, transparent),
+  "tab-separator-color": cm(transparent, black, 0.0803),
+  "tab-outline-color": cm(transparent, black, 0.0578),
   "tab-opacity-hover": 0.1,
 );
 
