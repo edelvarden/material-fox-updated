@@ -17,6 +17,7 @@
   --info-icon: url("icons/info.svg");
   --lock-icon: url("icons/lock.svg");
   --warning-icon: url("icons/warning.svg");
+  --properties-icon: url("icons/properties.svg");
   --tracking-protection-icon: url("icons/tracking-protection.svg");
   --star-icon: url("icons/star.svg");
   --menu-icon: url("icons/menu.svg");
@@ -164,6 +165,11 @@
   .identity-popup-security-connection {
   background-image: var(--warning-icon) !important;
   // fill: var(--error-text-color) !important;
+}
+
+// properties permitions icon
+#permissions-granted-icon {
+  list-style-image: var(--properties-icon) !important;
 }
 
 // star & tracking protection icons
