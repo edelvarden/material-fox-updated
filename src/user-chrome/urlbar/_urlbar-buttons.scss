@@ -4,7 +4,6 @@
   align-items: center !important;
 }
 
-
 #urlbar-zoom-button {
   order: 100 !important;
 }
@@ -22,7 +21,7 @@
 }
 
 .urlbar-page-action:is(#reader-mode-button, #pageActionButton, #pocket-button-box, #pageAction-urlbar-screenshots_mozilla_org, #pageAction-urlbar-sendToDevice, #pageAction-urlbar-emailLink, #pageAction-urlbar-copyURL, #pageAction-urlbar-shareURL, #pageAction-urlbar-addSearchEngine) {
-  transition: background-color 0.2s ease, margin 0.15s ease-in, opacity 0.15s ease, visibility 0s 4s !important;
+  transition: background-color 333ms ease, margin 0.15s ease-in, opacity 83ms linear, visibility 0s 4s !important;
   opacity: 0 !important;
   visibility: hidden !important;
   margin-inline-start: -32px !important;

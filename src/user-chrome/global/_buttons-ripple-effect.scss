@@ -1,0 +1,108 @@
+:is(html, body) {
+  --circle-size-100: 100%;
+  --circle-size-over: 250%;
+
+  --toolbarbutton-border-radius: 100px !important;
+}
+
+@media (prefers-color-scheme: light) {
+  :is(html, body) {
+    --circle-icon: url("icons/circle.svg");
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :is(html, body) {
+    --circle-icon: url("icons/circle-dark.svg");
+  }
+}
+
+@mixin button-ripple-effect {
+  border-radius: var(--toolbarbutton-border-radius) !important;
+
+  // transition
+  transition: background-size 0.15s linear, background-color 0.2s ease !important;
+
+  // background
+  background-image: var(--circle-icon), var(--circle-icon) !important;
+  background-size: 0 !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-color: transparent !important;
+}
+
+// effect for url bar buttons & tab scroll buttons
+:is(.identity-box-button, #notification-popup-box, #tracking-protection-icon-container, #pageActionButton, #urlbar-zoom-button, .urlbar-page-action, #scrollbutton-up, #scrollbutton-down, .tab-close-button):not([disabled]),
+#PlacesToolbarItems > .bookmark-item,
+#PlacesChevron:not([collapsed]) {
+  @include button-ripple-effect();
+
+  &:-moz-any(:active:hover, [checked], [open]):not([disabled]) {
+    background-size: var(--circle-size-100) !important;
+  }
+
+  &:not([checked], [open], [disabled]):hover {
+    background-color: var(--mf-bgcolor-100) !important;
+  }
+}
+
+// effect for bookmarks button
+#PlacesToolbarItems > .bookmark-item {
+  --toolbarbutton-border-radius: 4px !important;
+  padding: var(--bookmark-block-padding) 6px !important;
+}
+
+// effect for other nav bar buttons
+.findbar-find-next,
+.findbar-find-previous,
+.findbar-closebutton,
+.toolbarbutton-1:not(#alltabs-button) {
+  & > .toolbarbutton-icon,
+  & > .toolbarbutton-badge-stack {
+    @include button-ripple-effect();
+  }
+
+  &:-moz-any(:active:hover, [checked], [open]):not([disabled]) {
+    & > .toolbarbutton-icon,
+    & > .toolbarbutton-badge-stack {
+      background-size: var(--circle-size-100) !important;
+    }
+  }
+
+  &:not([checked], [open], [disabled]):hover {
+    & > .toolbarbutton-icon,
+    & > .toolbarbutton-badge-stack {
+      background-color: var(--mf-navbuttons-bgcolor-hover) !important;
+    }
+  }
+}
+
+// effect for findbar buttons
+.findbar-find-next,
+.findbar-find-previous,
+.findbar-closebutton {
+  &:hover {
+    background: transparent !important;
+  }
+}
+
+.tab-close-button {
+  &:hover {
+    background-color: var(--mf-navbuttons-bgcolor-hover) !important;
+  }
+}
+
+// disable refresh button animation
+#nav-bar-customization-target {
+  -moz-box-align: center;
+}
+
+:is(#reload-button, #stop-button) {
+  .toolbarbutton-icon {
+    max-height: 28px !important;
+    fill: inherit !important;
+  }
+
+  .toolbarbutton-animatable-box {
+    display: none !important;
+  }
+}
