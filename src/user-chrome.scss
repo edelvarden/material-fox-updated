@@ -7,4 +7,7 @@
 
 :-moz-any(*, *::before, *::after) {
   font-family: Roboto, sans-serif !important;
+  font-smooth: always !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }

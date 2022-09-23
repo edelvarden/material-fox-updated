@@ -1,8 +1,6 @@
 :is(html, body) {
-  --circle-size-100: 100%;
-  --circle-size-over: 250%;
-
   --toolbarbutton-border-radius: 100px !important;
+  --circle-size: 0;
 }
 
 @media (prefers-color-scheme: light) {
@@ -16,86 +14,71 @@
   }
 }
 
-@mixin button-ripple-effect {
+// regular style for buttons
+@mixin ripple-effect {
   border-radius: var(--toolbarbutton-border-radius) !important;
-
-  // transition
-  transition: background-size 167ms linear, background-color 167ms ease !important;
-
-  // background
   background-image: var(--circle-icon), var(--circle-icon) !important;
-  background-size: 0 !important;
+  background-size: var(--circle-size) !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
-  background-color: transparent !important;
+  // background-color: transparent !important;
+  outline: 1px solid transparent !important;
+  transition: background-size 167ms linear, background-color 167ms ease !important;
 }
 
-// effect for url bar buttons & tab scroll buttons
+// add style for buttons
+@mixin ripple-effect-for-button {
+  @include ripple-effect();
+  &:is(:active:hover, [checked], [open]):not([disabled]) {
+    --circle-size: 100%;
+  }
+  &:hover {
+    background-color: val(control-bgcolor) !important;
+    outline-color: val(control-border-color) !important;
+  }
+}
+
+// add style for exception buttons, for icon or badge-stack selectors
+@mixin ripple-effect-for-icon {
+  > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+    @include ripple-effect();
+  }
+  &:is(:active:hover, [checked], [open]):not([disabled]) > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+    --circle-size: 100%;
+  }
+  &:hover > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+    background-color: val(control-bgcolor) !important;
+    outline-color: val(control-border-color) !important;
+  }
+}
+
+// effect for url bar buttons, tab scroll buttons & bookmarkbar
 :is(.identity-box-button, #notification-popup-box, #tracking-protection-icon-container, #pageActionButton, #urlbar-zoom-button, .urlbar-page-action, #scrollbutton-up, #scrollbutton-down, .tab-close-button):not([disabled]),
 #PlacesToolbarItems > .bookmark-item,
 #PlacesChevron:not([collapsed]) {
-  @include button-ripple-effect();
-
-  &:-moz-any(:active:hover, [checked], [open]):not([disabled]) {
-    background-size: var(--circle-size-100) !important;
-  }
-
-  &:not([checked], [open], [disabled]):hover {
-    background-color: var(--mf-bgcolor-100) !important;
-  }
+  @include ripple-effect-for-button();
 }
 
-// effect for bookmarks button
+// bookmark folder style
 #PlacesToolbarItems > .bookmark-item {
   --toolbarbutton-border-radius: 4px !important;
   padding: var(--bookmark-block-padding) 6px !important;
 }
 
 // effect for other nav bar buttons
-.findbar-find-next,
-.findbar-find-previous,
-.findbar-closebutton,
-.toolbarbutton-1:not(#alltabs-button) {
-  & > .toolbarbutton-icon,
-  & > .toolbarbutton-badge-stack {
-    @include button-ripple-effect();
-  }
-
-  &:-moz-any(:active:hover, [checked], [open]):not([disabled]) {
-    & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-      background-size: var(--circle-size-100) !important;
-    }
-  }
-
-  &:not([checked], [open], [disabled]):hover {
-    & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-      background-color: val(control-bgcolor) !important;
-      outline: 1px solid transparent !important;
-      outline-color: val(control-border-color) !important;
-    }
-  }
+:is(.findbar-find-next, .findbar-find-previous, .findbar-closebutton, .toolbarbutton-1:not(#alltabs-button)) {
+  @include ripple-effect-for-icon();
 }
 
-// effect for findbar buttons
-.findbar-find-next,
-.findbar-find-previous,
-.findbar-closebutton {
-  &:hover {
-    background: transparent !important;
-  }
-}
-
-.tab-close-button {
-  &:hover {
-    background-color: var(--mf-navbuttons-bgcolor-hover) !important;
-  }
+// hide default findbar buttons hover background
+:is(.findbar-find-next, .findbar-find-previous, .findbar-closebutton):hover {
+  background: transparent !important;
 }
 
 // disable refresh button animation
 #nav-bar-customization-target {
   -moz-box-align: center;
 }
-
 :is(#reload-button, #stop-button) {
   .toolbarbutton-icon {
     max-height: 28px !important;
