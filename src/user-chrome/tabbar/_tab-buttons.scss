@@ -5,7 +5,7 @@
 }
 
 // new tab button & all tabs button
-:is(#tabs-newtab-button, #new-tab-button, #alltabs-button) {
+:-moz-any(#tabs-newtab-button, #new-tab-button, #alltabs-button) {
   min-width: 40px !important;
   min-height: var(--tab-min-height) !important;
   max-width: 40px !important;
@@ -13,29 +13,29 @@
   margin: 0 !important;
   // transform: translateY(3px) !important;
 
-  & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-    padding: 6px 9px !important;
+  & > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+    padding: 6px !important;
     margin: 0 !important;
     width: auto !important;
     height: auto !important;
     border-radius: 4px !important;
-    transition: background-color 83ms linear !important;
+    // transition: background-color 83ms linear !important;
   }
 
-  &:hover {
-    & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-      background: val(control-bgcolor) !important;
-      outline: 1px solid transparent !important;
-      outline-color: val(control-border-color) !important;
-    }
-  }
+  // &:hover {
+  //   & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  //     background: val(control-bgcolor) !important;
+  //     outline: 1px solid transparent !important;
+  //     outline-color: val(control-border-color) !important;
+  //   }
+  // }
 }
 
 // tab close
 .tab-close-button {
   width: auto !important;
-  height: 23px !important;
-  padding: 5px 7px !important;
+  height: 18px !important;
+  padding: 2px !important;
 
   transition: background-color 83ms linear !important;
 

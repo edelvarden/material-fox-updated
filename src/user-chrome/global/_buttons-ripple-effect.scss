@@ -20,7 +20,7 @@
   border-radius: var(--toolbarbutton-border-radius) !important;
 
   // transition
-  transition: background-size 0.15s linear, background-color 0.2s ease !important;
+  transition: background-size 167ms linear, background-color 167ms ease !important;
 
   // background
   background-image: var(--circle-icon), var(--circle-icon) !important;
@@ -62,16 +62,16 @@
   }
 
   &:-moz-any(:active:hover, [checked], [open]):not([disabled]) {
-    & > .toolbarbutton-icon,
-    & > .toolbarbutton-badge-stack {
+    & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
       background-size: var(--circle-size-100) !important;
     }
   }
 
   &:not([checked], [open], [disabled]):hover {
-    & > .toolbarbutton-icon,
-    & > .toolbarbutton-badge-stack {
-      background-color: var(--mf-navbuttons-bgcolor-hover) !important;
+    & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+      background-color: val(control-bgcolor) !important;
+      outline: 1px solid transparent !important;
+      outline-color: val(control-border-color) !important;
     }
   }
 }

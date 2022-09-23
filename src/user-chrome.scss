@@ -1,9 +1,5 @@
 @import "variables";
-@import "user-chrome/global/normalize";
-@import "user-chrome/global/variables-local";
-@import "user-chrome/global/icons";
-@import "user-chrome/global/extension-icons";
-@import "user-chrome/global/buttons-ripple-effect";
+@import "user-chrome/global/index";
 @import "user-chrome/tabbar/index";
 @import "user-chrome/urlbar/index";
 @import "user-chrome/components/menupopup";
