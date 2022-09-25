@@ -15,7 +15,7 @@ $prefix: mf;
 $dark-mode: (
   "accent-color": AccentColor,
   // UI background colors
-  "bgcolor-0": cm(#202020, val(accent-color), 0.03628),
+  "bgcolor-0": cm(#202020, val(accent-color), 0),
   "bgcolor-50": cm(val(bgcolor-0), white, 0.0512),
   "bgcolor-100": cm(val(bgcolor-0), white, 0.0605),
   // UI text
@@ -36,6 +36,8 @@ $dark-mode: (
   "tab-separator-color": cm(transparent, white, 0.0837),
   "tab-outline-color": cm(transparent, black, 0.1),
   "tab-opacity-hover": 0.5,
+  // navbar
+  "icon-color": #9aa0a6,
 );
 
 $light-mode: (
@@ -58,11 +60,12 @@ $light-mode: (
   "control-border-color": cm(transparent, black, 0.0373),
   "control-bgcolor-secondary": cm(val(bgcolor-0), white, 0.0837),
   "control-bgcolor-disabled": cm(val(bgcolor-0), white, 0.0419),
-
   // Tab bar
   "tab-separator-color": cm(transparent, black, 0.0803),
   "tab-outline-color": cm(transparent, black, 0.0578),
   "tab-opacity-hover": 0.1,
+  // navbar
+  "icon-color": rbg(95, 99, 104),
 );
 
 $animation: (

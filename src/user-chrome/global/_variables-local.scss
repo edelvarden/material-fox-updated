@@ -16,6 +16,11 @@
   }
 }
 
+:is(:root, html, body, panel, toolbar) {
+  --lwt-brighttext-url-color: AccentColor !important;
+  --toolbarbutton-icon-fill-attention: AccentColor !important;
+}
+
 @media (prefers-color-scheme: dark) {
   :is(html, body) {
     //----------------------------------------------------------------------
