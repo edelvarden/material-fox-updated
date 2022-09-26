@@ -32,7 +32,7 @@
 }
 
 // tab close
-.tab-close-button {
+:is(.tab-close-button, .messageCloseButton > .toolbarbutton-icon) {
   width: auto !important;
   height: 18px !important;
   padding: 2px !important;
