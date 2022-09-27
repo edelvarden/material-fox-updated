@@ -15,7 +15,7 @@ $prefix: mf;
 $dark-mode: (
   "accent-color": AccentColor,
   // UI background colors
-  "bgcolor-0": cm(#202020, val(accent-color), 0),
+  "bgcolor-0": cm(#202020, val(accent-color), 0.03628),
   "bgcolor-50": cm(val(bgcolor-0), white, 0.0512),
   "bgcolor-100": cm(val(bgcolor-0), white, 0.0605),
   // UI text
