@@ -1,7 +1,7 @@
 # MaterialFox UPDATED
 *A Material Design-inspired userChrome.css theme for Firefox*
 
-![Preview](https://github.com/edelvarden/material-fox-updated/preview.png)
+![Preview](https://github.com/edelvarden/material-fox-updated/blob/main/preview.png?raw=true)
 
 ## Installation
 1. Type ```about:support``` at url.
