@@ -172,3 +172,13 @@
   line-height: 20px !important;
   font-feature-settings: "fina" on, "init" on !important;
 }
+
+// hide tab spacers
+.titlebar-spacer:-moz-any([type="pre-tabs"], [type="post-tabs"]) {
+  display: none !important;
+}
+
+// top padding if window not maximized
+#main-window[sizemode="normal"] #TabsToolbar-customization-target {
+  padding-top: 8px !important;
+}
