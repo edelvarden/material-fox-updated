@@ -1,5 +1,5 @@
 :-moz-any(html, body) {
-  --tab-min-height: calc(34px - 1px) !important;
+  --tab-min-height: 33px !important; // 34px (real height) - 1px (border bottom)
 }
 .tabbrowser-tab {
   --tab-opacity: 0;
@@ -31,11 +31,11 @@
 .tabbrowser-tab {
   // tab text color
   &[visuallyselected] {
-    color: var(--#{$prefix}-text-primary) !important;
+    color: #{val(text-primary)} !important;
   }
 
   &:not([visuallyselected]) {
-    color: rvar(--#{$prefix}-text-secondary) !important; //var(--toolbar-color-unselected) !important;
+    color: #{val(text-secondary)} !important; //var(--toolbar-color-unselected) !important;
   }
 }
 
@@ -125,7 +125,7 @@
 .tabbrowser-tab[multiselected]:not([selected="true"]),
 :-moz-any(#TabsToolbar[brighttext]) .tabbrowser-tab:not([selected="true"]):hover,
 :-moz-any(#TabsToolbar[brighttext]) .tabbrowser-tab[multiselected]:not([selected="true"]) {
-  --tab-opacity: var(--#{$prefix}-tab-opacity-hover);
+  --tab-opacity: #{val(tab-opacity-hover)};
 }
 :-moz-any(#TabsToolbar) {
   .tabbrowser-tab[visuallyselected] {
@@ -167,7 +167,6 @@
 
 .tab-label {
   margin-left: 8px !important;
-  font-size: 12px !important;
   font-style: normal !important;
   line-height: 20px !important;
   font-feature-settings: "fina" on, "init" on !important;

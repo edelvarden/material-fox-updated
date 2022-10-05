@@ -21,12 +21,12 @@
 
     font-family: Roboto, sans-serif !important;
     font-weight: 500 !important;
-    font-size: 1rem !important;
+    // font-size: 1rem !important;
     line-height: 20.02px !important;
 
     color: var(--arrowpanel-color) !important;
     background: var(--arrowpanel-background) !important;
-    box-shadow: var(--mf-dark-shadow) !important;
+    box-shadow: val(elevation-2) !important;
 }
 
 .tabbrowser-tab:hover::after {

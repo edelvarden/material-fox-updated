@@ -1,3 +1,15 @@
+@use "sass:math";
+// convert px to rem
+@function rem($px) {
+  $result: math.div($px, 16) + rem;
+  @return $result;
+}
+// convert px to em
+@function em($px) {
+  $result: math.div($px, 16) + em;
+  @return $result;
+}
+
 // return color mix function with opacity support
 @function cm($main-color, $secondary-color, $opacity: 1) {
   $opacity: $opacity * 100%;
@@ -13,14 +25,29 @@
 $prefix: mf;
 
 $dark-mode: (
-  "accent-color": AccentColor,
+  // color palette
+  "grey-50": rgb(248, 249, 250),
+  "grey-100": rgb(241, 243, 244),
+  "grey-200": rgb(232, 234, 237),
+  "grey-300": rgb(218, 220, 224),
+  "grey-400": rgb(189, 193, 198),
+  "grey-500": rgb(154, 160, 166),
+  "grey-600": rgb(128, 134, 139),
+  "grey-700": rgb(95, 99, 104),
+  "grey-800": rgb(60, 64, 67),
+  "grey-900": rgb(32, 33, 36),
+  "grey-900-white-4-percent": #292a2d,
+  "grey-900-white-5-percent": #35363a,
+  // accent color
+  "accent-color": #8ab4f8,
+  "accent-color-hover": cm(transparent, val(accent-color), 0.968),
   // UI background colors
-  "bgcolor-0": cm(#202020, val(accent-color), 0.03628),
-  "bgcolor-50": cm(val(bgcolor-0), white, 0.0512),
-  "bgcolor-100": cm(val(bgcolor-0), white, 0.0605),
+  "bgcolor-0": val(grey-900),
+  "bgcolor-50": val(grey-900-white-4-percent),
+  "bgcolor-100": val(grey-900-white-5-percent),
   // UI text
-  "text-primary": white,
-  "text-secondary": cm(transparent, val(text-primary), 0.0786),
+  "text-primary": val(grey-200),
+  "text-secondary": val(grey-500),
   "text-disabled": cm(transparent, val(text-primary), 0.03628),
   // Link text color
   "text-accent-primary": cm(white, val(text-primary), 0.8),
@@ -37,7 +64,7 @@ $dark-mode: (
   "tab-outline-color": cm(transparent, black, 0.1),
   "tab-opacity-hover": 0.5,
   // navbar
-  "icon-color": #9aa0a6,
+  "icon-color": #9aa0a6
 );
 
 $light-mode: (
@@ -128,13 +155,5 @@ $shadow: (
   "elevation-5": (
     rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
     rgba(val(shadow-color-rgb), 0.15) 0 8px 12px 6px,
-  ),
-  "light-shadow": (
-    0px 32px 64px rgba(val(shadow-color-rgb), 0.1876),
-    0px 2px 21px rgba(val(shadow-color-rgb), 0.1474),
-  ),
-  "dark-shadow": (
-    0px 32px 64px rgba(val(shadow-color-rgb), 0.1876),
-    0px 2px 21px rgba(val(shadow-color-rgb), 0.37),
   ),
 );

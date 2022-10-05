@@ -7,6 +7,7 @@
 
 :-moz-any(*, *::before, *::after) {
   font-family: Roboto, sans-serif !important;
+  font-weight: 400 !important;
 }
 
 :-moz-any(html, body) {

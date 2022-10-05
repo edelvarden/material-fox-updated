@@ -11,18 +11,18 @@
 }
 
 // menu open animation
-panel[type="arrow"][animate][animate="open"] {
-  transform: scale(1) !important;
-  transition-duration: 333ms, 187ms !important;
-  transition-timing-function: var(--mf-point-to-point), ease-out !important;
-}
+// panel[type="arrow"][animate][animate="open"] {
+//   transform: scale(1) !important;
+//   transition-duration: 333ms, 187ms !important;
+//   transition-timing-function: var(--mf-point-to-point), ease-out !important;
+// }
 
-panel[type="arrow"]:not([animate="false"]) {
-  // transition-property: transform, opacity;
-  transform: scale(0.9) !important;
-  transition-duration: 333ms, 187ms !important;
-  transition-timing-function: var(--mf-point-to-point), ease-in-out !important;
-}
+// panel[type="arrow"]:not([animate="false"]) {
+//   // transition-property: transform, opacity;
+//   transform: scale(0.9) !important;
+//   transition-duration: 333ms, 187ms !important;
+//   transition-timing-function: var(--mf-point-to-point), ease-in-out !important;
+// }
 
 // tab padding if not maximized
 // :is(:root, .tabbrowser-tab) {
