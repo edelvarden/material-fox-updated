@@ -1,8 +1,9 @@
 :is(html, body) {
+  // animation vars
   @each $key, $value in $animation {
     --#{$prefix}-#{$key}: #{$value};
   }
-
+  // shadow vars
   @each $key, $value in $shadow {
     --#{$prefix}-#{$key}: #{$value};
   }
@@ -10,17 +11,27 @@
 
 @media (prefers-color-scheme: dark) {
   :is(html, body) {
+    // vars for dark mode
     @each $key, $value in $dark-mode {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
 }
 
+// accent color vars
 :is(:root, html, body, panel, toolbar) {
   --lwt-brighttext-url-color: #{val(accent-color)} !important;
   --toolbarbutton-icon-fill-attention: #{val(accent-color)} !important;
 }
+:is(:root, html, body) {
+  --panel-banner-item-info-icon-bgcolor: #{val(accent-color)} !important;
+  --focus-outline-color: #{val(accent-color)} !important;
+  --button-primary-active-bgcolor: #{val(accent-color)} !important;
+  --button-primary-bgcolor: #{val(accent-color)} !important;
+  --button-primary-hover-bgcolor: #{val(accent-color)} !important;
+}
 
+// shadow
 :is(:root, html, body, menupopup, panel) {
   --windows-panel-box-shadow: #{val(elevation-2)} !important;
 }
@@ -30,36 +41,45 @@
     //----------------------------------------------------------------------
     // --   Firefox vars
     // ----------------------------------------------------------------------
-    --arrowpanel-background: #{val(bgcolor-50)} !important;
-    --arrowpanel-border-color: #{val(border-color)} !important;
-    --arrowpanel-color: #{val(text-primary)} !important;
-    --arrowpanel-dimmed-further: color-mix(in srgb, currentColor 14%, transparent);
 
-    --autocomplete-popup-highlight-background: #{val(bgcolor-50)} !important;
+    // gray-900 - 0% lt dark bg
+    --lwt-accent-color: #{val(grey-900)} !important;
+    --toolbar-field-background-color: #{val(grey-900)} !important;
+    --toolbar-field-focus-background-color: #{val(grey-900)} !important;
+    --lwt-background-tab-separator-color: #{val(grey-900)} !important;
+
+    // grey-900-white-4-percent - 50% lt dark bg
+    --arrowpanel-background: #{val(grey-900-white-4-percent)} !important;
+    --arrowpanel-border-color: #{val(grey-900-white-4-percent)} !important;
+    --lwt-selected-tab-background-color: #{val(grey-900-white-4-percent)} !important;
+    --autocomplete-popup-highlight-background: #{val(grey-900-white-4-percent)} !important;
+    --tabpanel-background-color: #{val(grey-900-white-4-percent)} !important;
+    --toolbarseparator-color: #{val(grey-900-white-4-percent)} !important;
+    --tab-icon-overlay-stroke: #{val(grey-900-white-4-percent)} !important;
+
+    // grey-900-white-5-percent - 100% lt dark bg
+    --toolbar-bgcolor: #{val(grey-900-white-5-percent)} !important;
+
+    // grey-200 - primary text
+    --arrowpanel-color: #{val(grey-200)} !important;
+    --input-color: #{val(grey-200)} !important;
+    --lwt-tab-text: #{val(grey-200)} !important;
+    --lwt-text-color: #{val(grey-200)} !important;
+    --toolbar-color: #{val(grey-200)} !important;
+    --toolbar-field-color: #{val(grey-200)} !important;
+    --toolbar-field-focus-color: #{val(grey-200)} !important;
+
+    // text on accent
+    --button-primary-color: #{val(text-on-accent-primary)} !important;
+
     --autocomplete-popup-separator-color: #{val(border-color)} !important;
 
     --button-active-bgcolor: #{val(control-bgcolor)} !important;
     --button-bgcolor: #{val(control-bgcolor)} !important;
     --button-hover-bgcolor: #{val(control-bgcolor)} !important;
 
-    --button-primary-active-bgcolor: #{val(accent-color)} !important;
-    --button-primary-bgcolor: #{val(accent-color)} !important;
-    --button-primary-color: #{val(text-on-accent-primary)} !important; // text on accent
-    --button-primary-hover-bgcolor: #{val(accent-color-hover)} !important;
-
     --chrome-content-separator-color: #{val(tab-outline-color)} !important;
-    --error-text-color: rgb(255, 154, 162);
 
-    --input-bgcolor: var(--mf-input-bgcolor) !important;
-    --input-border-color: #{val(border-color)} !important;
-    --input-color: #{val(text-primary)} !important;
-
-    --lwt-accent-color: #{val(bgcolor-0)} !important;
-    --lwt-selected-tab-background-color: #{val(bgcolor-50)} !important;
-    --lwt-tab-text: #{val(text-primary)} !important;
-    --lwt-text-color: #{val(text-primary)} !important;
-
-    --panel-banner-item-info-icon-bgcolor: #{val(accent-color)} !important;
     --panel-banner-item-update-supported-bgcolor: rgb(84, 255, 189);
     --panel-description-color: rgba(251, 251, 254, 0.7);
     --panel-disabled-color: rgba(251, 251, 254, 0.5);
@@ -68,18 +88,10 @@
     --panel-separator-zap-gradient: linear-gradient(90deg, #9059ff 0%, #ff4aa2 52.08%, #ffbd4f 100%);
 
     --tab-icon-overlay-fill: rgb(251, 251, 254) !important;
-    --tab-icon-overlay-stroke: #{val(bgcolor-50)} !important;
 
-    --tabpanel-background-color: #{val(bgcolor-50)} !important;
-
-    --toolbar-bgcolor: var(--mf-bgcolor-100) !important;
-    --toolbar-color: #{val(text-primary)} !important;
-    --toolbar-field-background-color: var(--mf-bgcolor-0) !important;
     --toolbar-field-border-color: transparent !important;
     --toolbar-field-focus-border-color: #{val(accent-color)} !important;
-    --toolbar-field-color: #{val(text-primary)} !important;
-    --toolbar-field-focus-background-color: var(--mf-bgcolor-0) !important;
-    --toolbar-field-focus-color: #{val(text-primary)} !important;
+
     --toolbarbutton-icon-fill: rgb(251, 251, 254);
   }
 }
