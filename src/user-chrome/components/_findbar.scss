@@ -70,15 +70,14 @@
 
 // findbar buttons
 :-moz-any(.findbar-closebutton, .findbar-find-previous, .findbar-find-next) {
-  --button-size: 22px;
-  border-radius: 4px !important;
-  padding: 2px !important;
+  --button-size: 24px;
   min-width: var(--button-size) !important;
   min-height: var(--button-size) !important;
   max-width: var(--button-size) !important;
   max-height: var(--button-size) !important;
-
+  border-radius: 4px !important;
   margin: 0 10px 0 0 !important;
+  padding: 4px !important;
 }
 
 // fix arrow icons size

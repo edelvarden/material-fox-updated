@@ -7,7 +7,7 @@
 // added spinner animation
 .tab-throbber {
     -moz-context-properties: fill !important;
-    fill: AccentColor !important;
+    fill: #{val(accent-color)} !important;
     background-image: url('icons/spinner-busy.svg') !important;
     transform-origin: center !important;
     animation: rotate-360 1.333s linear infinite reverse !important;

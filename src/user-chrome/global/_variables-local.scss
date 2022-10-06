@@ -21,9 +21,8 @@
   --toolbarbutton-icon-fill-attention: #{val(accent-color)} !important;
 }
 
-:is(menupopup, panel) {
+:is(:root, html, body, menupopup, panel) {
   --windows-panel-box-shadow: #{val(elevation-2)} !important;
-  box-shadow: #{val(elevation-2)} !important;
 }
 
 @media (prefers-color-scheme: dark) {

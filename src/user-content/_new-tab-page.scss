@@ -33,18 +33,14 @@
     padding-inline-start: 48px !important;
     white-space: nowrap !important;
     text-overflow: ellipsis !important;
-    --elevation: 4;
-    box-shadow: 0 0 calc((var(--elevation) * 0.225px) + 2px) rgba(0, 0, 0, 0.11),
-      0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgba(0, 0, 0, 0.13) !important;
+    box-shadow: #{val(elevation-2)} !important;
   }
 
-  .search-handoff-button:hover {
-    --elevation: 6;
-  }
 
   .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
     border-color: transparent !important;
-    outline: 2px solid var(--newtab-primary-action-background) !important;
+    outline: 2px solid transparent !important;
+    outline-color: var(--newtab-primary-action-background) !important;
     outline-offset: -1px !important;
   }
 

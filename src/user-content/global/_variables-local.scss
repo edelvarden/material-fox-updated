@@ -1,0 +1,21 @@
+:is(html, body) {
+  @each $key, $value in $animation {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $shadow {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :is(html, body) {
+    @each $key, $value in $dark-mode {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+}
+
+:is(html, body) {
+  --newtab-primary-action-background: #{val(accent-color)} !important;
+}
