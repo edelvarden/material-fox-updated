@@ -29,6 +29,7 @@
   --button-primary-active-bgcolor: #{val(accent-color)} !important;
   --button-primary-bgcolor: #{val(accent-color)} !important;
   --button-primary-hover-bgcolor: #{val(accent-color)} !important;
+  --toolbar-field-focus-border-color: #{val(accent-color)} !important;
 }
 
 // shadow
@@ -43,22 +44,22 @@
     // ----------------------------------------------------------------------
 
     // gray-900 - 0% lt dark bg
-    --lwt-accent-color: #{val(grey-900)} !important;
-    --toolbar-field-background-color: #{val(grey-900)} !important;
-    --toolbar-field-focus-background-color: #{val(grey-900)} !important;
-    --lwt-background-tab-separator-color: #{val(grey-900)} !important;
+    --lwt-accent-color: #{val(bgcolor-0)} !important;
+    --toolbar-field-background-color: #{val(bgcolor-0)} !important;
+    --toolbar-field-focus-background-color: #{val(bgcolor-0)} !important;
+    --lwt-background-tab-separator-color: #{val(bgcolor-0)} !important;
 
     // grey-900-white-4-percent - 50% lt dark bg
-    --arrowpanel-background: #{val(grey-900-white-4-percent)} !important;
-    --arrowpanel-border-color: #{val(grey-900-white-4-percent)} !important;
-    --lwt-selected-tab-background-color: #{val(grey-900-white-4-percent)} !important;
-    --autocomplete-popup-highlight-background: #{val(grey-900-white-4-percent)} !important;
-    --tabpanel-background-color: #{val(grey-900-white-4-percent)} !important;
-    --toolbarseparator-color: #{val(grey-900-white-4-percent)} !important;
-    --tab-icon-overlay-stroke: #{val(grey-900-white-4-percent)} !important;
+    --arrowpanel-background: #{val(bgcolor-50)} !important;
+    --arrowpanel-border-color: #{val(bgcolor-50)} !important;
+    --lwt-selected-tab-background-color: #{val(bgcolor-50)} !important;
+    --autocomplete-popup-highlight-background: #{val(bgcolor-50)} !important;
+    --tabpanel-background-color: #{val(bgcolor-50)} !important;
+    --toolbarseparator-color: #{val(bgcolor-50)} !important;
+    --tab-icon-overlay-stroke: #{val(bgcolor-50)} !important;
 
     // grey-900-white-5-percent - 100% lt dark bg
-    --toolbar-bgcolor: #{val(grey-900-white-5-percent)} !important;
+    --toolbar-bgcolor: #{val(bgcolor-100)} !important;
 
     // grey-200 - primary text
     --arrowpanel-color: #{val(grey-200)} !important;
@@ -85,12 +86,11 @@
     --panel-disabled-color: rgba(251, 251, 254, 0.5);
     --panel-item-active-bgcolor: color-mix(in srgb, currentColor 25%, transparent);
     --panel-item-hover-bgcolor: color-mix(in srgb, currentColor 9%, transparent);
-    --panel-separator-zap-gradient: linear-gradient(90deg, #9059ff 0%, #ff4aa2 52.08%, #ffbd4f 100%);
+    --panel-separator-zap-gradient: transparent !important;
 
     --tab-icon-overlay-fill: rgb(251, 251, 254) !important;
 
     --toolbar-field-border-color: transparent !important;
-    --toolbar-field-focus-border-color: #{val(accent-color)} !important;
 
     --toolbarbutton-icon-fill: rgb(251, 251, 254);
   }
