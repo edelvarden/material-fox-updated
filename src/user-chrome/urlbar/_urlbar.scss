@@ -51,3 +51,9 @@
     border: none !important;
   }
 }
+
+// fix url input font size
+#urlbar-input {
+  font: unset !important;
+  font-size: 1.2rem !important;
+}
