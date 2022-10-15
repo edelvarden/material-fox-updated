@@ -6,11 +6,6 @@
 @import "user-chrome/components/findbar";
 
 :-moz-any(*, *::before, *::after) {
-  font-family: Roboto, sans-serif !important;
-  font-weight: 400 !important;
-}
-
-:-moz-any(html, body) {
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 500 !important;
 }

@@ -19,13 +19,14 @@
   "homepage": "https://github.com/edelvarden/material-fox-updated#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-sass": "^5.1.0",
     "sass": "^1.54.4"
   },
   "dependencies": {
-    "gulp-ttf2woff2": "^4.0.1"
+    "autoprefixer": "^10.4.12",
+    "cssnano": "^5.1.13",
+    "gulp-postcss": "^9.0.1",
+    "gulp-ttf2woff2": "^4.0.1",
+    "postcss": "^8.4.18"
   }
 }
