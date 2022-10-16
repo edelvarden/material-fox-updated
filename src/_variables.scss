@@ -1,13 +1,8 @@
 @use "sass:math";
+
 // convert px to rem
 @function rem($px) {
-  $result: math.div($px, 16) + rem;
-  @return $result;
-}
-// convert px to em
-@function em($px) {
-  $result: math.div($px, 16) + em;
-  @return $result;
+  @return math.div($px, 16px) * 1rem;
 }
 
 // return color mix function with opacity support

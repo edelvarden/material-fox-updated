@@ -14,6 +14,8 @@
   }
 }
 
+
+
 // regular style for buttons
 @mixin ripple-effect {
   border-radius: var(--toolbarbutton-border-radius) !important;
@@ -81,7 +83,6 @@
 }
 :is(#reload-button, #stop-button) {
   .toolbarbutton-icon {
-    max-height: 28px !important;
     fill: inherit !important;
   }
 

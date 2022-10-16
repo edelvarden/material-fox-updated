@@ -43,7 +43,6 @@
   padding: 0 8px !important;
 }
 
-
 #urlbar[open] {
   #urlbar-background,
   #searchbar {
@@ -53,7 +52,7 @@
 }
 
 // fix url input font size
-#urlbar-input {
+:-moz-any(#urlbar-input, #urlbar, #searchbar) {
   font: unset !important;
-  font-size: 1.2rem !important;
+  font-size: 14px !important;
 }

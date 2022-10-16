@@ -5,6 +5,6 @@
 @import "user-chrome/components/menupopup";
 @import "user-chrome/components/findbar";
 
-:-moz-any(*, *::before, *::after, #urlbar-input *) {
+:-moz-any(*, *::before, *::after) {
   font-family: system-ui, -apple-system, sans-serif !important;
 }
