@@ -6,12 +6,19 @@
 // change position
 .browserContainer > findbar {
   display: flex !important;
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
   position: absolute !important;
   top: 0 !important;
+  bottom: 0 !important;
   right: 0 !important;
-  width: auto !important;
+
+  width: 390px !important;
   height: 48px !important;
-  padding: 0 0 0 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
   margin-inline-start: 0 !important;
   margin: -4px 10rem 0 0 !important;
 
