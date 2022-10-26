@@ -5,15 +5,16 @@
 
 // change position
 .browserContainer > findbar {
-  display: flex !important;
-  justify-content: flex-end !important;
-  align-items: flex-end !important;
+  // display: block !important;
+  -moz-box-align: center !important;
   position: absolute !important;
   top: 0 !important;
   bottom: 0 !important;
   right: 0 !important;
 
-  width: 390px !important;
+  width: auto !important;
+  min-width: 255px !important;
+  max-width: 380px !important;
   height: 48px !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -30,9 +31,15 @@
 // reverse for result block
 .findbar-container {
   display: flex !important;
-  flex-direction: row-reverse !important;
+  flex-direction: column-reverse !important;
+
   overflow: visible !important;
   height: 100% !important;
+
+  .found-matches {
+    display: block !important;
+    visibility: visible !important;
+  }
 }
 
 .browserContainer > findbar {

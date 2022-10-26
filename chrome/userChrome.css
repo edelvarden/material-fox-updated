@@ -1,4 +1,15 @@
+@import "fonts/index.css";
 @import "user-chrome.css";
+
+@media (-moz-platform: windows) {
+  :-moz-any(*, *::before, *::after) {
+    font-family: "SF Pro Display", sans-serif !important;
+  }
+
+  html {
+    filter: hue-rotate(0);
+  }
+}
 
 /* make window titlebar like mac os (only for windows or linux) */
 @supports -moz-bool-pref("userChrome.MacOsTitlebar") {

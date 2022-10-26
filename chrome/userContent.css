@@ -1,1 +1,14 @@
+@import "fonts/index.css";
 @import "user-content.css";
+
+@media (-moz-platform: windows) {
+  @-moz-document regexp("about:(?!blank).*") {
+    * {
+                font-family: "SF Pro Display", sans-serif !important;
+    }
+  }
+
+  html {
+    filter: hue-rotate(0);
+  }
+}
