@@ -49,7 +49,7 @@
 
   &:not([busy]) {
     .tab-icon-image {
-      animation: set-scale 187ms ease-in-out;
+      animation: set-scale 187ms linear;
     }
   }
 }

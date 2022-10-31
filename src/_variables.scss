@@ -55,7 +55,7 @@ $dark-mode: (
   "control-bgcolor-secondary": cm(val(bgcolor-0), white, 0.0837),
   "control-bgcolor-disabled": cm(val(bgcolor-0), white, 0.0419),
   // Tab bar
-  "tab-separator-color": cm(transparent, white, 0.0837),
+  "tab-separator-color": cm(transparent, white, 0.2),
   "tab-outline-color": cm(transparent, black, 0.1),
   "tab-opacity-hover": 0.5,
   // navbar
