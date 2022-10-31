@@ -1,5 +1,5 @@
 :-moz-any(html, body) {
-  --tab-min-height: 33px !important; // 34px (real height) - 1px (border bottom)
+  --tab-min-height: 34px !important; // 34px (real height) - 1px (border bottom)
 }
 .tabbrowser-tab {
   --tab-opacity: 0;
@@ -35,7 +35,7 @@
   }
 
   &:not([visuallyselected]) {
-    color: #{val(text-secondary)} !important; //var(--toolbar-color-unselected) !important;
+    color: #{val(text-primary)} !important; //var(--toolbar-color-unselected) !important;
   }
 }
 
@@ -167,7 +167,6 @@
 
 .tab-label {
   margin-left: 8px !important;
-  color: white;
 }
 
 // hide tab spacers
