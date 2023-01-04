@@ -57,3 +57,9 @@ $urlbar-icons: "#reader-mode-button, #pageActionButton, #pocket-button-box, #pag
 #urlbar[open] #tracking-protection-icon-container {
   display: none !important;
 }
+
+
+// fix icon position
+.urlbar-icon {
+  height: auto !important;
+}
