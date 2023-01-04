@@ -200,6 +200,11 @@
   list-style-image: url("icons/chevron.svg") !important;
 }
 
+// extension icon
+#unified-extensions-button {
+  list-style-image: url("icons/extension.svg") !important;
+}
+
 // menu icon
 :-moz-any(#pageActionButton, #PanelUI-menu-button) {
   list-style-image: var(--menu-icon) !important;
