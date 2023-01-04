@@ -157,13 +157,13 @@
     list-style-image: var(--warning-icon) !important;
   }
 }
-#identity-popup[connection^="secure"] .identity-popup-security-connection {
-  background-image: var(--lock-icon) !important;
+#identity-popup[connection^="secure"] .identity-popup-security-connection .identity-popup-security-connection-icon {
+  list-style-image: var(--lock-icon) !important;
 }
 
 #identity-popup:-moz-any([connection="secure-cert-user-overridden"], [connection="cert-error-page"], [connection^="not-secure"])
-  .identity-popup-security-connection {
-  background-image: var(--warning-icon) !important;
+  .identity-popup-security-connection .identity-popup-security-connection-icon {
+  list-style-image: var(--warning-icon) !important;
   // fill: var(--error-text-color) !important;
 }
 
