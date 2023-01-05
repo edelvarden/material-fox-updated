@@ -69,6 +69,12 @@
 .tabbrowser-tab:not([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
   .tab-label-container {
     z-index: -2 !important;
-    position: absolute !important;
+    // position: absolute !important;
+  }
+}
+
+.tabbrowser-tab:is([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
+  .tab-icon-stack {
+    z-index: 2 !important;
   }
 }
