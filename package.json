@@ -26,6 +26,7 @@
     "autoprefixer": "^10.4.12",
     "cssnano": "^5.1.13",
     "gulp-postcss": "^9.0.1",
+    "gulp-svgmin": "^4.1.0",
     "gulp-ttf2woff2": "^4.0.1",
     "postcss": "^8.4.18"
   },

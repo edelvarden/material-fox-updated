@@ -3,7 +3,7 @@
 
 @media (-moz-platform: windows) {
   :-moz-any(*, *::before, *::after) {
-    font-family: "SF Pro Display", sans-serif !important;
+    font-family: "Roboto", sans-serif !important;
   }
 
   html {

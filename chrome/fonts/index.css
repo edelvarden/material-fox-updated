@@ -1,17 +1,17 @@
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("SFPRODISPLAYREGULAR.OTF") format("otf");
+  font-family: "Roboto";
+  src: url("Roboto-Regular.woff2") format("woff2");
   font-weight: normal;
 }
 
 @font-face {
-  font-family: "SF Pro Display Medium";
-  src: url("SFPRODISPLAYMEDIUM.OTF") format("otf");
+  font-family: "Roboto Medium";
+  src: url("Roboto-Medium.woff2") format("woff2");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: "SF Pro Display Bold";
-  src: url("SFPRODISPLAYBOLD.OTF") format("otf");
+  font-family: "Roboto Bold";
+  src: url("Roboto-Bold.woff2") format("woff2");
   font-weight: bold;
 }

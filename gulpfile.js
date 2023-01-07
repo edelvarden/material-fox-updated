@@ -1,6 +1,7 @@
 // --------------------------------------------------------------------------------
 // -- Plugins require
 // --------------------------------------------------------------------------------
+import ttf2woff2 from "gulp-ttf2woff2";
 import autoprefixer from "autoprefixer"; // add -webkit and other prefixes
 import cssnano from "cssnano";
 import gulp from "gulp";
@@ -29,7 +30,7 @@ const src = {
   css: `${srcRoot}/**/*.scss`,
   userChrome: `${srcRoot}/user-chrome.scss`,
   userContent: `${srcRoot}/user-content.scss`,
-  font: `${srcRoot}/font/*.ttf`,
+  fonts: `${srcRoot}/fonts/*.ttf`,
 };
 
 // --------------------------------------------------------------------------------
@@ -45,7 +46,7 @@ gulp.task("default", () => {
 // --------------------------------------------------------------------------------
 gulp.task("ttf2woff2", function () {
   return gulp
-    .src(src.font)
+    .src(src.fonts)
     .pipe(ttf2woff2())
-    .pipe(gulp.dest(`${destPath}/font/`));
+    .pipe(gulp.dest(`${destRoot}/fonts/`));
 });
