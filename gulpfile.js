@@ -35,6 +35,11 @@ const src = {
   icons: `${srcRoot}/icons/*.svg`,
 };
 
+const dest = {
+  fonts: `${destRoot}/fonts/`,
+  icons: `${destRoot}/icons/`
+};
+
 // --------------------------------------------------------------------------------
 // -- Tasks
 // --------------------------------------------------------------------------------
@@ -50,7 +55,7 @@ gulp.task("ttf2woff2", function () {
   return gulp
     .src(src.fonts)
     .pipe(ttf2woff2())
-    .pipe(gulp.dest(`${destRoot}/fonts/`));
+    .pipe(gulp.dest(dest.fonts));
 });
 // --------------------------------------------------------------------------------
 // -- Optimize svg
@@ -59,5 +64,5 @@ gulp.task("svgmin", function () {
   return gulp
     .src(src.icons)
     .pipe(svgmin())
-    .pipe(gulp.dest(`${destRoot}/icons/`));
+    .pipe(gulp.dest(dest.icons));
 });
