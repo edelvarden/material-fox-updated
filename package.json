@@ -28,5 +28,8 @@
     "gulp-postcss": "^9.0.1",
     "gulp-ttf2woff2": "^4.0.1",
     "postcss": "^8.4.18"
-  }
+  },
+  "browserslist": [
+    "last 3 firefox version"
+  ]
 }

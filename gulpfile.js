@@ -16,7 +16,7 @@ function buildStyles(srcPath, destPath) {
   return gulp
     .src(srcPath, { sourcemaps: false })
     .pipe(sass().on("error", sass.logError))
-    .pipe(postcss([autoprefixer({ grid: true, overrideBrowserslist: ["Firefox > 76"], cascade: true }), cssnano()]))
+    .pipe(postcss([autoprefixer({ grid: true, overrideBrowserslist: ["last 3 firefox version"], cascade: true }), cssnano()]))
     .pipe(gulp.dest(destPath));
 }
 
