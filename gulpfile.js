@@ -2,6 +2,7 @@
 // -- Plugins require
 // --------------------------------------------------------------------------------
 import ttf2woff2 from "gulp-ttf2woff2";
+import svgmin from "gulp-svgmin";
 import autoprefixer from "autoprefixer"; // add -webkit and other prefixes
 import cssnano from "cssnano";
 import gulp from "gulp";
@@ -31,6 +32,7 @@ const src = {
   userChrome: `${srcRoot}/user-chrome.scss`,
   userContent: `${srcRoot}/user-content.scss`,
   fonts: `${srcRoot}/fonts/*.ttf`,
+  icons: `${srcRoot}/icons/*.svg`,
 };
 
 // --------------------------------------------------------------------------------
@@ -49,4 +51,13 @@ gulp.task("ttf2woff2", function () {
     .src(src.fonts)
     .pipe(ttf2woff2())
     .pipe(gulp.dest(`${destRoot}/fonts/`));
+});
+// --------------------------------------------------------------------------------
+// -- Optimize svg
+// --------------------------------------------------------------------------------
+gulp.task("svgmin", function () {
+  return gulp
+    .src(src.icons)
+    .pipe(svgmin())
+    .pipe(gulp.dest(`${destRoot}/icons/`));
 });
