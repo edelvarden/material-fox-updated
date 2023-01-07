@@ -14,8 +14,6 @@
   }
 }
 
-
-
 // regular style for buttons
 @mixin ripple-effect {
   border-radius: var(--toolbarbutton-border-radius) !important;
@@ -55,7 +53,17 @@
 }
 
 // effect for url bar buttons, tab scroll buttons & bookmarkbar
-:is(.identity-box-button, #notification-popup-box, #tracking-protection-icon-container, #pageActionButton, #urlbar-zoom-button, .urlbar-page-action, #scrollbutton-up, #scrollbutton-down, .tab-close-button):not([disabled]),
+:is(
+    .identity-box-button,
+    #notification-popup-box,
+    #tracking-protection-icon-container,
+    #pageActionButton,
+    #urlbar-zoom-button,
+    .urlbar-page-action,
+    #scrollbutton-up,
+    #scrollbutton-down,
+    .tab-close-button
+  ):not([disabled]),
 #PlacesToolbarItems > .bookmark-item,
 #PlacesChevron:not([collapsed]) {
   @include ripple-effect-for-button();

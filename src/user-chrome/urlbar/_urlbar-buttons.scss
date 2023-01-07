@@ -58,8 +58,7 @@ $urlbar-icons: "#reader-mode-button, #pageActionButton, #pocket-button-box, #pag
   display: none !important;
 }
 
-
-// fix icon position
-.urlbar-icon {
-  height: auto !important;
+// centered url icons
+.urlbar-page-action {
+  -moz-box-align: center !important;
 }
