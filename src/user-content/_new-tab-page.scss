@@ -104,16 +104,6 @@
     display: flex !important;
     padding: 30px !important;
   }
-
-  @supports -moz-bool-pref("uc.tweak.hide-newtab-logo") {
-    .logo-and-wordmark {
-      display: none !important;
-    }
-
-    .outer-wrapper:not(.fixed-search) .search-wrapper {
-      padding-top: 0 !important;
-    }
-  }
 }
 
 /* private browsing newtab */

@@ -23,6 +23,13 @@ function buildStyles(srcPath, destPath) {
 }
 
 // --------------------------------------------------------------------------------
+// -- Optimize svg
+// --------------------------------------------------------------------------------
+function svgOptimize() {
+  return gulp.src(src.icons).pipe(svgmin()).pipe(gulp.dest(dest.icons));
+}
+
+// --------------------------------------------------------------------------------
 // -- Variables
 // --------------------------------------------------------------------------------
 const srcRoot = "src";
@@ -37,32 +44,24 @@ const src = {
 
 const dest = {
   fonts: `${destRoot}/fonts/`,
-  icons: `${destRoot}/icons/`
+  icons: `${destRoot}/icons/`,
 };
 
 // --------------------------------------------------------------------------------
 // -- Tasks
 // --------------------------------------------------------------------------------
-gulp.task("default", () => {
-  gulp.watch(src.css, (done) => buildStyles(src.userChrome, destRoot)(done));
-  gulp.watch(src.css, (done) => buildStyles(src.userContent, destRoot)(done));
-});
+gulp.task(
+  "default",
+  gulp.parallel(() => {
+    gulp.watch(src.icons, svgOptimize);
+    gulp.watch(src.css, (done) => buildStyles(src.userChrome, destRoot)(done));
+    gulp.watch(src.css, (done) => buildStyles(src.userContent, destRoot)(done));
+  })
+);
 
 // --------------------------------------------------------------------------------
 // -- Convert font
 // --------------------------------------------------------------------------------
 gulp.task("ttf2woff2", function () {
-  return gulp
-    .src(src.fonts)
-    .pipe(ttf2woff2())
-    .pipe(gulp.dest(dest.fonts));
-});
-// --------------------------------------------------------------------------------
-// -- Optimize svg
-// --------------------------------------------------------------------------------
-gulp.task("svgmin", function () {
-  return gulp
-    .src(src.icons)
-    .pipe(svgmin())
-    .pipe(gulp.dest(dest.icons));
+  return gulp.src(src.fonts).pipe(ttf2woff2()).pipe(gulp.dest(dest.fonts));
 });
