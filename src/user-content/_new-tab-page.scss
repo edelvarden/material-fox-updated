@@ -230,10 +230,25 @@
       --newtab-background-color: #{val(bgcolor-100)} !important;
       // secondary controls color
       --newtab-background-color-secondary: #{val(bgcolor-0)} !important;
-      // controls bgcolor hover 
+      // controls bgcolor hover
       --newtab-element-hover-color: #{val(control-bgcolor)} !important;
       // text & svg fill color
       --newtab-text-primary-color: #{val(text-primary)} !important;
     }
   }
+}
+
+// new tab shortcuts animation
+.top-site-outer {
+  border-radius: 100px !important;
+  opacity: 0.9;
+  transition: all 187ms ease !important;
+}
+
+.top-site-outer:hover {
+  opacity: 1;
+  border-radius: 18px !important;
+}
+.top-site-outer:active:hover {
+  border-radius: 100px !important;
 }
