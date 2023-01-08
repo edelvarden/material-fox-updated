@@ -1,4 +1,4 @@
-// menu shortcuts gray if not mouseover
+// popup menu shortcuts gray if not mouseover
 :is(panelview .toolbarbutton-1, toolbarbutton.subviewbutton, .widget-overflow-list
     .toolbarbutton-1, .toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton):not([disabled]) {
   &[shortcut]::after {
@@ -7,6 +7,20 @@
 
   &[shortcut]:hover::after {
     color: inherit !important;
+  }
+}
+
+@media (-moz-platform: windows) or (-moz-platform: linux) {
+  :is(.menupopup-arrowscrollbox) {
+    border: none !important;
+    background-color: var(--arrowpanel-background) !important;
+    box-shadow: var(--windows-panel-box-shadow) !important;
+  }
+  
+  :is(#contentAreaContextMenu > menuitem:not([disabled],[hidden]), #context-navigation > menuitem:not([disabled],[hidden])  > hbox) {
+    &:hover {
+      background-color: var(--button-hover-bgcolor) !important;
+    }
   }
 }
 
