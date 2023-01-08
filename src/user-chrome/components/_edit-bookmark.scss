@@ -1,0 +1,11 @@
+#editBookmarkPanel {
+    @media (prefers-color-scheme: dark) {
+        input, menulist, .expander-down {
+            border: 1px solid;
+            border-color: val(tab-separator-color) !important;
+            background-color: val(bgcolor-0) !important;
+            border-radius: 4px !important;
+            // color: val(text-primary) !important;
+          }
+    }
+}
