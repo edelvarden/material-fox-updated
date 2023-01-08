@@ -36,7 +36,6 @@
     box-shadow: #{val(elevation-2)} !important;
   }
 
-
   .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
     border-color: transparent !important;
     outline: 2px solid transparent !important;
@@ -219,6 +218,22 @@
     body:not(.inline-onboarding) .fixed-search .search-wrapper {
       border-bottom: 0 !important;
       background: transparent linear-gradient(#0004, transparent) !important;
+    }
+  }
+}
+
+// new tab page colors
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  @media (prefers-color-scheme: dark) {
+    :is(html, body) {
+      // main bg color
+      --newtab-background-color: #{val(bgcolor-100)} !important;
+      // secondary controls color
+      --newtab-background-color-secondary: #{val(bgcolor-0)} !important;
+      // controls bgcolor hover 
+      --newtab-element-hover-color: #{val(control-bgcolor)} !important;
+      // text & svg fill color
+      --newtab-text-primary-color: #{val(text-primary)} !important;
     }
   }
 }
