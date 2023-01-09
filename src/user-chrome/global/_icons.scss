@@ -22,37 +22,12 @@
   --star-icon: url("icons/star.svg");
   --menu-icon: url("icons/menu.svg");
   --menu-update-icon: url("icons/menu-update.svg");
+  --extension-icon: url("icons/extension.svg");
 
   //other
+  --chevron-icon: url("icons/chevron.svg");
   --folder-icon: url("icons/folder.svg");
   --check-icon: url("icons/check.svg");
-}
-
-@media (-moz-platform: windows) {
-  .titlebar-min {
-    list-style-image: url("icons/win11-minimize.svg") !important;
-  }
-
-  .titlebar-max {
-    list-style-image: url("icons/win11-maximize.svg") !important;
-  }
-
-  .titlebar-restore {
-    list-style-image: url("icons/win11-restore.svg") !important;
-  }
-
-  .titlebar-close {
-    list-style-image: url("icons/win11-close.svg") !important;
-  }
-
-  /* darkmode icon that uses thicker strokes and easier to see (only needed at
-    1x scale) */
-  @media (max-resolution: 1dppx) {
-    :root[lwtheme-brighttext="true"] .titlebar-close,
-    .titlebar-close:hover {
-      list-style-image: url("icons/win11-close-dark.svg") !important;
-    }
-  }
 }
 
 // no src icon
@@ -152,7 +127,16 @@
     list-style-image: var(--lock-icon) !important;
   }
 
-  &:-moz-any(.notSecure, .mixedActiveContent, .httpsOnlyErrorPage, .weakCipher, .mixedDisplayContent, .mixedDisplayContentLoadedActiveBlocked, .certUserOverridden, &.certErrorPage)
+  &:-moz-any(
+      .notSecure,
+      .mixedActiveContent,
+      .httpsOnlyErrorPage,
+      .weakCipher,
+      .mixedDisplayContent,
+      .mixedDisplayContentLoadedActiveBlocked,
+      .certUserOverridden,
+      &.certErrorPage
+    )
     #identity-icon {
     list-style-image: var(--warning-icon) !important;
   }
@@ -162,7 +146,8 @@
 }
 
 #identity-popup:-moz-any([connection="secure-cert-user-overridden"], [connection="cert-error-page"], [connection^="not-secure"])
-  .identity-popup-security-connection .identity-popup-security-connection-icon {
+  .identity-popup-security-connection
+  .identity-popup-security-connection-icon {
   list-style-image: var(--warning-icon) !important;
   // fill: var(--error-text-color) !important;
 }
@@ -197,12 +182,12 @@
 // chevron icon
 #PlacesChevron,
 #nav-bar-overflow-button {
-  list-style-image: url("icons/chevron.svg") !important;
+  list-style-image: var(--chevron-icon) !important;
 }
 
 // extension icon
 #unified-extensions-button {
-  list-style-image: url("icons/extension.svg") !important;
+  list-style-image: var(--extension-icon) !important;
 }
 
 // menu icon
