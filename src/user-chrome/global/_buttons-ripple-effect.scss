@@ -46,7 +46,7 @@
   &:is(:active:hover, [checked], [open]):not([disabled]) > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     --circle-size: 100%;
   }
-  &:hover > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  &:not([disabled]):hover > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     background-color: val(control-bgcolor) !important;
     outline-color: val(control-border-color) !important;
   }

@@ -4,7 +4,7 @@
 @media (-moz-platform: windows) {
   @-moz-document regexp("about:(?!blank).*") {
     * {
-                font-family: "Roboto", sans-serif !important;
+      font-family: "Roboto", system-ui, Arial, sans-serif !important;
     }
   }
 

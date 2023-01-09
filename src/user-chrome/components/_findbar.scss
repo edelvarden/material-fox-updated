@@ -131,7 +131,7 @@
   &:not([hidden]) {
     animation-name: findbar-opacity, findbar-transform;
     animation-duration: 333ms, 187ms !important;
-    animation-timing-function: var(--mf-point-to-point), ease-out !important;
+    animation-timing-function: val(point-to-point), ease-out !important;
   }
 }
 @keyframes findbar-opacity {
