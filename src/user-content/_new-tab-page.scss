@@ -165,21 +165,6 @@
 
 @supports -moz-bool-pref("uc.tweak.newtab-background") {
   @-moz-document url(about:newtab), url(about:home), url(about:privatebrowsing) {
-    body:not([lwt-newtab]),
-    body[lwt-newtab],
-    body[lwt-newtab][lwt-newtab-brighttext] {
-      /* specify both jpg and png file extensions, but jpg images will always
-        have a higher priority */
-      --bg-0: url(../background-0.jpg), url(../background-0.png);
-      --bg-1: url(../background-1.jpg), url(../background-1.png);
-      --newtab-element-hover-color: rgba(239, 239, 239, 0.3) !important;
-      --newtab-element-active-color: rgba(239, 239, 239, 0.45) !important;
-      background-color: #252525 !important;
-      background-image: var(--bg-0) !important;
-      background-position: center !important;
-      background-size: cover !important;
-      background-attachment: fixed !important;
-    }
 
     body[lwt-newtab][lwt-newtab-brighttext] {
       background-image: var(--bg-1), var(--bg-0) !important;
@@ -242,7 +227,7 @@
 .top-site-outer {
   // border-radius: 100px !important;
   // opacity: 0.9;
-  // transition: all 187ms ease !important;
+  // transition: border-radius 187ms ease !important;
   border-radius: 18px !important;
 }
 
