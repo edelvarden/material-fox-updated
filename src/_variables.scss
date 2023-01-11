@@ -35,7 +35,7 @@ $dark-mode: (
   "grey-900-white-5-percent": #35363a,
   // accent color
   "accent-color": #8ab4f8,
-  "accent-color-hover": cm(transparent, val(accent-color), 0.968),
+  "accent-color-hover": cm(transparent, val(accent-color), 0.8),
   // UI background colors
   "bgcolor-0": val(grey-900),
   "bgcolor-50": val(grey-900-white-4-percent),

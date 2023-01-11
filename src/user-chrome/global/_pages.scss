@@ -2,447 +2,447 @@
 
 /* chrome:// specific pages */
 
-@-moz-document regexp("chrome:\/\/(?!devtools).*") {
-	dialog, window, wizard {
-		background: var(--uwp-background) !important;
-		color: var(--uwp-foreground) !important;
-		padding: 0px !important;
-	}
-	#window-modal-dialog {
-		margin-top: auto !important;
-		background: transparent !important;;
-	}
-	#window-modal-dialog::before {
-		content: '' !important;
-		z-index: -1 !important;
-		position: fixed !important;
-		left: 0 !important;
-		top: 0 !important;
-		background: var(--uwp-dialog-smoke) !important;
-		width: 100vw !important;
-		height: 100vh !important;
-	}
-	.wizard-header {
-		background: transparent !important;
-		color: var(--uwp-global-front) !important;
-		border: none !important;
-	}
-	.wizard-button[dlgtype="back"] {
-		margin-inline-end: 5px !important;
-	}
-	.header-container, .footer-container {
-		border: none !important;
-	}
-	.dialogBox {
-		margin-top: 0px !important;
-		background-color: var(--uwp-dialog-background) !important;
-		background-clip: padding-box !important;
-		color: var(--uwp-global-front) !important;
-		box-shadow: var(--uwp-shadow-popup) !important;
-		border: 1px solid var(--uwp-dialog-border) !important;
-		animation: fadeInScale .3s;
-		border-radius: var(--uwp-tags-overlay-radius) !important;
-	}
-	.dialog-content-box {
-		padding: 24px !important;
-		border-bottom: 1px solid var(--uwp-dialog-separator) !important;
-		background-color: var(--uwp-layer-fill-alt) !important;
-		background-clip: padding-box !important;
-	}
-	.dialog-button-box {
-		padding: 0px 16px 16px 16px !important;
-	}
-	@supports not -moz-bool-pref("uwp.sun-valley") {
-		.dialog-content-box {
-			padding-bottom: 0px !important;
-		}
-	}
-	@supports -moz-bool-pref("uwp.sun-valley") {
-		.dialog-content-box {
-			margin-bottom: 24px !important;
-		}
-		.dialog-button-box {
-			padding: 0px 24px 24px 24px !important;
-		}
-	}
-	.dialog-button-box > button + button {
-		margin-left: 4px !important;
-		margin-right: 0px !important;
-	}
-	.titleIcon {
-		background-color: transparent !important;
-	}
-	.previewStack {
-		background: transparent !important;
-	}
-	.dialogOverlay[topmost="true"], #window-modal-dialog::backdrop {
-		background: transparent !important;
-	}
-	#label-box[native] {
-		outline: none !important;
-	}
-}
+// @-moz-document regexp("chrome:\/\/(?!devtools).*") {
+// 	dialog, window, wizard {
+// 		background: var(--uwp-background) !important;
+// 		color: var(--uwp-foreground) !important;
+// 		padding: 0px !important;
+// 	}
+// 	#window-modal-dialog {
+// 		margin-top: auto !important;
+// 		background: transparent !important;;
+// 	}
+// 	#window-modal-dialog::before {
+// 		content: '' !important;
+// 		z-index: -1 !important;
+// 		position: fixed !important;
+// 		left: 0 !important;
+// 		top: 0 !important;
+// 		background: var(--uwp-dialog-smoke) !important;
+// 		width: 100vw !important;
+// 		height: 100vh !important;
+// 	}
+// 	.wizard-header {
+// 		background: transparent !important;
+// 		color: var(--uwp-global-front) !important;
+// 		border: none !important;
+// 	}
+// 	.wizard-button[dlgtype="back"] {
+// 		margin-inline-end: 5px !important;
+// 	}
+// 	.header-container, .footer-container {
+// 		border: none !important;
+// 	}
+// 	.dialogBox {
+// 		margin-top: 0px !important;
+// 		background-color: var(--uwp-dialog-background) !important;
+// 		background-clip: padding-box !important;
+// 		color: var(--uwp-global-front) !important;
+// 		box-shadow: var(--uwp-shadow-popup) !important;
+// 		border: 1px solid var(--uwp-dialog-border) !important;
+// 		animation: fadeInScale .3s;
+// 		border-radius: var(--uwp-tags-overlay-radius) !important;
+// 	}
+// 	.dialog-content-box {
+// 		padding: 24px !important;
+// 		border-bottom: 1px solid var(--uwp-dialog-separator) !important;
+// 		background-color: var(--uwp-layer-fill-alt) !important;
+// 		background-clip: padding-box !important;
+// 	}
+// 	.dialog-button-box {
+// 		padding: 0px 16px 16px 16px !important;
+// 	}
+// 	@supports not -moz-bool-pref("uwp.sun-valley") {
+// 		.dialog-content-box {
+// 			padding-bottom: 0px !important;
+// 		}
+// 	}
+// 	@supports -moz-bool-pref("uwp.sun-valley") {
+// 		.dialog-content-box {
+// 			margin-bottom: 24px !important;
+// 		}
+// 		.dialog-button-box {
+// 			padding: 0px 24px 24px 24px !important;
+// 		}
+// 	}
+// 	.dialog-button-box > button + button {
+// 		margin-left: 4px !important;
+// 		margin-right: 0px !important;
+// 	}
+// 	.titleIcon {
+// 		background-color: transparent !important;
+// 	}
+// 	.previewStack {
+// 		background: transparent !important;
+// 	}
+// 	.dialogOverlay[topmost="true"], #window-modal-dialog::backdrop {
+// 		background: transparent !important;
+// 	}
+// 	#label-box[native] {
+// 		outline: none !important;
+// 	}
+// }
 
-@-moz-document url-prefix("chrome://global/content/print.html") {
-	html {
-		background: transparent !important;
-	}
-	input[type="number"].photon-number {
-		height: unset !important;
-	}
-	#more-settings {
-		border: none !important;
-	}
-}
+// @-moz-document url-prefix("chrome://global/content/print.html") {
+// 	html {
+// 		background: transparent !important;
+// 	}
+// 	input[type="number"].photon-number {
+// 		height: unset !important;
+// 	}
+// 	#more-settings {
+// 		border: none !important;
+// 	}
+// }
 
-@-moz-document url("chrome://browser/content/places/places.xhtml") {
+// @-moz-document url("chrome://browser/content/places/places.xhtml") {
 
-	.downloadButton {
-		margin: 16px 0px !important;
-		border-color: transparent !important;
-		background-color: transparent !important;
-	}
-	.downloadButton > .button-box {
-		padding: 0px !important;
-		background: transparent !important;
-	}
+// 	.downloadButton {
+// 		margin: 16px 0px !important;
+// 		border-color: transparent !important;
+// 		background-color: transparent !important;
+// 	}
+// 	.downloadButton > .button-box {
+// 		padding: 0px !important;
+// 		background: transparent !important;
+// 	}
 
-	#placesToolbar {
-		padding: 0px !important;
-		border: none !important;
-		background: transparent !important;
-	}
-	#placesToolbox {
-		appearance: none !important;
-	}
-	#detailsPane {
-		border: none !important;
-	}
-	toolbarbutton {
-		-moz-appearance: none !important;
-		padding: 8px !important;
-	}
-	toolbarbutton:not([disabled]):hover {
-		background-color: var(--uwp-menubar-item-background-hover) !important;
-	}
-	toolbarbutton:not([disabled]):hover:active {
-		background-color: var(--uwp-menubar-item-background-active) !important;
-	}
-	toolbarbutton > .toolbarbutton-icon {
-		fill: var(--uwp-global-front) !important;
-		fill-opacity: 1 !important;
-	}
-	toolbarbutton > .toolbarbutton-text:not([value]) {
-		display: none !important;
-	}
-	#placesMenu {
-		margin-inline-start: 0px !important;
-	}
-	#placesMenu > menu > .menubar-left {
-		display: none !important;
-	}
-	#placesMenu > menu > .menubar-text {
-		background-image: none !important;
-		padding-inline-end: unset !important;
-	}
-	#clearDownloadsButton {
-		-moz-appearance: none !important;
-		margin-left: 8px !important;
-		color: AccentColor !important;
-	}
-	#clearDownloadsButton:hover {
-		color: #999999 !important;
-		background-color: transparent !important;
-	}
-	#clearDownloadsButton:active {
-		color: #666666 !important;
-	}
-	#editBookmarkPanelRows label {
-		color: var(--uwp-global-front) !important;
-	}
-	label {
-		color: var(--uwp-global-front) !important;
-	}
-}
+// 	#placesToolbar {
+// 		padding: 0px !important;
+// 		border: none !important;
+// 		background: transparent !important;
+// 	}
+// 	#placesToolbox {
+// 		appearance: none !important;
+// 	}
+// 	#detailsPane {
+// 		border: none !important;
+// 	}
+// 	toolbarbutton {
+// 		-moz-appearance: none !important;
+// 		padding: 8px !important;
+// 	}
+// 	toolbarbutton:not([disabled]):hover {
+// 		background-color: var(--uwp-menubar-item-background-hover) !important;
+// 	}
+// 	toolbarbutton:not([disabled]):hover:active {
+// 		background-color: var(--uwp-menubar-item-background-active) !important;
+// 	}
+// 	toolbarbutton > .toolbarbutton-icon {
+// 		fill: var(--uwp-global-front) !important;
+// 		fill-opacity: 1 !important;
+// 	}
+// 	toolbarbutton > .toolbarbutton-text:not([value]) {
+// 		display: none !important;
+// 	}
+// 	#placesMenu {
+// 		margin-inline-start: 0px !important;
+// 	}
+// 	#placesMenu > menu > .menubar-left {
+// 		display: none !important;
+// 	}
+// 	#placesMenu > menu > .menubar-text {
+// 		background-image: none !important;
+// 		padding-inline-end: unset !important;
+// 	}
+// 	#clearDownloadsButton {
+// 		-moz-appearance: none !important;
+// 		margin-left: 8px !important;
+// 		color: AccentColor !important;
+// 	}
+// 	#clearDownloadsButton:hover {
+// 		color: #999999 !important;
+// 		background-color: transparent !important;
+// 	}
+// 	#clearDownloadsButton:active {
+// 		color: #666666 !important;
+// 	}
+// 	#editBookmarkPanelRows label {
+// 		color: var(--uwp-global-front) !important;
+// 	}
+// 	label {
+// 		color: var(--uwp-global-front) !important;
+// 	}
+// }
 
-@-moz-document url("chrome://browser/content/aboutDialog.xhtml") {
-	#aboutDialogContainer {
-		background: transparent !important;
-	}
-	#clientBox {
-		border-bottom: 1px solid var(--uwp-dialog-separator) !important;
-		background-color: var(--uwp-layer-fill-alt) !important;
-		background-clip: padding-box !important;
-		color: var(--uwp-global-front) !important;
-	}
-	#bottomBox {
-		background-color: transparent !important;
-	}
-	#rightBox {
-		-moz-context-properties: fill !important;
-		fill: var(--uwp-global-front) !important;
-	}
-	.button-text {
-		color: var(--uwp-global-front) !important;
-	}
-	@media (prefers-color-scheme: light) {
-		.text-link {
-			color: color-mix(in srgb, AccentColor 80%, black) !important;
-		}
-		.text-link:hover {
-			color: color-mix(in srgb, AccentColor 65%, black) !important;
-		}
-		.text-link:hover:active {
-			color: color-mix(in srgb, AccentColor 50%, black) !important;
-		}
-	}
-	@media (prefers-color-scheme: dark) {
-		.text-link {
-			color: color-mix(in srgb, AccentColor 80%, white) !important;
-		}
-		.text-link:hover {
-			color: color-mix(in srgb, AccentColor 65%, white) !important;
-		}
-		.text-link:hover:active {
-			color: color-mix(in srgb, AccentColor 50%, white) !important;
-		}
-	}
-}
+// @-moz-document url("chrome://browser/content/aboutDialog.xhtml") {
+// 	#aboutDialogContainer {
+// 		background: transparent !important;
+// 	}
+// 	#clientBox {
+// 		border-bottom: 1px solid var(--uwp-dialog-separator) !important;
+// 		background-color: var(--uwp-layer-fill-alt) !important;
+// 		background-clip: padding-box !important;
+// 		color: var(--uwp-global-front) !important;
+// 	}
+// 	#bottomBox {
+// 		background-color: transparent !important;
+// 	}
+// 	#rightBox {
+// 		-moz-context-properties: fill !important;
+// 		fill: var(--uwp-global-front) !important;
+// 	}
+// 	.button-text {
+// 		color: var(--uwp-global-front) !important;
+// 	}
+// 	@media (prefers-color-scheme: light) {
+// 		.text-link {
+// 			color: color-mix(in srgb, AccentColor 80%, black) !important;
+// 		}
+// 		.text-link:hover {
+// 			color: color-mix(in srgb, AccentColor 65%, black) !important;
+// 		}
+// 		.text-link:hover:active {
+// 			color: color-mix(in srgb, AccentColor 50%, black) !important;
+// 		}
+// 	}
+// 	@media (prefers-color-scheme: dark) {
+// 		.text-link {
+// 			color: color-mix(in srgb, AccentColor 80%, white) !important;
+// 		}
+// 		.text-link:hover {
+// 			color: color-mix(in srgb, AccentColor 65%, white) !important;
+// 		}
+// 		.text-link:hover:active {
+// 			color: color-mix(in srgb, AccentColor 50%, white) !important;
+// 		}
+// 	}
+// }
 
-@-moz-document url("chrome://mozapps/content/handling/dialog.xhtml") {
-	#handling {
-		background-color: black !important;
-		color: white !important;
-	}
-	richlistbox {
-		background-color: black !important;
-		border: none !important;
-		-moz-appearance: none !important;
-	}
-}
+// @-moz-document url("chrome://mozapps/content/handling/dialog.xhtml") {
+// 	#handling {
+// 		background-color: black !important;
+// 		color: white !important;
+// 	}
+// 	richlistbox {
+// 		background-color: black !important;
+// 		border: none !important;
+// 		-moz-appearance: none !important;
+// 	}
+// }
 
-@-moz-document url("chrome://global/content/alerts/alert.xhtml") {
-	#alertNotification {
-		background: transparent !important;
-		padding-top: 8px !important;
-		padding-left: 8px !important;
-		padding-right: 8px !important;
-		padding-bottom: 12px !important;
-	}
-	#alertBox {
-		color: var(--uwp-context-item-color) !important;
-		padding: 8px !important;
-		background-color: var(--uwp-context-background) !important;
-		background-clip: padding-box !important;
-		background-image: none !important;
-		border: 1px solid var(--uwp-dialog-border) !important;
-		border-radius: var(--uwp-tags-overlay-radius) !important;
-		box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, .32) !important;
-	}
-}
+// @-moz-document url("chrome://global/content/alerts/alert.xhtml") {
+// 	#alertNotification {
+// 		background: transparent !important;
+// 		padding-top: 8px !important;
+// 		padding-left: 8px !important;
+// 		padding-right: 8px !important;
+// 		padding-bottom: 12px !important;
+// 	}
+// 	#alertBox {
+// 		color: var(--uwp-context-item-color) !important;
+// 		padding: 8px !important;
+// 		background-color: var(--uwp-context-background) !important;
+// 		background-clip: padding-box !important;
+// 		background-image: none !important;
+// 		border: 1px solid var(--uwp-dialog-border) !important;
+// 		border-radius: var(--uwp-tags-overlay-radius) !important;
+// 		box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, .32) !important;
+// 	}
+// }
 
-@-moz-document url("chrome://global/content/commonDialog.xhtml") {
-	#checkbox {
-		margin-left: 23px !important;
-	}
-	#infoIcon {
-		-moz-context-properties: fill !important;
-		fill: var(--uwp-global-front) !important;
-	}
-}
+// @-moz-document url("chrome://global/content/commonDialog.xhtml") {
+// 	#checkbox {
+// 		margin-left: 23px !important;
+// 	}
+// 	#infoIcon {
+// 		-moz-context-properties: fill !important;
+// 		fill: var(--uwp-global-front) !important;
+// 	}
+// }
 
-@-moz-document url("chrome://mozapps/content/profile/createProfileWizard.xhtml") {
-	label {
-		color: var(--uwp-global-front) !important;
-	}
-	.wizard-header {
-		background-color: transparent !important;
-		border-bottom: none !important;
-		height: 40px !important;
-		vertical-align: middle;
-	}
-	.wizard-header-label {
-		margin: 5.75px 12px 0px 12px !important;
-	}
-	.wizard-buttons-separator {
-		display: none !important;
-	}
-	.wizard-next-deck {
-		margin-left: 10px !important;
-	}
-}
+// @-moz-document url("chrome://mozapps/content/profile/createProfileWizard.xhtml") {
+// 	label {
+// 		color: var(--uwp-global-front) !important;
+// 	}
+// 	.wizard-header {
+// 		background-color: transparent !important;
+// 		border-bottom: none !important;
+// 		height: 40px !important;
+// 		vertical-align: middle;
+// 	}
+// 	.wizard-header-label {
+// 		margin: 5.75px 12px 0px 12px !important;
+// 	}
+// 	.wizard-buttons-separator {
+// 		display: none !important;
+// 	}
+// 	.wizard-next-deck {
+// 		margin-left: 10px !important;
+// 	}
+// }
 
-@-moz-document url("chrome://pippki/content/exceptionDialog.xhtml") {
-	#exceptiondialog {
-		background-color: black !important;
-	}
-	.dialog-content-box {
-		color: white !important;
-	}
-	caption {
-		background-color: transparent !important;
-		font-size: 16px !important;
-		font-weight: bold !important;
-	}
-	vbox > image {
-		display: none !important;
-	}
-	#locationGroupBox {
-		margin-top: 5px !important;
-	}
-}
+// @-moz-document url("chrome://pippki/content/exceptionDialog.xhtml") {
+// 	#exceptiondialog {
+// 		background-color: black !important;
+// 	}
+// 	.dialog-content-box {
+// 		color: white !important;
+// 	}
+// 	caption {
+// 		background-color: transparent !important;
+// 		font-size: 16px !important;
+// 		font-weight: bold !important;
+// 	}
+// 	vbox > image {
+// 		display: none !important;
+// 	}
+// 	#locationGroupBox {
+// 		margin-top: 5px !important;
+// 	}
+// }
 
-@-moz-document url("chrome://browser/content/pageinfo/pageInfo.xhtml") {
-	/* Change Header Size */
-	#topBar {
-		background-color: var(--uwp-header-background) !important;
-		color: lightgray !important;
-		border: none !important;
-	}
-	#mainDeck {
-		background-color: var(--uwp-global-back) !important;
-		color: var(--uwp-global-front) !important;
-	}
-	#permHostBox > label {
-		margin-top: 7px !important;
-	}
-	#permList {
-		border: none !important;
-		-moz-appearance: none !important;
-		color: var(--uwp-global-front) !important;
-	}
-	#feedListbox {
-		border: none !important;
-		background-color: var(--uwp-global-back) !important;
-		-moz-appearance: none !important;
-	}
-	#feedListbox > richlistitem {
-		padding-inline-start: 0px !important;
-		padding-inline-end: 0px !important;
-	}
-	#feedListbox richlistitem:not([selected="true"]) {
-	    border-bottom: 0px !important;
-	}
-	.text-link {
-		margin-inline-start: 0px !important;
-		margin-inline-end: 0px !important;
-	}
-	.permission {
-		border: none !important;
-	}
-	.permission:hover {
-		background-color: #191919 !important;
-		color: white !important;
-	}
-	.permission:hover:active {
-		background-color: #333333 !important;
-	}
-	caption {
-		background-color: transparent !important;
-		font-size: 16px !important;
-		font-weight: bold !important;
-	}
-	#imagecontainerbox {
-		background-color: black !important;
-		border: none !important;
-	}
-	#viewGroup > radio {
-		padding-left: 13px !important;
-		padding-right: 13px !important;
-		padding-top: 9.5px !important;
-		padding-bottom: 9.5px !important;
-	}
-	#viewGroup > radio[selected="true"] {
-		background-color: transparent !important;
-		color: var(--uwp-global-front) !important;
-		border-bottom: 3px solid AccentColor;
-		padding-bottom: 6.5px !important;
-	}
-	#viewGroup > radio > .radio-label-box {
-		outline: none !important;
-	}
-	#viewGroup > radio:hover {
-		background-color: rgb(60,60,60) !important;
-		color: white !important;
-	}
-}
+// @-moz-document url("chrome://browser/content/pageinfo/pageInfo.xhtml") {
+// 	/* Change Header Size */
+// 	#topBar {
+// 		background-color: var(--uwp-header-background) !important;
+// 		color: lightgray !important;
+// 		border: none !important;
+// 	}
+// 	#mainDeck {
+// 		background-color: var(--uwp-global-back) !important;
+// 		color: var(--uwp-global-front) !important;
+// 	}
+// 	#permHostBox > label {
+// 		margin-top: 7px !important;
+// 	}
+// 	#permList {
+// 		border: none !important;
+// 		-moz-appearance: none !important;
+// 		color: var(--uwp-global-front) !important;
+// 	}
+// 	#feedListbox {
+// 		border: none !important;
+// 		background-color: var(--uwp-global-back) !important;
+// 		-moz-appearance: none !important;
+// 	}
+// 	#feedListbox > richlistitem {
+// 		padding-inline-start: 0px !important;
+// 		padding-inline-end: 0px !important;
+// 	}
+// 	#feedListbox richlistitem:not([selected="true"]) {
+// 	    border-bottom: 0px !important;
+// 	}
+// 	.text-link {
+// 		margin-inline-start: 0px !important;
+// 		margin-inline-end: 0px !important;
+// 	}
+// 	.permission {
+// 		border: none !important;
+// 	}
+// 	.permission:hover {
+// 		background-color: #191919 !important;
+// 		color: white !important;
+// 	}
+// 	.permission:hover:active {
+// 		background-color: #333333 !important;
+// 	}
+// 	caption {
+// 		background-color: transparent !important;
+// 		font-size: 16px !important;
+// 		font-weight: bold !important;
+// 	}
+// 	#imagecontainerbox {
+// 		background-color: black !important;
+// 		border: none !important;
+// 	}
+// 	#viewGroup > radio {
+// 		padding-left: 13px !important;
+// 		padding-right: 13px !important;
+// 		padding-top: 9.5px !important;
+// 		padding-bottom: 9.5px !important;
+// 	}
+// 	#viewGroup > radio[selected="true"] {
+// 		background-color: transparent !important;
+// 		color: var(--uwp-global-front) !important;
+// 		border-bottom: 3px solid AccentColor;
+// 		padding-bottom: 6.5px !important;
+// 	}
+// 	#viewGroup > radio > .radio-label-box {
+// 		outline: none !important;
+// 	}
+// 	#viewGroup > radio:hover {
+// 		background-color: rgb(60,60,60) !important;
+// 		color: white !important;
+// 	}
+// }
 
-@-moz-document url("chrome://pippki/content/certViewer.xhtml") {
-	/* Finish This */
-	#certDetails {
-		background-color: black !important;
-	}
-}
+// @-moz-document url("chrome://pippki/content/certViewer.xhtml") {
+// 	/* Finish This */
+// 	#certDetails {
+// 		background-color: black !important;
+// 	}
+// }
 
-@-moz-document url("chrome://mozapps/content/update/history.xhtml") {
-	
-}
+// @-moz-document url("chrome://mozapps/content/update/history.xhtml") {
 
-@-moz-document url("chrome://browser/content/sanitize.xhtml") {
-	#SanitizeDialog {
-		background: black !important;
-		color: white !important;
-	}
-	caption {
-		background: transparent !important;
-	}
-}
+// }
 
-@-moz-document url("chrome://global/content/pictureinpicture/player.xhtml") {
-	.control-item {
-		opacity: 0 !important;
-		transition: opacity 160ms linear !important;
-	}
-	#controls:hover .control-item:hover {
-		opacity: 1 !important;
-	}
-	#controls:hover .control-item {
-		opacity: 0.8 !important;
-	}
-}
+// @-moz-document url("chrome://browser/content/sanitize.xhtml") {
+// 	#SanitizeDialog {
+// 		background: black !important;
+// 		color: white !important;
+// 	}
+// 	caption {
+// 		background: transparent !important;
+// 	}
+// }
 
-@-moz-document url("chrome://browser/content/migration/migration.xhtml") {
-	#dataSources {
-		appearance: none !important;
-	}
-}
+// @-moz-document url("chrome://global/content/pictureinpicture/player.xhtml") {
+// 	.control-item {
+// 		opacity: 0 !important;
+// 		transition: opacity 160ms linear !important;
+// 	}
+// 	#controls:hover .control-item:hover {
+// 		opacity: 1 !important;
+// 	}
+// 	#controls:hover .control-item {
+// 		opacity: 0.8 !important;
+// 	}
+// }
 
-@-moz-document url("chrome://global/content/datepicker.xhtml") {
-	body {
-		background: transparent !important;
-		--disabled-fill-color: var(--uwp-button-background-disabled) !important;
-		--selected-fill-color: AccentColor !important;
-		--border: var(--uwp-button-border) !important;
-	}
-	.spinner {
-		scrollbar-width: thin !important;
-		scrollbar-color: var(--uwp-scrollbar-thumb) transparent !important;
-	}
-	.week-header > div {
-		opacity: 1 !important;
-	}
-	.month-year-view {
-		background: var(--uwp-context-background) !important;
-	}
-	.month-year-container {
-		height: auto !important;
-	}
-	.month-year {
-		width: 120px !important;
-	}
-}
+// @-moz-document url("chrome://browser/content/migration/migration.xhtml") {
+// 	#dataSources {
+// 		appearance: none !important;
+// 	}
+// }
 
-@-moz-document url("chrome://mozapps/content/extensions/abuse-report-frame.html") {
-	ul.abuse-report-reasons > li > label {
-		grid-template-columns: unset !important;
-		grid-template-rows: unset !important;
-		width: unset !important;
-		line-height: unset !important;
-	}
-	html.dialog-window {
-		background-color: var(--in-content-page-background) !important;
-	}
-	.abuse-report-buttons {
-		margin-bottom: 10px !important;
-	}
-}
+// @-moz-document url("chrome://global/content/datepicker.xhtml") {
+// 	body {
+// 		background: transparent !important;
+// 		--disabled-fill-color: var(--uwp-button-background-disabled) !important;
+// 		--selected-fill-color: AccentColor !important;
+// 		--border: var(--uwp-button-border) !important;
+// 	}
+// 	.spinner {
+// 		scrollbar-width: thin !important;
+// 		scrollbar-color: var(--uwp-scrollbar-thumb) transparent !important;
+// 	}
+// 	.week-header > div {
+// 		opacity: 1 !important;
+// 	}
+// 	.month-year-view {
+// 		background: var(--uwp-context-background) !important;
+// 	}
+// 	.month-year-container {
+// 		height: auto !important;
+// 	}
+// 	.month-year {
+// 		width: 120px !important;
+// 	}
+// }
+
+// @-moz-document url("chrome://mozapps/content/extensions/abuse-report-frame.html") {
+// 	ul.abuse-report-reasons > li > label {
+// 		grid-template-columns: unset !important;
+// 		grid-template-rows: unset !important;
+// 		width: unset !important;
+// 		line-height: unset !important;
+// 	}
+// 	html.dialog-window {
+// 		background-color: var(--in-content-page-background) !important;
+// 	}
+// 	.abuse-report-buttons {
+// 		margin-bottom: 10px !important;
+// 	}
+// }

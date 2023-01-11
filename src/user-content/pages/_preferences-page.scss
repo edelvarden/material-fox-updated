@@ -1,0 +1,18 @@
+@-moz-document url-prefix("about:preferences") {
+  @media (prefers-color-scheme: dark) {
+    :is(html, body) {
+      // main bgcolor
+      --in-content-page-background: #{val(bgcolor-0)} !important;
+      // accent color
+      --in-content-primary-button-background: #{val(accent-color)} !important;
+      --in-content-primary-button-background-hover: #{val(accent-color-hover)} !important;
+      --in-content-primary-button-background-active: #{val(accent-color)} !important;
+      // input bgcolor
+      --in-content-box-background: #{val(bgcolor-0)} !important;
+      // controls
+      --in-content-button-background: #{val(control-bgcolor)} !important;
+      --in-content-button-background-hover: #{val(control-bgcolor)} !important;
+      --in-content-button-border-color-hover: #{val(control-border-color)} !important;
+    }
+  }
+}

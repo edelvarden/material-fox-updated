@@ -103,22 +103,24 @@
     display: flex !important;
     padding: 30px !important;
   }
+
+  .info {
+    border-radius: 18px !important;
+  }
+
+  .card-outer,
+  .card-outer .card,
+  .ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) {
+    border-radius: 18px !important;
+  }
+  .card-outer .card-preview-image-outer,
+  .ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) .img-wrapper .img img {
+    border-radius: 18px 18px 0 0 !important;
+  }
 }
 
 /* private browsing newtab */
 @-moz-document url-prefix(about:privatebrowsing) {
-  :root {
-    --uc-wordmark-color: #737373 !important;
-    --uc-background-color-secondary: #fff !important;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --uc-wordmark-color: #fff !important;
-      --uc-background-color-secondary: #4a4a4a !important;
-    }
-  }
-
   .search-inner-wrapper {
     height: 44px !important;
   }
@@ -126,18 +128,11 @@
   .search-handoff-button,
   .search-handoff-button:active,
   .search-handoff-button:enabled:hover:active {
-    background-color: var(--uc-background-color-secondary) !important;
+    background-color: var(--mf-background-color-secondary) !important;
     background-size: 24px;
     border: 0 !important;
     border-radius: 99px !important;
     padding-inline-start: 48px !important;
-    --elevation: 4;
-    box-shadow: 0 0 calc((var(--elevation) * 0.225px) + 2px) rgba(0, 0, 0, 0.11),
-      0 calc(var(--elevation) * 0.4px) calc((var(--elevation) * 0.9px)) rgba(0, 0, 0, 0.13) !important;
-  }
-
-  .search-handoff-button:hover {
-    --elevation: 6;
   }
 
   .search-handoff-button.focused:not(.disabled) {
@@ -154,56 +149,9 @@
     color: var(--in-content-page-color) !important;
   }
 
-  .wordmark {
-    fill: var(--uc-wordmark-color) !important;
-  }
-
   .info {
-    background-color: var(--uc-background-color-secondary) !important;
-  }
-}
-
-@supports -moz-bool-pref("uc.tweak.newtab-background") {
-  @-moz-document url(about:newtab), url(about:home), url(about:privatebrowsing) {
-
-    body[lwt-newtab][lwt-newtab-brighttext] {
-      background-image: var(--bg-1), var(--bg-0) !important;
-      --newtab-element-hover-color: rgba(66, 66, 66, 0.4) !important;
-      --newtab-element-active-color: rgba(66, 66, 66, 0.55) !important;
-    }
-
-    .wordmark,
-    .icon-settings,
-    .top-site-outer .context-menu-button {
-      color: #fff !important;
-      fill: currentColor !important;
-      filter: drop-shadow(0 0.3px 0.6px #000) !important;
-    }
-
-    .top-site-outer .title,
-    .ds-header,
-    .ds-layout .section-title span,
-    .ds-navigation {
-      color: #fff !important;
-      text-shadow: 0 1px 2px #000 !important;
-      -moz-osx-font-smoothing: auto !important;
-    }
-
-    .section-top-bar .learn-more-link a,
-    .ds-navigation a {
-      color: #b3d4ff !important;
-      text-shadow: 0 1px 2px #000 !important;
-      -moz-osx-font-smoothing: auto !important;
-    }
-
-    .top-site-outer .title .sponsored-label {
-      color: #fffc !important;
-    }
-
-    body:not(.inline-onboarding) .fixed-search .search-wrapper {
-      border-bottom: 0 !important;
-      background: transparent linear-gradient(#0004, transparent) !important;
-    }
+    background-color: var(--mf-background-color-secondary) !important;
+    border-radius: 18px !important;
   }
 }
 
@@ -221,20 +169,25 @@
       --newtab-text-primary-color: #{val(text-primary)} !important;
     }
   }
+  // new tab shortcuts
+  .top-site-outer {
+    border-radius: 18px !important;
+  }
 }
 
-// new tab shortcuts animation
-.top-site-outer {
-  // border-radius: 100px !important;
-  // opacity: 0.9;
-  // transition: border-radius 187ms ease !important;
-  border-radius: 18px !important;
-}
+// private browsing page colors
+@-moz-document url-prefix("about:privatebrowsing") {
+    :is(html, body) {
+      // main bg color
+      --in-content-page-background: #{val(bgcolor-100)} !important;
+      // secondary controls color
+      --in-content-primary-button-background: #{val(accent-color)} !important;
+      --in-content-primary-button-background-hover: #{val(accent-color-hover)} !important;
+      --in-content-primary-button-background-active: #{val(accent-color)} !important;
+    }
 
-// .top-site-outer:hover {
-//   opacity: 1;
-//   border-radius: 18px !important;
-// }
-// .top-site-outer:active:hover {
-//   border-radius: 100px !important;
-// }
+  // custom vars
+  :is(html, body) {
+    --mf-background-color-secondary: #{val(bgcolor-0)} !important;
+  }
+}
