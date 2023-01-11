@@ -63,7 +63,8 @@ $dark-mode: (
 );
 
 $light-mode: (
-  "accent-color": AccentColor,
+  "accent-color": #8ab4f8,
+  "accent-color-hover": cm(transparent, val(accent-color), 0.8),
   // UI background colors
   "bgcolor-0": cm(#202020, val(accent-color), 0),
   "bgcolor-50": cm(val(bgcolor-0), white, 0.0512),
