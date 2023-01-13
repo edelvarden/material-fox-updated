@@ -7,3 +7,12 @@
 @import "user-chrome/components/menupopup";
 @import "user-chrome/components/findbar";
 @import "user-chrome/components/edit-bookmark";
+
+@media (-moz-platform: windows) {
+    :root {
+        --#{$prefix}-font-family: #{meta.inspect($font-family)};
+    }
+    :-moz-any(*, *::before, *::after) {
+      font-family: var(--#{$prefix}-font-family) !important;
+    }
+}

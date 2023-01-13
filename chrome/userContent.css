@@ -1,14 +1,2 @@
 @import "fonts/index.css";
 @import "user-content.css";
-
-@media (-moz-platform: windows) {
-  @-moz-document regexp("about:(?!blank).*") {
-    * {
-      font-family: "Roboto", sans-serif !important;
-    }
-  }
-
-  html {
-    filter: hue-rotate(0);
-  }
-}
