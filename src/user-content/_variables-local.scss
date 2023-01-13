@@ -1,9 +1,23 @@
-@-moz-document url-prefix("about:newtab"), url-prefix("about:home"), url-prefix("about:privatebrowsing") {
+@-moz-document regexp("about:(?!blank).*") {
   :is(html, body) {
+    // regular vars
+    @each $key, $value in $regular-variables {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+}
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home"), url-prefix("about:privatebrowsing") {
+
+  :is(html, body) {
+    // regular vars
+    @each $key, $value in $regular-variables {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+    // animation vars
     @each $key, $value in $animation {
       --#{$prefix}-#{$key}: #{$value};
     }
-
+    // shadow vars
     @each $key, $value in $shadow {
       --#{$prefix}-#{$key}: #{$value};
     }
@@ -11,11 +25,13 @@
 
   @media (prefers-color-scheme: dark) {
     :is(html, body) {
+      // vars for dark mode
       @each $key, $value in $dark-mode {
         --#{$prefix}-#{$key}: #{$value};
       }
     }
   }
+
   @media (prefers-color-scheme: light) {
     :is(html, body) {
       @each $key, $value in $light-mode {

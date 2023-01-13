@@ -1,3 +1,4 @@
+@use "sass:meta";
 @import "variables";
 @import "user-chrome/variables-local";
 @import "user-chrome/global/index";
@@ -6,4 +7,3 @@
 @import "user-chrome/components/menupopup";
 @import "user-chrome/components/findbar";
 @import "user-chrome/components/edit-bookmark";
-

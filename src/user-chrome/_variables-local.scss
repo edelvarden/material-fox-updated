@@ -1,4 +1,8 @@
 :is(html, body) {
+  // regular vars
+  @each $key, $value in $regular-variables {
+    --#{$prefix}-#{$key}: #{$value};
+  }
   // animation vars
   @each $key, $value in $animation {
     --#{$prefix}-#{$key}: #{$value};
@@ -18,6 +22,14 @@
   }
 }
 
+@media (prefers-color-scheme: light) {
+  :is(html, body) {
+    @each $key, $value in $light-mode {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+}
+
 // accent color vars
 :is(:root, html, body, panel, toolbar) {
   --lwt-brighttext-url-color: #{val(accent-color)} !important;
@@ -28,7 +40,7 @@
   --focus-outline-color: #{val(accent-color)} !important;
   --button-primary-active-bgcolor: #{val(accent-color)} !important;
   --button-primary-bgcolor: #{val(accent-color)} !important;
-  --button-primary-hover-bgcolor: #{val(accent-color)} !important;
+  --button-primary-hover-bgcolor: #{val(accent-color-hover)} !important;
   --toolbar-field-focus-border-color: #{val(accent-color)} !important;
 }
 
@@ -93,13 +105,5 @@
     --toolbar-field-border-color: transparent !important;
 
     --toolbarbutton-icon-fill: rgb(251, 251, 254);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :is(html, body) {
-    @each $key, $value in $light-mode {
-      --#{$prefix}-#{$key}: #{$value};
-    }
   }
 }

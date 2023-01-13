@@ -19,20 +19,23 @@
 // prefix for css variables
 $prefix: mf;
 
-$dark-mode: (
+$regular-variables: (
   // color palette
-  "grey-50": rgb(248, 249, 250),
-  "grey-100": rgb(241, 243, 244),
+  // "grey-50": rgb(248, 249, 250),
+  // "grey-100": rgb(241, 243, 244),
   "grey-200": rgb(232, 234, 237),
-  "grey-300": rgb(218, 220, 224),
-  "grey-400": rgb(189, 193, 198),
+  // "grey-300": rgb(218, 220, 224),
+  // "grey-400": rgb(189, 193, 198),
   "grey-500": rgb(154, 160, 166),
-  "grey-600": rgb(128, 134, 139),
-  "grey-700": rgb(95, 99, 104),
-  "grey-800": rgb(60, 64, 67),
+  // "grey-600": rgb(128, 134, 139),
+  // "grey-700": rgb(95, 99, 104),
+  // "grey-800": rgb(60, 64, 67),
   "grey-900": rgb(32, 33, 36),
   "grey-900-white-4-percent": #292a2d,
   "grey-900-white-5-percent": #35363a,
+);
+
+$dark-mode: (
   // accent color
   "accent-color": #8ab4f8,
   "accent-color-hover": cm(transparent, val(accent-color), 0.8),
@@ -132,24 +135,24 @@ $animation: (
 
 $shadow: (
   "shadow-color-rgb": "0,0,0",
-  "elevation-1": (
-    rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-    rgba(val(shadow-color-rgb), 0.15) 0 1px 3px 1px,
-  ),
+  // "elevation-1": (
+  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
+  //   rgba(val(shadow-color-rgb), 0.15) 0 1px 3px 1px,
+  // ),
   "elevation-2": (
     rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
     rgba(val(shadow-color-rgb), 0.15) 0 2px 6px 2px,
   ),
-  "elevation-3": (
-    rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-    rgba(val(shadow-color-rgb), 0.15) 0 4px 8px 3px,
-  ),
-  "elevation-4": (
-    rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-    rgba(val(shadow-color-rgb), 0.15) 0 6px 10px 4px,
-  ),
-  "elevation-5": (
-    rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-    rgba(val(shadow-color-rgb), 0.15) 0 8px 12px 6px,
-  ),
+  // "elevation-3": (
+  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
+  //   rgba(val(shadow-color-rgb), 0.15) 0 4px 8px 3px,
+  // ),
+  // "elevation-4": (
+  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
+  //   rgba(val(shadow-color-rgb), 0.15) 0 6px 10px 4px,
+  // ),
+  // "elevation-5": (
+  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
+  //   rgba(val(shadow-color-rgb), 0.15) 0 8px 12px 6px,
+  // ),
 );
