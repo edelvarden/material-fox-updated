@@ -1,24 +1,23 @@
 // --------------------------------------------------------------------------------
 // -- Plugins require
 // --------------------------------------------------------------------------------
+import gulp from "gulp";
 import ttf2woff2 from "gulp-ttf2woff2";
 import svgmin from "gulp-svgmin";
-import autoprefixer from "autoprefixer"; // add -webkit and other prefixes
-import cssnano from "cssnano";
-import gulp from "gulp";
-import postcss from "gulp-postcss";
 import gulpSass from "gulp-sass";
 import dartSass from "sass";
 const sass = gulpSass(dartSass);
+import postcss from "gulp-postcss";
+import autoprefixer from "autoprefixer";
+import cssnano from "cssnano";
 
 // --------------------------------------------------------------------------------
 // -- Compile scss
 // --------------------------------------------------------------------------------
-function buildStyles(srcPath, destPath) {
-  return gulp
-    .src(srcPath, { sourcemaps: false })
+function buildCss(srcPath, destPath) {
+  return gulp.src(srcPath, { sourcemaps: false })
     .pipe(sass().on("error", sass.logError))
-    .pipe(postcss([autoprefixer({ grid: true, overrideBrowserslist: ["last 3 firefox version"], cascade: true }), cssnano()]))
+    .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(gulp.dest(destPath));
 }
 
@@ -54,8 +53,8 @@ gulp.task(
   "default",
   gulp.parallel(() => {
     gulp.watch(src.icons, svgOptimize);
-    gulp.watch(src.css, (done) => buildStyles(src.userChrome, destRoot)(done));
-    gulp.watch(src.css, (done) => buildStyles(src.userContent, destRoot)(done));
+    gulp.watch(src.css, (done) => buildCss(src.userChrome, destRoot)(done));
+    gulp.watch(src.css, (done) => buildCss(src.userContent, destRoot)(done));
   })
 );
 
