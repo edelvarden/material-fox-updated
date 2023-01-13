@@ -1,29 +1,22 @@
-:is(html, body) {
+:-moz-any(:root, html, body) {
   // regular vars
-  @each $key, $value in $regular-variables {
-    --#{$prefix}-#{$key}: #{$value};
-  }
-  // animation vars
-  @each $key, $value in $animation {
-    --#{$prefix}-#{$key}: #{$value};
-  }
-  // shadow vars
-  @each $key, $value in $shadow {
+  @each $key, $value in $variables {
     --#{$prefix}-#{$key}: #{$value};
   }
 }
 
+// vars for dark mode
 @media (prefers-color-scheme: dark) {
-  :is(html, body) {
-    // vars for dark mode
+  :-moz-any(:root, html, body) {
     @each $key, $value in $dark-mode {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
 }
 
+// vars for light mode
 @media (prefers-color-scheme: light) {
-  :is(html, body) {
+  :-moz-any(:root, html, body) {
     @each $key, $value in $light-mode {
       --#{$prefix}-#{$key}: #{$value};
     }

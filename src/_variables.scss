@@ -19,10 +19,15 @@
 // prefix for css variables
 $prefix: mf;
 
-$font-family: "Roboto", system-ui, Arial, Helvetica, sans-serif;
+// change font
+$font-family: ("Roboto", Arial, sans-serif);
 
-$regular-variables: (
-  // color palette
+$variables: (
+
+  // --------------------------------------------------------------------------------
+  // -- Color palette
+  // --------------------------------------------------------------------------------
+
   // "grey-50": rgb(248, 249, 250),
   // "grey-100": rgb(241, 243, 244),
   "grey-200": rgb(232, 234, 237),
@@ -35,6 +40,75 @@ $regular-variables: (
   "grey-900": rgb(32, 33, 36),
   "grey-900-white-4-percent": #292a2d,
   "grey-900-white-5-percent": #35363a,
+
+
+  // --------------------------------------------------------------------------------
+  // -- Animation
+  // --------------------------------------------------------------------------------
+
+  // Fast Invoke
+  // Direct and subtle
+  // Usage: Transitions that are functional and utilitarian should use this curve.
+  // Position, Scale, Rotation
+  // Timing: 187, 333, 500
+  "fast-invoke": cubic-bezier(0, 0, 0, 1),
+  // Strong Invoke
+  // Bold and emphasizing
+  // Usage: Transitions that call attention or reinforce an action should use this curve.
+  // Position, Scale
+  // Timing: 667
+  "strong-invoke": cubic-bezier(0.13, 1.62, 0, 0.92),
+  // Fast Dismiss
+  // Direct and subtle
+  // Usage: Transitions that dismiss a surface without going off screen or within the same area should use this curve combined with a fade out.
+  // Position, Scale
+  // Timing: 187, 333, 500
+  "fast-dismiss": cubic-bezier(0, 0, 0, 1),
+  // Soft Dismiss
+  // Gentle and mellow
+  // Usage: Transitions that dismiss a surface off screen while confirming a user action should use this curve.
+  // Scale
+  // Timing: 167
+  "soft-dismiss": cubic-bezier(1, 0, 1, 1),
+  // Point to Point
+  // Direct and guiding
+  // Usage: Transitions that keep the same element on screen going from one place to another should use this curve.
+  // Position, Scale, Rotation
+  // Timing: 187, 333, 500
+  "point-to-point": cubic-bezier(0.55, 0.55, 0, 1),
+  // Fade in Out
+  // Quick and efficient
+  // Usage: Transitions that keep the same element on screen going from one place to another should use this curve.
+  // Opacity
+  // Timing: 83
+  "fade-in-out": linear,
+
+
+  // --------------------------------------------------------------------------------
+  // -- Shadow
+  // --------------------------------------------------------------------------------
+
+  "shadow-color-rgb": "0,0,0",
+  // "elevation-1": (
+  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
+  //   rgba(val(shadow-color-rgb), 0.15) 0 1px 3px 1px,
+  // ),
+  "elevation-2": (
+      rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
+      rgba(val(shadow-color-rgb), 0.15) 0 2px 6px 2px,
+    ),
+  // "elevation-3": (
+  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
+  //   rgba(val(shadow-color-rgb), 0.15) 0 4px 8px 3px,
+  // ),
+  // "elevation-4": (
+  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
+  //   rgba(val(shadow-color-rgb), 0.15) 0 6px 10px 4px,
+  // ),
+  // "elevation-5": (
+  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
+  //   rgba(val(shadow-color-rgb), 0.15) 0 8px 12px 6px,
+  // ),,,,,
 );
 
 $dark-mode: (
@@ -93,68 +167,5 @@ $light-mode: (
   "tab-outline-color": cm(transparent, black, 0.0578),
   "tab-opacity-hover": 0.1,
   // navbar
-  "icon-color": rbg(95, 99, 104),
-);
-
-$animation: (
-  // Fast Invoke
-  // Direct and subtle
-  // Usage: Transitions that are functional and utilitarian should use this curve.
-  // Position, Scale, Rotation
-  // Timing: 187, 333, 500
-  "fast-invoke": cubic-bezier(0, 0, 0, 1),
-  // Strong Invoke
-  // Bold and emphasizing
-  // Usage: Transitions that call attention or reinforce an action should use this curve.
-  // Position, Scale
-  // Timing: 667
-  "strong-invoke": cubic-bezier(0.13, 1.62, 0, 0.92),
-  // Fast Dismiss
-  // Direct and subtle
-  // Usage: Transitions that dismiss a surface without going off screen or within the same area should use this curve combined with a fade out.
-  // Position, Scale
-  // Timing: 187, 333, 500
-  "fast-dismiss": cubic-bezier(0, 0, 0, 1),
-  // Soft Dismiss
-  // Gentle and mellow
-  // Usage: Transitions that dismiss a surface off screen while confirming a user action should use this curve.
-  // Scale
-  // Timing: 167
-  "soft-dismiss": cubic-bezier(1, 0, 1, 1),
-  // Point to Point
-  // Direct and guiding
-  // Usage: Transitions that keep the same element on screen going from one place to another should use this curve.
-  // Position, Scale, Rotation
-  // Timing: 187, 333, 500
-  "point-to-point": cubic-bezier(0.55, 0.55, 0, 1),
-  // Fade in Out
-  // Quick and efficient
-  // Usage: Transitions that keep the same element on screen going from one place to another should use this curve.
-  // Opacity
-  // Timing: 83
-  "fade-in-out": linear
-);
-
-$shadow: (
-  "shadow-color-rgb": "0,0,0",
-  // "elevation-1": (
-  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-  //   rgba(val(shadow-color-rgb), 0.15) 0 1px 3px 1px,
-  // ),
-  "elevation-2": (
-    rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-    rgba(val(shadow-color-rgb), 0.15) 0 2px 6px 2px,
-  ),
-  // "elevation-3": (
-  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-  //   rgba(val(shadow-color-rgb), 0.15) 0 4px 8px 3px,
-  // ),
-  // "elevation-4": (
-  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-  //   rgba(val(shadow-color-rgb), 0.15) 0 6px 10px 4px,
-  // ),
-  // "elevation-5": (
-  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-  //   rgba(val(shadow-color-rgb), 0.15) 0 8px 12px 6px,
-  // ),
+  "icon-color": rgb(95, 99, 104),
 );
