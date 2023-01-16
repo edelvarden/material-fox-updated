@@ -1,2 +1,9 @@
 @import "fix-firefox-youtube";
-@import "new-tab-page";
+
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  @import "new-tab";
+}
+
+@-moz-document url-prefix(about:privatebrowsing) {
+  @import "privatebrowsing";
+}

@@ -20,3 +20,17 @@ button {
       font-family: var(--#{$prefix}-font-family) !important;
     }
 }
+
+// loading page bgcolor
+@-moz-document regexp("about:blank") {
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: color-mix(in srgb, AccentColor 3.628%, #202020);
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    body {
+      background-color: color-mix(in srgb, AccentColor 0, #202020);
+    }
+  }
+}
