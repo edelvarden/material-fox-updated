@@ -8,6 +8,10 @@
 @import "user-chrome/components/findbar";
 @import "user-chrome/components/edit-bookmark";
 
+button {
+  font-weight: 500 !important;
+}
+
 @media (-moz-platform: windows) {
     :root {
         --#{$prefix}-font-family: #{meta.inspect($font-family)};

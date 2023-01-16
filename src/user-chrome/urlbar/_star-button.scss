@@ -1,0 +1,9 @@
+// show star button on new tab
+#star-button-box {
+    display: flex !important;
+}
+
+// disable animation for star button
+#star-button-animatable-box {
+    display: none !important;
+}
