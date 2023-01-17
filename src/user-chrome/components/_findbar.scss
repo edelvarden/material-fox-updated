@@ -4,28 +4,61 @@
 }
 
 // change position
-.browserContainer > findbar {
-  // display: block !important;
-  -moz-box-align: center !important;
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  right: 0 !important;
+.browserContainer {
+  & > findbar {
+    // display: block !important;
+    //change items position
+    -moz-box-align: center !important;
+    justify-content: flex-end !important;
 
-  width: auto !important;
-  min-width: 255px !important;
-  max-width: 380px !important;
-  height: 48px !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  padding-bottom: 0 !important;
-  padding-top: 0 !important;
-  margin-inline-start: 0 !important;
-  margin: -4px 10rem 0 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
 
-  //change items position
-  justify-content: flex-end !important;
-  align-items: center !important;
+    height: 48px !important;
+    width: auto !important;
+    max-width: 380px !important;
+    min-width: 255px !important;
+
+    padding: 0 !important;
+    margin-inline-start: 0 !important;
+    margin: -4px 10rem 0 0 !important;
+
+    // colors & decorations
+    --separator-color: rgba(255, 255, 255, 0.1) !important;
+    background: var(--toolbar-field-background-color) !important;
+    box-shadow: var(--windows-panel-box-shadow) !important;
+    color: var(--arrowpanel-color) !important;
+
+    // border
+    border-radius: 8px !important;
+    border: none !important;
+    outline: none !important;
+    overflow: hidden !important;
+
+    .found-matches {
+      padding: 0 10px 0 0 !important;
+    }
+
+    // center position for items
+    .findbar-container {
+      align-items: center !important;
+      display: flex !important;
+      justify-content: center !important;
+    }
+    .findbar-textbox {
+      margin-right: 10px !important;
+    }
+    &:not([hidden]) {
+      animation-duration: 333ms, 187ms !important;
+      animation-name: findbar-opacity, findbar-transform;
+      animation-timing-function: val(point-to-point), ease-out !important;
+    }
+  }
+  & > findbar[hidden] {
+    opacity: 0;
+  }
 }
 
 // reverse for result block
@@ -33,88 +66,51 @@
   display: flex !important;
   flex-direction: column-reverse !important;
 
-  overflow: visible !important;
   height: 100% !important;
+  overflow: visible !important;
 
   .found-matches {
     display: block !important;
     visibility: visible !important;
   }
 }
+.browserContainer > findbar :is(.found-matches, .findbar-textbox) {
+  border-right: 1px solid !important;
+  border-color: var(--separator-color) !important;
+}
 
-.browserContainer > findbar {
-  // border
-  border-radius: 8px !important;
-  border: none !important;
-  outline: none !important;
-  overflow: hidden !important;
-
-  // colors & decorations
-  color: var(--arrowpanel-color) !important;
-  background: var(--toolbar-field-background-color) !important;
-  box-shadow: var(--windows-panel-box-shadow) !important;
-
-  // style for result block
-  --separator-color: rgba(255, 255, 255, 0.1) !important;
-  :-moz-any(.found-matches, .findbar-textbox) {
-    border-right: 1px solid !important;
-    border-color: var(--separator-color) !important;
-  }
-  .found-matches {
-    padding: 0 10px 0 0 !important;
-  }
-
-  // hide all checkboxes
-  :-moz-any(.findbar-find-status, .findbar-container > checkbox) {
-    display: none !important;
-    visibility: collapse !important;
-  }
-
-  // center position for items
-  .findbar-container {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
-  .findbar-textbox {
-    margin-right: 10px !important;
-  }
+// hide all checkboxes
+.browserContainer > findbar :is(.findbar-find-status, .findbar-container > checkbox) {
+  display: none !important;
+  visibility: collapse !important;
 }
 
 // findbar buttons
-:-moz-any(.findbar-closebutton, .findbar-find-previous, .findbar-find-next) {
+:is(.findbar-closebutton, .findbar-find-previous, .findbar-find-next) {
   --button-size: 24px;
-  min-width: var(--button-size) !important;
-  min-height: var(--button-size) !important;
-  max-width: var(--button-size) !important;
-  max-height: var(--button-size) !important;
   border-radius: 4px !important;
   margin: 0 10px 0 0 !important;
+  max-height: var(--button-size) !important;
+  max-width: var(--button-size) !important;
+  min-height: var(--button-size) !important;
+  min-width: var(--button-size) !important;
   padding: 4px !important;
 }
 
 // fix arrow icons size
-:-moz-any(.findbar-find-next, .findbar-find-previous, .findbar-closebutton) > .toolbarbutton-icon {
+:is(.findbar-find-next, .findbar-find-previous, .findbar-closebutton) > .toolbarbutton-icon {
   padding: 2px !important;
 }
 
 // findbar input
 .findbar-textbox {
-  background: transparent !important;
-  box-shadow: none !important;
-  outline: none !important;
-
-  width: auto !important;
-  border-radius: 0 !important;
-  border-top: 0 !important;
   border-bottom: 0 !important;
   border-left: 0 !important;
-
-  // fix input bg color
-  &:is([status="notfound"]) {
-    background: transparent !important;
-  }
+  border-radius: 0 !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  width: auto !important;
 
   // hide 'Find in page' text
   &::placeholder {
@@ -122,18 +118,12 @@
   }
 }
 
-// findbar show animation
-.browserContainer > findbar {
-  &[hidden] {
-    opacity: 0;
-  }
-
-  &:not([hidden]) {
-    animation-name: findbar-opacity, findbar-transform;
-    animation-duration: 333ms, 187ms !important;
-    animation-timing-function: val(point-to-point), ease-out !important;
-  }
+// fix input bg color
+.findbar-textbox,
+.findbar-textbox:is([status="notfound"]) {
+  background: transparent !important;
 }
+
 @keyframes findbar-opacity {
   from {
     opacity: 0;

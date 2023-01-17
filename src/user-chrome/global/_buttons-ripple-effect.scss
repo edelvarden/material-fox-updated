@@ -16,11 +16,11 @@
 
 // regular style for buttons
 @mixin ripple-effect {
-  border-radius: var(--toolbarbutton-border-radius) !important;
   background-image: var(--circle-icon), var(--circle-icon) !important;
-  background-size: var(--circle-size) !important;
+  background-position: 50% !important;
   background-repeat: no-repeat !important;
-  background-position: center center !important;
+  background-size: var(--circle-size) !important;
+  border-radius: var(--toolbarbutton-border-radius) !important;
   // background-color: transparent !important;
   outline: 1px solid transparent !important;
   transition: background-size 167ms linear, background-color 167ms ease !important;
@@ -53,6 +53,8 @@
 }
 
 // effect for url bar buttons, tab scroll buttons & bookmarkbar
+#PlacesChevron:not([collapsed]),
+#PlacesToolbarItems > .bookmark-item,
 :is(
     .identity-box-button,
     #notification-popup-box,
@@ -64,9 +66,7 @@
     #scrollbutton-down,
     .tab-close-button,
     .tab-icon-overlay
-  ):not([disabled]),
-#PlacesToolbarItems > .bookmark-item,
-#PlacesChevron:not([collapsed]) {
+  ):not([disabled]) {
   @include ripple-effect-for-button();
 }
 
