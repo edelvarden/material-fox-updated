@@ -1,15 +1,21 @@
-:is(html, body) {
+html,
+body {
   --toolbarbutton-border-radius: 100px !important;
   --circle-size: 0;
 }
 
 @media (prefers-color-scheme: light) {
-  :is(html, body) {
+
+  html,
+  body {
     --circle-icon: url("icons/circle.svg");
   }
 }
+
 @media (prefers-color-scheme: dark) {
-  :is(html, body) {
+
+  html,
+  body {
     --circle-icon: url("icons/circle-dark.svg");
   }
 }
@@ -29,9 +35,11 @@
 // add style for buttons
 @mixin ripple-effect-for-button {
   @include ripple-effect();
+
   &:is(:active:hover, [checked], [open]):not([disabled]) {
     --circle-size: 100%;
   }
+
   &:hover {
     background-color: val(control-bgcolor) !important;
     outline-color: val(control-border-color) !important;
@@ -40,13 +48,15 @@
 
 // add style for exception buttons, for icon or badge-stack selectors
 @mixin ripple-effect-for-icon {
-  > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  &> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     @include ripple-effect();
   }
-  &:is(:active:hover, [checked], [open]):not([disabled]) > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+
+  &:is(:active:hover, [checked], [open]):not([disabled])> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     --circle-size: 100%;
   }
-  &:not([disabled]):hover > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+
+  &:not([disabled]):hover> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     background-color: val(control-bgcolor) !important;
     outline-color: val(control-border-color) !important;
   }
@@ -54,43 +64,50 @@
 
 // effect for url bar buttons, tab scroll buttons & bookmarkbar
 #PlacesChevron:not([collapsed]),
-#PlacesToolbarItems > .bookmark-item,
-:is(
-    .identity-box-button,
-    #notification-popup-box,
-    #tracking-protection-icon-container,
-    #pageActionButton,
-    #urlbar-zoom-button,
-    .urlbar-page-action,
-    #scrollbutton-up,
-    #scrollbutton-down,
-    .tab-close-button,
-    .tab-icon-overlay
-  ):not([disabled]) {
+#PlacesToolbarItems>.bookmark-item,
+:is(.identity-box-button,
+  #notification-popup-box,
+  #tracking-protection-icon-container,
+  #pageActionButton,
+  #urlbar-zoom-button,
+  .urlbar-page-action,
+  #scrollbutton-up,
+  #scrollbutton-down,
+  .tab-close-button,
+  .tab-icon-overlay):not([disabled]) {
   @include ripple-effect-for-button();
 }
 
 // bookmark folder style
-#PlacesToolbarItems > .bookmark-item {
+#PlacesToolbarItems>.bookmark-item {
   --toolbarbutton-border-radius: 4px !important;
   padding: var(--bookmark-block-padding) 6px !important;
 }
 
 // effect for other nav bar buttons
-:is(.findbar-find-next, .findbar-find-previous, .findbar-closebutton, .toolbarbutton-1:not(#alltabs-button)) {
+.findbar-find-next,
+.findbar-find-previous,
+.findbar-closebutton,
+.toolbarbutton-1:not(#alltabs-button) {
   @include ripple-effect-for-icon();
 }
 
 // hide default findbar buttons hover background
-:is(.findbar-find-next, .findbar-find-previous, .findbar-closebutton):hover {
-  background: transparent !important;
+.findbar-find-next,
+.findbar-find-previous,
+.findbar-closebutton {
+  &:hover {
+    background: transparent !important;
+  }
 }
 
 // disable refresh button animation
 #nav-bar-customization-target {
   -moz-box-align: center;
 }
-:is(#reload-button, #stop-button) {
+
+#reload-button,
+#stop-button {
   .toolbarbutton-icon {
     fill: inherit !important;
   }

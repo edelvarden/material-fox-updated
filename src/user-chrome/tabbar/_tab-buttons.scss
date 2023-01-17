@@ -5,7 +5,9 @@
 }
 
 // new tab button & all tabs button
-:-moz-any(#tabs-newtab-button, #new-tab-button, #alltabs-button) {
+#tabs-newtab-button,
+#new-tab-button,
+#alltabs-button {
   min-width: 40px !important;
   min-height: var(--tab-min-height) !important;
   max-width: 40px !important;
@@ -13,7 +15,7 @@
   margin: 0 !important;
   // transform: translateY(3px) !important;
 
-  & > :-moz-any(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  &> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     padding: 6px !important;
     margin: 0 !important;
     width: auto !important;
@@ -32,7 +34,8 @@
 }
 
 // tab close
-:is(.tab-close-button, .messageCloseButton > .toolbarbutton-icon) {
+.tab-close-button,
+.messageCloseButton>.toolbarbutton-icon {
   width: auto !important;
   height: 16px !important;
   padding: 2px !important;
@@ -48,6 +51,7 @@
 
 // all tabs button
 @media (-moz-platform: windows) {
+
   // hide spacer between tabs & window nav
   .titlebar-spacer[type="post-tabs"] {
     display: none !important;
@@ -61,7 +65,7 @@
     --margin-left: 48px;
     margin: 0 0 0 var(--margin-left) !important;
 
-    & > stack {
+    &>stack {
       padding: 0 !important;
       margin: 0 !important;
       border-radius: 0 !important;

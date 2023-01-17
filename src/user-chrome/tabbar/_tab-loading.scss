@@ -1,7 +1,9 @@
 // hide default loading animation
-.tab-loading-burst[bursting]::before,
-.tab-throbber::before {
-  display: none !important;
+.tab-loading-burst[bursting],
+.tab-throbber {
+  &::before {
+    display: none !important;
+  }
 }
 
 // added spinner animation
@@ -16,9 +18,11 @@
   padding: 0 !important;
 }
 
-.tab-throbber[progress] {
-  background-image: url("icons/spinner-progress.svg") !important;
-  animation-direction: normal !important;
+.tab-throbber {
+  &[progress] {
+    background-image: url("icons/spinner-progress.svg") !important;
+    animation-direction: normal !important;
+  }
 }
 
 @keyframes rotate-360 {

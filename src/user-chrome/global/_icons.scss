@@ -1,4 +1,5 @@
-:-moz-any(html, body) {
+html,
+body {
   // tabbar
   --no-src-icon: url("icons/no-src.svg");
   --audio-icon: url("icons/audio.svg");
@@ -31,11 +32,15 @@
 }
 
 // no src icon
-.tab-icon-image:not([src]),
-.tab-icon-image:-moz-broken {
-  content: var(--no-src-icon) !important;
-  fill: #7f7f7f !important;
+.tab-icon-image {
+
+  &:not([src]),
+  &:-moz-broken {
+    content: var(--no-src-icon) !important;
+    fill: #7f7f7f !important;
+  }
 }
+
 .unified-nav-forward,
 .unified-nav-back {
   &:not([_moz-menuactive])[uri*="about:"] {
@@ -46,8 +51,7 @@
 
 // set no src icon for url result list
 #urlbar-results {
-  .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"]
-  {
+  .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
     fill: transparent !important;
     background: var(--no-src-icon) !important;
   }
@@ -72,7 +76,7 @@
 }
 
 // arrow back
-.toolbarbutton-1:-moz-any(#back-button, #forward-button),
+.toolbarbutton-1:is(#back-button, #forward-button),
 #context-back,
 #context-forward,
 .subviewbutton-back,
@@ -85,7 +89,7 @@
 .unidied-nav-back[_moz-menuactive]:-moz-locale-dir(rtl) {
   list-style-image: var(--arrow-back-icon) !important;
 
-  & > hbox > image {
+  &>hbox>image {
     transform: scaleX(-1) !important;
   }
 }
@@ -107,6 +111,7 @@
   list-style-image: var(--refresh-icon) !important;
   -moz-box-align: center !important; // fix refresh icon cropping
 }
+
 #reload-button .toolbarbutton-icon {
   padding: var(--toolbarbutton-inner-padding) !important;
 }
@@ -123,33 +128,31 @@
 
 // lock (secure)
 #identity-box[pageproxystate="valid"] {
-  &:-moz-any(.verifiedDomain, .mixedActiveBlocked) #identity-icon {
+  &:is(.verifiedDomain, .mixedActiveBlocked) #identity-icon {
     list-style-image: var(--lock-icon) !important;
   }
 
-  &:-moz-any(
-      .notSecure,
-      .mixedActiveContent,
-      .httpsOnlyErrorPage,
-      .weakCipher,
-      .mixedDisplayContent,
-      .mixedDisplayContentLoadedActiveBlocked,
-      .certUserOverridden,
-      &.certErrorPage
-    )
-    #identity-icon {
+  &:is(.notSecure,
+    .mixedActiveContent,
+    .httpsOnlyErrorPage,
+    .weakCipher,
+    .mixedDisplayContent,
+    .mixedDisplayContentLoadedActiveBlocked,
+    .certUserOverridden,
+    &.certErrorPage) #identity-icon {
     list-style-image: var(--warning-icon) !important;
   }
 }
-#identity-popup[connection^="secure"] .identity-popup-security-connection .identity-popup-security-connection-icon {
-  list-style-image: var(--lock-icon) !important;
-}
 
-#identity-popup:-moz-any([connection="secure-cert-user-overridden"], [connection="cert-error-page"], [connection^="not-secure"])
-  .identity-popup-security-connection
-  .identity-popup-security-connection-icon {
-  list-style-image: var(--warning-icon) !important;
-  // fill: var(--error-text-color) !important;
+#identity-popup {
+  &[connection^="secure"] .identity-popup-security-connection .identity-popup-security-connection-icon {
+    list-style-image: var(--lock-icon) !important;
+  }
+
+  &:is([connection="secure-cert-user-overridden"], [connection="cert-error-page"], [connection^="not-secure"]) .identity-popup-security-connection .identity-popup-security-connection-icon {
+    list-style-image: var(--warning-icon) !important;
+    // fill: var(--error-text-color) !important;
+  }
 }
 
 // properties permitions icon
@@ -162,7 +165,10 @@
   list-style-image: var(--tracking-protection-icon) !important;
 }
 
-:-moz-any(#star-button, #context-bookmarkpage, #pageAction-panel-bookmark, #urlbar-engine-one-off-item-bookmarks) {
+#star-button,
+#context-bookmarkpage,
+#pageAction-panel-bookmark,
+#urlbar-engine-one-off-item-bookmarks {
   list-style-image: var(--star-icon) !important;
   fill-opacity: 0 !important;
 }
@@ -171,12 +177,16 @@
   fill-opacity: 1 !important;
 }
 
-:-moz-any(#star-button[starred], #tracking-protection-icon-box[active]) {
+#star-button[starred],
+#tracking-protection-icon-box[active] {
   fill: var(--toolbarbutton-icon-fill-attention) !important;
 }
 
-:-moz-any(#star-button[starred], #context-bookmarkpage[starred]) {
-  fill-opacity: 1 !important;
+#star-button,
+#context-bookmarkpage {
+  &[starred] {
+    fill-opacity: 1 !important;
+  }
 }
 
 // chevron icon
@@ -191,11 +201,13 @@
 }
 
 // menu icon
-:-moz-any(#pageActionButton, #PanelUI-menu-button) {
+#pageActionButton,
+#PanelUI-menu-button {
   list-style-image: var(--menu-icon) !important;
 }
 
-:-moz-any(#PanelUI-menu-button[badge-status|="update"], .panel-banner-item[notificationid^="update"]) {
+#PanelUI-menu-button[badge-status|="update"],
+.panel-banner-item[notificationid^="update"] {
   list-style-image: var(--menu-update-icon) !important;
 }
 
@@ -209,13 +221,14 @@
 treechildren::-moz-tree-image(container) {
   list-style-image: var(--folder-icon) !important;
 }
+
 .downloadIconShow .button-icon,
 .folder-icon {
   list-style-image: var(--folder-icon) !important;
 }
 
 // checked icon
-menuitem[checked="true"] > .menu-iconic-left {
+menuitem[checked="true"]>.menu-iconic-left {
   list-style-image: var(--check-icon) !important;
 }
 
@@ -224,15 +237,23 @@ menuitem[checked="true"] > .menu-iconic-left {
   background-image: var(--check-icon) !important;
 }
 
-:-moz-any(.all-tabs-secondary-button, .tab-icon-overlay)[soundplaying],
+:is(.all-tabs-secondary-button, .tab-icon-overlay)[soundplaying],
 .tab-icon-sound {
   list-style-image: var(--audio-icon) !important;
 }
 
-:-moz-any(.all-tabs-secondary-button, .tab-icon-overlay, .tab-icon-sound)[muted] {
-  list-style-image: var(--audio-muted-icon) !important;
+.all-tabs-secondary-button,
+.tab-icon-overlay,
+.tab-icon-sound {
+  &[muted] {
+    list-style-image: var(--audio-muted-icon) !important;
+  }
 }
 
-:-moz-any(.all-tabs-secondary-button, .tab-icon-overlay, .tab-icon-sound)[activemedia-blocked] {
-  list-style-image: var(--audio-muted-icon) !important;
+.all-tabs-secondary-button,
+.tab-icon-overlay,
+.tab-icon-sound {
+  &[activemedia-blocked] {
+    list-style-image: var(--audio-muted-icon) !important;
+  }
 }

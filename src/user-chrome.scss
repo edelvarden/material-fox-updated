@@ -5,6 +5,7 @@
 @import "user-chrome/tabbar/index";
 @import "user-chrome/urlbar/index";
 @import "user-chrome/components/menupopup";
+@import "user-chrome/components/context-menu";
 @import "user-chrome/components/findbar";
 @import "user-chrome/components/edit-bookmark";
 
@@ -13,10 +14,13 @@ button {
 }
 
 @media (-moz-platform: windows) {
-    :root {
-        --#{$prefix}-font-family: #{meta.inspect($font-family)};
-    }
-    :-moz-any(*, *::before, *::after) {
-      font-family: var(--#{$prefix}-font-family) !important;
-    }
+  :root {
+    --#{$prefix}-font-family: #{meta.inspect($font-family)};
+  }
+
+  *,
+  *::before,
+  *::after {
+    font-family: var(--#{$prefix}-font-family) !important;
+  }
 }

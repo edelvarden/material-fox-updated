@@ -4,59 +4,60 @@
 }
 
 // change position
-.browserContainer {
-  & > findbar {
-    // display: block !important;
-    //change items position
-    -moz-box-align: center !important;
-    justify-content: flex-end !important;
+.browserContainer>findbar {
+  // display: block !important;
+  //change items position
+  -moz-box-align: center !important;
+  justify-content: flex-end !important;
 
-    position: absolute !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    right: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  right: 0 !important;
 
-    height: 48px !important;
-    width: auto !important;
-    max-width: 380px !important;
-    min-width: 255px !important;
+  height: 48px !important;
+  width: auto !important;
+  max-width: 380px !important;
+  min-width: 255px !important;
 
-    padding: 0 !important;
-    margin-inline-start: 0 !important;
-    margin: -4px 10rem 0 0 !important;
+  padding: 0 !important;
+  margin-inline-start: 0 !important;
+  margin: -4px 10rem 0 0 !important;
 
-    // colors & decorations
-    --separator-color: rgba(255, 255, 255, 0.1) !important;
-    background: var(--toolbar-field-background-color) !important;
-    box-shadow: var(--windows-panel-box-shadow) !important;
-    color: var(--arrowpanel-color) !important;
+  // colors & decorations
+  --separator-color: rgba(255, 255, 255, 0.1) !important;
+  background: var(--toolbar-field-background-color) !important;
+  box-shadow: var(--windows-panel-box-shadow) !important;
+  color: var(--arrowpanel-color) !important;
 
-    // border
-    border-radius: 8px !important;
-    border: none !important;
-    outline: none !important;
-    overflow: hidden !important;
+  // border
+  border-radius: 8px !important;
+  border: none !important;
+  outline: none !important;
+  overflow: hidden !important;
 
-    .found-matches {
-      padding: 0 10px 0 0 !important;
-    }
-
-    // center position for items
-    .findbar-container {
-      align-items: center !important;
-      display: flex !important;
-      justify-content: center !important;
-    }
-    .findbar-textbox {
-      margin-right: 10px !important;
-    }
-    &:not([hidden]) {
-      animation-duration: 333ms, 187ms !important;
-      animation-name: findbar-opacity, findbar-transform;
-      animation-timing-function: val(point-to-point), ease-out !important;
-    }
+  .found-matches {
+    padding: 0 10px 0 0 !important;
   }
-  & > findbar[hidden] {
+
+  // center position for items
+  .findbar-container {
+    align-items: center !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .findbar-textbox {
+    margin-right: 10px !important;
+  }
+
+  &:not([hidden]) {
+    animation-duration: 333ms, 187ms !important;
+    animation-name: findbar-opacity, findbar-transform;
+    animation-timing-function: val(point-to-point), ease-out !important;
+  }
+
+  &[hidden] {
     opacity: 0;
   }
 }
@@ -74,19 +75,30 @@
     visibility: visible !important;
   }
 }
-.browserContainer > findbar :is(.found-matches, .findbar-textbox) {
-  border-right: 1px solid !important;
-  border-color: var(--separator-color) !important;
+
+.browserContainer>findbar {
+
+  .found-matches,
+  .findbar-textbox {
+    border-right: 1px solid !important;
+    border-color: var(--separator-color) !important;
+  }
 }
 
 // hide all checkboxes
-.browserContainer > findbar :is(.findbar-find-status, .findbar-container > checkbox) {
-  display: none !important;
-  visibility: collapse !important;
+.browserContainer>findbar {
+
+  .findbar-find-status,
+  .findbar-container>checkbox {
+    display: none !important;
+    visibility: collapse !important;
+  }
 }
 
 // findbar buttons
-:is(.findbar-closebutton, .findbar-find-previous, .findbar-find-next) {
+.findbar-closebutton,
+.findbar-find-previous,
+.findbar-find-next {
   --button-size: 24px;
   border-radius: 4px !important;
   margin: 0 10px 0 0 !important;
@@ -98,8 +110,12 @@
 }
 
 // fix arrow icons size
-:is(.findbar-find-next, .findbar-find-previous, .findbar-closebutton) > .toolbarbutton-icon {
-  padding: 2px !important;
+.findbar-find-next,
+.findbar-find-previous,
+.findbar-closebutton {
+  &>.toolbarbutton-icon {
+    padding: 2px !important;
+  }
 }
 
 // findbar input
@@ -120,7 +136,7 @@
 
 // fix input bg color
 .findbar-textbox,
-.findbar-textbox:is([status="notfound"]) {
+.findbar-textbox[status="notfound"] {
   background: transparent !important;
 }
 

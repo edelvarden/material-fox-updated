@@ -13,7 +13,8 @@
   --urlbar-container-height: 36px !important;
 }
 
-:is(html, body) {
+html,
+body {
   // default
   // --urlbar-min-height: 32px;
   // --urlbar-icon-border-radius: calc(var(--toolbarbutton-border-radius) - 1px);
@@ -29,30 +30,43 @@
 }
 
 // fix icons sizes after url bar size changed
-:is(.identity-box-button, #notification-popup-box, #tracking-protection-icon-container, .urlbar-page-action, #urlbar-go-button, .search-go-button) {
+.identity-box-button,
+#notification-popup-box,
+#tracking-protection-icon-container,
+.urlbar-page-action,
+#urlbar-go-button,
+.search-go-button {
   width: auto !important;
   height: calc(var(--urlbar-height) - var(--urlbar-container-padding) * 2) !important;
   border-radius: var(--urlbar-icon-border-radius) !important;
   padding: 0 8px !important;
   -moz-box-pack: center !important;
 }
+
 #notification-popup-box {
   padding: 0 !important;
 }
+
 .notification-anchor-icon {
   padding: 0 8px !important;
 }
 
-#urlbar[open] {
-  #urlbar-background,
-  #searchbar {
-    border-radius: 4px !important;
-    border: none !important;
+#urlbar {
+
+  &[open] {
+
+    #urlbar-background,
+    #searchbar {
+      border-radius: 4px !important;
+      border: none !important;
+    }
   }
 }
 
 // fix url input font size
-:-moz-any(#urlbar-input, #urlbar, #searchbar) {
+#urlbar-input,
+#urlbar,
+#searchbar {
   font: unset !important;
   font-size: 14px !important;
 }

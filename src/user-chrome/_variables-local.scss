@@ -1,14 +1,19 @@
-:-moz-any(:root, html, body) {
+:root {
+
   // regular vars
-  @each $key, $value in $variables {
+  @each $key,
+  $value in $variables {
     --#{$prefix}-#{$key}: #{$value};
   }
 }
 
 // vars for dark mode
 @media (prefers-color-scheme: dark) {
-  :-moz-any(:root, html, body) {
-    @each $key, $value in $dark-mode {
+
+  :root {
+
+    @each $key,
+    $value in $dark-mode {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
@@ -16,19 +21,29 @@
 
 // vars for light mode
 @media (prefers-color-scheme: light) {
-  :-moz-any(:root, html, body) {
-    @each $key, $value in $light-mode {
+
+  :root {
+
+    @each $key,
+    $value in $light-mode {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
 }
 
 // accent color vars
-:is(:root, html, body, panel, toolbar) {
+:root,
+html,
+body,
+panel,
+toolbar {
   --lwt-brighttext-url-color: #{val(accent-color)} !important;
   --toolbarbutton-icon-fill-attention: #{val(accent-color)} !important;
 }
-:is(:root, html, body) {
+
+:root,
+html,
+body {
   --panel-banner-item-info-icon-bgcolor: #{val(accent-color)} !important;
   --focus-outline-color: #{val(accent-color)} !important;
   --button-primary-active-bgcolor: #{val(accent-color)} !important;
@@ -38,12 +53,18 @@
 }
 
 // shadow
-:is(:root, html, body, menupopup, panel) {
+:root,
+html,
+body,
+menupopup,
+panel {
   --windows-panel-box-shadow: #{val(elevation-2)} !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  :is(html, body) {
+
+  html,
+  body {
     //----------------------------------------------------------------------
     // --   Firefox vars
     // ----------------------------------------------------------------------

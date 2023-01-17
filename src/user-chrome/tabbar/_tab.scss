@@ -1,9 +1,11 @@
-:-moz-any(html, body) {
+html,
+body {
   --tab-min-height: 34px !important; // 34px (real height) - 1px (border bottom)
 }
+
 .tabbrowser-tab {
   --tab-opacity: 0;
-  --tab-bgcolor: var(--mf-bgcolor-100);
+  --tab-bgcolor: val(bgcolor-100);
   --tab-transition-duration: 83ms;
   overflow: visible !important;
   border: 0 !important;
@@ -29,6 +31,7 @@
 }
 
 .tabbrowser-tab {
+
   // tab text color
   &[visuallyselected] {
     color: #{val(text-primary)} !important;
@@ -40,35 +43,44 @@
 }
 
 // hide tab text and close button if pinned
-:-moz-any(.tab-label-container, .tab-close-button)[pinned] {
-  display: none !important;
-}
-
-.tabbrowser-tab[pinned] {
-  width: 40px !important;
-  padding: 0 !important;
-
-  .tab-icon-stack {
-    margin-left: 0 !important;
-  }
-
-  .tab-content {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+.tab-label-container,
+.tab-close-button {
+  &[pinned] {
+    display: none !important;
   }
 }
+
+.tabbrowser-tab {
+  &[pinned] {
+    width: 40px !important;
+    padding: 0 !important;
+
+    .tab-icon-stack {
+      margin-left: 0 !important;
+    }
+
+    .tab-content {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+  }
+}
+
 .tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"]) {
   max-width: 238px !important;
 }
+
 .tab-stack {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
+
 .tab-icon-overlay {
   margin: 0 !important;
   padding: 0 !important;
 }
+
 .tab-close-button,
 .tab-icon-image,
 .tab-icon-sound,
@@ -77,10 +89,12 @@
 .tab-throbber-fallback {
   margin-top: 0 !important;
 }
+
 .tabbrowser-tab::after,
 .tabbrowser-tab::before {
   display: none !important;
 }
+
 .tab-background {
   margin-block: 0 !important;
   background: var(--tab-bgcolor) !important;
@@ -91,6 +105,7 @@
   opacity: var(--tab-opacity) !important;
   visibility: visible !important;
   box-shadow: none !important;
+
   &::before,
   &::after {
     content: "" !important;
@@ -103,12 +118,14 @@
     transition: box-shadow 0s var(--tab-transition-duration) linear !important;
     clip-path: inset(0) !important;
   }
+
   &::before {
     border-bottom-right-radius: 8px !important;
     left: 0 !important;
     transform: translateX(-8px) !important;
     box-shadow: 4px 4px 0 4px var(--tab-bgcolor) !important;
   }
+
   &::after {
     border-bottom-left-radius: 8px !important;
     right: 0 !important;
@@ -116,26 +133,31 @@
     box-shadow: -4px 4px 0 4px var(--tab-bgcolor) !important;
   }
 }
+
 :-moz-any(#TabsToolbar[brighttext]) {
   .tabbrowser-tab {
     --tab-bgcolor: var(--toolbar-bgcolor) !important;
   }
 }
+
 .tabbrowser-tab:not([selected="true"]):hover,
 .tabbrowser-tab[multiselected]:not([selected="true"]),
-:-moz-any(#TabsToolbar[brighttext]) .tabbrowser-tab:not([selected="true"]):hover,
-:-moz-any(#TabsToolbar[brighttext]) .tabbrowser-tab[multiselected]:not([selected="true"]) {
+#TabsToolbar[brighttext] .tabbrowser-tab:not([selected="true"]):hover,
+#TabsToolbar[brighttext] .tabbrowser-tab[multiselected]:not([selected="true"]) {
   --tab-opacity: #{val(tab-opacity-hover)};
 }
-:-moz-any(#TabsToolbar) {
+
+#TabsToolbar {
   .tabbrowser-tab[visuallyselected] {
     --tab-bgcolor: var(--toolbar-bgcolor);
     --tab-opacity: 1;
   }
 }
+
 .tab-icon-image {
   margin: 0 !important;
 }
+
 .tabbrowser-tab[fadein] {
   .tab-close-button {
     visibility: visible !important;
@@ -148,20 +170,24 @@
     margin-inline-end: 2px !important;
   }
 }
+
 #tabbrowser-tabs[overflow] {
   margin-inline-start: 8px !important;
+
   .tabbrowser-arrowscrollbox {
     border-radius: 8px 8px 0 0 !important;
     background-color: rgba(0, 0, 0, 0.1) !important;
     padding-inline-start: 0 !important;
   }
+
   .tabbrowser-tab[last-visible-tab]:not([pinned]) {
     margin-inline-end: 8px !important;
   }
 }
+
 #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab],
 #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-tab]:not([pinned]),
-#tabbrowser-tabs[overflow] .tabbrowser-tab[pinned] + .tabbrowser-tab:not([pinned]) {
+#tabbrowser-tabs[overflow] .tabbrowser-tab[pinned]+.tabbrowser-tab:not([pinned]) {
   margin-inline-start: 8px !important;
 }
 

@@ -1,0 +1,25 @@
+// context menu
+@media (-moz-platform: windows) or (-moz-platform: linux) {
+
+    // context menu bgcolor & drop shadow
+    .menupopup-arrowscrollbox {
+      background-color: var(--arrowpanel-background) !important;
+      border: none !important;
+      box-shadow: var(--windows-panel-box-shadow) !important;
+    }
+  
+    // context menu items bgcolor hover
+    #contentAreaContextMenu>menuitem:not([disabled], [hidden]),
+    #context-navigation>menuitem:not([disabled], [hidden])>hbox {
+      &:hover {
+        background-color: var(--button-hover-bgcolor) !important;
+      }
+    }
+  
+    // separator color
+    menuseparator {
+      border-color: #{val(tab-separator-color)} !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }

@@ -6,7 +6,7 @@
 .search-handoff-button,
 .search-handoff-button:active,
 .search-handoff-button:enabled:hover:active {
-  background-color: var(--mf-background-color-secondary) !important;
+  background-color: val(bgcolor-0) !important;
   background-size: 24px;
   border: 0 !important;
   border-radius: 99px !important;
@@ -28,7 +28,7 @@
 }
 
 .info {
-  background-color: var(--mf-background-color-secondary) !important;
+  background-color: var(val(bgcolor-0)) !important;
   border-radius: 18px !important;
 }
 
@@ -40,9 +40,4 @@
   --in-content-primary-button-background: #{val(accent-color)} !important;
   --in-content-primary-button-background-hover: #{val(accent-color-hover)} !important;
   --in-content-primary-button-background-active: #{val(accent-color)} !important;
-}
-
-// custom vars
-:is(html, body) {
-  --mf-background-color-secondary: #{val(bgcolor-0)} !important;
 }

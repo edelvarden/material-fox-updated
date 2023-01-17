@@ -29,10 +29,11 @@
 .tab-label,
 .tab-icon-overlay {
   transform: translateX(0) !important;
-  transition: transform 333ms cubic-bezier(0.55, 0.55, 0, 1), background-size 167ms linear, background-color 167ms ease  !important;
+  transition: transform 333ms cubic-bezier(0.55, 0.55, 0, 1), background-size 167ms linear, background-color 167ms ease !important;
 }
 
 .tabbrowser-tab:not([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
+
   .tab-label,
   .tab-icon-overlay {
     transform: translateX(22px) !important;
@@ -40,19 +41,24 @@
 }
 
 // show sound icon instead favicon if soundplaing
-.tabbrowser-tab[pinned]:-moz-any([soundplaying], [muted], [activemedia-blocked]) {
-  .tab-icon-image {
-    display: none !important;
-  }
+.tabbrowser-tab {
+  &[pinned] {
+    &:is([soundplaying], [muted], [activemedia-blocked]) {
+      .tab-icon-image {
+        display: none !important;
+      }
 
-  .tab-icon-overlay {
-    display: block !important;
-    opacity: 1 !important;
-  }
-}
-.tabbrowser-tab[pinned]:not([soundplaying], [muted], [activemedia-blocked]) {
-  .tab-icon-overlay {
-    display: none !important;
+      .tab-icon-overlay {
+        display: block !important;
+        opacity: 1 !important;
+      }
+    }
+
+    &:not([soundplaying], [muted], [activemedia-blocked]) {
+      .tab-icon-overlay {
+        display: none !important;
+      }
+    }
   }
 }
 
@@ -60,6 +66,7 @@
 .tab-icon-image:not([pinned]) {
   opacity: 1 !important;
 }
+
 // fix tab selection on favicon click
 .tab-icon-image,
 .tab-icon-overlay {
@@ -73,7 +80,7 @@
   }
 }
 
-.tabbrowser-tab:is([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
+.tabbrowser-tab[pinned]:is([soundplaying], [muted], [activemedia-blocked]) {
   .tab-icon-stack {
     z-index: 2 !important;
   }
