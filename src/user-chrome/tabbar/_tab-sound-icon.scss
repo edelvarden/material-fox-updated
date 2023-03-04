@@ -1,46 +1,3 @@
-.tab-content {
-  position: relative !important;
-}
-
-.tab-icon-overlay {
-  --icon-size: 16px;
-  position: relative !important;
-  display: block !important;
-  border-radius: 100px !important;
-  min-width: var(--icon-size) !important;
-  min-height: var(--icon-size) !important;
-  max-width: var(--icon-size) !important;
-  max-height: var(--icon-size) !important;
-  top: 0 !important; // fix middle position if pinned
-  inset-inline-end: 0 !important; // fix space from the icon
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: visible !important;
-  // fix opacity
-  fill-opacity: 1 !important;
-
-  &:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-    display: block !important;
-    opacity: 1 !important;
-  }
-}
-
-// move sound icon
-.tab-label,
-.tab-icon-overlay {
-  transform: translateX(0) !important;
-  transition: transform 333ms cubic-bezier(0.55, 0.55, 0, 1), background-size 167ms linear, background-color 167ms ease !important;
-}
-
-.tabbrowser-tab:not([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
-
-  .tab-label,
-  .tab-icon-overlay {
-    transform: translateX(22px) !important;
-  }
-}
-
-// show sound icon instead favicon if soundplaing
 .tabbrowser-tab {
   &[pinned] {
     &:is([soundplaying], [muted], [activemedia-blocked]) {
@@ -60,28 +17,64 @@
       }
     }
   }
+
+  &:not([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
+    .tab-label,
+    .tab-icon-overlay {
+      transform: translateX(22px) !important;
+    }
+
+    .tab-label-container {
+      z-index: -2 !important;
+    }
+  }
 }
 
-// fix icon opacity if hover soundplaying tab
-.tab-icon-image:not([pinned]) {
-  opacity: 1 !important;
+.tab-content {
+  position: relative !important;
 }
 
-// fix tab selection on favicon click
+.tab-icon-overlay {
+  --icon-size: 16px;
+  position: relative !important;
+  display: block !important;
+  border-radius: 100px !important;
+  min-width: var(--icon-size) !important;
+  min-height: var(--icon-size) !important;
+  max-width: var(--icon-size) !important;
+  max-height: var(--icon-size) !important;
+  top: 0 !important; // fix middle position if pinned
+  inset-inline-end: 0 !important; // fix space from the icon
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+
+  // fix opacity
+  fill-opacity: 1 !important;
+
+  &:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+    display: block !important;
+    opacity: 1 !important;
+  }
+}
+
 .tab-icon-image,
 .tab-icon-overlay {
   z-index: -1 !important;
 }
 
-.tabbrowser-tab:not([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
-  .tab-label-container {
-    z-index: -2 !important;
-    // position: absolute !important;
-  }
+.tab-label,
+.tab-icon-overlay {
+  transform: translateX(0) !important;
+  transition: transform 333ms cubic-bezier(0.55, 0.55, 0, 1), background-size 167ms linear, background-color 167ms ease !important;
 }
 
 .tabbrowser-tab[pinned]:is([soundplaying], [muted], [activemedia-blocked]) {
   .tab-icon-stack {
     z-index: 2 !important;
   }
+}
+
+.tab-icon-image:not([pinned]) {
+  opacity: 1 !important;
 }

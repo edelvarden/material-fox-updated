@@ -1,14 +1,14 @@
 // popup menu shortcuts gray if not mouseover
-panelview .toolbarbutton-1,
-toolbarbutton.subviewbutton,
+.toolbarbutton-1,
+.subviewbutton,
 .widget-overflow-list .toolbarbutton-1,
-.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"])>toolbarbutton {
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton {
   &:not([disabled]) {
     &[shortcut]::after {
       color: #9aa0a6 !important;
     }
 
-    &[shortcut]:hover::after {
+    &:hover[shortcut]::after {
       color: inherit !important;
     }
   }

@@ -1,4 +1,4 @@
-// prefix for css variables
+// Prefix for CSS variables
 $prefix: mf;
 
 // convert px to rem
@@ -120,34 +120,34 @@ $dark-mode: (
   "tab-outline-color": cm(transparent, black, 0.1),
   "tab-opacity-hover": 0.5,
   // navbar
-  "icon-color": #9aa0a6
+  "icon-color": #8F8F8F
 );
 
 $light-mode: (
-  "accent-color": #8ab4f8,
+  "accent-color": #4285F4,
   "accent-color-hover": cm(transparent, val(accent-color), 0.8),
   // UI background colors
-  "bgcolor-0": cm(#202020, val(accent-color), 0),
-  "bgcolor-50": cm(val(bgcolor-0), white, 0.0512),
-  "bgcolor-100": cm(val(bgcolor-0), white, 0.0605),
+  "bgcolor-0": #FFFFFF,
+  "bgcolor-50": #F1F3F4,
+  "bgcolor-100": #E8EAED,
   // UI text
-  "text-primary": black,
-  "text-secondary": cm(transparent, val(text-primary), 0.0786),
-  "text-disabled": cm(transparent, val(text-primary), 0.03628),
+  "text-primary": #202124,
+  "text-secondary": #70757A,
+  "text-disabled": #BEC0C4,
   // Link text color
-  "text-accent-primary": cm(white, val(text-primary), 0.8),
-  "text-accent-secondary": cm(white, val(text-primary), 0.8),
+  "text-accent-primary": #1967D2,
+  "text-accent-secondary": #1A73E8,
   // Primary button text color
-  "text-on-accent-primary": black,
+  "text-on-accent-primary": white,
   // Button, Dropdown, Search inputs
-  "control-bgcolor": cm(transparent, black, 0.0373),
-  "control-border-color": cm(transparent, black, 0.0373),
-  "control-bgcolor-secondary": cm(val(bgcolor-0), white, 0.0837),
-  "control-bgcolor-disabled": cm(val(bgcolor-0), white, 0.0419),
+  "control-bgcolor": #F1F3F4,
+  "control-border-color": transparent,
+  "control-bgcolor-secondary": white,
+  "control-bgcolor-disabled": #F1F3F4,
   // Tab bar
-  "tab-separator-color": cm(transparent, black, 0.0803),
-  "tab-outline-color": cm(transparent, black, 0.0578),
+  "tab-separator-color": #E8EAED,
+  "tab-outline-color": rgba(black, 0.2),
   "tab-opacity-hover": 0.1,
   // navbar
-  "icon-color": rgb(95, 99, 104),
+  "icon-color": #8F8F8F,
 );

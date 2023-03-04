@@ -20,7 +20,7 @@
   flex: 1 1 auto !important;
 }
 
-// url icons fill color
+// URL icons
 #identity-box,
 #tracking-protection-icon-container,
 #notification-popup-box,
@@ -28,24 +28,24 @@
   fill: val(icon-color) !important;
 }
 
-// url popup icons fill color
+// URL popup icons
 #identity-popup,
 #permission-popup,
 #protections-popup,
 .popup-notification-icon,
 .permission-popup-permission-icon,
-.subviewbutton-iconic>.toolbarbutton-icon {
+.subviewbutton-iconic > .toolbarbutton-icon {
   fill: val(icon-color) !important;
 }
 
-// urlbar icons hover
+// URL bar icons hover 
 $urlbar-icons: "#reader-mode-button, #pageActionButton, #pocket-button-box, #pageAction-urlbar-screenshots_mozilla_org, #pageAction-urlbar-sendToDevice, #pageAction-urlbar-emailLink, #pageAction-urlbar-copyURL, #pageAction-urlbar-shareURL, #pageAction-urlbar-addSearchEngine";
 
 .urlbar-page-action:is(#{$urlbar-icons}) {
-  transition: background-size 167ms linear, background-color 167ms, margin 167ms ease-in, opacity 83ms linear, visibility 4s !important;
   opacity: 0 !important;
   visibility: hidden !important;
   margin-inline-start: -32px !important;
+  transition: background-size 167ms linear, background-color 167ms, margin 167ms ease-in, opacity 83ms linear, visibility 4s !important;
 }
 
 #urlbar:hover #tracking-protection-icon-box,
@@ -55,10 +55,10 @@ $urlbar-icons: "#reader-mode-button, #pageActionButton, #pocket-button-box, #pag
 #tracking-protection-icon-container[open]~#page-action-buttons .urlbar-page-action:is(#{$urlbar-icons}),
 #tracking-protection-icon-container[open] #tracking-protection-icon-box,
 #tracking-protection-icon-box[active] {
-  transition: background-size 167ms linear, background-color 167ms, margin 167ms ease-in, opacity 83ms linear !important;
   opacity: 1 !important;
   visibility: visible !important;
   margin-inline-start: 0 !important;
+  transition: background-size 167ms linear, background-color 167ms, margin 167ms ease-in, opacity 83ms linear !important;
 }
 
 #urlbar {
@@ -72,7 +72,7 @@ $urlbar-icons: "#reader-mode-button, #pageActionButton, #pocket-button-box, #pag
   }
 }
 
-// centered url icons
+// Centered URL icons
 .urlbar-page-action {
   -moz-box-align: center !important;
 }

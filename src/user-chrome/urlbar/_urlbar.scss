@@ -1,35 +1,23 @@
-// url bar size
+// URL Bar Size
 #urlbar {
-  // default
-  // --urlbar-height: 32.00px;
-  // --urlbar-toolbar-height: 40.00px;
   --urlbar-height: 28px !important;
   --urlbar-toolbar-height: 36px !important;
 }
 
 #urlbar-container {
-  // default
-  // --urlbar-container-height: 40.00px;
   --urlbar-container-height: 36px !important;
 }
 
-html,
-body {
-  // default
-  // --urlbar-min-height: 32px;
-  // --urlbar-icon-border-radius: calc(var(--toolbarbutton-border-radius) - 1px);
-  // --toolbarbutton-border-radius: 4px;
-  // --urlbar-container-padding: 1px;
-  // --toolbarbutton-inner-padding: 8px;
-  --toolbarbutton-inner-padding: 6px !important;
-  --urlbar-min-height: 28px !important;
-  --urlbar-icon-border-radius: 100px !important;
-  --toolbarbutton-border-radius: 100px !important;
-  --toolbarbutton-height: 28px !important;
-  --urlbar-container-padding: 2px !important;
+html, body {
+  --urlbar-min-height: 28px !important; // Minimum Height
+  --toolbarbutton-height: 28px !important; // Button Height
+  --toolbarbutton-inner-padding: 6px !important; // Button Inner Padding
+  --urlbar-icon-border-radius: 100px !important; // Icon Border Radius
+  --toolbarbutton-border-radius: 100px !important; // Button Border Radius
+  --urlbar-container-padding: 2px !important; // Container Padding
 }
 
-// fix icons sizes after url bar size changed
+// Fix Icons sizes after URL Bar Size Change
 .identity-box-button,
 #notification-popup-box,
 #tracking-protection-icon-container,
@@ -52,9 +40,7 @@ body {
 }
 
 #urlbar {
-
   &[open] {
-
     #urlbar-background,
     #searchbar {
       border-radius: 4px !important;
@@ -63,7 +49,7 @@ body {
   }
 }
 
-// fix url input font size
+// Fix URL Input Font Size
 #urlbar-input,
 #urlbar,
 #searchbar {

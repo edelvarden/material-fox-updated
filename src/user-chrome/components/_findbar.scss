@@ -1,21 +1,20 @@
-// for change findbar position
+// For change findbar position
 #browser {
   position: relative !important;
 }
 
-// change position
-.browserContainer>findbar {
-  // display: block !important;
-  //change items position
+// Change position
+.browserContainer > findbar {
+
+  // Change items position
   -moz-box-align: center !important;
   justify-content: flex-end !important;
-
   position: absolute !important;
   top: 0 !important;
   bottom: 0 !important;
   right: 0 !important;
 
-  height: 48px !important;
+    height: 48px !important;
   width: auto !important;
   max-width: 380px !important;
   min-width: 255px !important;
@@ -24,25 +23,25 @@
   margin-inline-start: 0 !important;
   margin: -4px 10rem 0 0 !important;
 
-  // colors & decorations
+  // Colors & decorations
   --separator-color: rgba(255, 255, 255, 0.1) !important;
-  background: var(--toolbar-field-background-color) !important;
+  background-color: var(--toolbar-field-background-color) !important;
   box-shadow: var(--windows-panel-box-shadow) !important;
   color: var(--arrowpanel-color) !important;
 
-  // border
+  // Border
   border-radius: 8px !important;
   border: none !important;
   outline: none !important;
   overflow: hidden !important;
 
   .found-matches {
-    padding: 0 10px 0 0 !important;
+    padding-right: 10px !important;
   }
-
-  // center position for items
+  
+  // Center position for items
   .findbar-container {
-    align-items: center !important;
+    align-items: center !important; 
     display: flex !important;
     justify-content: center !important;
   }
@@ -53,22 +52,22 @@
 
   &:not([hidden]) {
     animation-duration: 333ms, 187ms !important;
-    animation-name: findbar-opacity, findbar-transform;
+    animation-name: findbar-opacity, findbar-transform !important;
     animation-timing-function: val(point-to-point), ease-out !important;
   }
 
   &[hidden] {
-    opacity: 0;
+    opacity: 0 !important;
   }
 }
 
-// reverse for result block
+// Reverse for result block
 .findbar-container {
   display: flex !important;
   flex-direction: column-reverse !important;
 
   height: 100% !important;
-  overflow: visible !important;
+  overflow-y: visible !important;
 
   .found-matches {
     display: block !important;
@@ -76,7 +75,7 @@
   }
 }
 
-.browserContainer>findbar {
+.browserContainer > findbar {
 
   .found-matches,
   .findbar-textbox {
@@ -85,17 +84,17 @@
   }
 }
 
-// hide all checkboxes
-.browserContainer>findbar {
+// Hide all checkboxes
+.browserContainer > findbar {
 
   .findbar-find-status,
-  .findbar-container>checkbox {
+  .findbar-container > checkbox {
     display: none !important;
     visibility: collapse !important;
   }
 }
 
-// findbar buttons
+// Findbar buttons
 .findbar-closebutton,
 .findbar-find-previous,
 .findbar-find-next {
@@ -109,35 +108,36 @@
   padding: 4px !important;
 }
 
-// fix arrow icons size
+// Fix arrow icons size
 .findbar-find-next,
 .findbar-find-previous,
 .findbar-closebutton {
-  &>.toolbarbutton-icon {
+
+  & > .toolbarbutton-icon {
     padding: 2px !important;
   }
 }
 
-// findbar input
+// Findbar input
 .findbar-textbox {
-  border-bottom: 0 !important;
-  border-left: 0 !important;
+  border-bottom-width: 0 !important;
+  border-left-width: 0 !important;
   border-radius: 0 !important;
-  border-top: 0 !important;
+  border-top-width: 0 !important;
   box-shadow: none !important;
   outline: 0 !important;
   width: auto !important;
 
-  // hide 'Find in page' text
+  // Hide 'Find in page' text
   &::placeholder {
     color: transparent !important;
   }
 }
 
-// fix input bg color
+// Fix input bg color
 .findbar-textbox,
 .findbar-textbox[status="notfound"] {
-  background: transparent !important;
+  background-color: transparent !important;
 }
 
 @keyframes findbar-opacity {
