@@ -1,8 +1,9 @@
-@use "sass:math";
+// prefix for css variables
+$prefix: mf;
 
 // convert px to rem
 @function rem($px) {
-  @return math.div($px, 16px) * 1rem;
+  @return $px / 16 * 1rem;
 }
 
 // return color mix function with opacity support
@@ -11,13 +12,10 @@
   @return color-mix(in srgb, $secondary-color $opacity, $main-color);
 }
 
-// return val from css variable
+// return value from CSS variable
 @function val($variable-name) {
   @return #{var(--#{$prefix}-#{$variable-name})};
 }
-
-// prefix for css variables
-$prefix: mf;
 
 // change font
 $font-family: ("Roboto", Arial, sans-serif);
@@ -89,26 +87,10 @@ $variables: (
   // --------------------------------------------------------------------------------
 
   "shadow-color-rgb": "0,0,0",
-  // "elevation-1": (
-  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-  //   rgba(val(shadow-color-rgb), 0.15) 0 1px 3px 1px,
-  // ),
   "elevation-2": (
       rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
       rgba(val(shadow-color-rgb), 0.15) 0 2px 6px 2px,
     ),
-  // "elevation-3": (
-  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-  //   rgba(val(shadow-color-rgb), 0.15) 0 4px 8px 3px,
-  // ),
-  // "elevation-4": (
-  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-  //   rgba(val(shadow-color-rgb), 0.15) 0 6px 10px 4px,
-  // ),
-  // "elevation-5": (
-  //   rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-  //   rgba(val(shadow-color-rgb), 0.15) 0 8px 12px 6px,
-  // ),,,,,
 );
 
 $dark-mode: (

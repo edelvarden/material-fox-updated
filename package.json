@@ -1,45 +1,19 @@
 {
   "name": "material-fox-updated",
-  "version": "1.0.0",
-  "description": "*A Material Design-inspired userChrome.css theme for Firefox*",
-  "main": "gulpfile.js",
   "type": "module",
+  "private": true,
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vite",
+    "build": "vite build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/edelvarden/material-fox-updated.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/edelvarden/material-fox-updated/issues"
-  },
-  "homepage": "https://github.com/edelvarden/material-fox-updated#readme",
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.54.4"
+    "vite": "^4.1.0"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.12",
-    "cssnano": "^5.1.13",
-    "cssnano-preset-advanced": "^5.3.9",
-    "gulp-postcss": "^9.0.1",
-    "gulp-svgmin": "^4.1.0",
-    "gulp-ttf2woff2": "^4.0.1",
-    "postcss": "^8.4.18"
-  },
-  "cssnano": {
-    "preset": [
-      "advanced",
-      {
-        "discardComments": {
-          "removeAll": true
-        }
-      }
-    ]
+    "cssnano": "^5.1.15",
+    "cssnano-preset-advanced": "^5.3.10",
+    "sass": "^1.58.3"
   },
   "browserslist": [
     "last 5 Firefox version"
