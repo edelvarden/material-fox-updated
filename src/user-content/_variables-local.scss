@@ -1,6 +1,7 @@
 @-moz-document url-prefix("about:newtab"), url-prefix("about:home"), url-prefix("about:privatebrowsing") {
-
-  :root, html, body {
+  :root,
+  html,
+  body {
     // regular vars
     @each $key, $value in $variables {
       --#{$prefix}-#{$key}: #{$value};
@@ -8,7 +9,9 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    :root, html, body {
+    :root,
+    html,
+    body {
       // vars for dark mode
       @each $key, $value in $dark-mode {
         --#{$prefix}-#{$key}: #{$value};
@@ -17,14 +20,18 @@
   }
 
   @media (prefers-color-scheme: light) {
-    :root, html, body {
+    :root,
+    html,
+    body {
       @each $key, $value in $light-mode {
         --#{$prefix}-#{$key}: #{$value};
       }
     }
   }
 
-  :root, html, body {
+  :root,
+  html,
+  body {
     --newtab-primary-action-background: var(--mf-accent-color) !important;
   }
 }

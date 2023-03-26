@@ -31,14 +31,15 @@ body {
 }
 
 .tabbrowser-tab {
-
   // tab text color
   &[visuallyselected] {
     color: var(--mf-text-primary) !important;
   }
 
   &:not([visuallyselected]) {
-    color: var(--mf-text-primary) !important; //var(--toolbar-color-unselected) !important;
+    color: var(
+      --mf-text-primary
+    ) !important; //var(--toolbar-color-unselected) !important;
   }
 }
 
@@ -101,7 +102,8 @@ body {
   border-radius: 8px 8px 0 0 !important;
   position: relative !important;
   border: 0 !important;
-  transition: opacity var(--tab-transition-duration) linear, background-color 0s var(--tab-transition-duration) linear !important;
+  transition: opacity var(--tab-transition-duration) linear,
+    background-color 0s var(--tab-transition-duration) linear !important;
   opacity: var(--tab-opacity) !important;
   visibility: visible !important;
   box-shadow: none !important;
@@ -134,10 +136,10 @@ body {
   }
 }
 
-// fix tab courners possition for maximized window 
-#main-window[sizemode="maximized"]{
+// fix tab courners possition for maximized window
+#main-window[sizemode="maximized"] {
   .tab-background {
-    &::before{
+    &::before {
       transform: translate(-8px, 1px) !important;
     }
     &::after {
@@ -145,7 +147,6 @@ body {
     }
   }
 }
-
 
 :-moz-any(#TabsToolbar[brighttext]) {
   .tabbrowser-tab {
@@ -200,7 +201,9 @@ body {
 
 #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab],
 #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-tab]:not([pinned]),
-#tabbrowser-tabs[overflow] .tabbrowser-tab[pinned]+.tabbrowser-tab:not([pinned]) {
+#tabbrowser-tabs[overflow]
+  .tabbrowser-tab[pinned]
+  + .tabbrowser-tab:not([pinned]) {
   margin-inline-start: 8px !important;
 }
 

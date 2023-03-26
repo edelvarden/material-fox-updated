@@ -5,7 +5,6 @@
 
 // Change position
 .browserContainer > findbar {
-
   // Change items position
   -moz-box-align: center !important;
   justify-content: flex-end !important;
@@ -14,7 +13,7 @@
   bottom: 0 !important;
   right: 0 !important;
 
-    height: 48px !important;
+  height: 48px !important;
   width: auto !important;
   max-width: 380px !important;
   min-width: 255px !important;
@@ -38,10 +37,10 @@
   .found-matches {
     padding-right: 10px !important;
   }
-  
+
   // Center position for items
   .findbar-container {
-    align-items: center !important; 
+    align-items: center !important;
     display: flex !important;
     justify-content: center !important;
   }
@@ -76,7 +75,6 @@
 }
 
 .browserContainer > findbar {
-
   .found-matches,
   .findbar-textbox {
     border-right: 1px solid !important;
@@ -86,7 +84,6 @@
 
 // Hide all checkboxes
 .browserContainer > findbar {
-
   .findbar-find-status,
   .findbar-container > checkbox {
     display: none !important;

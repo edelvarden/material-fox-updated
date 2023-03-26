@@ -9,10 +9,13 @@
     "watch:content": "sass --watch src/user-content.scss chrome/user-content.css --no-source-map --style compressed",
     "build": "run-s build:chrome build:content",
     "build:chrome": "sass --no-source-map --style compressed src/user-chrome.scss chrome/user-chrome.css",
-    "build:content": "sass --no-source-map --style compressed src/user-content.scss chrome/user-content.css"
+    "build:content": "sass --no-source-map --style compressed src/user-content.scss chrome/user-content.css",
+    "format": "prettier --write \"src/**/*.+(css|scss|sass)\""
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.7",
+    "stylefmt": "^6.0.3"
   },
   "dependencies": {
     "sass": "^1.58.3"

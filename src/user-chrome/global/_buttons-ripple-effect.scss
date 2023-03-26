@@ -5,7 +5,6 @@ body {
 }
 
 @media (prefers-color-scheme: light) {
-
   html,
   body {
     --circle-icon: url("icons/circle.svg");
@@ -13,7 +12,6 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-
   html,
   body {
     --circle-icon: url("icons/circle-dark.svg");
@@ -48,15 +46,17 @@ body {
 
 // add style for exception buttons, for icon or badge-stack selectors
 @mixin ripple-effect-for-icon {
-  &> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     @include ripple-effect();
   }
 
-  &:is(:active:hover, [checked], [open]):not([disabled])> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  &:is(:active:hover, [checked], [open]):not([disabled])
+    > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     --circle-size: 100%;
   }
 
-  &:not([disabled]):hover> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  &:not([disabled]):hover
+    > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     background-color: var(--mf-control-bgcolor) !important;
     outline-color: var(--mf-control-border-color) !important;
   }
@@ -64,22 +64,24 @@ body {
 
 // effect for url bar buttons, tab scroll buttons & bookmarkbar
 #PlacesChevron:not([collapsed]),
-#PlacesToolbarItems>.bookmark-item,
-:is(.identity-box-button,
-  #notification-popup-box,
-  #tracking-protection-icon-container,
-  #pageActionButton,
-  #urlbar-zoom-button,
-  .urlbar-page-action,
-  #scrollbutton-up,
-  #scrollbutton-down,
-  .tab-close-button,
-  .tab-icon-overlay):not([disabled]) {
+#PlacesToolbarItems > .bookmark-item,
+:is(
+    .identity-box-button,
+    #notification-popup-box,
+    #tracking-protection-icon-container,
+    #pageActionButton,
+    #urlbar-zoom-button,
+    .urlbar-page-action,
+    #scrollbutton-up,
+    #scrollbutton-down,
+    .tab-close-button,
+    .tab-icon-overlay
+  ):not([disabled]) {
   @include ripple-effect-for-button();
 }
 
 // bookmark folder style
-#PlacesToolbarItems>.bookmark-item {
+#PlacesToolbarItems > .bookmark-item {
   --toolbarbutton-border-radius: 4px !important;
   padding: var(--bookmark-block-padding) 6px !important;
 }

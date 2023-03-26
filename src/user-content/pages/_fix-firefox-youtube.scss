@@ -11,7 +11,9 @@
   }
 
   /* // fix info block width */
-  #content.style-scope.ytd-app #meta-contents > ytd-video-secondary-info-renderer {
+  #content.style-scope.ytd-app
+    #meta-contents
+    > ytd-video-secondary-info-renderer {
     width: 100% !important;
   }
 
@@ -32,7 +34,10 @@
 
   /* // fix width */
   #content.style-scope.ytd-app #info-contents ytd-video-primary-info-renderer,
-  #content.style-scope.ytd-app #info-contents ytd-video-primary-info-renderer #container {
+  #content.style-scope.ytd-app
+    #info-contents
+    ytd-video-primary-info-renderer
+    #container {
     width: 100% !important;
   }
 
@@ -40,7 +45,8 @@
   #content.style-scope.ytd-app #comment-teaser,
   #content.style-scope.ytd-app #expand,
   #content.style-scope.ytd-app #owner,
-  #content.style-scope.ytd-app ytd-watch-metadata.watch-active-metadata.style-scope.ytd-watch-flexy {
+  #content.style-scope.ytd-app
+    ytd-watch-metadata.watch-active-metadata.style-scope.ytd-watch-flexy {
     display: none !important;
   }
 
@@ -50,7 +56,9 @@
   }
 
   /* // hide description old elements */
-  #content.style-scope.ytd-app #formatted-snippet-text > :not(.style-scope.yt-formatted-string.bold) {
+  #content.style-scope.ytd-app
+    #formatted-snippet-text
+    > :not(.style-scope.yt-formatted-string.bold) {
     display: none !important;
   }
 

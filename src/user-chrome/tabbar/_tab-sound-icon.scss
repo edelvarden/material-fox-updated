@@ -52,7 +52,11 @@
   // fix opacity
   fill-opacity: 1 !important;
 
-  &:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+  &:not([pinned], [sharing], [crashed]):is(
+      [soundplaying],
+      [muted],
+      [activemedia-blocked]
+    ) {
     display: block !important;
     opacity: 1 !important;
   }
@@ -66,7 +70,8 @@
 .tab-label,
 .tab-icon-overlay {
   transform: translateX(0) !important;
-  transition: transform 333ms cubic-bezier(0.55, 0.55, 0, 1), background-size 167ms linear, background-color 167ms ease !important;
+  transition: transform 333ms cubic-bezier(0.55, 0.55, 0, 1),
+    background-size 167ms linear, background-color 167ms ease !important;
 }
 
 .tabbrowser-tab[pinned]:is([soundplaying], [muted], [activemedia-blocked]) {

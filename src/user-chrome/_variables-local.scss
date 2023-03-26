@@ -1,19 +1,14 @@
 :root {
-
   // regular vars
-  @each $key,
-  $value in $variables {
+  @each $key, $value in $variables {
     --#{$prefix}-#{$key}: #{$value};
   }
 }
 
 // vars for dark mode
 @media (prefers-color-scheme: dark) {
-
   :root {
-
-    @each $key,
-    $value in $dark-mode {
+    @each $key, $value in $dark-mode {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
@@ -21,11 +16,8 @@
 
 // vars for light mode
 @media (prefers-color-scheme: light) {
-
   :root {
-
-    @each $key,
-    $value in $light-mode {
+    @each $key, $value in $light-mode {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
@@ -62,7 +54,6 @@ panel {
 }
 
 @media (prefers-color-scheme: dark) {
-
   html,
   body {
     //----------------------------------------------------------------------
@@ -110,8 +101,16 @@ panel {
     --panel-banner-item-update-supported-bgcolor: rgb(84, 255, 189);
     --panel-description-color: rgba(251, 251, 254, 0.7);
     --panel-disabled-color: rgba(251, 251, 254, 0.5);
-    --panel-item-active-bgcolor: color-mix(in srgb, currentColor 25%, transparent);
-    --panel-item-hover-bgcolor: color-mix(in srgb, currentColor 9%, transparent);
+    --panel-item-active-bgcolor: color-mix(
+      in srgb,
+      currentColor 25%,
+      transparent
+    );
+    --panel-item-hover-bgcolor: color-mix(
+      in srgb,
+      currentColor 9%,
+      transparent
+    );
     --panel-separator-zap-gradient: transparent !important;
 
     --tab-icon-overlay-fill: rgb(251, 251, 254) !important;

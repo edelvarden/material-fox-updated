@@ -2,7 +2,11 @@
 .toolbarbutton-1,
 .subviewbutton,
 .widget-overflow-list .toolbarbutton-1,
-.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton {
+.toolbaritem-combined-buttons:is(
+    :not([cui-areatype="toolbar"]),
+    [overflowedItem="true"]
+  )
+  > toolbarbutton {
   &:not([disabled]) {
     &[shortcut]::after {
       color: #9aa0a6 !important;

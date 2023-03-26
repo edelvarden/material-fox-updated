@@ -38,6 +38,10 @@
   --in-content-page-background: var(--mf-bgcolor-100) !important;
   // secondary controls color
   --in-content-primary-button-background: var(--mf-accent-color) !important;
-  --in-content-primary-button-background-hover: var(--mf-accent-color-hover) !important;
-  --in-content-primary-button-background-active: var(--mf-accent-color) !important;
+  --in-content-primary-button-background-hover: var(
+    --mf-accent-color-hover
+  ) !important;
+  --in-content-primary-button-background-active: var(
+    --mf-accent-color
+  ) !important;
 }

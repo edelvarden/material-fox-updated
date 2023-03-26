@@ -40,7 +40,6 @@
 
 // top sites
 .top-site-outer {
-
   .tile {
     border-radius: 100px !important;
     height: 44px !important;
@@ -53,11 +52,9 @@
     width: 24px !important;
     height: 24px !important;
   }
-
 }
 
 .top-site-outer {
-
   .default-icon,
   .search-topsite {
     background-size: 16px !important;
@@ -83,7 +80,11 @@
 }
 
 .card-outer .card-preview-image-outer,
-.ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) .img-wrapper .img img {
+.ds-card-grid.ds-card-grid-border
+  .ds-card:not(.placeholder)
+  .img-wrapper
+  .img
+  img {
   border-radius: 6px 6px 0 0 !important;
 }
 
@@ -108,13 +109,16 @@
 }
 
 .card-outer .card-preview-image-outer,
-.ds-card-grid.ds-card-grid-border .ds-card:not(.placeholder) .img-wrapper .img img {
+.ds-card-grid.ds-card-grid-border
+  .ds-card:not(.placeholder)
+  .img-wrapper
+  .img
+  img {
   border-radius: 18px 18px 0 0 !important;
 }
 
 // new tab page colors
 @media (prefers-color-scheme: dark) {
-
   html,
   body {
     // main bg color

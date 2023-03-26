@@ -4,12 +4,12 @@
 @import "user-content/pages/index";
 
 @media (-moz-platform: windows) {
-    @-moz-document regexp("about:(?!blank).*") {
-      :root {
-        --#{$prefix}-font-family: #{meta.inspect($font-family)};
-      }
-      * {
-        font-family: var(--#{$prefix}-font-family) !important;
-      }
+  @-moz-document regexp("about:(?!blank).*") {
+    :root {
+      --#{$prefix}-font-family: #{meta.inspect($font-family)};
+    }
+    * {
+      font-family: var(--#{$prefix}-font-family) !important;
     }
   }
+}

@@ -21,11 +21,9 @@ $prefix: mf;
 $font-family: ("Roboto", Arial, sans-serif);
 
 $variables: (
-
   // --------------------------------------------------------------------------------
   // -- Color palette
   // --------------------------------------------------------------------------------
-
   // "grey-50": rgb(248, 249, 250),
   // "grey-100": rgb(241, 243, 244),
   "grey-200": rgb(232, 234, 237),
@@ -39,11 +37,9 @@ $variables: (
   "grey-900-white-4-percent": #292a2d,
   "grey-900-white-5-percent": #35363a,
 
-
   // --------------------------------------------------------------------------------
   // -- Animation
   // --------------------------------------------------------------------------------
-
   // Fast Invoke
   // Direct and subtle
   // Usage: Transitions that are functional and utilitarian should use this curve.
@@ -81,16 +77,14 @@ $variables: (
   // Timing: 83
   "fade-in-out": linear,
 
-
   // --------------------------------------------------------------------------------
   // -- Shadow
   // --------------------------------------------------------------------------------
-
   "shadow-color-rgb": "0,0,0",
   "elevation-2": (
-      rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-      rgba(val(shadow-color-rgb), 0.15) 0 2px 6px 2px,
-    ),
+    rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
+    rgba(val(shadow-color-rgb), 0.15) 0 2px 6px 2px
+  )
 );
 
 $dark-mode: (
@@ -120,43 +114,41 @@ $dark-mode: (
   "tab-outline-color": cm(transparent, black, 0.1),
   "tab-opacity-hover": 0.5,
   // navbar
-  "icon-color": #8F8F8F
+  "icon-color": #8f8f8f
 );
 
 $light-mode: (
   // Accent colors
-  "accent-color": #4285F4,
+  "accent-color": #4285f4,
   "accent-color-hover": cm(transparent, val(accent-color), 0.8),
-
   // UI background colors
-  "bgcolor-0": #FFFFFF,
-  "bgcolor-50": #F1F3F4,
-  "bgcolor-100": #E8EAED,
+  "bgcolor-0": #ffffff,
+  "bgcolor-50": #f1f3f4,
+  "bgcolor-100": #e8eaed,
 
   // UI text
   "text-primary": #202124,
-  "text-secondary": #70757A,
-  "text-disabled": #BEC0C4,
+  "text-secondary": #70757a,
+  "text-disabled": #bec0c4,
 
   // Link text color
-  "text-accent-primary": #1967D2,
-  "text-accent-secondary": #1A73E8,
+  "text-accent-primary": #1967d2,
+  "text-accent-secondary": #1a73e8,
 
   // Primary button text color
   "text-on-accent-primary": white,
 
   // Button, Dropdown, Search inputs
-  "control-bgcolor": #F1F3F4,
+  "control-bgcolor": #f1f3f4,
   "control-border-color": transparent,
   "control-bgcolor-secondary": white,
-  "control-bgcolor-disabled": #F1F3F4,
+  "control-bgcolor-disabled": #f1f3f4,
 
   // Tab bar
-  "tab-separator-color": #E8EAED,
+  "tab-separator-color": #e8eaed,
   "tab-outline-color": rgba(black, 0.2),
   "tab-opacity-hover": 0.1,
 
   // Navbar
-  "icon-color": #8F8F8F,
+  "icon-color": #8f8f8f
 );
-

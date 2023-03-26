@@ -33,7 +33,6 @@ body {
 
 // no src icon
 .tab-icon-image {
-
   &:not([src]),
   &:-moz-broken {
     content: var(--no-src-icon) !important;
@@ -51,7 +50,8 @@ body {
 
 // set no src icon for url result list
 #urlbar-results {
-  .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
+  .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"]
+  {
     fill: transparent !important;
     background: var(--no-src-icon) !important;
   }
@@ -89,7 +89,7 @@ body {
 .unidied-nav-back[_moz-menuactive]:-moz-locale-dir(rtl) {
   list-style-image: var(--arrow-back-icon) !important;
 
-  &>hbox>image {
+  & > hbox > image {
     transform: scaleX(-1) !important;
   }
 }
@@ -132,24 +132,35 @@ body {
     list-style-image: var(--lock-icon) !important;
   }
 
-  &:is(.notSecure,
-    .mixedActiveContent,
-    .httpsOnlyErrorPage,
-    .weakCipher,
-    .mixedDisplayContent,
-    .mixedDisplayContentLoadedActiveBlocked,
-    .certUserOverridden,
-    &.certErrorPage) #identity-icon {
+  &:is(
+      .notSecure,
+      .mixedActiveContent,
+      .httpsOnlyErrorPage,
+      .weakCipher,
+      .mixedDisplayContent,
+      .mixedDisplayContentLoadedActiveBlocked,
+      .certUserOverridden,
+      &.certErrorPage
+    )
+    #identity-icon {
     list-style-image: var(--warning-icon) !important;
   }
 }
 
 #identity-popup {
-  &[connection^="secure"] .identity-popup-security-connection .identity-popup-security-connection-icon {
+  &[connection^="secure"]
+    .identity-popup-security-connection
+    .identity-popup-security-connection-icon {
     list-style-image: var(--lock-icon) !important;
   }
 
-  &:is([connection="secure-cert-user-overridden"], [connection="cert-error-page"], [connection^="not-secure"]) .identity-popup-security-connection .identity-popup-security-connection-icon {
+  &:is(
+      [connection="secure-cert-user-overridden"],
+      [connection="cert-error-page"],
+      [connection^="not-secure"]
+    )
+    .identity-popup-security-connection
+    .identity-popup-security-connection-icon {
     list-style-image: var(--warning-icon) !important;
     // fill: var(--error-text-color) !important;
   }
@@ -228,7 +239,7 @@ treechildren::-moz-tree-image(container) {
 }
 
 // checked icon
-menuitem[checked="true"]>.menu-iconic-left {
+menuitem[checked="true"] > .menu-iconic-left {
   list-style-image: var(--check-icon) !important;
 }
 

@@ -8,7 +8,8 @@
   --urlbar-container-height: 36px !important;
 }
 
-html, body {
+html,
+body {
   --urlbar-min-height: 28px !important; // Minimum Height
   --toolbarbutton-height: 28px !important; // Button Height
   --toolbarbutton-inner-padding: 6px !important; // Button Inner Padding
@@ -25,7 +26,9 @@ html, body {
 #urlbar-go-button,
 .search-go-button {
   width: auto !important;
-  height: calc(var(--urlbar-height) - var(--urlbar-container-padding) * 2) !important;
+  height: calc(
+    var(--urlbar-height) - var(--urlbar-container-padding) * 2
+  ) !important;
   border-radius: var(--urlbar-icon-border-radius) !important;
   padding: 0 8px !important;
   -moz-box-pack: center !important;
