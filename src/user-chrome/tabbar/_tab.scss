@@ -134,6 +134,19 @@ body {
   }
 }
 
+// fix tab courners possition for maximized window 
+#main-window[sizemode="maximized"]{
+  .tab-background {
+    &::before{
+      transform: translate(-8px, 1px) !important;
+    }
+    &::after {
+      transform: translate(8px, 1px) !important;
+    }
+  }
+}
+
+
 :-moz-any(#TabsToolbar[brighttext]) {
   .tabbrowser-tab {
     --tab-bgcolor: var(--toolbar-bgcolor) !important;

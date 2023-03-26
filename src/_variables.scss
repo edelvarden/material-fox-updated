@@ -124,30 +124,39 @@ $dark-mode: (
 );
 
 $light-mode: (
+  // Accent colors
   "accent-color": #4285F4,
   "accent-color-hover": cm(transparent, val(accent-color), 0.8),
+
   // UI background colors
   "bgcolor-0": #FFFFFF,
   "bgcolor-50": #F1F3F4,
   "bgcolor-100": #E8EAED,
+
   // UI text
   "text-primary": #202124,
   "text-secondary": #70757A,
   "text-disabled": #BEC0C4,
+
   // Link text color
   "text-accent-primary": #1967D2,
   "text-accent-secondary": #1A73E8,
+
   // Primary button text color
   "text-on-accent-primary": white,
+
   // Button, Dropdown, Search inputs
   "control-bgcolor": #F1F3F4,
   "control-border-color": transparent,
   "control-bgcolor-secondary": white,
   "control-bgcolor-disabled": #F1F3F4,
+
   // Tab bar
   "tab-separator-color": #E8EAED,
   "tab-outline-color": rgba(black, 0.2),
   "tab-opacity-hover": 0.1,
-  // navbar
+
+  // Navbar
   "icon-color": #8F8F8F,
 );
+

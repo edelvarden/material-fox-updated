@@ -24,8 +24,3 @@ dist-ssr
 
 # ignore
 node_modules
-userChrome.css
-userContent.css
-
-# exception
-!chrome/*

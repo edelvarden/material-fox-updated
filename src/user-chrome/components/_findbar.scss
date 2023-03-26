@@ -99,22 +99,18 @@
 .findbar-find-previous,
 .findbar-find-next {
   --button-size: 24px;
-  border-radius: 4px !important;
-  margin: 0 10px 0 0 !important;
+  border-radius: 50% !important;
+  padding: 6px !important;
   max-height: var(--button-size) !important;
   max-width: var(--button-size) !important;
   min-height: var(--button-size) !important;
   min-width: var(--button-size) !important;
-  padding: 4px !important;
-}
-
-// Fix arrow icons size
-.findbar-find-next,
-.findbar-find-previous,
-.findbar-closebutton {
 
   & > .toolbarbutton-icon {
-    padding: 2px !important;
+    display: block !important;
+    height: 18px !important;
+    width: 18px !important;
+    padding: 0 !important;
   }
 }
 
@@ -132,6 +128,10 @@
   &::placeholder {
     color: transparent !important;
   }
+}
+
+.browserContainer > findbar[hidden] {
+  opacity: 0 !important;
 }
 
 // Fix input bg color
