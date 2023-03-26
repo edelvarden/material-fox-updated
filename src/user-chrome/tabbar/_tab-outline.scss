@@ -2,7 +2,7 @@
 #nav-bar {
   margin-top: -1px !important;
   border-top: 1px solid !important;
-  border-color: val(tab-outline-color) !important;
+  border-color: var(--mf-tab-outline-color) !important;
 }
 
 .tabbrowser-tab[visuallyselected] {
@@ -10,7 +10,7 @@
   .tab-background::before,
   .tab-background::after {
     outline: 1px solid !important;
-    outline-color: val(tab-outline-color) !important;
+    outline-color: var(--mf-tab-outline-color) !important;
     outline-offset: 0 !important;
   }
 }

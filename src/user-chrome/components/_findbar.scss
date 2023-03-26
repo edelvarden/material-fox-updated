@@ -53,7 +53,7 @@
   &:not([hidden]) {
     animation-duration: 333ms, 187ms !important;
     animation-name: findbar-opacity, findbar-transform !important;
-    animation-timing-function: val(point-to-point), ease-out !important;
+    animation-timing-function: var(--mf-point-to-point), ease-out !important;
   }
 
   &[hidden] {

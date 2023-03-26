@@ -2,9 +2,8 @@
   "name": "material-fox-updated",
   "type": "module",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
-    "start": "vite",
     "watch": "run-s watch:chrome watch:content",
     "watch:chrome": "sass --watch src/user-chrome.scss chrome/user-chrome.css --no-source-map --style compressed",
     "watch:content": "sass --watch src/user-content.scss chrome/user-content.css --no-source-map --style compressed",
@@ -13,12 +12,9 @@
     "build:content": "sass --no-source-map --style compressed src/user-content.scss chrome/user-content.css"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "vite": "^4.1.0"
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {
-    "cssnano": "^5.1.15",
-    "cssnano-preset-advanced": "^5.3.10",
     "sass": "^1.58.3"
   },
   "browserslist": [

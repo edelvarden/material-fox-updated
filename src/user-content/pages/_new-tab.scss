@@ -19,7 +19,7 @@
   padding-inline-start: 48px !important;
   white-space: nowrap !important;
   text-overflow: ellipsis !important;
-  box-shadow: #{val(elevation-2)} !important;
+  box-shadow: var(--mf-elevation-2) !important;
 }
 
 .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
@@ -118,13 +118,13 @@
   html,
   body {
     // main bg color
-    --newtab-background-color: #{val(bgcolor-100)} !important;
+    --newtab-background-color: var(--mf-bgcolor-100) !important;
     // secondary controls color
-    --newtab-background-color-secondary: #{val(bgcolor-0)} !important;
+    --newtab-background-color-secondary: var(--mf-bgcolor-0) !important;
     // controls bgcolor hover
-    --newtab-element-hover-color: #{val(control-bgcolor)} !important;
+    --newtab-element-hover-color: var(--mf-control-bgcolor) !important;
     // text & svg fill color
-    --newtab-text-primary-color: #{val(text-primary)} !important;
+    --newtab-text-primary-color: var(--mf-text-primary) !important;
   }
 }
 
@@ -134,5 +134,5 @@
 }
 
 // .card-outer {
-//   box-shadow: val(elevation-2) !important;
+//   box-shadow: var(--mf-elevation-2) !important;
 // }

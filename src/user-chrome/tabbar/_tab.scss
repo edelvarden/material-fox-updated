@@ -5,7 +5,7 @@ body {
 
 .tabbrowser-tab {
   --tab-opacity: 0;
-  --tab-bgcolor: val(bgcolor-100);
+  --tab-bgcolor: var(--mf-bgcolor-100);
   --tab-transition-duration: 83ms;
   overflow: visible !important;
   border: 0 !important;
@@ -34,11 +34,11 @@ body {
 
   // tab text color
   &[visuallyselected] {
-    color: #{val(text-primary)} !important;
+    color: var(--mf-text-primary) !important;
   }
 
   &:not([visuallyselected]) {
-    color: #{val(text-primary)} !important; //var(--toolbar-color-unselected) !important;
+    color: var(--mf-text-primary) !important; //var(--toolbar-color-unselected) !important;
   }
 }
 
@@ -157,7 +157,7 @@ body {
 .tabbrowser-tab[multiselected]:not([selected="true"]),
 #TabsToolbar[brighttext] .tabbrowser-tab:not([selected="true"]):hover,
 #TabsToolbar[brighttext] .tabbrowser-tab[multiselected]:not([selected="true"]) {
-  --tab-opacity: #{val(tab-opacity-hover)};
+  --tab-opacity: var(--mf-tab-opacity-hover);
 }
 
 #TabsToolbar {

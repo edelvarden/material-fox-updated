@@ -26,9 +26,9 @@
 
   // &:hover {
   //   & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-  //     background: val(control-bgcolor) !important;
+  //     background: var(--mf-control-bgcolor) !important;
   //     outline: 1px solid transparent !important;
-  //     outline-color: val(control-border-color) !important;
+  //     outline-color: var(--mf-control-border-color) !important;
   //   }
   // }
 }
@@ -43,9 +43,9 @@
   transition: background-color 83ms linear !important;
 
   &:hover {
-    background: val(control-bgcolor) !important;
+    background: var(--mf-control-bgcolor) !important;
     outline: 1px solid transparent !important;
-    outline-color: val(control-border-color) !important;
+    outline-color: var(--mf-control-border-color) !important;
   }
 }
 

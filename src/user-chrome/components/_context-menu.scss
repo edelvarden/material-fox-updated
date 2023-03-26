@@ -15,7 +15,7 @@
 
   // separator color
   menuseparator {
-    border-color: #{val(tab-separator-color)} !important;
+    border-color: var(--mf-tab-separator-color) !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
