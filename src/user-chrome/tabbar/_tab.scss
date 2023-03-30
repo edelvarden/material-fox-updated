@@ -230,3 +230,8 @@ body {
 #tabbrowser-arrowscrollbox .tabbrowser-tab:is(:first-child) {
   margin-left: 8px !important;
 }
+
+// fix for firefox view button (black border under tabbar)
+#TabsToolbar .toolbarbutton-1 {
+  margin: 0 !important;
+}
