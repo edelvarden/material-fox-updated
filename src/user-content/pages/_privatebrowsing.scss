@@ -33,7 +33,11 @@
 }
 
 // private browsing page colors
-:is(html, body) {
+:root,
+html,
+body {
+  --in-content-text-color: var(--mf-text-primary) !important;
+  --in-content-page-color: var(--mf-text-primary) !important;
   // main bg color
   --in-content-page-background: var(--mf-bgcolor-100) !important;
   // secondary controls color

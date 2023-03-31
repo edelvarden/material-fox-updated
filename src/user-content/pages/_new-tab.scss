@@ -119,6 +119,7 @@
 
 // new tab page colors
 @media (prefers-color-scheme: dark) {
+  :root,
   html,
   body {
     // main bg color
@@ -132,6 +133,26 @@
   }
 }
 
+@media (prefers-color-scheme: light) {
+  :root,
+  html,
+  body {
+    // main bg color
+    --newtab-background-color: var(--mf-bgcolor-100) !important;
+    // secondary controls color
+    --newtab-background-color-secondary: var(--mf-bgcolor-100) !important;
+    // controls bgcolor hover
+    --newtab-element-hover-color: var(--mf-bgcolor-0) !important;
+    // text & svg fill color
+    --newtab-text-primary-color: var(--mf-text-primary) !important;
+  }
+
+  // new tab shortcuts bg color
+  .top-site-outer .tile {
+    --newtab-background-color-secondary: var(--mf-bgcolor-50) !important;
+  }
+}
+
 // new tab shortcuts
 .top-site-outer {
   border-radius: 18px !important;
@@ -140,3 +161,9 @@
 // .card-outer {
 //   box-shadow: var(--mf-elevation-2) !important;
 // }
+
+// searchbar shadow
+.search-wrapper .search-handoff-button,
+.search-wrapper input {
+  box-shadow: var(--mf-elevation-2) !important;
+}

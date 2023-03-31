@@ -31,7 +31,7 @@ $variables: (
   // "grey-400": rgb(189, 193, 198),
   "grey-500": rgb(154, 160, 166),
   // "grey-600": rgb(128, 134, 139),
-  // "grey-700": rgb(95, 99, 104),
+  "grey-700": rgb(95, 99, 104),
   // "grey-800": rgb(60, 64, 67),
   "grey-900": rgb(32, 33, 36),
   "grey-900-white-4-percent": #292a2d,
@@ -95,6 +95,10 @@ $dark-mode: (
   "bgcolor-0": val(grey-900),
   "bgcolor-50": val(grey-900-white-4-percent),
   "bgcolor-100": val(grey-900-white-5-percent),
+  // Optional feature: Github theme colors
+  // "bgcolor-0": #0d1117,
+  // "bgcolor-50": #161b22,
+  // "bgcolor-100": #21262d,
   // UI text
   "text-primary": val(grey-200),
   "text-secondary": val(grey-500),
@@ -122,13 +126,13 @@ $light-mode: (
   "accent-color": #4285f4,
   "accent-color-hover": cm(transparent, val(accent-color), 0.8),
   // UI background colors
-  "bgcolor-0": #ffffff,
+  "bgcolor-0": #dee1e6,
   "bgcolor-50": #f1f3f4,
-  "bgcolor-100": #e8eaed,
+  "bgcolor-100": #fff,
 
   // UI text
-  "text-primary": #202124,
-  "text-secondary": #70757a,
+  "text-primary": val(grey-900),
+  "text-secondary": val(grey-700),
   "text-disabled": #bec0c4,
 
   // Link text color
@@ -145,9 +149,9 @@ $light-mode: (
   "control-bgcolor-disabled": #f1f3f4,
 
   // Tab bar
-  "tab-separator-color": #e8eaed,
-  "tab-outline-color": rgba(black, 0.2),
-  "tab-opacity-hover": 0.1,
+  "tab-separator-color": cm(transparent, black, 0.2),
+  "tab-outline-color": cm(transparent, black, 0.2),
+  "tab-opacity-hover": 0.5,
 
   // Navbar
   "icon-color": #8f8f8f

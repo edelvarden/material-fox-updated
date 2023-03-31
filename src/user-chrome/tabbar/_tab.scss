@@ -5,7 +5,7 @@ body {
 
 .tabbrowser-tab {
   --tab-opacity: 0;
-  --tab-bgcolor: var(--mf-bgcolor-100);
+  --tab-bgcolor: var(--mf-bgcolor-100) !important;
   --tab-transition-duration: 83ms;
   overflow: visible !important;
   border: 0 !important;

@@ -59,3 +59,17 @@ body {
   font: unset !important;
   font-size: 14px !important;
 }
+
+#urlbar-background,
+#searchbar {
+  background-color: var(--mf-bgcolor-50) !important;
+}
+
+#urlbar {
+  &[open] {
+    #urlbar-background,
+    #searchbar {
+      background-color: var(--mf-bgcolor-100) !important;
+    }
+  }
+}
