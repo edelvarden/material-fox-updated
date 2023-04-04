@@ -112,11 +112,16 @@ panel {
       transparent
     );
     --panel-separator-zap-gradient: transparent !important;
-
     --tab-icon-overlay-fill: rgb(251, 251, 254) !important;
-
     --toolbar-field-border-color: transparent !important;
-
     --toolbarbutton-icon-fill: rgb(251, 251, 254);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not(:-moz-window-inactive) #navigator-toolbox{
+    #toolbar-menubar, #TabsToolbar {
+      background-color: var(--mf-bgcolor-0) !important;
+    }
   }
 }
