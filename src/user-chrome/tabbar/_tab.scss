@@ -221,6 +221,12 @@ body {
   padding-top: 8px !important;
 }
 
+#main-window:not([sizemode="normal"]) #alltabs-button > stack {
+  display: grid !important;
+  align-items: center !important;
+  // justify-content: center !important;
+}
+
 // tab inline padding
 .tab-content {
   padding: 0 12px !important;

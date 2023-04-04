@@ -112,13 +112,14 @@ body {
   -moz-box-align: center !important; // fix refresh icon cropping
 }
 
-#reload-button .toolbarbutton-icon {
-  padding: var(--toolbarbutton-inner-padding) !important;
-}
-
 // stop icon
 #stop-button {
   list-style-image: var(--close-icon) !important;
+}
+
+#reload-button .toolbarbutton-icon,
+#stop-button .toolbarbutton-icon {
+  padding: 2px !important;
 }
 
 // home icon
