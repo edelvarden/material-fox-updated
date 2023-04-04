@@ -119,9 +119,18 @@ panel {
 }
 
 @media (prefers-color-scheme: light) {
-  :root:not(:-moz-window-inactive) #navigator-toolbox{
-    #toolbar-menubar, #TabsToolbar {
+  :root:not(:-moz-window-inactive) #navigator-toolbox {
+    #toolbar-menubar,
+    #TabsToolbar {
       background-color: var(--mf-bgcolor-0) !important;
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root:-moz-window-inactive #navigator-toolbox {
+    #toolbar-menubar,
+    #TabsToolbar {
+      background-color: var(--mf-bgcolor-50) !important;
     }
   }
 }
