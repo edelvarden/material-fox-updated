@@ -9,7 +9,7 @@
   > toolbarbutton {
   &:not([disabled]) {
     &[shortcut]::after {
-      color: #9aa0a6 !important;
+      color: var(--mf-text-secondary) !important;
     }
 
     &:hover[shortcut]::after {
