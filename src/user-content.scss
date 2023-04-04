@@ -1,7 +1,7 @@
 @use "sass:meta";
 @import "variables";
 @import "user-content/variables-local";
-@import "user-content/pages/index";
+@import "user-content/pages/_index__";
 
 @media (-moz-platform: windows) {
   @-moz-document regexp("about:(?!blank).*") {

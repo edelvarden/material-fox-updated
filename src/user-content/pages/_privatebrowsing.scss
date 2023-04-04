@@ -49,3 +49,7 @@ body {
     --mf-accent-color
   ) !important;
 }
+
+.fake-caret {
+  background-color: var(--in-content-text-color) !important;
+}
