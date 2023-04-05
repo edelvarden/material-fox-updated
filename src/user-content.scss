@@ -11,5 +11,16 @@
     * {
       font-family: var(--#{$prefix}-font-family) !important;
     }
+
+    ::selection {
+      background-color: #4285f4 !important;
+      color: #ffffff !important;
+    }
+    @media (prefers-color-scheme: light) {
+      ::selection {
+        background-color: #c2d7ff !important;
+        color: #000 !important;
+      }
+    }
   }
 }
