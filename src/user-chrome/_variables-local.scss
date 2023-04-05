@@ -34,6 +34,11 @@ toolbar {
 }
 
 :root,
+:is(panel, toolbar, #urlbar, #searchbar) {
+  --toolbar-field-icon-fill-attention: var(--mf-accent-color) !important;
+}
+
+:root,
 html,
 body {
   --panel-banner-item-info-icon-bgcolor: var(--mf-accent-color) !important;

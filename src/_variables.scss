@@ -118,7 +118,7 @@ $dark-mode: (
   "tab-outline-color": cm(transparent, black, 0.1),
   "tab-opacity-hover": 0.5,
   // navbar
-  "icon-color": val(grey-500),
+  "icon-color": val(grey-500)
 );
 
 $light-mode: (
@@ -147,7 +147,6 @@ $light-mode: (
   "control-border-color": transparent,
   "control-bgcolor-secondary": val(bgcolor-100),
   "control-bgcolor-disabled": val(bgcolor-50),
-
   // Tab bar
   "tab-separator-color": cm(transparent, black, 0.2),
   "tab-outline-color": cm(transparent, black, 0.2),
