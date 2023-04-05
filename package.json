@@ -4,7 +4,7 @@
   "private": true,
   "version": "0.0.2",
   "scripts": {
-    "watch": "run-s watch:chrome watch:content",
+    "watch": "npm-run-all --parallel watch:chrome watch:content",
     "watch:chrome": "sass --watch src/user-chrome.scss chrome/user-chrome.css --no-source-map --style compressed",
     "watch:content": "sass --watch src/user-content.scss chrome/user-content.css --no-source-map --style compressed",
     "build": "run-s build:chrome build:content",
