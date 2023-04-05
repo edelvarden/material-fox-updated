@@ -29,8 +29,8 @@ Project structure
         ├── user-content
         ├── user-chrome.scss
         └── user-content.scss
-    ├── pachage-lock.json
-    ├── pachage.json
+    ├── package-lock.json
+    ├── package.json
     ├── userChrome.css
     └── userContent.css
 ```
