@@ -1,3 +1,4 @@
+$menu-min-width: 220px;
 // context menu
 @media (-moz-platform: windows) or (-moz-platform: linux) {
   // context menu bgcolor & drop shadow
@@ -33,6 +34,7 @@
 
   // string style for back/forward/reload/bookmark menu items
   #context-navigation:not([hidden]) {
+    min-width: $menu-min-width !important;
     background-color: inherit;
     // padding-bottom: 0.4em !important;
     display: flex !important;
@@ -96,5 +98,20 @@
   menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
     background-color: get-var("menu-separator-color") !important;
     color: inherit !important;
+  }
+
+  // hide "Bookmark Page.."
+  #context-bookmarkpage {
+    display: none !important;
+  }
+
+  // hide "Save Page to Pocket"
+  #context-pocket {
+    display: none !important;
+  }
+
+  // hide "Inspect Accessibility Properties"
+  #context-inspect-a11y {
+    display: none !important;
   }
 }
