@@ -5,13 +5,13 @@
     background-color: var(--arrowpanel-background) !important;
     // border: none !important;
     border: 1px solid !important;
-    border-color: get-var("tab-separator-color") !important;
+    border-color: get-var("menu-separator-color") !important;
     box-shadow: get-var("elevation-2") !important;
   }
 
   // separator color
   menuseparator {
-    border-color: get-var("tab-separator-color") !important;
+    border-color: get-var("menu-separator-color") !important;
     margin-left: 1px !important;
     margin-right: 1px !important;
   }
@@ -21,15 +21,15 @@
   $image-width: 16px;
   $image-padding-end: 8px;
 
-  menuitem:not([image]) {
+  #contentAreaContextMenu menuitem:not([image]) {
     padding-inline-start: calc(
       $default-padding + $image-width + $image-padding-end
     ) !important;
   }
-  menupopup > menuitem,
-  menupopup > menu {
-    // padding-block: 0.4em !important;
-  }
+  // menupopup > menuitem,
+  // menupopup > menu {
+  //   padding-block: 0.4em !important;
+  // }
 
   // string style for back/forward/reload/bookmark menu items
   #context-navigation:not([hidden]) {
@@ -94,7 +94,7 @@
   // menu item hover bg color
   menu:where([_moz-menuactive="true"]:not([disabled="true"])),
   menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
-    background-color: get-var("tab-separator-color") !important;
+    background-color: get-var("menu-separator-color") !important;
     color: inherit !important;
   }
 }

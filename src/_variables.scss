@@ -133,6 +133,7 @@ $dark-mode: (
   "control-bgcolor-disabled": cm(get-var(bgcolor-0), white, 0.0419),
   // Menu, Popups
   "menu-bgcolor": get-var(bgcolor-50),
+  "menu-separator-color": get-var(grey-800),
   // Tab bar
   "tab-separator-color": cm(transparent, white, 0.2),
   "tab-outline-color": cm(transparent, black, 0.1),
@@ -169,6 +170,7 @@ $light-mode: (
   "control-bgcolor-disabled": get-var(bgcolor-50),
   // Menu, Popups
   "menu-bgcolor": get-var(bgcolor-100),
+  "menu-separator-color": get-var(bgcolor-0),
   // Tab bar
   "tab-separator-color": cm(transparent, black, 0.2),
   "tab-outline-color": cm(transparent, black, 0.2),
