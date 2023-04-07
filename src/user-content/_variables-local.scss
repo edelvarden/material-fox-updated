@@ -32,6 +32,6 @@
   :root,
   html,
   body {
-    --newtab-primary-action-background: var(--mf-accent-color) !important;
+    --newtab-primary-action-background: #{get-var("accent-color")} !important;
   }
 }

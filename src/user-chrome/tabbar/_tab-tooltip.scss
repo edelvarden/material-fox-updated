@@ -24,11 +24,11 @@
 
   color: var(--arrowpanel-color) !important;
   background: var(--arrowpanel-background) !important;
-  box-shadow: var(--mf-elevation-2) !important;
+  box-shadow: get-var("elevation-2") !important;
 }
 
 .tabbrowser-tab:hover::after {
-  animation: show-tooltip 333ms var(--mf-point-to-point) forwards;
+  animation: show-tooltip 333ms get-var("point-to-point") forwards;
   animation-delay: 0.75s;
 }
 

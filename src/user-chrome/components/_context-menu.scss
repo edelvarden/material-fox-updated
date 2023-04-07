@@ -28,13 +28,13 @@
   }
   menupopup > menuitem,
   menupopup > menu {
-    padding-block: 0.4em !important;
+    // padding-block: 0.4em !important;
   }
 
   // string style for back/forward/reload/bookmark menu items
   #context-navigation:not([hidden]) {
     background-color: inherit;
-    padding-bottom: 0.4em !important;
+    // padding-bottom: 0.4em !important;
     display: flex !important;
     flex-direction: column !important;
 
@@ -76,16 +76,18 @@
     > .menu-iconic-icon {
     width: 100% !important;
     height: auto !important;
+    min-height: $menu-item-height !important;
     max-height: $menu-item-height !important;
     padding: 0 !important;
     margin: 0 !important;
-    padding-block: 0.4em !important;
+    // padding-block: 0.4em !important;
   }
 
   // other menu items
   menupopup > menu,
   menupopup > menuitem,
   menupopup > menucaption {
+    min-height: $menu-item-height !important;
     max-height: $menu-item-height !important;
   }
 

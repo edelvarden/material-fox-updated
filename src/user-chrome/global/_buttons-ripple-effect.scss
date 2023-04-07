@@ -39,8 +39,8 @@ body {
   }
 
   &:hover {
-    background-color: var(--mf-control-bgcolor) !important;
-    outline-color: var(--mf-control-border-color) !important;
+    background-color: get-var("control-bgcolor") !important;
+    outline-color: get-var("control-border-color") !important;
   }
 }
 
@@ -57,8 +57,8 @@ body {
 
   &:not([disabled]):hover
     > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-    background-color: var(--mf-control-bgcolor) !important;
-    outline-color: var(--mf-control-border-color) !important;
+    background-color: get-var("control-bgcolor") !important;
+    outline-color: get-var("control-border-color") !important;
   }
 }
 

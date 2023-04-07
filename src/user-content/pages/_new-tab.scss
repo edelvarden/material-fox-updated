@@ -19,7 +19,7 @@
   padding-inline-start: 48px !important;
   white-space: nowrap !important;
   text-overflow: ellipsis !important;
-  box-shadow: var(--mf-elevation-2) !important;
+  box-shadow: get-var("elevation-2") !important;
 }
 
 .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
@@ -123,13 +123,13 @@
   html,
   body {
     // main bg color
-    --newtab-background-color: var(--mf-bgcolor-100) !important;
+    --newtab-background-color: #{get-var("bgcolor-100")} !important;
     // secondary controls color
-    --newtab-background-color-secondary: var(--mf-bgcolor-0) !important;
+    --newtab-background-color-secondary: #{get-var("bgcolor-0")} !important;
     // controls bgcolor hover
-    --newtab-element-hover-color: var(--mf-control-bgcolor) !important;
+    --newtab-element-hover-color: #{get-var("control-bgcolor")} !important;
     // text & svg fill color
-    --newtab-text-primary-color: var(--mf-text-primary) !important;
+    --newtab-text-primary-color: #{get-var("text-primary")} !important;
   }
 }
 
@@ -138,18 +138,18 @@
   html,
   body {
     // main bg color
-    --newtab-background-color: var(--mf-bgcolor-100) !important;
+    --newtab-background-color: #{get-var("bgcolor-100")} !important;
     // secondary controls color
-    --newtab-background-color-secondary: var(--mf-bgcolor-100) !important;
+    --newtab-background-color-secondary: #{get-var("bgcolor-100")} !important;
     // controls bgcolor hover
-    --newtab-element-hover-color: var(--mf-bgcolor-0) !important;
+    --newtab-element-hover-color: #{get-var("bgcolor-0")} !important;
     // text & svg fill color
-    --newtab-text-primary-color: var(--mf-text-primary) !important;
+    --newtab-text-primary-color: #{get-var("text-primary")} !important;
   }
 
   // new tab shortcuts bg color
   .top-site-outer .tile {
-    --newtab-background-color-secondary: var(--mf-bgcolor-50) !important;
+    --newtab-background-color-secondary: #{get-var("bgcolor-50")} !important;
   }
 }
 
@@ -165,5 +165,5 @@
 // searchbar shadow
 .search-wrapper .search-handoff-button,
 .search-wrapper input {
-  box-shadow: var(--mf-elevation-2) !important;
+  box-shadow: get-var("elevation-2") !important;
 }

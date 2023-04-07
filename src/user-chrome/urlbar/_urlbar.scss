@@ -63,14 +63,14 @@ body {
 @media (prefers-color-scheme: light) {
   #urlbar-background,
   #searchbar {
-    background-color: var(--mf-bgcolor-50) !important;
+    background-color: get-var("bgcolor-50") !important;
   }
 
   #urlbar {
     &[open] {
       #urlbar-background,
       #searchbar {
-        background-color: var(--mf-bgcolor-100) !important;
+        background-color: get-var("bgcolor-100") !important;
       }
     }
   }

@@ -1,11 +1,12 @@
+// bookmark popup
 #editBookmarkPanel {
   @media (prefers-color-scheme: dark) {
     input,
     menulist,
     .expander-down {
       border: 1px solid;
-      border-color: var(--mf-tab-separator-color) !important;
-      background-color: var(--mf-bgcolor-0) !important;
+      border-color: get-var("tab-separator-color") !important;
+      background-color: get-var("bgcolor-0") !important;
       border-radius: 4px !important;
     }
   }

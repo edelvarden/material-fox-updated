@@ -2,7 +2,7 @@
 #star-button-box {
   display: flex !important;
   align-items: center !important;
-  --toolbarbutton-icon-fill-attention: var(--mf-accent-color) !important;
+  --toolbarbutton-icon-fill-attention: #{get-var("accent-color")} !important;
 }
 
 // disable animation for star button

@@ -25,7 +25,8 @@
 #tracking-protection-icon-container,
 #notification-popup-box,
 .urlbar-icon {
-  fill: var(--mf-icon-color) !important;
+  fill: get-var("icon-color-secondary") !important;
+  color: get-var("text-primary") !important;
 }
 
 // URL popup icons
@@ -35,7 +36,7 @@
 .popup-notification-icon,
 .permission-popup-permission-icon,
 .subviewbutton-iconic > .toolbarbutton-icon {
-  fill: var(--mf-icon-color) !important;
+  fill: get-var("icon-color-secondary") !important;
 }
 
 // URL bar icons hover

@@ -9,7 +9,7 @@
   > toolbarbutton {
   &:not([disabled]) {
     &[shortcut]::after {
-      color: var(--mf-text-secondary) !important;
+      color: get-var("text-secondary") !important;
     }
 
     &:hover[shortcut]::after {
@@ -18,35 +18,16 @@
   }
 }
 
-// menu open animation
-// panel[type="arrow"][animate][animate="open"] {
-//   transform: scale(1) !important;
-//   transition-duration: 333ms, 187ms !important;
-//   transition-timing-function: var(--mf-point-to-point), ease-out !important;
-// }
-
-// panel[type="arrow"]:not([animate="false"]) {
-//   // transition-property: transform, opacity;
-//   transform: scale(0.9) !important;
-//   transition-duration: 333ms, 187ms !important;
-//   transition-timing-function: var(--mf-point-to-point), ease-in-out !important;
-// }
-
-// tab padding if not maximized
-// :is(:root, .tabbrowser-tab) {
-//     --tab-min-height: 32px !important;
-// }
-
-// :root[tabsintitlebar][sizemode="normal"] #titlebar {
-//     .tab-stack {
-//         padding: 8px 0 0 0 !important;
-//     }
-
-//     :is(#tabbrowser-tabs, #tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs]>#tabbrowser-arrowscrollbox>.tabbrowser-tab[pinned]) {
-//         min-height: 40px !important;
-//     }
-
-//     #TabsToolbar .toolbarbutton-1 {
-//         padding: 8px 0 0 0 !important;
-//     }
-// }
+// separator style
+#widget-overflow-mainView > toolbarseparator,
+#widget-overflow-mainView > .panel-subview-body > toolbarseparator,
+.PanelUI-subView toolbarseparator,
+#unified-extensions-panel toolbarseparator,
+#permission-popup-mainView > toolbarseparator,
+#editBookmarkPanel toolbarseparator,
+#downloadsFooterButtons > toolbarseparator,
+.cui-widget-panel toolbarseparator {
+  border-top: 1px solid !important;
+  border-color: get-var("tab-separator-color") !important;
+  margin: 0.4em 1px !important;
+}

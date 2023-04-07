@@ -33,13 +33,12 @@ body {
 .tabbrowser-tab {
   // tab text color
   &[visuallyselected] {
-    color: var(--mf-text-primary) !important;
+    color: get-var("text-primary") !important;
   }
 
   &:not([visuallyselected]) {
-    color: var(
-      --mf-text-primary
-    ) !important; //var(--toolbar-color-unselected) !important;
+    //var(--toolbar-color-unselected) !important;
+    color: get-var("text-primary") !important;
   }
 }
 
@@ -158,7 +157,7 @@ body {
 .tabbrowser-tab[multiselected]:not([selected="true"]),
 #TabsToolbar[brighttext] .tabbrowser-tab:not([selected="true"]):hover,
 #TabsToolbar[brighttext] .tabbrowser-tab[multiselected]:not([selected="true"]) {
-  --tab-opacity: var(--mf-tab-opacity-hover);
+  --tab-opacity: #{get-var("tab-opacity-hover")};
 }
 
 #TabsToolbar {
@@ -240,4 +239,22 @@ body {
 // fix for firefox view button (black border under tab bar)
 #firefox-view-button {
   margin: 0 !important;
+}
+
+// window-inactive title bar bg color
+@media (prefers-color-scheme: light) {
+  :root:not(:-moz-window-inactive) #navigator-toolbox {
+    #toolbar-menubar,
+    #TabsToolbar {
+      background-color: get-var("bgcolor-0") !important;
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root:-moz-window-inactive #navigator-toolbox {
+    #toolbar-menubar,
+    #TabsToolbar {
+      background-color: get-var("bgcolor-50") !important;
+    }
+  }
 }

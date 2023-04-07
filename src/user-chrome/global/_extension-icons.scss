@@ -1,7 +1,7 @@
 // extencion badge color
 .toolbarbutton-badge {
-  background-color: var(--mf-grey-800) !important;
-  color: #fff !important;
+  background-color: get-var("grey-800") !important;
+  color: get-var("white") !important;
   border-radius: 4px !important;
   min-width: 10px !important;
   padding: 1px !important;
