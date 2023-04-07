@@ -3,20 +3,96 @@
   // context menu bgcolor & drop shadow
   .menupopup-arrowscrollbox {
     background-color: var(--arrowpanel-background) !important;
-    border: none !important;
-    box-shadow: var(--windows-panel-box-shadow) !important;
-  }
-
-  // context menu items bgcolor hover
-  #contentAreaContextMenu > menuitem:not([disabled]):not([hidden]):hover,
-  #context-navigation > menuitem:not([disabled]):not([hidden]) > hbox:hover {
-    background-color: var(--button-hover-bgcolor) !important;
+    // border: none !important;
+    border: 1px solid !important;
+    border-color: get-var("tab-separator-color") !important;
+    box-shadow: get-var("elevation-2") !important;
   }
 
   // separator color
   menuseparator {
-    border-color: var(--mf-tab-separator-color) !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    border-color: get-var("tab-separator-color") !important;
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+  }
+
+  // left margin for menu item without icon
+  $default-padding: 1em;
+  $image-width: 16px;
+  $image-padding-end: 8px;
+
+  menuitem:not([image]) {
+    padding-inline-start: calc(
+      $default-padding + $image-width + $image-padding-end
+    ) !important;
+  }
+  menupopup > menuitem,
+  menupopup > menu {
+    padding-block: 0.4em !important;
+  }
+
+  // string style for back/forward/reload/bookmark menu items
+  #context-navigation:not([hidden]) {
+    background-color: inherit;
+    padding-bottom: 0.4em !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    .menuitem-iconic {
+      position: relative !important;
+      &::after {
+        display: grid;
+        place-items: start;
+        align-items: center;
+        content: attr(aria-label);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding-inline-start: calc(
+          $default-padding + $image-width + $image-padding-end
+        );
+      }
+    }
+
+    // hide back/forward/reload/bookmark icons
+    .menu-iconic-icon {
+      visibility: hidden !important;
+    }
+  }
+
+  // fix width for last #context-navigation item
+  #context-navigation > .menuitem-iconic:last-child,
+  #context-navigation > .menuitem-iconic:first-child {
+    width: 100% !important;
+  }
+
+  $menu-item-height: 24px;
+  // #context-navigation menu items
+  #context-navigation
+    > .menuitem-iconic
+    > .menu-iconic-left
+    > .menu-iconic-icon {
+    width: 100% !important;
+    height: auto !important;
+    max-height: $menu-item-height !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    padding-block: 0.4em !important;
+  }
+
+  // other menu items
+  menupopup > menu,
+  menupopup > menuitem,
+  menupopup > menucaption {
+    max-height: $menu-item-height !important;
+  }
+
+  // menu item hover bg color
+  menu:where([_moz-menuactive="true"]:not([disabled="true"])),
+  menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
+    background-color: get-var("tab-separator-color") !important;
+    color: inherit !important;
   }
 }

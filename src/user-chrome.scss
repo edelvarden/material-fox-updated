@@ -7,13 +7,13 @@
 @import "user-chrome/components/_index__";
 
 ::selection {
-  background-color: #4285f4 !important;
-  color: #ffffff !important;
+  background-color: get-var(blue-500) !important;
+  color: get-var(white) !important;
 }
 @media (prefers-color-scheme: light) {
   ::selection {
-    background-color: #c2d7ff !important;
-    color: #000 !important;
+    background-color: get-var(blue-200) !important;
+    color: get-var(black) !important;
   }
 }
 

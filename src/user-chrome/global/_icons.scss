@@ -36,7 +36,7 @@ body {
   &:not([src]),
   &:-moz-broken {
     content: var(--no-src-icon) !important;
-    fill: #7f7f7f !important;
+    fill: get-var("grey-600") !important;
   }
 }
 
@@ -44,7 +44,7 @@ body {
 .unified-nav-back {
   &:not([_moz-menuactive])[uri*="about:"] {
     list-style-image: var(--no-src-icon) !important;
-    fill: #7f7f7f !important;
+    fill: get-var("grey-600") !important;
   }
 }
 
@@ -57,11 +57,17 @@ body {
   }
 }
 
+// set no src icon for "List all tabs"
+.all-tabs-button:not([src]) {
+  list-style-image: var(--no-src-icon) !important;
+  fill: get-var("grey-600") !important;
+}
+
 // for alert window
 .titleIcon {
   background-color: transparent !important;
   background-image: var(--icon-url, --no-src-icon) !important;
-  fill: #9aa0a6 !important;
+  fill: get-var("grey-500") !important;
 }
 
 // tabbar icons

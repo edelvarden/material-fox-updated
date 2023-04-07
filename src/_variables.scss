@@ -1,9 +1,15 @@
 // Prefix for CSS variables
 $prefix: mf;
+$base-font-size: 16px;
+
+// convert px to em
+@function px-to-em($px) {
+  @return $px / $base-font-size * 1em;
+}
 
 // convert px to rem
-@function rem($px) {
-  @return $px / 16 * 1rem;
+@function px-to-rem($px) {
+  @return $px / $base-font-size * 1rem;
 }
 
 // return color mix function with opacity support
@@ -12,8 +18,8 @@ $prefix: mf;
   @return color-mix(in srgb, $secondary-color $opacity, $main-color);
 }
 
-// return value from CSS variable
-@function val($variable-name) {
+// return get-varue from CSS variable
+@function get-var($variable-name) {
   @return #{var(--#{$prefix}-#{$variable-name})};
 }
 
@@ -24,18 +30,30 @@ $variables: (
   // --------------------------------------------------------------------------------
   // -- Color palette
   // --------------------------------------------------------------------------------
-  // "grey-50": rgb(248, 249, 250),
-  // "grey-100": rgb(241, 243, 244),
-  "grey-200": rgb(232, 234, 237),
-  // "grey-300": rgb(218, 220, 224),
-  // "grey-400": rgb(189, 193, 198),
-  "grey-500": rgb(154, 160, 166),
-  // "grey-600": rgb(128, 134, 139),
-  "grey-700": rgb(95, 99, 104),
-  // "grey-800": rgb(60, 64, 67),
-  "grey-900": rgb(32, 33, 36),
+  "white": #fff,
+  "black": #000,
   "grey-900-white-4-percent": #292a2d,
   "grey-900-white-5-percent": #35363a,
+  "grey-900": #202124,
+  "grey-800": #3c4043,
+  "grey-700": #5f6368,
+  "grey-600": #80868b,
+  "grey-500": #9aa0a6,
+  "grey-400": #bdc1c6,
+  "grey-300": #dadce0,
+  "grey-200": #e8eaed,
+  "grey-100": #f1f3f4,
+  "grey-50": #f8f9fa,
+  "blue-900": #174ea6,
+  "blue-800": #185abc,
+  "blue-700": #1967d2,
+  "blue-600": #1a73e8,
+  "blue-500": #4285f4,
+  "blue-400": #669df6,
+  "blue-300": #8ab4f8,
+  "blue-200": #aecbfa,
+  "blue-100": #d2e3fc,
+  "blue-50": #e8f0fe,
 
   // --------------------------------------------------------------------------------
   // -- Animation
@@ -82,57 +100,57 @@ $variables: (
   // --------------------------------------------------------------------------------
   "shadow-color-rgb": "0,0,0",
   "elevation-2": (
-    rgba(val(shadow-color-rgb), 0.3) 0 1px 2px 0,
-    rgba(val(shadow-color-rgb), 0.15) 0 2px 6px 2px
+    rgba(get-var(shadow-color-rgb), 0.3) 0 1px 2px 0,
+    rgba(get-var(shadow-color-rgb), 0.15) 0 2px 6px 2px
   )
 );
 
 $dark-mode: (
   // accent color
-  "accent-color": #8ab4f8,
-  "accent-color-hover": cm(transparent, val(accent-color), 0.8),
+  "accent-color": get-var(blue-300),
+  "accent-color-hover": cm(transparent, get-var(accent-color), 0.8),
   // UI background colors
-  "bgcolor-0": val(grey-900),
-  "bgcolor-50": val(grey-900-white-4-percent),
-  "bgcolor-100": val(grey-900-white-5-percent),
+  "bgcolor-0": get-var(grey-900),
+  "bgcolor-50": get-var(grey-900-white-4-percent),
+  "bgcolor-100": get-var(grey-900-white-5-percent),
   // Optional feature: Github theme colors
   // "bgcolor-0": #0d1117,
   // "bgcolor-50": #161b22,
   // "bgcolor-100": #21262d,
   // UI text
-  "text-primary": val(grey-200),
-  "text-secondary": val(grey-500),
-  "text-disabled": cm(transparent, val(text-primary), 0.03628),
+  "text-primary": get-var(grey-200),
+  "text-secondary": get-var(grey-500),
+  "text-disabled": cm(transparent, get-var(text-primary), 0.03628),
   // Link text color
-  "text-accent-primary": cm(white, val(text-primary), 0.8),
-  "text-accent-secondary": cm(white, val(text-primary), 0.8),
+  "text-accent-primary": cm(white, get-var(text-primary), 0.8),
+  "text-accent-secondary": cm(white, get-var(text-primary), 0.8),
   // Primary button text color
   "text-on-accent-primary": black,
   // Button, Dropdown, Search inputs
   "control-bgcolor": cm(transparent, white, 0.0605),
   "control-border-color": cm(transparent, white, 0.0605),
-  "control-bgcolor-secondary": cm(val(bgcolor-0), white, 0.0837),
-  "control-bgcolor-disabled": cm(val(bgcolor-0), white, 0.0419),
+  "control-bgcolor-secondary": cm(get-var(bgcolor-0), white, 0.0837),
+  "control-bgcolor-disabled": cm(get-var(bgcolor-0), white, 0.0419),
   // Tab bar
   "tab-separator-color": cm(transparent, white, 0.2),
   "tab-outline-color": cm(transparent, black, 0.1),
   "tab-opacity-hover": 0.5,
   // navbar
-  "icon-color": val(grey-500)
+  "icon-color": get-var(grey-500)
 );
 
 $light-mode: (
   // Accent colors
-  "accent-color": #4285f4,
-  "accent-color-hover": cm(transparent, val(accent-color), 0.8),
+  "accent-color": get-var(blue-500),
+  "accent-color-hover": cm(transparent, get-var(accent-color), 0.8),
   // UI background colors
   "bgcolor-0": #dee1e6,
   "bgcolor-50": #f1f3f4,
   "bgcolor-100": #fff,
 
   // UI text
-  "text-primary": val(grey-900),
-  "text-secondary": val(grey-700),
+  "text-primary": get-var(grey-900),
+  "text-secondary": get-var(grey-700),
   "text-disabled": #bec0c4,
 
   // Link text color
@@ -143,15 +161,15 @@ $light-mode: (
   "text-on-accent-primary": white,
 
   // Button, Dropdown, Search inputs
-  "control-bgcolor": val(bgcolor-50),
+  "control-bgcolor": get-var(bgcolor-50),
   "control-border-color": transparent,
-  "control-bgcolor-secondary": val(bgcolor-100),
-  "control-bgcolor-disabled": val(bgcolor-50),
+  "control-bgcolor-secondary": get-var(bgcolor-100),
+  "control-bgcolor-disabled": get-var(bgcolor-50),
   // Tab bar
   "tab-separator-color": cm(transparent, black, 0.2),
   "tab-outline-color": cm(transparent, black, 0.2),
   "tab-opacity-hover": 0.5,
 
   // Navbar
-  "icon-color": val(grey-700)
+  "icon-color": get-var(grey-700)
 );
