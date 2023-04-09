@@ -118,7 +118,6 @@
 }
 
 // new tab page colors
-@media (prefers-color-scheme: dark) {
   html,
   body {
     // main bg color
@@ -129,8 +128,8 @@
     --newtab-element-hover-color: #{get-var("control-bgcolor")} !important;
     // text & svg fill color
     --newtab-text-primary-color: #{get-var("text-primary")} !important;
+    --newtab-primary-element-text-color: #{get-var("text-on-accent")} !important;
   }
-}
 
 @media (prefers-color-scheme: light) {
   html,

@@ -125,7 +125,7 @@ $dark-mode: (
   "text-accent-primary": cm(white, get-var(text-primary), 0.8),
   "text-accent-secondary": cm(white, get-var(text-primary), 0.8),
   // Primary button text color
-  "text-on-accent-primary": black,
+  "text-on-accent": get-var(grey-900),
   // Button, Dropdown, Search inputs
   "control-bgcolor": cm(transparent, white, 0.0605),
   "control-border-color": cm(transparent, white, 0.0605),
@@ -161,7 +161,7 @@ $light-mode: (
   "text-accent-secondary": #1a73e8,
 
   // Primary button text color
-  "text-on-accent-primary": white,
+  "text-on-accent": white,
 
   // Button, Dropdown, Search inputs
   "control-bgcolor": get-var(bgcolor-50),

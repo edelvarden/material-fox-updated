@@ -80,3 +80,8 @@ $urlbar-icons: "#reader-mode-button, #pageActionButton, #pocket-button-box, #pag
 .urlbar-page-action {
   -moz-box-align: center !important;
 }
+
+// protections-popup-tp-switch color
+.protections-popup-tp-switch::before {
+  background-color: get-var('text-on-accent') !important;
+}
