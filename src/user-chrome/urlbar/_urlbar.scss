@@ -73,7 +73,7 @@ body {
   }
 
   #urlbar {
-    &:is([open],[focused]) {
+    &:is([open], [focused]) {
       #urlbar-background,
       #searchbar {
         background-color: get-var("bgcolor-100") !important;

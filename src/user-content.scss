@@ -1,11 +1,9 @@
 @use "sass:meta";
 @import "variables";
 
+// local variables only for: home, private browsing and about:* pages
 @-moz-document url-prefix("about:newtab"), url-prefix("about:home"), url-prefix("about:privatebrowsing"), regexp("about:(?!blank).*") {
   @import "user-content/variables-local";
-}
-
-@-moz-document regexp("about:(?!blank).*") {
   @import "reset";
 }
 

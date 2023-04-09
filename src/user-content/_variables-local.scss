@@ -1,37 +1,35 @@
-@-moz-document url-prefix("about:newtab"), url-prefix("about:home"), url-prefix("about:privatebrowsing") {
+:root,
+html,
+body {
+  // regular vars
+  @each $key, $value in $variables {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
   :root,
   html,
   body {
-    // regular vars
-    @each $key, $value in $variables {
+    // vars for dark mode
+    @each $key, $value in $dark-mode {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root,
-    html,
-    body {
-      // vars for dark mode
-      @each $key, $value in $dark-mode {
-        --#{$prefix}-#{$key}: #{$value};
-      }
-    }
-  }
-
-  @media (prefers-color-scheme: light) {
-    :root,
-    html,
-    body {
-      @each $key, $value in $light-mode {
-        --#{$prefix}-#{$key}: #{$value};
-      }
-    }
-  }
-
+@media (prefers-color-scheme: light) {
   :root,
   html,
   body {
-    --newtab-primary-action-background: #{get-var("accent-color")} !important;
+    @each $key, $value in $light-mode {
+      --#{$prefix}-#{$key}: #{$value};
+    }
   }
+}
+
+:root,
+html,
+body {
+  --newtab-primary-action-background: #{get-var("accent-color")} !important;
 }
