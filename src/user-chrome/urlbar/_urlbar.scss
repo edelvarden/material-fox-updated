@@ -50,6 +50,12 @@ body {
       border: none !important;
     }
   }
+  &:not([open])[focused] {
+    #urlbar-background,
+    #searchbar {
+      box-shadow: none !important;
+    }
+  }
 }
 
 // Fix URL Input Font Size
