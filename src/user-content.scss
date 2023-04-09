@@ -1,7 +1,11 @@
 @use "sass:meta";
-@-moz-document regexp("about:(?!blank).*") {
-  @import "variables";
+@import "variables";
+
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home"), url-prefix("about:privatebrowsing"), regexp("about:(?!blank).*") {
   @import "user-content/variables-local";
+}
+
+@-moz-document regexp("about:(?!blank).*") {
   @import "reset";
 }
 
