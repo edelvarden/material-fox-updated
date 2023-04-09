@@ -96,7 +96,7 @@ $menu-min-width: 220px;
   // menu item hover bg color
   menu:where([_moz-menuactive="true"]:not([disabled="true"])),
   menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
-    background-color: get-var("menu-separator-color") !important;
+    background-color: get-var("menu-border-color") !important;
     color: inherit !important;
   }
 
