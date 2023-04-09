@@ -1,34 +1,9 @@
 @use "sass:meta";
 @import "variables";
 @import "user-chrome/variables-local";
+@import "reset";
+
 @import "user-chrome/global/_index__";
 @import "user-chrome/tabbar/_index__";
 @import "user-chrome/urlbar/_index__";
 @import "user-chrome/components/_index__";
-
-::selection {
-  background-color: get-var(blue-500) !important;
-  color: get-var(white) !important;
-}
-@media (prefers-color-scheme: light) {
-  ::selection {
-    background-color: get-var(blue-200) !important;
-    color: get-var(black) !important;
-  }
-}
-
-button {
-  font-weight: 500 !important;
-}
-
-@media (-moz-platform: windows) {
-  :root {
-    --#{$prefix}-font-family: #{meta.inspect($font-family)};
-  }
-
-  *,
-  *::before,
-  *::after {
-    font-family: var(--#{$prefix}-font-family) !important;
-  }
-}

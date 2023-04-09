@@ -28,11 +28,11 @@
 #downloadsFooterButtons > toolbarseparator,
 .cui-widget-panel toolbarseparator {
   border-top: 1px solid !important;
-  border-color: get-var("menu-separator-color") !important;
+  border-color: get-var("menu-border-color") !important;
   margin: 0.4em 1px !important;
 }
 
 toolbarbutton menupopup[placespopup] menuseparator::before {
   border-top: 1px solid !important;
-  border-color: get-var("menu-separator-color") !important;
+  border-color: get-var("menu-border-color") !important;
 }

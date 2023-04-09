@@ -1,13 +1,48 @@
 // bookmark popup
 #editBookmarkPanel {
-  @media (prefers-color-scheme: dark) {
-    input,
-    menulist,
-    .expander-down {
-      border: 1px solid;
-      border-color: get-var("tab-separator-color") !important;
-      background-color: get-var("bgcolor-0") !important;
-      border-radius: 4px !important;
+  input,
+  tree,
+  richlistbox,
+  menulist,
+  .expander-down,
+  .expander-up {
+    border: 1px solid;
+    border-color: get-var("menu-border-color") !important;
+    background-color: get-var("bgcolor-0") !important;
+    border-radius: 4px !important;
+
+    @media (prefers-color-scheme: light) {
+      background-color: get-var("bgcolor-100") !important;
+    }
+  }
+}
+
+#editBookmarkPanelBottomButtons {
+  button {
+    color: get-var("accent-color") !important;
+    background-color: transparent !important;
+    border: 1px solid !important;
+    border-color: get-var("menu-border-color") !important;
+    padding: 8px 16px !important;
+    user-select: none !important;
+    cursor: pointer;
+
+    &:hover {
+      background-color: cm(
+        transparent,
+        get-var("accent-color"),
+        0.0837
+      ) !important;
+    }
+  }
+
+  button[default] {
+    color: get-var("text-on-accent-primary") !important;
+    background-color: get-var("accent-color") !important;
+    border: none !important;
+
+    &:hover {
+      background-color: get-var("accent-color-hover") !important;
     }
   }
 }

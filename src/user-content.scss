@@ -1,26 +1,8 @@
 @use "sass:meta";
-@import "variables";
-@import "user-content/variables-local";
-@import "user-content/pages/_index__";
-
-@media (-moz-platform: windows) {
-  @-moz-document regexp("about:(?!blank).*") {
-    :root {
-      --#{$prefix}-font-family: #{meta.inspect($font-family)};
-    }
-    * {
-      font-family: var(--#{$prefix}-font-family) !important;
-    }
-
-    ::selection {
-      background-color: #4285f4 !important;
-      color: #ffffff !important;
-    }
-    @media (prefers-color-scheme: light) {
-      ::selection {
-        background-color: #c2d7ff !important;
-        color: #000 !important;
-      }
-    }
-  }
+@-moz-document regexp("about:(?!blank).*") {
+  @import "variables";
+  @import "user-content/variables-local";
+  @import "reset";
 }
+
+@import "user-content/pages/_index__";

@@ -6,13 +6,13 @@ $menu-min-width: 220px;
     background-color: var(--arrowpanel-background) !important;
     // border: none !important;
     border: 1px solid !important;
-    border-color: get-var("menu-separator-color") !important;
+    border-color: get-var("menu-border-color") !important;
     box-shadow: get-var("elevation-2") !important;
   }
 
   // separator color
   menuseparator {
-    border-color: get-var("menu-separator-color") !important;
+    border-color: get-var("menu-border-color") !important;
     margin-left: 1px !important;
     margin-right: 1px !important;
   }

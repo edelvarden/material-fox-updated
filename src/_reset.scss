@@ -1,0 +1,46 @@
+input,
+button,
+textarea,
+select {
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  word-spacing: inherit !important;
+}
+
+// custom font (only for windows)
+@media (-moz-platform: windows) {
+  :root {
+    --#{$prefix}-font-family: #{meta.inspect($font-family)};
+  }
+
+  *,
+  *::before,
+  *::after {
+    font-family: var(--#{$prefix}-font-family) !important;
+  }
+}
+
+// selection color
+::selection {
+  background-color: get-var("blue-500") !important;
+  color: get-var("white") !important;
+}
+@media (prefers-color-scheme: light) {
+  ::selection {
+    background-color: get-var("blue-200") !important;
+    color: get-var("black") !important;
+  }
+}
+
+html,
+body {
+  --check-icon: url("icons/check.svg");
+}
+
+.checkbox-check[checked] {
+  background-image: var(--check-icon) !important;
+}
+
+button {
+  font-weight: 500 !important;
+}
