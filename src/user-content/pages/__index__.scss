@@ -7,3 +7,7 @@
 @-moz-document url-prefix(about:privatebrowsing) {
   @import "privatebrowsing";
 }
+
+@-moz-document regexp("about:(?!blank).*") {
+  @import "reader-view";
+}

@@ -28,11 +28,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: cm(
-        transparent,
-        get-var("accent-color"),
-        0.0837
-      ) !important;
+      background-color: get-var("accent-color-transparent") !important;
     }
   }
 
