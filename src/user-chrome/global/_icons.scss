@@ -123,15 +123,22 @@ body {
   list-style-image: var(--close-icon) !important;
 }
 
-// pixel perfect refresh button size
-#reload-button .toolbarbutton-icon,
-#stop-button .toolbarbutton-icon {
-  padding: 3px !important;
+// nav bar icon size
+#nav-bar {
+  #reload-button .toolbarbutton-icon,
+  #stop-button .toolbarbutton-icon {
+    padding: 4px !important;
+  }
 }
 
 // home icon
 #home-button {
   list-style-image: var(--home-icon) !important;
+}
+
+// nav bar icon size
+#nav-bar #home-button .toolbarbutton-icon {
+  padding: 5px !important;
 }
 
 // lock (secure)

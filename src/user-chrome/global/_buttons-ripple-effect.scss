@@ -4,17 +4,15 @@ body {
   --circle-size: 0;
 }
 
+html,
+body {
+  --circle-icon: url("icons/circle-dark.svg");
+}
+
 @media (prefers-color-scheme: light) {
   html,
   body {
     --circle-icon: url("icons/circle.svg");
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  html,
-  body {
-    --circle-icon: url("icons/circle-dark.svg");
   }
 }
 
