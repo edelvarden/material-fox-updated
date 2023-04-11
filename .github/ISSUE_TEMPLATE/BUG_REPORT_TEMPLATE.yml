@@ -1,18 +1,18 @@
-name: 🎃 Bug
-description: Bug Report
+name: "🎃 Bug Report" 
+description: Create Bug Report
 title: "[Bug]: "
 labels: ["bug-report"]
 
 body:
   - type: textarea
-    id: description-area
+    id: description
     attributes:
       label: Description
       description: Simple and clear description of bug. Add screenshots if needed
     validations:
       required: true
   - type: textarea
-  id: additional-info-area
-  attributes:
-    label: Additional info
-    description: OS and Firefox version if needed
+    id: additional
+    attributes:
+      label: Additional info
+      description: OS and Firefox version if needed

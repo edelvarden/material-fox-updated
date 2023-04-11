@@ -1,18 +1,18 @@
-name: ✨ Feature
-description: Feature Request
+name: "✨ Feature Request" 
+description: Create Feature Request
 title: "[Feature Request]: "
 labels: ["enhancement"]
 
 body:
   - type: textarea
-    id: description-area
+    id: description
     attributes:
       label: Description
       description: Include clear explaination of the feature and how it works. Add screenshots if needed
     validations:
       required: true
   - type: textarea
-  id: additional-info-area
-  attributes:
-    label: Additional info
-    description: OS and Firefox version if needed
+    id: additional
+    attributes:
+      label: Additional info
+      description: OS and Firefox version if needed
