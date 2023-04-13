@@ -1,117 +1,121 @@
 $menu-min-width: 220px;
 // context menu
-@media (-moz-platform: windows) or (-moz-platform: linux) {
-  // context menu bgcolor & drop shadow
-  .menupopup-arrowscrollbox {
-    background-color: var(--arrowpanel-background) !important;
-    // border: none !important;
-    border: 1px solid !important;
-    border-color: get-var("menu-border-color") !important;
-    box-shadow: get-var("elevation-2") !important;
-  }
+@media (-moz-platform: windows),
+  (-moz-platform: linux),
+  (-moz-platform: macos) {
+  @supports not -moz-bool-pref("widget.macos.native-context-menus") {
+    // context menu bgcolor & drop shadow
+    .menupopup-arrowscrollbox {
+      background-color: var(--arrowpanel-background) !important;
+      // border: none !important;
+      border: 1px solid !important;
+      border-color: get-var("menu-border-color") !important;
+      box-shadow: get-var("elevation-2") !important;
+    }
 
-  // separator color
-  menuseparator {
-    border-color: get-var("menu-border-color") !important;
-    margin-left: 1px !important;
-    margin-right: 1px !important;
-  }
+    // separator color
+    menuseparator {
+      border-color: get-var("menu-border-color") !important;
+      margin-left: 1px !important;
+      margin-right: 1px !important;
+    }
 
-  // left margin for menu item without icon
-  $default-padding: 1em;
-  $image-width: 16px;
-  $image-padding-end: 8px;
+    // left margin for menu item without icon
+    $default-padding: 1em;
+    $image-width: 16px;
+    $image-padding-end: 8px;
 
-  #contentAreaContextMenu menuitem:not([image]) {
-    padding-inline-start: calc(
-      $default-padding + $image-width + $image-padding-end
-    ) !important;
-  }
-  // menupopup > menuitem,
-  // menupopup > menu {
-  //   padding-block: 0.4em !important;
-  // }
+    #contentAreaContextMenu menuitem:not([image]) {
+      padding-inline-start: calc(
+        $default-padding + $image-width + $image-padding-end
+      ) !important;
+    }
+    // menupopup > menuitem,
+    // menupopup > menu {
+    //   padding-block: 0.4em !important;
+    // }
 
-  // string style for back/forward/reload/bookmark menu items
-  #context-navigation:not([hidden]) {
-    min-width: $menu-min-width !important;
-    background-color: inherit;
-    // padding-bottom: 0.4em !important;
-    display: flex !important;
-    flex-direction: column !important;
+    // string style for back/forward/reload/bookmark menu items
+    #context-navigation:not([hidden]) {
+      min-width: $menu-min-width !important;
+      background-color: inherit;
+      // padding-bottom: 0.4em !important;
+      display: flex !important;
+      flex-direction: column !important;
 
-    .menuitem-iconic {
-      position: relative !important;
-      &::after {
-        display: grid;
-        place-items: start;
-        align-items: center;
-        content: attr(aria-label);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding-inline-start: calc(
-          $default-padding + $image-width + $image-padding-end
-        );
+      .menuitem-iconic {
+        position: relative !important;
+        &::after {
+          display: grid;
+          place-items: start;
+          align-items: center;
+          content: attr(aria-label);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          padding-inline-start: calc(
+            $default-padding + $image-width + $image-padding-end
+          );
+        }
+      }
+
+      // hide back/forward/reload/bookmark icons
+      .menu-iconic-icon {
+        visibility: hidden !important;
       }
     }
 
-    // hide back/forward/reload/bookmark icons
-    .menu-iconic-icon {
-      visibility: hidden !important;
+    // fix width for last #context-navigation item
+    #context-navigation > .menuitem-iconic:last-child,
+    #context-navigation > .menuitem-iconic:first-child {
+      width: 100% !important;
     }
-  }
 
-  // fix width for last #context-navigation item
-  #context-navigation > .menuitem-iconic:last-child,
-  #context-navigation > .menuitem-iconic:first-child {
-    width: 100% !important;
-  }
+    $menu-item-height: 24px;
+    // #context-navigation menu items
+    #context-navigation
+      > .menuitem-iconic
+      > .menu-iconic-left
+      > .menu-iconic-icon {
+      width: 100% !important;
+      height: auto !important;
+      min-height: $menu-item-height !important;
+      max-height: $menu-item-height !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      // padding-block: 0.4em !important;
+    }
 
-  $menu-item-height: 24px;
-  // #context-navigation menu items
-  #context-navigation
-    > .menuitem-iconic
-    > .menu-iconic-left
-    > .menu-iconic-icon {
-    width: 100% !important;
-    height: auto !important;
-    min-height: $menu-item-height !important;
-    max-height: $menu-item-height !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    // padding-block: 0.4em !important;
-  }
+    // other menu items
+    menupopup > menu,
+    menupopup > menuitem,
+    menupopup > menucaption {
+      min-height: $menu-item-height !important;
+      max-height: $menu-item-height !important;
+    }
 
-  // other menu items
-  menupopup > menu,
-  menupopup > menuitem,
-  menupopup > menucaption {
-    min-height: $menu-item-height !important;
-    max-height: $menu-item-height !important;
-  }
+    // menu item hover bg color
+    menu:where([_moz-menuactive="true"]:not([disabled="true"])),
+    menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
+      background-color: get-var("menu-border-color") !important;
+      color: inherit !important;
+    }
 
-  // menu item hover bg color
-  menu:where([_moz-menuactive="true"]:not([disabled="true"])),
-  menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
-    background-color: get-var("menu-border-color") !important;
-    color: inherit !important;
-  }
+    // hide "Bookmark Page.."
+    #context-bookmarkpage {
+      display: none !important;
+    }
 
-  // hide "Bookmark Page.."
-  #context-bookmarkpage {
-    display: none !important;
-  }
+    // hide "Save Page to Pocket"
+    #context-pocket {
+      display: none !important;
+    }
 
-  // hide "Save Page to Pocket"
-  #context-pocket {
-    display: none !important;
-  }
-
-  // hide "Inspect Accessibility Properties"
-  #context-inspect-a11y {
-    display: none !important;
+    // hide "Inspect Accessibility Properties"
+    #context-inspect-a11y {
+      display: none !important;
+    }
   }
 }
