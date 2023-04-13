@@ -18,6 +18,19 @@
   }
 }
 
+// also for #toolbar-menubar
+menuitem:not([disabled]) {
+  .menu-accel, .menu-iconic-accel {
+    color: get-var("text-secondary") !important;
+  }
+
+  &:hover {
+    .menu-accel, .menu-iconic-accel {
+      color: inherit !important;
+    }
+  }
+}
+
 // separator style
 #widget-overflow-mainView > toolbarseparator,
 #widget-overflow-mainView > .panel-subview-body > toolbarseparator,
