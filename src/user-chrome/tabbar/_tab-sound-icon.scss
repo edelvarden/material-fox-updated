@@ -83,3 +83,8 @@
 .tab-icon-image:not([pinned]) {
   opacity: 1 !important;
 }
+
+// fix colors for pinned tab icon
+#TabsToolbar .tab-icon-overlay:is([pinned], [sharing]):not([crashed]) {
+  color: get-var('text-primary') !important;
+}
