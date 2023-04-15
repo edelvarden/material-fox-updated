@@ -1,0 +1,36 @@
+// urlbar suggestions
+.urlbarView {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+// urlbar suggestions item
+.urlbarView-row {
+  border-radius: 0px !important;
+  border: none !important;
+  border-left: solid 4px transparent !important;
+
+  &[selected] {
+    border-left-color: get-var("accent-color") !important;
+    background-color: get-var("menu-border-color") !important;
+  }
+  &:not([selected]):hover {
+    border-left-color: get-var("menu-border-color") !important;
+    background-color: get-var("menu-border-color") !important;
+  }
+}
+
+// urlbar suggestions item url
+.urlbarView-url {
+  color: get-var("accent-color") !important;
+}
+
+// urlbar suggestions item left/right padding
+.urlbarView-row {
+  padding: 0 9px !important;
+}
+
+// urlbar suggestions item top/bottom padding
+.urlbarView-row-inner {
+  padding-block: 9px !important;
+}

@@ -80,8 +80,8 @@ $urlbar-icons: "#reader-mode-button, #pageActionButton, #pocket-button-box, #pag
 .urlbar-page-action {
   -moz-box-align: center !important;
 }
-#urlbar-input-container:not([pageproxystate="invalid"]){
-  .urlbar-page-action { 
+#urlbar-input-container:not([pageproxystate="invalid"]) {
+  .urlbar-page-action {
     &:not([hidden]) {
       display: grid !important;
       align-content: center !important;

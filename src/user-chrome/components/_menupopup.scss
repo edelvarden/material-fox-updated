@@ -20,12 +20,14 @@
 
 // also for #toolbar-menubar
 menuitem:not([disabled]) {
-  .menu-accel, .menu-iconic-accel {
+  .menu-accel,
+  .menu-iconic-accel {
     color: get-var("text-secondary") !important;
   }
 
   &:hover {
-    .menu-accel, .menu-iconic-accel {
+    .menu-accel,
+    .menu-iconic-accel {
       color: inherit !important;
     }
   }
