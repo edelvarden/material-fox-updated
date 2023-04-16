@@ -164,3 +164,13 @@ body {
 .search-wrapper input {
   box-shadow: get-var("elevation-2") !important;
 }
+
+// "Resent activity" start button
+.icon.icon-bookmark-added {
+  background-image: url("icons/star.svg") !important;
+}
+
+// "Resent activity" start button fill color
+.compact-cards .card-outer .card-context .card-context-icon.icon-bookmark-added {
+  fill: get-var("accent-color") !important;
+}
