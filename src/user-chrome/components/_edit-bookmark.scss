@@ -14,6 +14,12 @@
     @media (prefers-color-scheme: light) {
       background-color: get-var("bgcolor-100") !important;
     }
+
+    &:focus {
+      outline: 2px solid !important;
+      outline-offset: -2px;
+      outline-color: get-var("accent-color") !important;
+    }
   }
 }
 
