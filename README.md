@@ -10,9 +10,11 @@
 4. Restart Firefox.
 
 ## Build & Development
-[Visual Studio Code](https://code.visualstudio.com/) to develop this project.
 
-1. Clone this repo to ```[Profile Folder]/chrome```
+- [Visual Studio Code](https://code.visualstudio.com/) (development environment)
+- [NodeJS](https://nodejs.org/en/download) (for npm)
+
+1. Clone this repo or extract downloaded zip to ```[Profile Folder]/chrome```
 
 ````
 git clone https://github.com/edelvarden/material-fox-updated.git .
@@ -25,10 +27,10 @@ Project structure
 └── chrome
     ├── chrome
     ├── src
-        ├── user-chrome
-        ├── user-content
-        ├── user-chrome.scss
-        └── user-content.scss
+    │   ├── user-chrome
+    │   ├── user-content
+    │   ├── user-chrome.scss
+    │   └── user-content.scss
     ├── package-lock.json
     ├── package.json
     ├── userChrome.css
@@ -48,5 +50,5 @@ npm run watch
 ````
 
 ## Credits
-* [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)
-* [edge-frfox](https://github.com/bmFtZQ/edge-frfox) by [bmFtZQ](https://github.com/bmFtZQ)
+- [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)
+- [edge-frfox](https://github.com/bmFtZQ/edge-frfox) by [bmFtZQ](https://github.com/bmFtZQ)
