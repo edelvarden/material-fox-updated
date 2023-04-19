@@ -1,5 +1,26 @@
-// input:focus {
-//   --input-border-color: AccentColor !important;
-//   border-color: AccentColor !important;
-//   outline-color: AccentColor !important;
-// }
+input:is(
+    [type="email"],
+    [type="tel"],
+    [type="text"],
+    [type="password"],
+    [type="url"],
+    [type="number"]
+  ),
+textarea,
+search-textbox {
+  border: 1px solid;
+  border-color: get-var("menu-border-color") !important;
+  background-color: get-var("bgcolor-0") !important;
+  border-radius: 4px !important;
+
+  @media (prefers-color-scheme: light) {
+    background-color: get-var("bgcolor-100") !important;
+  }
+
+  &:focus {
+    border-color: transparent !important;
+    outline: 2px solid !important;
+    outline-offset: -2px;
+    outline-color: get-var("accent-color") !important;
+  }
+}
