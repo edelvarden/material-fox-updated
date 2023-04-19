@@ -1,4 +1,4 @@
-button {
+button:not(.searchbar-engine-one-off-item) {
   color: get-var("accent-color") !important;
   background-color: transparent !important;
   border: 1px solid !important;
@@ -10,14 +10,14 @@ button {
   &:hover {
     background-color: get-var("accent-color-transparent") !important;
   }
-}
 
-button[default] {
-  color: get-var("text-on-accent") !important;
-  background-color: get-var("accent-color") !important;
-  border: none !important;
+  &[default] {
+    color: get-var("text-on-accent") !important;
+    background-color: get-var("accent-color") !important;
+    border: none !important;
 
-  &:hover {
-    background-color: get-var("accent-color-hover") !important;
+    &:hover {
+      background-color: get-var("accent-color-hover") !important;
+    }
   }
 }
