@@ -29,9 +29,9 @@
   }
 
   // hide all checkboxes
-  .findbar-container > checkbox {
-    display: none !important;
-  }
+  // .findbar-container > checkbox {
+  //   display: none !important;
+  // }
 }
 
 // find bar font and colors
@@ -80,10 +80,15 @@
     outline: none !important;
   }
 
+  .findbar-textbox {
+    border-left: 1px solid !important;
+  }
+
   .found-matches,
   .findbar-textbox {
     border-right: 1px solid !important;
     border-color: get-var("menu-border-color") !important;
+    border-radius: 0 !important;
   }
 
   // find bar buttons
