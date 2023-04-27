@@ -1,158 +1,122 @@
-// For change findbar position
+// change find bar position
 #browser {
   position: relative !important;
 }
 
-// Change position
 .browserContainer > findbar {
-  // Change items position
-  -moz-box-align: center !important;
-  justify-content: flex-end !important;
   position: absolute !important;
   top: 0 !important;
   bottom: 0 !important;
   right: 0 !important;
+  margin: -4px 0rem 0 0 !important;
+}
 
+// reset find bar styles
+.browserContainer > findbar {
   height: 48px !important;
-  width: auto !important;
-  max-width: 380px !important;
-  min-width: 255px !important;
-
+  width: 100vw !important;
+  -moz-box-align: center !important;
+  align-items: center !important;
   padding: 0 !important;
-  margin-inline-start: 0 !important;
-  margin: -4px 10rem 0 0 !important;
-
-  // Colors & decorations
-  --separator-color: rgba(255, 255, 255, 0.1) !important;
-  background-color: var(--toolbar-field-background-color) !important;
-  box-shadow: var(--windows-panel-box-shadow) !important;
-  color: var(--arrowpanel-color) !important;
-
-  // Border
-  border-radius: 8px !important;
-  border: none !important;
-  outline: none !important;
   overflow: hidden !important;
 
-  .found-matches {
-    padding-right: 10px !important;
+  .findbar-container {
+    position: relative !important;
+    height: 48px !important;
+    display: flex;
+    align-items: center !important;
+    flex-direction: row-reverse !important;
   }
 
-  // Center position for items
-  .findbar-container {
-    align-items: center !important;
+  // hide all checkboxes
+  .findbar-container > checkbox {
+    display: none !important;
+  }
+}
+
+// find bar font and colors
+.browserContainer > findbar {
+  color: get-var("text-primary") !important;
+  box-shadow: get-var("elevation-2") !important;
+  background: get-var("bgcolor-0") !important;
+  border: 1px solid !important;
+  border-color: get-var("menu-border-color") !important;
+  border-radius: 6px !important;
+
+  @media (prefers-color-scheme: light) {
+    background: get-var("bgcolor-100") !important;
+  }
+
+  .findbar-label {
+    color: get-var("text-primary") !important;
+    font-weight: 400 !important;
+  }
+
+  .found-matches {
+    margin-right: 0 !important;
+    padding-right: 8px !important;
+
+    &[hidden] {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+
+  .found-matches {
+    height: 80% !important;
     display: flex !important;
-    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .findbar-textbox-wrapper {
+    height: 80% !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
   .findbar-textbox {
-    margin-right: 10px !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
   }
 
-  &:not([hidden]) {
-    animation-duration: 333ms, 187ms !important;
-    animation-name: findbar-opacity, findbar-transform !important;
-    animation-timing-function: var(--mf-point-to-point), ease-out !important;
-  }
-
-  &[hidden] {
-    opacity: 0 !important;
-  }
-}
-
-// Reverse for result block
-.findbar-container {
-  display: flex !important;
-  flex-direction: column-reverse !important;
-
-  height: 100% !important;
-  overflow-y: visible !important;
-
-  .found-matches {
-    display: block !important;
-    visibility: visible !important;
-  }
-}
-
-.browserContainer > findbar {
   .found-matches,
   .findbar-textbox {
     border-right: 1px solid !important;
-    border-color: var(--separator-color) !important;
-  }
-}
-
-// Hide all checkboxes
-.browserContainer > findbar {
-  .findbar-find-status,
-  .findbar-container > checkbox {
-    display: none !important;
-    visibility: collapse !important;
-  }
-}
-
-// Findbar buttons
-.findbar-closebutton,
-.findbar-find-previous,
-.findbar-find-next {
-  --button-size: 24px;
-  border-radius: 50% !important;
-  padding: 6px !important;
-  max-height: var(--button-size) !important;
-  max-width: var(--button-size) !important;
-  min-height: var(--button-size) !important;
-  min-width: var(--button-size) !important;
-
-  & > .toolbarbutton-icon {
-    display: block !important;
-    height: 18px !important;
-    width: 18px !important;
-    padding: 0 !important;
-  }
-}
-
-// Findbar input
-.findbar-textbox {
-  border-bottom-width: 0 !important;
-  border-left-width: 0 !important;
-  border-radius: 0 !important;
-  border-top-width: 0 !important;
-  box-shadow: none !important;
-  outline: 0 !important;
-  width: auto !important;
-
-  // Hide 'Find in page' text
-  &::placeholder {
-    color: transparent !important;
-  }
-}
-
-.browserContainer > findbar[hidden] {
-  opacity: 0 !important;
-}
-
-// Fix input bg color
-.findbar-textbox,
-.findbar-textbox[status="notfound"] {
-  background-color: transparent !important;
-}
-
-@keyframes findbar-opacity {
-  from {
-    opacity: 0;
+    border-color: get-var("menu-border-color") !important;
   }
 
-  to {
-    opacity: 1;
-  }
-}
+  // find bar buttons
+  .findbar-closebutton,
+  .findbar-find-previous,
+  .findbar-find-next {
+    --button-size: 24px;
+    border-radius: 50% !important;
+    padding: 6px !important;
+    max-height: var(--button-size) !important;
+    max-width: var(--button-size) !important;
+    min-height: var(--button-size) !important;
+    min-width: var(--button-size) !important;
 
-@keyframes findbar-transform {
-  from {
-    transform: scale(0.9);
+    & > .toolbarbutton-icon {
+      display: block !important;
+      max-height: var(--button-size) !important;
+      max-width: var(--button-size) !important;
+      min-height: var(--button-size) !important;
+      min-width: var(--button-size) !important;
+      padding: 4px !important;
+    }
   }
 
-  to {
-    transform: scale(1);
+  .findbar-closebutton {
+    margin-left: 0 !important;
+  }
+
+  .findbar-find-previous, .findbar-find-next {
+    margin-inline-end: 6px !important;
+
+    & > .toolbarbutton-icon { 
+      padding: 6px !important;
+    }
   }
 }
