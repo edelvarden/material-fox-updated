@@ -39,3 +39,8 @@
 .search-one-offs {
   display: none !important;
 }
+
+// added url bar suggestions container padding
+.urlbarView-results {
+  padding-block: 0 8px !important;
+}
