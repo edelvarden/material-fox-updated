@@ -34,3 +34,8 @@
 .urlbarView-row-inner {
   padding-block: 9px !important;
 }
+
+// hide "This time, search with" bottom panel
+.search-one-offs {
+  display: none !important;
+}
