@@ -1,7 +1,7 @@
 name: "🎃 Bug Report" 
 description: Create Bug Report
 title: "[Bug]: "
-labels: ["bug-report"]
+labels: ["bug"]
 
 body:
   - type: textarea
