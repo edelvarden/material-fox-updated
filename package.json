@@ -3,6 +3,7 @@
   "type": "module",
   "private": true,
   "version": "0.0.2",
+  "license": "MIT",
   "scripts": {
     "watch": "npm-run-all --parallel watch:chrome watch:content",
     "watch:chrome": "sass --watch src/user-chrome.scss chrome/user-chrome.css --no-source-map --style compressed",
