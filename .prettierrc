@@ -4,5 +4,8 @@
     "semi": true,
     "singleQuote": false,
     "quoteProps": "as-needed",
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "plugins": ["stylefmt"],
+    "pluginSearchDirs": false,
+    "bracketSpacing": true
 }
