@@ -117,10 +117,11 @@
     margin-left: 0 !important;
   }
 
-  .findbar-find-previous, .findbar-find-next {
+  .findbar-find-previous,
+  .findbar-find-next {
     margin-inline-end: 6px !important;
 
-    & > .toolbarbutton-icon { 
+    & > .toolbarbutton-icon {
       padding: 6px !important;
     }
   }

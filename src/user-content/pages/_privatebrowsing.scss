@@ -53,3 +53,8 @@ body {
 .fake-caret {
   background-color: var(--in-content-text-color) !important;
 }
+
+.fake-caret {
+  inset-inline-start: 48px !important;
+  top: 13px !important;
+}
