@@ -79,6 +79,7 @@ $urlbar-icons: "#reader-mode-button, #pageActionButton, #pocket-button-box, #pag
 // Centered URL icons
 .urlbar-page-action {
   -moz-box-align: center !important;
+  align-items: center !important;
 }
 #urlbar-input-container:not([pageproxystate="invalid"]) {
   .urlbar-page-action {

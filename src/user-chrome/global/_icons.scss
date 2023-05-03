@@ -116,6 +116,7 @@ body {
 #context-reload {
   list-style-image: var(--refresh-icon) !important;
   -moz-box-align: center !important; // fix refresh icon cropping
+  align-items: center !important;
 }
 
 // stop icon
