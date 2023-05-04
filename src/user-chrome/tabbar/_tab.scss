@@ -185,7 +185,7 @@ body {
 }
 
 #tabbrowser-tabs[overflow] {
-  margin-inline-start: 8px !important;
+  // margin-inline-start: 8px !important;
 
   .tabbrowser-arrowscrollbox {
     border-radius: 8px 8px 0 0 !important;
@@ -198,13 +198,13 @@ body {
   }
 }
 
-#tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab],
-#tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-tab]:not([pinned]),
-#tabbrowser-tabs[overflow]
-  .tabbrowser-tab[pinned]
-  + .tabbrowser-tab:not([pinned]) {
-  margin-inline-start: 8px !important;
-}
+// #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab],
+// #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-tab]:not([pinned]),
+// #tabbrowser-tabs[overflow]
+//   .tabbrowser-tab[pinned]
+//   + .tabbrowser-tab:not([pinned]) {
+//   margin-inline-start: 8px !important;
+// }
 
 .tab-label {
   margin-left: 8px !important;
@@ -257,4 +257,16 @@ body {
       background-color: get-var("bgcolor-50") !important;
     }
   }
+}
+
+// fix pinned tabs position for overflow mode
+#tabbrowser-tabs[overflow] {
+  .tabbrowser-tab:is([pinned], [first-visible-unpinned-tab]) {
+    margin-inline-start: 0 !important;
+  }
+}
+
+// remove left title bar drag area
+#tabbrowser-tabs {
+  padding-inline: 0 0 !important;
 }

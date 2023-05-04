@@ -43,12 +43,12 @@
   opacity: var(--tab-separator-opacity) !important;
 }
 
-#tabbrowser-tabs[overflow]
-  .tabbrowser-tab[pinned]
-  + .tabbrowser-tab:not([pinned])
-  .tab-content::before {
-  opacity: 0 !important;
-}
+// #tabbrowser-tabs[overflow]
+//   .tabbrowser-tab[pinned]
+//   + .tabbrowser-tab:not([pinned])
+//   .tab-content::before {
+//   opacity: 0 !important;
+// }
 
 .tabbrowser-tab[visuallyselected] {
   --tab-transition-duration: 0s !important;
