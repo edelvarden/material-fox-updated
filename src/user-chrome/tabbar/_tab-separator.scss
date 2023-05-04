@@ -1,6 +1,7 @@
 .tab-content {
   position: relative !important;
   overflow: hidden !important;
+  align-items: center !important;
 
   &::before,
   &::after {
@@ -10,7 +11,7 @@
     background-color: get-var("tab-separator-color") !important;
     width: 1px !important;
     height: 20px !important;
-    transform: translateY(40%) !important;
+    transform: translateY(0%) !important;
     opacity: 0 !important;
     transition: opacity 187ms get-var("point-to-point") !important;
   }
