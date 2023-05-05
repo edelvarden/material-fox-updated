@@ -1,6 +1,6 @@
 // inherit fonts for inputs and buttons
 input,
-button,
+:not(button-group) > button,
 textarea,
 select {
   font: inherit !important;
@@ -34,7 +34,7 @@ select {
 }
 
 // checkbox new icon
-
+:root,
 html,
 body {
   --check-icon: url("icons/check.svg");
