@@ -1,7 +1,8 @@
 @use "sass:meta";
-@import "variables";
+@import "global/variables";
+@import "global/icons";
+@import "global/reset";
 @import "user-chrome/variables-local";
-@import "reset";
 
 @import "user-chrome/global/_index__";
 @import "user-chrome/tabbar/_index__";

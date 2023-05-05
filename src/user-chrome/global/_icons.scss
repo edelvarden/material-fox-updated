@@ -1,36 +1,3 @@
-html,
-body {
-  // tabbar
-  --no-src-icon: url("icons/no-src.svg");
-  --audio-icon: url("icons/audio.svg");
-  --audio-muted-icon: url("icons/audio-muted.svg");
-  --audio-blocked-icon: url("icons/audio-blocked.svg");
-  --close-tab-icon: url("icons/close-tab.svg");
-  --new-tab-icon: url("icons/new-tab.svg");
-
-  // navbar
-  --arrow-back-icon: url("icons/arrow-back.svg");
-  --refresh-icon: url("icons/refresh.svg");
-  --close-icon: url("icons/close.svg");
-  --home-icon: url("icons/home.svg");
-
-  //urlbar
-  --info-icon: url("icons/info.svg");
-  --lock-icon: url("icons/lock.svg");
-  --warning-icon: url("icons/warning.svg");
-  --properties-icon: url("icons/properties.svg");
-  --tracking-protection-icon: url("icons/tracking-protection.svg");
-  --star-icon: url("icons/star.svg");
-  --menu-icon: url("icons/menu.svg");
-  --menu-update-icon: url("icons/menu-update.svg");
-  --extension-icon: url("icons/extension.svg");
-
-  //other
-  --chevron-icon: url("icons/chevron.svg");
-  --folder-icon: url("icons/folder.svg");
-  --check-icon: url("icons/check.svg");
-}
-
 // no src icon
 .tab-icon-image {
   &:not([src]),

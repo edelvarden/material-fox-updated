@@ -51,3 +51,8 @@ toolbarbutton menupopup[placespopup] menuseparator::before {
   border-top: 1px solid !important;
   border-color: get-var("menu-border-color") !important;
 }
+
+// modal window shadow
+.dialogBox:not(.spotlightBox) {
+  box-shadow: get-var("elevation-2") !important;
+}
