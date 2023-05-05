@@ -1,6 +1,6 @@
 // inherit fonts for inputs and buttons
 input,
-:not(button-group) > button,
+// :not(button-group) > button,
 textarea,
 select {
   font: inherit !important;
