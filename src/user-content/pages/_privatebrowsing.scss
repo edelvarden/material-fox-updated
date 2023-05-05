@@ -1,60 +1,60 @@
-/* private browsing newtab */
-.search-inner-wrapper {
-  height: 44px !important;
-}
+@-moz-document url-prefix("about:privatebrowsing") {
+  /* private browsing newtab */
+  .search-inner-wrapper {
+    height: 44px !important;
+  }
 
-.search-handoff-button,
-.search-handoff-button:active,
-.search-handoff-button:enabled:hover:active {
-  background-color: get-var("bgcolor-0") !important;
-  background-size: 24px;
-  border: 0 !important;
-  border-radius: 99px !important;
-  padding-inline-start: 48px !important;
-}
+  .search-handoff-button,
+  .search-handoff-button:active,
+  .search-handoff-button:enabled:hover:active {
+    background-color: get-var("bgcolor-0") !important;
+    background-size: 24px;
+    border: 0 !important;
+    border-radius: 99px !important;
+    padding-inline-start: 48px !important;
+  }
 
-.search-handoff-button.focused:not(.disabled) {
-  box-shadow: none !important;
-  outline: 2px solid var(--in-content-focus-outline-color) !important;
-  outline-offset: -1px !important;
-}
+  .search-handoff-button.focused:not(.disabled) {
+    box-shadow: none !important;
+    outline: 2px solid var(--in-content-focus-outline-color) !important;
+    outline-offset: -1px !important;
+  }
 
-.search-handoff-button.disabled {
-  opacity: 0 !important;
-}
+  .search-handoff-button.disabled {
+    opacity: 0 !important;
+  }
 
-.fake-textbox {
-  color: var(--in-content-page-color) !important;
-}
+  .fake-textbox {
+    color: var(--in-content-page-color) !important;
+  }
 
-.info {
-  background-color: get-var("bgcolor-0") !important;
-  border-radius: 18px !important;
-}
+  .info {
+    background-color: get-var("bgcolor-0") !important;
+    border-radius: 18px !important;
+  }
 
-// private browsing page colors
-:root,
-html,
-body {
-  --in-content-text-color: #{get-var("text-primary")} !important;
-  --in-content-page-color: #{get-var("text-primary")} !important;
-  // main bg color
-  --in-content-page-background: #{get-var("bgcolor-100")} !important;
-  // secondary controls color
-  --in-content-primary-button-background: #{get-var("accent-color")} !important;
-  --in-content-primary-button-background-hover: var(
-    --mf-accent-color-hover
-  ) !important;
-  --in-content-primary-button-background-active: var(
-    --mf-accent-color
-  ) !important;
-}
+  // private browsing page colors
+  :root,
+  html,
+  body {
+    --in-content-text-color: #{get-var("text-primary")} !important;
+    --in-content-page-color: #{get-var("text-primary")} !important;
+    // main bg color
+    --in-content-page-background: #{get-var("bgcolor-100")} !important;
+    // secondary controls color
+    --in-content-primary-button-background: #{get-var("accent-color")} !important;
+    --in-content-primary-button-background-hover: #{get-var(
+        "accent-color-hover"
+      )} !important;
+    --in-content-primary-button-background-active: #{get-var("accent-color")} !important;
+  }
 
-.fake-caret {
-  background-color: var(--in-content-text-color) !important;
-}
+  .fake-caret {
+    background-color: var(--in-content-text-color) !important;
+  }
 
-.fake-caret {
-  inset-inline-start: 48px !important;
-  top: 13px !important;
+  .fake-caret {
+    inset-inline-start: 48px !important;
+    top: 13px !important;
+  }
 }

@@ -46,7 +46,7 @@ npm install
 3. Watch for changes to the ```src``` files and automatically build them to the ```chrome``` folder by using the following command
 
 ````
-npm run watch
+npm run dev
 ````
 
 ## Credits

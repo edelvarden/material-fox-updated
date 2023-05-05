@@ -5,6 +5,13 @@
   }
 }
 
+:root {
+  // icons
+  @each $key, $value in $icons {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+}
+
 // vars for dark mode
 @media (prefers-color-scheme: dark) {
   :root {

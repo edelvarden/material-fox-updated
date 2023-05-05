@@ -1,11 +1,21 @@
 @use "sass:meta";
-@import "global/variables";
-@import "global/icons";
-@import "global/reset";
 
-// local variables only for: home, private browsing and about:* pages
-@-moz-document url-prefix("about:newtab"), url-prefix("about:home"), url-prefix("about:privatebrowsing"), regexp("about:(?!blank).*") {
+// only for about:* pages
+@-moz-document regexp("about:(?!blank).*") {
+  @import "global/variables";
+  @import "global/icons";
+  @import "global/reset";
   @import "user-content/variables-local";
+
+  // new tab page
+  @import "user-content/pages/new-tab";
+
+  // private browsing page
+  @import "user-content/pages/privatebrowsing";
+
+  // reader view page
+  @import "user-content/pages/reader-view";
 }
 
-@import "user-content/pages/_index__";
+// youtube page
+@import "user-content/pages/fix-firefox-youtube";

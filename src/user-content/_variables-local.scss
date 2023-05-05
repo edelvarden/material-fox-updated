@@ -7,6 +7,15 @@ body {
   }
 }
 
+:root,
+html,
+body {
+  // icons
+  @each $key, $value in $icons {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root,
   html,

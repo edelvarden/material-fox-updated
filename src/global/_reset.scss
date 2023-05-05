@@ -34,15 +34,9 @@ select {
 }
 
 // checkbox new icon
-:root,
-html,
-body {
-  --check-icon: url("icons/check.svg");
-}
-
 .checkbox-check[checked],
 .home-section .section .sponsored-checkbox:checked {
-  background-image: var(--check-icon) !important;
+  background-image: get-var("check-icon") !important;
 }
 
 // button font weight similar to chrome

@@ -13,7 +13,6 @@
   max-width: 40px !important;
   max-height: var(--tab-min-height) !important;
   margin: 0 !important;
-  // transform: translateY(3px) !important;
 
   & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     padding: 6px !important;
@@ -21,16 +20,7 @@
     width: auto !important;
     height: auto !important;
     border-radius: 4px !important;
-    // transition: background-color 83ms linear !important;
   }
-
-  // &:hover {
-  //   & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-  //     background: var(--mf-control-bgcolor) !important;
-  //     outline: 1px solid transparent !important;
-  //     outline-color: var(--mf-control-border-color) !important;
-  //   }
-  // }
 }
 
 // tab close

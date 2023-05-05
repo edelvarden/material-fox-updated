@@ -2,7 +2,7 @@
 .tab-icon-image {
   &:not([src]),
   &:-moz-broken {
-    content: var(--no-src-icon) !important;
+    content: get-var("no-src-icon") !important;
     fill: get-var("grey-600") !important;
   }
 }
@@ -10,7 +10,7 @@
 .unified-nav-forward,
 .unified-nav-back {
   &:not([_moz-menuactive])[uri*="about:"] {
-    list-style-image: var(--no-src-icon) !important;
+    list-style-image: get-var("no-src-icon") !important;
     fill: get-var("grey-600") !important;
   }
 }
@@ -20,32 +20,25 @@
   .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"]
   {
     fill: transparent !important;
-    background: var(--no-src-icon) !important;
+    background: get-var("no-src-icon") !important;
   }
 }
 
 // set no src icon for "List all tabs"
 .all-tabs-button:not([src]) {
-  list-style-image: var(--no-src-icon) !important;
+  list-style-image: get-var("no-src-icon") !important;
   fill: get-var("grey-600") !important;
-}
-
-// for alert window
-.titleIcon {
-  background-color: transparent !important;
-  background-image: var(--icon-url, --no-src-icon) !important;
-  fill: get-var("grey-500") !important;
 }
 
 // tabbar icons
 .tab-close-button,
 .close-icon {
-  list-style-image: var(--close-tab-icon) !important;
+  list-style-image: get-var("close-tab-icon") !important;
 }
 
 #tabs-newtab-button,
 #new-tab-button {
-  list-style-image: var(--new-tab-icon) !important;
+  list-style-image: get-var("new-tab-icon") !important;
 }
 
 // arrow back
@@ -54,13 +47,13 @@
 #context-forward,
 .subviewbutton-back,
 .identity-popup-expander {
-  list-style-image: var(--arrow-back-icon) !important;
+  list-style-image: get-var("arrow-back-icon") !important;
 }
 
 // forward icon
 .unified-nav-forward[_moz-menuactive]:-moz-locale-dir(ltr),
 .unidied-nav-back[_moz-menuactive]:-moz-locale-dir(rtl) {
-  list-style-image: var(--arrow-back-icon) !important;
+  list-style-image: get-var("arrow-back-icon") !important;
 
   & > hbox > image {
     transform: scaleX(-1) !important;
@@ -70,7 +63,7 @@
 // back icon
 .unified-nav-back[_moz-menuactive]:-moz-locale-dir(ltr),
 .unidied-nav-forward[_moz-menuactive]:-moz-locale-dir(rtl) {
-  list-style-image: var(--arrow-back-icon) !important;
+  list-style-image: get-var("arrow-back-icon") !important;
 }
 
 .toolbarbutton-1#forward-button .toolbarbutton-icon,
@@ -81,14 +74,14 @@
 // refresh icon
 #reload-button,
 #context-reload {
-  list-style-image: var(--refresh-icon) !important;
+  list-style-image: get-var("refresh-icon") !important;
   -moz-box-align: center !important; // fix refresh icon cropping
   align-items: center !important;
 }
 
 // stop icon
 #stop-button {
-  list-style-image: var(--close-icon) !important;
+  list-style-image: get-var("close-icon") !important;
 }
 
 // nav bar icon size
@@ -101,7 +94,7 @@
 
 // home icon
 #home-button {
-  list-style-image: var(--home-icon) !important;
+  list-style-image: get-var("home-icon") !important;
 }
 
 // nav bar icon size
@@ -112,7 +105,7 @@
 // lock (secure)
 #identity-box[pageproxystate="valid"] {
   &:is(.verifiedDomain, .mixedActiveBlocked) #identity-icon {
-    list-style-image: var(--lock-icon) !important;
+    list-style-image: get-var("lock-icon") !important;
   }
 
   &:is(
@@ -126,7 +119,7 @@
       &.certErrorPage
     )
     #identity-icon {
-    list-style-image: var(--warning-icon) !important;
+    list-style-image: get-var("warning-icon") !important;
   }
 }
 
@@ -134,7 +127,7 @@
   &[connection^="secure"]
     .identity-popup-security-connection
     .identity-popup-security-connection-icon {
-    list-style-image: var(--lock-icon) !important;
+    list-style-image: get-var("lock-icon") !important;
   }
 
   &:is(
@@ -144,26 +137,26 @@
     )
     .identity-popup-security-connection
     .identity-popup-security-connection-icon {
-    list-style-image: var(--warning-icon) !important;
-    // fill: var(--error-text-color) !important;
+    list-style-image: get-var("warning-icon") !important;
+    // fill: get-var("error-text-color) !important;
   }
 }
 
 // properties permitions icon
 #permissions-granted-icon {
-  list-style-image: var(--properties-icon) !important;
+  list-style-image: get-var("properties-icon") !important;
 }
 
 // star & tracking protection icons
 #tracking-protection-icon {
-  list-style-image: var(--tracking-protection-icon) !important;
+  list-style-image: get-var("tracking-protection-icon") !important;
 }
 
 #star-button,
 #context-bookmarkpage,
 #pageAction-panel-bookmark,
 #urlbar-engine-one-off-item-bookmarks {
-  list-style-image: var(--star-icon) !important;
+  list-style-image: get-var("star-icon") !important;
   fill-opacity: 0 !important;
 }
 
@@ -173,7 +166,7 @@
 
 #star-button[starred],
 #tracking-protection-icon-box[active] {
-  fill: var(--mf-accent-color) !important;
+  fill: get-var("accent-color") !important;
 }
 
 #star-button,
@@ -186,23 +179,23 @@
 // chevron icon
 #PlacesChevron,
 #nav-bar-overflow-button {
-  list-style-image: var(--chevron-icon) !important;
+  list-style-image: get-var("chevron-icon") !important;
 }
 
 // extension icon
 #unified-extensions-button {
-  list-style-image: var(--extension-icon) !important;
+  list-style-image: get-var("extension-icon") !important;
 }
 
 // menu icon
 #pageActionButton,
 #PanelUI-menu-button {
-  list-style-image: var(--menu-icon) !important;
+  list-style-image: get-var("menu-icon") !important;
 }
 
 #PanelUI-menu-button[badge-status|="update"],
 .panel-banner-item[notificationid^="update"] {
-  list-style-image: var(--menu-update-icon) !important;
+  list-style-image: get-var("menu-update-icon") !important;
 }
 
 .panel-banner-item[notificationid^="update"] {
@@ -213,34 +206,34 @@
 // custom bookmarks folder icon
 .bookmark-item[container],
 treechildren::-moz-tree-image(container) {
-  list-style-image: var(--folder-icon) !important;
+  list-style-image: get-var("folder-icon") !important;
 }
 
 .downloadIconShow .button-icon,
 .folder-icon {
-  list-style-image: var(--folder-icon) !important;
+  list-style-image: get-var("folder-icon") !important;
 }
 
 // checked icon
 menuitem[checked="true"] > .menu-iconic-left {
-  list-style-image: var(--check-icon) !important;
+  list-style-image: get-var("check-icon") !important;
 }
 
 // edit bookmark menu checkbox icon
 .checkbox-check[checked] {
-  background-image: var(--check-icon) !important;
+  background-image: get-var("check-icon") !important;
 }
 
 :is(.all-tabs-secondary-button, .tab-icon-overlay)[soundplaying],
 .tab-icon-sound {
-  list-style-image: var(--audio-icon) !important;
+  list-style-image: get-var("audio-icon") !important;
 }
 
 .all-tabs-secondary-button,
 .tab-icon-overlay,
 .tab-icon-sound {
   &[muted] {
-    list-style-image: var(--audio-muted-icon) !important;
+    list-style-image: get-var("audio-muted-icon") !important;
   }
 }
 
@@ -248,6 +241,6 @@ menuitem[checked="true"] > .menu-iconic-left {
 .tab-icon-overlay,
 .tab-icon-sound {
   &[activemedia-blocked] {
-    list-style-image: var(--audio-muted-icon) !important;
+    list-style-image: get-var("audio-muted-icon") !important;
   }
 }

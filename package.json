@@ -2,26 +2,21 @@
   "name": "material-fox-updated",
   "type": "module",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo \"[Husky] pre-commit\""
-    }
-  },
   "scripts": {
-    "watch": "npm-run-all --parallel watch:chrome watch:content",
-    "watch:chrome": "sass --watch src/user-chrome.scss chrome/user-chrome.css --no-source-map --style compressed",
-    "watch:content": "sass --watch src/user-content.scss chrome/user-content.css --no-source-map --style compressed",
+    "dev": "npm-run-all --parallel dev:chrome dev:content",
+    "dev:chrome": "sass --watch src/user-chrome.scss chrome/user-chrome.css --no-source-map --style compressed",
+    "dev:content": "sass --watch src/user-content.scss chrome/user-content.css --no-source-map --style compressed",
     "build": "run-s build:chrome build:content",
     "build:chrome": "sass --no-source-map --style compressed src/user-chrome.scss chrome/user-chrome.css",
     "build:content": "sass --no-source-map --style compressed src/user-content.scss chrome/user-content.css",
     "format": "prettier --write \"src/**/*.+(css|scss|sass)\"",
+    "lint": "prettier --check .",
     "pre-commit": "npm run format -- --list-different"
   },
   "devDependencies": {
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.7",
     "stylefmt": "^6.0.3"
