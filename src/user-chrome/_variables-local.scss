@@ -1,35 +1,3 @@
-:root {
-  // regular vars
-  @each $key, $value in $variables {
-    --#{$prefix}-#{$key}: #{$value};
-  }
-}
-
-:root {
-  // icons
-  @each $key, $value in $icons {
-    --#{$prefix}-#{$key}: #{$value};
-  }
-}
-
-// vars for dark mode
-@media (prefers-color-scheme: dark) {
-  :root {
-    @each $key, $value in $dark-mode {
-      --#{$prefix}-#{$key}: #{$value};
-    }
-  }
-}
-
-// vars for light mode
-@media (prefers-color-scheme: light) {
-  :root {
-    @each $key, $value in $light-mode {
-      --#{$prefix}-#{$key}: #{$value};
-    }
-  }
-}
-
 // accent color vars
 :root,
 html,

@@ -1,12 +1,14 @@
 # MaterialFox UPDATED
-*A Material Design-inspired userChrome.css theme for Firefox*
+
+_A Material Design-inspired userChrome.css theme for Firefox_
 
 ![Preview](https://github.com/edelvarden/material-fox-updated/blob/main/preview.png?raw=true)
 
 ## Installation
-1. Go to ```about:support``` url address
-2. Find ```Profile Folder``` and click ```Open Folder``` button.
-3. Move ```chrome``` folder and ```user.js``` file into Firefox profile directory.
+
+1. Go to `about:support` url address
+2. Find `Profile Folder` and click `Open Folder` button.
+3. Move `chrome` folder and `user.js` file into Firefox profile directory.
 4. Restart Firefox.
 
 ## Build & Development
@@ -14,11 +16,11 @@
 - [Visual Studio Code](https://code.visualstudio.com/) (development environment)
 - [NodeJS](https://nodejs.org/en/download) (for npm)
 
-1. Clone this repo or extract downloaded zip to ```[Profile Folder]/chrome```
+1. Clone this repo or extract downloaded zip to `[Profile Folder]/chrome`
 
-````
+```
 git clone https://github.com/edelvarden/material-fox-updated.git .
-````
+```
 
 Project structure
 
@@ -37,18 +39,19 @@ Project structure
     └── userContent.css
 ```
 
-2. On the project root directory, install the dependencies listed in ```package.json``` by using the following command
+2. On the project root directory, install the dependencies listed in `package.json` by using the following command
 
-````
+```
 npm install
-````
+```
 
-3. Watch for changes to the ```src``` files and automatically build them to the ```chrome``` folder by using the following command
+3. Watch for changes to the `src` files and automatically build them to the `chrome` folder by using the following command
 
-````
+```
 npm run dev
-````
+```
 
 ## Credits
+
 - [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)
 - [edge-frfox](https://github.com/bmFtZQ/edge-frfox) by [bmFtZQ](https://github.com/bmFtZQ)

@@ -11,9 +11,9 @@
     "build": "run-s build:chrome build:content",
     "build:chrome": "sass --no-source-map --style compressed src/user-chrome.scss chrome/user-chrome.css",
     "build:content": "sass --no-source-map --style compressed src/user-content.scss chrome/user-content.css",
-    "format": "prettier --write \"src/**/*.+(css|scss|sass)\"",
+    "format": "prettier --write .",
     "lint": "prettier --check .",
-    "pre-commit": "npm run format -- --list-different"
+    "pre-commit": "prettier --write . --list-different"
   },
   "devDependencies": {
     "husky": "^8.0.3",

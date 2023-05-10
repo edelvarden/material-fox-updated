@@ -1,9 +1,6 @@
-@use "sass:meta";
-
 // only for about:* pages
 @-moz-document regexp("about:(?!blank).*") {
-  @import "global/variables";
-  @import "global/icons";
+  @import "global/variables/index";
   @import "global/reset";
   @import "user-content/variables-local";
 

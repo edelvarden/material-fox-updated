@@ -1,32 +1,4 @@
-// Prefix for CSS variables
-$prefix: mf;
-$base-font-size: 16px;
-
-// convert px to em
-@function px-to-em($px) {
-  @return $px / $base-font-size * 1em;
-}
-
-// convert px to rem
-@function px-to-rem($px) {
-  @return $px / $base-font-size * 1rem;
-}
-
-// return color mix function with opacity support
-@function cm($main-color, $secondary-color, $opacity: 1) {
-  $opacity: $opacity * 100%;
-  @return color-mix(in srgb, $secondary-color $opacity, $main-color);
-}
-
-// return get-varue from CSS variable
-@function get-var($variable-name) {
-  @return #{var(--#{$prefix}-#{$variable-name})};
-}
-
-// change font
-$font-family: ("Roboto", Arial, sans-serif);
-
-$variables: (
+$colors: (
   // --------------------------------------------------------------------------------
   // -- Color palette
   // --------------------------------------------------------------------------------
@@ -54,46 +26,6 @@ $variables: (
   "blue-200": #aecbfa,
   "blue-100": #d2e3fc,
   "blue-50": #e8f0fe,
-
-  // --------------------------------------------------------------------------------
-  // -- Animation
-  // --------------------------------------------------------------------------------
-  // Fast Invoke
-  // Direct and subtle
-  // Usage: Transitions that are functional and utilitarian should use this curve.
-  // Position, Scale, Rotation
-  // Timing: 187, 333, 500
-  "fast-invoke": cubic-bezier(0, 0, 0, 1),
-  // Strong Invoke
-  // Bold and emphasizing
-  // Usage: Transitions that call attention or reinforce an action should use this curve.
-  // Position, Scale
-  // Timing: 667
-  "strong-invoke": cubic-bezier(0.13, 1.62, 0, 0.92),
-  // Fast Dismiss
-  // Direct and subtle
-  // Usage: Transitions that dismiss a surface without going off screen or within the same area should use this curve combined with a fade out.
-  // Position, Scale
-  // Timing: 187, 333, 500
-  "fast-dismiss": cubic-bezier(0, 0, 0, 1),
-  // Soft Dismiss
-  // Gentle and mellow
-  // Usage: Transitions that dismiss a surface off screen while confirming a user action should use this curve.
-  // Scale
-  // Timing: 167
-  "soft-dismiss": cubic-bezier(1, 0, 1, 1),
-  // Point to Point
-  // Direct and guiding
-  // Usage: Transitions that keep the same element on screen going from one place to another should use this curve.
-  // Position, Scale, Rotation
-  // Timing: 187, 333, 500
-  "point-to-point": cubic-bezier(0.55, 0.55, 0, 1),
-  // Fade in Out
-  // Quick and efficient
-  // Usage: Transitions that keep the same element on screen going from one place to another should use this curve.
-  // Opacity
-  // Timing: 83
-  "fade-in-out": linear,
 
   // --------------------------------------------------------------------------------
   // -- Shadow

@@ -1,9 +1,6 @@
 **/.git
+**/.husky
 **/node_modules
 
-# assets
-**/chrome/icons
-
 # build files
-**/chrome/user-chrome.css
-**/chrome/user-content.css
+**/chrome

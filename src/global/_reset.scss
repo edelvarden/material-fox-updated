@@ -1,26 +1,3 @@
-// inherit fonts for inputs and buttons
-input,
-// :not(button-group) > button,
-textarea,
-select {
-  font: inherit !important;
-  letter-spacing: inherit !important;
-  word-spacing: inherit !important;
-}
-
-// custom font (only for windows)
-@media (-moz-platform: windows) {
-  :root {
-    --#{$prefix}-font-family: #{meta.inspect($font-family)};
-  }
-
-  *,
-  *::before,
-  *::after {
-    font-family: var(--#{$prefix}-font-family) !important;
-  }
-}
-
 // selection color
 ::selection {
   background-color: get-var("blue-500") !important;
@@ -33,6 +10,16 @@ select {
   }
 }
 
+// inherit fonts for inputs and buttons
+input,
+// :not(button-group) > button,
+textarea,
+select {
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  word-spacing: inherit !important;
+}
+
 // checkbox new icon
 .checkbox-check[checked],
 .home-section .section .sponsored-checkbox:checked {
@@ -42,4 +29,13 @@ select {
 // button font weight similar to chrome
 button {
   font-weight: 500 !important;
+}
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none !important;
 }

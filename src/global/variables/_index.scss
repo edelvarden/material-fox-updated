@@ -1,0 +1,52 @@
+@use "sass:meta";
+@import "constants";
+@import "functions";
+@import "animation";
+@import "colors";
+@import "icons";
+
+// Custom font (only for windows)
+@media (-moz-platform: windows) {
+  :root {
+    --#{$prefix}-font-family: #{meta.inspect($font-family)};
+  }
+
+  *,
+  *::before,
+  *::after {
+    font-family: var(--#{$prefix}-font-family) !important;
+  }
+}
+
+:root,
+html,
+body {
+  // animation
+  @each $key, $value in $animation {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+
+  // icons
+  @each $key, $value in $icons {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+
+  // colors
+  @each $key, $value in $colors {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+
+  // dark mode colors
+  @media (prefers-color-scheme: dark) {
+    @each $key, $value in $dark-mode {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+
+  // light mode colors
+  @media (prefers-color-scheme: light) {
+    @each $key, $value in $light-mode {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+}
