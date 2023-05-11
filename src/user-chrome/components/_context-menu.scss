@@ -32,6 +32,7 @@ $menu-min-width: 220px;
       ) !important;
     }
   }
+
   #tabContextMenu {
     :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
       padding-inline-start: calc(
@@ -140,4 +141,3 @@ $menu-min-width: 220px;
     display: none !important;
   }
 }
-// }
