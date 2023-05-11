@@ -25,7 +25,8 @@ $menu-min-width: 220px;
   $image-width: 16px;
   $image-padding-end: 8px;
 
-  #contentAreaContextMenu :is(menuitem, menu):not([image]) {
+  #contentAreaContextMenu
+    :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
     padding-inline-start: calc(
       $default-padding + $image-width + $image-padding-end
     ) !important;
@@ -103,18 +104,25 @@ $menu-min-width: 220px;
     color: inherit !important;
   }
 
-  // hide "Bookmark Page.."
-  #context-bookmarkpage {
+  // hide "Bookmark Page/Link.."
+  #context-bookmarkpage,
+  #context-bookmarklink {
     display: none !important;
   }
 
-  // hide "Save Page to Pocket"
-  #context-pocket {
+  // hide "Save Page/Link to Pocket"
+  #context-pocket,
+  #context-savelinktopocket {
     display: none !important;
   }
 
   // hide "Inspect Accessibility Properties"
   #context-inspect-a11y {
+    display: none !important;
+  }
+
+  // hide "Email Image…"
+  #context-sendimage {
     display: none !important;
   }
 }
