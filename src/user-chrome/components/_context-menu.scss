@@ -25,12 +25,19 @@ $menu-min-width: 220px;
   $image-width: 16px;
   $image-padding-end: 8px;
 
-  #contentAreaContextMenu,
-  #tabContextMenu
+  #contentAreaContextMenu {
     :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
-    padding-inline-start: calc(
-      $default-padding + $image-width + $image-padding-end
-    ) !important;
+      padding-inline-start: calc(
+        $default-padding + $image-width + $image-padding-end
+      ) !important;
+    }
+  }
+  #tabContextMenu {
+    :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
+      padding-inline-start: calc(
+        $default-padding + $image-padding-end
+      ) !important;
+    }
   }
   // menupopup > menuitem,
   // menupopup > menu {
@@ -99,10 +106,16 @@ $menu-min-width: 220px;
   }
 
   // menu item hover bg color
-  menu:where([_moz-menuactive="true"]:not([disabled="true"])),
-  menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
-    background-color: get-var("menu-border-color") !important;
-    color: inherit !important;
+  menu,
+  menuitem {
+    &[disabled="true"] {
+      background-color: transparent !important;
+      color: get-var("text-secondary") !important;
+    }
+    &:where([_moz-menuactive="true"]):not([disabled="true"]) {
+      background-color: get-var("menu-border-color") !important;
+      color: inherit !important;
+    }
   }
 
   // hide "Bookmark Page/Link.."
