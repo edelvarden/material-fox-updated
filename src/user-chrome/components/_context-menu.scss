@@ -25,7 +25,8 @@ $menu-min-width: 220px;
   $image-width: 16px;
   $image-padding-end: 8px;
 
-  #contentAreaContextMenu
+  #contentAreaContextMenu,
+  #tabContextMenu
     :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
     padding-inline-start: calc(
       $default-padding + $image-width + $image-padding-end
