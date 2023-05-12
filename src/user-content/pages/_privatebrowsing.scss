@@ -47,6 +47,8 @@
         "accent-color-hover"
       )} !important;
     --in-content-primary-button-background-active: #{get-var("accent-color")} !important;
+    --in-content-focus-outline-color: #{get-var("accent-color")} !important;
+    --focus-outline-color: #{get-var("accent-color")} !important;
   }
 
   .fake-caret {
