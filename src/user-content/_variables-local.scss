@@ -3,3 +3,32 @@ html,
 body {
   --newtab-primary-action-background: #{get-var("accent-color")} !important;
 }
+
+:root,
+html,
+body {
+  // bg color
+  // --in-content-page-background: #{get-var("bgcolor-0")} !important;
+  // --in-content-box-info-background: #{get-var("bgcolor-50")} !important;
+  // --in-content-box-background: #{get-var("bgcolor-50")} !important;
+  // border
+  --in-content-border-color: #{get-var("menu-border-color")} !important;
+  // primary text color
+  --in-content-text-color: #{get-var("text-primary")} !important;
+  --in-content-page-color: #{get-var("text-primary")} !important;
+
+  // accent color
+  --in-content-link-color: #{get-var("accent-color")} !important;
+  --in-content-link-color-hover: #{get-var("accent-color")} !important;
+  --in-content-accent-color: #{get-var("accent-color")} !important;
+  --in-content-primary-button-background: #{get-var("accent-color")} !important;
+  --in-content-primary-button-background-hover: #{get-var("accent-color")} !important;
+  --in-content-primary-button-background-active: #{get-var("accent-color")} !important;
+  --in-content-focus-outline-color: #{get-var("accent-color")} !important;
+  --focus-outline-color: #{get-var("accent-color")} !important;
+}
+.toggle-button {
+  --toggle-background-color-pressed: #{get-var("accent-color")} !important;
+  --toggle-background-color-pressed-hover: #{get-var("accent-color")} !important;
+  --toggle-background-color-pressed-active: #{get-var("accent-color")} !important;
+}

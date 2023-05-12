@@ -1,6 +1,6 @@
 // only for about:* pages
 @-moz-document regexp("about:(?!blank).*") {
-  @import "global/variables/index";
+  @import "variables/index";
   @import "global/reset";
   @import "user-content/variables-local";
 

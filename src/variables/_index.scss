@@ -23,10 +23,8 @@ body {
   }
 
   // dark mode colors
-  @media (prefers-color-scheme: dark) {
-    @each $key, $value in $dark-mode {
-      --#{$prefix}-#{$key}: #{$value};
-    }
+  @each $key, $value in $dark-mode {
+    --#{$prefix}-#{$key}: #{$value};
   }
 
   // light mode colors
