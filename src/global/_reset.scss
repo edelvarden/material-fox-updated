@@ -1,3 +1,5 @@
+@use "sass:meta";
+
 // selection color
 ::selection {
   background-color: get-var("blue-500") !important;
@@ -38,4 +40,35 @@ See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d4
 
 :-moz-ui-invalid {
   box-shadow: none !important;
+}
+
+// font settings
+:root,
+html,
+body {
+  --#{$prefix}-font-family: system-ui, -apple-system,
+    #{meta.inspect($font-family)};
+  font-family: var(--#{$prefix}-font-family) !important;
+  // -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  line-height: 1.2;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+// Custom font (only for windows)
+@media (-moz-platform: windows) {
+  :root,
+  html,
+  body {
+    --#{$prefix}-font-family: #{meta.inspect($font-family)};
+  }
+
+  *,
+  *::before,
+  *::after {
+    font-family: var(--#{$prefix}-font-family) !important;
+  }
 }

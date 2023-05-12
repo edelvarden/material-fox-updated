@@ -1,22 +1,8 @@
-@use "sass:meta";
 @import "constants";
 @import "functions";
 @import "animation";
 @import "colors";
 @import "icons";
-
-// Custom font (only for windows)
-@media (-moz-platform: windows) {
-  :root {
-    --#{$prefix}-font-family: #{meta.inspect($font-family)};
-  }
-
-  *,
-  *::before,
-  *::after {
-    font-family: var(--#{$prefix}-font-family) !important;
-  }
-}
 
 :root,
 html,

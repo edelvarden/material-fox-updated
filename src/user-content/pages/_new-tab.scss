@@ -1,4 +1,37 @@
 @-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  // new tab page colors
+  html,
+  body {
+    // main bg color
+    --newtab-background-color: #{get-var("bgcolor-100")} !important;
+    // secondary controls color
+    --newtab-background-color-secondary: #{get-var("bgcolor-0")} !important;
+    // controls bgcolor hover
+    --newtab-element-hover-color: #{get-var("control-bgcolor")} !important;
+    // text & svg fill color
+    --newtab-text-primary-color: #{get-var("text-primary")} !important;
+    --newtab-primary-element-text-color: #{get-var("text-on-accent")} !important;
+  }
+
+  @media (prefers-color-scheme: light) {
+    html,
+    body {
+      // main bg color
+      --newtab-background-color: #{get-var("bgcolor-100")} !important;
+      // secondary controls color
+      --newtab-background-color-secondary: #{get-var("bgcolor-100")} !important;
+      // controls bgcolor hover
+      --newtab-element-hover-color: #{get-var("bgcolor-0")} !important;
+      // text & svg fill color
+      --newtab-text-primary-color: #{get-var("text-primary")} !important;
+    }
+
+    // new tab shortcuts bg color
+    .top-site-outer .tile {
+      --newtab-background-color-secondary: #{get-var("bgcolor-50")} !important;
+    }
+  }
+
   // hide pin
   .icon.icon-pin-small {
     display: none !important;
@@ -116,39 +149,6 @@
     .img
     img {
     border-radius: 18px 18px 0 0 !important;
-  }
-
-  // new tab page colors
-  html,
-  body {
-    // main bg color
-    --newtab-background-color: #{get-var("bgcolor-100")} !important;
-    // secondary controls color
-    --newtab-background-color-secondary: #{get-var("bgcolor-0")} !important;
-    // controls bgcolor hover
-    --newtab-element-hover-color: #{get-var("control-bgcolor")} !important;
-    // text & svg fill color
-    --newtab-text-primary-color: #{get-var("text-primary")} !important;
-    --newtab-primary-element-text-color: #{get-var("text-on-accent")} !important;
-  }
-
-  @media (prefers-color-scheme: light) {
-    html,
-    body {
-      // main bg color
-      --newtab-background-color: #{get-var("bgcolor-100")} !important;
-      // secondary controls color
-      --newtab-background-color-secondary: #{get-var("bgcolor-100")} !important;
-      // controls bgcolor hover
-      --newtab-element-hover-color: #{get-var("bgcolor-0")} !important;
-      // text & svg fill color
-      --newtab-text-primary-color: #{get-var("text-primary")} !important;
-    }
-
-    // new tab shortcuts bg color
-    .top-site-outer .tile {
-      --newtab-background-color-secondary: #{get-var("bgcolor-50")} !important;
-    }
   }
 
   // new tab shortcuts

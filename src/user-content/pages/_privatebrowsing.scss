@@ -1,5 +1,22 @@
 @-moz-document url-prefix("about:privatebrowsing") {
-  /* private browsing newtab */
+  // private browsing page colors
+  :root,
+  html,
+  body {
+    --in-content-text-color: #{get-var("text-primary")} !important;
+    --in-content-page-color: #{get-var("text-primary")} !important;
+    // main bg color
+    --in-content-page-background: #{get-var("bgcolor-100")} !important;
+    // secondary controls color
+    --in-content-primary-button-background: #{get-var("accent-color")} !important;
+    --in-content-primary-button-background-hover: #{get-var(
+        "accent-color-hover"
+      )} !important;
+    --in-content-primary-button-background-active: #{get-var("accent-color")} !important;
+    --in-content-focus-outline-color: #{get-var("accent-color")} !important;
+    --focus-outline-color: #{get-var("accent-color")} !important;
+  }
+
   .search-inner-wrapper {
     height: 44px !important;
   }
@@ -31,24 +48,6 @@
   .info {
     background-color: get-var("bgcolor-0") !important;
     border-radius: 18px !important;
-  }
-
-  // private browsing page colors
-  :root,
-  html,
-  body {
-    --in-content-text-color: #{get-var("text-primary")} !important;
-    --in-content-page-color: #{get-var("text-primary")} !important;
-    // main bg color
-    --in-content-page-background: #{get-var("bgcolor-100")} !important;
-    // secondary controls color
-    --in-content-primary-button-background: #{get-var("accent-color")} !important;
-    --in-content-primary-button-background-hover: #{get-var(
-        "accent-color-hover"
-      )} !important;
-    --in-content-primary-button-background-active: #{get-var("accent-color")} !important;
-    --in-content-focus-outline-color: #{get-var("accent-color")} !important;
-    --focus-outline-color: #{get-var("accent-color")} !important;
   }
 
   .fake-caret {
