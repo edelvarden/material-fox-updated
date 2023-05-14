@@ -1,12 +1,14 @@
 html,
 body {
   --tab-min-height: 34px !important; // 34px (real height) - 1px (border bottom)
-}
 
-.tabbrowser-tab {
+  // custom tab variables
   --tab-opacity: 0;
   --tab-bgcolor: #{get-var("bgcolor-100")} !important;
   --tab-transition-duration: 83ms;
+}
+
+.tabbrowser-tab {
   overflow: visible !important;
   border: 0 !important;
   min-height: var(--tab-min-height) !important;
@@ -17,42 +19,49 @@ body {
   background: 0 0 !important;
   padding: 0 !important;
 
-  .tab-background {
-    box-shadow: none !important;
-  }
-
   &:not([pinned]) {
     margin-inline-start: 0 !important;
   }
-
-  .tab-secondary-label {
-    display: none !important;
-  }
 }
 
+.tab-background {
+  box-shadow: none !important;
+}
+
+// hide tab bottom additional text
+.tab-secondary-label {
+  display: none !important;
+}
+
+// tab label margin from icon
+.tab-label {
+  margin-left: 8px !important;
+}
+
+// selected and not selected tab text color
 .tabbrowser-tab {
-  // tab text color
   &[visuallyselected] {
     color: get-var("text-primary") !important;
   }
 
   &:not([visuallyselected]) {
-    //var(--toolbar-color-unselected) !important;
     color: get-var("text-primary") !important;
   }
 }
 
-// hide tab text and close button if pinned
-.tab-label-container,
+// hide tab text and close button if pinned tab
+.tabbrowser-tab[pinned]
+{
+  .tab-label-container,
 .tab-close-button {
-  &[pinned] {
     display: none !important;
-  }
+}
 }
 
-.tabbrowser-tab {
-  &[pinned] {
-    width: 40px !important;
+// styles for pinned tab
+.tabbrowser-tab[pinned] {
+    max-width: 40px !important;
+    min-width: 40px !important;
     padding: 0 !important;
 
     .tab-icon-stack {
@@ -60,16 +69,10 @@ body {
     }
 
     .tab-content {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
+      display: grid !important;
+      align-content: center !important;
     }
   }
-}
-
-.tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"]) {
-  max-width: 238px !important;
-}
 
 .tab-stack {
   margin-top: 0 !important;
@@ -95,6 +98,7 @@ body {
   display: none !important;
 }
 
+// general tab background styles with tab corners
 .tab-background {
   margin-block: 0 !important;
   background: var(--tab-bgcolor) !important;
@@ -135,7 +139,7 @@ body {
   }
 }
 
-// fix tab courners possition for maximized window
+// fix tab corners possition for maximized window
 #main-window[sizemode="maximized"] {
   .tab-background {
     &::before {
@@ -147,25 +151,17 @@ body {
   }
 }
 
-:-moz-any(#TabsToolbar[brighttext]) {
-  .tabbrowser-tab {
-    --tab-bgcolor: var(--toolbar-bgcolor) !important;
-  }
-}
-
+// hover bg opacity for not selected tab
 .tabbrowser-tab:not([selected="true"]):hover,
-.tabbrowser-tab[multiselected]:not([selected="true"]),
-#TabsToolbar[brighttext] .tabbrowser-tab:not([selected="true"]):hover,
-#TabsToolbar[brighttext] .tabbrowser-tab[multiselected]:not([selected="true"]) {
+.tabbrowser-tab[multiselected]:not([selected="true"]) {
   --tab-opacity: #{get-var("tab-opacity-hover")};
 }
 
-#TabsToolbar {
+// bg color and opacity for selected tab
   .tabbrowser-tab[visuallyselected] {
     --tab-bgcolor: var(--toolbar-bgcolor);
     --tab-opacity: 1;
   }
-}
 
 .tab-icon-image {
   margin: 0 !important;
@@ -177,6 +173,10 @@ body {
   }
 }
 
+.tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"]) {
+  max-width: 238px !important;
+}
+
 #tabbrowser-tabs {
   #tabs-newtab-button {
     margin-inline-start: 6px !important;
@@ -185,45 +185,28 @@ body {
 }
 
 #tabbrowser-tabs[overflow] {
-  // margin-inline-start: 8px !important;
-
-  .tabbrowser-arrowscrollbox {
-    border-radius: 8px 8px 0 0 !important;
-    background-color: rgba(0, 0, 0, 0.1) !important;
-    padding-inline-start: 0 !important;
-  }
-
-  .tabbrowser-tab[last-visible-tab]:not([pinned]) {
+  .tabbrowser-tab[last-visible-unpinned-tab] {
     margin-inline-end: 8px !important;
   }
-}
-
-// #tabbrowser-tabs:not([overflow]) .tabbrowser-tab[first-visible-tab],
-// #tabbrowser-tabs[overflow] .tabbrowser-tab[first-visible-tab]:not([pinned]),
-// #tabbrowser-tabs[overflow]
-//   .tabbrowser-tab[pinned]
-//   + .tabbrowser-tab:not([pinned]) {
-//   margin-inline-start: 8px !important;
-// }
-
-.tab-label {
-  margin-left: 8px !important;
+  .tabbrowser-tab[first-visible-unpinned-tab] {
+    margin-inline-start: 8px !important;
+  }
 }
 
 // hide tab spacers
-.titlebar-spacer:-moz-any([type="pre-tabs"], [type="post-tabs"]) {
+.titlebar-spacer:is([type="pre-tabs"], [type="post-tabs"]) {
   display: none !important;
 }
 
-// top padding if window not maximized
-#main-window[sizemode="normal"] #TabsToolbar-customization-target {
-  padding-top: 8px !important;
+// tabs top margin if window not maximized
+#main-window[sizemode="normal"] #TabsToolbar-customization-target > :not( #alltabs-button) {
+  margin-top: 8px !important;
 }
 
-#main-window:not([sizemode="normal"]) #alltabs-button > stack {
+// centered alltabs icon
+#alltabs-button > stack {
   display: grid !important;
-  align-items: center !important;
-  // justify-content: center !important;
+  align-content: center !important;
 }
 
 // tab inline padding
@@ -242,6 +225,14 @@ body {
 }
 
 // window-inactive title bar bg color
+:root:-moz-window-inactive #navigator-toolbox {
+  #toolbar-menubar,
+  #TabsToolbar {
+    background-color: get-var("bgcolor-50") !important;
+  }
+}
+
+// window-inactive title bar bg color (light mode)
 @media (prefers-color-scheme: light) {
   :root:not(:-moz-window-inactive) #navigator-toolbox {
     #toolbar-menubar,
@@ -250,19 +241,19 @@ body {
     }
   }
 }
-@media (prefers-color-scheme: dark) {
-  :root:-moz-window-inactive #navigator-toolbox {
-    #toolbar-menubar,
-    #TabsToolbar {
-      background-color: get-var("bgcolor-50") !important;
-    }
-  }
-}
+
 
 // fix pinned tabs position for overflow mode
 #tabbrowser-tabs[overflow] {
   .tabbrowser-tab:is([pinned], [first-visible-unpinned-tab]) {
     margin-inline-start: 0 !important;
+  }
+}
+
+// fix for prev style, if no pinned tabs - restore margin to prevent left tab corner cropping
+#tabbrowser-tabs:not([haspinnedtabs]) {
+  .tabbrowser-tab[first-visible-unpinned-tab] {
+    margin-inline-start: 8px !important;
   }
 }
 

@@ -30,7 +30,7 @@
     --font-value-background: #{get-var("bgcolor-50")} !important;
     --font-value-border: #{get-var("menu-border-color")} !important;
     --icon-fill: #{get-var("icon-color-secondary")} !important;
-    --icon-disabled-fill: rgba(251, 251, 254, 0.4);
+    --icon-disabled-fill: rgb(251 251 254 / 40%);
     --link-selected-foreground: #fff;
   }
 
@@ -41,6 +41,7 @@
     .dropdown .dropdown-popup {
       box-shadow: #{get-var("elevation-2")} !important;
     }
+
     .domain {
       text-decoration: underline var(--primary-color) !important;
     }

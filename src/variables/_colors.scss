@@ -53,12 +53,10 @@ $dark-mode: (
   // UI text
   "text-primary": get-var(grey-200),
   "text-secondary": get-var(grey-500),
-  "text-disabled": cm(transparent, get-var(text-primary), 0.03628),
-  // Link text color
-  "text-accent-primary": cm(white, get-var(text-primary), 0.8),
-  "text-accent-secondary": cm(white, get-var(text-primary), 0.8),
+
   // Primary button text color
   "text-on-accent": get-var(grey-900),
+
   // Button, Dropdown, Search inputs
   "control-bgcolor": cm(transparent, white, 0.0605),
   "control-border-color": cm(transparent, white, 0.0605),
@@ -87,11 +85,6 @@ $light-mode: (
   // UI text
   "text-primary": get-var(grey-900),
   "text-secondary": get-var(grey-700),
-  "text-disabled": #bec0c4,
-
-  // Link text color
-  "text-accent-primary": #1967d2,
-  "text-accent-secondary": #1a73e8,
 
   // Primary button text color
   "text-on-accent": white,

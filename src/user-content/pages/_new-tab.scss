@@ -59,8 +59,8 @@
   .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
     border-color: transparent !important;
     outline: 2px solid transparent !important;
-    outline-color: var(--newtab-primary-action-background) !important;
-    outline-offset: -1px !important;
+    outline-color: get-var("accent-color") !important;
+    outline-offset: -2px !important;
   }
 
   .search-handoff-button .fake-caret {

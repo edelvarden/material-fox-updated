@@ -34,15 +34,15 @@
   position: relative !important;
 }
 
+$icon-size: 16px;
 .tab-icon-overlay {
-  --icon-size: 16px;
   position: relative !important;
   display: block !important;
   border-radius: 100px !important;
-  min-width: var(--icon-size) !important;
-  min-height: var(--icon-size) !important;
-  max-width: var(--icon-size) !important;
-  max-height: var(--icon-size) !important;
+  min-width: $icon-size !important;
+  min-height: $icon-size !important;
+  max-width: $icon-size !important;
+  max-height: $icon-size !important;
   top: 0 !important; // fix middle position if pinned
   inset-inline-end: 0 !important; // fix space from the icon
   margin: 0 !important;

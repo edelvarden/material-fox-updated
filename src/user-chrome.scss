@@ -1,8 +1,7 @@
 @import "variables/index";
 @import "global/reset";
 @import "user-chrome/variables-local";
-
-@import "user-chrome/global/_index__";
-@import "user-chrome/tabbar/_index__";
-@import "user-chrome/urlbar/_index__";
-@import "user-chrome/components/_index__";
+@import "user-chrome/global/index";
+@import "user-chrome/tabbar/index";
+@import "user-chrome/urlbar/index";
+@import "user-chrome/components/index";

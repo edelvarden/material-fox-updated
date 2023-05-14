@@ -3,18 +3,8 @@
   :root,
   html,
   body {
-    --in-content-text-color: #{get-var("text-primary")} !important;
-    --in-content-page-color: #{get-var("text-primary")} !important;
     // main bg color
     --in-content-page-background: #{get-var("bgcolor-100")} !important;
-    // secondary controls color
-    --in-content-primary-button-background: #{get-var("accent-color")} !important;
-    --in-content-primary-button-background-hover: #{get-var(
-        "accent-color-hover"
-      )} !important;
-    --in-content-primary-button-background-active: #{get-var("accent-color")} !important;
-    --in-content-focus-outline-color: #{get-var("accent-color")} !important;
-    --focus-outline-color: #{get-var("accent-color")} !important;
   }
 
   .search-inner-wrapper {
@@ -33,8 +23,9 @@
 
   .search-handoff-button.focused:not(.disabled) {
     box-shadow: none !important;
-    outline: 2px solid var(--in-content-focus-outline-color) !important;
-    outline-offset: -1px !important;
+    outline: 2px solid !important;
+    outline-color: get-var("accent-color") !important;
+    outline-offset: -2px !important;
   }
 
   .search-handoff-button.disabled {
@@ -57,5 +48,17 @@
   .fake-caret {
     inset-inline-start: 48px !important;
     top: 13px !important;
+  }
+
+  // promo card
+  .promo-visible {
+    background-color: get-var("bgcolor-0") !important;
+    border-radius: 18px !important;
+  }
+
+  // promo card button
+  .promo-cta .primary {
+    background-color: get-var("accent-color") !important;
+    color: get-var("text-on-accent") !important;
   }
 }
