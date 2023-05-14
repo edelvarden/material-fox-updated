@@ -2,6 +2,11 @@
 @-moz-document regexp("about:(?!blank).*") {
   @import "variables/index";
   @import "global/reset";
+  // @import "global/button";
+  @import "global/input";
+  @import "global/select";
+  @import "global/checkbox";
+  @import "global/radio-button";
   @import "user-content/variables-local";
 
   // new tab page
@@ -12,7 +17,9 @@
 
   // reader view page
   @import "user-content/pages/reader-view";
+
 }
 
 // youtube page
 @import "user-content/pages/fix-firefox-youtube";
+

@@ -224,6 +224,7 @@ menuitem[checked="true"] > .menu-iconic-left {
   background-image: get-var("check-icon") !important;
 }
 
+// sound icons for tab and all tabs view
 :is(.all-tabs-secondary-button, .tab-icon-overlay)[soundplaying],
 .tab-icon-sound {
   list-style-image: get-var("audio-icon") !important;

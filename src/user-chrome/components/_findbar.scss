@@ -92,23 +92,23 @@
   }
 
   // find bar buttons
+  $button-size: 24px;
   .findbar-closebutton,
   .findbar-find-previous,
   .findbar-find-next {
-    --button-size: 24px;
     border-radius: 50% !important;
     padding: 6px !important;
-    max-height: var(--button-size) !important;
-    max-width: var(--button-size) !important;
-    min-height: var(--button-size) !important;
-    min-width: var(--button-size) !important;
+    max-height: $button-size !important;
+    max-width: $button-size !important;
+    min-height: $button-size !important;
+    min-width: $button-size !important;
 
     & > .toolbarbutton-icon {
       display: block !important;
-      max-height: var(--button-size) !important;
-      max-width: var(--button-size) !important;
-      min-height: var(--button-size) !important;
-      min-width: var(--button-size) !important;
+      max-height: $button-size !important;
+      max-width: $button-size !important;
+      min-height: $button-size !important;
+      min-width: $button-size !important;
       padding: 4px !important;
     }
   }
