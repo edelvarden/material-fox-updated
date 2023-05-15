@@ -42,10 +42,12 @@ $dark-mode: (
   "accent-color": get-var(blue-300),
   "accent-color-hover": cm(transparent, get-var(accent-color), 0.8),
   "accent-color-transparent": cm(transparent, get-var(accent-color), 0.0837),
+
   // UI background colors
   "bgcolor-0": get-var(grey-900),
   "bgcolor-50": get-var(grey-900-white-4-percent),
   "bgcolor-100": get-var(grey-900-white-5-percent),
+
   // Optional feature: Github theme colors
   // "bgcolor-0": #0d1117,
   // "bgcolor-50": #161b22,
@@ -60,8 +62,6 @@ $dark-mode: (
   // Button, Dropdown, Search inputs
   "control-bgcolor": cm(transparent, white, 0.0605),
   "control-border-color": cm(transparent, white, 0.0605),
-  "control-bgcolor-secondary": cm(get-var(bgcolor-0), white, 0.0837),
-  "control-bgcolor-disabled": cm(get-var(bgcolor-0), white, 0.0419),
 
   // input, select, textarea
   "input-bgcolor": get-var(bgcolor-0),
@@ -74,6 +74,7 @@ $dark-mode: (
   "tab-separator-color": cm(transparent, white, 0.2),
   "tab-outline-color": cm(transparent, black, 0.1),
   "tab-opacity-hover": 0.5,
+
   // navbar
   "icon-color-primary": get-var(grey-100),
   "icon-color-secondary": get-var(grey-500),
@@ -87,10 +88,12 @@ $light-mode: (
   // Accent colors
   "accent-color": get-var(blue-500),
   "accent-color-hover": cm(transparent, get-var(accent-color), 0.8),
+  
   // UI background colors
   "bgcolor-0": #dee1e6,
   "bgcolor-50": get-var(grey-100),
   "bgcolor-100": get-var("white"),
+
   // UI text
   "text-primary": get-var(grey-900),
   "text-secondary": get-var(grey-700),
@@ -101,8 +104,6 @@ $light-mode: (
   // Button, Dropdown, Search inputs
   "control-bgcolor": get-var(bgcolor-50),
   "control-border-color": transparent,
-  "control-bgcolor-secondary": get-var(bgcolor-100),
-  "control-bgcolor-disabled": get-var(bgcolor-50),
 
   // input, select, textarea
   "input-bgcolor": get-var(bgcolor-100),
@@ -110,6 +111,7 @@ $light-mode: (
   // Menu, Popups
   "menu-bgcolor": get-var(bgcolor-100),
   "menu-border-color": get-var(bgcolor-0),
+
   // Tab bar
   "tab-separator-color": cm(transparent, black, 0.2),
   "tab-outline-color": cm(transparent, black, 0.2),

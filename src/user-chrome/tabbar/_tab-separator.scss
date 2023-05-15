@@ -25,6 +25,7 @@
   }
 }
 
+// hide tab separators if hover or selected
 .tabbrowser-tab[visuallyselected][style*="transform"]
   + .tabbrowser-tab[style*="transform"]
   .tab-content::after,
@@ -51,6 +52,7 @@
 //   opacity: 0 !important;
 // }
 
+// disable hover transition for selected tab
 .tabbrowser-tab[visuallyselected] {
   --tab-transition-duration: 0s !important;
 }

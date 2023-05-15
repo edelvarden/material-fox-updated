@@ -83,7 +83,6 @@ $menu-min-width: 220px;
     width: 100% !important;
   }
 
-  $menu-item-height: 24px;
   // #context-navigation menu items
   #context-navigation
     > .menuitem-iconic
@@ -91,17 +90,20 @@ $menu-min-width: 220px;
     > .menu-iconic-icon {
     width: 100% !important;
     height: auto !important;
-    min-height: $menu-item-height !important;
-    max-height: $menu-item-height !important;
     padding: 0 !important;
     margin: 0 !important;
     // padding-block: 0.4em !important;
   }
 
   // other menu items
+  #context-navigation
+  > .menuitem-iconic
+  > .menu-iconic-left
+  > .menu-iconic-icon,
   menupopup > menu,
   menupopup > menuitem,
   menupopup > menucaption {
+    $menu-item-height: 24px;
     min-height: $menu-item-height !important;
     max-height: $menu-item-height !important;
   }
