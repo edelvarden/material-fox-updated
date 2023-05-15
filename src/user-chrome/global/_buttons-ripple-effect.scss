@@ -1,27 +1,27 @@
 html,
 body {
   --toolbarbutton-border-radius: 100px !important;
-  --circle-size: 0;
+  --#{$prefix}-circle-size: 0;
 }
 
 html,
 body {
-  --circle-icon: url("icons/circle-dark.svg");
+  --#{$prefix}-circle-icon: url("icons/circle-dark.svg");
 }
 
 @media (prefers-color-scheme: light) {
   html,
   body {
-    --circle-icon: url("icons/circle.svg");
+    --#{$prefix}-circle-icon: url("icons/circle.svg");
   }
 }
 
 // regular style for buttons
 @mixin ripple-effect {
-  background-image: var(--circle-icon), var(--circle-icon) !important;
+  background-image: get-var('circle-icon'), get-var('circle-icon') !important;
   background-position: 50% !important;
   background-repeat: no-repeat !important;
-  background-size: var(--circle-size) !important;
+  background-size: get-var('circle-size') !important;
   border-radius: var(--toolbarbutton-border-radius) !important;
   // background-color: transparent !important;
   outline: 1px solid transparent !important;
@@ -33,7 +33,7 @@ body {
   @include ripple-effect();
 
   &:is(:active:hover, [checked], [open]):not([disabled]) {
-    --circle-size: 100%;
+    --#{$prefix}-circle-size: 100%;
   }
 
   &:hover {
@@ -50,7 +50,7 @@ body {
 
   &:is(:active:hover, [checked], [open]):not([disabled])
     > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-    --circle-size: 100%;
+      --#{$prefix}-circle-size: 100%;
   }
 
   &:not([disabled]):hover
