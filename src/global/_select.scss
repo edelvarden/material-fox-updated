@@ -5,12 +5,8 @@ menulist,
 .expander-up {
   border: 1px solid;
   border-color: get-var("menu-border-color") !important;
-  background-color: get-var("bgcolor-0") !important;
+  background-color: get-var("input-bgcolor") !important;
   border-radius: 4px !important;
-
-  @media (prefers-color-scheme: light) {
-    background-color: get-var("bgcolor-100") !important;
-  }
 
   &:focus {
     border-color: transparent !important;
@@ -26,6 +22,6 @@ menulist > menupopup {
 
   --panel-border-color: #{get-var("menu-border-color")} !important;
   --panel-border-radius: 4px !important;
-  --panel-background: #{get-var("bgcolor-0")} !important;
+  --panel-background: #{get-var("input-bgcolor")} !important;
   --panel-color: #{get-var("text-primary")} !important;
 }

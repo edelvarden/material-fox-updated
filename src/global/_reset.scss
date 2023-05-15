@@ -2,14 +2,8 @@
 
 // selection color
 ::selection {
-  background-color: get-var("blue-500") !important;
-  color: get-var("white") !important;
-}
-@media (prefers-color-scheme: light) {
-  ::selection {
-    background-color: get-var("blue-200") !important;
-    color: get-var("black") !important;
-  }
+  background-color: get-var("selection-bgcolor") !important;
+  color: get-var("selection-text") !important;
 }
 
 // inherit fonts for inputs and buttons
