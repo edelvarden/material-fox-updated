@@ -199,7 +199,7 @@ body {
 }
 
 // tabs top margin if window not maximized
-#main-window[sizemode="normal"] #TabsToolbar-customization-target > :not( #alltabs-button) {
+#main-window[sizemode="normal"] #TabsToolbar-customization-target > :not(#alltabs-button) {
   margin-top: 8px !important;
 }
 

@@ -19,19 +19,19 @@
   align-items: center !important;
   padding: 0 !important;
   overflow: hidden !important;
+}
 
-  .findbar-container {
-    position: relative !important;
-    height: 48px !important;
-    display: flex;
-    align-items: center !important;
-    flex-direction: row-reverse !important;
-  }
+// hide all checkboxes
+// .findbar-container > checkbox {
+//   display: none !important;
+// }
 
-  // hide all checkboxes
-  // .findbar-container > checkbox {
-  //   display: none !important;
-  // }
+.findbar-container {
+  position: relative !important;
+  height: 48px !important;
+  display: flex;
+  align-items: center !important;
+  flex-direction: row-reverse !important;
 }
 
 // find bar font and colors
@@ -46,83 +46,83 @@
   @media (prefers-color-scheme: light) {
     background: get-var("bgcolor-100") !important;
   }
+}
 
-  .findbar-label {
-    color: get-var("text-primary") !important;
-    font-weight: 400 !important;
+.findbar-label {
+  color: get-var("text-primary") !important;
+  font-weight: 400 !important;
+}
+
+.found-matches {
+  margin-right: 0 !important;
+  padding-right: 8px !important;
+
+  &[hidden] {
+    margin: 0 !important;
+    padding: 0 !important;
   }
+}
 
-  .found-matches {
-    margin-right: 0 !important;
-    padding-right: 8px !important;
+.found-matches {
+  height: 80% !important;
+  display: flex !important;
+  align-items: center !important;
+}
 
-    &[hidden] {
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-  }
+.findbar-textbox-wrapper {
+  height: 80% !important;
+  display: flex !important;
+  align-items: center !important;
+}
 
-  .found-matches {
-    height: 80% !important;
-    display: flex !important;
-    align-items: center !important;
-  }
+.findbar-textbox {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
 
-  .findbar-textbox-wrapper {
-    height: 80% !important;
-    display: flex !important;
-    align-items: center !important;
-  }
+.findbar-textbox {
+  border-left: 1px solid !important;
+}
 
-  .findbar-textbox {
-    background: transparent !important;
-    border: none !important;
-    outline: none !important;
-  }
+.found-matches,
+.findbar-textbox {
+  border-right: 1px solid !important;
+  border-color: get-var("menu-border-color") !important;
+  border-radius: 0 !important;
+}
 
-  .findbar-textbox {
-    border-left: 1px solid !important;
-  }
-
-  .found-matches,
-  .findbar-textbox {
-    border-right: 1px solid !important;
-    border-color: get-var("menu-border-color") !important;
-    border-radius: 0 !important;
-  }
-
-  // find bar buttons
+// find bar buttons
+.findbar-closebutton,
+.findbar-find-previous,
+.findbar-find-next {
   $button-size: 24px;
-  .findbar-closebutton,
-  .findbar-find-previous,
-  .findbar-find-next {
-    border-radius: 50% !important;
-    padding: 6px !important;
+  border-radius: 50% !important;
+  padding: 6px !important;
+  max-height: $button-size !important;
+  max-width: $button-size !important;
+  min-height: $button-size !important;
+  min-width: $button-size !important;
+
+  & > .toolbarbutton-icon {
+    display: block !important;
     max-height: $button-size !important;
     max-width: $button-size !important;
     min-height: $button-size !important;
     min-width: $button-size !important;
-
-    & > .toolbarbutton-icon {
-      display: block !important;
-      max-height: $button-size !important;
-      max-width: $button-size !important;
-      min-height: $button-size !important;
-      min-width: $button-size !important;
-      padding: 4px !important;
-    }
+    padding: 4px !important;
   }
+}
 
-  .findbar-closebutton {
-    margin-left: 0 !important;
-  }
+.findbar-closebutton {
+  margin-left: 0 !important;
+}
 
-  .findbar-find-previous,
-  .findbar-find-next {
-    margin-inline-end: 6px !important;
+.findbar-find-previous,
+.findbar-find-next {
+  margin-inline-end: 6px !important;
 
-    & > .toolbarbutton-icon {
-      padding: 6px !important;
-    }
+  & > .toolbarbutton-icon {
+    padding: 6px !important;
   }
 }
