@@ -83,3 +83,7 @@ body {
   }
 }
 
+// remove theme navbar top border
+#nav-bar:-moz-lwtheme {
+  box-shadow: none !important;
+}

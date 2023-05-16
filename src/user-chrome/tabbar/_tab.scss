@@ -24,10 +24,6 @@ body {
   }
 }
 
-.tab-background {
-  box-shadow: none !important;
-}
-
 // hide tab bottom additional text
 .tab-secondary-label {
   display: none !important;
@@ -104,6 +100,7 @@ body {
   border-radius: 8px 8px 0 0 !important;
   position: relative !important;
   border: 0 !important;
+  // outline: 0 !important;
   transition: opacity var(--tab-transition-duration) linear,
     background-color 0s var(--tab-transition-duration) linear !important;
   opacity: var(--tab-opacity) !important;
@@ -157,10 +154,10 @@ body {
 }
 
 // bg color and opacity for selected tab
-  .tabbrowser-tab[visuallyselected] {
-    --tab-bgcolor: var(--toolbar-bgcolor);
-    --tab-opacity: 1;
-  }
+.tabbrowser-tab[visuallyselected] {
+  --tab-bgcolor: var(--toolbar-bgcolor);
+  --tab-opacity: 1;
+}
 
 .tab-icon-image {
   margin: 0 !important;
@@ -198,7 +195,9 @@ body {
 }
 
 // tabs top margin if window not maximized
-#main-window[sizemode="normal"] #TabsToolbar-customization-target > :not(#alltabs-button) {
+#main-window[sizemode="normal"]
+  #TabsToolbar-customization-target
+  > :not(#alltabs-button) {
   margin-top: 8px !important;
 }
 
@@ -231,17 +230,6 @@ body {
   }
 }
 
-// window-inactive title bar bg color (light mode)
-@media (prefers-color-scheme: light) {
-  :root:not(:-moz-window-inactive) #navigator-toolbox {
-    #toolbar-menubar,
-    #TabsToolbar {
-      background-color: get-var("bgcolor-0") !important;
-    }
-  }
-}
-
-
 // fix pinned tabs position for overflow mode
 #tabbrowser-tabs[overflow] {
   .tabbrowser-tab:is([pinned], [first-visible-unpinned-tab]) {
@@ -259,4 +247,9 @@ body {
 // remove left title bar drag area
 #tabbrowser-tabs {
   padding-inline: 0 0 !important;
+}
+
+// remove theme tab outline color
+#TabsToolbar {
+  --lwt-tab-line-color: transparent !important;
 }

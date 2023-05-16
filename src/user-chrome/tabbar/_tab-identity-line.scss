@@ -1,9 +1,9 @@
-// hide old identity line
+// hide old user container identity line
 .tab-context-line {
   display: none !important;
 }
 
-// identity line like dot
+// user container identity line like dot
 .tab-stack {
   position: relative !important;
   &::before {
@@ -19,7 +19,7 @@
   }
 }
 
-// identity line default
+// user container identity line default
 // .tab-stack {
 //   position: relative !important;
 //   &::before {
