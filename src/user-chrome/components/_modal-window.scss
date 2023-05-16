@@ -1,0 +1,10 @@
+// modal window shadow
+.dialogBox:not(.spotlightBox) {
+  box-shadow: get-var("elevation-2") !important;
+}
+
+// modal window background and text color
+:root {
+  background-color: get-var("bgcolor-50") !important;
+  color: get-var("text-primary") !important;
+}

@@ -30,6 +30,8 @@ html,
 body,
 menupopup,
 panel {
+  --panel-border-color: #{get-var("menu-border-color")} !important;
+  --panel-shadow: #{get-var("elevation-2")} !important;
   --windows-panel-box-shadow: #{get-var("elevation-2")} !important;
 }
 
@@ -47,7 +49,8 @@ body {
 
   // grey-900-white-4-percent - 50% lt dark bg
   --arrowpanel-background: #{get-var("menu-bgcolor")} !important;
-  --arrowpanel-border-color: #{get-var("bgcolor-50")} !important;
+  --arrowpanel-border-color: #{get-var("menu-border-color")} !important;
+  --panel-separator-color: #{get-var("menu-border-color")} !important;
   --lwt-selected-tab-background-color: #{get-var("bgcolor-50")} !important;
   --autocomplete-popup-highlight-background: #{get-var("bgcolor-50")} !important;
   --tabpanel-background-color: #{get-var("bgcolor-50")} !important;
