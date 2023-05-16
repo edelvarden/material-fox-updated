@@ -44,12 +44,45 @@ menuitem:not([disabled]) {
 .cui-widget-panel toolbarseparator {
   border-top: 1px solid !important;
   border-color: get-var("menu-border-color") !important;
-  margin: 0.4em 1px !important;
+  margin: 0.4em 7px !important;
 }
 
 toolbarbutton menupopup[placespopup] menuseparator::before {
   border-top: 1px solid !important;
   border-color: get-var("menu-border-color") !important;
+}
+
+menupopup, panel{
+  --panel-shadow: #{get-var("elevation-2")} !important;
+}
+panelmultiview {
+  border: 1px solid !important;
+  border-color: get-var("menu-border-color")!important;
+  // border-radius: 4px !important;
+}
+.panel-subview-body {
+  padding: 6px 0  !important;
+}
+
+toolbarbutton menupopup[placespopup] > :is(menu, menuitem), .subview-subheader, panelview .toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1 {
+  min-height: 30px !important;
+  padding: 0 8px !important;
+}
+
+#appMenu-popup {
+  --panel-border-radius: 4px !important;
+  --panel-shadow: #{get-var("elevation-2")} !important;
+  --panel-separator-margin: 2px !important;
+}
+
+:root {
+  --arrowpanel-menuitem-margin-block: 0 !important;
+  --arrowpanel-menuitem-margin-inline: 7px !important;
+  // --arrowpanel-menuitem-margin: 0px !important;
+  // --arrowpanel-menuitem-padding-block: 0px !important;
+  // --arrowpanel-menuitem-padding-inline: 0px !important;
+  // --arrowpanel-menuitem-padding: 0px !important;
+  // --arrowpanel-menuitem-border-radius: 4px !important;
 }
 
 // modal window shadow
