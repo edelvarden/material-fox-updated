@@ -50,29 +50,28 @@ body {
 }
 
 // hide tab text and close button if pinned tab
-.tabbrowser-tab[pinned]
-{
+.tabbrowser-tab[pinned] {
   .tab-label-container,
-.tab-close-button {
+  .tab-close-button {
     display: none !important;
-}
+  }
 }
 
 // styles for pinned tab
 .tabbrowser-tab[pinned] {
-    max-width: 40px !important;
-    min-width: 40px !important;
-    padding: 0 !important;
+  max-width: 40px !important;
+  min-width: 40px !important;
+  padding: 0 !important;
 
-    .tab-icon-stack {
-      margin-left: 0 !important;
-    }
-
-    .tab-content {
-      display: grid !important;
-      align-content: center !important;
-    }
+  .tab-icon-stack {
+    margin-left: 0 !important;
   }
+
+  .tab-content {
+    display: grid !important;
+    align-content: center !important;
+  }
+}
 
 .tab-stack {
   margin-top: 0 !important;

@@ -1,0 +1,36 @@
+// hide old identity line
+.tab-context-line {
+  display: none !important;
+}
+
+// identity line like dot
+.tab-stack {
+  position: relative !important;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 4px;
+    height: 4px;
+    background-color: var(--identity-icon-color);
+    border-radius: 100%;
+    z-index: 999;
+  }
+}
+
+// identity line default
+// .tab-stack {
+//   position: relative !important;
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     width: 100%;
+//     height: 1px;
+//     background-color: var(--identity-icon-color);
+//     z-index: 999;
+//   }
+// }
