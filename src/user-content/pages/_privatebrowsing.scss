@@ -14,7 +14,7 @@
   .search-handoff-button,
   .search-handoff-button:active,
   .search-handoff-button:enabled:hover:active {
-    background-color: get-var("bgcolor-0") !important;
+    background-color: get-var("input-bgcolor") !important;
     background-size: 24px;
     border: 0 !important;
     border-radius: 99px !important;

@@ -1,6 +1,8 @@
 // modal window shadow
 .dialogBox:not(.spotlightBox) {
   box-shadow: get-var("elevation-2") !important;
+  border: 1px solid !important;
+  border-color: get-var("menu-border-color") !important;
 }
 
 // modal window background and text color

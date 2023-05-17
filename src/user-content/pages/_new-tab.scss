@@ -72,6 +72,10 @@
     opacity: 0 !important;
   }
 
+  .search-wrapper .search-handoff-button, .search-wrapper input {
+    background-color: get-var("input-bgcolor") !important;
+  }
+
   // top sites
   .top-site-outer {
     .tile {
