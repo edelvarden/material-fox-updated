@@ -23,7 +23,7 @@ The following properties from `about:config` must be `true`
 
 1. Go to the following url address `about:support`
 2. Find `Profile Folder` and click `Open Folder` button
-3. Download `chrome.zip` from project [Realeses](https://github.com/edelvarden/material-fox-updated/releases) and extract into Firefox profile directory
+3. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases) and extract into Firefox profile directory
 4. Restart Firefox
 
 ## Build & Development
