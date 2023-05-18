@@ -1,17 +1,20 @@
 // radio button
-input[type="radio"], .radio-check {
+input[type="radio"],
+.radio-check {
   border: 1px solid;
   border-color: get-var("menu-border-color") !important;
-  background-color: get-var("bgcolor-0") !important;
-  
-  &[selected], &:checked {
+  background-color: get-var("background-color-0") !important;
+
+  &[selected],
+  &:checked {
     background-color: get-var("accent-color") !important;
     border-color: get-var("accent-color") !important;
   }
 }
 
-input[type="radio"]:enabled:hover, radio:not([disabled="true"]):hover > .radio-check {
-  &:not([selected], :checked){
-    background-color: get-var("bgcolor-50") !important;
+input[type="radio"]:enabled:hover,
+radio:not([disabled="true"]):hover > .radio-check {
+  &:not([selected], :checked) {
+    background-color: get-var("background-color-50") !important;
   }
 }

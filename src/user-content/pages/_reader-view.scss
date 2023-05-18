@@ -17,17 +17,17 @@
     // --icon-disabled-fill: rgba(251, 251, 254, 0.4);
     // --link-selected-foreground: #fff;
     // custom
-    --main-background: #{get-var("bgcolor-0")} !important;
+    --main-background: #{get-var("background-color-0")} !important;
     --main-foreground: #{get-var("text-primary")} !important;
     --primary-color: #{get-var("accent-color")} !important;
     --toolbar-border: #{get-var("menu-border-color")} !important;
-    --toolbar-button-background-hover: #{get-var("bgcolor-50")} !important;
-    --toolbar-button-background-active: #{get-var("bgcolor-100")} !important;
-    --popup-background: #{get-var("bgcolor-50")} !important;
+    --toolbar-button-background-hover: #{get-var("background-color-50")} !important;
+    --toolbar-button-background-active: #{get-var("background-color-100")} !important;
+    --popup-background: #{get-var("background-color-50")} !important;
     --popup-line: #{get-var("menu-border-color")} !important;
-    --popup-button-background: #{get-var("bgcolor-0")} !important;
+    --popup-button-background: #{get-var("background-color-0")} !important;
     --selected-background: #{get-var("accent-color-transparent")} !important;
-    --font-value-background: #{get-var("bgcolor-50")} !important;
+    --font-value-background: #{get-var("background-color-50")} !important;
     --font-value-border: #{get-var("menu-border-color")} !important;
     --icon-fill: #{get-var("icon-color-secondary")} !important;
     --icon-disabled-fill: rgb(251 251 254 / 40%);

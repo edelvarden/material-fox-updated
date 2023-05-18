@@ -10,7 +10,7 @@ textarea,
 search-textbox {
   border: 1px solid;
   border-color: get-var("menu-border-color") !important;
-  background-color: get-var("input-bgcolor") !important;
+  background-color: get-var("input-background-color") !important;
   border-radius: 4px !important;
 
   &:focus {
@@ -20,4 +20,3 @@ search-textbox {
     outline-color: get-var("accent-color") !important;
   }
 }
-

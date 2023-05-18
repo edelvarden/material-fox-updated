@@ -3,19 +3,18 @@
 .sponsored-checkbox {
   border: 1px solid;
   border-color: get-var("menu-border-color") !important;
-  background-color: get-var("bgcolor-0") !important;
+  background-color: get-var("background-color-0") !important;
   border-radius: 2px !important;
-  
+
   &:is([checked], :checked) {
     background-image: get-var("check-icon") !important;
     background-color: get-var("accent-color") !important;
     border-color: get-var("accent-color") !important;
   }
-
 }
 
 checkbox:not([disabled="true"]):hover > .checkbox-check {
-  &:not([checked], :checked){
-    background-color: get-var("bgcolor-50") !important;
+  &:not([checked], :checked) {
+    background-color: get-var("background-color-50") !important;
   }
 }

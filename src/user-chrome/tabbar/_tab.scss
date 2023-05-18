@@ -4,7 +4,7 @@ body {
 
   // custom tab variables
   --tab-opacity: 0;
-  --tab-bgcolor: #{get-var("bgcolor-100")} !important;
+  --tab-background-color: #{get-var("background-color-100")} !important;
   --tab-transition-duration: 83ms;
 }
 
@@ -96,7 +96,7 @@ body {
 // general tab background styles with tab corners
 .tab-background {
   margin-block: 0 !important;
-  background: var(--tab-bgcolor) !important;
+  background: var(--tab-background-color) !important;
   border-radius: 8px 8px 0 0 !important;
   position: relative !important;
   border: 0 !important;
@@ -124,14 +124,14 @@ body {
     border-bottom-right-radius: 8px !important;
     left: 0 !important;
     transform: translateX(-8px) !important;
-    box-shadow: 4px 4px 0 4px var(--tab-bgcolor) !important;
+    box-shadow: 4px 4px 0 4px var(--tab-background-color) !important;
   }
 
   &::after {
     border-bottom-left-radius: 8px !important;
     right: 0 !important;
     transform: translateX(8px) !important;
-    box-shadow: -4px 4px 0 4px var(--tab-bgcolor) !important;
+    box-shadow: -4px 4px 0 4px var(--tab-background-color) !important;
   }
 }
 
@@ -155,7 +155,7 @@ body {
 
 // bg color and opacity for selected tab
 .tabbrowser-tab[visuallyselected] {
-  --tab-bgcolor: var(--toolbar-bgcolor);
+  --tab-background-color: var(--toolbar-bgcolor);
   --tab-opacity: 1;
 }
 
@@ -226,7 +226,7 @@ body {
 :root:-moz-window-inactive #navigator-toolbox {
   #toolbar-menubar,
   #TabsToolbar {
-    background-color: get-var("bgcolor-50") !important;
+    background-color: get-var("background-color-50") !important;
   }
 }
 

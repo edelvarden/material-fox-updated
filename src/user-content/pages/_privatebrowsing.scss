@@ -4,7 +4,7 @@
   html,
   body {
     // main bg color
-    --in-content-page-background: #{get-var("bgcolor-100")} !important;
+    --in-content-page-background: #{get-var("background-color-100")} !important;
   }
 
   .search-inner-wrapper {
@@ -14,7 +14,7 @@
   .search-handoff-button,
   .search-handoff-button:active,
   .search-handoff-button:enabled:hover:active {
-    background-color: get-var("input-bgcolor") !important;
+    background-color: get-var("input-background-color") !important;
     background-size: 24px;
     border: 0 !important;
     border-radius: 99px !important;
@@ -38,7 +38,7 @@
   }
 
   .info {
-    background-color: get-var("bgcolor-0") !important;
+    background-color: get-var("background-color-0") !important;
     border-radius: 18px !important;
   }
 
@@ -53,7 +53,7 @@
 
   // promo card
   .promo-visible {
-    background-color: get-var("bgcolor-0") !important;
+    background-color: get-var("background-color-0") !important;
     border-radius: 18px !important;
   }
 

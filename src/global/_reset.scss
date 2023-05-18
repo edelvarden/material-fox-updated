@@ -2,8 +2,8 @@
 
 // selection color
 ::selection {
-  background-color: get-var("selection-bgcolor") !important;
-  color: get-var("selection-text") !important;
+  background-color: get-var("selection-background-color") !important;
+  color: get-var("selection-text-color") !important;
 }
 
 // inherit fonts for inputs and buttons

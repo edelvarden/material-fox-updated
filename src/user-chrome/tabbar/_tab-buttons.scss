@@ -33,7 +33,7 @@
   transition: background-color 83ms linear !important;
 
   &:hover {
-    background: get-var("control-bgcolor") !important;
+    background: get-var("control-background-color") !important;
     outline: 1px solid transparent !important;
     outline-color: get-var("control-border-color") !important;
   }

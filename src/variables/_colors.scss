@@ -42,86 +42,72 @@ $dark-mode: (
   "accent-color": get-var(blue-300),
   "accent-color-hover": cm(transparent, get-var(accent-color), 0.8),
   "accent-color-transparent": cm(transparent, get-var(accent-color), 0.0837),
-
   // UI background colors
-  "bgcolor-0": get-var(grey-900),
-  "bgcolor-50": get-var(grey-900-white-4-percent),
-  "bgcolor-100": get-var(grey-900-white-5-percent),
-
-  // Optional feature: Github theme colors
-  // "bgcolor-0": #0d1117,
-  // "bgcolor-50": #161b22,
-  // "bgcolor-100": #21262d,
+  "background-color-0": get-var(grey-900),
+  "background-color-50": get-var(grey-900-white-4-percent),
+  "background-color-100": get-var(grey-900-white-5-percent),
+  // optional feature: Github theme colors
+  // "background-color-0": #0d1117,
+  // "background-color-50": #161b22,
+  // "background-color-100": #21262d,
   // UI text
   "text-primary": get-var(grey-200),
   "text-secondary": get-var(grey-500),
-
-  // Primary button text color
+  // primary button text color
   "text-on-accent": get-var(grey-900),
-
-  // Button, Dropdown, Search inputs
-  "control-bgcolor": cm(transparent, white, 0.0605),
-  "control-border-color": cm(transparent, white, 0.0605),
-
+  // button, dropdown
+  "control-background-color": cm(transparent, get-var("white"), 0.0605),
+  "control-border-color": cm(transparent, get-var("white"), 0.0605),
   // input, select, textarea
-  "input-bgcolor": get-var(bgcolor-0),
-
-  // Menu, Popups
-  "menu-bgcolor": get-var(bgcolor-50),
+  "input-background-color": get-var(background-color-0),
+  // menu, popups
+  "menu-background-color": get-var(background-color-50),
   "menu-border-color": get-var(grey-800),
-
-  // Tab bar
-  "tab-separator-color": cm(transparent, white, 0.2),
-  "tab-outline-color": cm(transparent, black, 0.1),
+  // tab bar
+  "tab-separator-color": cm(transparent, get-var("white"), 0.2),
+  "tab-outline-color": cm(transparent, get-var("black"), 0.1),
   "tab-opacity-hover": 0.5,
 
-  // navbar
+  // nav bar
   "icon-color-primary": get-var(grey-100),
   "icon-color-secondary": get-var(grey-500),
-
-  // selection solors
-  "selection-text": get-var("white"),
-  "selection-bgcolor": get-var("blue-500")
+  // selection colors
+  "selection-text-color": get-var("white"),
+  "selection-background-color": get-var(blue-500)
 );
 
 $light-mode: (
-  // Accent colors
+  // accent color
   "accent-color": get-var(blue-500),
   "accent-color-hover": cm(transparent, get-var(accent-color), 0.8),
-  
+  "accent-color-transparent": cm(transparent, get-var(accent-color), 0.0837),
   // UI background colors
-  "bgcolor-0": #dee1e6,
-  "bgcolor-50": get-var(grey-100),
-  "bgcolor-100": get-var("white"),
-
+  "background-color-0": #dee1e6,
+  "background-color-50": get-var(grey-100),
+  "background-color-100": get-var("white"),
   // UI text
   "text-primary": get-var(grey-900),
   "text-secondary": get-var(grey-700),
-
-  // Primary button text color
-  "text-on-accent": white,
-
-  // Button, Dropdown, Search inputs
-  "control-bgcolor": get-var(bgcolor-50),
+  // primary button text color
+  "text-on-accent": get-var("white"),
+  // button, dropdown
+  "control-background-color": get-var(background-color-50),
   "control-border-color": transparent,
 
   // input, select, textarea
-  "input-bgcolor": get-var(bgcolor-100),
-
-  // Menu, Popups
-  "menu-bgcolor": get-var(bgcolor-100),
-  "menu-border-color": get-var(bgcolor-0),
-
-  // Tab bar
-  "tab-separator-color": cm(transparent, black, 0.2),
-  "tab-outline-color": cm(transparent, black, 0.2),
+  "input-background-color": get-var(background-color-100),
+  // menu, popups
+  "menu-background-color": get-var(background-color-0),
+  "menu-border-color": get-var(background-color-0),
+  // tab bar
+  "tab-separator-color": cm(transparent, get-var("black"), 0.2),
+  "tab-outline-color": cm(transparent, get-var("black"), 0.2),
   "tab-opacity-hover": 0.5,
 
-  // Navbar
+  // nav bar
   "icon-color-primary": get-var(grey-700),
   "icon-color-secondary": get-var(grey-700),
-
-  // selection solors
-  "selection-text": get-var("black"),
-  "selection-bgcolor": get-var("blue-200")
+  // selection colors
+  "selection-text-color": get-var("black"),
+  "selection-background-color": get-var("blue-200")
 );

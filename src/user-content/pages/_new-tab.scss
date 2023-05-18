@@ -3,11 +3,11 @@
   html,
   body {
     // main bg color
-    --newtab-background-color: #{get-var("bgcolor-100")} !important;
+    --newtab-background-color: #{get-var("background-color-100")} !important;
     // secondary controls color
-    --newtab-background-color-secondary: #{get-var("bgcolor-0")} !important;
-    // controls bgcolor hover
-    --newtab-element-hover-color: #{get-var("control-bgcolor")} !important;
+    --newtab-background-color-secondary: #{get-var("background-color-0")} !important;
+    // controls background-color hover
+    --newtab-element-hover-color: #{get-var("control-background-color")} !important;
     // text & svg fill color
     --newtab-text-primary-color: #{get-var("text-primary")} !important;
     --newtab-primary-element-text-color: #{get-var("text-on-accent")} !important;
@@ -17,18 +17,18 @@
     html,
     body {
       // main bg color
-      --newtab-background-color: #{get-var("bgcolor-100")} !important;
+      --newtab-background-color: #{get-var("background-color-100")} !important;
       // secondary controls color
-      --newtab-background-color-secondary: #{get-var("bgcolor-100")} !important;
-      // controls bgcolor hover
-      --newtab-element-hover-color: #{get-var("bgcolor-0")} !important;
+      --newtab-background-color-secondary: #{get-var("background-color-100")} !important;
+      // controls background-color hover
+      --newtab-element-hover-color: #{get-var("background-color-0")} !important;
       // text & svg fill color
       --newtab-text-primary-color: #{get-var("text-primary")} !important;
     }
 
     // new tab shortcuts bg color
     .top-site-outer .tile {
-      --newtab-background-color-secondary: #{get-var("bgcolor-50")} !important;
+      --newtab-background-color-secondary: #{get-var("background-color-50")} !important;
     }
   }
 
@@ -72,8 +72,9 @@
     opacity: 0 !important;
   }
 
-  .search-wrapper .search-handoff-button, .search-wrapper input {
-    background-color: get-var("input-bgcolor") !important;
+  .search-wrapper .search-handoff-button,
+  .search-wrapper input {
+    background-color: get-var("input-background-color") !important;
   }
 
   // top sites

@@ -4,7 +4,7 @@ $menu-min-width: 220px;
 //   (-moz-platform: linux),
 //   (-moz-platform: macos) {
 @supports not -moz-bool-pref("widget.macos.native-context-menus") {
-  // context menu bgcolor & drop shadow
+  // context menu background-color & drop shadow
   .menupopup-arrowscrollbox {
     background-color: var(--arrowpanel-background) !important;
     // border: none !important;
@@ -97,9 +97,9 @@ $menu-min-width: 220px;
 
   // other menu items
   #context-navigation
-  > .menuitem-iconic
-  > .menu-iconic-left
-  > .menu-iconic-icon,
+    > .menuitem-iconic
+    > .menu-iconic-left
+    > .menu-iconic-icon,
   menupopup > menu,
   menupopup > menuitem,
   menupopup > menucaption {

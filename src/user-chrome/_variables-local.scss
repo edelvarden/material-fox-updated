@@ -42,23 +42,23 @@ body {
   // ----------------------------------------------------------------------
 
   // gray-900 - 0% lt dark bg
-  --lwt-accent-color: #{get-var("bgcolor-0")} !important;
-  --toolbar-field-background-color: #{get-var("bgcolor-0")} !important;
-  --toolbar-field-focus-background-color: #{get-var("bgcolor-0")} !important;
-  --lwt-background-tab-separator-color: #{get-var("bgcolor-0")} !important;
+  --lwt-accent-color: #{get-var("background-color-0")} !important;
+  --toolbar-field-background-color: #{get-var("background-color-0")} !important;
+  --toolbar-field-focus-background-color: #{get-var("background-color-0")} !important;
+  --lwt-background-tab-separator-color: #{get-var("background-color-0")} !important;
 
   // grey-900-white-4-percent - 50% lt dark bg
-  --arrowpanel-background: #{get-var("menu-bgcolor")} !important;
+  --arrowpanel-background: #{get-var("menu-background-color")} !important;
   --arrowpanel-border-color: #{get-var("menu-border-color")} !important;
   --panel-separator-color: #{get-var("menu-border-color")} !important;
-  --lwt-selected-tab-background-color: #{get-var("bgcolor-50")} !important;
-  --autocomplete-popup-highlight-background: #{get-var("bgcolor-50")} !important;
-  --tabpanel-background-color: #{get-var("bgcolor-50")} !important;
-  --toolbarseparator-color: #{get-var("bgcolor-50")} !important;
-  --tab-icon-overlay-stroke: #{get-var("bgcolor-50")} !important;
+  --lwt-selected-tab-background-color: #{get-var("background-color-50")} !important;
+  --autocomplete-popup-highlight-background: #{get-var("background-color-50")} !important;
+  --tabpanel-background-color: #{get-var("background-color-50")} !important;
+  --toolbarseparator-color: #{get-var("background-color-50")} !important;
+  --tab-icon-overlay-stroke: #{get-var("background-color-50")} !important;
 
   // grey-900-white-5-percent - 100% lt dark bg
-  --toolbar-bgcolor: #{get-var("bgcolor-100")} !important;
+  --toolbar-bgcolor: #{get-var("background-color-100")} !important;
 
   // grey-200 - primary text
   --arrowpanel-color: #{get-var("text-primary")} !important;
@@ -74,9 +74,9 @@ body {
 
   --autocomplete-popup-separator-color: #{get-var("border-color")} !important;
 
-  --button-active-bgcolor: #{get-var("control-bgcolor")} !important;
-  --button-bgcolor: #{get-var("control-bgcolor")} !important;
-  --button-hover-bgcolor: #{get-var("control-bgcolor")} !important;
+  --button-active-bgcolor: #{get-var("control-background-color")} !important;
+  --button-bgcolor: #{get-var("control-background-color")} !important;
+  --button-hover-bgcolor: #{get-var("control-background-color")} !important;
 
   --chrome-content-separator-color: #{get-var("tab-outline-color")} !important;
 
