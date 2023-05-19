@@ -3,17 +3,19 @@
 _A Material Design-inspired userChrome.css theme for Firefox_
 
 <!-- preview -->
-| Light                                   | Dark                                   |
-| --------------------------------------- | -------------------------------------- |
-| ![Light][mf-light]                      | ![Dark][mf-dark]                       |
+
+| Light              | Dark             |
+| ------------------ | ---------------- |
+| ![Light][mf-light] | ![Dark][mf-dark] |
 
 <!-- preview references -->
+
 [mf-light]: mf-light.png
 [mf-dark]: mf-dark.png
 
 ## Requirements
 
-The following properties from `about:config` must be `true` 
+The following properties from `about:config` must be `true`
 
 - `toolkit.legacyUserProfileCustomizations.stylesheets`
 - `svg.context-properties.content.enabled`

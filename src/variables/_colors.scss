@@ -46,7 +46,6 @@ $dark-mode: (
   "background-color-0": get-var(grey-900),
   "background-color-50": get-var(grey-900-white-4-percent),
   "background-color-100": get-var(grey-900-white-5-percent),
-
   // UI text
   "text-primary": get-var(grey-200),
   "text-secondary": get-var(grey-500),
@@ -68,6 +67,7 @@ $dark-mode: (
   // nav bar
   "icon-color-primary": get-var(grey-100),
   "icon-color-secondary": get-var(grey-500),
+  "content-separator-color": #606164,
   // selection colors
   "selection-text-color": get-var("white"),
   "selection-background-color": get-var(blue-500)
@@ -104,6 +104,7 @@ $light-mode: (
   // nav bar
   "icon-color-primary": get-var(grey-700),
   "icon-color-secondary": get-var(grey-700),
+  "content-separator-color": #dbdcdd,
   // selection colors
   "selection-text-color": get-var("black"),
   "selection-background-color": get-var("blue-200")

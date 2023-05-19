@@ -8,7 +8,11 @@
 }
 
 // extension icons size inside popup list
-.unified-extensions-item-icon, .unified-extensions-item .webextension-browser-action.subviewbutton > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+.unified-extensions-item-icon,
+.unified-extensions-item
+  .webextension-browser-action.subviewbutton
+  > .toolbarbutton-badge-stack
+  > .toolbarbutton-icon {
   $icon-size: 24px;
   height: $icon-size !important;
   width: $icon-size !important;
