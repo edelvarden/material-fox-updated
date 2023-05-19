@@ -27,6 +27,13 @@ body {
     --#{$prefix}-#{$key}: #{$value};
   }
 
+  // optional feature: Github theme colors
+  @supports -moz-bool-pref("userChrome.github-theme-colors") {
+    @each $key, $value in $github-theme-colors {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+
   // light mode colors
   @media (prefers-color-scheme: light) {
     @each $key, $value in $light-mode {

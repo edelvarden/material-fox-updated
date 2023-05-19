@@ -46,10 +46,7 @@ $dark-mode: (
   "background-color-0": get-var(grey-900),
   "background-color-50": get-var(grey-900-white-4-percent),
   "background-color-100": get-var(grey-900-white-5-percent),
-  // optional feature: Github theme colors
-  // "background-color-0": #0d1117,
-  // "background-color-50": #161b22,
-  // "background-color-100": #21262d,
+
   // UI text
   "text-primary": get-var(grey-200),
   "text-secondary": get-var(grey-500),
@@ -110,4 +107,13 @@ $light-mode: (
   // selection colors
   "selection-text-color": get-var("black"),
   "selection-background-color": get-var("blue-200")
+);
+
+// optional feature: Github theme colors
+$github-theme-colors: (
+  "accent-color": #2f81f7,
+  "background-color-0": #0d1117,
+  "background-color-50": #161b22,
+  "background-color-100": #21262d,
+  "menu-border-color": #30363d,
 );
