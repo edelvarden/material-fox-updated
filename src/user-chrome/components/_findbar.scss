@@ -50,19 +50,15 @@
 }
 
 .found-matches {
-  margin-right: 0 !important;
-  padding-right: 8px !important;
-
-  &[hidden] {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+  align-items: center !important;
 }
 
-.found-matches {
-  height: 80% !important;
+// hide find bar additional text info
+.findbar-find-status {
+  display: none !important;
+}
+.findbar-find-status[status="notfound"] {
   display: flex !important;
-  align-items: center !important;
 }
 
 .findbar-textbox-wrapper {
@@ -79,10 +75,6 @@
 
 .findbar-textbox {
   border-left: 1px solid !important;
-}
-
-.found-matches,
-.findbar-textbox {
   border-right: 1px solid !important;
   border-color: get-var("menu-border-color") !important;
   border-radius: 0 !important;
