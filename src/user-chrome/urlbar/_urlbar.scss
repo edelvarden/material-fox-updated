@@ -73,14 +73,22 @@ body {
     background-color: get-var("background-color-50") !important;
   }
 
-  #urlbar {
-    &:is([open], [focused]) {
-      #urlbar-background,
-      #searchbar {
-        background-color: get-var("background-color-100") !important;
-      }
+  #urlbar:is([open], [focused]) {
+    #urlbar-background,
+    #searchbar {
+      background-color: get-var("background-color-100") !important;
     }
   }
+}
+
+// hide url bar search input placeholder if focused
+#urlbar:is([open], [focused]) {
+  #urlbar-input::placeholder {
+    color: transparent !important;
+  }
+}
+.searchbar-textbox:focus::placeholder {
+  color: transparent !important;
 }
 
 // remove theme navbar top border
