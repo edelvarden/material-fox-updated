@@ -28,6 +28,73 @@ The following properties from `about:config` must be `true`
 3. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases) and extract into Firefox profile directory
 4. Restart Firefox
 
+## Manual Customization
+
+If you want change colors you can edit the following variables inside `user-chrome.css` (for browser shell) or `user-config.css` (for the content part)
+
+<table>
+  <tr>
+    <th>Variable name</th>
+    <th>Description</th>
+    <th>Default value</th>
+  </tr>
+  <tr>
+    <td>--mf-accent-color</td>
+    <td>accent color</td>
+    <td>#8ab4f8</td>
+  </tr>
+  <tr>
+    <td>--mf-background-color-0</td>
+    <td>dark tones</td>
+    <td>#202124</td>
+  </tr>
+  <tr>
+    <td>--mf-background-color-50</td>
+    <td>middle tones</td>
+    <td>#292a2d</td>
+  </tr>
+  <tr>
+    <td>--mf-background-color-100</td>
+    <td>light tones</td>
+    <td>#35363a</td>
+  </tr>
+  <tr>
+    <td>--mf-text-primary</td>
+    <td>main text color</td>
+    <td>#e8eaed</td>
+  </tr>
+  <tr>
+    <td>--mf-text-secondary</td>
+    <td>secondary text color</td>
+    <td>#9aa0a6</td>
+  </tr>
+  <tr>
+    <td>--mf-text-on-accent</td>
+    <td>text on primary button</td>
+    <td>#202124</td>
+  </tr>
+  <tr>
+    <td>--mf-menu-border-color</td>
+    <td>controls border color</td>
+    <td>#3c4043</td>
+  </tr>
+  <tr>
+    <td>--mf-content-separator-color</td>
+    <td>separator line between browser and content area</td>
+    <td>#606164</td>
+  </tr>
+  <tr>
+    <td>--mf-selection-text-color</td>
+    <td>text selection color</td>
+    <td>#fff</td>
+  </tr>
+  <tr>
+    <td>--mf-selection-background-color</td>
+    <td>selection background color</td>
+    <td>#4285f4</td>
+  </tr>
+</table>
+
 ## Build & Development
 
 - [Visual Studio Code](https://code.visualstudio.com/) (development environment)
