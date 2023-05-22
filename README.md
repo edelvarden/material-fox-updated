@@ -30,7 +30,7 @@ The following properties from `about:config` must be `true`
 
 ## Manual Customization
 
-If you want change colors you can edit the following variables inside `user-chrome.css` (for browser shell) or `user-config.css` (for the content part)
+If you want change colors you can edit the following variables inside `user-chrome.css` (for browser shell) or `user-content.css` (for the content part)
 
 <table>
   <tr>
