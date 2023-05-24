@@ -2,17 +2,7 @@
 
 _A Material Design-inspired userChrome.css theme for Firefox_
 
-<!-- preview -->
-<table>
-  <tr>
-    <th>Light</th>
-    <th>Dark</th>
-  </tr>
-  <tr>
-    <td><img src="assets/mf-light.png" alt="mf-light"></img></td>
-    <td><img src="assets/mf-dark.png" alt="mf-dark"></img></td>
-  </tr>
- </table>
+![preview](assets/preview.png)
 
 ## Requirements
 
@@ -28,6 +18,19 @@ The following properties from `about:config` must be `true`
 2. Find `Profile Folder` and click `Open Folder` button
 3. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases) and extract into Firefox profile directory
 4. Restart Firefox
+
+## Screenshots
+
+<table>
+  <tr>
+    <th>Light</th>
+    <th>Dark</th>
+  </tr>
+  <tr>
+    <td><img src="assets/preview-light.png" alt="preview-light"></img></td>
+    <td><img src="assets/preview-dark.png" alt="preview-dark"></img></td>
+  </tr>
+ </table>
 
 ## Manual Customization
 
