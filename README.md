@@ -3,15 +3,16 @@
 _A Material Design-inspired userChrome.css theme for Firefox_
 
 <!-- preview -->
-
-| Light              | Dark             |
-| ------------------ | ---------------- |
-| ![Light][mf-light] | ![Dark][mf-dark] |
-
-<!-- preview references -->
-
-[mf-light]: mf-light.png
-[mf-dark]: mf-dark.png
+<table>
+  <tr>
+    <th>Light</th>
+    <th>Dark</th>
+  </tr>
+  <tr>
+    <td><img src="assets/mf-light.png" alt="mf-light"></img></td>
+    <td><img src="assets/mf-dark.png" alt="mf-dark"></img></td>
+  </tr>
+ </table>
 
 ## Requirements
 
