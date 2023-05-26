@@ -34,7 +34,9 @@ The following properties from `about:config` must be `true`
 
 ## Manual Customization
 
-If you want change colors you can edit the following variables inside `user-chrome.css` (for browser shell) or `user-content.css` (for the content part)
+If you want to change the colors, you can open `user-chrome.css` (for the browser shell) or `user-content.css` (for the content part) in a text editor. Find and change the value for a specific variable.
+
+For example, set the accent color to red: --mf-accent-color: #ea4335;
 
 <table>
   <tr>
@@ -106,13 +108,13 @@ If you want change colors you can edit the following variables inside `user-chro
 
 1. Clone this repo or extract downloaded zip to `[Profile Folder]/chrome`
 
-```
+```bash
 git clone https://github.com/edelvarden/material-fox-updated.git .
 ```
 
 Project structure
 
-```
+```plaintext
 [Profile Folder]
 └── chrome
     ├── chrome
@@ -129,13 +131,13 @@ Project structure
 
 2. On the project root directory, install the dependencies listed in `package.json` by using the following command
 
-```
+```bash
 npm install
 ```
 
 3. Watch for changes to the `src` files and automatically build them to the `chrome` folder by using the following command
 
-```
+```bash
 npm run dev
 ```
 
