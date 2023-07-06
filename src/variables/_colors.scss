@@ -94,7 +94,7 @@ $light-mode: (
   // input, select, textarea
   "input-background-color": get-var(background-color-100),
   // menu, popups
-  "menu-background-color": get-var(background-color-0),
+  "menu-background-color": get-var(background-color-100),
   "menu-border-color": get-var(background-color-0),
   // tab bar
   "tab-separator-color": cm(transparent, get-var("black"), 0.2),
