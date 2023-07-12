@@ -1,4 +1,5 @@
 // checkbox
+input[type="checkbox"],
 .checkbox-check,
 .sponsored-checkbox {
   border: 1px solid;
@@ -13,6 +14,7 @@
   }
 }
 
+input[type="checkbox"]:not(:disabled, [disabled="true"]):hover,
 checkbox:not([disabled="true"]):hover > .checkbox-check {
   &:not([checked], :checked) {
     background-color: get-var("background-color-50") !important;

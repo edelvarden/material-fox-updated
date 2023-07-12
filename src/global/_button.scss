@@ -7,6 +7,7 @@
       [autofocus],
       [default],
       .primary,
+      .primary-button,
       .popup-notification-primary-button,
       .disco-cta-button
     ),
@@ -25,7 +26,7 @@
 
   // secondary button styles
   &:is([accesskey], .accessory-button, [dlgtype="cancel"], .disco-cta-button) {
-    color: get-var("accent-color") !important;
+    // color: get-var("accent-color") !important;
     background-color: transparent !important;
     border: 1px solid !important;
     border-color: get-var("menu-border-color") !important;
@@ -36,14 +37,46 @@
   }
 
   // primary button styles
-  &:is([autofocus], [default], .primary, .popup-notification-primary-button),
+  &:is(
+      [autofocus],
+      [default],
+      .primary,
+      .primary-button,
+      .popup-notification-primary-button
+    ),
   [type="submit"] {
     border: none !important;
-    color: get-var("text-on-accent") !important;
+    // color: get-var("text-on-accent") !important;
     background-color: get-var("accent-color") !important;
 
     &:hover {
       background-color: get-var("accent-color-hover") !important;
+    }
+  }
+}
+
+// fix font color for dialog box buttons
+:not(dialog, .dialogBox) {
+  :not(button-group) > button {
+    // secondary button styles
+    &:is(
+        [accesskey],
+        .accessory-button,
+        [dlgtype="cancel"],
+        .disco-cta-button
+      ) {
+      color: get-var("accent-color") !important;
+    }
+    // primary button styles
+    &:is(
+        [autofocus],
+        [default],
+        .primary,
+        .primary-button,
+        .popup-notification-primary-button
+      ),
+    [type="submit"] {
+      color: get-var("text-on-accent") !important;
     }
   }
 }
