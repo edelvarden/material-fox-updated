@@ -4,22 +4,15 @@ _A Material Design-inspired userChrome.css theme for Firefox_
 
 ![preview](assets/preview.png)
 
-## Requirements
+## Installation
+
+### Prerequisites
 
 The following properties from `about:config` must be `true`
 
 - `toolkit.legacyUserProfileCustomizations.stylesheets`
 - `svg.context-properties.content.enabled`
 - `layout.css.color-mix.enabled`
-
-## Installation
-
-### Manual installation
-
-1. Go to the following url address `about:support`
-2. Find `Profile Folder` and click `Open Folder` button
-3. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases) and extract into Firefox profile directory
-4. Restart Firefox to apply changes
 
 ### Installation script
 
@@ -28,6 +21,13 @@ For **Windows** you can run the following PowerShell command:
 ```powershell
 PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
 ```
+
+### Manual installation
+
+1. Go to the following url address `about:support`
+2. Find `Profile Folder` and click `Open Folder` button
+3. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases) and extract into your Firefox profile directory
+4. Restart Firefox to apply changes
 
 ## Screenshots
 
@@ -44,7 +44,7 @@ PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercon
 
 ## Manual Customization
 
-If you want to change the colors, you can change the values of the variables in the following files:
+If you want to change some colors, you can change the value of the variables in the following files:
 
 - `user-chrome.css` for the browser shell;
 - `user-content.css` for the content part (e.g. the "New tab" page);
@@ -54,9 +54,9 @@ Follow this steps:
 1. Open the css file in a text editor
 2. Find the desired variable
 3. Change the value, for example, set the accent color to red: --mf-accent-color: #ea4335;
-4. Restart Firefox to apply changes
+4. Save the file and restart Firefox to apply changes
 
-### Available values
+### Available variables
 
 <table>
   <tr>
@@ -123,18 +123,21 @@ Follow this steps:
 
 ## Build & Development
 
-### Prerequisite
+### Prerequisites
 
 - [Visual Studio Code](https://code.visualstudio.com/) (development environment)
 - [NodeJS](https://nodejs.org/en/download) (for npm)
 
 ### Installation
 
-1. Open Firefox profile folder.
+1. Open Firefox profile directory in terminal.
 2. Clone this repo with the following command:
 
 ```bash
 git clone https://github.com/edelvarden/material-fox-updated.git chrome
+cd chrome
+npm install
+npm run dev
 ```
 
 Project structure
@@ -154,13 +157,9 @@ Project structure
     └── userContent.css
 ```
 
-3. On the project root directory, install the dependencies listed in `package.json` by using the following command:
+3. Then you can modify the files in the `src` directory, all changes will be automatically build in the `[Profile Folder]/chrome/chrome` folder.
 
-```bash
-npm install
-```
-
-3. Watch for changes to the `src` files and automatically build them into the `chrome` folder using the following command:
+To subsequently start the development mode, just use the following command:
 
 ```bash
 npm run dev
