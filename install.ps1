@@ -1,6 +1,6 @@
 function Get-ProfileDirectory {
 
-  $installationDirectory = ""
+  $profileName = ""
   $directories = (Get-ChildItem -Path "$env:APPDATA\Mozilla\Firefox\Profiles" -Directory  |
     Where-Object {
       if (Get-ChildItem $_.FullName -File -Name "*prefs.js") {
@@ -13,34 +13,37 @@ function Get-ProfileDirectory {
     Sort-Object Name)
 
   if ($directories.Count -gt 1) {
+    Write-Host "Select a user profile:"
+    Write-Host ""
     for ($i = 0; $i -lt $directories.Count; $i++) {
       $directory = $directories[$i]
 
       Write-Host "$($i + 1). $($directory)"
     } 
+    Write-Host ""
   
-    while (!($installationDirectory)) {
-      $index = Read-Host "Select profile: "
+    while (!($profileName)) {
+      $index = Read-Host "Profile number: "
       $directory = $directories[$index - 1]
 
       if ($directory) {
         Write-Host "You selected $directory."
-        $installationDirectory = $directory
+        $profileName = $directory
       }
       else {
-        Write-Host "Invalid selection."
+        Write-Warning "Invalid profile number. Enter a number from the list."
       }
     }
   }
   else {
-    $installationDirectory = $directories[0]
+    $profileName = $directories[0]
   }
 
-  if ($installationDirectory) {
-    return "$env:APPDATA\Mozilla\Firefox\Profiles\$installationDirectory"
+  if ($profileName) {
+    return "$env:APPDATA\Mozilla\Firefox\Profiles\$profileName"
   }
   else {
-    Write-Host "Can't get profile directory!"
+    Write-Warning "Can't get profile directory!"
     return
   }
 }
@@ -68,7 +71,7 @@ function Update-FirefoxTheme {
     Expand-Archive -LiteralPath $zipPath -DestinationPath $DestinationPath -Force
   }
   catch {
-    Write-Host "Can't install firefox theme!"
+    Write-Warning "Can't install firefox theme!"
   }
   finally {
     Write-Host "Done. Clean up temp files..."
@@ -100,7 +103,8 @@ function Invoke-Installation {
     $status = $true
   }
   else {
-    $confirm = Read-Host "The chrome folder already exist. Do you want replace? (Y/N)"
+    Write-Warning "The chrome folder already exist."
+    $confirm = Read-Host "Do you want replace? (Y/N)"
 
     if ($confirm -eq "Y") {
       $status = $true
@@ -112,4 +116,8 @@ function Invoke-Installation {
   }
 }
 
+
+Write-Host "----------------------------------------------------------------"
+Write-Host "MaterialFox UPDATED"
+Write-Host "----------------------------------------------------------------"
 Invoke-Installation
