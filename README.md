@@ -14,10 +14,20 @@ The following properties from `about:config` must be `true`
 
 ## Installation
 
+### Manual installation
+
 1. Go to the following url address `about:support`
 2. Find `Profile Folder` and click `Open Folder` button
 3. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases) and extract into Firefox profile directory
-4. Restart Firefox
+4. Restart Firefox to apply changes
+
+### Installation script
+
+For **Windows** you can run the following PowerShell command:
+
+```powershell
+PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
+```
 
 ## Screenshots
 
@@ -34,9 +44,19 @@ The following properties from `about:config` must be `true`
 
 ## Manual Customization
 
-If you want to change the colors, you can open `user-chrome.css` (for the browser shell) or `user-content.css` (for the content part) in a text editor. Find and change the value for a specific variable.
+If you want to change the colors, you can change the values of the variables in the following files:
 
-For example, set the accent color to red: --mf-accent-color: #ea4335;
+- `user-chrome.css` for the browser shell;
+- `user-content.css` for the content part (e.g. the "New tab" page);
+
+Follow this steps:
+
+1. Open the css file in a text editor
+2. Find the desired variable
+3. Change the value, for example, set the accent color to red: --mf-accent-color: #ea4335;
+4. Restart Firefox to apply changes
+
+### Available values
 
 <table>
   <tr>
@@ -103,13 +123,18 @@ For example, set the accent color to red: --mf-accent-color: #ea4335;
 
 ## Build & Development
 
+### Prerequisite
+
 - [Visual Studio Code](https://code.visualstudio.com/) (development environment)
 - [NodeJS](https://nodejs.org/en/download) (for npm)
 
-1. Clone this repo or extract downloaded zip to `[Profile Folder]/chrome`
+### Installation
+
+1. Open Firefox profile folder.
+2. Clone this repo with the following command:
 
 ```bash
-git clone https://github.com/edelvarden/material-fox-updated.git .
+git clone https://github.com/edelvarden/material-fox-updated.git chrome
 ```
 
 Project structure
@@ -129,13 +154,13 @@ Project structure
     └── userContent.css
 ```
 
-2. On the project root directory, install the dependencies listed in `package.json` by using the following command
+3. On the project root directory, install the dependencies listed in `package.json` by using the following command:
 
 ```bash
 npm install
 ```
 
-3. Watch for changes to the `src` files and automatically build them to the `chrome` folder by using the following command
+3. Watch for changes to the `src` files and automatically build them into the `chrome` folder using the following command:
 
 ```bash
 npm run dev
