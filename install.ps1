@@ -97,22 +97,42 @@ function Invoke-Installation {
     [string]$ProfileDirectory = (Get-ProfileDirectory),
     [string]$DownloadUrl = (Get-FileDownloadUrlFromGithubReales -RealesUrl "https://api.github.com/repos/edelvarden/material-fox-updated/releases/latest" -FileName "chrome.zip")
   )
-  $status = $false
+  $isUpdate = $false
 
   if (-not (Test-Path "$ProfileDirectory\chrome")) {
-    $status = $true
+    $isUpdate = $true
   }
   else {
     Write-Warning "The chrome folder already exist."
     $confirm = Read-Host "Do you want replace? (Y/N)"
 
     if ($confirm -eq "Y") {
-      $status = $true
+      $isUpdate = $true
     }
   }
 
-  if ($status) {
+  if ($isUpdate) {
     Update-FirefoxTheme -DownloadUrl $DownloadUrl -DestinationPath $ProfileDirectory
+  }
+
+  # Also install the user.js file
+  $includeUserJS = $false
+
+  if (-not (Test-Path "$ProfileDirectory\user.js")) {
+    $includeUserJS = $true
+  }
+  else {
+    Write-Warning "The user.js file already exist."
+    $confirm = Read-Host "Do you want replace? (Y/N)"
+
+    if ($confirm -eq "Y") {
+      $includeUserJS = $true
+    }
+  }
+
+  if ($includeUserJS) {
+    $userJSDownloadUrl = (Get-FileDownloadUrlFromGithubReales -RealesUrl "https://api.github.com/repos/edelvarden/material-fox-updated/releases/latest" -FileName "user.js")
+    (New-Object System.Net.WebClient).DownloadFile($userJSDownloadUrl, "$ProfileDirectory\user.js")
   }
 }
 
