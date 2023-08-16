@@ -14,10 +14,14 @@ $menu-min-width: 220px;
   }
 
   // separator color
-  menuseparator {
+  menuseparator::before {
     border-color: get-var("menu-border-color") !important;
     margin-left: 1px !important;
     margin-right: 1px !important;
+  }
+
+  menuseparator {
+    padding-inline: 0 !important;
   }
 
   // left margin for menu item without icon
