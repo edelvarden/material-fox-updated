@@ -131,7 +131,7 @@ function Invoke-Installation {
   }
 
   if ($includeUserJS) {
-    $userJSDownloadUrl = (Get-FileDownloadUrlFromGithubReales -RealesUrl "https://api.github.com/repos/edelvarden/material-fox-updated/releases/latest" -FileName "user.js")
+    $userJSDownloadUrl = "https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/user.js"
     (New-Object System.Net.WebClient).DownloadFile($userJSDownloadUrl, "$ProfileDirectory\user.js")
   }
 }
