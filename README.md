@@ -26,7 +26,7 @@ PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercon
 
 1. Go to the following url address `about:support`
 2. Find `Profile Folder` and click `Open Folder` button
-3. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases) and extract into your Firefox profile directory
+3. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases/latest) and extract into your Firefox profile directory
 4. Restart Firefox to apply changes
 
 ## Screenshots
@@ -137,6 +137,7 @@ Follow this steps:
 git clone https://github.com/edelvarden/material-fox-updated.git chrome
 cd chrome
 npm install
+npx husky install
 npm run dev
 ```
 
