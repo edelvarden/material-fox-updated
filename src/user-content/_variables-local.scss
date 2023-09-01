@@ -2,6 +2,9 @@
 html,
 body {
   --newtab-primary-action-background: #{get-var("accent-color")} !important;
+
+  --brand-color-accent: #{get-var("accent-color")} !important;
+  --brand-color-accent-hover: #{get-var("accent-color-hover")} !important;
 }
 
 :root,

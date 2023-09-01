@@ -29,22 +29,34 @@ PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercon
 3. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases/latest) and extract into your Firefox profile directory
 4. Restart Firefox to apply changes
 
-## Screenshots
+## Manual Customization
+
+Go to `about:config` and create a custom boolean preference, for example `userChrome.github-theme-colors`, the color theme will be applied after restart.
 
 <table>
   <tr>
-    <th>Light</th>
-    <th>Dark</th>
+    <th>Preferences</th>
+    <th>Preview</th>
   </tr>
   <tr>
-    <td><img src="assets/preview-light.png" alt="preview-light"></img></td>
+    <td>userChrome.dracula-theme-colors</td>
+    <td><img src="assets/preview-dracula.png" alt="preview-dracula"></img></td>
+  </tr>
+  <tr>
+    <td>userChrome.github-theme-colors</td>
+    <td><img src="assets/preview-github.png" alt="preview-github"></img></td>
+  </tr>
+  <tr>
+    <td>Default Dark</td>
     <td><img src="assets/preview-dark.png" alt="preview-dark"></img></td>
   </tr>
- </table>
+  <tr>
+    <td>Default Light</td>
+    <td><img src="assets/preview-light.png" alt="preview-light"></img></td>
+  </tr>
+</table>
 
-## Manual Customization
-
-If you want to change some colors, you can change the value of the variables in the following files:
+Additionally, if you want to change some colors, you can change the value of the variables in the following files:
 
 - `user-chrome.css` for the browser shell;
 - `user-content.css` for the content part (e.g. the "New tab" page);

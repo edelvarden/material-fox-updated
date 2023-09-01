@@ -118,3 +118,15 @@ $github-theme-colors: (
   "background-color-100": #21262d,
   "menu-border-color": #30363d,
 );
+
+// optional feature: Dracula theme colors
+$dracula-theme-colors: (
+  "accent-color": #bd93f9,
+  "background-color-0": #282a36,
+  "background-color-50": #343746,
+  "background-color-100": #44475a,
+  "menu-background-color": get-var(background-color-0),
+  "menu-border-color": #343746,
+  "selection-text-color": get-var("black"),
+  "selection-background-color": #bd93f9,
+);
