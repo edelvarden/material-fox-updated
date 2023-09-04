@@ -29,30 +29,47 @@ PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercon
 3. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases/latest) and extract into your Firefox profile directory
 4. Restart Firefox to apply changes
 
-## Manual Customization
-
-Go to `about:config` and create a custom boolean preference, for example `userChrome.github-theme-colors`, the color theme will be applied after restart.
+### Screenshots
 
 <table>
   <tr>
-    <th>Preferences</th>
-    <th>Preview</th>
+    <th>Light</th>
+    <th>Dark</th>
+  </tr>
+  <tr>
+    <td><img src="assets/preview-light.png" alt="preview-light"></img></td>
+    <td><img src="assets/preview-dark.png" alt="preview-dark"></img></td>
+  </tr>
+ </table>
+
+### Manual Customization
+
+This theme contains preinstalled color presets, you can start using it follow this steps:
+
+1. Go to `about:config`
+2. Create a custom boolean preference, just type the preference name and click the plus button, for example `userChrome.github-theme-colors`
+3. Restart Firefox to apply changes
+
+To disable, search by name and remove the preference
+
+#### Available preferences
+
+<table>
+  <tr>
+    <th>Preference</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>userChrome.system-accent-colors</td>
+    <td>Set the accent color as your system accent color</td>
   </tr>
   <tr>
     <td>userChrome.dracula-theme-colors</td>
-    <td><img src="assets/preview-dracula.png" alt="preview-dracula"></img></td>
+    <td><a src="assets/preview-dracula.png" alt="preview-dracula">Preview</a></td>
   </tr>
   <tr>
     <td>userChrome.github-theme-colors</td>
-    <td><img src="assets/preview-github.png" alt="preview-github"></img></td>
-  </tr>
-  <tr>
-    <td>Default Dark</td>
-    <td><img src="assets/preview-dark.png" alt="preview-dark"></img></td>
-  </tr>
-  <tr>
-    <td>Default Light</td>
-    <td><img src="assets/preview-light.png" alt="preview-light"></img></td>
+    <td><a src="assets/preview-github.png" alt="preview-github">Preview</a></td>
   </tr>
 </table>
 
@@ -68,7 +85,7 @@ Follow this steps:
 3. Change the value, for example, set the accent color to red: --mf-accent-color: #ea4335;
 4. Save the file and restart Firefox to apply changes
 
-### Available variables
+#### Available variables
 
 <table>
   <tr>

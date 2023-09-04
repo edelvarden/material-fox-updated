@@ -130,3 +130,8 @@ $dracula-theme-colors: (
   "selection-text-color": get-var("black"),
   "selection-background-color": #bd93f9,
 );
+
+// optional feature: System accent colors
+$system-accent-colors: (
+  "accent-color": AccentColor,
+);
