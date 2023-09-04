@@ -44,7 +44,7 @@ PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercon
 
 ### Manual Customization
 
-This theme contains preinstalled color presets, you can start using it follow this steps:
+You can set pre-installed color presets by following the steps below:
 
 1. Go to `about:config`
 2. Create a custom boolean preference, just type the preference name and click the plus button, for example `userChrome.github-theme-colors`
@@ -65,11 +65,11 @@ To disable, search by name and remove the preference
   </tr>
   <tr>
     <td>userChrome.dracula-theme-colors</td>
-    <td><a src="assets/preview-dracula.png" alt="preview-dracula">Preview</a></td>
+    <td><img src="assets/preview-dracula.png" alt="preview-dracula"></img></td>
   </tr>
   <tr>
     <td>userChrome.github-theme-colors</td>
-    <td><a src="assets/preview-github.png" alt="preview-github">Preview</a></td>
+    <td><img src="assets/preview-github.png" alt="preview-github"></img></td>
   </tr>
 </table>
 
