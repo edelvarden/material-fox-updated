@@ -66,3 +66,17 @@
 .protections-popup-tp-switch::before {
   background-color: get-var("text-on-accent") !important;
 }
+
+// fix background for "Firefox" box in urlbar container
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button,
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button,
+#urlbar-label-box {
+  // background-color: var(--urlbar-box-bgcolor); // Default
+  background-color: transparent !important;
+
+  &:hover {
+    background-color: get-var("control-background-color") !important;
+    outline-color: get-var("control-border-color") !important;
+  }
+}

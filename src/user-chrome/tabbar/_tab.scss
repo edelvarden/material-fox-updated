@@ -156,7 +156,7 @@ body {
 // bg color and opacity for selected tab
 .tabbrowser-tab[visuallyselected] {
   --tab-background-color: var(--toolbar-bgcolor);
-  --tab-opacity: 1;
+  --tab-opacity: #{get-var("tab-opacity")};
 }
 
 .tab-icon-image {

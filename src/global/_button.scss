@@ -65,7 +65,7 @@
         [dlgtype="cancel"],
         .disco-cta-button
       ) {
-      color: get-var("accent-color") !important;
+      color: get-var("secondary-button-text") !important;
     }
     // primary button styles
     &:is(

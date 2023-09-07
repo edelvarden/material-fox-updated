@@ -50,8 +50,14 @@ body {
 
   // optional feature: System accent colors
   @supports -moz-bool-pref("userChrome.system-accent-colors") {
-    @each $key, $value in $system-accent-colors {
+    @each $key, $value in $dark-accent-colors {
       --#{$prefix}-#{$key}: #{$value};
+    }
+
+    @media (prefers-color-scheme: light) {
+      @each $key, $value in $light-accent-colors {
+        --#{$prefix}-#{$key}: #{$value};
+      }
     }
   }
 }
