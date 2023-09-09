@@ -253,3 +253,10 @@ body {
 #TabsToolbar {
   --lwt-tab-line-color: transparent !important;
 }
+
+@media (-moz-platform: macos) {
+  // bigger font size for tab text
+  .tab-label {
+    font-size: 13px !important;
+  }
+}

@@ -38,8 +38,8 @@ body {
 
   font-family: var(--#{$prefix}-font-family) !important;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
   font-feature-settings: normal;
   font-variation-settings: normal;
   line-height: 1.2;

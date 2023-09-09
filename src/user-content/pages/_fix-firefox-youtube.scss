@@ -77,8 +77,18 @@
   /*  */
 
   /* hide download button & sponsor join button */
-  #top-level-buttons-computed > ytd-download-button-renderer,
+  #info ytd-download-button-renderer,
   #sponsor-button {
     display: none !important;
+  }
+
+  /* remove unwanted margin for expanded description container */
+  ytd-expander.ytd-video-secondary-info-renderer {
+    margin-left: 0px !important;
+  }
+
+  /* fix width for expanded description container */
+  #description.ytd-video-secondary-info-renderer {
+    max-width: unset !important;
   }
 }

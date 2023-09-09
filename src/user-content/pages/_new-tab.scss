@@ -189,7 +189,7 @@
   .personalize-button {
     // color: get-var("accent-color") !important;
     box-shadow: get-var("elevation-2") !important;
-    font-weight: 400 !important;
+    // font-weight: 400 !important;
     min-width: 32px !important;
     border-radius: 100px !important;
   }
@@ -227,6 +227,22 @@
       &:hover {
         background-color: get-var("accent-color-hover") !important;
       }
+    }
+  }
+
+  // bigger font size for "new tab" page
+  @media (-moz-platform: macos) {
+    html,
+    body {
+      font-weight: 500 !important;
+    }
+
+    .fake-textbox {
+      font-weight: 500 !important;
+    }
+
+    .title {
+      font-weight: 500 !important;
     }
   }
 }
