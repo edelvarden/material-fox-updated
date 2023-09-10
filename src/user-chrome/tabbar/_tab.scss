@@ -6,6 +6,7 @@ body {
   --tab-opacity: 0;
   --tab-background-color: #{get-var("background-color-100")} !important;
   --tab-transition-duration: 83ms;
+  --tab-margin-top: 8px !important;
 }
 
 .tabbrowser-tab {
@@ -18,6 +19,8 @@ body {
   box-sizing: border-box !important;
   background: 0 0 !important;
   padding: 0 !important;
+  margin-top: var(--tab-margin-top) !important;
+  font-size: 12px !important;
 
   &:not([pinned]) {
     margin-inline-start: 0 !important;
