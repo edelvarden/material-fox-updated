@@ -161,5 +161,6 @@ $dark-accent-colors: (
   "text-on-accent": get-var("white"),
   "secondary-button-text": get-var("white"),
   "content-separator-color": cm(get-var(accent-color), #606164, 0.9),
-  "selection-background-color": cm(get-var(accent-color), get-var(grey-900), 0.15),
+  "selection-background-color":
+    cm(get-var(accent-color), get-var(grey-900), 0.15),
 );

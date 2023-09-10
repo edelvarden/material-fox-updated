@@ -13,7 +13,6 @@
   max-width: 40px !important;
   max-height: var(--tab-min-height) !important;
   margin: 0 !important;
-  margin-top: 8px !important;
 
   & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     padding: 6px !important;
@@ -85,3 +84,13 @@
 //   min-height: var(--scrollbutton-size) !important;
 //   min-height: var(--scrollbutton-size) !important;
 // }
+
+// fixes for macOS
+@media (-moz-platform: macos) {
+  // macOS fix for new tab button & all tabs button
+  #tabs-newtab-button,
+  #new-tab-button,
+  #alltabs-button {
+    margin-top: 8px !important;
+  }
+}

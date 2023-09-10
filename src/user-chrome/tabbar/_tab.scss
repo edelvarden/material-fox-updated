@@ -19,7 +19,6 @@ body {
   box-sizing: border-box !important;
   background: 0 0 !important;
   padding: 0 !important;
-  margin-top: var(--tab-margin-top) !important;
   font-size: 12px !important;
 
   &:not([pinned]) {
@@ -257,9 +256,19 @@ body {
   --lwt-tab-line-color: transparent !important;
 }
 
+// fixes for macOS
 @media (-moz-platform: macos) {
+  html,
+  body {
+    --tab-margin-top: 8px !important;
+  }
+
+  .tabbrowser-tab {
+    margin-top: var(--tab-margin-top) !important;
+  }
+
   // bigger font size for tab text
-  .tab-label {
+  .tabbrowser-tab {
     font-size: 13px !important;
   }
 }
