@@ -64,6 +64,10 @@ To disable, search by name and remove the preference
     <td>Set the accent color as your system accent color</td>
   </tr>
   <tr>
+    <td>userChrome.default-theme-colors</td>
+    <td>(Experimental) Use default firefox colors</td>
+  </tr>
+  <tr>
     <td>userChrome.dracula-theme-colors</td>
     <td><img src="assets/preview-dracula.png" alt="preview-dracula"></img></td>
   </tr>

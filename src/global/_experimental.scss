@@ -1,0 +1,25 @@
+@supports -moz-bool-pref("userChrome.default-theme-colors") {
+  html,
+  body {
+    --tab-background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1)} !important;
+    --toolbar-bgcolor: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1)} !important;
+  }
+
+  // urlbar suggestions item
+  .urlbarView-row {
+    &[selected] {
+      background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1)} !important;
+    }
+    &:not([selected]):hover {
+      background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1)} !important;
+    }
+  }
+
+  // menu item hover bg color
+  menu,
+  menuitem {
+    &:where([_moz-menuactive="true"]):not([disabled="true"]) {
+      background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1)} !important;
+    }
+  }
+}
