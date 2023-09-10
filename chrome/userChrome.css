@@ -2,21 +2,21 @@
 @import "user-chrome.css";
 
 /* make window titlebar like mac os (only for windows or linux) */
-@supports -moz-bool-pref("userChrome.MacOsTitlebar") {
+@supports -moz-bool-pref("userChrome.macos-buttons-right") or -moz-bool-pref("userChrome.macos-buttons-left") {
   @media not (-moz-platform: macos) {
     .titlebar-button {
-      --uc-caption-color: #f6be4f;
-      --uc-border-color: #d6a243;
+      --mf-caption-color: #f6be4f;
+      --mf-border-color: #d6a243;
     }
 
     .titlebar-min {
-      --uc-caption-color: #62c554;
-      --uc-border-color: #58a942;
+      --mf-caption-color: #62c554;
+      --mf-border-color: #58a942;
     }
 
     .titlebar-close {
-      --uc-caption-color: #ed6a5e;
-      --uc-border-color: #ce5347;
+      --mf-caption-color: #ed6a5e;
+      --mf-border-color: #ce5347;
     }
 
     .titlebar-button {
@@ -25,9 +25,9 @@
       padding-inline: 4px !important;
     }
 
-    .titlebar-close {
+    /* .titlebar-close {
       padding-left: 13px !important;
-    }
+    } */
 
     .titlebar-close > .toolbarbutton-icon,
     .titlebar-restore > .toolbarbutton-icon,
@@ -35,9 +35,9 @@
     .titlebar-min > .toolbarbutton-icon {
       list-style-image: none !important;
       border-radius: 50% !important;
-      background: var(--uc-caption-color) !important;
+      background: var(--mf-caption-color) !important;
       border: 1px solid !important;
-      border-color: var(--uc-border-color) !important;
+      border-color: var(--mf-border-color) !important;
 
       transform: scale(1);
       transition: transform 0.3s !important;
@@ -56,15 +56,40 @@
     }
 
     /* reverse buttons */
-    .titlebar-buttonbox {
+    /* .titlebar-buttonbox {
       display: flex !important;
       flex-direction: row-reverse !important;
-    }
+    } */
 
     /* added missing width to right spacer */
     :is(.titlebar-placeholder, .titlebar-spacer)[type="post-tabs"] {
       width: 117px !important;
       /* 138(win titlebar width) - 69(mac titlebar width) = 69; 48(right spacer width) + 69(empty width) = 117 */
     }
+
+  }
+}
+
+@supports -moz-bool-pref("userChrome.macos-buttons-left"){
+    /* position left  */
+    #TabsToolbar {
+      display: flex !important;
+      flex-direction: row-reverse !important;
+    }
+
+     /* reverse buttons */
+    .titlebar-buttonbox {
+      display: flex !important;
+      flex-direction: row-reverse !important;
+    }
+
+    .titlebar-close {
+      padding-left: 13px !important;
+    }
+}
+
+@supports -moz-bool-pref("userChrome.macos-buttons-right"){
+  .titlebar-close {
+    padding-right: 13px !important;
   }
 }
