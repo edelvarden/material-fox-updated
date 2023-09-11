@@ -80,3 +80,9 @@
     outline-color: get-var("control-border-color") !important;
   }
 }
+
+// remove unnecessary right space from shield icon button (like chrome)
+#identity-box {
+  // margin-inline-end: var(--identity-box-margin-inline); // default
+  margin-inline-end: 0 !important;
+}

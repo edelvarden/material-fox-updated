@@ -44,3 +44,8 @@
 .urlbarView-results {
   padding-block: 0 8px !important;
 }
+
+// remove unnecessary border upper url bar suggestions
+#urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
+  border-color: transparent !important;
+}

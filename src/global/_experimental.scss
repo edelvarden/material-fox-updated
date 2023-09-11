@@ -1,25 +1,31 @@
 @supports -moz-bool-pref("userChrome.default-theme-colors") {
   html,
   body {
-    --tab-background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1)} !important;
-    --toolbar-bgcolor: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1)} !important;
+    --tab-background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1333)} !important;
+    --toolbar-bgcolor: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1333)} !important;
   }
 
   // urlbar suggestions item
   .urlbarView-row {
     &[selected] {
-      background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1)} !important;
+      background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.15)} !important;
     }
     &:not([selected]):hover {
-      background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1)} !important;
+      background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.15)} !important;
     }
+  }
+
+  // urlbar background as title bar color
+  #urlbar-background,
+  #searchbar {
+    background-color: var(--lwt-accent-color) !important;
   }
 
   // menu item hover bg color
   menu,
   menuitem {
     &:where([_moz-menuactive="true"]):not([disabled="true"]) {
-      background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1)} !important;
+      background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.15)} !important;
     }
   }
 }
