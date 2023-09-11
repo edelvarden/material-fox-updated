@@ -91,6 +91,16 @@
   #tabs-newtab-button,
   #new-tab-button,
   #alltabs-button {
-    margin-top: 8px !important;
+    margin-top: auto !important;
+  }
+
+  #new-tab-button {
+    margin-inline-start: 2px !important;
+  }
+
+  // macos drag area fix
+  #tabs-newtab-button,
+  #new-tab-button {
+    margin-inline-end: 40px !important;
   }
 }

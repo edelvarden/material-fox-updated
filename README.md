@@ -80,7 +80,7 @@ To disable, search by name and remove the preference
     <td>(Experimental) right side macOS like buttons for Windows</td>
   </tr>
   <tr>
-    <td>userChrome.macos-buttons-right</td>
+    <td>userChrome.macos-buttons-left</td>
     <td>(Experimental) left side macOS like buttons for Windows</td>
   </tr>
 </table>

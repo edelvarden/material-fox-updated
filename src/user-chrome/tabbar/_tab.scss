@@ -6,7 +6,6 @@ body {
   --tab-opacity: 0;
   --tab-background-color: #{get-var("background-color-100")} !important;
   --tab-transition-duration: 83ms;
-  --tab-margin-top: 8px !important;
 }
 
 .tabbrowser-tab {
@@ -175,11 +174,9 @@ body {
   max-width: 238px !important;
 }
 
-#tabbrowser-tabs {
-  #tabs-newtab-button {
-    margin-inline-start: 6px !important;
-    margin-inline-end: 2px !important;
-  }
+#tabs-newtab-button {
+  margin-inline-start: 6px !important;
+  margin-inline-end: 2px !important;
 }
 
 #tabbrowser-tabs[overflow] {
@@ -258,13 +255,9 @@ body {
 
 // fixes for macOS
 @media (-moz-platform: macos) {
-  html,
-  body {
-    --tab-margin-top: 8px !important;
-  }
-
-  .tabbrowser-tab {
-    margin-top: var(--tab-margin-top) !important;
+  // tabs bar top margin
+  #TabsToolbar-customization-target > :not(#alltabs-button) {
+    margin-top: 8px !important;
   }
 
   // bigger font size for tab text
