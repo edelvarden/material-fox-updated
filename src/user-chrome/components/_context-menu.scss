@@ -3,7 +3,7 @@ $menu-min-width: 220px;
 // @media (-moz-platform: windows),
 //   (-moz-platform: linux),
 //   (-moz-platform: macos) {
-@supports not -moz-bool-pref("widget.macos.native-context-menus") {
+@media (-moz-platform: windows), (-moz-platform: linux) {
   // context menu background-color & drop shadow
   .menupopup-arrowscrollbox {
     background-color: var(--arrowpanel-background) !important;
@@ -23,31 +23,6 @@ $menu-min-width: 220px;
   menuseparator {
     padding-inline: 0 !important;
   }
-
-  // left margin for menu item without icon
-  $default-padding: 1em;
-  $image-width: 16px;
-  $image-padding-end: 8px;
-
-  #contentAreaContextMenu {
-    :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
-      padding-inline-start: calc(
-        $default-padding + $image-width + $image-padding-end
-      ) !important;
-    }
-  }
-
-  #tabContextMenu {
-    :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
-      padding-inline-start: calc(
-        $default-padding + $image-padding-end
-      ) !important;
-    }
-  }
-  // menupopup > menuitem,
-  // menupopup > menu {
-  //   padding-block: 0.4em !important;
-  // }
 
   // string style for back/forward/reload/bookmark menu items
   #context-navigation:not([hidden]) {
@@ -69,9 +44,6 @@ $menu-min-width: 220px;
         left: 0;
         width: 100%;
         height: 100%;
-        padding-inline-start: calc(
-          $default-padding + $image-width + $image-padding-end
-        );
       }
     }
 
@@ -111,7 +83,44 @@ $menu-min-width: 220px;
     min-height: $menu-item-height !important;
     max-height: $menu-item-height !important;
   }
+}
 
+// left margin for menu item without icon
+$default-padding: 1em;
+$image-width: 16px;
+$image-padding-end: 8px;
+
+@media (-moz-platform: windows) {
+  #contentAreaContextMenu {
+    :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
+      padding-inline-start: calc(
+        $default-padding + $image-width + $image-padding-end
+      ) !important;
+    }
+  }
+
+  #tabContextMenu {
+    :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
+      padding-inline-start: calc(
+        $default-padding + $image-padding-end
+      ) !important;
+    }
+  }
+
+  // string style for back/forward/reload/bookmark menu items
+  #context-navigation:not([hidden]) {
+    .menuitem-iconic {
+      position: relative !important;
+      &::after {
+        padding-inline-start: calc(
+          $default-padding + $image-width + $image-padding-end
+        );
+      }
+    }
+  }
+}
+
+@media (-moz-platform: windows), (-moz-platform: linux) {
   // menu item hover bg color
   menu,
   menuitem {
@@ -145,5 +154,34 @@ $menu-min-width: 220px;
   // hide "Email Image…"
   #context-sendimage {
     display: none !important;
+  }
+}
+
+// fixes for linux
+@media (-moz-platform: linux) {
+  $menu-item-height: 27px;
+  // other menu items
+  #context-navigation
+    > .menuitem-iconic
+    > .menu-iconic-left
+    > .menu-iconic-icon,
+  menupopup > menu,
+  menupopup > menuitem,
+  menupopup > menucaption {
+    min-height: $menu-item-height !important;
+    max-height: $menu-item-height !important;
+    // padding: 4px 6px !important;
+  }
+
+  #context-navigation > :is(menu, menuitem, menucaption) {
+    min-height: $menu-item-height !important;
+    max-height: $menu-item-height !important;
+  }
+
+  // back/forward/reload buttons left margin
+  .menuitem-iconic {
+    &::after {
+      padding: 0 0 0 27px !important;
+    }
   }
 }
