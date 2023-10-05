@@ -4,6 +4,18 @@ _A Material Design-inspired userChrome.css theme for Firefox_
 
 ![preview](assets/preview.png)
 
+## Navigation
+
+<!-- TOC -->
+
+- [Installation](#installation)
+  - [Installation script (Windows)](#installation-script)
+  - [Manual installation](#manual-installation)
+- [Manual Customization](#manual-customization)
+- [Build & Development](#build--development)
+
+<!-- /TOC -->
+
 ## Installation
 
 ### Prerequisites
@@ -65,7 +77,7 @@ To disable, search by name and remove the preference
   </tr>
   <tr>
     <td>userChrome.default-theme-colors</td>
-    <td>(Experimental) Use default firefox colors</td>
+    <td>Use default Firefox colors. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
   </tr>
   <tr>
     <td>userChrome.dracula-theme-colors</td>
@@ -77,11 +89,11 @@ To disable, search by name and remove the preference
   </tr>
   <tr>
     <td>userChrome.macos-buttons-right</td>
-    <td>(Experimental) right side macOS like buttons for Windows</td>
+    <td>Right side macOS like buttons for Windows</td>
   </tr>
   <tr>
     <td>userChrome.macos-buttons-left</td>
-    <td>(Experimental) left side macOS like buttons for Windows</td>
+    <td>Left side macOS like buttons for Windows</td>
   </tr>
 </table>
 
