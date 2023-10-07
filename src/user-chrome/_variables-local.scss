@@ -23,6 +23,8 @@
     --button-primary-bgcolor: #{get-var("accent-color")} !important;
     --button-primary-hover-bgcolor: #{get-var("accent-color-hover")} !important;
     --toolbar-field-focus-border-color: #{get-var("accent-color")} !important;
+
+    --link-color: #{get-var("accent-color")} !important;
   }
 
   // shadow
