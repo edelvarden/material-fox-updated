@@ -1,13 +1,61 @@
 function Get-FirefoxProfileDirectory {
-    
+
   [CmdletBinding()]
   param(
     [Parameter(Mandatory = $false)]
     [string]$ProfileName = ""
   )
 
+  $browserDirectories = @(
+    "$env:APPDATA\Mozilla\Firefox",
+    "$env:APPDATA\Waterfox",
+    "$env:APPDATA\librewolf"
+  )
+
+  # If there are multiple browsers, prompt the user to select one
+  $selectedDirectories = @()
+
+  foreach ($firefoxBrowserDirectory in $browserDirectories) {
+    if (Test-Path -Path $firefoxBrowserDirectory) {
+      $selectedDirectories += $firefoxBrowserDirectory
+    }
+  }
+
+  if ($selectedDirectories.Count -eq 0) {
+    return ""
+  }
+
+  if ($selectedDirectories.Count -gt 1) {
+    Write-Host "Select a Firefox browser:"
+    Write-Host ""
+    for ($i = 0; $i -lt $selectedDirectories.Count; $i++) {
+      $directory = $selectedDirectories[$i]
+      Write-Host "$($i + 1). $($directory)"
+    }
+    Write-Host ""
+
+    while (!$BrowserProfile) {
+      $profileNumber = Read-Host "Firefox browser number from list"
+
+      if (($profileNumber -ne 0) -and (($profileNumber -match "^\d+$") -and ($profileNumber -le $selectedDirectories.Count))) {
+        $selectedProfile = $selectedDirectories[$profileNumber - 1]
+        Write-Host "You selected $($profileNumber). $($selectedProfile)."
+        $BrowserProfile = $selectedProfile
+      }
+      else {
+        Write-Warning "Invalid number. Enter a number from the list."
+      }
+    }
+  }
+  else {
+    # First profile, if there is only one
+    $BrowserProfile = $selectedDirectories[0]
+  }
+
+  $profilesDirectory = "$BrowserProfile\Profiles"
+  
   # Get the list of Firefox profiles
-  $directories = (Get-ChildItem -Path "$env:APPDATA\Mozilla\Firefox\Profiles" -Directory  |
+  $profileDirectories = (Get-ChildItem -Path $profilesDirectory -Directory  |
     Where-Object {
       if (Get-ChildItem $_.FullName -File -Name "*prefs.js") {
         return $true
@@ -19,20 +67,20 @@ function Get-FirefoxProfileDirectory {
     Sort-Object Name)
 
   # If there are multiple profiles, prompt the user to select one
-  if ($directories.Count -gt 1) {
+  if ($profileDirectories.Count -gt 1) {
     Write-Host "Select a Firefox profile:"
     Write-Host ""
-    for ($i = 0; $i -lt $directories.Count; $i++) {
-      $directory = $directories[$i]
+    for ($i = 0; $i -lt $profileDirectories.Count; $i++) {
+      $directory = $profileDirectories[$i]
       Write-Host "$($i + 1). $($directory)"
     } 
     Write-Host ""
 
-    while (!($ProfileName)) {
-      $profileNumber = Read-Host "Profile number"
+    while (!$ProfileName) {
+      $profileNumber = Read-Host "Firefox profile number"
 
-      if (($profileNumber -ne 0) -and (($profileNumber -match "^\d+$") -and ($profileNumber -le $directories.Count))) {
-        $selectedProfile = $directories[$profileNumber - 1]
+      if (($profileNumber -ne 0) -and (($profileNumber -match "^\d+$") -and ($profileNumber -le $profileDirectories.Count))) {
+        $selectedProfile = $profileDirectories[$profileNumber - 1]
         Write-Host "You selected $($profileNumber). $($selectedProfile)."
         $ProfileName = $selectedProfile
       }
@@ -43,15 +91,15 @@ function Get-FirefoxProfileDirectory {
   }
   else {
     # First profile, if there is only one
-    $ProfileName = $directories[0]
+    $ProfileName = $profileDirectories[0]
   }
 
   if ($ProfileName) {
     # Return the selected profile directory
-    return "$env:APPDATA\Mozilla\Firefox\Profiles\$ProfileName"
+    return "$profilesDirectory\$ProfileName"
   }
   else {
-    Write-Warning "Can't get profile directory!"
+    Write-Warning "Can't get Firefox profile directory!"
     return
   }
 
@@ -103,10 +151,15 @@ function Get-FileDownloadUrlFromGithubReleases {
     [string]$FileName
   )
 
-  # Get download url from github realeses
-  $source = (Invoke-RestMethod -Uri $ReleasesUrl -Method Get -ErrorAction Stop)
+  try {
+    # Get download url from github realeses
+    $source = (Invoke-RestMethod -Uri $ReleasesUrl -Method Get -ErrorAction Stop)
 
-  return ($source[0].assets | Where-Object name -Match $FileName)[0].browser_download_url
+    return ($source[0].assets | Where-Object name -Match $FileName)[0].browser_download_url
+  }
+  catch {}
+
+  return ""
 }
 
 
@@ -121,6 +174,18 @@ function Invoke-Installation {
     [Parameter(Mandatory = $false)]
     [string]$UserJSDownloadUrl = "https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/user.js"
   )
+
+  if (!($DownloadUrl)) {
+    Write-Warning "Can't get download url. Installation aborted."
+
+    return;
+  }
+
+  if ((!($ProfileDirectory)) -or (!(Test-Path -Path $ProfileDirectory))) {
+    Write-Warning "Can't find Firefox profile directory. Installation aborted."
+
+    return;
+  }
 
   $isUpdate = $false
 
