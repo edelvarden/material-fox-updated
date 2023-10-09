@@ -7,12 +7,26 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: Description
-      description: Simple and clear description of bug. Add screenshots if needed
+      label: What happened?
+      description: General description of the problem. Add screenshots if needed
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce the problem
+      description: Describe step by step how to reproduce the problem
+      value: |
+        1. Open .... 
+        2. Click to ....
+        3. ...
     validations:
       required: true
   - type: textarea
     id: additional
     attributes:
-      label: Additional info
+      label: Additional info (Optional)
       description: OS and Firefox version if needed
+      value: |
+        Firefox version: 
+        Operating system:

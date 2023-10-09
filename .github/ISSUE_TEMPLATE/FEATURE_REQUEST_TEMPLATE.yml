@@ -8,11 +8,14 @@ body:
     id: description
     attributes:
       label: Description
-      description: Include clear explaination of the feature and how it works. Add screenshots if needed
+      description: Include clear explanation of the feature and how it works. Add screenshots if needed
     validations:
       required: true
   - type: textarea
     id: additional
     attributes:
-      label: Additional info
+      label: Additional info (Optional)
       description: OS and Firefox version if needed
+      value: |
+        Firefox version: 
+        Operating system:
