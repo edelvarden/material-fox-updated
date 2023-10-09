@@ -13,7 +13,6 @@
     ),
   [type="submit"] {
     padding: 8px 16px !important;
-    cursor: pointer;
     border-radius: 4px !important;
 
     align-items: center;
@@ -30,7 +29,7 @@
     border: 1px solid !important;
     border-color: get-var("menu-border-color") !important;
 
-    &:hover {
+    &:not(.disabled, :disabled, [disabled]):hover {
       background-color: get-var("accent-color-transparent") !important;
     }
   }
@@ -48,9 +47,13 @@
     // color: get-var("text-on-accent") !important;
     background-color: get-var("accent-color") !important;
 
-    &:hover {
+    &:not(.disabled, :disabled, [disabled]):hover {
       background-color: get-var("accent-color-hover") !important;
     }
+  }
+
+  &:not(.disabled, :disabled, [disabled]) {
+    cursor: pointer;
   }
 }
 
