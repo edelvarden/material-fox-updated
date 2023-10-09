@@ -1,2 +1,5 @@
-@import "fonts/index.css";
+/* only for about:* pages */
+@-moz-document regexp("about:(?!blank).*") {
+  @import "fonts/index.css";
+}
 @import "user-content.css";

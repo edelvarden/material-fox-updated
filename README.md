@@ -95,6 +95,10 @@ To disable, search by name and remove the preference
     <td>userChrome.macos-buttons-left</td>
     <td>Left side macOS like buttons for Windows</td>
   </tr>
+  <tr>
+    <td>userChrome.old-youtube-description</td>
+    <td>Restore old description block on youtube.com</td>
+  </tr>
 </table>
 
 Additionally, if you want to change some colors, you can change the value of the variables in the following files:
