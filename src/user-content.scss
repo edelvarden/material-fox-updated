@@ -18,8 +18,3 @@
   // reader view page
   @import "user-content/pages/reader-view";
 }
-
-@supports -moz-bool-pref("userChrome.old-youtube-description") {
-  // youtube page
-  @import "user-content/pages/old-youtube-description";
-}

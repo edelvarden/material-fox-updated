@@ -254,3 +254,12 @@ menuitem[checked="true"] > .menu-iconic-left {
   background-image: get-var("star-icon") !important;
   fill: get-var("accent-color") !important;
 }
+
+// download icon
+#downloads-button {
+  display: block !important;
+}
+#downloads-button,
+#downloads-indicator-anchor {
+  list-style-image: get-var("download-icon") !important;
+}
