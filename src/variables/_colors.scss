@@ -60,6 +60,7 @@ $dark-mode: (
   "input-background-color": get-var(background-color-0),
   // menu, popups
   "menu-background-color": get-var(background-color-50),
+  "menu-background-color-hover": #323334,
   "menu-border-color": get-var(grey-800),
   // tab bar
   "tab-separator-color": cm(transparent, get-var("white"), 0.2),
@@ -99,6 +100,7 @@ $light-mode: (
   "input-background-color": get-var(background-color-100),
   // menu, popups
   "menu-background-color": get-var(background-color-100),
+  "menu-background-color-hover": get-var(background-color-0),
   "menu-border-color": get-var(background-color-0),
   // tab bar
   "tab-separator-color": cm(transparent, get-var("black"), 0.2),
@@ -121,6 +123,7 @@ $github-theme-colors: (
   "background-color-0": #0d1117,
   "background-color-50": #161b22,
   "background-color-100": #21262d,
+  "menu-background-color-hover": #30363d,
   "menu-border-color": #30363d,
 );
 
@@ -130,6 +133,7 @@ $dracula-theme-colors: (
   "background-color-0": #282a36,
   "background-color-50": #343746,
   "background-color-100": #44475a,
+  "menu-background-color-hover": get-var(background-color-0),
   "menu-background-color": get-var(background-color-0),
   "menu-border-color": #343746,
   "selection-text-color": get-var("black"),
@@ -143,6 +147,8 @@ $light-accent-colors: (
   "background-color-0": cm(get-var(accent-color), #dee1e6, 0.9),
   "background-color-50": cm(get-var(accent-color), get-var(grey-100), 0.9),
   "background-color-100": cm(get-var(accent-color), get-var("white"), 0.9),
+  "menu-background-color-hover":
+    cm(get-var(accent-color), get-var(background-color-0), 0.9),
   "menu-border-color":
     cm(get-var(accent-color), get-var(background-color-0), 0.9),
   "content-separator-color": cm(get-var(accent-color), #dbdcdd, 0.9),
@@ -158,6 +164,8 @@ $dark-accent-colors: (
     cm(get-var(accent-color), get-var(grey-900-white-4-percent), 0.85),
   "background-color-100":
     cm(get-var(accent-color), get-var(grey-900-white-5-percent), 0.85),
+  "menu-background-color-hover":
+    cm(get-var(accent-color), get-var(grey-800), 0.85),
   "menu-border-color": cm(get-var(accent-color), get-var(grey-800), 0.85),
   "text-on-accent": get-var("white"),
   "secondary-button-text": get-var("white"),

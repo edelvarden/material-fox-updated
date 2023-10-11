@@ -2,21 +2,24 @@
 .urlbarView {
   margin: 0 !important;
   width: 100% !important;
+  border-inline: none !important;
 }
 
 // urlbar suggestions item
 .urlbarView-row {
   border-radius: 0px !important;
   border: none !important;
-  border-left: solid 4px transparent !important;
+  border-left: solid 5px transparent !important;
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
 
   &[selected] {
     border-left-color: get-var("accent-color") !important;
-    background-color: get-var("menu-border-color") !important;
+    background-color: get-var("menu-background-color-hover") !important;
   }
   &:not([selected]):hover {
-    border-left-color: get-var("menu-border-color") !important;
-    background-color: get-var("menu-border-color") !important;
+    border-left-color: get-var("menu-background-color-hover") !important;
+    background-color: get-var("menu-background-color-hover") !important;
   }
 }
 
@@ -44,8 +47,54 @@
 .urlbarView-results {
   padding-block: 0 8px !important;
 }
+.urlbarView[noresults="true"] // if no results
+{
+  .urlbarView-results {
+    padding-block: 0 !important;
+  }
+}
 
 // remove unnecessary border upper url bar suggestions
 #urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
   border-color: transparent !important;
+}
+
+// urlbar suggestions item height
+.urlbarView-row-inner {
+  // min-height: 20px; // (Default) Height with margins equals 38px
+  min-height: 22px; // Height with margins equals 40px
+}
+
+// hide group titles (eg., Firefox Suggest, Firefox Extension)
+.urlbarView-row[label] {
+  &::before {
+    display: none !important;
+  }
+
+  // and remove reserved padding for group titles
+  margin-block-start: 0 !important;
+}
+
+// set secondary text color
+.urlbarView-title-separator,
+.urlbarView-action {
+  color: get-var("text-secondary") !important;
+}
+
+// hide unwanted suggestions (eg., Firefox Extension and other promotion or recommended items with large height)
+// .urlbarView-row[type="dynamic"] {
+//   display: none !important;
+// }
+
+// hide go buttons for search fields, because if you want use the mouse you can click on first item for search
+#urlbar-go-button,
+.search-go-button {
+  display: none !important;
+}
+
+// crop the background of item which out of the results block on hover
+.urlbarView-body-inner {
+  border-bottom-left-radius: 16px !important;
+  border-bottom-right-radius: 16px !important;
+  overflow: hidden !important;
 }
