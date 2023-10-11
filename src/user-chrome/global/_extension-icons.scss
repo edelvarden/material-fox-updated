@@ -17,3 +17,27 @@
   height: $icon-size !important;
   width: $icon-size !important;
 }
+
+// fix rounded corners for extension button
+.unified-extensions-item-action-button {
+  border-radius: 50% !important;
+  overflow: visible !important;
+}
+
+// move extension icon badge to the right bottom corner
+.toolbarbutton-1 {
+  position: relative !important;
+}
+
+.toolbarbutton-badge {
+  margin: 0 !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+}
+
+// some styles for badge
+.toolbarbutton-badge {
+  border: 1px solid transparent !important;
+  border-color: get-var("background-color-100") !important;
+}
