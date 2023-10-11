@@ -1,40 +1,48 @@
+// variables
+$button-border-radius: 4px;
+$button-padding: 8px 16px;
+
+// mixins
+@mixin button-styles {
+  border-radius: $button-border-radius;
+  padding: $button-padding;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 187ms get-var("fast-invoke");
+}
+
+@mixin primary-button-styles {
+  border: none !important;
+  color: get-var("text-on-accent") !important;
+  background-color: get-var("accent-color") !important;
+
+  &:not(.disabled, :disabled, [disabled]):hover {
+    background-color: get-var("accent-color-hover") !important;
+  }
+}
+
+@mixin secondary-button-styles {
+  color: get-var("secondary-button-text") !important;
+  background-color: transparent !important;
+  border: 1px solid !important;
+  border-color: get-var("menu-border-color") !important;
+
+  &:not(.disabled, :disabled, [disabled]):hover {
+    background-color: get-var("accent-color-transparent") !important;
+  }
+}
+
+// styles
 :not(button-group) > button {
-  // general button styles
-  &:is(
-      [accesskey],
-      .accessory-button,
-      [dlgtype="cancel"],
-      [autofocus],
-      [default],
-      .primary,
-      .primary-button,
-      .popup-notification-primary-button,
-      .disco-cta-button
-    ),
-  [type="submit"] {
-    padding: 8px 16px !important;
-    border-radius: 4px !important;
+  @include button-styles;
 
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    transition: background-color 187ms get-var("fast-invoke");
-  }
-
-  // secondary button styles
+  // Secondary buttons
   &:is([accesskey], .accessory-button, [dlgtype="cancel"], .disco-cta-button) {
-    // color: get-var("accent-color") !important;
-    background-color: transparent !important;
-    border: 1px solid !important;
-    border-color: get-var("menu-border-color") !important;
-
-    &:not(.disabled, :disabled, [disabled]):hover {
-      background-color: get-var("accent-color-transparent") !important;
-    }
+    @include secondary-button-styles;
   }
 
-  // primary button styles
+  // Primary buttons
   &:is(
       [autofocus],
       [default],
@@ -43,13 +51,7 @@
       .popup-notification-primary-button
     ),
   [type="submit"] {
-    border: none !important;
-    // color: get-var("text-on-accent") !important;
-    background-color: get-var("accent-color") !important;
-
-    &:not(.disabled, :disabled, [disabled]):hover {
-      background-color: get-var("accent-color-hover") !important;
-    }
+    @include primary-button-styles;
   }
 
   &:not(.disabled, :disabled, [disabled]) {
@@ -57,10 +59,10 @@
   }
 }
 
-// fix font color for dialog box buttons
+// Fix font color for dialog box buttons
 :not(dialog, .dialogBox) {
   :not(button-group) > button {
-    // secondary button styles
+    // Secondary buttons
     &:is(
         [accesskey],
         .accessory-button,
@@ -69,7 +71,8 @@
       ) {
       color: get-var("secondary-button-text") !important;
     }
-    // primary button styles
+
+    // Primary buttons
     &:is(
         [autofocus],
         [default],

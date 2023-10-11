@@ -1,3 +1,4 @@
+// fixes for default Firefox colors feature
 @supports -moz-bool-pref("userChrome.default-theme-colors") {
   html,
   body {
