@@ -1,17 +1,18 @@
-// URL Bar Size
-#urlbar {
-  --urlbar-height: 28px !important;
-  --urlbar-toolbar-height: 36px !important;
+// Main URL bar wrapper with paddings
+#urlbar-container {
+  --urlbar-container-height: 42px !important;
 }
 
-#urlbar-container {
-  --urlbar-container-height: 36px !important;
+// Just URL bar without top and bottom paddings
+#urlbar {
+  --urlbar-height: 34px !important;
+  --urlbar-toolbar-height: 42px !important;
 }
 
 html,
 body {
-  --urlbar-min-height: 28px !important; // Minimum Height
-  --toolbarbutton-height: 28px !important; // Button Height
+  --urlbar-min-height: 34px !important; // Minimum Height
+  --toolbarbutton-height: 34px !important; // Button Height
   --toolbarbutton-inner-padding: 6px !important; // Button Inner Padding
   --urlbar-icon-border-radius: 100px !important; // Icon Border Radius
   --toolbarbutton-border-radius: 100px !important; // Button Border Radius
@@ -100,16 +101,4 @@ body {
 #navigator-toolbox {
   // border-bottom: 1px solid var(--chrome-content-separator-color);
   border-bottom: 1px solid get-var("content-separator-color") !important;
-}
-
-// fixes for macOS
-@media (-moz-platform: macos) {
-  #urlbar {
-    --urlbar-height: 34px !important;
-    --urlbar-toolbar-height: 42px !important;
-  }
-
-  #urlbar-container {
-    --urlbar-container-height: 42px !important;
-  }
 }
