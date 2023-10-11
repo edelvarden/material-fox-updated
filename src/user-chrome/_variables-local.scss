@@ -25,6 +25,9 @@
     --toolbar-field-focus-border-color: #{get-var("accent-color")} !important;
 
     --link-color: #{get-var("accent-color")} !important;
+    --link-color-hover: #{get-var("accent-color")} !important;
+    --link-color-active: #{get-var("accent-color")} !important;
+    --link-color-visited: #{get-var("accent-color")} !important;
   }
 
   // shadow

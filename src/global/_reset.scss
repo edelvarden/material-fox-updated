@@ -62,11 +62,3 @@ body {
     font-family: var(--#{$prefix}-font-family) !important;
   }
 }
-
-a[href] {
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}

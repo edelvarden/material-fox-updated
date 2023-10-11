@@ -87,14 +87,6 @@ To disable, search by name and remove the preference
     <td>userChrome.github-theme-colors</td>
     <td><img src="assets/preview-github.png" alt="preview-github"></img></td>
   </tr>
-  <tr>
-    <td>userChrome.macos-buttons-right</td>
-    <td>Right side macOS like buttons for Windows</td>
-  </tr>
-  <tr>
-    <td>userChrome.macos-buttons-left</td>
-    <td>Left side macOS like buttons for Windows</td>
-  </tr>
 </table>
 
 Additionally, if you want to change some colors, you can change the value of the variables in the following files:

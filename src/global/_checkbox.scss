@@ -2,10 +2,14 @@
 input[type="checkbox"],
 .checkbox-check,
 .sponsored-checkbox {
-  border: 1px solid;
+  border-width: 2px !important;
+  border-style: solid !important;
   border-color: get-var("menu-border-color") !important;
   background-color: get-var("background-color-0") !important;
   border-radius: 2px !important;
+
+  width: 18px !important;
+  height: 18px !important;
 
   &:is([checked], :checked) {
     background-image: get-var("check-icon") !important;
@@ -18,5 +22,46 @@ input[type="checkbox"]:not(:disabled, [disabled="true"]):hover,
 checkbox:not([disabled="true"]):hover > .checkbox-check {
   &:not([checked], :checked) {
     background-color: get-var("background-color-50") !important;
+  }
+}
+
+// checkbox material hover effect
+checkbox {
+  position: relative !important;
+
+  &::after {
+    content: "";
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    display: grid;
+    align-items: center !important;
+    top: 50%;
+    left: -15px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: background-color 187ms get-var("fast-invoke");
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+}
+
+checkbox:not([disabled="true"]) {
+  &:hover::after {
+    background-color: get-var("accent-color-transparent");
+  }
+
+  &:hover:active::after {
+    background-color: get-var("accent-color-transparent-active");
+  }
+}
+
+// hand cursor on hover
+checkbox:not([disabled="true"]) {
+  cursor: pointer !important;
+
+  // also for label, because it doesn't inherit
+  label {
+    cursor: pointer !important;
   }
 }

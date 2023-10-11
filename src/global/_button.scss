@@ -1,15 +1,17 @@
 // variables
 $button-border-radius: 4px;
 $button-padding: 8px 16px;
+$button-min-width: 5.14em;
 
 // mixins
 @mixin button-styles {
-  border-radius: $button-border-radius;
-  padding: $button-padding;
+  min-width: $button-min-width !important;
+  border-radius: $button-border-radius !important;
+  padding: $button-padding !important;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 187ms get-var("fast-invoke");
+  transition: background-color 187ms get-var("fast-invoke") !important;
 }
 
 @mixin primary-button-styles {
@@ -18,6 +20,10 @@ $button-padding: 8px 16px;
   background-color: get-var("accent-color") !important;
 
   &:not(.disabled, :disabled, [disabled]):hover {
+    background-color: get-var("accent-color-hover") !important;
+  }
+
+  &:not(.disabled, :disabled, [disabled]):hover:active {
     background-color: get-var("accent-color-hover") !important;
   }
 }
@@ -31,11 +37,28 @@ $button-padding: 8px 16px;
   &:not(.disabled, :disabled, [disabled]):hover {
     background-color: get-var("accent-color-transparent") !important;
   }
+
+  &:not(.disabled, :disabled, [disabled]):hover:active {
+    background-color: get-var("accent-color-transparent-active") !important;
+  }
 }
 
 // styles
 :not(button-group) > button {
-  @include button-styles;
+  &:is(
+      [accesskey],
+      .accessory-button,
+      [dlgtype="cancel"],
+      [autofocus],
+      [default],
+      .primary,
+      .primary-button,
+      .popup-notification-primary-button,
+      .disco-cta-button
+    ),
+  [type="submit"] {
+    @include button-styles;
+  }
 
   // Secondary buttons
   &:is([accesskey], .accessory-button, [dlgtype="cancel"], .disco-cta-button) {

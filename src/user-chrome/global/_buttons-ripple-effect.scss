@@ -18,13 +18,13 @@ body {
 
 // regular style for buttons
 @mixin ripple-effect {
+  place-content: center !important;
+  place-items: center !important;
   background-image: get-var("circle-icon"), get-var("circle-icon") !important;
   background-position: 50% !important;
   background-repeat: no-repeat !important;
   background-size: get-var("circle-size") !important;
   border-radius: var(--toolbarbutton-border-radius) !important;
-  // background-color: transparent !important;
-  outline: 1px solid transparent !important;
   transition: background-size 167ms linear, background-color 167ms ease !important;
 }
 
@@ -38,7 +38,6 @@ body {
 
   &:hover {
     background-color: get-var("control-background-color") !important;
-    outline-color: get-var("control-border-color") !important;
   }
 }
 
@@ -56,7 +55,6 @@ body {
   &:not([disabled]):hover
     > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     background-color: get-var("control-background-color") !important;
-    outline-color: get-var("control-border-color") !important;
   }
 }
 
@@ -103,7 +101,6 @@ body {
 
 // disable refresh button animation
 #nav-bar-customization-target {
-  -moz-box-align: center;
   align-items: center;
 }
 

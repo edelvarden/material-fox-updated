@@ -42,6 +42,7 @@ $dark-mode: (
   "accent-color": get-var(blue-300),
   "accent-color-hover": cm(transparent, get-var(accent-color), 0.8),
   "accent-color-transparent": cm(transparent, get-var(accent-color), 0.0837),
+  "accent-color-transparent-active": cm(transparent, get-var(accent-color), 0.2),
   // UI background colors
   "background-color-0": get-var(grey-900),
   "background-color-50": get-var(grey-900-white-4-percent),
