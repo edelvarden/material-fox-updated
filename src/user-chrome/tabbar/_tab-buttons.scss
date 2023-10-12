@@ -30,7 +30,9 @@
   height: 16px !important;
   padding: 2px !important;
 
-  transition: background-color 83ms linear !important;
+  transition-property: background-color !important;
+  transition-duration: get-var("short-duration") !important;
+  transition-timing-function: get-var("fade-in-out") !important;
 
   &:hover {
     background: get-var("control-background-color") !important;

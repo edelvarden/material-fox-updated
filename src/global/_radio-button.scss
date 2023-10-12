@@ -17,7 +17,9 @@ input[type="radio"],
   background-size: 10px !important;
   background-position: center !important;
 
-  transition: background-size 187ms get-var("fast-invoke");
+  transition-property: background-size !important;
+  transition-duration: get-var("medium-short-duration") !important;
+  transition-timing-function: get-var("fast-invoke") !important;
 }
 
 input[type="radio"]:enabled:hover,
@@ -48,7 +50,8 @@ radio {
     left: -15px;
     background-color: transparent;
     border-radius: 50%;
-    transition: background-color 187ms get-var("fast-invoke");
+    transition: background-color get-var("medium-short-duration")
+      get-var("fast-invoke");
     z-index: 1;
     transform: translateY(-50%);
   }

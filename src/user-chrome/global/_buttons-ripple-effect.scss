@@ -25,7 +25,10 @@ body {
   background-repeat: no-repeat !important;
   background-size: get-var("circle-size") !important;
   border-radius: var(--toolbarbutton-border-radius) !important;
-  transition: background-size 167ms linear, background-color 167ms ease !important;
+
+  transition-property: background-size, background-color !important;
+  transition-duration: get-var("short-duration"), get-var("short-duration") !important;
+  transition-timing-function: get-var("fade-in-out"), ease !important;
 }
 
 // add style for buttons

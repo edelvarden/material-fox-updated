@@ -1,3 +1,12 @@
+$animation-durations: (
+  "shortest-duration": "83ms",
+  "short-duration": "167ms",
+  "medium-short-duration": "187ms",
+  "medium-duration": "333ms",
+  "medium-long-duration": "500ms",
+  "long-duration": "667ms",
+);
+
 $animation: (
   // Fast Invoke
   // Direct and subtle

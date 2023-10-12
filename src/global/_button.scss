@@ -11,7 +11,10 @@ $button-min-width: 5.14em;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background-color 187ms get-var("fast-invoke") !important;
+
+  transition-property: background-color !important;
+  transition-duration: get-var("medium-short-duration") !important;
+  transition-timing-function: get-var("fast-invoke") !important;
 }
 
 @mixin primary-button-styles {

@@ -17,6 +17,10 @@ $base-font-size: 16px;
 }
 
 // return value from CSS variable
-@function get-var($variable-name) {
+@function get-var($variable-name, $secondary-variable-name: false) {
+  @if $secondary-variable-name {
+    @return #{var(--#{$prefix}-#{$variable-name}, $secondary-variable-name)};
+  }
+
   @return #{var(--#{$prefix}-#{$variable-name})};
 }

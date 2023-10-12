@@ -34,15 +34,16 @@ checkbox {
     width: 48px;
     height: 48px;
     position: absolute;
-    display: grid;
-    align-items: center !important;
     top: 50%;
     left: -15px;
     background-color: transparent;
     border-radius: 50%;
-    transition: background-color 187ms get-var("fast-invoke");
     z-index: 1;
     transform: translateY(-50%);
+
+    transition-property: background-color;
+    transition-duration: get-var("medium-short-duration");
+    transition-timing-function: get-var("fast-invoke");
   }
 }
 

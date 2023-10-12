@@ -70,8 +70,12 @@
 .tab-label,
 .tab-icon-overlay {
   transform: translateX(0) !important;
-  transition: transform 333ms cubic-bezier(0.55, 0.55, 0, 1),
-    background-size 167ms linear, background-color 167ms ease !important;
+
+  transition-property: transform, background-size, background-color !important;
+  transition-duration: get-var("medium-duration"), get-var("short-duration"),
+    get-var("short-duration") !important;
+  transition-timing-function: get-var("point-to-point"), get-var("fade-in-out"),
+    ease !important;
 }
 
 .tabbrowser-tab[pinned]:is([soundplaying], [muted], [activemedia-blocked]) {

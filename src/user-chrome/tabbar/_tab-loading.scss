@@ -53,7 +53,8 @@
 
   &:not([busy]) {
     .tab-icon-image {
-      animation: set-scale 187ms linear;
+      animation: set-scale get-var("medium-short-duration", 0ms)
+        get-var("fade-in-out");
     }
   }
 }

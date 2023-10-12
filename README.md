@@ -80,6 +80,10 @@ To disable, search by name and remove the preference
     <td>Use default Firefox colors. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
   </tr>
   <tr>
+    <td>userChrome.force-enable-animations</td>
+    <td>Force enable control animation, because by default respects the user animation disable preference. <em>(Not required if you do not disable animation)</em></td>
+  </tr>
+  <tr>
     <td>userChrome.dracula-theme-colors</td>
     <td><img src="assets/preview-dracula.png" alt="preview-dracula"></img></td>
   </tr>
