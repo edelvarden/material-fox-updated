@@ -1,0 +1,16 @@
+@supports -moz-bool-pref("userChrome.compact-url-bar") {
+  #urlbar {
+    --urlbar-height: 28px !important;
+    --urlbar-toolbar-height: 36px !important;
+  }
+
+  #urlbar-container {
+    --urlbar-container-height: 36px !important;
+  }
+
+  html,
+  body {
+    --urlbar-min-height: 28px !important; // Minimum Height
+    --toolbarbutton-height: 28px !important; // Button Height
+  }
+}

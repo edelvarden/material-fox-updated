@@ -72,23 +72,27 @@ To disable, search by name and remove the preference
     <th>Description</th>
   </tr>
   <tr>
-    <td>userChrome.system-accent-colors</td>
-    <td>Set the accent color as your system accent color</td>
+    <td><code>userChrome.compact-url-bar</code></td>
+    <td>Make the URL bar more compact by reducing the height.</td>
   </tr>
   <tr>
-    <td>userChrome.default-theme-colors</td>
+    <td><code>userChrome.default-theme-colors</code></td>
     <td>Use default Firefox colors. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
   </tr>
   <tr>
-    <td>userChrome.force-enable-animations</td>
+    <td><code>userChrome.force-enable-animations</code></td>
     <td>Force enable control animation, because by default respects the user animation disable preference. <em>(Not required if you do not disable animation)</em></td>
   </tr>
   <tr>
-    <td>userChrome.dracula-theme-colors</td>
+    <td><code>userChrome.system-accent-colors</code></td>
+    <td>Set the accent color as your system accent color</td>
+  </tr>
+  <tr>
+    <td><code>userChrome.dracula-theme-colors</code></td>
     <td><img src="assets/preview-dracula.png" alt="preview-dracula"></img></td>
   </tr>
   <tr>
-    <td>userChrome.github-theme-colors</td>
+    <td><code>userChrome.github-theme-colors</code></td>
     <td><img src="assets/preview-github.png" alt="preview-github"></img></td>
   </tr>
 </table>

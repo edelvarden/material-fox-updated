@@ -31,8 +31,10 @@
 }
 
 .tabbrowser-tab:hover::after {
-  animation: show-tooltip get-var("medium-duration", 0ms)
-    get-var("point-to-point") forwards;
+  animation-name: show-tooltip;
+  animation-duration: get-var("medium-duration");
+  animation-timing-function: get-var("point-to-point");
+  animation-fill-mode: forwards;
   animation-delay: 0.75s;
 }
 

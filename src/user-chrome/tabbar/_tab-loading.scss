@@ -12,10 +12,11 @@
   fill: var(--focus-outline-color) !important;
   background-image: url("icons/spinner-busy.svg") !important;
   transform-origin: center !important;
-  animation: rotate-360 1.333s linear infinite reverse !important;
   position: static !important;
   margin: 0 !important;
   padding: 0 !important;
+
+  animation: rotate-360 1.333s linear infinite reverse !important;
 }
 
 .tab-throbber {
@@ -53,8 +54,9 @@
 
   &:not([busy]) {
     .tab-icon-image {
-      animation: set-scale get-var("medium-short-duration", 0ms)
-        get-var("fade-in-out");
+      animation-name: set-scale;
+      animation-duration: get-var("medium-short-duration");
+      animation-timing-function: get-var("fade-in-out");
     }
   }
 }
