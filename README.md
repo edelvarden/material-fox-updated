@@ -56,13 +56,18 @@ PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercon
 
 ### Manual Customization
 
-You can set pre-installed color presets by following the steps below:
+You can use some customization options.
+
+To set preference:
 
 1. Go to `about:config`
-2. Create a custom boolean preference, just type the preference name and click the plus button, for example `userChrome.github-theme-colors`
+2. Create a custom boolean preference, just type the preference name and click the plus button, for example `userChrome.default-theme-colors`
 3. Restart Firefox to apply changes
 
-To disable, search by name and remove the preference
+To disable, search by name and remove the preference:
+
+1. Go to `about:config`.
+2. Search by name and remove the preference.
 
 #### Available preferences
 
@@ -73,11 +78,11 @@ To disable, search by name and remove the preference
   </tr>
   <tr>
     <td><code>userChrome.compact-url-bar</code></td>
-    <td>Make the URL bar more compact by reducing the height.</td>
+    <td>Make the URL bar more compact by reducing its height.</td>
   </tr>
   <tr>
     <td><code>userChrome.default-theme-colors</code></td>
-    <td>Use default Firefox colors. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
+    <td>Use the default Firefox colors. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
   </tr>
   <tr>
     <td><code>userChrome.force-enable-animations</code></td>
@@ -97,17 +102,25 @@ To disable, search by name and remove the preference
   </tr>
 </table>
 
-Additionally, if you want to change some colors, you can change the value of the variables in the following files:
-
-- `user-chrome.css` for the browser shell;
-- `user-content.css` for the content part (e.g. the "New tab" page);
+Additionally, if you want to change some colors, you can override the default values with your own.
 
 Follow this steps:
 
-1. Open the css file in a text editor
-2. Find the desired variable
-3. Change the value, for example, set the accent color to red: --mf-accent-color: #ea4335;
-4. Save the file and restart Firefox to apply changes
+1. Find and rename `custom_example.css` to `custom.css` in the root folder
+2. Open the css file in a text editor
+3. Find the desired variable
+4. Add your values, for example, set the accent color to red:
+
+```css
+:root,
+html,
+body {
+  /* add your css below */
+  --mf-accent-color: #ea4335 !important;
+}
+```
+
+5. Save the file and restart Firefox to apply changes
 
 #### Available variables
 
@@ -115,62 +128,66 @@ Follow this steps:
   <tr>
     <th>Variable name</th>
     <th>Description</th>
-    <th>Default value</th>
   </tr>
   <tr>
-    <td>--mf-accent-color</td>
+    <td><code>--mf-accent-color</code></td>
     <td>accent color</td>
-    <td>#8ab4f8</td>
   </tr>
   <tr>
-    <td>--mf-background-color-0</td>
+    <td><code>--mf-background-color-0</code></td>
     <td>dark tones</td>
-    <td>#202124</td>
   </tr>
   <tr>
-    <td>--mf-background-color-50</td>
+    <td><code>--mf-background-color-50</code></td>
     <td>middle tones</td>
-    <td>#292a2d</td>
   </tr>
   <tr>
-    <td>--mf-background-color-100</td>
+    <td><code>--mf-background-color-100</code></td>
     <td>light tones</td>
-    <td>#35363a</td>
   </tr>
   <tr>
-    <td>--mf-text-primary</td>
+    <td><code>--mf-text-primary</code></td>
     <td>main text color</td>
-    <td>#e8eaed</td>
   </tr>
   <tr>
-    <td>--mf-text-secondary</td>
+    <td><code>--mf-text-secondary</code></td>
     <td>secondary text color</td>
-    <td>#9aa0a6</td>
   </tr>
   <tr>
-    <td>--mf-text-on-accent</td>
+    <td><code>--mf-text-on-accent</code></td>
     <td>text on primary button</td>
-    <td>#202124</td>
   </tr>
   <tr>
-    <td>--mf-menu-border-color</td>
+    <td><code>--mf-menu-background-color</code></td>
+    <td>menu background color</td>
+  </tr>
+  <tr>
+    <td><code>--mf-menu-background-color-hover</code></td>
+    <td>menu items background color on mouse over</td>
+  </tr>
+  <tr>
+    <td><code>--mf-menu-border-color</code></td>
     <td>controls border color</td>
-    <td>#3c4043</td>
   </tr>
   <tr>
-    <td>--mf-content-separator-color</td>
+    <td><code>--mf-icon-color-primary</code></td>
+    <td>navigation bar icons color</td>
+  </tr>
+  <tr>
+    <td><code>--mf-icon-color-secondary</code></td>
+    <td>URL bar icons color</td>
+  </tr>
+  <tr>
+    <td><code>--mf-content-separator-color</code></td>
     <td>separator line between browser and content area</td>
-    <td>#606164</td>
   </tr>
   <tr>
-    <td>--mf-selection-text-color</td>
+    <td><code>--mf-selection-text-color</code></td>
     <td>text selection color</td>
-    <td>#fff</td>
   </tr>
   <tr>
-    <td>--mf-selection-background-color</td>
+    <td><code>--mf-selection-background-color</code></td>
     <td>selection background color</td>
-    <td>#4285f4</td>
   </tr>
 </table>
 

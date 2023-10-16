@@ -25,3 +25,4 @@ dist-ssr
 # ignore
 node_modules
 *.zip
+custom.css
