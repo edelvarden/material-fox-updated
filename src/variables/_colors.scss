@@ -30,11 +30,9 @@ $colors: (
   // --------------------------------------------------------------------------------
   // -- Shadow
   // --------------------------------------------------------------------------------
-  "shadow-color-rgb": "0,0,0",
-  "elevation-2": (
-    rgba(get-var(shadow-color-rgb), 0.3) 0 1px 2px 0,
-    rgba(get-var(shadow-color-rgb), 0.15) 0 2px 6px 2px
-  )
+  "elevation-2":
+    (rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px),
+  "elevation-3": (rgba(0, 0, 0, 0.56) 0px 22px 70px 4px)
 );
 
 $dark-mode: (

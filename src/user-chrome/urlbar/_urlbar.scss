@@ -51,6 +51,7 @@ body {
     #searchbar {
       border-radius: 16px !important;
       border: none !important;
+      box-shadow: get-var("elevation-3") !important;
     }
   }
   &:not([open])[focused] {
