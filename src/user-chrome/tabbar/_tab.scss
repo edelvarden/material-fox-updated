@@ -1,6 +1,6 @@
 html,
 body {
-  --tab-min-height: 34px !important; // 34px (real height) - 1px (border bottom)
+  --tab-min-height: 34px !important; // 34px (real height)
 
   // custom tab variables
   --tab-opacity: 0;
@@ -67,6 +67,9 @@ body {
   .tab-content {
     display: grid !important;
     align-content: center !important;
+    place-content: center !important;
+    place-items: center !important;
+    justify-content: center !important;
   }
 }
 
@@ -137,16 +140,16 @@ body {
 }
 
 // fix tab corners possition for maximized window
-#main-window[sizemode="maximized"] {
-  .tab-background {
-    &::before {
-      transform: translate(-8px, 1px) !important;
-    }
-    &::after {
-      transform: translate(8px, 1px) !important;
-    }
-  }
-}
+// #main-window[sizemode="maximized"] {
+//   .tab-background {
+//     &::before {
+//       transform: translate(-8px, 1px) !important;
+//     }
+//     &::after {
+//       transform: translate(8px, 1px) !important;
+//     }
+//   }
+// }
 
 // hover bg opacity for not selected tab
 .tabbrowser-tab:not([selected="true"]):hover,
