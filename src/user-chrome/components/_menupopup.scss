@@ -16,6 +16,16 @@
       color: inherit !important;
     }
   }
+
+  &[disabled] {
+    &[shortcut]::after {
+      color: get-var("text-secondary") !important;
+    }
+
+    &:hover[shortcut]::after {
+      color: get-var("text-secondary") !important;
+    }
+  }
 }
 
 // also for #toolbar-menubar
@@ -29,6 +39,20 @@ menuitem:not([disabled]) {
     .menu-accel,
     .menu-iconic-accel {
       color: inherit !important;
+    }
+  }
+}
+
+menuitem[disabled] {
+  .menu-accel,
+  .menu-iconic-accel {
+    color: get-var("text-secondary") !important;
+  }
+
+  &:hover {
+    .menu-accel,
+    .menu-iconic-accel {
+      color: get-var("text-secondary") !important;
     }
   }
 }
@@ -61,6 +85,7 @@ toolbarbutton menupopup[placespopup] menuseparator::before {
     --panel-shadow-margin: 160px !important;
   }
 }
+
 menupopup,
 panel {
   --panel-shadow: #{get-var("elevation-2")} !important;
