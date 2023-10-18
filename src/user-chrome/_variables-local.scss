@@ -7,6 +7,8 @@
   toolbar {
     --lwt-brighttext-url-color: #{get-var("accent-color")} !important;
     --toolbarbutton-icon-fill-attention: #{get-var("accent-color")} !important;
+
+    --panel-item-hover-bgcolor: #{get-var("menu-background-color-hover")} !important;
   }
 
   :root,

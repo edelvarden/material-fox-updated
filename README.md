@@ -85,6 +85,10 @@ To disable, search by name and remove the preference:
     <td>Enabling new tab bar design like in Chrome Canary version which named as "Chrome Refresh 2023".</td>
   </tr>
   <tr>
+    <td><code>userChrome.chrome-refresh-colors</code></td>
+    <td>Enabling new color scheme like in Chrome Canary version which named as "Chrome Refresh 2023".</td>
+  </tr>
+  <tr>
     <td><code>userChrome.default-theme-colors</code></td>
     <td>Use the default Firefox colors. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
   </tr>

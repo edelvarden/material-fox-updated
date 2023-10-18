@@ -171,3 +171,17 @@ $dark-accent-colors: (
   "selection-background-color":
     cm(get-var(accent-color), get-var(grey-900), 0.15),
 );
+
+$chrome-refresh-colors: (
+  "accent-color": #a8c7fa,
+  "tab-opacity": 0.9,
+  "background-color-0": #1f2020,
+  "background-color-50": #282828,
+  "background-color-100": #3c3c3c,
+  "menu-background-color": #1f1f1f,
+  "menu-background-color-hover": #363635,
+  "menu-border-color": #444746,
+  "content-separator-color": #444746,
+  "selection-text-color": get-var("black"),
+  "selection-background-color": #a8c7fa,
+);

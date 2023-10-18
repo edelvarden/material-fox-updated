@@ -63,6 +63,13 @@ body {
     }
   }
 
+  // optional feature: Chrome refresh theme colors
+  @supports -moz-bool-pref("userChrome.chrome-refresh-colors") {
+    @each $key, $value in $chrome-refresh-colors {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+
   // optional feature: System accent colors
   @supports -moz-bool-pref("userChrome.system-accent-colors") {
     @each $key, $value in $dark-accent-colors {
