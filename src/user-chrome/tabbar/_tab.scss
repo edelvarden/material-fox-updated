@@ -256,6 +256,12 @@ body {
   --lwt-tab-line-color: transparent !important;
 }
 
+// hide unwanted left tab bar separator
+#tabbrowser-tabs {
+  border-inline-start: none !important;
+  margin-inline-start: 0px !important;
+}
+
 // fixes for macOS
 @media (-moz-platform: macos) {
   // tabs bar top margin

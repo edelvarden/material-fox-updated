@@ -183,8 +183,18 @@
 }
 
 // extension icon
-#unified-extensions-button {
+#unified-extensions-button,
+#identity-box[pageproxystate="valid"].extensionPage #identity-icon,
+#identity-popup[connection="extension"] .identity-popup-security-connection {
   list-style-image: get-var("extension-icon") !important;
+}
+#unified-extensions-button > image {
+  padding: 4.5px !important;
+}
+
+.tabbrowser-tab[image="chrome://mozapps/skin/extensions/extension.svg"] .tab-icon-image
+{
+  content: get-var("extension-icon") !important;
 }
 
 // menu icon
@@ -262,4 +272,19 @@ menuitem[checked="true"] > .menu-iconic-left {
 #downloads-button,
 #downloads-indicator-anchor {
   list-style-image: get-var("download-icon") !important;
+}
+
+// info icon
+#identity-box.unknownIdentity #identity-icon,
+#identity-popup[connection="net-error-page"]
+  .identity-popup-security-connection,
+.panel-info-button > image {
+  list-style-image: get-var("info-icon") !important;
+}
+
+#developer-button {
+  list-style-image: get-var("dev-icon") !important;
+  & > image {
+    padding: 4px !important;
+  }
 }
