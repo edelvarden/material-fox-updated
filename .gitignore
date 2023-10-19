@@ -25,4 +25,5 @@ dist-ssr
 # ignore
 node_modules
 *.zip
-custom.css
+custom-chrome.css
+custom-content.css

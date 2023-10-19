@@ -114,10 +114,16 @@ Additionally, if you want to change some colors, you can override the default va
 
 Follow this steps:
 
-1. Find and rename `custom_example.css` to `custom.css` in the root folder
-2. Open the css file in a text editor
+1. Find and rename in the root folder:
+
+- `custom-chrome_example.css` to `custom-chrome.css`
+- `custom-content_example.css` to `custom-content.css` _(this is for the "New Tab" page)_
+
+2. Open the appropriate css file in a text editor
 3. Find the desired variable
 4. Add your values, for example, set the accent color to red:
+
+_custom-chrome.css_
 
 ```css
 :root,
@@ -128,7 +134,25 @@ body {
 }
 ```
 
+or also for the "New Tab" page:
+
+_custom-content.css_
+
+```css
+/* only for about:* pages */
+@-moz-document regexp("about:(?!blank).*") {
+  :root,
+  html,
+  body {
+    /* add your css below */
+    --mf-accent-color: #ea4335 !important;
+  }
+}
+```
+
 5. Save the file and restart Firefox to apply changes
+
+Using these custom css files can separate your changes from the source project and you can easily backup your files and don't worry about overwriting your changes if you want to update or reinstall the main files.
 
 #### Available variables
 
@@ -198,6 +222,58 @@ body {
     <td>selection background color</td>
   </tr>
 </table>
+
+#### Some other examples
+
+- Replacing the font with your own, change `"YourFontName"` to the name of your font:
+
+  _custom-chrome.css_
+
+  ```css
+  :root,
+  html,
+  body {
+    /* add your css below */
+  }
+
+  *,
+  *::before,
+  *::after {
+    font-family: "YourFontName" !important;
+  }
+  ```
+
+  _custom-content.css_
+
+  ```css
+  /* only for about:* pages */
+  @-moz-document regexp("about:(?!blank).*") {
+    :root,
+    html,
+    body {
+      /* add your css below */
+    }
+
+    *,
+    *::before,
+    *::after {
+      font-family: "YourFontName" !important;
+    }
+  }
+  ```
+
+- Remove the separator line between browser and content:
+
+  _custom-chrome.css_
+
+  ```css
+  :root,
+  html,
+  body {
+    /* add your css below */
+    --mf-content-separator-color: transparent !important;
+  }
+  ```
 
 ## Build & Development
 

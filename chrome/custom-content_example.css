@@ -1,0 +1,9 @@
+/* only for about:* pages */
+@-moz-document regexp("about:(?!blank).*") {
+  :root,
+  html,
+  body {
+    /* add your css below */
+
+  }
+}
