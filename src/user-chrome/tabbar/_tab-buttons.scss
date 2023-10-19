@@ -1,3 +1,9 @@
+// centered alltabs icon
+#alltabs-button > stack {
+  display: flex !important;
+  align-content: center !important;
+}
+
 // buttons at center
 #tabbrowser-arrowscrollbox-periphery {
   display: flex !important;

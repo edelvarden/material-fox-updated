@@ -39,8 +39,10 @@
   .tab-background {
     &::before,
     &::after {
-      width: 11px !important;
-      height: 11px !important;
+      min-width: 11px !important;
+      max-width: 11px !important;
+      min-height: 11px !important;
+      max-height: 11px !important;
     }
     &::before {
       transform: translateX(-11px) !important;

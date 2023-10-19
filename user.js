@@ -4,9 +4,11 @@ user_pref("layout.css.color-mix.enabled", true); // for color-mix
 
 // * Available preferences
 
+// user_pref("userChrome.chrome-refresh-2023", true);
+
 // * Color themes, use only one
+// user_pref("userChrome.chrome-refresh-colors", true);
 // user_pref("userChrome.default-theme-colors", true);
-// user_pref("userChrome.system-accent-colors", true);
 // user_pref("userChrome.dracula-theme-colors", true);
 // user_pref("userChrome.github-theme-colors", true);
 

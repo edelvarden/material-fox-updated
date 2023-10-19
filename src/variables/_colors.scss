@@ -138,43 +138,8 @@ $dracula-theme-colors: (
   "selection-background-color": #bd93f9,
 );
 
-// optional feature: System accent colors
-$light-accent-colors: (
-  "accent-color": cm(AccentColor, get-var(grey-900), 0.15),
-  "tab-opacity": 0.9,
-  "background-color-0": cm(get-var(accent-color), #dee1e6, 0.9),
-  "background-color-50": cm(get-var(accent-color), get-var(grey-100), 0.9),
-  "background-color-100": cm(get-var(accent-color), get-var("white"), 0.9),
-  "menu-background-color-hover":
-    cm(get-var(accent-color), get-var(background-color-0), 0.9),
-  "menu-border-color":
-    cm(get-var(accent-color), get-var(background-color-0), 0.9),
-  "content-separator-color": cm(get-var(accent-color), #dbdcdd, 0.9),
-  "secondary-button-text": get-var(accent-color),
-  "selection-background-color": cm(get-var(accent-color), #dee1e6, 0.1),
-);
-
-$dark-accent-colors: (
-  "accent-color": cm(AccentColor, get-var("white"), 0.15),
-  "tab-opacity": 0.9,
-  "background-color-0": cm(get-var(accent-color), get-var(grey-900), 0.85),
-  "background-color-50":
-    cm(get-var(accent-color), get-var(grey-900-white-4-percent), 0.85),
-  "background-color-100":
-    cm(get-var(accent-color), get-var(grey-900-white-5-percent), 0.85),
-  "menu-background-color-hover":
-    cm(get-var(accent-color), get-var(grey-800), 0.85),
-  "menu-border-color": cm(get-var(accent-color), get-var(grey-800), 0.85),
-  "text-on-accent": get-var("white"),
-  "secondary-button-text": get-var("white"),
-  "content-separator-color": cm(get-var(accent-color), #606164, 0.9),
-  "selection-background-color":
-    cm(get-var(accent-color), get-var(grey-900), 0.15),
-);
-
 $chrome-refresh-colors: (
   "accent-color": #a8c7fa,
-  "tab-opacity": 0.9,
   "background-color-0": #1f2020,
   "background-color-50": #282828,
   "background-color-100": #3c3c3c,
