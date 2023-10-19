@@ -126,35 +126,37 @@
     }
   }
 
-  // move all tabs button to the left
-  #TabsToolbar-customization-target {
-    display: flex !important;
-  }
+  @media (-moz-platform: windows), (-moz-platform: linux) {
+    // move all tabs button to the left
+    #TabsToolbar-customization-target {
+      display: flex !important;
+    }
 
-  #alltabs-button {
-    order: 0 !important;
-  }
+    #alltabs-button {
+      order: 0 !important;
+    }
 
-  #tabbrowser-tabs {
-    order: 98 !important;
-  }
+    #tabbrowser-tabs {
+      order: 98 !important;
+    }
 
-  #new-tab-button {
-    order: 99 !important;
-  }
+    #new-tab-button {
+      order: 99 !important;
+    }
 
-  #tabbrowser-arrowscrollbox .tabbrowser-tab:is(:first-child) {
-    margin-left: 0px !important;
-  }
+    #tabbrowser-arrowscrollbox .tabbrowser-tab:is(:first-child) {
+      margin-left: 0px !important;
+    }
 
-  // restore drag area
-  #alltabs-button {
-    margin: 0 !important;
-  }
+    // restore drag area
+    #alltabs-button {
+      margin: 0 !important;
+    }
 
-  .titlebar-buttonbox-container {
-    --margin-left: 48px;
-    margin: 0 0 0 var(--margin-left) !important;
+    .titlebar-buttonbox-container {
+      --margin-left: 48px;
+      margin: 0 0 0 var(--margin-left) !important;
+    }
   }
 
   // all tabs button redesign

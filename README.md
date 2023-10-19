@@ -82,11 +82,11 @@ To disable, search by name and remove the preference:
   </tr>
   <tr>
     <td><code>userChrome.chrome-refresh-2023</code></td>
-    <td>Enabling new tab bar design like in Chrome Canary version which named as "Chrome Refresh 2023".</td>
+    <td>Enabling new tab bar design like in Chrome Canary version which named as "Chrome Refresh 2023".<img src="assets/preview-chrome-refresh.png" alt="preview-chrome-refresh"></img></td>
   </tr>
   <tr>
     <td><code>userChrome.chrome-refresh-colors</code></td>
-    <td>Enabling new color scheme like in Chrome Canary version which named as "Chrome Refresh 2023".</td>
+    <td>Enabling new color scheme like in Chrome Canary version.</img></td>
   </tr>
   <tr>
     <td><code>userChrome.default-theme-colors</code></td>
