@@ -1,0 +1,57 @@
+@-moz-document url-prefix(about:devtools), url-prefix(chrome:) {
+  .theme-dark .editor.text pre {
+    // color: var(--theme-text-color-strong);
+    color: #e3e3e3 !important;
+  }
+
+  .theme-selected,
+  .CodeMirror-hint-active {
+    // background-color: var(--theme-selection-background);
+    background-color: #134b76 !important;
+  }
+
+  .theme-body {
+    // color: var(--theme-body-color);
+    color: #82aef7 !important;
+  }
+
+  .theme-fg-color1,
+  .cm-s-mozilla .cm-attribute,
+  .cm-s-mozilla .cm-builtin,
+  .cm-s-mozilla .cm-keyword,
+  .variables-view-variable > .title > .name {
+    // color: var(--theme-highlight-red);
+    color: #abc8f9 !important;
+  }
+
+  .theme-fg-color3,
+  .cm-s-mozilla .cm-tag,
+  .cm-s-mozilla .cm-header,
+  .cm-s-mozilla .cm-bracket,
+  .cm-s-mozilla .cm-qualifier,
+  .variables-view-property > .title > .name {
+    // color: var(--theme-highlight-blue);
+    color: #82aef7 !important;
+  }
+
+  .theme-fg-color2 {
+    // color: var(--theme-highlight-purple);
+    color: #f78c58 !important;
+  }
+
+  .ruleview-code {
+    .ruleview-propertyvaluecontainer,
+    .ruleview-propertyvalue,
+    .ruleview-color {
+      color: #e3e3e3 !important;
+    }
+
+    .ruleview-variable {
+      color: #82aef7 !important;
+    }
+
+    .ruleview-propertyname {
+      color: #6ac9eb !important;
+    }
+  }
+}

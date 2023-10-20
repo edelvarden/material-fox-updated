@@ -1,5 +1,5 @@
 /* only for about:* pages */
-@-moz-document regexp("about:(?!blank).*") {
+@-moz-document regexp("about:(?!blank|devtools).*") {
   :root,
   html,
   body {

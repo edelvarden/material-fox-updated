@@ -186,11 +186,6 @@ body {
   }
 }
 
-// hide tab spacers
-.titlebar-spacer:is([type="pre-tabs"], [type="post-tabs"]) {
-  display: none !important;
-}
-
 // tabs top margin if window not maximized
 #main-window[sizemode="normal"]
   #TabsToolbar-customization-target
@@ -206,19 +201,6 @@ body {
 // fix first tab margin
 #tabbrowser-arrowscrollbox .tabbrowser-tab:is(:first-child) {
   margin-left: 8px !important;
-}
-
-// fix for firefox view button (black border under tab bar)
-#firefox-view-button {
-  margin: 0 !important;
-}
-
-// window-inactive title bar bg color
-:root:-moz-window-inactive #navigator-toolbox {
-  #toolbar-menubar,
-  #TabsToolbar {
-    background-color: get-var("background-color-50") !important;
-  }
 }
 
 // fix pinned tabs position for overflow mode
@@ -243,12 +225,6 @@ body {
 // remove theme tab outline color
 #TabsToolbar {
   --lwt-tab-line-color: transparent !important;
-}
-
-// hide unwanted left tab bar separator
-#tabbrowser-tabs {
-  border-inline-start: none !important;
-  margin-inline-start: 0px !important;
 }
 
 // fix tab background cropping

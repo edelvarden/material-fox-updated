@@ -30,6 +30,9 @@
     --link-color-hover: #{get-var("accent-color")} !important;
     --link-color-active: #{get-var("accent-color")} !important;
     --link-color-visited: #{get-var("accent-color")} !important;
+
+    // secondary text color
+    --text-color-deemphasized: #{get-var("text-secondary")} !important;
   }
 
   // shadow

@@ -136,7 +136,7 @@ _custom-content.css_
 
 ```css
 /* only for about:* pages */
-@-moz-document regexp("about:(?!blank).*") {
+@-moz-document regexp("about:(?!blank|devtools).*") {
   :root,
   html,
   body {
@@ -243,7 +243,7 @@ Using these custom css files can separate your changes from the source project a
 
   ```css
   /* only for about:* pages */
-  @-moz-document regexp("about:(?!blank).*") {
+  @-moz-document regexp("about:(?!blank|devtools).*") {
     :root,
     html,
     body {

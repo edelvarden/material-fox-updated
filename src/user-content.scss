@@ -1,5 +1,5 @@
 // only for about:* pages
-@-moz-document regexp("about:(?!blank).*") {
+@-moz-document regexp("about:(?!blank|devtools).*") {
   @import "variables/index";
   @import "global/reset";
   @import "global/button";
@@ -18,3 +18,6 @@
   // reader view page
   @import "user-content/pages/reader-view";
 }
+
+// dev tools panel
+@import "user-content/pages/dev-tools";

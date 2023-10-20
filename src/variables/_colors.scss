@@ -117,12 +117,19 @@ $light-mode: (
 
 // optional feature: Github theme colors
 $github-theme-colors: (
+  "text-primary": #e6edf3,
+  "text-secondary": #7d8590,
   "accent-color": #2f81f7,
   "background-color-0": #0d1117,
   "background-color-50": #161b22,
-  "background-color-100": #21262d,
-  "menu-background-color-hover": #30363d,
-  "menu-border-color": #30363d,
+  "background-color-100": #24292f,
+  "menu-background-color": #0d1117,
+  "menu-background-color-hover": #161b22,
+  "menu-border-color": #31363d,
+  "content-separator-color": #57606a,
+  "selection-background-color": cm(transparent, #388bfd, 0.4),
+  // rgba(56,139,253,0.4)
+  "text-on-accent": get-var("white"),
 );
 
 // optional feature: Dracula theme colors
