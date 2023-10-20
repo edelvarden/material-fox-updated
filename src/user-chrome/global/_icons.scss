@@ -197,6 +197,14 @@
   content: get-var("extension-icon") !important;
 }
 
+.install-icon {
+  list-style-image: get-var("extension-icon") !important;
+}
+
+.install-icon.blocked-permission-icon {
+  list-style-image: get-var("extension-blocked-icon") !important;
+}
+
 // menu icon
 #pageActionButton,
 #PanelUI-menu-button {
@@ -282,9 +290,30 @@ menuitem[checked="true"] > .menu-iconic-left {
   list-style-image: get-var("info-icon") !important;
 }
 
+// wrench icon for firefox dev
 #developer-button {
   list-style-image: get-var("dev-icon") !important;
   & > image {
     padding: 4px !important;
+  }
+}
+
+// menu popup arrow right icon
+#protections-popup-mainView .subviewbutton-nav:not(.notFound)::after,
+.widget-overflow-list .subviewbutton-nav::after,
+.PanelUI-subView .subviewbutton-nav::after {
+  content: get-var("arrow-right-icon") !important;
+  // fill: get-var("icon-color-secondary") !important;
+}
+
+// context menu drop down arrow right icon
+.menu-right {
+  list-style-image: get-var("arrow-right-icon") !important;
+  fill: get-var("icon-color-secondary") !important;
+}
+
+@media (-moz-platform: windows) {
+  .menu-right {
+    margin-inline-end: 0px !important;
   }
 }

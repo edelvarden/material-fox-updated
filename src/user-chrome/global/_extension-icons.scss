@@ -37,3 +37,20 @@
   font-weight: 400 !important;
   box-shadow: none !important;
 }
+
+.unified-extensions-item-contents {
+}
+.unified-extensions-item-name {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  text-align: left !important;
+
+  max-width: 250px !important;
+
+  padding-right: 0px !important;
+  padding-inline-end: 0px !important;
+
+  word-break: unset !important;
+  word-wrap: unset !important;
+}

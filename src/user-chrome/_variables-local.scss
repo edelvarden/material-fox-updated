@@ -83,7 +83,7 @@
     // text on accent
     --button-primary-color: #{get-var("text-on-accent")} !important;
 
-    --autocomplete-popup-separator-color: #{get-var("border-color")} !important;
+    --autocomplete-popup-separator-color: #{get-var("menu-border-color")} !important;
 
     --button-active-bgcolor: #{get-var("control-background-color")} !important;
     --button-bgcolor: #{get-var("control-background-color")} !important;

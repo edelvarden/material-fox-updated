@@ -4,6 +4,11 @@ $menu-min-width: 220px;
 //   (-moz-platform: linux),
 //   (-moz-platform: macos) {
 @media (-moz-platform: windows), (-moz-platform: linux) {
+  menupopup,
+  panel {
+    min-width: $menu-min-width !important;
+  }
+
   // context menu background-color & drop shadow
   .menupopup-arrowscrollbox {
     background-color: var(--arrowpanel-background) !important;
