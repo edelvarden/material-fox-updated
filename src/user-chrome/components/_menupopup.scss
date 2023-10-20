@@ -90,3 +90,10 @@ menupopup,
 panel {
   --panel-shadow: #{get-var("elevation-2")} !important;
 }
+
+dialog,
+.dialogBox {
+  .titleIcon {
+    background-color: transparent !important;
+  }
+}
