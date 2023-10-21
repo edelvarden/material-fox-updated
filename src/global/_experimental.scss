@@ -1,9 +1,30 @@
 // fixes for default Firefox colors feature
 @supports -moz-bool-pref("userChrome.default-theme-colors") {
+  :root,
   html,
-  body {
-    --tab-background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1333)} !important;
-    --toolbar-bgcolor: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.1333)} !important;
+  body,
+  .tabbrowser-tab[visuallyselected] {
+    --tab-background-color: var(
+      --lwt-selected-tab-background-color,
+      var(--toolbar-bgcolor)
+    ) !important;
+  }
+
+  .tabbrowser-tab[visuallyselected] .tab-background {
+    background-color: var(--tab-background-color) !important;
+  }
+
+  #navbar,
+  .browser-toolbar:not(.titlebar-color) {
+    background-color: var(
+      --lwt-selected-tab-background-color,
+      var(--toolbar-bgcolor)
+    ) !important;
+  }
+
+  #urlbar-background,
+  #searchbar {
+    background-color: var(--toolbar-field-background-color) !important;
   }
 
   // urlbar suggestions item
@@ -16,10 +37,15 @@
     }
   }
 
-  // urlbar background as title bar color
-  #urlbar-background,
-  #searchbar {
-    background-color: var(--lwt-accent-color) !important;
+  // global accent color
+  :root,
+  html,
+  body {
+    --#{$prefix}-accent-color: var(--toolbar-field-focus-color) !important;
+    // --mf-text-on-accent: var(--button-primary-color) !important;
+    --#{$prefix}-menu-border-color: var(--arrowpanel-border-color) !important;
+
+    --toolbar-field-focus-border-color: get-var("accent-color") !important;
   }
 
   // menu item hover bg color

@@ -1,10 +1,3 @@
-// title bar default background
-@supports not -moz-bool-pref("widget.windows.titlebar-accent.enabled") {
-  #titlebar {
-    background-color: get-var("background-color-0") !important;
-  }
-}
-
 // window-inactive title bar bg color
 :root:-moz-window-inactive #navigator-toolbox {
   #toolbar-menubar,

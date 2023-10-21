@@ -124,7 +124,7 @@ body {
     max-height: 8px !important;
     bottom: 0 !important;
     pointer-events: none !important;
-    clip-path: inset(-1px) !important;
+    clip-path: inset(0px) !important;
 
     transition-property: box-shadow !important;
     transition-duration: get-var("shortest-duration") !important;
@@ -149,13 +149,13 @@ body {
 // hover bg opacity for not selected tab
 .tabbrowser-tab:not([selected="true"]):hover,
 .tabbrowser-tab[multiselected]:not([selected="true"]) {
-  --tab-opacity: #{get-var("tab-opacity-hover")};
+  --tab-opacity: #{get-var("tab-opacity-hover")} !important;
 }
 
 // bg color and opacity for selected tab
 .tabbrowser-tab[visuallyselected] {
-  --tab-background-color: var(--toolbar-bgcolor);
-  --tab-opacity: #{get-var("tab-opacity")};
+  --tab-background-color: var(--toolbar-bgcolor) !important;
+  --tab-opacity: #{get-var("tab-opacity")} !important;
 }
 
 .tab-icon-image {

@@ -5,6 +5,12 @@ body {
 
   --brand-color-accent: #{get-var("accent-color")} !important;
   --brand-color-accent-hover: #{get-var("accent-color-hover")} !important;
+
+  // primary button colors
+  --in-content-primary-button-text-color: #{get-var("text-on-accent")} !important;
+  --in-content-primary-button-background: #{get-var("accent-color")} !important;
+  --in-content-primary-button-background-hover: #{get-var("accent-color-hover")} !important;
+  --in-content-primary-button-background-active: #{get-var("accent-color")} !important;
 }
 
 :root,
