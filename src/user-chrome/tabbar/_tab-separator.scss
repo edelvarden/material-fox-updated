@@ -11,8 +11,10 @@
     background-color: get-var("tab-separator-color") !important;
     width: 1px !important;
     height: 20px !important;
+    top: unset !important;
     transform: translateY(0%) !important;
     opacity: 0 !important;
+    border: none !important;
 
     transition-property: opacity !important;
     transition-duration: get-var("medium-short-duration") !important;

@@ -191,7 +191,15 @@
       overflow: hidden !important;
       border-radius: 11px !important;
 
-      background-color: get-var("control-background-color") !important;
+      background-color: get-var("background-color-100") !important;
+
+      @media (prefers-color-scheme: light) {
+        background-color: cm(
+          get-var("background-color-100"),
+          get-var("accent-color"),
+          0.1333
+        ) !important;
+      }
     }
 
     &:hover {
@@ -209,6 +217,13 @@
     .toolbarbutton-icon {
       width: 12px !important;
       height: 12px !important;
+    }
+  }
+
+  // window-inactive title bar bg color
+  :root:-moz-window-inactive #navigator-toolbox {
+    #alltabs-button .toolbarbutton-badge-stack {
+      background-color: get-var("background-color-100") !important;
     }
   }
 

@@ -129,6 +129,8 @@ body {
     transition-property: box-shadow !important;
     transition-duration: get-var("shortest-duration") !important;
     transition-timing-function: get-var("fade-in-out") !important;
+
+    background-image: none !important; // remove tab image for waterfox
   }
 
   &::before {

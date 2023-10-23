@@ -1,7 +1,11 @@
 // centered alltabs icon
-#alltabs-button > stack {
+#alltabs-button {
   display: flex !important;
-  align-content: center !important;
+
+  & > stack {
+    display: flex !important;
+    align-content: center !important;
+  }
 }
 
 // buttons at center

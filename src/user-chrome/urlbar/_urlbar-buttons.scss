@@ -86,3 +86,21 @@
   // margin-inline-end: var(--identity-box-margin-inline); // default
   margin-inline-end: 0 !important;
 }
+
+#identity-icon-label {
+  font-family: 500 !important;
+}
+
+// hide left border for menu button
+#PanelUI-button {
+  border: none !important;
+  border-inline: none !important;
+}
+
+// hide right border for identity box button
+#identity-icon-box {
+  &::after,
+  &::before {
+    display: none !important;
+  }
+}

@@ -3,6 +3,7 @@
     &:is([soundplaying], [muted], [activemedia-blocked]) {
       .tab-icon-image {
         display: none !important;
+        visibility: collapse !important;
       }
 
       .tab-icon-overlay {
@@ -14,6 +15,7 @@
     &:not([soundplaying], [muted], [activemedia-blocked]) {
       .tab-icon-overlay {
         display: none !important;
+        visibility: collapse !important;
       }
     }
   }
@@ -21,7 +23,8 @@
   &:not([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
     .tab-label,
     .tab-icon-overlay {
-      transform: translateX(22px) !important;
+      transform: translateX(9px) !important;
+      inset-inline-end: -9px !important;
     }
 
     .tab-label-container {
@@ -49,6 +52,8 @@
   padding: 0 !important;
   overflow: visible !important;
 
+  margin-inline-end: 0px !important; // fix position for waterfox
+
   // fix opacity
   fill-opacity: 1 !important;
 
@@ -70,6 +75,7 @@
 .tab-label,
 .tab-icon-overlay {
   transform: translateX(0) !important;
+  inset-inline-end: 0px !important;
 
   transition-property: transform, background-size, background-color !important;
   transition-duration: get-var("medium-duration"), get-var("short-duration"),
@@ -91,4 +97,11 @@
 // fix colors for pinned tab icon
 #TabsToolbar .tab-icon-overlay:is([pinned], [sharing]):not([crashed]) {
   color: get-var("text-primary") !important;
+}
+
+// hide sound icon if not sound playing
+.tabbrowser-tab:not([soundplaying], [muted], [activemedia-blocked]) {
+  .tab-icon-overlay {
+    visibility: collapse !important;
+  }
 }

@@ -7,15 +7,18 @@
 .tab-stack {
   position: relative !important;
   &::before {
-    content: "";
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    width: 4px;
-    height: 4px;
-    background-color: var(--identity-icon-color);
-    border-radius: 100%;
-    z-index: 999;
+    content: "" !important;
+    position: absolute !important;
+    top: 4px !important;
+    right: 4px !important;
+    width: 4px !important;
+    height: 4px !important;
+    background-color: var(--identity-icon-color) !important;
+    border-radius: 100% !important;
+    border-width: 0px !important;
+    border-color: transparent !important;
+    z-index: 999 !important;
+    opacity: 1 !important;
   }
 }
 
