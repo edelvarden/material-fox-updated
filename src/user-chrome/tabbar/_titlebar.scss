@@ -40,7 +40,12 @@
   margin-inline-start: 0px !important;
 }
 
-// fix for firefox view button (black border under tab bar)
+// fix for firefox view button (black border under tab bar), see: https://github.com/edelvarden/material-fox-updated/issues/6
 #firefox-view-button {
   margin: 0 !important;
+}
+
+// also for other buttons which can be added to the title bar
+#TabsToolbar .toolbarbutton-1 {
+  margin-bottom: 0 !important;
 }
