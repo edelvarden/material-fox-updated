@@ -42,13 +42,6 @@ body {
     --#{$prefix}-#{$key}: #{$value};
   }
 
-  // light mode colors
-  @media (prefers-color-scheme: light) {
-    @each $key, $value in $light-mode {
-      --#{$prefix}-#{$key}: #{$value};
-    }
-  }
-
   // optional feature: Github theme colors
   @supports -moz-bool-pref("userChrome.github-theme-colors") {
     @each $key, $value in $github-theme-colors {
@@ -66,6 +59,13 @@ body {
   // optional feature: Chrome refresh theme colors
   @supports -moz-bool-pref("userChrome.chrome-refresh-colors") {
     @each $key, $value in $chrome-refresh-colors {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+
+  // light mode colors (placed to the end to override dark mode styles if light mode is enabled)
+  @media (prefers-color-scheme: light) {
+    @each $key, $value in $light-mode {
       --#{$prefix}-#{$key}: #{$value};
     }
   }

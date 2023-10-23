@@ -1,3 +1,25 @@
+// accent color mix for title bar and url bar backgrounds
+@media (prefers-color-scheme: light) {
+  #toolbar-menubar,
+  #TabsToolbar,
+  #titlebar {
+    background-color: cm(
+      get-var("background-color-50"),
+      get-var("accent-color"),
+      0.2
+    ) !important;
+  }
+
+  #urlbar-background,
+  #searchbar {
+    background-color: cm(
+      get-var("background-color-50"),
+      get-var("accent-color"),
+      0.0333
+    ) !important;
+  }
+}
+
 // window-inactive title bar bg color
 :root:-moz-window-inactive #navigator-toolbox {
   #toolbar-menubar,

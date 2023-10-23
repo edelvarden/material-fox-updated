@@ -217,6 +217,12 @@
     border-radius: 7px 7px 0 0 !important;
   }
 
+  @media (-moz-platform: macos) {
+    #alltabs-button {
+      margin-right: 6px !important;
+    }
+  }
+
   // ----------------------------------------------------------------
   // * (Temporary disabled) New Nav Bar style
 
