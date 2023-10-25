@@ -97,3 +97,10 @@ dialog,
     background-color: transparent !important;
   }
 }
+
+// menupopup and panel border width
+@media (prefers-color-scheme: dark) {
+  *[part="content"] {
+    border-width: 2px !important;
+  }
+}
