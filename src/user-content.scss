@@ -2,6 +2,7 @@
 @-moz-document regexp("about:(?!blank|devtools).*") {
   @import "variables/index";
   @import "global/reset";
+  @import "global/fonts";
   @import "global/button";
   @import "global/input";
   @import "global/select";

@@ -1,20 +1,25 @@
 // radio button
 input[type="radio"],
 .radio-check {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
   border: none !important;
   background-color: get-var("background-color-0") !important;
 
   outline-width: 2px !important;
   outline-style: solid !important;
   outline-color: get-var("menu-border-color") !important;
-  outline-offset: -2px !important;
+  outline-offset: 0px !important;
 
-  width: 20px !important;
-  height: 20px !important;
+  width: 16px !important;
+  height: 16px !important;
 
   color: get-var("accent-color") !important;
 
-  background-size: 10px !important;
+  background-size: 16px !important;
+
   background-position: center !important;
 
   transition-property: background-size !important;
@@ -33,6 +38,10 @@ input[type="radio"]:checked,
 .radio-check[selected] {
   background-size: 16px !important;
 
+  border: none !important;
+  outline-width: 2px !important;
+  outline-style: solid !important;
+  outline-offset: 0px !important;
   outline-color: get-var("accent-color") !important;
 }
 

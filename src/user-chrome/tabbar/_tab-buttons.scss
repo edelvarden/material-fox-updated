@@ -23,6 +23,7 @@
   max-width: 40px !important;
   max-height: var(--tab-min-height) !important;
   margin: 0 !important;
+  margin-top: auto !important;
 
   & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     padding: 6px !important;
@@ -31,6 +32,11 @@
     height: auto !important;
     border-radius: 4px !important;
   }
+}
+
+#tabs-newtab-button {
+  margin-inline-start: 6px !important;
+  margin-inline-end: 2px !important;
 }
 
 // tab close
@@ -100,12 +106,6 @@
 // fixes for macOS
 @media (-moz-platform: macos) {
   // macOS fix for new tab button & all tabs button
-  #tabs-newtab-button,
-  #new-tab-button,
-  #alltabs-button {
-    margin-top: auto !important;
-  }
-
   #new-tab-button {
     margin-inline-start: 2px !important;
   }

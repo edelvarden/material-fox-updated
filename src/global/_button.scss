@@ -27,7 +27,11 @@ $button-min-width: 5.14em;
   }
 
   &:not(.disabled, :disabled, [disabled]):hover:active {
-    background-color: get-var("accent-color-hover") !important;
+    background-color: cm(
+      transparent,
+      get-var("accent-color-hover"),
+      0.8
+    ) !important;
   }
 }
 

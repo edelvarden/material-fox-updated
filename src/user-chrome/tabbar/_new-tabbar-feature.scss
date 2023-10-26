@@ -39,18 +39,20 @@
   .tab-background {
     &::before,
     &::after {
-      min-width: 11px !important;
-      max-width: 11px !important;
-      min-height: 11px !important;
-      max-height: 11px !important;
+      min-width: 12px !important;
+      max-width: 12px !important;
+      min-height: 12px !important;
+      max-height: 12px !important;
     }
     &::before {
-      transform: translateX(-11px) !important;
+      border-bottom-right-radius: 12px !important;
+      transform: translateX(-12px) !important;
       box-shadow: 4px 4px 0 4px var(--tab-background-color) !important;
     }
 
     &::after {
-      transform: translateX(11px) !important;
+      border-bottom-left-radius: 12px !important;
+      transform: translateX(12px) !important;
       box-shadow: -4px 4px 0 4px var(--tab-background-color) !important;
     }
   }
@@ -235,6 +237,21 @@
   @media (-moz-platform: macos) {
     #alltabs-button {
       margin-right: 6px !important;
+    }
+  }
+
+  // fix first tab `.tab-background::before` cropping
+  @media (-moz-platform: windows) {
+    .scrollbox-clip[orient="horizontal"] > scrollbox:nth-child(1) {
+      padding-inline-start: 11px !important;
+      transform: translateX(-11px);
+    }
+    #alltabs-button {
+      z-index: 1 !important;
+    }
+
+    #tabs-newtab-button {
+      margin-inline-start: 0px !important;
     }
   }
 

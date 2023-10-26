@@ -31,8 +31,12 @@ $colors: (
   // -- Shadow
   // --------------------------------------------------------------------------------
   "elevation-2":
-    (rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px),
-  "elevation-3": (rgba(0, 0, 0, 0.56) 0px 22px 70px 4px)
+    (rgba(0, 0, 0, 0.3) 0 1px 2px 0, rgba(0, 0, 0, 0.15) 0 2px 6px 2px),
+  "elevation-3": (
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px
+  ),
+  "elevation-4": (rgba(0, 0, 0, 0.56) 0px 22px 70px 4px)
 );
 
 $dark-mode: (
