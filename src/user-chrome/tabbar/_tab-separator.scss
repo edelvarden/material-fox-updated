@@ -31,21 +31,25 @@
 }
 
 // hide tab separators if hover or selected
-.tabbrowser-tab[visuallyselected][style*="transform"]
+.tabbrowser-tab:is([visuallyselected], [selected])[style*="transform"]
   + .tabbrowser-tab[style*="transform"]
   .tab-content::after,
-.tabbrowser-tab[style*="transform"]:not([visuallyselected])
+.tabbrowser-tab[style*="transform"]:not(:is([visuallyselected], [selected]))
   .tab-content::before,
 .tabbrowser-tab[style*="transform"]
-  + .tabbrowser-tab:not([visuallyselected])
+  + .tabbrowser-tab:not(:is([visuallyselected], [selected]))
   .tab-content::before,
-.tabbrowser-tab:not([visuallyselected]):not(:hover):not([multiselected])
-  + .tabbrowser-tab:not([visuallyselected]):not(:hover):not([multiselected])
-  .tab-content::before,
-#tabbrowser-tabs[hasadjacentnewtabbutton]:not([overflow])
-  .tabbrowser-tab[last-visible-tab]:not([visuallyselected]):not(:hover):not(
+.tabbrowser-tab:not(:is([visuallyselected], [selected])):not(:hover):not(
     [multiselected]
   )
+  + .tabbrowser-tab:not(:is([visuallyselected], [selected])):not(:hover):not(
+    [multiselected]
+  )
+  .tab-content::before,
+#tabbrowser-tabs[hasadjacentnewtabbutton]:not([overflow])
+  .tabbrowser-tab[last-visible-tab]:not(
+    :is([visuallyselected], [selected])
+  ):not(:hover):not([multiselected])
   .tab-content::after {
   opacity: var(--tab-separator-opacity) !important;
 }
@@ -58,6 +62,6 @@
 // }
 
 // disable hover transition for selected tab
-.tabbrowser-tab[visuallyselected] {
+.tabbrowser-tab:is([visuallyselected], [selected]) {
   --tab-transition-duration: 0s !important;
 }

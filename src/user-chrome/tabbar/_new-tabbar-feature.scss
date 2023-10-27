@@ -117,7 +117,7 @@
   }
 
   // bg color and opacity for selected tab
-  .tabbrowser-tab[visuallyselected] {
+  .tabbrowser-tab:is([visuallyselected], [selected]) {
     --tab-opacity: 1 !important;
   }
 

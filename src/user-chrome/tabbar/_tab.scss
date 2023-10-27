@@ -36,11 +36,11 @@ body {
 
 // selected and not selected tab text color
 .tabbrowser-tab {
-  &[visuallyselected] {
+  &:is([visuallyselected], [selected]) {
     color: get-var("text-primary") !important;
   }
 
-  &:not([visuallyselected]) {
+  &:not(:is([visuallyselected], [selected])) {
     color: get-var("text-primary") !important;
   }
 }
@@ -155,7 +155,7 @@ body {
 }
 
 // bg color and opacity for selected tab
-.tabbrowser-tab[visuallyselected] {
+.tabbrowser-tab:is([visuallyselected], [selected]) {
   --tab-background-color: var(--toolbar-bgcolor) !important;
   --tab-opacity: #{get-var("tab-opacity")} !important;
 }
@@ -238,7 +238,7 @@ body {
   }
 }
 
-.tabbrowser-tab[visuallyselected] {
+.tabbrowser-tab:is([visuallyselected], [selected]) {
   .tab-background {
     z-index: 2 !important;
 

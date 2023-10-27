@@ -3,14 +3,14 @@
   :root,
   html,
   body,
-  .tabbrowser-tab[visuallyselected] {
+  .tabbrowser-tab:is([visuallyselected], [selected]) {
     --tab-background-color: var(
       --lwt-selected-tab-background-color,
       var(--toolbar-bgcolor)
     ) !important;
   }
 
-  .tabbrowser-tab[visuallyselected] .tab-background {
+  .tabbrowser-tab:is([visuallyselected], [selected]) .tab-background {
     background-color: var(--tab-background-color) !important;
   }
 

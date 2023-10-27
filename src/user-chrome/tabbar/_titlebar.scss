@@ -29,6 +29,17 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  // window-inactive title bar bg color
+  :root:not(:-moz-window-inactive) #navigator-toolbox {
+    #toolbar-menubar,
+    #TabsToolbar,
+    #titlebar {
+      background-color: get-var("background-color-0") !important;
+    }
+  }
+}
+
 // hide tab spacers
 .titlebar-spacer:is([type="pre-tabs"], [type="post-tabs"]) {
   display: none !important;
