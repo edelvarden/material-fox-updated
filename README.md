@@ -93,6 +93,10 @@ To disable, search by name and remove the preference:
     <td>Use the default Firefox colors. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
   </tr>
   <tr>
+    <td><code>userChrome.system-accent-colors</code></td>
+    <td>Use system accent colors</td>
+  </tr>
+  <tr>
     <td><code>userChrome.force-enable-animations</code></td>
     <td>Force enable control animation, because by default respects the user animation disable preference. <em>(Not required if you do not disable animation)</em></td>
   </tr>
@@ -110,12 +114,8 @@ Additionally, if you want to change some colors, you can override the default va
 
 Follow this steps:
 
-1. Find and rename in the root folder:
-
-- `custom-chrome_example.css` to `custom-chrome.css`
-- `custom-content_example.css` to `custom-content.css` _(this is for the "New Tab" page)_
-
-2. Open `custom-base.css` in a text editor
+1. Find and rename in the root folder `custom_example.css` to `custom.css`
+2. Open `custom.css` in a text editor
 3. Find the desired variable
 4. Add your values, for example, set the accent color to red:
 
@@ -131,8 +131,6 @@ body {
 5. Save the file and restart Firefox to apply changes
 
 Using these custom css files can separate your changes from the source project and you can easily backup your files and don't worry about overwriting your changes if you want to update or reinstall the main files.
-
-You can also find pre-made color schemes in the `color-schemes` folder in this repo.
 
 #### Available variables
 
@@ -207,8 +205,6 @@ You can also find pre-made color schemes in the `color-schemes` folder in this r
 
 - Replacing the font with your own, change `"YourFontName"` to the name of your font:
 
-  _custom-chrome.css_
-
   ```css
   :root,
   html,
@@ -223,28 +219,7 @@ You can also find pre-made color schemes in the `color-schemes` folder in this r
   }
   ```
 
-  _custom-content.css_
-
-  ```css
-  /* only for about:* pages */
-  @-moz-document regexp("about:(?!blank|devtools).*") {
-    :root,
-    html,
-    body {
-      /* add your css below */
-    }
-
-    *,
-    *::before,
-    *::after {
-      font-family: "YourFontName" !important;
-    }
-  }
-  ```
-
 - Remove the separator line between browser and content:
-
-  _custom-chrome.css_
 
   ```css
   :root,

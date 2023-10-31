@@ -69,4 +69,17 @@ body {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
+
+  // optional feature: system accent colors
+  @media (-moz-bool-pref: meta.inspect("userChrome.system-accent-colors")) {
+    @each $key, $value in $system-accent-colors-dark {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+
+    @media (prefers-color-scheme: light) {
+      @each $key, $value in $system-accent-colors-light {
+        --#{$prefix}-#{$key}: #{$value};
+      }
+    }
+  }
 }
