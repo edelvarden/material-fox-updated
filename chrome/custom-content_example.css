@@ -1,9 +1,1 @@
-/* only for about:* pages */
-@-moz-document regexp("about:(?!blank|devtools).*") {
-  :root,
-  html,
-  body {
-    /* add your css below */
-
-  }
-}
+@import url("custom-base.css");
