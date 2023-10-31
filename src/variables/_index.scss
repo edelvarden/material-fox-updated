@@ -1,3 +1,4 @@
+@use "sass:meta";
 @import "constants";
 @import "functions";
 @import "animation";
@@ -14,8 +15,7 @@ body {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
-
-  @supports -moz-bool-pref("userChrome.force-enable-animations") {
+  @media (-moz-bool-pref: meta.inspect("userChrome.force-enable-animations")) {
     // animation durations
     @each $key, $value in $animation-durations {
       --#{$prefix}-#{$key}: #{$value};
@@ -43,21 +43,21 @@ body {
   }
 
   // optional feature: Github theme colors
-  @supports -moz-bool-pref("userChrome.github-theme-colors") {
+  @media (-moz-bool-pref: meta.inspect("userChrome.github-theme-colors")) {
     @each $key, $value in $github-theme-colors {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
 
   // optional feature: Dracula theme colors
-  @supports -moz-bool-pref("userChrome.dracula-theme-colors") {
+  @media (-moz-bool-pref: meta.inspect("userChrome.dracula-theme-colors")) {
     @each $key, $value in $dracula-theme-colors {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
 
   // optional feature: Chrome refresh theme colors
-  @supports -moz-bool-pref("userChrome.chrome-refresh-colors") {
+  @media (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-colors")) {
     @each $key, $value in $chrome-refresh-colors {
       --#{$prefix}-#{$key}: #{$value};
     }

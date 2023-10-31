@@ -1,4 +1,4 @@
-@supports not -moz-bool-pref("userChrome.default-theme-colors") {
+@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
   // accent color vars
   :root,
   html,

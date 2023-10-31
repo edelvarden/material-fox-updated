@@ -1,4 +1,4 @@
-@supports -moz-bool-pref("userChrome.chrome-refresh-2023") {
+@media (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-2023")) {
   // tabs bar top margin
   #TabsToolbar-customization-target > :not(#alltabs-button) {
     margin-top: 0px !important;

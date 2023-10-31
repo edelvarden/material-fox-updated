@@ -1,4 +1,4 @@
-@supports -moz-bool-pref("userChrome.compact-url-bar") {
+@media (-moz-bool-pref: meta.inspect("userChrome.compact-url-bar")) {
   #urlbar {
     --urlbar-height: 28px !important;
     --urlbar-toolbar-height: 36px !important;
