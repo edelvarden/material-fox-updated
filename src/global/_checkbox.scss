@@ -79,3 +79,8 @@ checkbox:not([disabled="true"]) {
     cursor: pointer !important;
   }
 }
+
+// fix checkbox checkmark fill color
+.checkbox-check[checked] {
+  fill: get-var("text-on-accent") !important;
+}
