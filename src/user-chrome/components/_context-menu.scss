@@ -5,7 +5,7 @@ $menu-min-width: 220px;
 //   (-moz-platform: macos) {
 @media (-moz-platform: windows), (-moz-platform: linux) {
   menupopup,
-  panel {
+  panel:not(#autoscroller) {
     min-width: $menu-min-width !important;
   }
 
