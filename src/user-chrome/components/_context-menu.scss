@@ -190,3 +190,8 @@ $image-padding-end: 8px;
     }
   }
 }
+
+// fix dropdown menu background color override
+arrowscrollbox {
+  background-image: none !important;
+}
