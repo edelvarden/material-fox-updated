@@ -30,8 +30,7 @@ $colors: (
   // --------------------------------------------------------------------------------
   // -- Shadow
   // --------------------------------------------------------------------------------
-  "elevation-2":
-    (rgba(0, 0, 0, 0.3) 0 1px 2px 0, rgba(0, 0, 0, 0.15) 0 2px 6px 2px),
+  "elevation-2": (0 2px 4px 0 rgba(0, 0, 0, 0.28)),
   "elevation-3": (
     rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px
@@ -46,24 +45,24 @@ $dark-mode: (
   "accent-color-transparent": cm(transparent, get-var(accent-color), 0.0837),
   "accent-color-transparent-active": cm(transparent, get-var(accent-color), 0.2),
   // UI background colors
-  "background-color-0": get-var(grey-900),
-  "background-color-50": get-var(grey-900-white-4-percent),
-  "background-color-100": get-var(grey-900-white-5-percent),
+  "background-color-0": get-var("grey-900"),
+  "background-color-50": get-var("grey-900-white-4-percent"),
+  "background-color-100": get-var("grey-900-white-5-percent"),
   // UI text
   "text-primary": get-var(grey-200),
   "text-secondary": get-var(grey-500),
   // primary button text color
-  "text-on-accent": get-var(grey-900),
+  "text-on-accent": get-var("grey-900"),
   "secondary-button-text": get-var(accent-color),
   // button, dropdown
   "control-background-color": cm(transparent, get-var("white"), 0.0605),
   "control-border-color": cm(transparent, get-var("white"), 0.0605),
   // input, select, textarea
-  "input-background-color": get-var(background-color-0),
+  "input-background-color": get-var("background-color-0"),
   // menu, popups
   "menu-background-color": get-var(background-color-50),
   "menu-background-color-hover": #323334,
-  "menu-border-color": get-var(grey-800),
+  "menu-border-color": get-var("grey-800"),
   // tab bar
   "tab-separator-color": cm(transparent, get-var("white"), 0.2),
   "tab-outline-color": cm(transparent, get-var("black"), 0.1),
@@ -71,7 +70,7 @@ $dark-mode: (
   "tab-opacity-hover": 0.5,
 
   // nav bar
-  "icon-color-primary": get-var(grey-100),
+  "icon-color-primary": get-var("grey-100"),
   "icon-color-secondary": get-var(grey-500),
   "content-separator-color": #606164,
   // selection colors
@@ -86,10 +85,10 @@ $light-mode: (
   "accent-color-transparent": cm(transparent, get-var(accent-color), 0.0837),
   // UI background colors
   "background-color-0": #dee1e6,
-  "background-color-50": get-var(grey-100),
+  "background-color-50": get-var("grey-100"),
   "background-color-100": get-var("white"),
   // UI text
-  "text-primary": get-var(grey-900),
+  "text-primary": get-var("grey-900"),
   "text-secondary": get-var(grey-700),
   // primary button text color
   "text-on-accent": get-var("white"),
@@ -102,8 +101,8 @@ $light-mode: (
   "input-background-color": get-var(background-color-100),
   // menu, popups
   "menu-background-color": get-var(background-color-100),
-  "menu-background-color-hover": get-var(background-color-0),
-  "menu-border-color": get-var(background-color-0),
+  "menu-background-color-hover": get-var("background-color-0"),
+  "menu-border-color": get-var("background-color-0"),
   // tab bar
   "tab-separator-color": cm(transparent, get-var("black"), 0.2),
   "tab-outline-color": cm(transparent, get-var("black"), 0.2),
@@ -142,13 +141,14 @@ $dracula-theme-colors: (
   "background-color-0": #282a36,
   "background-color-50": #343746,
   "background-color-100": #44475a,
-  "menu-background-color-hover": get-var(background-color-0),
-  "menu-background-color": get-var(background-color-0),
+  "menu-background-color-hover": get-var("background-color-0"),
+  "menu-background-color": get-var("background-color-0"),
   "menu-border-color": #343746,
   "selection-text-color": get-var("black"),
   "selection-background-color": #bd93f9,
 );
 
+// optional feature: Chrome refresh colors for dark mode
 $chrome-refresh-colors: (
   "accent-color": #a8c7fa,
   "background-color-0": #1f2020,
@@ -160,4 +160,53 @@ $chrome-refresh-colors: (
   "content-separator-color": #444746,
   "selection-text-color": get-var("black"),
   "selection-background-color": #a8c7fa,
+);
+
+// optional feature: system accent colors
+$system-accent-colors-dark: (
+  "accent-color": color-mix(in srgb, get-var("white") 15%, AccentColor),
+  "tab-opacity": 0.9,
+  "background-color-0":
+    color-mix(in srgb, get-var("grey-900") 85%, var(accent-color)),
+  "background-color-50":
+    color-mix(
+      in srgb,
+      get-var("grey-900-white-4-percent") 85%,
+      get-var(accent-color)
+    ),
+  "background-color-100":
+    color-mix(
+      in srgb,
+      get-var("grey-900-white-5-percent") 85%,
+      get-var(accent-color)
+    ),
+  "menu-background-color-hover":
+    color-mix(in srgb, get-var("grey-800") 85%, get-var(accent-color)),
+  "menu-border-color":
+    color-mix(in srgb, get-var("grey-800") 85%, get-var(accent-color)),
+  "text-on-accent": get-var("white"),
+  "secondary-button-text": get-var("white"),
+  "content-separator-color":
+    color-mix(in srgb, #606164 90%, get-var(accent-color)),
+  "selection-background-color":
+    color-mix(in srgb, get-var("grey-900") 15%, get-var(accent-color)),
+);
+
+$system-accent-colors-light: (
+  "accent-color": color-mix(in srgb, get-var("grey-900") 15%, AccentColor),
+  "tab-opacity": 0.9,
+  "background-color-0": color-mix(in srgb, #dee1e6 90%, get-var(accent-color)),
+  "background-color-50":
+    color-mix(in srgb, get-var("grey-100") 90%, get-var(accent-color)),
+  "background-color-100":
+    color-mix(in srgb, get-var("white") 90%, get-var(accent-color)),
+  "menu-background-color-hover":
+    color-mix(in srgb, get-var("background-color-0") 90%, get-var(accent-color)),
+  "menu-border-color":
+    color-mix(in srgb, get-var("background-color-0") 90%, get-var(accent-color)),
+  "secondary-button-text": get-var(accent-color),
+  "content-separator-color":
+    color-mix(in srgb, #dbdcdd 90%, get-var(accent-color)),
+  "selection-background-color":
+    color-mix(in srgb, #dee1e6 10%, get-var(accent-color)),
 );

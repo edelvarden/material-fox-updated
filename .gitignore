@@ -24,6 +24,9 @@ dist-ssr
 
 # ignore
 node_modules
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
 *.zip
 custom-chrome.css
 custom-content.css

@@ -81,13 +81,13 @@ toolbarbutton menupopup[placespopup] menuseparator::before {
 // popup drop shadow
 @media (-moz-platform: windows) {
   menupopup,
-  panel {
+  panel:not(#autoscroller) {
     --panel-shadow-margin: 12px !important;
   }
 }
 
 menupopup,
-panel {
+panel:not(#autoscroller) {
   --panel-shadow: #{get-var("elevation-2")} !important;
 }
 
