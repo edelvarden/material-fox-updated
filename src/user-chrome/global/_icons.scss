@@ -233,8 +233,10 @@ treechildren::-moz-tree-image(container) {
 }
 
 // checked icon
-menuitem[checked="true"] > .menu-iconic-left {
-  list-style-image: get-var("check-icon") !important;
+@media (-moz-platform: windows) {
+  menuitem[checked="true"] > .menu-iconic-left {
+    list-style-image: get-var("check-icon") !important;
+  }
 }
 
 // edit bookmark menu checkbox icon
