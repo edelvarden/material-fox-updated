@@ -274,9 +274,9 @@ menuitem[checked="true"] > .menu-iconic-left {
 }
 
 // download icon
-#downloads-button {
-  display: flex !important;
-}
+// #downloads-button {
+//   display: flex !important;
+// }
 #downloads-button,
 #downloads-indicator-anchor {
   list-style-image: get-var("download-icon") !important;
