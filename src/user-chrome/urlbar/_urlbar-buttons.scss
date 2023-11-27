@@ -35,7 +35,7 @@
 #protections-popup,
 .popup-notification-icon,
 .permission-popup-permission-icon,
-.subviewbutton-iconic > .toolbarbutton-icon {
+.subviewbutton-iconic:not([class*="identity-color-"]) > .toolbarbutton-icon {
   fill: get-var("icon-color-secondary") !important;
 }
 

@@ -233,8 +233,10 @@ treechildren::-moz-tree-image(container) {
 }
 
 // checked icon
-menuitem[checked="true"] > .menu-iconic-left {
-  list-style-image: get-var("check-icon") !important;
+@media (-moz-platform: windows) {
+  menuitem[checked="true"] > .menu-iconic-left {
+    list-style-image: get-var("check-icon") !important;
+  }
 }
 
 // edit bookmark menu checkbox icon
@@ -274,9 +276,9 @@ menuitem[checked="true"] > .menu-iconic-left {
 }
 
 // download icon
-#downloads-button {
-  display: flex !important;
-}
+// #downloads-button {
+//   display: flex !important;
+// }
 #downloads-button,
 #downloads-indicator-anchor {
   list-style-image: get-var("download-icon") !important;
