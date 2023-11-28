@@ -1,0 +1,58 @@
+// bookmark folder style
+#PlacesToolbarItems > .bookmark-item {
+  --toolbarbutton-border-radius: 100px !important;
+  padding: var(--bookmark-block-padding) 6px !important;
+}
+
+// bookmarks bar haight
+:root,
+#PersonalToolbar {
+  --bookmarks-toolbar-overlapping-browser-heigh: max(36px, 2em) !important;
+}
+:root[BookmarksToolbarOverlapsBrowser] #PersonalToolbar {
+  height: var(--bookmarks-toolbar-overlapping-browser-heigh) !important;
+}
+
+// bookmarks item haight
+#PersonalToolbar toolbarbutton {
+  height: 28px !important;
+  max-height: 28px !important;
+
+  margin-top: 0 !important;
+  margin-bottom: 4px !important;
+
+  align-items: center !important;
+}
+
+#PersonalToolbar {
+  align-items: center !important;
+}
+
+// centered bookmark item content
+#PlacesToolbarItems > .bookmark-item {
+  display: flex !important;
+  align-items: center !important;
+
+  & > image {
+    margin-inline-end: 6px !important;
+  }
+
+  & > label {
+    margin: 0 !important;
+    margin-block: 0 !important;
+    margin-inline: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+// bookmarks bar left/right padding
+#PersonalToolbar {
+  padding-inline: 4px !important;
+}
+
+// bookmart item max width (not in folder)
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+  max-width: 12em !important; // default: 13em
+}
