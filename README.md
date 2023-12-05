@@ -1,70 +1,59 @@
 # MaterialFox UPDATED
 
-_A Material Design-inspired userChrome.css theme for Firefox_
-
 ![preview](assets/preview.png)
 
-## Navigation
+## Overview
 
-<!-- TOC -->
+MaterialFox UPDATED is a user CSS theme designed for the Firefox browser, inspired by material design.
 
-- [Installation](#installation)
-  - [Installation script (Windows)](#installation-script)
-  - [Manual installation](#manual-installation)
-- [Manual Customization](#manual-customization)
-- [Build & Development](#build--development)
+## Motivation
 
-<!-- /TOC -->
+The motivation behind creating this theme is my appreciation for material design, and the desire to bring this visually appealing style to the Firefox browser.
 
-## Installation
+## Functionality
 
-### Prerequisites
+MaterialFox UPDATED overriding the default CSS with custom styles, utilizing the CSS `!important` rule.
 
-The following properties from `about:config` must be `true`
+## Getting Started
 
-- `toolkit.legacyUserProfileCustomizations.stylesheets`
-- `svg.context-properties.content.enabled`
-- `layout.css.color-mix.enabled`
+To start using MaterialFox UPDATED, follow these steps:
+
+1. Go to the following url address `about:config`.
+2. Ensure the following properties are set to `true`:
+
+   - `toolkit.legacyUserProfileCustomizations.stylesheets`
+   - `svg.context-properties.content.enabled`
+   - `layout.css.color-mix.enabled`
+
+3. Go to the following url address `about:support`
+4. Find `Profile Folder` and click `Open Folder` button
+5. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases/latest) and extract into your Firefox profile directory
+6. Restart Firefox to apply changes
 
 ### Installation script
 
 For **Windows** you can run the following PowerShell command:
 
 ```powershell
-PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
+PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/material-fox-updated/main/install.ps1 -useb | iex"
 ```
 
-### Manual installation
+For **Windows** and Firefox version **119** or below, use the following PowerShell command:
 
-1. Go to the following url address `about:support`
-2. Find `Profile Folder` and click `Open Folder` button
-3. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases/latest) and extract into your Firefox profile directory
-4. Restart Firefox to apply changes
-
-### Screenshots
-
-<table>
-  <tr>
-    <th>Light</th>
-    <th>Dark</th>
-  </tr>
-  <tr>
-    <td><img src="assets/preview-light.png" alt="preview-light"></img></td>
-    <td><img src="assets/preview-dark.png" alt="preview-dark"></img></td>
-  </tr>
- </table>
+```powershell
+PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/material-fox-updated/firefox-old/install.ps1 -useb | iex"
+```
 
 ### Manual Customization
 
-You can use some customization options.
+MaterialFox UPDATED support some `about:config` customization options.
 
 To set preference:
 
 1. Go to `about:config`
 2. Create a custom boolean preference, just type the preference name and click the plus button, for example `userChrome.default-theme-colors`
-3. Restart Firefox to apply changes
 
-To disable, search by name and remove the preference:
+To disable preference, search by name and remove the preference:
 
 1. Go to `about:config`.
 2. Search by name and remove the preference.
@@ -110,7 +99,9 @@ To disable, search by name and remove the preference:
   </tr>
 </table>
 
-Additionally, if you want to change some colors, you can override the default values with your own.
+### Custom CSS rules
+
+MaterialFox UPDATED support custom css rules, or additionally, if you want to change some colors, you can override the default values with your own.
 
 Follow this steps:
 
@@ -230,7 +221,7 @@ Using these custom css files can separate your changes from the source project a
   }
   ```
 
-## Build & Development
+## Build & Development (for developers)
 
 ### Prerequisites
 
@@ -274,6 +265,19 @@ To subsequently start the development mode, just use the following command:
 ```bash
 npm run dev
 ```
+
+### Screenshots
+
+<table>
+  <tr>
+    <th>Light</th>
+    <th>Dark</th>
+  </tr>
+  <tr>
+    <td><img src="assets/preview-light.png" alt="preview-light"></img></td>
+    <td><img src="assets/preview-dark.png" alt="preview-dark"></img></td>
+  </tr>
+ </table>
 
 ## Credits
 
