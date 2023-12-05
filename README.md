@@ -32,7 +32,7 @@ To start using MaterialFox UPDATED, follow these steps:
 
 ### Installation script (for advanced)
 
-As an alternative to manual installation, you can use PowerShell script
+As an alternative to manual installation, you can use PowerShell script.
 
 For **Windows** you can run the following PowerShell command:
 
