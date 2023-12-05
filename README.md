@@ -31,7 +31,7 @@ The following properties from `about:config` must be `true`
 For **Windows** you can run the following PowerShell command:
 
 ```powershell
-PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
+PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/firefox-old/install.ps1 -useb | iex"
 ```
 
 ### Manual installation
