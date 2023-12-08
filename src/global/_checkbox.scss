@@ -51,7 +51,7 @@ checkbox {
 html[dir="rtl"] {
   checkbox {
     &::after {
-      left: unset !important;
+      left: unset;
       right: -15px;
     }
   }

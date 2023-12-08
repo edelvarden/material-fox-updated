@@ -308,6 +308,18 @@ treechildren::-moz-tree-image(container) {
   // fill: get-var("icon-color-secondary") !important;
 }
 
+html[dir="rtl"] {
+  #protections-popup-mainView .subviewbutton-nav:not(.notFound)::after,
+  .widget-overflow-list .subviewbutton-nav::after,
+  .PanelUI-subView .subviewbutton-nav::after {
+    transform: scaleX(-1);
+  }
+
+  .menu-right {
+    transform: scaleX(-1);
+  }
+}
+
 // context menu drop down arrow right icon
 .menu-right {
   list-style-image: get-var("arrow-right-icon") !important;
