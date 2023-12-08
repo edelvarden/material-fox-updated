@@ -308,7 +308,7 @@ treechildren::-moz-tree-image(container) {
   // fill: get-var("icon-color-secondary") !important;
 }
 
-html[dir="rtl"] {
+[dir="rtl"] {
   #protections-popup-mainView .subviewbutton-nav:not(.notFound)::after,
   .widget-overflow-list .subviewbutton-nav::after,
   .PanelUI-subView .subviewbutton-nav::after {

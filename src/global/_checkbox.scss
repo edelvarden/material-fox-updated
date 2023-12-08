@@ -48,7 +48,7 @@ checkbox {
 }
 
 // checkbox material hover effect (rtl support)
-html[dir="rtl"] {
+[dir="rtl"] {
   checkbox {
     &::after {
       left: unset;

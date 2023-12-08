@@ -44,6 +44,7 @@
       min-height: 12px !important;
       max-height: 12px !important;
     }
+
     &::before {
       border-bottom-right-radius: 12px !important;
       transform: translateX(-12px) !important;
@@ -124,6 +125,7 @@
   // disable tab background transition
   .tab-background {
     transition: none !important;
+
     &::before,
     &::after {
       transition: none !important;
@@ -160,6 +162,12 @@
     .titlebar-buttonbox-container {
       --margin-left: 48px;
       margin: 0 0 0 var(--margin-left) !important;
+    }
+
+    [dir="rtl"] {
+      .titlebar-buttonbox-container {
+        margin: 0 var(--margin-left) 0 0 !important;
+      }
     }
   }
 
@@ -209,6 +217,7 @@
         background-color: get-var("accent-color-transparent-active") !important;
       }
     }
+
     &[open="true"],
     &:hover:active {
       .toolbarbutton-badge-stack {
@@ -219,6 +228,13 @@
     .toolbarbutton-icon {
       width: 12px !important;
       height: 12px !important;
+    }
+  }
+
+  [dir="rtl"] {
+    #alltabs-button .toolbarbutton-badge-stack {
+      // make the position pixel perfect, this is the top and left margin
+      transform: translate(-6px, 6px) !important;
     }
   }
 
@@ -246,6 +262,7 @@
       padding-inline-start: 11px !important;
       transform: translateX(-11px);
     }
+
     #alltabs-button {
       z-index: 1 !important;
     }

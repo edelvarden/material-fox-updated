@@ -60,7 +60,7 @@ $menu-min-width: 220px;
   }
 
   // (RTL) string style for back/forward/reload/bookmark menu items
-  html[dir="rtl"] {
+  [dir="rtl"] {
     #context-navigation:not([hidden]) {
       .menuitem-iconic {
         &::after {
@@ -145,7 +145,7 @@ $image-padding-end: 8px;
     }
   }
 
-  html[dir="rtl"] {
+  [dir="rtl"] {
     // string style for back/forward/reload/bookmark menu items
     #context-navigation:not([hidden]) {
       .menuitem-iconic {
