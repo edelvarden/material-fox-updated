@@ -30,6 +30,7 @@
 // default position for sound icon
 [dir="ltr"] {
   .tabbrowser-tab {
+    // apply only for soundplaying not pinned tabs
     &:not([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
       // .tab-label,
       // .tab-icon-overlay {
@@ -37,19 +38,21 @@
       //   inset-inline-end: -7px !important;
       // }
 
+      // margin between favicon and text label
       .tab-icon-stack {
-        margin-right: 11px !important;
+        margin-right: 18px !important;
       }
 
+      // sound icon position
       .tab-icon-overlay {
-        transform: translateX(16px) !important;
+        transform: translateX(20px) !important;
         // inset-inline-end: -7px !important;
       }
 
-      // make more space if gradient for rtl text
+      // make more space for rtl text fade gradient
       &[labeldirection="rtl"] {
         .tab-icon-stack {
-          margin-right: 14px !important;
+          margin-right: 20px !important;
         }
       }
     }
@@ -59,24 +62,28 @@
 // rtl position for sound icon
 [dir="rtl"] {
   .tabbrowser-tab {
+    // set default margin as zero
     .tab-icon-stack {
       margin-left: 0 !important;
     }
 
+    // apply only for soundplaying not pinned tabs
     &:not([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
+      // margin between favicon and text label
       .tab-icon-stack {
-        margin-left: 11px !important;
+        margin-left: 18px !important;
       }
 
+      // sound icon position
       .tab-icon-overlay {
-        transform: translateX(-16px) !important;
+        transform: translateX(-20px) !important;
         // inset-inline-end: -7px !important;
       }
 
-      // make more space if gradient for ltr text
+      // make more space for ltr text fade gradient
       &[labeldirection="ltr"] {
         .tab-icon-stack {
-          margin-left: 14px !important;
+          margin-left: 20px !important;
         }
       }
     }

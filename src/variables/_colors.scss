@@ -69,6 +69,9 @@ $dark-mode: (
   "tab-opacity": 1,
   "tab-opacity-hover": 0.5,
 
+  "tab-icon-color": #c3c3c3,
+  "tab-label-color": #e3e3e3,
+
   // nav bar
   "icon-color-primary": get-var("grey-100"),
   "icon-color-secondary": get-var(grey-500),
@@ -109,6 +112,8 @@ $light-mode: (
   "tab-opacity": 1,
   "tab-opacity-hover": 0.5,
 
+  "tab-icon-color": get-var("grey-900"),
+  "tab-label-color": get-var("grey-900"),
   // nav bar
   "icon-color-primary": get-var(grey-700),
   "icon-color-secondary": get-var(grey-700),

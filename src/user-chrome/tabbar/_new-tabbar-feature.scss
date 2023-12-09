@@ -260,7 +260,7 @@
   @media (-moz-platform: windows) {
     .scrollbox-clip[orient="horizontal"] > scrollbox:nth-child(1) {
       padding-inline-start: 11px !important;
-      transform: translateX(-11px);
+      // transform: translateX(-11px);
     }
 
     #alltabs-button {

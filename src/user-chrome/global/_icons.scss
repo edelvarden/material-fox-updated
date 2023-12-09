@@ -248,6 +248,7 @@ treechildren::-moz-tree-image(container) {
 :is(.all-tabs-secondary-button, .tab-icon-overlay)[soundplaying],
 .tab-icon-sound {
   list-style-image: get-var("audio-icon") !important;
+  fill: get-var("tab-icon-color") !important;
 }
 
 .all-tabs-secondary-button,
@@ -255,6 +256,7 @@ treechildren::-moz-tree-image(container) {
 .tab-icon-sound {
   &[muted] {
     list-style-image: get-var("audio-muted-icon") !important;
+    fill: get-var("tab-icon-color") !important;
   }
 }
 
@@ -263,6 +265,7 @@ treechildren::-moz-tree-image(container) {
 .tab-icon-sound {
   &[activemedia-blocked] {
     list-style-image: get-var("audio-muted-icon") !important;
+    fill: get-var("tab-icon-color") !important;
   }
 }
 
