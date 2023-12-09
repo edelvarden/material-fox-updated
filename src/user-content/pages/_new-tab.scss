@@ -49,8 +49,8 @@
 
   .search-handoff-button {
     border-radius: 99px !important;
-    background-position: 12px !important;
-    padding-inline-start: 48px !important;
+    // background-position: 12px !important;
+    // padding-inline-start: 48px !important;
     white-space: nowrap !important;
     text-overflow: ellipsis !important;
     box-shadow: get-var("elevation-2") !important;
@@ -64,7 +64,7 @@
   }
 
   .search-handoff-button .fake-caret {
-    inset-inline-start: 48px !important;
+    // inset-inline-start: 48px !important;
     top: 13px !important;
   }
 
