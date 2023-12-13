@@ -257,10 +257,9 @@
   }
 
   // fix first tab left decorative corner cropping (`.tab-background::before`)
-  @media (-moz-platform: windows) {
+  @media (-moz-platform: windows) or (-moz-platform: linux) {
     .scrollbox-clip[orient="horizontal"] > scrollbox:nth-child(1) {
       padding-inline-start: 11px !important;
-      // transform: translateX(-11px);
       margin-inline-start: -11px !important;
     }
 
