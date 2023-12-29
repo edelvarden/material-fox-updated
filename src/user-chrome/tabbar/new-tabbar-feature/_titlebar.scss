@@ -1,0 +1,11 @@
+// tabs bar top margin
+#TabsToolbar-customization-target > :not(#alltabs-button) {
+  margin-top: 0px !important;
+}
+
+// tabs top margin if window not maximized
+#main-window[sizemode="normal"]
+  #TabsToolbar-customization-target
+  > :not(#alltabs-button) {
+  margin-top: 0px !important;
+}
