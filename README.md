@@ -37,13 +37,13 @@ As an alternative to manual installation, you can use PowerShell script.
 For **Windows** you can run the following PowerShell command:
 
 ```powershell
-PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/material-fox-updated/main/install.ps1 -useb | iex"
+PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
 ```
 
 For **Windows** and Firefox version **119** or below, use the following PowerShell command:
 
 ```powershell
-PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/material-fox-updated/firefox-old/install.ps1 -useb | iex"
+PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/firefox-old/install.ps1 -useb | iex"
 ```
 
 ### Manual Customization
