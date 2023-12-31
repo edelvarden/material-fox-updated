@@ -132,3 +132,10 @@
     margin-inline-start: 0px !important;
   }
 }
+
+// all tabs button transition
+#alltabs-button .toolbarbutton-badge-stack {
+  transition-property: background-color !important;
+  transition-duration: get-var("short-duration") !important;
+  transition-timing-function: get-var("fade-in-out") !important;
+}
