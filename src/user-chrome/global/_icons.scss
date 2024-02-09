@@ -169,6 +169,12 @@
   fill: get-var("accent-color") !important;
 }
 
+#tracking-protection-icon-box {
+  // increase icon size as 20px but keep button size
+  transform: scale(1.25) !important;
+  border-radius: 50% !important;
+}
+
 #star-button,
 #context-bookmarkpage {
   &[starred] {
@@ -334,4 +340,20 @@ treechildren::-moz-tree-image(title, open) {
   .menu-right {
     margin-inline-end: 0px !important;
   }
+}
+
+// nav bar account avatar icon
+#fxa-avatar-image {
+  /* icon should be 20px, but we don't want to affect button size */
+  transform: scale(1.25) !important;
+  border-radius: 50% !important;
+}
+
+:root:not([fxastatus="signedin"]) #fxa-avatar-image {
+  list-style-image: get-var("account-icon") !important;
+}
+
+:root[fxastatus="signedin"]:not([style*="--avatar-image-url"])
+  #fxa-avatar-image {
+  list-style-image: get-var("account-icon") !important;
 }
