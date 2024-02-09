@@ -8,15 +8,16 @@ input[type="radio"],
   border: none !important;
   background-color: get-var("background-color-0") !important;
 
-  outline-width: 2px !important;
-  outline-style: solid !important;
-  outline-color: get-var("menu-border-color") !important;
-  outline-offset: 0px !important;
+  // outline-width: 2px !important;
+  // outline-style: solid !important;
+  // outline-color: get-var("menu-border-color") !important;
+  // outline-offset: 0px !important;
 
   width: 16px !important;
   height: 16px !important;
 
   color: get-var("accent-color") !important;
+  border-color: get-var("accent-color") !important;
 
   background-size: 16px !important;
 
@@ -39,10 +40,10 @@ input[type="radio"]:checked,
   background-size: 16px !important;
 
   border: none !important;
-  outline-width: 2px !important;
-  outline-style: solid !important;
-  outline-offset: 0px !important;
-  outline-color: get-var("accent-color") !important;
+  // outline-width: 2px !important;
+  // outline-style: solid !important;
+  // outline-offset: 0px !important;
+  // outline-color: get-var("accent-color") !important;
 }
 
 radio {
