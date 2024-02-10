@@ -6,15 +6,31 @@ $menu-min-width: 220px;
 @media (-moz-platform: windows), (-moz-platform: linux) {
   menupopup,
   panel:not(#autoscroller) {
+    // menu container min width
     min-width: $menu-min-width !important;
+
+    // menu container border radius
+    --panel-border-radius: 12px !important;
+    border-radius: var(--panel-border-radius) !important;
+
+    // menu container inner padding
+    --panel-padding-block: 8px !important;
+    --panel-padding: var(--panel-padding-block) 0 !important;
+  }
+
+  // menu items border radius
+  menu,
+  menuitem,
+  menucaption {
+    border-radius: 0 !important;
   }
 
   // context menu background-color & drop shadow
   .menupopup-arrowscrollbox {
     background-color: var(--arrowpanel-background) !important;
-    // border: none !important;
-    border: 1px solid !important;
-    border-color: get-var("menu-border-color") !important;
+    border: none !important;
+    // border: 1px solid !important;
+    // border-color: get-var("menu-border-color") !important;
     box-shadow: get-var("elevation-2") !important;
   }
 
@@ -155,6 +171,11 @@ $image-padding-end: 8px;
         }
       }
     }
+  }
+
+  // drop menu arrow icon margin
+  .menu-right {
+    margin-inline-end: 12px !important;
   }
 }
 
