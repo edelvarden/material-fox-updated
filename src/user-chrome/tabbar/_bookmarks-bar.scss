@@ -56,3 +56,20 @@
 toolbarbutton.bookmark-item:not(.subviewbutton) {
   max-width: 12em !important; // default: 13em
 }
+
+//fix margin for bookmark item in menu
+.toolbar-menupopup :is(menu, menuitem).bookmark-item {
+  margin: 0 !important;
+}
+
+[dir="ltr"] {
+  .toolbar-menupopup :is(menu, menuitem).bookmark-item {
+    padding-left: 16px !important;
+  }
+}
+
+[dir="rtl"] {
+  .toolbar-menupopup :is(menu, menuitem).bookmark-item {
+    padding-right: 16px !important;
+  }
+}
