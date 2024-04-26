@@ -116,3 +116,10 @@
     margin-inline-end: 40px !important;
   }
 }
+
+// restore close button visibility for not selected tabs
+.tabbrowser-tab:not([pinned]) {
+  .tab-close-button {
+    display: flex !important;
+  }
+}
