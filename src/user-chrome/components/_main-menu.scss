@@ -198,3 +198,8 @@
   width: 16px;
   height: 16px;
 }
+
+// exit icon
+#appMenu-quit-button2 {
+  list-style-image: get-var("exit-icon") !important;
+}
