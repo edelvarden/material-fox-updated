@@ -16,6 +16,7 @@
   border-radius: 6px !important;
 }
 
+#appMenu-zoom-controls > .toolbarbutton-text,
 .widget-overflow-list
   .toolbarbutton-1:not(.toolbarbutton-combined)
   > .toolbarbutton-text,
@@ -26,7 +27,6 @@
 }
 
 // padding for items without icons
-#appMenu-zoom-controls > .toolbarbutton-text,
 #fxa-manage-account-button > vbox,
 #PanelUI-fxa-menu-syncnow-button > hbox {
   padding-inline-start: calc(
@@ -177,4 +177,24 @@
 // help icon
 #appMenu-help-button2 {
   list-style-image: get-var("help-icon") !important;
+}
+
+// zoom icon
+#appMenu-zoom-controls2::before,
+#appMenu-zoom-controls::before {
+  content: get-var("zoom-in-icon") !important;
+}
+
+#appMenu-zoom-controls2::before,
+#appMenu-zoom-controls::before {
+  margin-inline-end: 0 !important;
+  -moz-context-properties: fill, fill-opacity, stroke !important;
+}
+
+#appMenu-multiView .subviewbutton::before,
+#appMenu-proton-update-banner::before {
+  display: inline-flex;
+  display: -moz-inline-box;
+  width: 16px;
+  height: 16px;
 }
