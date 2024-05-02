@@ -1,0 +1,180 @@
+// menu icons
+
+:root {
+  --mf-menuicon-margin-inline: 14px;
+}
+
+#widget-overflow-mainView .panel-subview-body {
+  padding-bottom: 0 !important;
+}
+
+.addon-banner-item,
+.panel-banner-item {
+  margin: 2px 4px 2px !important;
+  padding-inline: 4px 12px !important;
+  padding-block: 6px !important;
+  border-radius: 6px !important;
+}
+
+.widget-overflow-list
+  .toolbarbutton-1:not(.toolbarbutton-combined)
+  > .toolbarbutton-text,
+.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton)
+  > .toolbarbutton-icon
+  + .toolbarbutton-text {
+  padding-inline-start: var(--mf-menuicon-margin-inline) !important;
+}
+
+// padding for items without icons
+#appMenu-zoom-controls > .toolbarbutton-text,
+#fxa-manage-account-button > vbox,
+#PanelUI-fxa-menu-syncnow-button > hbox {
+  padding-inline-start: calc(
+    16px + var(--mf-menuicon-margin-inline)
+  ) !important;
+}
+
+.subviewbutton > .toolbarbutton-icon {
+  width: 16px !important;
+}
+
+// fill menu icons
+.panel-subview-body > .subviewbutton {
+  -moz-context-properties: fill !important;
+}
+.panel-subview-body > .subviewbutton:not([disabled]) {
+  -moz-context-properties: fill !important;
+  fill: get-var("icon-color-primary") !important;
+}
+.panel-subview-body > .subviewbutton[disabled] {
+  fill: get-var("icon-color-secondary") !important;
+  color: get-var("text-secondary") !important;
+  opacity: 0.6 !important;
+}
+
+// ------------------
+// set icons
+// ------------------
+
+// new tab icon
+#appMenu-new-tab-button2 {
+  list-style-image: get-var("new-tab-icon") !important;
+}
+
+// new window icon
+#new-window-button,
+#appMenu-new-window-button2 {
+  list-style-image: get-var("new-window-icon") !important;
+}
+
+// incognito icon
+#appMenu-new-private-window-button2 {
+  list-style-image: get-var("incognito-icon") !important;
+}
+
+// bookmarks icon
+#bookmarks-menu-button,
+#appMenu-bookmarks-button,
+#sidebar-switcher-bookmarks,
+#appMenu-library-bookmarks-button,
+#sidebar-box[sidebarcommand="viewBookmarksSidebar"]
+  > #sidebar-header
+  > #sidebar-switcher-target
+  > #sidebar-icon {
+  list-style-image: get-var("star-icon") !important;
+
+  // make star icon without fill
+  -moz-context-properties: fill, fill-opacity !important;
+  fill-opacity: 0 !important;
+}
+
+// history icon
+#history-panelmenu,
+.urlbarView-row[source="history"]
+  > .urlbarView-row-inner
+  > .urlbarView-no-wrap
+  > .urlbarView-favicon,
+#urlbar-engine-one-off-item-history,
+#appMenu-history-button,
+#appMenu-library-history-button,
+#sidebar-switcher-history,
+#sidebar-box[sidebarcommand="viewHistorySidebar"]
+  > #sidebar-header
+  > #sidebar-switcher-target
+  > #sidebar-icon {
+  list-style-image: get-var("history-icon") !important;
+}
+
+// download icon
+#appMenu-downloads-button,
+#appMenu-library-downloads-button {
+  list-style-image: get-var("download-icon") !important;
+}
+
+// password icon
+#appMenu-passwords-button,
+#password-notification-icon,
+#PopupAutoComplete
+  > richlistbox
+  > richlistitem[originaltype="generatedPassword"]
+  > .two-line-wrapper
+  > .ac-site-icon,
+#PopupAutoComplete
+  > richlistbox
+  > richlistitem[originaltype="loginWithOrigin"]
+  > .two-line-wrapper
+  > .ac-site-icon,
+#PopupAutoComplete
+  > richlistbox
+  > richlistitem[originaltype="login"]
+  > .ac-site-icon {
+  list-style-image: get-var("key-icon") !important;
+}
+
+// extension icon
+#add-ons-button,
+#appMenu-extensions-themes-button {
+  list-style-image: get-var("extension-icon") !important;
+}
+
+// print icon
+#print-button,
+#appMenu-print-button2 {
+  list-style-image: get-var("print-icon") !important;
+}
+
+// save page as
+#save-page-button,
+#appMenu-save-file-button2 {
+  list-style-image: get-var("file-save-icon") !important;
+}
+
+// find in page
+#find-button,
+#appMenu-find-button2 {
+  list-style-image: get-var("find-icon") !important;
+}
+
+// translate page
+#appMenu-translate-button,
+#translations-button-icon {
+  list-style-image: get-var("translate-icon") !important;
+}
+
+// settings icon
+#preferences-button,
+.search-setting-button > .button-box > .button-icon,
+#appMenu-settings-button,
+.unified-extensions-item-open-menu.subviewbutton {
+  list-style-image: get-var("settings-icon") !important;
+}
+
+// more tools icon
+#appMenu-more-button2 {
+  list-style-image: get-var("tools-icon") !important;
+}
+
+// help icon
+#appMenu-help-button2 {
+  list-style-image: get-var("help-icon") !important;
+}
