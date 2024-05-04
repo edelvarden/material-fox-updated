@@ -7,6 +7,11 @@
   }
 }
 
+.bookmark-item {
+  list-style-image: get-var("no-src-icon") !important;
+  fill: get-var("grey-600") !important;
+}
+
 .unified-nav-forward,
 .unified-nav-back {
   &:not([_moz-menuactive])[uri*="about:"] {

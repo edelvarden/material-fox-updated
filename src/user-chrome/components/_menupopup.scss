@@ -125,10 +125,9 @@ dialog,
 // --------
 
 // context menu padding inline start
-#pageActionContextMenu,
-#placesContext {
-  & > menuitem,
-  & > menu {
+menupopup {
+  menuitem:not(.menuitem-iconic),
+  menu:not(.menu-iconic) {
     padding-inline-start: 36px !important;
   }
 }
