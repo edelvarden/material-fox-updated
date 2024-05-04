@@ -124,7 +124,11 @@ dialog,
 // }
 // --------
 
-// extension context menu padding inline start
-#pageActionContextMenu > menuitem {
-  padding-inline-start: 36px !important;
+// context menu padding inline start
+#pageActionContextMenu,
+#placesContext {
+  & > menuitem,
+  & > menu {
+    padding-inline-start: 36px !important;
+  }
 }
