@@ -43,7 +43,6 @@
   -moz-context-properties: fill !important;
 }
 .panel-subview-body > .subviewbutton:not([disabled]) {
-  -moz-context-properties: fill !important;
   fill: get-var("icon-color-primary") !important;
 }
 .panel-subview-body > .subviewbutton[disabled] {
@@ -202,4 +201,26 @@
 // exit icon
 #appMenu-quit-button2 {
   list-style-image: get-var("exit-icon") !important;
+}
+
+// multiaccount container icon
+#allTabsMenu-containerTabsButton {
+  list-style-image: get-var("multiaccountcontainer-icon") !important;
+}
+
+// search icon
+#urlbar:not(.searchButton)
+  > #urlbar-input-container
+  > #identity-box[pageproxystate="invalid"]
+  #identity-icon,
+#allTabsMenu-searchTabs {
+  list-style-image: get-var("search-icon") !important;
+}
+
+// fix fill color
+#allTabsMenu-containerTabsButton,
+#allTabsMenu-searchTabs {
+  & > .toolbarbutton-icon {
+    fill: get-var("icon-color-primary") !important;
+  }
 }
