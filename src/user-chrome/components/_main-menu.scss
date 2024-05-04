@@ -56,13 +56,15 @@
 // ------------------
 
 // new tab icon
-#appMenu-new-tab-button2 {
+#appMenu-new-tab-button2,
+#appMenuRecentlyClosedTabs {
   list-style-image: get-var("new-tab-icon") !important;
 }
 
 // new window icon
 #new-window-button,
-#appMenu-new-window-button2 {
+#appMenu-new-window-button2,
+#appMenuRecentlyClosedWindows {
   list-style-image: get-var("new-window-icon") !important;
 }
 
@@ -72,6 +74,7 @@
 }
 
 // bookmarks icon
+#panelMenuBookmarkThisPage,
 #bookmarks-menu-button,
 #appMenu-bookmarks-button,
 #sidebar-switcher-bookmarks,
@@ -209,6 +212,8 @@
 }
 
 // search icon
+#panelMenu_searchBookmarks,
+#appMenuSearchHistory,
 #urlbar:not(.searchButton)
   > #urlbar-input-container
   > #identity-box[pageproxystate="invalid"]
@@ -217,10 +222,137 @@
   list-style-image: get-var("search-icon") !important;
 }
 
+// Manage containers icon
+.subviewbutton[data-l10n-id="user-context-manage-containers"] {
+  list-style-image: get-var("settings-icon") !important;
+}
+
+// Show bookmarks toolbar icon
+#panelMenu_viewBookmarksToolbar {
+  list-style-image: get-var("toolbar-icon") !important;
+}
+
+// Manage bookmarks icon
+#panelMenu_showAllBookmarks,
+#PanelUI-historyMore {
+  list-style-image: get-var("bookmark-manager-icon") !important;
+}
+
+// Clear recent history… icon
+#appMenuClearRecentHistory {
+  list-style-image: get-var("trash-icon") !important;
+}
+
+// Customize toolbar… icon
+#appmenu-moreTools-button {
+  list-style-image: get-var("edit-icon") !important;
+}
+
+#appmenu-developer-tools-view,
+#PanelUI-developer-tools-view {
+  // Web Developer Tools icon
+  .subviewbutton[key="key_toggleToolbox"] {
+    list-style-image: get-var("dev-icon") !important;
+  }
+
+  // Task Manager icon
+  .subviewbutton[key="key_aboutProcesses"] {
+    list-style-image: get-var("task-manager-icon") !important;
+  }
+
+  // Remote Debugging icon
+  .subviewbutton[label="Remote Debugging"] {
+    list-style-image: get-var("remote-icon") !important;
+  }
+
+  // Browser Toolbox icon
+  .subviewbutton[key="key_browserToolbox"] {
+    list-style-image: get-var("tools-icon") !important;
+  }
+
+  // Browser Console icon
+  .subviewbutton[key="key_browserConsole"] {
+    list-style-image: get-var("toolbar-icon") !important;
+  }
+
+  // Responsive Design Mode icon
+  .subviewbutton[key="key_responsiveDesignMode"] {
+    list-style-image: get-var("devices-icon") !important;
+  }
+
+  // Eyedropper icon
+  .subviewbutton[label="Eyedropper"] {
+    list-style-image: get-var("eyedropper-icon") !important;
+  }
+
+  // Page Source icon
+  .subviewbutton[key="key_viewSource"] {
+    list-style-image: get-var("code-icon") !important;
+  }
+
+  // Extensions for developers icon
+  .subviewbutton[data-l10n-id="appmenu-developer-tools-extensions"] {
+    list-style-image: get-var("extension-icon") !important;
+  }
+}
+
+// Get help icon
+#appMenu_menu_openHelp {
+  list-style-image: get-var("help-icon") !important;
+}
+
+// Share ideas and feedback… icon
+#appMenu_feedbackPage {
+  list-style-image: get-var("feedback-icon") !important;
+}
+
+// More troubleshooting information
+#appMenu_helpSafeMode {
+  list-style-image: get-var("dev-icon") !important;
+}
+
+// More troubleshooting information icon
+#appMenu_troubleShooting {
+  list-style-image: get-var("info-icon") !important;
+}
+
+// Report icon
+#appMenu_help_reportSiteIssue,
+#appMenu_menu_HelpPopup_reportPhishingtoolmenu {
+  list-style-image: get-var("report-icon") !important;
+}
+
+// Switching to a new device icon
+#appMenu_helpSwitchDevice {
+  list-style-image: get-var("devices-icon") !important;
+}
+
+// About icon
+#appMenu_aboutName {
+  list-style-image: get-var("info-icon") !important;
+}
+
+// Manage extensions icon
+#unified-extensions-manage-extensions {
+  list-style-image: get-var("settings-icon") !important;
+}
+
+// extensions menu icon
+.unified-extensions-item-menu-button {
+  list-style-image: get-var("menu-icon") !important;
+}
+
 // fix fill color
 #allTabsMenu-containerTabsButton,
-#allTabsMenu-searchTabs {
+#allTabsMenu-searchTabs,
+#panelMenu_showAllBookmarks,
+#PanelUI-historyMore,
+#appmenu-developer-tools-view > .subviewbutton,
+#unified-extensions-manage-extensions {
+  -moz-context-properties: fill !important;
+
   & > .toolbarbutton-icon {
+    -moz-context-properties: fill !important;
     fill: get-var("icon-color-primary") !important;
   }
 }
