@@ -117,3 +117,8 @@
   border-bottom-right-radius: 16px !important;
   overflow: hidden !important;
 }
+
+// fix urlbar search tag height
+#urlbar-search-mode-indicator {
+  height: 100% !important;
+}
