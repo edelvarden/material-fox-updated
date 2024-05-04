@@ -348,7 +348,9 @@
 #panelMenu_showAllBookmarks,
 #PanelUI-historyMore,
 #appmenu-developer-tools-view > .subviewbutton,
-#unified-extensions-manage-extensions {
+#unified-extensions-manage-extensions,
+#identity-popup-more-info,
+#identity-popup-clear-sitedata-button {
   -moz-context-properties: fill !important;
 
   & > .toolbarbutton-icon {

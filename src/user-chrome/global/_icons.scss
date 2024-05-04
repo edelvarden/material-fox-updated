@@ -357,3 +357,13 @@ treechildren::-moz-tree-image(title, open) {
   #fxa-avatar-image {
   list-style-image: get-var("account-icon") !important;
 }
+
+// More information icon
+#identity-popup-more-info {
+  list-style-image: get-var("info-icon") !important;
+}
+
+// Clear cookies and site data… icon
+#identity-popup-clear-sitedata-button {
+  list-style-image: get-var("trash-icon") !important;
+}

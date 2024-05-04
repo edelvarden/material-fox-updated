@@ -104,3 +104,27 @@ dialog,
     border-width: 2px !important;
   }
 }
+
+// --------
+// Context menu icons
+// Customize Toolbar… icon
+// menuitem.viewCustomizeToolbar {
+//   background-image: get-var("edit-icon") !important;
+//   background-size: 16px !important;
+//   background-repeat: no-repeat !important;
+//   background-position: left 1em center !important;
+//   -moz-context-properties: fill !important;
+//   fill: get-var("icon-color-primary") !important;
+// }
+
+// [dir="rtl"] {
+//   menuitem.viewCustomizeToolbar {
+//       background-position: right 1em center !important;
+//   }
+// }
+// --------
+
+// extension context menu padding inline start
+#pageActionContextMenu > menuitem {
+  padding-inline-start: 36px !important;
+}
