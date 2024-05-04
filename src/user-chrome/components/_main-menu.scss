@@ -342,6 +342,16 @@
   list-style-image: get-var("menu-icon") !important;
 }
 
+// Reopen all tabs icon
+#appMenu-library-recentlyClosedTabs > .restoreallitem {
+  list-style-image: get-var("open-in-icon") !important;
+}
+
+// Reopen all windows
+#appMenu-library-recentlyClosedWindows > .restoreallitem {
+  list-style-image: get-var("open-in-icon") !important;
+}
+
 // fix fill color
 #allTabsMenu-containerTabsButton,
 #allTabsMenu-searchTabs,
@@ -350,7 +360,9 @@
 #appmenu-developer-tools-view > .subviewbutton,
 #unified-extensions-manage-extensions,
 #identity-popup-more-info,
-#identity-popup-clear-sitedata-button {
+#identity-popup-clear-sitedata-button,
+#appMenu-library-recentlyClosedWindows > .restoreallitem,
+#appMenu-library-recentlyClosedTabs > .restoreallitem {
   -moz-context-properties: fill !important;
 
   & > .toolbarbutton-icon {
