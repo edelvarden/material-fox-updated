@@ -27,7 +27,7 @@ To start using MaterialFox UPDATED, follow these steps:
 
 3. Go to the following url address `about:support`
 4. Find `Profile Folder` and click `Open Folder` button
-5. Download `chrome.zip` from project [releases](https://github.com/edelvarden/material-fox-updated/releases/latest) and extract into your Firefox profile directory
+5. Download `chrome.zip` from the latest project releases -> [here](https://github.com/edelvarden/material-fox-updated/releases/latest) (or for Firefox **119** or below -> [here](https://github.com/edelvarden/material-fox-updated/releases/tag/v1.0.7)) and extract into your Firefox profile directory
 6. Restart Firefox to apply changes
 
 ### Installation script (for advanced)
@@ -38,12 +38,6 @@ For **Windows** you can run the following PowerShell command:
 
 ```powershell
 PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
-```
-
-For **Windows** and Firefox version **119** or below, use the following PowerShell command:
-
-```powershell
-PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/firefox-old/install.ps1 -useb | iex"
 ```
 
 ### Manual Customization
