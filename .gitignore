@@ -29,3 +29,5 @@ package-lock.json
 pnpm-lock.yaml
 *.zip
 custom.css
+user-chrome.css
+user-content.css
