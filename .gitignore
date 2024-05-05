@@ -30,3 +30,5 @@ pnpm-lock.yaml
 *.zip
 custom-chrome.css
 custom-content.css
+user-chrome.css
+user-content.css
