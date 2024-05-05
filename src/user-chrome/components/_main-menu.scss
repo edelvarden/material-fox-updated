@@ -352,6 +352,11 @@
   list-style-image: get-var("open-in-icon") !important;
 }
 
+// Restore previous session
+#appMenu-restoreSession {
+  list-style-image: get-var("open-in-icon") !important;
+}
+
 // fix fill color
 #allTabsMenu-containerTabsButton,
 #allTabsMenu-searchTabs,
