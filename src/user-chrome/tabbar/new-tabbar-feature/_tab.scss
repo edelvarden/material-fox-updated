@@ -1,0 +1,134 @@
+html,
+body {
+  --tab-min-height: 40px !important;
+  --tab-vertical-padding: 6px;
+  --tab-horizontal-padding: 3px;
+}
+
+.tabbrowser-tab,
+.tabbrowser-tab[pinned] {
+  .tab-stack {
+    min-height: var(--tab-min-height) !important;
+    max-height: var(--tab-min-height) !important;
+  }
+}
+
+.tab-background {
+  margin-top: var(--tab-vertical-padding) !important;
+  min-height: calc(
+    var(--tab-min-height) - var(--tab-vertical-padding)
+  ) !important;
+  max-height: calc(
+    var(--tab-min-height) - var(--tab-vertical-padding)
+  ) !important;
+}
+
+.tab-background {
+  &::before,
+  &::after {
+    min-width: 12px !important;
+    max-width: 12px !important;
+    min-height: 12px !important;
+    max-height: 12px !important;
+  }
+
+  &::before {
+    border-bottom-right-radius: 12px !important;
+    transform: translateX(-12px) !important;
+    box-shadow: none !important;
+  }
+
+  &::after {
+    border-bottom-left-radius: 12px !important;
+    transform: translateX(12px) !important;
+    box-shadow: none !important;
+  }
+}
+
+.tabbrowser-tab[pinned] {
+  max-width: calc(40px + var(--tab-horizontal-padding)) !important;
+  min-width: calc(40px + var(--tab-horizontal-padding)) !important;
+
+  .tab-content {
+    place-content: center !important;
+    place-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+.tab-background {
+  border-radius: 11px !important;
+
+  margin-top: var(--tab-vertical-padding) !important;
+  margin-bottom: 0px !important;
+  margin-left: var(--tab-horizontal-padding) !important;
+  margin-right: var(--tab-horizontal-padding) !important;
+
+  min-height: 28px !important;
+  max-height: 28px !important;
+}
+
+// hover bg opacity for not selected tab
+.tabbrowser-tab:not([selected="true"]):hover,
+.tabbrowser-tab[multiselected]:not([selected="true"]) {
+  --tab-background-color: #{get-var("accent-color-transparent-active")} !important;
+
+  .tab-background {
+    margin-top: var(--tab-vertical-padding) !important;
+    margin-bottom: var(--tab-vertical-padding) !important;
+    margin-left: var(--tab-horizontal-padding) !important;
+    margin-right: var(--tab-horizontal-padding) !important;
+
+    min-height: 28px !important;
+    max-height: 28px !important;
+
+    &::before,
+    &::after {
+      box-shadow: none !important;
+    }
+  }
+}
+
+// hover bg opacity for not selected tab
+.tabbrowser-tab:not([selected="true"]):hover,
+.tabbrowser-tab[multiselected]:not([selected="true"]) {
+  --tab-opacity: 1 !important;
+}
+
+// bg color and opacity for selected tab
+.tabbrowser-tab:is([visuallyselected], [selected]) {
+  --tab-opacity: 1 !important;
+}
+
+// tab transition
+.tab-background {
+  transition-property: opacity, background-color !important;
+  transition-duration: get-var("medium-short-duration") !important;
+  transition-timing-function: get-var("fast-invoke") !important;
+}
+
+.tabbrowser-tab:is([visuallyselected], [selected]) .tab-background {
+  transition: none !important;
+
+  &::before,
+  &::after {
+    transition: none !important;
+  }
+}
+
+// selected tab style
+.tabbrowser-tab:is([visuallyselected], [selected]) .tab-background {
+  min-height: 34px !important;
+  max-height: 34px !important;
+
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+
+  &::before {
+    box-shadow: 4px 4px 0 4px var(--tab-background-color) !important;
+  }
+
+  &::after {
+    box-shadow: -4px 4px 0 4px var(--tab-background-color) !important;
+  }
+}

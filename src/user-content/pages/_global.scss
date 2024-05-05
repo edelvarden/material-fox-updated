@@ -1,0 +1,16 @@
+// rules for about:addons and about:preferences pages
+
+// right navigation panel bolder category names
+.category-name,
+.sidebar-footer-label {
+  font-weight: 500 !important;
+}
+
+// replace extension icon
+.addons-icon {
+  list-style-image: get-var("extension-icon") !important;
+}
+
+.category[name="extension"] {
+  background-image: get-var("extension-icon") !important;
+}

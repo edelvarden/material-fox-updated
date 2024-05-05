@@ -1,0 +1,141 @@
+@media (-moz-platform: windows), (-moz-platform: linux) {
+  // move all tabs button to the left
+  #TabsToolbar-customization-target {
+    display: flex !important;
+  }
+
+  #alltabs-button {
+    order: 0 !important;
+  }
+
+  #tabbrowser-tabs {
+    order: 98 !important;
+  }
+
+  #new-tab-button {
+    order: 99 !important;
+  }
+
+  #tabbrowser-arrowscrollbox .tabbrowser-tab:is(:first-child) {
+    margin-left: 0px !important;
+  }
+
+  // restore drag area
+  #alltabs-button {
+    margin: 0 !important;
+  }
+
+  .titlebar-buttonbox-container {
+    --margin-left: 48px;
+    margin: 0 0 0 var(--margin-left) !important;
+  }
+
+  [dir="rtl"] {
+    .titlebar-buttonbox-container {
+      margin: 0 var(--margin-left) 0 0 !important;
+    }
+  }
+}
+
+// all tabs button redesign
+#alltabs-button {
+  // 40px - 3px horizontal margin = 37px
+  min-width: 37px !important;
+  max-width: 37px !important;
+  min-height: 37px !important;
+  max-height: 37px !important;
+
+  // move to the top left corner
+  justify-content: start !important;
+  align-items: start !important;
+
+  .toolbarbutton-badge-stack {
+    // make the position pixel perfect, this is the top and left margin
+    transform: translate(6px, 6px) !important;
+
+    min-width: 28px !important;
+    max-width: 28px !important;
+    min-height: 28px !important;
+    max-height: 28px !important;
+
+    display: grid !important;
+    align-content: center !important;
+    place-content: center !important;
+    place-items: center !important;
+    justify-content: center !important;
+
+    overflow: hidden !important;
+    border-radius: 11px !important;
+
+    background-color: get-var("background-color-100") !important;
+
+    @media (prefers-color-scheme: light) {
+      background-color: cm(
+        get-var("background-color-100"),
+        get-var("accent-color"),
+        0.1333
+      ) !important;
+    }
+  }
+
+  &:hover {
+    .toolbarbutton-badge-stack {
+      background-color: get-var("accent-color-transparent-active") !important;
+    }
+  }
+
+  &[open="true"],
+  &:hover:active {
+    .toolbarbutton-badge-stack {
+      background-color: get-var("accent-color-hover") !important;
+    }
+  }
+
+  .toolbarbutton-icon {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
+
+[dir="rtl"] {
+  #alltabs-button .toolbarbutton-badge-stack {
+    // make the position pixel perfect, this is the top and left margin
+    transform: translate(-6px, 6px) !important;
+  }
+}
+
+// window-inactive title bar bg color
+:root:-moz-window-inactive #navigator-toolbox {
+  #alltabs-button .toolbarbutton-badge-stack {
+    background-color: get-var("background-color-100") !important;
+  }
+}
+
+@media (-moz-platform: macos) {
+  #alltabs-button {
+    margin-right: 6px !important;
+  }
+}
+
+// fix first tab left decorative corner cropping (`.tab-background::before`)
+@media (-moz-platform: windows) or (-moz-platform: linux) {
+  .scrollbox-clip[orient="horizontal"] > scrollbox:nth-child(1) {
+    padding-inline-start: 11px !important;
+    margin-inline-start: -11px !important;
+  }
+
+  #alltabs-button {
+    z-index: 1 !important;
+  }
+
+  #tabs-newtab-button {
+    margin-inline-start: 0px !important;
+  }
+}
+
+// all tabs button transition
+#alltabs-button .toolbarbutton-badge-stack {
+  transition-property: background-color !important;
+  transition-duration: get-var("short-duration") !important;
+  transition-timing-function: get-var("fade-in-out") !important;
+}

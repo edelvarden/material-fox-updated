@@ -18,6 +18,9 @@
 
   // reader view page
   @import "user-content/pages/reader-view";
+
+  // any about:* page
+  @import "user-content/pages/global";
 }
 
 // dev tools panel

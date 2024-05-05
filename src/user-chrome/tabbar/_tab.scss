@@ -34,14 +34,21 @@ body {
   margin-left: 8px !important;
 }
 
+[dir="rtl"] {
+  .tab-label {
+    margin-left: unset !important;
+    margin-right: 8px !important;
+  }
+}
+
 // selected and not selected tab text color
 .tabbrowser-tab {
   &:is([visuallyselected], [selected]) {
-    color: get-var("text-primary") !important;
+    color: get-var("tab-label-color") !important;
   }
 
   &:not(:is([visuallyselected], [selected])) {
-    color: get-var("text-primary") !important;
+    color: get-var("tab-label-color") !important;
   }
 }
 

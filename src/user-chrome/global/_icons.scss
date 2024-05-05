@@ -38,7 +38,7 @@
 
 #tabs-newtab-button,
 #new-tab-button {
-  list-style-image: get-var("new-tab-icon") !important;
+  list-style-image: get-var("plus-icon") !important;
 }
 
 // arrow back
@@ -169,6 +169,12 @@
   fill: get-var("accent-color") !important;
 }
 
+#tracking-protection-icon-box {
+  // increase icon size as 20px but keep button size
+  transform: scale(1.25) !important;
+  border-radius: 50% !important;
+}
+
 #star-button,
 #context-bookmarkpage {
   &[starred] {
@@ -223,7 +229,8 @@
 
 // custom bookmarks folder icon
 .bookmark-item[container],
-treechildren::-moz-tree-image(container) {
+treechildren::-moz-tree-image(title, container),
+treechildren::-moz-tree-image(title, open) {
   list-style-image: get-var("folder-icon") !important;
 }
 
@@ -248,6 +255,7 @@ treechildren::-moz-tree-image(container) {
 :is(.all-tabs-secondary-button, .tab-icon-overlay)[soundplaying],
 .tab-icon-sound {
   list-style-image: get-var("audio-icon") !important;
+  fill: get-var("tab-icon-color") !important;
 }
 
 .all-tabs-secondary-button,
@@ -255,6 +263,7 @@ treechildren::-moz-tree-image(container) {
 .tab-icon-sound {
   &[muted] {
     list-style-image: get-var("audio-muted-icon") !important;
+    fill: get-var("tab-icon-color") !important;
   }
 }
 
@@ -263,6 +272,7 @@ treechildren::-moz-tree-image(container) {
 .tab-icon-sound {
   &[activemedia-blocked] {
     list-style-image: get-var("audio-muted-icon") !important;
+    fill: get-var("tab-icon-color") !important;
   }
 }
 
@@ -308,6 +318,18 @@ treechildren::-moz-tree-image(container) {
   // fill: get-var("icon-color-secondary") !important;
 }
 
+[dir="rtl"] {
+  #protections-popup-mainView .subviewbutton-nav:not(.notFound)::after,
+  .widget-overflow-list .subviewbutton-nav::after,
+  .PanelUI-subView .subviewbutton-nav::after {
+    transform: scaleX(-1);
+  }
+
+  .menu-right {
+    transform: scaleX(-1);
+  }
+}
+
 // context menu drop down arrow right icon
 .menu-right {
   list-style-image: get-var("arrow-right-icon") !important;
@@ -318,4 +340,30 @@ treechildren::-moz-tree-image(container) {
   .menu-right {
     margin-inline-end: 0px !important;
   }
+}
+
+// nav bar account avatar icon
+#fxa-avatar-image {
+  /* icon should be 20px, but we don't want to affect button size */
+  transform: scale(1.25) !important;
+  border-radius: 50% !important;
+}
+
+:root:not([fxastatus="signedin"]) #fxa-avatar-image {
+  list-style-image: get-var("account-icon") !important;
+}
+
+:root[fxastatus="signedin"]:not([style*="--avatar-image-url"])
+  #fxa-avatar-image {
+  list-style-image: get-var("account-icon") !important;
+}
+
+// More information icon
+#identity-popup-more-info {
+  list-style-image: get-var("info-icon") !important;
+}
+
+// Clear cookies and site data… icon
+#identity-popup-clear-sitedata-button {
+  list-style-image: get-var("trash-icon") !important;
 }

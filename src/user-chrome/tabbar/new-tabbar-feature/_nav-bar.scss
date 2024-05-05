@@ -1,0 +1,82 @@
+// nav bar top right and top left rounded corners
+#nav-bar {
+  border-radius: 7px 7px 0 0 !important;
+}
+
+// ----------------------------------------------------------------
+// * (Temporary disabled) New Nav Bar style
+
+// #nav-bar {
+//   min-height: 46px !important;
+//   max-height: 46px !important;
+// }
+
+// html,
+// body {
+
+// --toolbarbutton-inner-padding: 9px !important; // Button Inner Padding
+
+// --toolbarbutton-outer-padding: 1px !important; // gap between nav buttons
+// --toolbar-start-end-padding: 5px !important; // first button left and last button right padding
+
+// }
+
+// #nav-bar  {
+//   display: flex !important;
+//   align-items: center !important;
+
+//   .toolbarbutton-1 {
+//   min-height: 34px !important;
+//   max-height: 34px !important;
+//   min-width: 34px !important;
+
+//   place-content: center !important;
+//   place-items: center !important;
+//   align-items: center !important;
+//   justify-content: center !important;
+
+//   &>stack, &>image {
+//     min-height: 34px !important;
+//     max-height: 34px !important;
+//     min-width: 34px !important;
+
+//     place-content: center !important;
+//     place-items: center !important;
+//     align-items: center !important;
+//     justify-content: center !important;
+//   }
+//   }
+
+//   :is(.toolbarbutton-1, #home-button, #reload-button, #stop-button)  > :is(stack, image){
+//     padding: 9px !important;
+//   }
+
+//   #home-button {
+//     .toolbarbutton-icon{
+//       padding: 9px !important;
+//     }
+//   }
+
+//   #reload-button, #stop-button {
+//     .toolbarbutton-icon{
+//       padding: 7px !important;
+//     }
+//   }
+
+//   #unified-extensions-button{
+//     .toolbarbutton-icon{
+//       padding: 7px !important;
+//     }
+//   }
+
+//   #developer-button {
+//     .toolbarbutton-icon{
+//       padding: 7px !important;
+//     }
+//   }
+
+//   #PanelUI-button {
+//     display: flex !important;
+//     align-items: center !important;
+//   }
+// }

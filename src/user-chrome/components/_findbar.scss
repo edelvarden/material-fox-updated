@@ -114,3 +114,9 @@
     padding: 6px !important;
   }
 }
+
+// fix findbar margin for checkboxes
+.findbar-container > checkbox,
+.findbar-label {
+  margin: 0 8px !important;
+}

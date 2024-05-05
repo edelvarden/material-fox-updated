@@ -47,10 +47,21 @@ checkbox {
   }
 }
 
+// checkbox material hover effect (rtl support)
+[dir="rtl"] {
+  checkbox {
+    &::after {
+      left: unset;
+      right: -15px;
+    }
+  }
+}
+
 @keyframes control-hover {
   0% {
     transform: scale(0.8) translateY(-50%);
   }
+
   100% {
     transform: scale(1) translateY(-50%);
   }

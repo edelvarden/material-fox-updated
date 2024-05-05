@@ -49,3 +49,16 @@
     opacity: 1;
   }
 }
+
+// fix visibility priority for tab tooltip (make it over nav bar and bookmarks bar)
+#titlebar {
+  z-index: 3 !important;
+}
+
+#nav-bar {
+  z-index: 2 !important;
+}
+
+#PersonalToolbar {
+  z-index: 1 !important;
+}

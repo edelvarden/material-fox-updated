@@ -21,14 +21,71 @@
   }
 
   &:not([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
-    .tab-label,
-    .tab-icon-overlay {
-      transform: translateX(9px) !important;
-      inset-inline-end: -9px !important;
-    }
-
     .tab-label-container {
       z-index: -2 !important;
+    }
+  }
+}
+
+// default position for sound icon
+[dir="ltr"] {
+  .tabbrowser-tab {
+    // apply only for soundplaying not pinned tabs
+    &:not([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
+      // .tab-label,
+      // .tab-icon-overlay {
+      //   margin-right: 9px !important;
+      //   inset-inline-end: -7px !important;
+      // }
+
+      // margin between favicon and text label
+      .tab-icon-stack {
+        margin-right: 18px !important;
+      }
+
+      // sound icon position
+      .tab-icon-overlay {
+        transform: translateX(20px) !important;
+        // inset-inline-end: -7px !important;
+      }
+
+      // make more space for rtl text fade gradient
+      &[labeldirection="rtl"] {
+        .tab-icon-stack {
+          margin-right: 20px !important;
+        }
+      }
+    }
+  }
+}
+
+// rtl position for sound icon
+[dir="rtl"] {
+  .tabbrowser-tab {
+    // set default margin as zero
+    .tab-icon-stack {
+      margin-left: 0 !important;
+    }
+
+    // apply only for soundplaying not pinned tabs
+    &:not([pinned]):is([soundplaying], [muted], [activemedia-blocked]) {
+      // margin between favicon and text label
+      .tab-icon-stack {
+        margin-left: 18px !important;
+      }
+
+      // sound icon position
+      .tab-icon-overlay {
+        transform: translateX(-20px) !important;
+        // inset-inline-end: -7px !important;
+      }
+
+      // make more space for ltr text fade gradient
+      &[labeldirection="ltr"] {
+        .tab-icon-stack {
+          margin-left: 20px !important;
+        }
+      }
     }
   }
 }
@@ -72,16 +129,18 @@
   z-index: -1 !important;
 }
 
+.tab-icon-stack,
 .tab-label,
 .tab-icon-overlay {
+  margin-right: 0 !important;
   transform: translateX(0) !important;
   inset-inline-end: 0px !important;
 
-  transition-property: transform, background-size, background-color !important;
-  transition-duration: get-var("medium-duration"), get-var("short-duration"),
-    get-var("short-duration") !important;
-  transition-timing-function: get-var("point-to-point"), get-var("fade-in-out"),
-    ease !important;
+  transition-property: margin, transform, background-size, background-color !important;
+  transition-duration: get-var("medium-duration"), get-var("medium-duration"),
+    get-var("short-duration"), get-var("short-duration") !important;
+  transition-timing-function: get-var("point-to-point"),
+    get-var("point-to-point"), get-var("fade-in-out"), ease !important;
 }
 
 .tabbrowser-tab[pinned]:is([soundplaying], [muted], [activemedia-blocked]) {
@@ -103,5 +162,21 @@
 .tabbrowser-tab:not([soundplaying], [muted], [activemedia-blocked]) {
   .tab-icon-overlay {
     visibility: collapse !important;
+  }
+}
+
+// little margin for tab close button
+[dir="ltr"] {
+  .tabbrowser-tab[labeldirection="rtl"] {
+    .tab-close-button {
+      margin-left: 3px !important;
+    }
+  }
+}
+[dir="rtl"] {
+  .tabbrowser-tab[labeldirection="ltr"] {
+    .tab-close-button {
+      margin-right: 3px !important;
+    }
   }
 }

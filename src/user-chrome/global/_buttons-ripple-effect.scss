@@ -79,12 +79,6 @@ body {
   @include ripple-effect-for-button();
 }
 
-// bookmark folder style
-#PlacesToolbarItems > .bookmark-item {
-  --toolbarbutton-border-radius: 4px !important;
-  padding: var(--bookmark-block-padding) 6px !important;
-}
-
 // effect for other nav bar buttons
 .findbar-find-next,
 .findbar-find-previous,

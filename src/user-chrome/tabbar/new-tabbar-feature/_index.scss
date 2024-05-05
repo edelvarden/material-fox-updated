@@ -1,0 +1,7 @@
+@supports -moz-bool-pref("userChrome.chrome-refresh-2023") {
+  @import "tab";
+  @import "tab-separator";
+  @import "tab-buttons";
+  @import "titlebar";
+  @import "nav-bar";
+}

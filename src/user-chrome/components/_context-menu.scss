@@ -6,15 +6,31 @@ $menu-min-width: 220px;
 @media (-moz-platform: windows), (-moz-platform: linux) {
   menupopup,
   panel:not(#autoscroller) {
+    // menu container min width
     min-width: $menu-min-width !important;
+
+    // menu container border radius
+    --panel-border-radius: 12px !important;
+    border-radius: var(--panel-border-radius) !important;
+
+    // menu container inner padding
+    --panel-padding-block: 8px !important;
+    --panel-padding: var(--panel-padding-block) 0 !important;
+  }
+
+  // menu items border radius
+  menu,
+  menuitem,
+  menucaption {
+    border-radius: 0 !important;
   }
 
   // context menu background-color & drop shadow
   .menupopup-arrowscrollbox {
     background-color: var(--arrowpanel-background) !important;
-    // border: none !important;
-    border: 1px solid !important;
-    border-color: get-var("menu-border-color") !important;
+    border: none !important;
+    // border: 1px solid !important;
+    // border-color: get-var("menu-border-color") !important;
     box-shadow: get-var("elevation-2") !important;
   }
 
@@ -39,6 +55,7 @@ $menu-min-width: 220px;
 
     .menuitem-iconic {
       position: relative !important;
+
       &::after {
         display: grid;
         place-items: start;
@@ -55,6 +72,20 @@ $menu-min-width: 220px;
     // hide back/forward/reload/bookmark icons
     .menu-iconic-icon {
       visibility: hidden !important;
+    }
+  }
+
+  // (RTL) string style for back/forward/reload/bookmark menu items
+  [dir="rtl"] {
+    #context-navigation:not([hidden]) {
+      .menuitem-iconic {
+        &::after {
+          place-items: end;
+          align-items: center !important;
+          left: unset;
+          right: calc(-1 * get-var("menu-icon-padding")) !important;
+        }
+      }
     }
   }
 
@@ -96,19 +127,26 @@ $image-width: 16px;
 $image-padding-end: 8px;
 
 @media (-moz-platform: windows) {
+  :root,
+  html,
+  body {
+    --#{$prefix}-menu-icon-padding: calc(
+      #{$default-padding} + #{$image-width} + #{$image-padding-end}
+    );
+    --#{$prefix}-menu-without-icon-padding: calc(
+      #{$default-padding} + #{$image-width} + #{$image-padding-end}
+    );
+  }
+
   #contentAreaContextMenu {
     :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
-      padding-inline-start: calc(
-        $default-padding + $image-width + $image-padding-end
-      ) !important;
+      padding-inline-start: get-var("menu-icon-padding") !important;
     }
   }
 
   #tabContextMenu {
     :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
-      padding-inline-start: calc(
-        $default-padding + $image-padding-end
-      ) !important;
+      padding-inline-start: get-var("menu-without-icon-padding") !important;
     }
   }
 
@@ -116,12 +154,28 @@ $image-padding-end: 8px;
   #context-navigation:not([hidden]) {
     .menuitem-iconic {
       position: relative !important;
+
       &::after {
-        padding-inline-start: calc(
-          $default-padding + $image-width + $image-padding-end
-        );
+        padding-inline-start: get-var("menu-icon-padding") !important;
       }
     }
+  }
+
+  [dir="rtl"] {
+    // string style for back/forward/reload/bookmark menu items
+    #context-navigation:not([hidden]) {
+      .menuitem-iconic {
+        &::after {
+          padding-inline-start: unset !important;
+          padding-inline-end: get-var("menu-icon-padding") !important;
+        }
+      }
+    }
+  }
+
+  // drop menu arrow icon margin
+  .menu-right {
+    margin-inline-end: 12px !important;
   }
 }
 
@@ -133,6 +187,7 @@ $image-padding-end: 8px;
       background-color: transparent !important;
       color: get-var("text-secondary") !important;
     }
+
     &:where([_moz-menuactive="true"]):not([disabled="true"]) {
       background-color: get-var("menu-border-color") !important;
       color: inherit !important;
@@ -165,6 +220,7 @@ $image-padding-end: 8px;
 // fixes for linux
 @media (-moz-platform: linux) {
   $menu-item-height: 27px;
+
   // other menu items
   #context-navigation
     > .menuitem-iconic

@@ -1,5 +1,6 @@
 // accent color mix for title bar and url bar backgrounds
 @media (prefers-color-scheme: light) {
+  #navigator-toolbox,
   #toolbar-menubar,
   #TabsToolbar,
   #titlebar {
@@ -20,8 +21,31 @@
   }
 }
 
+// restore tab opacity when window-inactive
+:root[tabsintitlebar] #titlebar {
+  &:-moz-window-inactive {
+    // opacity: var(--inactive-titlebar-opacity);
+    opacity: 1 !important;
+  }
+}
+
+// title bar buttons opacity when window-inactive
+@media (-moz-platform: windows) {
+  :root:-moz-window-inactive #navigator-toolbox {
+    .titlebar-buttonbox .titlebar-button {
+      opacity: 0.5 !important;
+    }
+
+    .titlebar-buttonbox .titlebar-button:hover {
+      opacity: 1 !important;
+    }
+  }
+}
+
 // window-inactive title bar bg color
 :root:-moz-window-inactive #navigator-toolbox {
+  background-color: get-var("background-color-50") !important;
+
   #toolbar-menubar,
   #TabsToolbar,
   #titlebar {
@@ -32,6 +56,8 @@
 @media (prefers-color-scheme: dark) {
   // window-inactive title bar bg color
   :root:not(:-moz-window-inactive) #navigator-toolbox {
+    background-color: get-var("background-color-0") !important;
+
     #toolbar-menubar,
     #TabsToolbar,
     #titlebar {

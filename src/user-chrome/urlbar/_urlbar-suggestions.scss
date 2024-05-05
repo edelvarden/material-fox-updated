@@ -23,6 +23,24 @@
   }
 }
 
+[dir="rtl"] {
+  .urlbarView-row {
+    border-left-width: 0px !important; // hide left border
+
+    border-right: solid 5px transparent !important;
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+
+    &[selected] {
+      border-right-color: get-var("accent-color") !important;
+    }
+
+    &:not([selected]):hover {
+      border-right-color: get-var("menu-background-color-hover") !important;
+    }
+  }
+}
+
 // urlbar suggestions item url
 .urlbarView-url {
   color: get-var("accent-color") !important;
@@ -98,4 +116,9 @@
   border-bottom-left-radius: 16px !important;
   border-bottom-right-radius: 16px !important;
   overflow: hidden !important;
+}
+
+// fix urlbar search tag height
+#urlbar-search-mode-indicator {
+  height: 100% !important;
 }
