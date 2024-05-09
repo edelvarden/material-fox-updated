@@ -124,10 +124,12 @@ dialog,
 // }
 // --------
 
-// context menu padding inline start
-menupopup {
-  menuitem:not(.menuitem-iconic, [checked="true"]),
-  menu:not(.menu-iconic) {
-    padding-inline-start: 36px !important;
+@media (-moz-platform: windows) {
+  // context menu padding inline start
+  menupopup {
+    menuitem:not(.menuitem-iconic, [checked="true"]),
+    menu:not(.menu-iconic) {
+      padding-inline-start: 36px !important;
+    }
   }
 }
