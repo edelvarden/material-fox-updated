@@ -233,7 +233,6 @@ Using these custom css files can separate your changes from the source project a
 git clone https://github.com/edelvarden/material-fox-updated.git chrome
 cd chrome
 npm install
-npx husky install
 npm run dev
 ```
 
