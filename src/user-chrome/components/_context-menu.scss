@@ -115,32 +115,56 @@ $menu-min-width: 220px;
   menupopup > menu,
   menupopup > menuitem,
   menupopup > menucaption {
-    $menu-item-height: 24px;
+    $menu-item-height: 28px;
     min-height: $menu-item-height !important;
     max-height: $menu-item-height !important;
   }
 }
 
 // left margin for menu item without icon
-$default-padding: 1em;
+$default-padding: 20px;
 $image-width: 16px;
-$image-padding-end: 8px;
+$image-padding-end: 12px;
 
 @media (-moz-platform: windows) {
   :root,
   html,
   body {
-    --#{$prefix}-menu-icon-padding: calc(
-      #{$default-padding} + #{$image-width} + #{$image-padding-end}
-    );
+    --#{$prefix}-menu-icon-padding: #{$default-padding};
     --#{$prefix}-menu-without-icon-padding: calc(
       #{$default-padding} + #{$image-width} + #{$image-padding-end}
     );
   }
 
   #contentAreaContextMenu {
-    :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
+    :is(menuitem, menu):not([type="checkbox"]) {
       padding-inline-start: get-var("menu-icon-padding") !important;
+    }
+
+    :is(menuitem, menu):not(
+        [image],
+        .menu-iconic,
+        .menuitem-iconic,
+        [type="checkbox"]
+      ) {
+      padding-inline-start: get-var("menu-without-icon-padding") !important;
+    }
+
+    menuitem[checked="true"] {
+      padding-inline-start: get-var("menu-icon-padding") !important;
+    }
+
+    menuitem[type="checkbox"] > .menu-iconic-left {
+      margin-inline-end: 0 !important;
+      margin-inline-end: 12px !important;
+    }
+
+    menuitem[checked="true"]
+      > .menu-iconic-left
+      .menu-iconic
+      > .menu-iconic-left,
+    .menuitem-iconic > .menu-iconic-left {
+      margin-inline-end: 12px !important;
     }
   }
 
@@ -156,7 +180,7 @@ $image-padding-end: 8px;
       position: relative !important;
 
       &::after {
-        padding-inline-start: get-var("menu-icon-padding") !important;
+        padding-inline-start: get-var("menu-without-icon-padding") !important;
       }
     }
   }
@@ -213,6 +237,11 @@ $image-padding-end: 8px;
 
   // hide "Email Image…"
   #context-sendimage {
+    display: none !important;
+  }
+
+  // hide "Email Video…"
+  #context-sendvideo {
     display: none !important;
   }
 }

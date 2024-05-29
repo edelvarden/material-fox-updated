@@ -71,7 +71,7 @@ body {
 // hover bg opacity for not selected tab
 .tabbrowser-tab:not([selected="true"]):hover,
 .tabbrowser-tab[multiselected]:not([selected="true"]) {
-  --tab-background-color: #{get-var("accent-color-transparent-active")} !important;
+  --tab-background-color: #{get-var("tab-background-color-hover")} !important;
 
   .tab-background {
     margin-top: var(--tab-vertical-padding) !important;

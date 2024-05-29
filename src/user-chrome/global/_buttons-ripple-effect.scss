@@ -55,7 +55,7 @@ body {
     --#{$prefix}-circle-size: 100%;
   }
 
-  &:not([disabled]):hover
+  &:not([disabled], #tabs-newtab-button, #new-tab-button):hover
     > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     background-color: get-var("control-background-color") !important;
   }
@@ -63,19 +63,17 @@ body {
 
 // effect for url bar buttons, tab scroll buttons & bookmarkbar
 #PlacesChevron:not([collapsed]),
-#PlacesToolbarItems > .bookmark-item,
-:is(
-    .identity-box-button,
-    #notification-popup-box,
-    #tracking-protection-icon-container,
-    #pageActionButton,
-    #urlbar-zoom-button,
-    .urlbar-page-action,
-    // #scrollbutton-up,
-    // #scrollbutton-down,
-    .tab-close-button,
-    .tab-icon-overlay
-  ):not([disabled]) {
+#PlacesToolbarItems>.bookmark-item,
+:is(.identity-box-button,
+  #notification-popup-box,
+  #tracking-protection-icon-container,
+  #pageActionButton,
+  #urlbar-zoom-button,
+  .urlbar-page-action,
+  // #scrollbutton-up,
+  // #scrollbutton-down,
+  .tab-close-button,
+  .tab-icon-overlay):not([disabled]) {
   @include ripple-effect-for-button();
 }
 
@@ -109,5 +107,30 @@ body {
 
   .toolbarbutton-animatable-box {
     display: none !important;
+  }
+}
+
+//
+@media (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-2023")) {
+  html,
+  body {
+    --#{$prefix}-circle-icon-refresh: url("icons/circle-refresh.svg");
+  }
+
+  #tabs-newtab-button,
+  #new-tab-button {
+    @include ripple-effect-for-icon();
+
+    & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+      background-image: get-var("circle-icon-refresh"),
+        get-var("circle-icon-refresh") !important;
+    }
+
+    &:not([disabled]):hover
+      > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+      background-color: get-var("tab-background-color-hover") !important;
+    }
+
+    fill: get-var("icon-color-secondary") !important;
   }
 }

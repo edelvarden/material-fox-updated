@@ -64,6 +64,7 @@ $dark-mode: (
   "menu-background-color-hover": #323334,
   "menu-border-color": get-var("grey-800"),
   // tab bar
+  "tab-background-color-hover": #004a77,
   "tab-separator-color": cm(transparent, get-var("white"), 0.2),
   "tab-outline-color": cm(transparent, get-var("black"), 0.1),
   "tab-opacity": 1,
@@ -107,6 +108,7 @@ $light-mode: (
   "menu-background-color-hover": get-var("background-color-0"),
   "menu-border-color": get-var("background-color-0"),
   // tab bar
+  "tab-background-color-hover": get-var("accent-color-transparent-active"),
   "tab-separator-color": cm(transparent, get-var("black"), 0.2),
   "tab-outline-color": cm(transparent, get-var("black"), 0.2),
   "tab-opacity": 1,

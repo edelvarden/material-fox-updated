@@ -58,11 +58,7 @@
 // forward icon
 .unified-nav-forward[_moz-menuactive]:-moz-locale-dir(ltr),
 .unidied-nav-back[_moz-menuactive]:-moz-locale-dir(rtl) {
-  list-style-image: get-var("arrow-back-icon") !important;
-
-  & > hbox > image {
-    transform: scaleX(-1) !important;
-  }
+  list-style-image: get-var("arrow-forward-icon") !important;
 }
 
 // back icon

@@ -139,3 +139,13 @@
   transition-duration: get-var("short-duration") !important;
   transition-timing-function: get-var("fade-in-out") !important;
 }
+
+// make new tab button icon smaller
+#tabs-newtab-button,
+#new-tab-button {
+  & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+    width: 30px !important;
+    height: 30px !important;
+    padding: 8px !important;
+  }
+}
