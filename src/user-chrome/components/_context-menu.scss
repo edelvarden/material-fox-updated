@@ -83,7 +83,7 @@ $menu-min-width: 220px;
           place-items: end;
           align-items: center !important;
           left: unset;
-          right: calc(-1 * get-var("menu-icon-padding")) !important;
+          right: calc(-1 * get-var("menuitem-padding-with-icon")) !important;
         }
       }
     }
@@ -115,31 +115,31 @@ $menu-min-width: 220px;
   menupopup > menu,
   menupopup > menuitem,
   menupopup > menucaption {
-    $menu-item-height: 28px;
+    $menu-item-height: 24px;
     min-height: $menu-item-height !important;
     max-height: $menu-item-height !important;
   }
 }
 
 // left margin for menu item without icon
-$default-padding: 20px;
+$default-padding: 1em;
 $image-width: 16px;
-$image-padding-end: 12px;
+$image-padding-end: 8px;
 
 @media (-moz-platform: windows) {
   :root,
   html,
   body {
-    --#{$prefix}-menu-icon-padding: #{$default-padding};
-    --#{$prefix}-menu-without-icon-padding: calc(
+    --#{$prefix}-menuitem-padding-with-icon: #{$default-padding};
+    --#{$prefix}-menuitem-padding-without-icon: calc(
       #{$default-padding} + #{$image-width} + #{$image-padding-end}
     );
   }
 
   #contentAreaContextMenu {
-    :is(menuitem, menu):not([type="checkbox"]) {
-      padding-inline-start: get-var("menu-icon-padding") !important;
-    }
+    // :is(menuitem, menu):not([type="checkbox"]) {
+    //   padding-inline-start: get-var("menuitem-padding-without-icon") !important;
+    // }
 
     :is(menuitem, menu):not(
         [image],
@@ -147,16 +147,21 @@ $image-padding-end: 12px;
         .menuitem-iconic,
         [type="checkbox"]
       ) {
-      padding-inline-start: get-var("menu-without-icon-padding") !important;
+      padding-inline-start: get-var("menuitem-padding-without-icon") !important;
+    }
+    :is(menuitem, menu):is([image], .menu-iconic, .menuitem-iconic) {
+      padding-inline-start: get-var("menuitem-padding-with-icon") !important;
     }
 
     menuitem[checked="true"] {
-      padding-inline-start: get-var("menu-icon-padding") !important;
+      padding-inline-start: get-var("menuitem-padding-with-icon") !important;
     }
 
     menuitem[type="checkbox"] > .menu-iconic-left {
       margin-inline-end: 0 !important;
-      margin-inline-end: 12px !important;
+    }
+    menuitem[type="checkbox"]:is([checked="true"]) > .menu-iconic-left {
+      margin-inline-end: $image-padding-end !important;
     }
 
     menuitem[checked="true"]
@@ -164,13 +169,13 @@ $image-padding-end: 12px;
       .menu-iconic
       > .menu-iconic-left,
     .menuitem-iconic > .menu-iconic-left {
-      margin-inline-end: 12px !important;
+      margin-inline-end: $image-padding-end !important;
     }
   }
 
   #tabContextMenu {
     :is(menuitem, menu):not([image], .menu-iconic, .menuitem-iconic) {
-      padding-inline-start: get-var("menu-without-icon-padding") !important;
+      padding-inline-start: get-var("menuitem-padding-without-icon") !important;
     }
   }
 
@@ -180,7 +185,9 @@ $image-padding-end: 12px;
       position: relative !important;
 
       &::after {
-        padding-inline-start: get-var("menu-without-icon-padding") !important;
+        padding-inline-start: get-var(
+          "menuitem-padding-without-icon"
+        ) !important;
       }
     }
   }
@@ -191,13 +198,13 @@ $image-padding-end: 12px;
       .menuitem-iconic {
         &::after {
           padding-inline-start: unset !important;
-          padding-inline-end: get-var("menu-icon-padding") !important;
+          padding-inline-end: get-var("menuitem-padding-with-icon") !important;
         }
       }
     }
   }
 
-  // drop menu arrow icon margin
+  // sub menu arrow icon margin
   .menu-right {
     margin-inline-end: 12px !important;
   }
