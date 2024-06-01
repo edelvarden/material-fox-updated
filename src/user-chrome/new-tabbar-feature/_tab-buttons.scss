@@ -80,7 +80,7 @@
 
   &:hover {
     .toolbarbutton-badge-stack {
-      background-color: get-var("accent-color-transparent-active") !important;
+      background-color: get-var("tab-background-color-hover") !important;
     }
   }
 
@@ -88,6 +88,15 @@
   &:hover:active {
     .toolbarbutton-badge-stack {
       background-color: get-var("accent-color-hover") !important;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &[open="true"],
+    &:hover:active {
+      .toolbarbutton-badge-stack {
+        background-color: #29668c !important;
+      }
     }
   }
 
