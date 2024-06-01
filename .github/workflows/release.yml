@@ -1,0 +1,51 @@
+name: Publish New Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "package.json" # Trigger workflow on changes in package.json
+  workflow_dispatch:
+
+jobs:
+  create-release:
+    permissions:
+      contents: write
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies and build project
+        run: |
+          sudo apt-get update && sudo apt-get install -y jq zip && npm install && npm run build
+        continue-on-error: false # Stop the workflow if npm run build fails
+
+      - name: Add chrome folder to archive
+        run: |
+          zip -r chrome.zip chrome
+        working-directory: ${{ github.workspace }}
+
+      - name: Read version from package.json
+        id: get_version
+        run: |
+          VERSION=$(jq -r '.version' package.json)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Create version tag
+        run: |
+          TAG_NAME="v${{ env.VERSION }}"
+          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
+
+      - name: Create and Publish Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          name: ${{ env.TAG_NAME }}
+          files: chrome.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
