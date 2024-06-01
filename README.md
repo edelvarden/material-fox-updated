@@ -74,6 +74,10 @@ To disable preference, search by name and remove the preference:
     <td>Enabling new color scheme like in Chrome Canary version.</img></td>
   </tr>
   <tr>
+    <td><code>userChrome.no-menu-icons</code></td>
+    <td>Hide menu icons</td>
+  </tr>
+  <tr>
     <td><code>userChrome.default-theme-colors</code></td>
     <td>Use the default Firefox colors. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
   </tr>

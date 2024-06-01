@@ -180,4 +180,8 @@
 
   background-position: left center !important;
   background-position-x: 20px !important;
+
+  @media (-moz-platform: linux) {
+    background-position-x: 6px !important;
+  }
 }
