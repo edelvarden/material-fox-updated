@@ -42,20 +42,6 @@ body {
     --#{$prefix}-#{$key}: #{$value};
   }
 
-  // optional feature: Github theme colors
-  @media (-moz-bool-pref: meta.inspect("userChrome.github-theme-colors")) {
-    @each $key, $value in $github-theme-colors {
-      --#{$prefix}-#{$key}: #{$value};
-    }
-  }
-
-  // optional feature: Dracula theme colors
-  @media (-moz-bool-pref: meta.inspect("userChrome.dracula-theme-colors")) {
-    @each $key, $value in $dracula-theme-colors {
-      --#{$prefix}-#{$key}: #{$value};
-    }
-  }
-
   // optional feature: Chrome refresh theme colors
   @media (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-colors")) {
     @each $key, $value in $chrome-refresh-colors {
@@ -67,19 +53,6 @@ body {
   @media (prefers-color-scheme: light) {
     @each $key, $value in $light-mode {
       --#{$prefix}-#{$key}: #{$value};
-    }
-  }
-
-  // optional feature: system accent colors
-  @media (-moz-bool-pref: meta.inspect("userChrome.system-accent-colors")) {
-    @each $key, $value in $system-accent-colors-dark {
-      --#{$prefix}-#{$key}: #{$value};
-    }
-
-    @media (prefers-color-scheme: light) {
-      @each $key, $value in $system-accent-colors-light {
-        --#{$prefix}-#{$key}: #{$value};
-      }
     }
   }
 }

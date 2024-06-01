@@ -125,36 +125,6 @@ $light-mode: (
   "selection-background-color": get-var("blue-200")
 );
 
-// optional feature: Github theme colors
-$github-theme-colors: (
-  "text-primary": #e6edf3,
-  "text-secondary": #7d8590,
-  "accent-color": #2f81f7,
-  "background-color-0": #0d1117,
-  "background-color-50": #161b22,
-  "background-color-100": #24292f,
-  "menu-background-color": #0d1117,
-  "menu-background-color-hover": #161b22,
-  "menu-border-color": #31363d,
-  "content-separator-color": #57606a,
-  "selection-background-color": cm(transparent, #388bfd, 0.4),
-  // rgba(56,139,253,0.4)
-  "text-on-accent": get-var("white"),
-);
-
-// optional feature: Dracula theme colors
-$dracula-theme-colors: (
-  "accent-color": #bd93f9,
-  "background-color-0": #282a36,
-  "background-color-50": #343746,
-  "background-color-100": #44475a,
-  "menu-background-color-hover": get-var("background-color-0"),
-  "menu-background-color": get-var("background-color-0"),
-  "menu-border-color": #343746,
-  "selection-text-color": get-var("black"),
-  "selection-background-color": #bd93f9,
-);
-
 // optional feature: Chrome refresh colors for dark mode
 $chrome-refresh-colors: (
   "accent-color": #a8c7fa,
@@ -167,53 +137,4 @@ $chrome-refresh-colors: (
   "content-separator-color": #444746,
   "selection-text-color": get-var("black"),
   "selection-background-color": #a8c7fa,
-);
-
-// optional feature: system accent colors
-$system-accent-colors-dark: (
-  "accent-color": color-mix(in srgb, get-var("white") 15%, AccentColor),
-  "tab-opacity": 0.9,
-  "background-color-0":
-    color-mix(in srgb, get-var("grey-900") 85%, var(accent-color)),
-  "background-color-50":
-    color-mix(
-      in srgb,
-      get-var("grey-900-white-4-percent") 85%,
-      get-var(accent-color)
-    ),
-  "background-color-100":
-    color-mix(
-      in srgb,
-      get-var("grey-900-white-5-percent") 85%,
-      get-var(accent-color)
-    ),
-  "menu-background-color-hover":
-    color-mix(in srgb, get-var("grey-800") 85%, get-var(accent-color)),
-  "menu-border-color":
-    color-mix(in srgb, get-var("grey-800") 85%, get-var(accent-color)),
-  "text-on-accent": get-var("white"),
-  "secondary-button-text": get-var("white"),
-  "content-separator-color":
-    color-mix(in srgb, #606164 90%, get-var(accent-color)),
-  "selection-background-color":
-    color-mix(in srgb, get-var("grey-900") 15%, get-var(accent-color)),
-);
-
-$system-accent-colors-light: (
-  "accent-color": color-mix(in srgb, get-var("grey-900") 15%, AccentColor),
-  "tab-opacity": 0.9,
-  "background-color-0": color-mix(in srgb, #dee1e6 90%, get-var(accent-color)),
-  "background-color-50":
-    color-mix(in srgb, get-var("grey-100") 90%, get-var(accent-color)),
-  "background-color-100":
-    color-mix(in srgb, get-var("white") 90%, get-var(accent-color)),
-  "menu-background-color-hover":
-    color-mix(in srgb, get-var("background-color-0") 90%, get-var(accent-color)),
-  "menu-border-color":
-    color-mix(in srgb, get-var("background-color-0") 90%, get-var(accent-color)),
-  "secondary-button-text": get-var(accent-color),
-  "content-separator-color":
-    color-mix(in srgb, #dbdcdd 90%, get-var(accent-color)),
-  "selection-background-color":
-    color-mix(in srgb, #dee1e6 10%, get-var(accent-color)),
 );

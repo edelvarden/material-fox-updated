@@ -1,0 +1,16 @@
+@media (-moz-bool-pref: "userChrome.dracula-theme-colors") {
+  :root,
+  html,
+  body {
+    --mf-accent-color: #bd93f9;
+    --mf-background-color-0: #282a36;
+    --mf-background-color-50: #343746;
+    --mf-background-color-100: #44475a;
+    --mf-tab-background-color-hover: #44475a;
+    --mf-menu-background-color-hover: var(--mf-background-color-0);
+    --mf-menu-background-color: var(--mf-background-color-0);
+    --mf-menu-border-color: #343746;
+    --mf-selection-text-color: var(--mf-black);
+    --mf-selection-background-color: #bd93f9;
+  }
+}

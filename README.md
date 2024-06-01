@@ -89,14 +89,6 @@ To disable preference, search by name and remove the preference:
     <td><code>userChrome.force-enable-animations</code></td>
     <td>Force enable control animation, because by default respects the user animation disable preference. <em>(Not required if you do not disable animation)</em></td>
   </tr>
-  <tr>
-    <td><code>userChrome.dracula-theme-colors</code></td>
-    <td><img src="assets/preview-dracula.png" alt="preview-dracula"></img></td>
-  </tr>
-  <tr>
-    <td><code>userChrome.github-theme-colors</code></td>
-    <td><img src="assets/preview-github.png" alt="preview-github"></img></td>
-  </tr>
 </table>
 
 ### Custom CSS rules
@@ -114,7 +106,7 @@ Follow this steps:
 :root,
 html,
 body {
-  /* add your css below */
+  /* add your css variables below */
   --mf-accent-color: #ea4335 !important;
 }
 ```
@@ -192,7 +184,9 @@ Using these custom css files can separate your changes from the source project a
   </tr>
 </table>
 
-#### Some other examples
+TIPS: You can find more variables in the [variables/\_colors.scss](src/variables/_colors.scss) file. To use these variables just add `--mf-` prefix, eg. `"accent-color": #a8c7fa,` to `--mf-accent-color: #a8c7fa;`
+
+#### Custom css use cases
 
 - Replacing the font with your own, change `"YourFontName"` to the name of your font:
 
@@ -200,9 +194,10 @@ Using these custom css files can separate your changes from the source project a
   :root,
   html,
   body {
-    /* add your css below */
+    /* add your css variables below */
   }
 
+  /* add your user css below */
   *,
   *::before,
   *::after {
@@ -216,10 +211,28 @@ Using these custom css files can separate your changes from the source project a
   :root,
   html,
   body {
-    /* add your css below */
+    /* add your css variables below */
     --mf-content-separator-color: transparent !important;
   }
   ```
+
+#### Custom css use cases for create your own color themes
+
+You can use variables to completly recolor to your own color, some examples with code:
+
+- Dracula theme
+
+  Source code: [dracula-theme.css](assets/examples/dracula-theme.css)
+  <img src="assets/preview-dracula.png" alt="preview-dracula"></img>
+
+- Github theme
+
+  Source code: [github-theme.css](assets/examples/github-theme.css)
+  <img src="assets/preview-github.png" alt="preview-github"></img>
+
+- System accent colors
+
+  Source code: [system-accent-colors.css](assets/examples/system-accent-colors.css)
 
 ## Build & Development (for developers)
 

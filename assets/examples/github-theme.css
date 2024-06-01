@@ -1,0 +1,22 @@
+@media (-moz-bool-pref: "userChrome.github-theme-colors") {
+  :root,
+  html,
+  body {
+    --mf-text-primary: #e6edf3;
+    --mf-text-secondary: #7d8590;
+    --mf-accent-color: #2f81f7;
+    --mf-background-color-0: #0d1117;
+    --mf-background-color-50: #161b22;
+    --mf-background-color-100: #24292f;
+    --mf-menu-background-color: #0d1117;
+    --mf-menu-background-color-hover: #161b22;
+    --mf-menu-border-color: #31363d;
+    --mf-content-separator-color: #57606a;
+    --mf-selection-background-color: color-mix(
+      in srgb,
+      transparent 0.4,
+      #388bfd
+    ); /* make #388bfd color tranparent with 0.4 opacity */
+    --mf-text-on-accent: var(--mf-white);
+  }
+}
