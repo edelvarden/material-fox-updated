@@ -280,3 +280,20 @@ $image-padding-end: 12px;
 arrowscrollbox {
   background-image: none !important;
 }
+
+// fix menu item double background color
+menuitem,
+menu {
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  &[_moz-menuactive]:is([disabled]) {
+    background: transparent !important;
+  }
+  &[_moz-menuactive]:not([disabled]) {
+    background: get-var("menu-background-color-hover") !important;
+  }
+}
