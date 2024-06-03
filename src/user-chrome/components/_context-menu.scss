@@ -297,10 +297,10 @@ menu {
     background: transparent !important;
   }
 
-  &[_moz-menuactive]:is([disabled]) {
+  &[_moz-menuactive]:is([disabled="true"]) {
     background: transparent !important;
   }
-  &[_moz-menuactive]:not([disabled]) {
+  &[_moz-menuactive]:not([disabled="true"]) {
     background: get-var("menu-background-color-hover") !important;
   }
 }
