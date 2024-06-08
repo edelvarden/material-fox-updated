@@ -1,7 +1,10 @@
+/* use variables when about:config variable userChrome.system-accent-colors is true */
 @media (-moz-bool-pref: "userChrome.system-accent-colors") {
   /* use variables when dark mode */
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root,
+    html,
+    body {
       --mf-accent-color: color-mix(in srgb, var(--mf-white) 15%, AccentColor);
       --mf-tab-opacity: 0.9;
       --mf-background-color-0: color-mix(
@@ -46,11 +49,13 @@
 
   /* use variables when light mode */
   @media (prefers-color-scheme: light) {
-    :root {
+    :root,
+    html,
+    body {
       --mf-accent-color: color-mix(
         in srgb,
         var(--mf-grey-900) 15%,
-        var(--mf-AccentColor)
+        AccentColor
       );
       --mf-tab-opacity: 0.9;
       --mf-background-color-0: color-mix(
@@ -78,12 +83,12 @@
         var(--mf-background-color-0) 90%,
         var(--mf-accent-color)
       );
-      --mf-secondary-button-text: var(--mf-accent-color);
       --mf-content-separator-color: color-mix(
         in srgb,
         #dbdcdd 90%,
         var(--mf-accent-color)
       );
+      --mf-secondary-button-text: var(--mf-accent-color);
       --mf-selection-background-color: color-mix(
         in srgb,
         #dee1e6 10%,

@@ -82,10 +82,6 @@ To disable preference, search by name and remove the preference:
     <td>Use the default Firefox colors. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
   </tr>
   <tr>
-    <td><code>userChrome.system-accent-colors</code></td>
-    <td>Use system accent colors</td>
-  </tr>
-  <tr>
     <td><code>userChrome.force-enable-animations</code></td>
     <td>Force enable control animation, because by default respects the user animation disable preference. <em>(Not required if you do not disable animation)</em></td>
   </tr>
@@ -220,19 +216,34 @@ TIPS: You can find more variables in the [variables/\_colors.scss](src/variables
 
 You can use variables to completly recolor to your own color, some examples with code:
 
-- Dracula theme
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Preview</th>
+  </tr>
+  <tr>
+    <td>
+      <h2>System accent colors</h6>
+      Source code: <br><a href="assets/examples/system-accent-colors.css" _blank>system-accent-colors.css</a>
+    </td>
+    <td><img src="assets/preview-accent-1.png" alt=""/><img src="assets/preview-accent-2.png" alt=""/><img src="assets/preview-accent-3.png" alt=""/></td>
+  </tr>
+  <tr>
+    <td>
+      <h2>Github theme</h6>
+      Source code: <br><a href="assets/examples/github-theme.css" _blank>github-theme.css</a>
+    </td>
+    <td><img src="assets/preview-github.png" alt="preview-github"></img></td>
+  </tr>
+  <tr>
+    <td>
+      <h2>Dracula theme</h6>
+      Source code: <br><a href="assets/examples/dracula-theme.css" _blank>dracula-theme.css</a>
+    </td>
+    <td><img src="assets/preview-dracula.png" alt="preview-dracula"/></td>
+  </tr>
 
-  Source code: [dracula-theme.css](assets/examples/dracula-theme.css)
-  <img src="assets/preview-dracula.png" alt="preview-dracula"></img>
-
-- Github theme
-
-  Source code: [github-theme.css](assets/examples/github-theme.css)
-  <img src="assets/preview-github.png" alt="preview-github"></img>
-
-- System accent colors
-
-  Source code: [system-accent-colors.css](assets/examples/system-accent-colors.css)
+</table>
 
 ## Build & Development (for developers)
 

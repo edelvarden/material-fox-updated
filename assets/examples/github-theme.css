@@ -1,3 +1,4 @@
+/* use variables when about:config variable userChrome.github-theme-colors is true */
 @media (-moz-bool-pref: "userChrome.github-theme-colors") {
   :root,
   html,
