@@ -1,39 +1,35 @@
 // fixes for default Firefox colors feature
 @media (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
-  :root,
-  html,
-  body,
-  .tabbrowser-tab:is([visuallyselected], [selected]) {
-    --tab-background-color: var(
-      --lwt-selected-tab-background-color,
-      var(--toolbar-bgcolor)
-    ) !important;
-  }
-
-  .tabbrowser-tab:is([visuallyselected], [selected]) .tab-background {
-    background-color: var(--tab-background-color) !important;
-  }
-
-  #navbar,
-  .browser-toolbar:not(.titlebar-color) {
-    background-color: var(
-      --lwt-selected-tab-background-color,
-      var(--toolbar-bgcolor)
-    ) !important;
-  }
-
-  #urlbar-background,
-  #searchbar {
-    background-color: var(--toolbar-field-background-color) !important;
-  }
-
   // urlbar suggestions item
   .urlbarView-row {
     &[selected] {
       background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.15)} !important;
     }
+
+    &[selected] {
+      border-left-color: var(--color-accent-primary) !important;
+    }
+
     &:not([selected]):hover {
       background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.15)} !important;
+    }
+  }
+
+  .urlbarView-row {
+    &:not([selected]):hover {
+      border-left-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.15)} !important;
+    }
+  }
+
+  [dir="rtl"] {
+    .urlbarView-row {
+      &[selected] {
+        border-left-color: var(--color-accent-primary) !important;
+      }
+
+      &:not([selected]):hover {
+        border-right-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.15)} !important;
+      }
     }
   }
 
@@ -45,14 +41,19 @@
     // --mf-text-on-accent: var(--button-primary-color) !important;
     --#{$prefix}-menu-border-color: var(--arrowpanel-border-color) !important;
 
-    --toolbar-field-focus-border-color: get-var("accent-color") !important;
+    --toolbar-field-focus-border-color: var(--color-accent-primary) !important;
   }
 
-  // menu item hover bg color
-  menu,
-  menuitem {
-    &:where([_moz-menuactive="true"]):not([disabled="true"]) {
-      background-color: #{cm(rgba(0, 0, 0, 0.2), get-var("white"), 0.15)} !important;
-    }
+  html,
+  body {
+    --toolbar-bgcolor: var(--tab-selected-bgcolor) !important;
+  }
+
+  #nav-bar {
+    background-color: var(--toolbar-bgcolor) !important;
+  }
+
+  #urlbar-background {
+    background-color: var(--toolbar-field-background-color) !important;
   }
 }

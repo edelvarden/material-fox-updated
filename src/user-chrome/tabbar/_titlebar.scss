@@ -1,23 +1,25 @@
 // accent color mix for title bar and url bar backgrounds
-@media (prefers-color-scheme: light) {
-  #navigator-toolbox,
-  #toolbar-menubar,
-  #TabsToolbar,
-  #titlebar {
-    background-color: cm(
-      get-var("background-color-50"),
-      get-var("accent-color"),
-      0.2
-    ) !important;
-  }
+@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+  @media (prefers-color-scheme: light) {
+    #navigator-toolbox,
+    #toolbar-menubar,
+    #TabsToolbar,
+    #titlebar {
+      background-color: cm(
+        get-var("background-color-50"),
+        get-var("accent-color"),
+        0.2
+      ) !important;
+    }
 
-  #urlbar-background,
-  #searchbar {
-    background-color: cm(
-      get-var("background-color-50"),
-      get-var("accent-color"),
-      0.0333
-    ) !important;
+    #urlbar-background,
+    #searchbar {
+      background-color: cm(
+        get-var("background-color-50"),
+        get-var("accent-color"),
+        0.0333
+      ) !important;
+    }
   }
 }
 
@@ -43,25 +45,27 @@
 }
 
 // window-inactive title bar bg color
-:root:-moz-window-inactive #navigator-toolbox {
-  background-color: get-var("background-color-50") !important;
-
-  #toolbar-menubar,
-  #TabsToolbar,
-  #titlebar {
+@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+  :root:-moz-window-inactive #navigator-toolbox {
     background-color: get-var("background-color-50") !important;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  // window-inactive title bar bg color
-  :root:not(:-moz-window-inactive) #navigator-toolbox {
-    background-color: get-var("background-color-0") !important;
 
     #toolbar-menubar,
     #TabsToolbar,
     #titlebar {
+      background-color: get-var("background-color-50") !important;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    // window-inactive title bar bg color
+    :root:not(:-moz-window-inactive) #navigator-toolbox {
       background-color: get-var("background-color-0") !important;
+
+      #toolbar-menubar,
+      #TabsToolbar,
+      #titlebar {
+        background-color: get-var("background-color-0") !important;
+      }
     }
   }
 }

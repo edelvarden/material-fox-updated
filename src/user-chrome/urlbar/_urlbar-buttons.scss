@@ -24,7 +24,7 @@
 #identity-box,
 #tracking-protection-icon-container,
 #notification-popup-box,
-.urlbar-icon {
+.urlbar-icon:not(#star-button[starred], #tracking-protection-icon-box[active]) {
   fill: get-var("icon-color-secondary") !important;
   color: get-var("text-primary") !important;
 }

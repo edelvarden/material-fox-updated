@@ -288,19 +288,21 @@ arrowscrollbox {
   background-image: none !important;
 }
 
-// fix menu item double background color
-menuitem,
-menu {
-  background: transparent !important;
-
-  &:hover {
+@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+  // fix menu item double background color
+  menuitem,
+  menu {
     background: transparent !important;
-  }
 
-  &[_moz-menuactive]:is([disabled="true"]) {
-    background: transparent !important;
-  }
-  &[_moz-menuactive]:not([disabled="true"]) {
-    background: get-var("menu-background-color-hover") !important;
+    &:hover {
+      background: transparent !important;
+    }
+
+    &[_moz-menuactive]:is([disabled="true"]) {
+      background: transparent !important;
+    }
+    &[_moz-menuactive]:not([disabled="true"]) {
+      background: get-var("menu-background-color-hover") !important;
+    }
   }
 }

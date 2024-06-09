@@ -71,8 +71,6 @@ body {
 // hover bg opacity for not selected tab
 .tabbrowser-tab:not([selected="true"]):hover,
 .tabbrowser-tab[multiselected]:not([selected="true"]) {
-  --tab-background-color: #{get-var("tab-background-color-hover")} !important;
-
   .tab-background {
     margin-top: var(--tab-vertical-padding) !important;
     margin-bottom: var(--tab-vertical-padding) !important;
@@ -125,10 +123,29 @@ body {
   border-bottom-right-radius: 0px !important;
 
   &::before {
-    box-shadow: 4px 4px 0 4px var(--tab-background-color) !important;
+    box-shadow: 4px 4px 0 4px var(--tab-selected-bgcolor) !important;
   }
 
   &::after {
-    box-shadow: -4px 4px 0 4px var(--tab-background-color) !important;
+    box-shadow: -4px 4px 0 4px var(--tab-selected-bgcolor) !important;
+  }
+}
+
+@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+  // hover bg opacity for not selected tab
+  .tabbrowser-tab:not([selected="true"]):hover,
+  .tabbrowser-tab[multiselected]:not([selected="true"]) {
+    --tab-background-color: #{get-var("tab-background-color-hover")} !important;
+  }
+
+  // selected tab style
+  .tabbrowser-tab:is([visuallyselected], [selected]) .tab-background {
+    &::before {
+      box-shadow: 4px 4px 0 4px var(--tab-background-color) !important;
+    }
+
+    &::after {
+      box-shadow: -4px 4px 0 4px var(--tab-background-color) !important;
+    }
   }
 }

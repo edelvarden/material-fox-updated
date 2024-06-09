@@ -74,11 +74,13 @@ body {
   font-size: 14px !important;
 }
 
-@media (prefers-color-scheme: light) {
-  #urlbar:is([open], [focused]) {
-    #urlbar-background,
-    #searchbar {
-      background-color: get-var("background-color-100") !important;
+@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+  @media (prefers-color-scheme: light) {
+    #urlbar:is([open], [focused]) {
+      #urlbar-background,
+      #searchbar {
+        background-color: get-var("background-color-100") !important;
+      }
     }
   }
 }
