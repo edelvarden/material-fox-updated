@@ -1,6 +1,13 @@
 // accent color mix for title bar and url bar backgrounds
 @media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
   @media (prefers-color-scheme: light) {
+    #urlbar-background,
+    #searchbar {
+      background-color: get-var("background-color-50") !important;
+    }
+  }
+
+  @media (prefers-color-scheme: light) and (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-colors")) {
     #navigator-toolbox,
     #toolbar-menubar,
     #TabsToolbar,
