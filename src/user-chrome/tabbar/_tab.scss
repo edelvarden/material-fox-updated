@@ -41,13 +41,15 @@ body {
 }
 
 // selected and not selected tab text color
-.tabbrowser-tab {
-  &:is([visuallyselected], [selected]) {
-    color: get-var("tab-label-color") !important;
-  }
+@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+  .tabbrowser-tab {
+    &:is([visuallyselected], [selected]) {
+      color: get-var("tab-label-color") !important;
+    }
 
-  &:not(:is([visuallyselected], [selected])) {
-    color: get-var("tab-label-color") !important;
+    &:not(:is([visuallyselected], [selected])) {
+      color: get-var("tab-label-color") !important;
+    }
   }
 }
 

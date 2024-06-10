@@ -56,4 +56,19 @@
   #urlbar-background {
     background-color: var(--toolbar-field-background-color) !important;
   }
+
+  #urlbar:is([open], [focused]) {
+    #urlbar-background,
+    #searchbar {
+      background-color: var(--toolbar-field-focus-background-color) !important;
+    }
+  }
+
+  @media (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-2023")) {
+    #alltabs-button {
+      .toolbarbutton-badge-stack {
+        background-color: var(--tab-selected-bgcolor) !important;
+      }
+    }
+  }
 }

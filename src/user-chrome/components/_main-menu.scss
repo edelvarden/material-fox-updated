@@ -2,7 +2,7 @@
   // menu icons
 
   :root {
-    --mf-menuicon-margin-inline: 14px;
+    --#{$prefix}-menuicon-margin-inline: 14px;
   }
 
   #widget-overflow-mainView .panel-subview-body {
@@ -24,14 +24,14 @@
   .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton)
     > .toolbarbutton-icon
     + .toolbarbutton-text {
-    padding-inline-start: var(--mf-menuicon-margin-inline) !important;
+    padding-inline-start: get-var("menuicon-margin-inline") !important;
   }
 
   // padding for items without icons
   #fxa-manage-account-button > vbox,
   #PanelUI-fxa-menu-syncnow-button > hbox {
     padding-inline-start: calc(
-      16px + var(--mf-menuicon-margin-inline)
+      16px + get-var("menuicon-margin-inline")
     ) !important;
   }
 

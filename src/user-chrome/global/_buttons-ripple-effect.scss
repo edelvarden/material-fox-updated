@@ -111,26 +111,28 @@ body {
 }
 
 //
-@media (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-2023")) {
-  html,
-  body {
-    --#{$prefix}-circle-icon-refresh: url("icons/circle-refresh.svg");
-  }
-
-  #tabs-newtab-button,
-  #new-tab-button {
-    @include ripple-effect-for-icon();
-
-    & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-      background-image: get-var("circle-icon-refresh"),
-        get-var("circle-icon-refresh") !important;
+@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+  @media (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-2023")) {
+    html,
+    body {
+      --#{$prefix}-circle-icon-refresh: url("icons/circle-refresh.svg");
     }
 
-    &:not([disabled]):hover
-      > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-      background-color: get-var("tab-background-color-hover") !important;
-    }
+    #tabs-newtab-button,
+    #new-tab-button {
+      @include ripple-effect-for-icon();
 
-    fill: get-var("icon-color-secondary") !important;
+      & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+        background-image: get-var("circle-icon-refresh"),
+          get-var("circle-icon-refresh") !important;
+      }
+
+      &:not([disabled]):hover
+        > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+        background-color: get-var("tab-background-color-hover") !important;
+      }
+
+      fill: get-var("icon-color-secondary") !important;
+    }
   }
 }

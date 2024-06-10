@@ -67,35 +67,37 @@
     overflow: hidden !important;
     border-radius: 11px !important;
 
-    background-color: get-var("background-color-100") !important;
+    @media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+      background-color: get-var("background-color-100") !important;
 
-    @media (prefers-color-scheme: light) {
-      background-color: cm(
-        get-var("background-color-100"),
-        get-var("accent-color"),
-        0.1333
-      ) !important;
+      @media (prefers-color-scheme: light) {
+        background-color: cm(
+          get-var("background-color-100"),
+          get-var("accent-color"),
+          0.1333
+        ) !important;
+      }
     }
-  }
 
-  &:hover {
-    .toolbarbutton-badge-stack {
-      background-color: get-var("tab-background-color-hover") !important;
+    &:hover {
+      .toolbarbutton-badge-stack {
+        background-color: get-var("tab-background-color-hover") !important;
+      }
     }
-  }
 
-  &[open="true"],
-  &:hover:active {
-    .toolbarbutton-badge-stack {
-      background-color: get-var("accent-color-hover") !important;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
     &[open="true"],
     &:hover:active {
       .toolbarbutton-badge-stack {
-        background-color: #29668c !important;
+        background-color: get-var("accent-color-hover") !important;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      &[open="true"],
+      &:hover:active {
+        .toolbarbutton-badge-stack {
+          background-color: #29668c !important;
+        }
       }
     }
   }
@@ -113,10 +115,12 @@
   }
 }
 
-// window-inactive title bar bg color
-:root:-moz-window-inactive #navigator-toolbox {
-  #alltabs-button .toolbarbutton-badge-stack {
-    background-color: get-var("background-color-100") !important;
+@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+  // window-inactive title bar bg color
+  :root:-moz-window-inactive #navigator-toolbox {
+    #alltabs-button .toolbarbutton-badge-stack {
+      // background-color: get-var("background-color-100") !important;
+    }
   }
 }
 
