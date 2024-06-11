@@ -4,14 +4,19 @@ user_pref("layout.css.color-mix.enabled", true); // for color-mix
 
 // * Available preferences
 
-// user_pref("userChrome.chrome-refresh-2023", true);
+// user_pref("userChrome.ui-chrome-refresh", true);
 
 // * Color themes, use only one
-// user_pref("userChrome.chrome-refresh-colors", true);
-// user_pref("userChrome.default-theme-colors", true);
-// user_pref("userChrome.dracula-theme-colors", true);
-// user_pref("userChrome.github-theme-colors", true);
+// user_pref("userChrome.theme-chrome-refresh", true);
+// user_pref("userChrome.theme-default", true);
+// user_pref("userChrome.theme-material", true);
 
 // * Force enable control animation, because by default respects the user animation disable preference.
 // * (Not required if you do not disable animation)
-// user_pref("userChrome.force-enable-animations", true);
+// user_pref("userChrome.ui-force-animation", true);
+
+// * Make the URL bar more compact by reducing its height
+// user_pref("userChrome.ui-compact-url-bar", true);
+
+// * Hide menu icons
+// user_pref("userChrome.ui-no-menu-icons", true);

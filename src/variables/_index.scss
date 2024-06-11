@@ -15,7 +15,7 @@ body {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
-  @media (-moz-bool-pref: meta.inspect("userChrome.force-enable-animations")) {
+  @media (-moz-bool-pref: meta.inspect("userChrome.ui-force-animation")) {
     // animation durations
     @each $key, $value in $animation-durations {
       --#{$prefix}-#{$key}: #{$value};
@@ -43,7 +43,7 @@ body {
   }
 
   // optional feature: Chrome refresh theme colors
-  @media (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-colors")) {
+  @media (-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) {
     @each $key, $value in $chrome-refresh-colors {
       --#{$prefix}-#{$key}: #{$value};
     }

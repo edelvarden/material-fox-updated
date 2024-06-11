@@ -1,11 +1,11 @@
 // accent color mix for title bar and url bar backgrounds
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   #urlbar-background,
   #searchbar {
     background-color: get-var("background-color-50") !important;
   }
 
-  @media (prefers-color-scheme: light) and (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-colors")) {
+  @media (prefers-color-scheme: light) and (-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) {
     #navigator-toolbox,
     #toolbar-menubar,
     #TabsToolbar,
@@ -50,7 +50,7 @@
 }
 
 // window-inactive title bar bg color
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   :root:-moz-window-inactive #navigator-toolbox {
     background-color: get-var("background-color-50") !important;
     background-image: none !important;

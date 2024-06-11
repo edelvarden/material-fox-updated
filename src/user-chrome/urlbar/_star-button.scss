@@ -4,7 +4,7 @@
   align-items: center !important;
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   #star-button-box {
     --toolbarbutton-icon-fill-attention: #{get-var("accent-color")} !important;
   }

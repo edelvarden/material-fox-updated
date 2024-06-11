@@ -1,5 +1,5 @@
 // fixes for default Firefox colors feature
-@media (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   // urlbar suggestions item
   .urlbarView-row {
     &[selected] {
@@ -38,7 +38,7 @@
   html,
   body {
     --#{$prefix}-accent-color: var(--toolbar-field-focus-color) !important;
-    // --mf-text-on-accent: var(--button-primary-color) !important;
+    // --md-text-on-accent: var(--button-primary-color) !important;
     --#{$prefix}-menu-border-color: var(--arrowpanel-border-color) !important;
 
     --toolbar-field-focus-border-color: var(--color-accent-primary) !important;
@@ -64,7 +64,7 @@
     }
   }
 
-  @media (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-2023")) {
+  @media (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")) {
     #alltabs-button {
       .toolbarbutton-badge-stack {
         background-color: var(--tab-selected-bgcolor) !important;

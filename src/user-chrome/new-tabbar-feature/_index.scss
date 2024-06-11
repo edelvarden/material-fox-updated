@@ -1,4 +1,4 @@
-@media (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-2023")) {
+@media (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")) {
   @import "tab";
   @import "tab-separator";
   @import "tab-buttons";

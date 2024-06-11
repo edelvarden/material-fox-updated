@@ -41,7 +41,7 @@ body {
 }
 
 // selected and not selected tab text color
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   .tabbrowser-tab {
     &:is([visuallyselected], [selected]) {
       color: get-var("tab-label-color") !important;
@@ -155,7 +155,7 @@ body {
   }
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   html,
   body {
     --tab-background-color: #{get-var("background-color-100")} !important;

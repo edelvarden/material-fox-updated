@@ -131,7 +131,7 @@ body {
   }
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   // hover bg opacity for not selected tab
   .tabbrowser-tab:not([selected="true"]):hover,
   .tabbrowser-tab[multiselected]:not([selected="true"]) {

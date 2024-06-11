@@ -1,0 +1,17 @@
+/* use variables when about:config variable userChrome.theme-dracula is true */
+@media (-moz-bool-pref: "userChrome.theme-dracula") {
+  :root,
+  html,
+  body {
+    --md-accent-color: #bd93f9;
+    --md-background-color-0: #282a36;
+    --md-background-color-50: #343746;
+    --md-background-color-100: #44475a;
+    --md-tab-background-color-hover: #44475a;
+    --md-menu-background-color-hover: var(--md-background-color-0);
+    --md-menu-background-color: var(--md-background-color-0);
+    --md-menu-border-color: #343746;
+    --md-selection-text-color: var(--md-black);
+    --md-selection-background-color: #bd93f9;
+  }
+}

@@ -111,8 +111,8 @@ body {
 }
 
 //
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
-  @media (-moz-bool-pref: meta.inspect("userChrome.chrome-refresh-2023")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+  @media (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")) {
     html,
     body {
       --#{$prefix}-circle-icon-refresh: url("icons/circle-refresh.svg");

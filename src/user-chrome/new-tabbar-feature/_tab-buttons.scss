@@ -67,7 +67,7 @@
     overflow: hidden !important;
     border-radius: 11px !important;
 
-    @media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+    @media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
       background-color: get-var("background-color-100") !important;
 
       @media (prefers-color-scheme: light) {
@@ -115,7 +115,7 @@
   }
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   // window-inactive title bar bg color
   :root:-moz-window-inactive #navigator-toolbox {
     #alltabs-button .toolbarbutton-badge-stack {

@@ -1,4 +1,4 @@
-@media not (-moz-bool-pref: meta.inspect("userChrome.no-menu-icons")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.ui-no-menu-icons")) {
   // menu icons
 
   :root {

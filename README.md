@@ -47,7 +47,7 @@ MaterialFox UPDATED support some `about:config` customization options.
 To set preference:
 
 1. Go to `about:config`
-2. Create a custom boolean preference, just type the preference name and click the plus button, for example `userChrome.default-theme-colors`
+2. Create a custom boolean preference, just type the preference name and click the plus button, for example `userChrome.theme-default`
 
 To disable preference, search by name and remove the preference:
 
@@ -61,28 +61,32 @@ To disable preference, search by name and remove the preference:
     <th>Preference</th>
     <th>Description</th>
   </tr>
+    <tr>
+    <td><code>userChrome.ui-chrome-refresh</code></td>
+    <td>Enabling new Chrome design which named as "Chrome Refresh".<img src="assets/preview-chrome-refresh.png" alt="preview-chrome-refresh"></img></td>
+  </tr>
   <tr>
-    <td><code>userChrome.compact-url-bar</code></td>
+    <td><code>userChrome.theme-chrome-refresh</code></td>
+    <td>Enabling new color scheme like in "Chrome Refresh".</img></td>
+  </tr>
+  <tr>
+    <td><code>userChrome.theme-material</code></td>
+    <td>Enabling Meterial color schemes. <a href="#theme-material" _blank>Read more</a>.</img></td>
+  </tr>
+  <tr>
+    <td><code>userChrome.theme-default</code></td>
+    <td>Enabling default color scheme. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
+  </tr>
+  <tr>
+    <td><code>userChrome.ui-compact-url-bar</code></td>
     <td>Make the URL bar more compact by reducing its height.</td>
   </tr>
-  <tr>
-    <td><code>userChrome.chrome-refresh-2023</code></td>
-    <td>Enabling new tab bar design like in Chrome Canary version which named as "Chrome Refresh 2023".<img src="assets/preview-chrome-refresh.png" alt="preview-chrome-refresh"></img></td>
-  </tr>
-  <tr>
-    <td><code>userChrome.chrome-refresh-colors</code></td>
-    <td>Enabling new color scheme like in Chrome Canary version.</img></td>
-  </tr>
-  <tr>
-    <td><code>userChrome.no-menu-icons</code></td>
+    <tr>
+    <td><code>userChrome.ui-no-menu-icons</code></td>
     <td>Hide menu icons</td>
   </tr>
   <tr>
-    <td><code>userChrome.default-theme-colors</code></td>
-    <td>Use the default Firefox colors. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
-  </tr>
-  <tr>
-    <td><code>userChrome.force-enable-animations</code></td>
+    <td><code>userChrome.ui-force-animation</code></td>
     <td>Force enable control animation, because by default respects the user animation disable preference. <em>(Not required if you do not disable animation)</em></td>
   </tr>
 </table>
@@ -103,7 +107,7 @@ Follow this steps:
 html,
 body {
   /* add your css variables below */
-  --mf-accent-color: #ea4335 !important;
+  --md-accent-color: #ea4335 !important;
 }
 ```
 
@@ -119,68 +123,68 @@ Using these custom css files can separate your changes from the source project a
     <th>Description</th>
   </tr>
   <tr>
-    <td><code>--mf-accent-color</code></td>
+    <td><code>--md-accent-color</code></td>
     <td>accent color</td>
   </tr>
   <tr>
-    <td><code>--mf-background-color-0</code></td>
+    <td><code>--md-background-color-0</code></td>
     <td>dark tones</td>
   </tr>
   <tr>
-    <td><code>--mf-background-color-50</code></td>
+    <td><code>--md-background-color-50</code></td>
     <td>middle tones</td>
   </tr>
   <tr>
-    <td><code>--mf-background-color-100</code></td>
+    <td><code>--md-background-color-100</code></td>
     <td>light tones</td>
   </tr>
   <tr>
-    <td><code>--mf-text-primary</code></td>
+    <td><code>--md-text-primary</code></td>
     <td>main text color</td>
   </tr>
   <tr>
-    <td><code>--mf-text-secondary</code></td>
+    <td><code>--md-text-secondary</code></td>
     <td>secondary text color</td>
   </tr>
   <tr>
-    <td><code>--mf-text-on-accent</code></td>
+    <td><code>--md-text-on-accent</code></td>
     <td>text on primary button</td>
   </tr>
   <tr>
-    <td><code>--mf-menu-background-color</code></td>
+    <td><code>--md-menu-background-color</code></td>
     <td>menu background color</td>
   </tr>
   <tr>
-    <td><code>--mf-menu-background-color-hover</code></td>
+    <td><code>--md-menu-background-color-hover</code></td>
     <td>menu items background color on mouse over</td>
   </tr>
   <tr>
-    <td><code>--mf-menu-border-color</code></td>
+    <td><code>--md-menu-border-color</code></td>
     <td>controls border color</td>
   </tr>
   <tr>
-    <td><code>--mf-icon-color-primary</code></td>
+    <td><code>--md-icon-color-primary</code></td>
     <td>navigation bar icons color</td>
   </tr>
   <tr>
-    <td><code>--mf-icon-color-secondary</code></td>
+    <td><code>--md-icon-color-secondary</code></td>
     <td>URL bar icons color</td>
   </tr>
   <tr>
-    <td><code>--mf-content-separator-color</code></td>
+    <td><code>--md-content-separator-color</code></td>
     <td>separator line between browser and content area</td>
   </tr>
   <tr>
-    <td><code>--mf-selection-text-color</code></td>
+    <td><code>--md-selection-text-color</code></td>
     <td>text selection color</td>
   </tr>
   <tr>
-    <td><code>--mf-selection-background-color</code></td>
+    <td><code>--md-selection-background-color</code></td>
     <td>selection background color</td>
   </tr>
 </table>
 
-TIPS: You can find more variables in the [variables/\_colors.scss](src/variables/_colors.scss) file. To use these variables just add `--mf-` prefix, eg. `"accent-color": #a8c7fa,` to `--mf-accent-color: #a8c7fa;`
+TIPS: You can find more variables in the [variables/\_colors.scss](src/variables/_colors.scss) file. To use these variables just add `--md-` prefix, eg. `"accent-color": #a8c7fa,` to `--md-accent-color: #a8c7fa;`
 
 #### Custom css use cases
 
@@ -208,7 +212,7 @@ TIPS: You can find more variables in the [variables/\_colors.scss](src/variables
   html,
   body {
     /* add your css variables below */
-    --mf-content-separator-color: transparent !important;
+    --md-content-separator-color: transparent !important;
   }
   ```
 
@@ -244,6 +248,21 @@ You can use variables to completly recolor to your own color, some examples with
   </tr>
 
 </table>
+
+#### Theme Material
+
+Now you can use [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) to create a color theme from an image.
+
+1. Set to `true` or create `userChrome.theme-material` variable in the `about:config` page.
+2. Go to the [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) website.
+3. Select from the presented images, upload your own or use "Random color" button to generate theme.
+4. Then click "Pick your fonts" button in the right bottom corner, scipt this step and click "Export theme".
+5. Click "Export" and select "Web (CSS)" from the drop down menu.
+   ![material-theme-tutorial](assets/material-theme-tutorial.png)
+
+This will download an archive of CSS files, you need only two files `light.css` and `dark.css`.
+Open in a text editor and extract variables to your `custom.css` file.
+Wrap variables to appropriate media rule for light and dark theme.
 
 ## Build & Development (for developers)
 

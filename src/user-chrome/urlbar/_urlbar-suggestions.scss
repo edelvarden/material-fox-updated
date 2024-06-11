@@ -14,7 +14,7 @@
   border-bottom-right-radius: 4px !important;
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   // urlbar suggestions item
   .urlbarView-row {
     &[selected] {
@@ -43,7 +43,7 @@
   color: var(--color-accent-primary) !important;
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   [dir="rtl"] {
     .urlbarView-row {
       &[selected] {

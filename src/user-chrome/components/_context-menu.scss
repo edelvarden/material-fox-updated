@@ -288,7 +288,7 @@ arrowscrollbox {
   background-image: none !important;
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   // fix menu item double background color
   menuitem,
   menu {

@@ -170,7 +170,7 @@
   fill: var(--color-accent-primary) !important;
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   #star-button[starred],
   #tracking-protection-icon-box[active] {
     fill: get-var("accent-color") !important;
@@ -293,7 +293,7 @@ treechildren::-moz-tree-image(title, open) {
   fill: var(--color-accent-primary) !important;
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.default-theme-colors")) {
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   // url bar suggestions star icon badge
   .urlbarView-row[type="bookmark"]
     > .urlbarView-row-inner
