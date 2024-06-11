@@ -9,7 +9,7 @@
   > toolbarbutton {
   &:not([disabled]) {
     &[shortcut]::after {
-      color: get-var("text-secondary") !important;
+      color: get-var("text-disabled") !important;
     }
 
     &:hover[shortcut]::after {
@@ -19,11 +19,11 @@
 
   &[disabled] {
     &[shortcut]::after {
-      color: get-var("text-secondary") !important;
+      color: get-var("text-disabled") !important;
     }
 
     &:hover[shortcut]::after {
-      color: get-var("text-secondary") !important;
+      color: get-var("text-disabled") !important;
     }
   }
 }

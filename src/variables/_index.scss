@@ -55,4 +55,16 @@ body {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
+
+  @media (-moz-bool-pref: meta.inspect("userChrome.theme-material")) {
+    @each $key, $value in $theme-material-light {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+
+    @media (prefers-color-scheme: dark) {
+      @each $key, $value in $theme-material-dark {
+        --#{$prefix}-#{$key}: #{$value};
+      }
+    }
+  }
 }

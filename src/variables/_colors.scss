@@ -51,6 +51,7 @@ $dark-mode: (
   // UI text
   "text-primary": get-var(grey-200),
   "text-secondary": get-var(grey-500),
+  "text-disabled": get-var(text-secondary),
   // primary button text color
   "text-on-accent": get-var("grey-900"),
   "secondary-button-text": get-var(accent-color),
@@ -61,7 +62,7 @@ $dark-mode: (
   "input-background-color": get-var("background-color-0"),
   // menu, popups
   "menu-background-color": get-var(background-color-50),
-  "menu-background-color-hover": #323334,
+  "menu-background-color-hover": cm(transparent, white, 0.15),
   "menu-border-color": get-var("grey-800"),
   // tab bar
   "tab-background-color-hover": #004a77,
@@ -94,6 +95,7 @@ $light-mode: (
   // UI text
   "text-primary": get-var("grey-900"),
   "text-secondary": get-var(grey-700),
+  "text-disabled": get-var(text-secondary),
   // primary button text color
   "text-on-accent": get-var("white"),
   "secondary-button-text": get-var(accent-color),
@@ -132,9 +134,86 @@ $chrome-refresh-colors: (
   "background-color-50": #282828,
   "background-color-100": #3c3c3c,
   "menu-background-color": #1f1f1f,
-  "menu-background-color-hover": #363635,
+  "menu-background-color-hover": cm(transparent, white, 0.15),
   "menu-border-color": #444746,
   "content-separator-color": #444746,
   "selection-text-color": get-var("black"),
   "selection-background-color": #a8c7fa,
+);
+
+$theme-material-light: (
+  // accent color
+  "accent-color": get-var(sys-color-primary),
+  "accent-color-hover": cm(transparent, get-var(accent-color), 0.8),
+  "accent-color-transparent": cm(transparent, get-var(accent-color), 0.0837),
+  // UI background colors
+  "background-color-0": cm(get-var("grey-100"), get-var(accent-color), 0.2),
+  "background-color-50": cm(get-var("grey-100"), get-var(accent-color), 0.05),
+  "background-color-100":
+    cm(
+      get-var(sys-color-surface-container-lowest),
+      get-var(accent-color),
+      0.0333
+    ),
+  // UI text
+  "text-primary": get-var(sys-color-on-surface),
+  "text-secondary": get-var(sys-color-secondary),
+  "text-disabled": cm(transparent, get-var(text-secondary), 0.8),
+  // primary button text color
+  "text-on-accent": get-var(sys-color-on-primary),
+  "secondary-button-text": get-var(accent-color),
+  // menu, popups
+  "menu-background-color": get-var(background-color-100),
+  "menu-background-color-hover": get-var("background-color-0"),
+  "menu-border-color": get-var("background-color-0"),
+  // tab bar
+  "tab-background-color-hover": get-var("accent-color-transparent-active"),
+  "tab-separator-color": cm(transparent, get-var("black"), 0.2),
+  "tab-outline-color": cm(transparent, get-var("black"), 0.2),
+  "tab-icon-color": get-var(text-primary),
+  "tab-label-color": get-var(text-primary),
+  // nav bar
+  "icon-color-primary": get-var(text-secondary),
+  "icon-color-secondary": get-var(text-secondary),
+  "content-separator-color": #dbdcdd,
+  // selection colors
+  "selection-text-color": get-var("black"),
+  "selection-background-color": get-var("blue-200")
+);
+
+$theme-material-dark: (
+  // accent color
+  "accent-color": get-var(sys-color-primary),
+  "accent-color-hover": cm(transparent, get-var(accent-color), 0.8),
+  "accent-color-transparent": cm(transparent, get-var(accent-color), 0.0837),
+  // UI background colors
+  "background-color-0": cm(get-var(accent-color), #1f2020, 0.9),
+  "background-color-50": cm(get-var(accent-color), #282828, 0.9),
+  "background-color-100": cm(get-var(accent-color), #3c3c3c, 0.9),
+  // UI text
+  "text-primary": get-var(sys-color-on-surface),
+  "text-secondary": get-var(sys-color-secondary),
+  "text-disabled": cm(transparent, get-var(text-secondary), 0.8),
+  // primary button text color
+  "text-on-accent": get-var(sys-color-on-primary),
+  "secondary-button-text": get-var(accent-color),
+  // menu, popups
+  "menu-background-color": get-var(background-color-50),
+  "menu-background-color-hover":
+    cm(get-var(background-color-100), get-var(accent-color), 0.15),
+  "menu-border-color": cm(get-var(sys-color-outline), #444746, 0.9),
+  // tab bar
+  "tab-background-color-hover":
+    cm(transparent, get-var(sys-color-tertiary), 0.2),
+  "tab-separator-color": cm(transparent, get-var("white"), 0.2),
+  "tab-outline-color": cm(transparent, get-var("black"), 0.1),
+  "tab-icon-color": get-var(text-secondary),
+  "tab-label-color": get-var(text-primary),
+  // nav bar
+  "icon-color-primary": get-var(text-primary),
+  "icon-color-secondary": get-var(text-secondary),
+  "content-separator-color": #606164,
+  // selection colors
+  "selection-text-color": get-var("white"),
+  "selection-background-color": get-var(blue-900)
 );
