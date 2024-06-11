@@ -147,14 +147,9 @@ $theme-material-light: (
   "accent-color-hover": cm(transparent, get-var(accent-color), 0.8),
   "accent-color-transparent": cm(transparent, get-var(accent-color), 0.0837),
   // UI background colors
-  "background-color-0": cm(get-var("grey-100"), get-var(accent-color), 0.2),
-  "background-color-50": cm(get-var("grey-100"), get-var(accent-color), 0.05),
-  "background-color-100":
-    cm(
-      get-var(sys-color-surface-container-lowest),
-      get-var(accent-color),
-      0.0333
-    ),
+  "background-color-0": cm(get-var(accent-color), get-var("grey-100"), 0.8),
+  "background-color-50": cm(get-var(accent-color), get-var("grey-100"), 0.95),
+  "background-color-100": cm(get-var(accent-color), white, 0.98),
   // UI text
   "text-primary": get-var(sys-color-on-surface),
   "text-secondary": get-var(sys-color-secondary),
