@@ -264,6 +264,14 @@ This will download an archive of CSS files, you need only two files `light.css` 
 Open in a text editor and extract variables to your `custom.css` file.
 Wrap variables to appropriate media rule for light and dark theme.
 
+Examples with previews
+| Example | Preview |
+| --- | --- |
+| [theme-material-blue.css](chrome/theme-material-blue.css) | ![material-blue-preview](assets/material-blue-preview.png) |
+| [theme-material-red.css](assets/examples/theme-material-red.css) | ![material-red-preview](assets/material-red-preview.png) |
+| [theme-material-yellow.css](assets/examples/theme-material-yellow.css) | ![material-yellow-preview](assets/material-yellow-preview.png) |
+| [theme-material-green.css](assets/examples/theme-material-green.css) | ![material-green-preview](assets/material-green-preview.png) |
+
 ## Build & Development (for developers)
 
 ### Prerequisites

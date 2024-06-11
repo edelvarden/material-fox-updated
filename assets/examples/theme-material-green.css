@@ -1,5 +1,6 @@
 /* use variables when about:config variable userChrome.theme-material-green is true */
 @media (-moz-bool-pref: "userChrome.theme-material-green") {
+  /* light mode variables */
   :root {
     --md-sys-color-primary: rgb(76 102 43);
     --md-sys-color-surface-tint: rgb(76 102 43);
@@ -52,6 +53,7 @@
     --md-sys-color-surface-container-highest: rgb(226 227 216);
   }
 
+  /* dark mode variables */
   @media (prefers-color-scheme: dark) {
     :root {
       --md-sys-color-primary: rgb(177 209 138);
