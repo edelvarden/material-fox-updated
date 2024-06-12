@@ -9,6 +9,7 @@
 #PersonalToolbar {
   --bookmarks-toolbar-overlapping-browser-heigh: max(36px, 2em) !important;
 }
+
 :root[BookmarksToolbarOverlapsBrowser] #PersonalToolbar {
   height: var(--bookmarks-toolbar-overlapping-browser-heigh) !important;
 }

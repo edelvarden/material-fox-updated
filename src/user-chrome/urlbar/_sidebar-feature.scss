@@ -1,0 +1,127 @@
+// browser.toolbars.bookmarks.visibility = 'always'
+
+:root {
+  --#{$prefix}-sidebar-width: 44px;
+}
+
+#browser {
+  margin-left: get-var(sidebar-width);
+}
+
+#navigator-toolbox {
+  position: relative !important;
+}
+
+#PersonalToolbar {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 100%;
+  left: 0;
+  width: get-var(sidebar-width);
+  min-width: unset !important;
+  height: 100vh;
+  max-height: 100vh !important;
+  padding-bottom: 120px !important;
+  padding-inline: 0px !important;
+}
+
+#PersonalToolbar .toolbarbutton-1,
+#PersonalToolbar toolbaritem {
+  max-width: get-var(sidebar-width) !important;
+  margin: 0 !important;
+}
+
+#PersonalToolbar #PlacesToolbarItems {
+  display: flex !important;
+  flex-direction: column;
+  overflow-y: auto;
+  // scrollbar-width: none;
+}
+
+#PersonalToolbar > #personal-bookmarks {
+  overflow-y: auto;
+  scrollbar-width: none;
+  height: 100vh;
+}
+
+#PersonalToolbar #PlacesToolbarItems {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+#personal-bookmarks,
+#PlacesToolbar,
+#PlacesToolbarItems {
+  width: 100% !important;
+}
+
+#personal-bookmarks .bookmark-item > .toolbarbutton-text,
+#import-button label {
+  display: none !important;
+}
+
+#PlacesToolbarItems > .bookmark-item > image {
+  padding: 0 !important;
+  margin-block: 0 !important;
+  margin-inline: 0 !important;
+  margin: 0 !important;
+}
+
+#PlacesToolbarItems > .bookmark-item {
+  --tab-min-height: 40px;
+  --tab-vertical-padding: 6px;
+  --tab-horizontal-padding: 3px;
+
+  min-height: var(--tab-min-height) !important;
+  max-height: var(--tab-min-height) !important;
+  width: 100%;
+
+  background: none !important;
+  background-image: none !important;
+  padding: 0 !important;
+  margin-block: 0 !important;
+  margin-inline: 0 !important;
+  margin: 0 !important;
+
+  place-content: center !important;
+  place-items: center !important;
+  justify-content: center !important;
+  align-items: center;
+
+  position: relative !important;
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    // margin-top: var(--tab-vertical-padding) !important;
+    // margin-bottom: var(--tab-vertical-padding) !important;
+    // margin-left: var(--tab-horizontal-padding) !important;
+    // margin-right: var(--tab-horizontal-padding) !important;
+
+    min-height: 28px !important;
+    max-height: 28px !important;
+    min-width: 37px;
+    max-width: 37px;
+
+    width: 100%;
+    border-radius: 11px;
+
+    left: 50%;
+    right: 0;
+
+    transform: translateX(-50%);
+
+    opacity: get-var(tab-opacity);
+  }
+
+  &:hover {
+    &::after {
+      background-color: get-var(tab-background-color-hover);
+      opacity: get-var(tab-opacity-hover);
+    }
+  }
+}

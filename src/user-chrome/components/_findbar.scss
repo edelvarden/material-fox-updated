@@ -120,3 +120,19 @@
 .findbar-label {
   margin: 0 8px !important;
 }
+
+.found-matches:not([hidden="true"]),
+.findbar-find-status[status] {
+  display: flex !important;
+  width: 140px !important;
+}
+
+.findbar-label {
+  justify-content: end !important;
+  order: 1;
+}
+
+// checkboxes
+.tabbable {
+  order: 2;
+}
