@@ -66,40 +66,6 @@
 
     overflow: hidden !important;
     border-radius: 11px !important;
-
-    @media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
-      background-color: get-var("background-color-100") !important;
-
-      @media (prefers-color-scheme: light) {
-        background-color: cm(
-          get-var("background-color-100"),
-          get-var("accent-color"),
-          0.1333
-        ) !important;
-      }
-    }
-
-    &:hover {
-      .toolbarbutton-badge-stack {
-        background-color: get-var("tab-background-color-hover") !important;
-      }
-    }
-
-    &[open="true"],
-    &:hover:active {
-      .toolbarbutton-badge-stack {
-        background-color: get-var("accent-color-hover") !important;
-      }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      &[open="true"],
-      &:hover:active {
-        .toolbarbutton-badge-stack {
-          background-color: #29668c !important;
-        }
-      }
-    }
   }
 
   .toolbarbutton-icon {
@@ -112,15 +78,6 @@
   #alltabs-button .toolbarbutton-badge-stack {
     // make the position pixel perfect, this is the top and left margin
     transform: translate(-6px, 6px) !important;
-  }
-}
-
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
-  // window-inactive title bar bg color
-  :root:-moz-window-inactive #navigator-toolbox {
-    #alltabs-button .toolbarbutton-badge-stack {
-      // background-color: get-var("background-color-100") !important;
-    }
   }
 }
 
@@ -160,5 +117,52 @@
     width: 30px !important;
     height: 30px !important;
     padding: 8px !important;
+  }
+}
+
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+  #alltabs-button {
+    // default color
+    .toolbarbutton-badge-stack {
+      background-color: cm(
+        get-var("background-color-100"),
+        get-var("accent-color"),
+        0.1333
+      ) !important;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: get-var("background-color-100") !important;
+      }
+    }
+
+    // on hover
+    &:not(:active, [open="true"]):hover {
+      .toolbarbutton-badge-stack {
+        background-color: get-var("tab-background-color-hover") !important;
+      }
+    }
+
+    // when open/active
+    &:active:hover,
+    &[open="true"] {
+      .toolbarbutton-badge-stack {
+        background-color: cm(
+          transparent,
+          get-var("accent-color-hover"),
+          0.6
+        ) !important;
+
+        @media (prefers-color-scheme: dark) {
+          background-color: #29668c !important;
+        }
+      }
+    }
+  }
+
+  // when window inactive
+  :root:-moz-window-inactive #navigator-toolbox {
+    #alltabs-button .toolbarbutton-badge-stack {
+      background-color: get-var("background-color-100") !important;
+    }
   }
 }

@@ -37,7 +37,7 @@
   :root,
   html,
   body {
-    --#{$prefix}-accent-color: var(--toolbar-field-focus-color) !important;
+    --#{$prefix}-accent-color: var(--color-accent-primary) !important;
     // --md-text-on-accent: var(--button-primary-color) !important;
     --#{$prefix}-menu-border-color: var(--arrowpanel-border-color) !important;
 
