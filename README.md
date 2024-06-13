@@ -89,6 +89,10 @@ To disable preference, search by name and remove the preference:
     <td><code>userChrome.ui-force-animation</code></td>
     <td>Force enable control animation, because by default respects the user animation disable preference. <em>(Not required if you do not disable animation)</em></td>
   </tr>
+  <tr>
+    <td><code>userChrome.ui-no-ripple</code></td>
+    <td>Disable ripple effect from buttons</td>
+  </tr>
 </table>
 
 ### Custom CSS rules

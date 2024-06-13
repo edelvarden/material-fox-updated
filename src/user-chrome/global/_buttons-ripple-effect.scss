@@ -29,6 +29,10 @@ body {
   transition-property: background-size, background-color !important;
   transition-duration: get-var("short-duration"), get-var("short-duration") !important;
   transition-timing-function: get-var("fade-in-out"), ease !important;
+
+  @media (-moz-bool-pref: meta.inspect("userChrome.ui-no-ripple")) {
+    transition-duration: 0ms, get-var("short-duration") !important;
+  }
 }
 
 // add style for buttons
@@ -94,22 +98,6 @@ body {
   }
 }
 
-// disable refresh button animation
-#nav-bar-customization-target {
-  align-items: center;
-}
-
-#reload-button,
-#stop-button {
-  .toolbarbutton-icon {
-    fill: inherit !important;
-  }
-
-  .toolbarbutton-animatable-box {
-    display: none !important;
-  }
-}
-
 //
 @media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   @media (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")) {
@@ -126,13 +114,6 @@ body {
         background-image: get-var("circle-icon-refresh"),
           get-var("circle-icon-refresh") !important;
       }
-
-      &:not([disabled]):hover
-        > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
-        background-color: get-var("tab-background-color-hover") !important;
-      }
-
-      fill: get-var("icon-color-secondary") !important;
     }
   }
 }

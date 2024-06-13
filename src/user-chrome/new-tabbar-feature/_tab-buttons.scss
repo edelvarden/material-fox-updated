@@ -166,3 +166,15 @@
     }
   }
 }
+
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+  #tabs-newtab-button,
+  #new-tab-button {
+    &:not([disabled]):hover
+      > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+      background-color: get-var("tab-background-color-hover") !important;
+    }
+
+    fill: get-var("icon-color-secondary") !important;
+  }
+}

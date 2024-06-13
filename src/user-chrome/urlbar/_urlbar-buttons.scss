@@ -104,3 +104,19 @@
     display: none !important;
   }
 }
+
+// disable refresh button animation
+#nav-bar-customization-target {
+  align-items: center;
+}
+
+#reload-button,
+#stop-button {
+  .toolbarbutton-icon {
+    fill: inherit !important;
+  }
+
+  .toolbarbutton-animatable-box {
+    display: none !important;
+  }
+}
