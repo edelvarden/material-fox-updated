@@ -69,6 +69,21 @@
       .toolbarbutton-badge-stack {
         background-color: var(--tab-selected-bgcolor) !important;
       }
+
+      &:not(:active, [open="true"]):hover {
+        .toolbarbutton-badge-stack {
+          background-color: cm(
+            get-var(accent-color),
+            var(--tab-selected-bgcolor),
+            0.5
+          ) !important;
+        }
+      }
+      &:active:hover {
+        .toolbarbutton-badge-stack {
+          background-color: var(--tab-selected-bgcolor) !important;
+        }
+      }
     }
   }
 }
