@@ -74,3 +74,38 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
     padding-right: 16px !important;
   }
 }
+
+// bookmarks label font bolder
+.bookmark-item {
+  label {
+    font-weight: 500 !important;
+  }
+}
+
+// recolor like in chrome
+@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+  @media (-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) {
+    .bookmark-item {
+      fill: get-var(text-secondary) !important;
+
+      label {
+        color: get-var(text-secondary) !important;
+      }
+    }
+  }
+
+  #PlacesChevron:not([collapsed]) .toolbarbutton-icon {
+    fill: get-var(icon-color-secondary) !important;
+  }
+}
+
+// make folder icon size bigger like in chrome
+#PlacesToolbarItems > .bookmark-item[container="true"] > image {
+  transform: scale(1.15) !important;
+  margin-inline-end: 8px !important;
+}
+
+// smaller "Show more bookmarks" icon
+#PlacesChevron:not([collapsed]) .toolbarbutton-icon {
+  width: calc(2 * var(--toolbarbutton-inner-padding) + 12px) !important;
+}

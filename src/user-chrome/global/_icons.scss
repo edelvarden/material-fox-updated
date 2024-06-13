@@ -9,7 +9,7 @@
 
 .bookmark-item {
   list-style-image: get-var("no-src-icon") !important;
-  fill: get-var("grey-600") !important;
+  // fill: get-var("grey-600") !important;
 }
 
 .unified-nav-forward,
@@ -362,7 +362,7 @@ treechildren::-moz-tree-image(title, open) {
 
 // nav bar account avatar icon
 #fxa-avatar-image {
-  /* icon should be 20px, but we don't want to affect button size */
+  // icon should be 20px, but we don't want to affect button size
   transform: scale(1.25) !important;
   border-radius: 50% !important;
 }
