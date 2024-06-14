@@ -232,7 +232,7 @@ You can use variables to completly recolor to your own color, some examples with
   <tr>
     <td>
       <h2>System accent colors</h6>
-      Source code: <br><a href="assets/examples/system-accent-colors.css" _blank>system-accent-colors.css</a>
+      Source code: <br><a href="assets/examples/theme-system-accent.css" _blank>system-accent-colors.css</a>
     </td>
     <td><img src="assets/preview-accent-1.png" alt=""/><img src="assets/preview-accent-2.png" alt=""/><img src="assets/preview-accent-3.png" alt=""/></td>
   </tr>
@@ -246,7 +246,7 @@ You can use variables to completly recolor to your own color, some examples with
   <tr>
     <td>
       <h2>Dracula theme</h6>
-      Source code: <br><a href="assets/examples/dracula-theme.css" _blank>dracula-theme.css</a>
+      Source code: <br><a href="assets/examples/theme-dracula.css" _blank>dracula-theme.css</a>
     </td>
     <td><img src="assets/preview-dracula.png" alt="preview-dracula"/></td>
   </tr>
