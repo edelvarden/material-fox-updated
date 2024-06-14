@@ -26,7 +26,7 @@ To start using MaterialFox UPDATED, follow these steps:
    - `layout.css.color-mix.enabled`
 
 3. Go to the following url address `about:support`
-4. Find `Profile Folder` and click `Open Folder` button
+4. Find `Profile Directory` and click `Open Directory` button
 5. Download `chrome.zip` from the latest project releases -> [here](https://github.com/edelvarden/material-fox-updated/releases/latest) (or for Firefox **119** or below -> [here](https://github.com/edelvarden/material-fox-updated/releases/tag/v1.0.7)) and extract into your Firefox profile directory
 6. Restart Firefox to apply changes
 
@@ -239,7 +239,7 @@ You can use variables to completly recolor to your own color, some examples with
   <tr>
     <td>
       <h2>Github theme</h6>
-      Source code: <br><a href="assets/examples/github-theme.css" _blank>github-theme.css</a>
+      Source code: <br><a href="assets/examples/theme-github.css" _blank>github-theme.css</a>
     </td>
     <td><img src="assets/preview-github.png" alt="preview-github"></img></td>
   </tr>
