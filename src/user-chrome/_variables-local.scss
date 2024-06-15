@@ -17,6 +17,11 @@
   }
 
   :root,
+  html body {
+    --color-accent-primary: #{get-var("accent-color")} !important;
+  }
+
+  :root,
   html,
   body {
     --panel-banner-item-info-icon-bgcolor: #{get-var("accent-color")} !important;

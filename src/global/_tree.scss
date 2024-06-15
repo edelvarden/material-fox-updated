@@ -12,3 +12,12 @@
   border: none !important;
   outline: none !important;
 }
+
+richlistbox {
+  background-color: get-var(input-background-color) !important;
+}
+
+richlistitem[selected] {
+  background-color: get-var(accent-color) !important;
+  color: get-var(text-on-accent) !important;
+}
