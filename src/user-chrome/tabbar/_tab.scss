@@ -43,11 +43,15 @@ body {
 // selected and not selected tab text color
 @media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   .tabbrowser-tab {
+    &:not(:is([visuallyselected], [selected])) {
+      color: get-var("tab-label-color-inactive") !important;
+    }
+
     &:is([visuallyselected], [selected]) {
       color: get-var("tab-label-color") !important;
     }
 
-    &:not(:is([visuallyselected], [selected])) {
+    &:hover {
       color: get-var("tab-label-color") !important;
     }
   }

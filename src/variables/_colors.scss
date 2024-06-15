@@ -73,6 +73,7 @@ $dark-mode: (
 
   "tab-icon-color": #c3c3c3,
   "tab-label-color": #e3e3e3,
+  "tab-label-color-inactive": #c3c3c3,
 
   // nav bar
   "icon-color-primary": get-var("grey-100"),
@@ -118,6 +119,7 @@ $light-mode: (
 
   "tab-icon-color": get-var("grey-900"),
   "tab-label-color": get-var("grey-900"),
+  "tab-label-color-inactive": #474747,
   // nav bar
   "icon-color-primary": get-var(grey-700),
   "icon-color-secondary": get-var(grey-700),

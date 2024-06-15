@@ -1,0 +1,14 @@
+// hide selected item outline
+:root {
+  --default-focusring-width: 0px !important;
+}
+
+:root {
+  --default-focusring: var(--default-focusring-width) solid !important;
+}
+
+// downloads window
+#downloadsListBox:focus > richlistitem[selected] {
+  border: none !important;
+  outline: none !important;
+}

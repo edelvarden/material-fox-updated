@@ -1,4 +1,6 @@
-# MaterialFox UPDATED
+<h1 align="center">
+  MaterialFox UPDATED
+</h1>
 
 ![preview](assets/preview.png)
 
@@ -18,17 +20,17 @@ MaterialFox UPDATED overriding the default CSS with custom styles, utilizing the
 
 To start using MaterialFox UPDATED, follow these steps:
 
-1. Go to the following url address `about:config`
-2. Ensure the following properties are set to `true`:
+1. **Go to** the URL `about:config`.
+2. **Ensure** the following properties are set to `true`:
 
    - `toolkit.legacyUserProfileCustomizations.stylesheets`
    - `svg.context-properties.content.enabled`
    - `layout.css.color-mix.enabled`
 
-3. Go to the following url address `about:support`
-4. Find `Profile Directory` and click `Open Directory` button
-5. Download `chrome.zip` from the latest project releases -> [here](https://github.com/edelvarden/material-fox-updated/releases/latest) (or for Firefox **119** or below -> [here](https://github.com/edelvarden/material-fox-updated/releases/tag/v1.0.7)) and extract into your Firefox profile directory
-6. Restart Firefox to apply changes
+3. **Go to** the URL `about:support`.
+4. **Find** the `Profile Folder` category and **click** the `Open Folder` button.
+5. **Download** `chrome.zip` from the latest project releases -> [here](https://github.com/edelvarden/material-fox-updated/releases/latest) (or for Firefox **119** or below -> [here](https://github.com/edelvarden/material-fox-updated/releases/tag/v1.0.7)) and **extract** into your Firefox profile directory.
+6. **Restart** Firefox to apply changes.
 
 ### Installation script (for advanced)
 
@@ -44,15 +46,15 @@ PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercon
 
 MaterialFox UPDATED support some `about:config` customization options.
 
-To set preference:
+To **set** a preference:
 
-1. Go to `about:config`
-2. Create a custom boolean preference, just type the preference name and click the plus button, for example `userChrome.theme-default`
+1. **Go to** `about:config`.
+2. **Create** a custom boolean preference by typing the preference name and **clicking** the plus button, for example, `userChrome.theme-default`.
 
-To disable preference, search by name and remove the preference:
+To **disable** a preference:
 
-1. Go to `about:config`.
-2. Search by name and remove the preference.
+1. **Go to** `about:config`.
+2. **Search** by name and **delete** the preference or toggle preference state to `false`.
 
 #### Available preferences
 
@@ -71,7 +73,7 @@ To disable preference, search by name and remove the preference:
   </tr>
   <tr>
     <td><code>userChrome.theme-material</code></td>
-    <td>Enabling Meterial color schemes. <a href="#theme-material" _blank>Read more</a>.</img></td>
+    <td>Enabling Meterial color schemes. <a href="#material-theme" _blank>Read more</a>.</img></td>
   </tr>
   <tr>
     <td><code>userChrome.theme-default</code></td>
@@ -95,16 +97,19 @@ To disable preference, search by name and remove the preference:
   </tr>
 </table>
 
+> [!WARNING]  
+> Use only one preference with the prefix `theme`.
+
 ### Custom CSS rules
 
 MaterialFox UPDATED support custom css rules, or additionally, if you want to change some colors, you can override the default values with your own.
 
 Follow this steps:
 
-1. Find and rename in the root folder `custom_example.css` to `custom.css`
-2. Open `custom.css` in a text editor
-3. Find the desired variable
-4. Add your values, for example, set the accent color to red:
+1. **Find and rename** the `custom_example.css` file in the root folder to `custom.css`.
+2. **Open** `custom.css` in a text editor.
+3. **Find** the desired variable.
+4. **Add your values**. For example, set the accent color to red:
 
 ```css
 :root,
@@ -117,7 +122,8 @@ body {
 
 5. Save the file and restart Firefox to apply changes
 
-Using these custom css files can separate your changes from the source project and you can easily backup your files and don't worry about overwriting your changes if you want to update or reinstall the main files.
+> [!NOTE]  
+> Using these custom CSS files can separate your changes from the source project. You can easily back up your files and not worry about overwriting your changes when updating or reinstalling the main files.
 
 #### Available variables
 
@@ -188,7 +194,8 @@ Using these custom css files can separate your changes from the source project a
   </tr>
 </table>
 
-TIPS: You can find more variables in the [variables/\_colors.scss](src/variables/_colors.scss) file. To use these variables just add `--md-` prefix, eg. `"accent-color": #a8c7fa,` to `--md-accent-color: #a8c7fa;`
+> [!TIP]
+> You can find more variables in the [variables/\_colors.scss](src/variables/_colors.scss) file. To use these variables, simply add the `--md-` prefix. For example, `"accent-color": #a8c7fa,` becomes `--md-accent-color: #a8c7fa;`.
 
 #### Custom css use cases
 
@@ -232,41 +239,41 @@ You can use variables to completly recolor to your own color, some examples with
   <tr>
     <td>
       <h2>System accent colors</h6>
-      Source code: <br><a href="assets/examples/theme-system-accent.css" _blank>system-accent-colors.css</a>
+      Source code: <br><a href="assets/examples/theme-system-accent.css" _blank>theme-system-accent.css</a>
     </td>
     <td><img src="assets/preview-accent-1.png" alt=""/><img src="assets/preview-accent-2.png" alt=""/><img src="assets/preview-accent-3.png" alt=""/></td>
   </tr>
   <tr>
     <td>
       <h2>Github theme</h6>
-      Source code: <br><a href="assets/examples/theme-github.css" _blank>github-theme.css</a>
+      Source code: <br><a href="assets/examples/theme-github.css" _blank>theme-github.css</a>
     </td>
     <td><img src="assets/preview-github.png" alt="preview-github"></img></td>
   </tr>
   <tr>
     <td>
       <h2>Dracula theme</h6>
-      Source code: <br><a href="assets/examples/theme-dracula.css" _blank>dracula-theme.css</a>
+      Source code: <br><a href="assets/examples/theme-dracula.css" _blank>theme-dracula.css</a>
     </td>
     <td><img src="assets/preview-dracula.png" alt="preview-dracula"/></td>
   </tr>
 
 </table>
 
-#### Theme Material
+## Material Theme
 
-Now you can use [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) to create a color theme from an image.
+You can use the [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) to create a color theme from an image.
 
-1. Set to `true` or create `userChrome.theme-material` variable in the `about:config` page.
-2. Go to the [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) website.
-3. Select from the presented images, upload your own or use "Random color" button to generate theme.
-4. Then click "Pick your fonts" button in the right bottom corner, scipt this step and click "Export theme".
-5. Click "Export" and select "Web (CSS)" from the drop down menu.
+1. **Create** the `userChrome.theme-material` preference in the `about:config` page.
+2. **Go to the** [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) website.
+3. **Select** from the presented images, **upload** your own, or **use the "Random color" button** to generate a theme.
+4. **Click the "Pick your fonts" button** in the bottom right corner.
+5. **Skip this step** and **click the "Export theme" button**.
+6. **Click "Export"** and **select "Web (CSS)"** from the dropdown menu.
+
    ![material-theme-tutorial](assets/material-theme-tutorial.png)
 
-This will download an archive of CSS files, you need only two files `light.css` and `dark.css`.
-Open in a text editor and extract variables to your `custom.css` file.
-Wrap variables to appropriate media rule for light and dark theme.
+This will download an archive of CSS files. You need only two files: `light.css` and `dark.css`. Open these in a text editor and extract the variables to your `custom.css` file. Wrap the variables in the appropriate media rule for light and dark themes.
 
 Examples with previews
 | Example | Preview |

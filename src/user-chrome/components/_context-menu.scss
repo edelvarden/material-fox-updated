@@ -1,4 +1,5 @@
 $menu-min-width: 220px;
+$menu-side-paddings: 4px;
 // context menu
 // @media (-moz-platform: windows),
 //   (-moz-platform: linux),
@@ -37,8 +38,8 @@ $menu-min-width: 220px;
   // separator color
   menuseparator::before {
     border-color: get-var("menu-border-color") !important;
-    margin-left: 1px !important;
-    margin-right: 1px !important;
+    margin-inline-start: $menu-side-paddings !important;
+    margin-inline-end: $menu-side-paddings !important;
   }
 
   menuseparator {
@@ -149,6 +150,7 @@ $image-padding-end: 8px;
       ) {
       padding-inline-start: get-var("menuitem-padding-without-icon") !important;
     }
+
     :is(menuitem, menu):is([image], .menu-iconic, .menuitem-iconic) {
       padding-inline-start: get-var("menuitem-padding-with-icon") !important;
     }
@@ -160,6 +162,7 @@ $image-padding-end: 8px;
     menuitem[type="checkbox"] > .menu-iconic-left {
       margin-inline-end: 0 !important;
     }
+
     menuitem[type="checkbox"]:is([checked="true"]) > .menu-iconic-left {
       margin-inline-end: $image-padding-end !important;
     }
@@ -214,11 +217,16 @@ $image-padding-end: 8px;
   // menu item hover bg color
   menu,
   menuitem {
+    margin-inline-start: $menu-side-paddings !important;
+    margin-inline-end: $menu-side-paddings !important;
+    border-radius: 4px !important;
+
     &[disabled="true"] {
       background-color: transparent !important;
       color: get-var("text-disabled") !important;
     }
 
+    // on hover
     &:where([_moz-menuactive="true"]):not([disabled="true"]) {
       background-color: get-var("menu-border-color") !important;
       color: inherit !important;
@@ -301,8 +309,38 @@ arrowscrollbox {
     &[_moz-menuactive]:is([disabled="true"]) {
       background: transparent !important;
     }
+
     &[_moz-menuactive]:not([disabled="true"]) {
       background: get-var("menu-background-color-hover") !important;
     }
   }
+}
+
+// main menu
+// panelview {
+//   min-width: 400px !important;
+// }
+.subviewbutton {
+  margin-inline-start: $menu-side-paddings !important;
+  margin-inline-end: $menu-side-paddings !important;
+  padding-inline-start: 12px !important;
+  padding-inline-end: 12px !important;
+  border-radius: 4px !important;
+
+  &[disabled="true"] {
+    background-color: transparent !important;
+    color: get-var("text-disabled") !important;
+  }
+
+  // on hover
+  &:where([_moz-menuactive="true"]):not([disabled="true"]) {
+    background-color: get-var("menu-border-color") !important;
+    color: inherit !important;
+  }
+}
+
+toolbarseparator {
+  margin: 0 !important;
+  margin-inline-start: $menu-side-paddings !important;
+  margin-inline-end: $menu-side-paddings !important;
 }

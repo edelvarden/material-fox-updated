@@ -1,18 +1,40 @@
+$select-border-radius: 8px;
 // general "select" control styles
 select,
 menulist,
 .expander-down,
-.expander-up {
+.expander-up,
+button[type="menu"] {
   border: 1px solid;
   border-color: get-var("menu-border-color") !important;
-  background-color: get-var("input-background-color") !important;
-  border-radius: 4px !important;
+  background-color: rgba(253, 252, 251, 0.1) !important;
+  border-radius: $select-border-radius !important;
+  padding-inline-start: 10px !important;
+  padding-inline-end: 4px !important;
+
+  height: 36px !important;
+  line-height: 36px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+
+  menupopup,
+  menuitem {
+    line-height: 18px !important;
+  }
 
   &:focus {
     border-color: transparent !important;
     outline: 2px solid !important;
-    outline-offset: -2px;
+    outline-offset: -1px;
     outline-color: get-var("accent-color") !important;
+  }
+
+  &[open="true"] {
+    background-color: get-var("input-background-color") !important;
+  }
+
+  &:hover {
+    background-color: rgba(253, 252, 251, 0.1) !important;
   }
 }
 
@@ -21,7 +43,20 @@ menulist > menupopup {
   --panel-shadow: #{get-var("elevation-2")} !important;
 
   --panel-border-color: #{get-var("menu-border-color")} !important;
-  --panel-border-radius: 4px !important;
+  // --panel-border-radius: #{$select-border-radius} !important;
   --panel-background: #{get-var("input-background-color")} !important;
   --panel-color: #{get-var("text-primary")} !important;
+}
+
+dropmarker {
+  content: get-var(arrow-down-icon) !important;
+  fill: get-var(icon-color-secondary) !important;
+}
+
+button[type="menu"] {
+  .button-box {
+    display: flex;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
 }

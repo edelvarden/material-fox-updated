@@ -1,16 +1,21 @@
 // variables
-$button-border-radius: 4px;
-$button-padding: 8px 16px;
+$button-border-radius: 100px;
 $button-min-width: 5.14em;
 
 // mixins
 @mixin button-styles {
   min-width: $button-min-width !important;
   border-radius: $button-border-radius !important;
-  padding: $button-padding !important;
+  padding-block-end: 10px !important;
+  padding-block-start: 10px !important;
+  padding-inline-end: 24px !important;
+  padding-inline-start: 24px !important;
+  min-height: 40px !important;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  font-weight: 500 !important;
 
   transition-property: background-color !important;
   transition-duration: get-var("medium-short-duration") !important;
@@ -39,7 +44,8 @@ $button-min-width: 5.14em;
   color: get-var("secondary-button-text") !important;
   background-color: transparent !important;
   border: 1px solid !important;
-  border-color: get-var("menu-border-color") !important;
+  // border-color: get-var("menu-border-color") !important;
+  border-color: var(--in-content-box-border-color) !important;
 
   &:not(.disabled, :disabled, [disabled]):hover {
     background-color: get-var("accent-color-transparent") !important;
@@ -62,8 +68,9 @@ $button-min-width: 5.14em;
         .primary,
         .primary-button,
         .popup-notification-primary-button,
-        .disco-cta-button
-      ),
+        .disco-cta-button,
+        [data-l10n-id="translations-manage-language-download-button"]
+      ):not(button[type="menu"]),
     [type="submit"] {
       @include button-styles;
     }
@@ -73,8 +80,9 @@ $button-min-width: 5.14em;
         [accesskey],
         .accessory-button,
         [dlgtype="cancel"],
-        .disco-cta-button
-      ) {
+        .disco-cta-button,
+        [data-l10n-id="translations-manage-language-download-button"]
+      ):not(button[type="menu"]) {
       @include secondary-button-styles;
     }
 
@@ -85,7 +93,7 @@ $button-min-width: 5.14em;
         .primary,
         .primary-button,
         .popup-notification-primary-button
-      ),
+      ):not(button[type="menu"]),
     [type="submit"] {
       @include primary-button-styles;
     }

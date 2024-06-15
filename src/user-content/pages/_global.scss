@@ -14,3 +14,30 @@
 .category[name="extension"] {
   background-image: get-var("extension-icon") !important;
 }
+
+.info-box-container {
+  font-size: 13px !important;
+  background-color: get-var("input-background-color") !important;
+}
+
+.info-icon[data-l10n-id="managed-notice-info-icon"] {
+  content: get-var(organization-icon) !important;
+}
+
+.info-icon {
+  // fill: #9aa0a6 !important;
+  fill: get-var("icon-color-secondary") !important;
+  margin-inline-end: 8px !important;
+}
+
+h1 {
+  color: get-var(accent-color) !important;
+  font-family: "Georgia", "Times New Roman", "Times", serif !important;
+  font-weight: 400 !important;
+  font-size: 1.5rem;
+  letter-spacing: 0.25px;
+}
+
+.description-deemphasized {
+  color: get-var(text-secondary) !important;
+}

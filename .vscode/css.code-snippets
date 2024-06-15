@@ -1,5 +1,5 @@
 {
-  "-moz-bool-pref:userChrome": {
+  "-moz-bool-pref": {
     "scope": "scss",
     "prefix": "media-uc",
     "body": [
@@ -10,7 +10,7 @@
     ],
     "description": "Preference wrapper"
   },
-  "-moz-bool-pref:userChrome ": {
+  "-moz-bool-pref ": {
     "scope": "css",
     "prefix": "media-uc",
     "body": [
@@ -26,5 +26,11 @@
     "prefix": "media-dark",
     "body": ["@media (prefers-color-scheme: ${1:dark}) {", "\t$2", "}", "$0"],
     "description": "Styles for dark mode"
+  },
+  "-moz-platform": {
+    "scope": "scss, css",
+    "prefix": "media-pl",
+    "body": ["@media (-moz-platform: ${1:windows}) {", "\t$2", "}", "$0"],
+    "description": "Platform wrapper"
   }
 }

@@ -84,13 +84,11 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 
 // recolor like in chrome
 @media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
-  @media (-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) {
-    .bookmark-item {
-      fill: get-var(text-secondary) !important;
+  .bookmark-item {
+    fill: get-var(text-secondary) !important;
 
-      label {
-        color: get-var(text-secondary) !important;
-      }
+    label {
+      color: get-var("tab-label-color-inactive") !important;
     }
   }
 

@@ -3,7 +3,8 @@
   &:not([src]),
   &:-moz-broken {
     content: get-var("no-src-icon") !important;
-    fill: get-var("grey-600") !important;
+    // fill: get-var("grey-600") !important;
+    fill: get-var("icon-color-secondary") !important;
   }
 }
 
@@ -16,7 +17,8 @@
 .unified-nav-back {
   &:not([_moz-menuactive])[uri*="about:"] {
     list-style-image: get-var("no-src-icon") !important;
-    fill: get-var("grey-600") !important;
+    // fill: get-var("grey-600") !important;
+    fill: get-var("icon-color-secondary") !important;
   }
 }
 
@@ -32,7 +34,8 @@
 // set no src icon for "List all tabs"
 .all-tabs-button:not([src]) {
   list-style-image: get-var("no-src-icon") !important;
-  fill: get-var("grey-600") !important;
+  // fill: get-var("grey-600") !important;
+  fill: get-var("icon-color-secondary") !important;
 }
 
 // tabbar icons
