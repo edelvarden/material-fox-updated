@@ -78,7 +78,13 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 // bookmarks label font bolder
 .bookmark-item {
   label {
-    font-weight: 500 !important;
+    @media (-moz-platform: windows) {
+      font-weight: 500 !important;
+    }
+
+    @media (-moz-platform: macos) {
+      font-size: 1.05rem !important;
+    }
   }
 }
 

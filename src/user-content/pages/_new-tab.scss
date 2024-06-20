@@ -195,6 +195,13 @@
   }
   .icon.icon-settings {
     background-image: get-var("edit-icon") !important;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: get-var(tab-background-color-hover) !important;
+      &:hover {
+        background-color: #29668c !important;
+      }
+    }
   }
 
   // .top-sites-list item edit icon

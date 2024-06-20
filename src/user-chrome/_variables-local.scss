@@ -17,7 +17,8 @@
   }
 
   :root,
-  html body {
+  html,
+  body {
     --color-accent-primary: #{get-var("accent-color")} !important;
   }
 

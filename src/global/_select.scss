@@ -43,7 +43,7 @@ menulist > menupopup {
   --panel-shadow: #{get-var("elevation-2")} !important;
 
   --panel-border-color: #{get-var("menu-border-color")} !important;
-  // --panel-border-radius: #{$select-border-radius} !important;
+  --panel-border-radius: 4px !important;
   --panel-background: #{get-var("input-background-color")} !important;
   --panel-color: #{get-var("text-primary")} !important;
 }

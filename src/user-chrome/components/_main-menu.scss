@@ -321,7 +321,8 @@
 
   // Report icon
   #appMenu_help_reportSiteIssue,
-  #appMenu_menu_HelpPopup_reportPhishingtoolmenu {
+  #appMenu_menu_HelpPopup_reportPhishingtoolmenu,
+  #appMenu_report_broken_site_button {
     list-style-image: get-var("report-icon") !important;
   }
 
