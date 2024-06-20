@@ -63,7 +63,7 @@
     }
   }
 
-  @media (prefers-color-scheme: dark) {
+  @media not ((-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) or (-moz-bool-pref: meta.inspect("userChrome.theme-material"))) {
     // window-inactive title bar bg color
     :root:not(:-moz-window-inactive) #navigator-toolbox {
       background-color: get-var("background-color-0") !important;

@@ -44,13 +44,22 @@
     --toolbar-field-focus-border-color: var(--color-accent-primary) !important;
   }
 
-  html,
-  body {
-    --toolbar-bgcolor: var(--tab-selected-bgcolor) !important;
+  .browser-toolbar {
+    &:not(.titlebar-color) {
+      background-color: var(--toolbar-bgcolor) !important;
+    }
   }
 
-  #nav-bar {
-    background-color: var(--toolbar-bgcolor) !important;
+  // make navbar the same color as selected tab
+  @media (prefers-color-scheme: dark) {
+    html,
+    body {
+      --toolbar-bgcolor: var(--tab-selected-bgcolor) !important;
+    }
+
+    #nav-bar {
+      background-color: var(--toolbar-bgcolor) !important;
+    }
   }
 
   #urlbar-background {
