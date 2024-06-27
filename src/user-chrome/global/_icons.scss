@@ -1,5 +1,6 @@
 // no src icon
 .tab-icon-image {
+
   &:not([src]),
   &:-moz-broken {
     content: get-var("no-src-icon") !important;
@@ -24,8 +25,7 @@
 
 // set no src icon for url result list
 #urlbar-results {
-  .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"]
-  {
+  .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
     fill: transparent !important;
     background: get-var("no-src-icon") !important;
   }
@@ -90,6 +90,7 @@
 
 // nav bar icon size
 #nav-bar {
+
   #reload-button .toolbarbutton-icon,
   #stop-button .toolbarbutton-icon {
     padding: 4px !important;
@@ -112,35 +113,26 @@
     list-style-image: get-var("lock-icon") !important;
   }
 
-  &:is(
-      .notSecure,
-      .mixedActiveContent,
-      .httpsOnlyErrorPage,
-      .weakCipher,
-      .mixedDisplayContent,
-      .mixedDisplayContentLoadedActiveBlocked,
-      .certUserOverridden,
-      &.certErrorPage
-    )
-    #identity-icon {
+  &:is(.notSecure,
+    .mixedActiveContent,
+    .httpsOnlyErrorPage,
+    .weakCipher,
+    .mixedDisplayContent,
+    .mixedDisplayContentLoadedActiveBlocked,
+    .certUserOverridden,
+    &.certErrorPage) #identity-icon {
     list-style-image: get-var("warning-icon") !important;
   }
 }
 
 #identity-popup {
-  &[connection^="secure"]
-    .identity-popup-security-connection
-    .identity-popup-security-connection-icon {
+  &[connection^="secure"] .identity-popup-security-connection .identity-popup-security-connection-icon {
     list-style-image: get-var("lock-icon") !important;
   }
 
-  &:is(
-      [connection="secure-cert-user-overridden"],
-      [connection="cert-error-page"],
-      [connection^="not-secure"]
-    )
-    .identity-popup-security-connection
-    .identity-popup-security-connection-icon {
+  &:is([connection="secure-cert-user-overridden"],
+    [connection="cert-error-page"],
+    [connection^="not-secure"]) .identity-popup-security-connection .identity-popup-security-connection-icon {
     list-style-image: get-var("warning-icon") !important;
     // fill: get-var("error-text-color) !important;
   }
@@ -174,6 +166,7 @@
 }
 
 @media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+
   #star-button[starred],
   #tracking-protection-icon-box[active] {
     fill: get-var("accent-color") !important;
@@ -205,13 +198,28 @@
 #identity-popup[connection="extension"] .identity-popup-security-connection {
   list-style-image: get-var("extension-icon") !important;
 }
-#unified-extensions-button > image {
-  padding: 4.5px !important;
+
+// when not old-icons and chrome-refresh enabled
+@media (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")) {
+  @media not (-moz-bool-pref: meta.inspect("userChrome.ui-force-old-icons")) {
+    #unified-extensions-button>image {
+      transform: scale(1.25) !important;
+    }
+  }
 }
 
-.tabbrowser-tab[image="chrome://mozapps/skin/extensions/extension.svg"] .tab-icon-image
-{
-  content: get-var("extension-icon") !important;
+// when not chrome-refresh and old-icons enabled
+@media not (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")),
+(-moz-bool-pref: meta.inspect("userChrome.ui-force-old-icons")) {
+  #unified-extensions-button>image {
+    padding: 4.5px !important;
+  }
+}
+
+
+
+.tabbrowser-tab[image="chrome://mozapps/skin/extensions/extension.svg"] .tab-icon-image {
+  content: get-var("extension-old-icon") !important;
 }
 
 .install-icon {
@@ -252,7 +260,7 @@ treechildren::-moz-tree-image(title, open) {
 
 // checked icon
 @media (-moz-platform: windows) {
-  menuitem[checked="true"] > .menu-iconic-left {
+  menuitem[checked="true"]>.menu-iconic-left {
     list-style-image: get-var("check-icon") !important;
   }
 }
@@ -288,20 +296,15 @@ treechildren::-moz-tree-image(title, open) {
 }
 
 // url bar suggestions star icon badge
-.urlbarView-row[type="bookmark"]
-  > .urlbarView-row-inner
-  > .urlbarView-no-wrap
-  > .urlbarView-type-icon {
+.urlbarView-row[type="bookmark"]>.urlbarView-row-inner>.urlbarView-no-wrap>.urlbarView-type-icon {
   background-image: get-var("star-icon") !important;
   fill: var(--color-accent-primary) !important;
 }
 
 @media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+
   // url bar suggestions star icon badge
-  .urlbarView-row[type="bookmark"]
-    > .urlbarView-row-inner
-    > .urlbarView-no-wrap
-    > .urlbarView-type-icon {
+  .urlbarView-row[type="bookmark"]>.urlbarView-row-inner>.urlbarView-no-wrap>.urlbarView-type-icon {
     fill: get-var("accent-color") !important;
   }
 }
@@ -317,16 +320,16 @@ treechildren::-moz-tree-image(title, open) {
 
 // info icon
 #identity-box.unknownIdentity #identity-icon,
-#identity-popup[connection="net-error-page"]
-  .identity-popup-security-connection,
-.panel-info-button > image {
+#identity-popup[connection="net-error-page"] .identity-popup-security-connection,
+.panel-info-button>image {
   list-style-image: get-var("info-icon") !important;
 }
 
 // wrench icon for firefox dev
 #developer-button {
   list-style-image: get-var("dev-icon") !important;
-  & > image {
+
+  &>image {
     padding: 4px !important;
   }
 }
@@ -340,6 +343,7 @@ treechildren::-moz-tree-image(title, open) {
 }
 
 [dir="rtl"] {
+
   #protections-popup-mainView .subviewbutton-nav:not(.notFound)::after,
   .widget-overflow-list .subviewbutton-nav::after,
   .PanelUI-subView .subviewbutton-nav::after {
@@ -374,7 +378,6 @@ treechildren::-moz-tree-image(title, open) {
   list-style-image: get-var("account-icon") !important;
 }
 
-:root[fxastatus="signedin"]:not([style*="--avatar-image-url"])
-  #fxa-avatar-image {
+:root[fxastatus="signedin"]:not([style*="--avatar-image-url"]) #fxa-avatar-image {
   list-style-image: get-var("account-icon") !important;
 }

@@ -1,65 +1,80 @@
-$icons: (
+:root {
   // tabbar
-  "no-src-icon": url("icons/no-src.svg"),
-  "audio-icon": url("icons/audio.svg"),
-  "audio-muted-icon": url("icons/audio-muted.svg"),
-  "audio-blocked-icon": url("icons/audio-blocked.svg"),
-  "close-tab-icon": url("icons/close-tab.svg"),
-  "plus-icon": url("icons/plus.svg"),
+  --#{$prefix}-no-src-icon: url("icons/no-src.svg");
+  --#{$prefix}-audio-icon: url("icons/audio.svg");
+  --#{$prefix}-audio-muted-icon: url("icons/audio-muted.svg");
+  --#{$prefix}-audio-blocked-icon: url("icons/audio-blocked.svg");
+  --#{$prefix}-close-tab-icon: url("icons/close-tab.svg");
+  --#{$prefix}-plus-icon: url("icons/plus.svg");
   // navbar
-  "arrow-back-icon": url("icons/arrow-back.svg"),
-  "arrow-forward-icon": url("icons/arrow-forward.svg"),
-  "refresh-icon": url("icons/refresh.svg"),
-  "close-icon": url("icons/close.svg"),
-  "home-icon": url("icons/home.svg"),
-  "dev-icon": url("icons/dev.svg"),
-  "menu-icon": url("icons/menu.svg"),
-  "menu-update-icon": url("icons/menu-update.svg"),
-  "extension-icon": url("icons/extension.svg"),
-  "extension-blocked-icon": url("icons/extension-blocked.svg"),
-  "download-icon": url("icons/download.svg"),
-  "account-icon": url("icons/account.svg"),
+  --#{$prefix}-arrow-back-icon: url("icons/arrow-back.svg");
+  --#{$prefix}-arrow-forward-icon: url("icons/arrow-forward.svg");
+  --#{$prefix}-refresh-icon: url("icons/refresh.svg");
+  --#{$prefix}-close-icon: url("icons/close.svg");
+  --#{$prefix}-home-icon: url("icons/home.svg");
+  --#{$prefix}-dev-icon: url("icons/dev.svg");
+  --#{$prefix}-menu-icon: url("icons/menu.svg");
+  --#{$prefix}-menu-update-icon: url("icons/menu-update.svg");
+  --#{$prefix}-extension-icon: url("icons/extension.svg");
+  --#{$prefix}-extension-blocked-icon: url("icons/extension-blocked.svg");
+  --#{$prefix}-download-icon: url("icons/download.svg");
+  --#{$prefix}-account-icon: url("icons/account.svg");
   //urlbar
-  "info-icon": url("icons/info.svg"),
-  "lock-icon": url("icons/lock.svg"),
-  "warning-icon": url("icons/warning.svg"),
-  "properties-icon": url("icons/properties.svg"),
-  "tracking-protection-icon": url("icons/tracking-protection.svg"),
-  "star-icon": url("icons/star.svg"),
+  --#{$prefix}-info-icon: url("icons/info.svg");
+  --#{$prefix}-lock-icon: url("icons/lock.svg");
+  --#{$prefix}-warning-icon: url("icons/warning.svg");
+  --#{$prefix}-properties-icon: url("icons/properties.svg");
+  --#{$prefix}-tracking-protection-icon: url("icons/tracking-protection.svg");
+  --#{$prefix}-star-icon: url("icons/star.svg");
   //other
-  "chevron-icon": url("icons/chevron.svg"),
-  "folder-icon": url("icons/folder.svg"),
-  "check-icon": url("icons/check.svg"),
-  "edit-icon": url("icons/edit.svg"),
-  "arrow-right-icon": url("icons/arrow-right.svg"),
-  "arrow-down-icon": url("icons/arrow-down.svg"),
-  "organization-icon": url("icons/organization.svg"),
+  --#{$prefix}-chevron-icon: url("icons/chevron.svg");
+  --#{$prefix}-folder-icon: url("icons/folder.svg");
+  --#{$prefix}-check-icon: url("icons/check.svg");
+  --#{$prefix}-edit-icon: url("icons/edit.svg");
+  --#{$prefix}-arrow-right-icon: url("icons/arrow-right.svg");
+  --#{$prefix}-arrow-down-icon: url("icons/arrow-down.svg");
+  --#{$prefix}-organization-icon: url("icons/organization.svg");
   // menu
-  "new-tab-icon": url("icons/new-tab.svg"),
-  "new-window-icon": url("icons/new-window.svg"),
-  "incognito-icon": url("icons/incognito.svg"),
-  "history-icon": url("icons/history.svg"),
-  "key-icon": url("icons/key.svg"),
-  "print-icon": url("icons/print.svg"),
-  "file-save-icon": url("icons/file-save.svg"),
-  "find-icon": url("icons/find.svg"),
-  "translate-icon": url("icons/translate.svg"),
-  "settings-icon": url("icons/settings.svg"),
-  "tools-icon": url("icons/tools.svg"),
-  "help-icon": url("icons/help.svg"),
-  "zoom-in-icon": url("icons/zoom-in.svg"),
-  "exit-icon": url("icons/exit.svg"),
-  "search-icon": url("icons/search.svg"),
-  "multiaccountcontainer-icon": url("icons/multiaccountcontainer.svg"),
-  "toolbar-icon": url("icons/toolbar.svg"),
-  "bookmark-manager-icon": url("icons/bookmark-manager.svg"),
-  "trash-icon": url("icons/trash.svg"),
-  "task-manager-icon": url("icons/task-manager.svg"),
-  "eyedropper-icon": url("icons/eyedropper.svg"),
-  "devices-icon": url("icons/devices.svg"),
-  "remote-icon": url("icons/remote.svg"),
-  "code-icon": url("icons/code.svg"),
-  "report-icon": url("icons/report.svg"),
-  "feedback-icon": url("icons/feedback.svg"),
-  "open-in-icon": url("icons/open-in.svg")
-);
+  --#{$prefix}-new-tab-icon: url("icons/new-tab.svg");
+  --#{$prefix}-new-window-icon: url("icons/new-window.svg");
+  --#{$prefix}-incognito-icon: url("icons/incognito.svg");
+  --#{$prefix}-history-icon: url("icons/history.svg");
+  --#{$prefix}-key-icon: url("icons/key.svg");
+  --#{$prefix}-print-icon: url("icons/print.svg");
+  --#{$prefix}-file-save-icon: url("icons/file-save.svg");
+  --#{$prefix}-find-icon: url("icons/find.svg");
+  --#{$prefix}-translate-icon: url("icons/translate.svg");
+  --#{$prefix}-settings-icon: url("icons/settings.svg");
+  --#{$prefix}-tools-icon: url("icons/tools.svg");
+  --#{$prefix}-help-icon: url("icons/help.svg");
+  --#{$prefix}-zoom-in-icon: url("icons/zoom-in.svg");
+  --#{$prefix}-exit-icon: url("icons/exit.svg");
+  --#{$prefix}-search-icon: url("icons/search.svg");
+  --#{$prefix}-multiaccountcontainer-icon: url("icons/multiaccountcontainer.svg");
+  --#{$prefix}-toolbar-icon: url("icons/toolbar.svg");
+  --#{$prefix}-bookmark-manager-icon: url("icons/bookmark-manager.svg");
+  --#{$prefix}-trash-icon: url("icons/trash.svg");
+  --#{$prefix}-task-manager-icon: url("icons/task-manager.svg");
+  --#{$prefix}-eyedropper-icon: url("icons/eyedropper.svg");
+  --#{$prefix}-devices-icon: url("icons/devices.svg");
+  --#{$prefix}-remote-icon: url("icons/remote.svg");
+  --#{$prefix}-code-icon: url("icons/code.svg");
+  --#{$prefix}-report-icon: url("icons/report.svg");
+  --#{$prefix}-feedback-icon: url("icons/feedback.svg");
+  --#{$prefix}-open-in-icon: url("icons/open-in.svg");
+
+  // when not chrome-refresh or when old-icons enabled
+  @media not (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")),
+  (-moz-bool-pref: meta.inspect("userChrome.ui-force-old-icons")) {
+    --#{$prefix}-audio-icon: url("icons/old/audio.svg");
+    --#{$prefix}-audio-muted-icon: url("icons/old/audio-muted.svg");
+    --#{$prefix}-audio-blocked-icon: url("icons/old/audio-blocked.svg");
+
+    --#{$prefix}-extension-icon: url("icons/old/extension.svg");
+
+    --#{$prefix}-tracking-protection-icon: url("icons/old/tracking-protection.svg");
+  }
+
+  --#{$prefix}-extension-old-icon: url("icons/old/extension.svg");
+
+}

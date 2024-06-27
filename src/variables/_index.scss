@@ -27,11 +27,6 @@ body {
     --#{$prefix}-#{$key}: #{$value};
   }
 
-  // icons
-  @each $key, $value in $icons {
-    --#{$prefix}-#{$key}: #{$value};
-  }
-
   // colors
   @each $key, $value in $colors {
     --#{$prefix}-#{$key}: #{$value};

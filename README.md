@@ -92,6 +92,10 @@ To **disable** a preference:
     <td>Force enable control animation, because by default respects the user animation disable preference. <em>(Not required if you do not disable animation)</em></td>
   </tr>
   <tr>
+    <td><code>userChrome.ui-force-old-icons</code></td>
+    <td>Force old icons to be used even if the <code>userChrome.ui-chrome-refresh</code> preference is enabled.</td>
+  </tr>
+  <tr>
     <td><code>userChrome.ui-no-ripple</code></td>
     <td>Disable ripple effect from buttons</td>
   </tr>
