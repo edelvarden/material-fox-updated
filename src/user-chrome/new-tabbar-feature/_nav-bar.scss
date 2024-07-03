@@ -3,6 +3,53 @@
   border-radius: 7px 7px 0 0 !important;
 }
 
+@media not (-moz-bool-pref: meta.inspect("userChrome.ui-compact-url-bar")) {
+
+  // lock (secure)
+  #identity-box[pageproxystate="valid"] {
+    &:is(.verifiedDomain, .mixedActiveBlocked) #identity-icon {
+      list-style-image: get-var("page-info") !important;
+    }
+  }
+
+  #identity-box {
+    padding-bottom: 2px !important;
+    padding-top: 2px !important;
+    margin-inline-end: 4px !important;
+    margin-inline-start: 2px !important;
+    fill: get-var(icon-color-primary) !important;
+  }
+
+  #identity-icon-box {
+    min-width: 24px !important;
+  }
+
+  #identity-box:not(.chromeUI) {
+    #identity-icon-box.identity-box-button {
+      padding-inline: unset !important;
+    }
+  }
+
+  #identity-icon-box.identity-box-button,
+  #notification-popup-box,
+  #urlbar-go-button,
+  .search-go-button {
+    height: unset !important;
+  }
+
+  #identity-icon-box {
+    background-color: get-var(background-color-100) !important;
+  }
+
+  #identity-box[pageproxystate=valid].notSecureText>.identity-box-button,
+  #identity-box[pageproxystate=valid].chromeUI>.identity-box-button,
+  #identity-box[pageproxystate=valid].extensionPage>.identity-box-button,
+  #urlbar-label-box {
+    background-color: get-var(background-color-100) !important;
+  }
+}
+
+
 // ----------------------------------------------------------------
 // * (Temporary disabled) New Nav Bar style
 

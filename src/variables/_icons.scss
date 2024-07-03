@@ -22,6 +22,7 @@ $icons: (
   //urlbar
   "info-icon": url("icons/info.svg"),
   "lock-icon": url("icons/lock.svg"),
+  "page-info": url("icons/page-info.svg"),
   "warning-icon": url("icons/warning.svg"),
   "properties-icon": url("icons/properties.svg"),
   "tracking-protection-icon": url("icons/tracking-protection.svg"),
@@ -74,6 +75,8 @@ $icons-old: (
   //naav bar
   "home-icon": url("icons/old/home.svg"),
   "extension-icon": url("icons/old/extension.svg"),
+
+  "page-info": url("icons/lock.svg"),
 
   "tracking-protection-icon": url("icons/old/tracking-protection.svg")
 )
