@@ -175,8 +175,8 @@ $theme-material-light: (
   "icon-color-secondary": get-var(text-secondary),
   "content-separator-color": #dbdcdd,
   // selection colors
-  "selection-text-color": get-var("black"),
-  "selection-background-color": get-var("blue-200")
+  "selection-text-color": get-var(sys-color-on-primary),
+  "selection-background-color": get-var(sys-color-primary)
 );
 
 $theme-material-dark: (
@@ -212,6 +212,6 @@ $theme-material-dark: (
   "icon-color-secondary": get-var(text-secondary),
   "content-separator-color": #606164,
   // selection colors
-  "selection-text-color": get-var("white"),
-  "selection-background-color": get-var(blue-900)
+  "selection-text-color": get-var(sys-color-on-primary),
+  "selection-background-color": get-var(sys-color-primary)
 );

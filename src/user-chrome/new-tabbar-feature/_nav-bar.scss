@@ -3,6 +3,7 @@
   border-radius: 7px 7px 0 0 !important;
 }
 
+// chrome refresh lock icon style
 @media not (-moz-bool-pref: meta.inspect("userChrome.ui-compact-url-bar")) {
 
   // lock (secure)
@@ -17,19 +18,25 @@
     padding-top: 2px !important;
     margin-inline-end: 4px !important;
     margin-inline-start: 2px !important;
-    fill: get-var(icon-color-primary) !important;
+    
+    @media not (-moz-bool-pref: meta.inspect("userChrome.ui-force-old-icons")) {
+      fill: get-var(icon-color-primary) !important;
+    }
+    
   }
 
   #identity-icon-box {
     min-width: 24px !important;
   }
 
+  // remove box side paddings
   #identity-box:not(.chromeUI) {
     #identity-icon-box.identity-box-button {
       padding-inline: unset !important;
     }
   }
 
+  // for icon box middle position
   #identity-icon-box.identity-box-button,
   #notification-popup-box,
   #urlbar-go-button,
