@@ -104,8 +104,17 @@
 
 // nav bar icon size
 #nav-bar #home-button .toolbarbutton-icon {
-  padding: 6px !important;
+  padding: 4px !important;
 }
+
+// when not chrome-refresh or when old-icons enabled
+@media not (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")),
+(-moz-bool-pref: meta.inspect("userChrome.ui-force-old-icons")) {
+  #nav-bar #home-button .toolbarbutton-icon {
+    padding: 6px !important;
+  }
+}
+
 
 // lock (secure)
 #identity-box[pageproxystate="valid"] {
