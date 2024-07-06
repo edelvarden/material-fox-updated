@@ -202,7 +202,7 @@ $theme-material-dark: (
   "menu-border-color": cm(get-var(sys-color-outline), #444746, 0.9),
   // tab bar
   "tab-background-color-hover":
-    cm(transparent, get-var(sys-color-tertiary), 0.2),
+    cm(transparent, get-var(sys-color-primary), 0.2),
   "tab-separator-color": cm(transparent, get-var("white"), 0.2),
   "tab-outline-color": cm(transparent, get-var("black"), 0.1),
   "tab-icon-color": get-var(text-secondary),
