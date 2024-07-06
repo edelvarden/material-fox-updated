@@ -3,6 +3,14 @@
   border-radius: 7px 7px 0 0 !important;
 }
 
+// remove rounded corners for popup windows
+#main-window[chromehidden="menubar toolbar directories extrachrome "] {
+  #nav-bar {
+    border-radius: 0 !important;
+  }
+}
+
+
 // chrome refresh lock icon style
 @media not (-moz-bool-pref: meta.inspect("userChrome.ui-compact-url-bar")) {
 
@@ -18,11 +26,11 @@
     padding-top: 2px !important;
     margin-inline-end: 4px !important;
     margin-inline-start: 2px !important;
-    
+
     @media not (-moz-bool-pref: meta.inspect("userChrome.ui-force-old-icons")) {
       fill: get-var(icon-color-primary) !important;
     }
-    
+
   }
 
   #identity-icon-box {
