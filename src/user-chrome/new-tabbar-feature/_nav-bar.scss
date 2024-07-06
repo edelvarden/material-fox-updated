@@ -45,11 +45,16 @@
   }
 
   // for icon box middle position
-  #identity-icon-box.identity-box-button,
+  :is(#identity-icon-box, #identity-permission-box).identity-box-button,
   #notification-popup-box,
   #urlbar-go-button,
   .search-go-button {
     height: unset !important;
+  }
+
+  // correct permissions icon position
+  #identity-permission-box.identity-box-button {
+    padding-inline: 4px !important;
   }
 
   #identity-icon-box {
