@@ -343,6 +343,21 @@ treechildren::-moz-tree-image(title, open) {
   }
 }
 
+// side panel icon
+#sidebar-button {
+  list-style-image: get-var("side-panel-icon") !important;
+
+  &>image {
+    padding: 4px !important;
+  }
+}
+
+[dir="rtl"] {
+  #sidebar-button {
+    transform: scale(-1);
+  }
+}
+
 // menu popup arrow right icon
 #protections-popup-mainView .subviewbutton-nav:not(.notFound)::after,
 .widget-overflow-list .subviewbutton-nav::after,
