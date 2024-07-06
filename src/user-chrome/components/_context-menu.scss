@@ -84,16 +84,10 @@ $menu-side-paddings: 4px;
           place-items: end;
           align-items: center !important;
           left: unset;
-          right: calc(-1 * get-var("menuitem-padding-with-icon")) !important;
+          right: calc(-1 * get-var("menuitem-padding-without-icon")) !important;
         }
       }
     }
-  }
-
-  // fix width for last #context-navigation item
-  #context-navigation > .menuitem-iconic:last-child,
-  #context-navigation > .menuitem-iconic:first-child {
-    width: 100% !important;
   }
 
   // #context-navigation menu items
