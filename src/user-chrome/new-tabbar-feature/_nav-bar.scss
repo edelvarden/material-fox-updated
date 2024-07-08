@@ -49,7 +49,12 @@
   #notification-popup-box,
   #urlbar-go-button,
   .search-go-button {
-    height: unset !important;
+    // height: unset !important;
+    max-height: 24px !important;
+  }
+
+  #identity-box {
+    align-items: center !important;
   }
 
   // correct permissions icon position
