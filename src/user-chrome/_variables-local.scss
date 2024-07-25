@@ -118,4 +118,9 @@
       )} !important;
     --in-content-primary-button-background-active: #{get-var("accent-color")} !important;
   }
+
+  // Remove tab outline described in https://github.com/edelvarden/material-fox-updated/issues/62
+  .tab-background{
+    --tab-selected-outline-color: none !important;
+  }
 }
