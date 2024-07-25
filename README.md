@@ -1,27 +1,27 @@
 <h1 align="center">
-  MaterialFox UPDATED
+  🦊 MaterialFox UPDATED
 </h1>
 
 ![preview](assets/preview.png)
 
-## Overview
+## 📖 Overview
 
 MaterialFox UPDATED is a user CSS theme designed for the Firefox browser, inspired by material design.
 
-## Motivation
+## 🎯 Motivation
 
-The motivation behind creating this theme is my appreciation for material design, and the desire to bring this visually appealing style to the Firefox browser.
+This theme was created out of appreciation for material design and the desire to bring this visually appealing style to the Firefox browser.
 
-## Functionality
+## ⚙️ Functionality
 
-MaterialFox UPDATED overriding the default CSS with custom styles, utilizing the CSS `!important` rule.
+MaterialFox UPDATED overrides the default CSS with custom styles, utilizing the CSS `!important` rule.
 
-## Getting Started
+## 🚀 Getting Started
 
 To start using MaterialFox UPDATED, follow these steps:
 
 1. **Go to** the URL `about:config`.
-2. **Ensure** the following properties are set to `true`:
+2. **Ensure** the following preferences are `true`:
 
    - `toolkit.legacyUserProfileCustomizations.stylesheets`
    - `svg.context-properties.content.enabled`
@@ -29,22 +29,28 @@ To start using MaterialFox UPDATED, follow these steps:
 
 3. **Go to** the URL `about:support`.
 4. **Find** the `Profile Folder` category and **click** the `Open Folder` button.
-5. **Download** `chrome.zip` from the latest project releases -> [here](https://github.com/edelvarden/material-fox-updated/releases/latest) (or for Firefox **119** or below -> [here](https://github.com/edelvarden/material-fox-updated/releases/tag/v1.0.7)) and **extract** into your Firefox profile directory.
-6. **Restart** Firefox to apply changes.
+5. **Download** `chrome.zip` from [**the latest release here**](https://github.com/edelvarden/material-fox-updated/releases/latest).
+ 
+6. **Extract** the contents into your Firefox profile directory.
+7. **Restart** Firefox to apply changes.
 
-### Installation script (for advanced)
+### Installation Script (for Advanced Users)
 
-As an alternative to manual installation, you can use PowerShell script.
+As an alternative to manual installation, you can use a PowerShell script.
 
-For **Windows** you can run the following PowerShell command:
+For **Windows**, run the following PowerShell command:
 
 ```powershell
 PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
 ```
 
-### Manual Customization
+## 💬 Feedback
 
-MaterialFox UPDATED support some `about:config` customization options.
+Feel free to provide **feedback**, **suggestions**, or **bug reports** on [GitHub Issues](https://github.com/edelvarden/material-fox-updated/issues).
+
+## 🎨 Manual Customization
+
+You can **apply** visual design changes by adding some `about:config` customization options (preferences).
 
 To **set** a preference:
 
@@ -54,9 +60,12 @@ To **set** a preference:
 To **disable** a preference:
 
 1. **Go to** `about:config`.
-2. **Search** by name and **delete** the preference or toggle preference state to `false`.
+2. **Search** by name and **delete** the preference or toggle its state to `false`.
 
-#### Available preferences
+### Available preferences
+
+> [!WARNING]  
+> Use only one preference with the prefix `theme`.
 
 <table>
   <tr>
@@ -73,7 +82,7 @@ To **disable** a preference:
   </tr>
   <tr>
     <td><code>userChrome.theme-material</code></td>
-    <td>Enabling Meterial color schemes. <a href="#material-theme" _blank>Read more</a>.</img></td>
+    <td>Enabling Material color schemes. <a href="#material-theme" _blank>Read more</a>.</img></td>
   </tr>
   <tr>
     <td><code>userChrome.theme-default</code></td>
@@ -101,12 +110,10 @@ To **disable** a preference:
   </tr>
 </table>
 
-> [!WARNING]  
-> Use only one preference with the prefix `theme`.
 
-### Custom CSS rules
+## Custom CSS rules
 
-MaterialFox UPDATED support custom css rules, or additionally, if you want to change some colors, you can override the default values with your own.
+You can also add your own user CSS rules by using the `custom.css` file. Additionally, if you want to change some colors, you can override the default variable values with your own.
 
 Follow this steps:
 
@@ -124,12 +131,12 @@ body {
 }
 ```
 
-5. Save the file and restart Firefox to apply changes
+5. Save the file and restart Firefox to apply changes.
 
 > [!NOTE]  
 > Using these custom CSS files can separate your changes from the source project. You can easily back up your files and not worry about overwriting your changes when updating or reinstalling the main files.
 
-#### Available variables
+### Available variables
 
 <table>
   <tr>
@@ -201,9 +208,11 @@ body {
 > [!TIP]
 > You can find more variables in the [variables/\_colors.scss](src/variables/_colors.scss) file. To use these variables, simply add the `--md-` prefix. For example, `"accent-color": #a8c7fa,` becomes `--md-accent-color: #a8c7fa;`.
 
-#### Custom css use cases
+### Custom css use cases
 
-- Replacing the font with your own, change `"YourFontName"` to the name of your font:
+Here are some examples of how you can use the `custom.css` file:
+
+- **Replacing** the font with your own. **Change** `"YourFontName"` to the name of your font:
 
   ```css
   :root,
@@ -220,7 +229,7 @@ body {
   }
   ```
 
-- Remove the separator line between browser and content:
+- **Removing** the separator line between the browser and content:
 
   ```css
   :root,
@@ -231,9 +240,10 @@ body {
   }
   ```
 
-#### Custom css use cases for create your own color themes
+### Custom css use cases for create your own color themes
 
-You can use variables to completly recolor to your own color, some examples with code:
+> [!TIP]
+> You can use variables to completely recolor the theme. Here are some preset examples with code:
 
 <table>
   <tr>
@@ -269,11 +279,11 @@ You can use variables to completly recolor to your own color, some examples with
 You can use the [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) to create a color theme from an image.
 
 1. **Create** the `userChrome.theme-material` preference in the `about:config` page.
-2. **Go to the** [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) website.
-3. **Select** from the presented images, **upload** your own, or **use the "Random color" button** to generate a theme.
-4. **Click the "Pick your fonts" button** in the bottom right corner.
-5. **Skip this step** and **click the "Export theme" button**.
-6. **Click "Export"** and **select "Web (CSS)"** from the dropdown menu.
+2. **Go to**  the [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) website.
+3. **Select** from the presented images, **upload** your own, or **use** the "Random color" button to **generate** a theme.
+4. **Click** the "Pick your fonts" button in the bottom right corner.
+5. **Skip** this step and **click** the "Export theme" button.
+6. **Click** "Export" and **select** "Web (CSS)" from the dropdown menu.
 
    ![material-theme-tutorial](assets/material-theme-tutorial.png)
 
@@ -287,7 +297,7 @@ Examples with previews
 | [theme-material-yellow.css](assets/examples/theme-material-yellow.css) | ![material-yellow-preview](assets/material-yellow-preview.png) |
 | [theme-material-green.css](assets/examples/theme-material-green.css) | ![material-green-preview](assets/material-green-preview.png) |
 
-## Build & Development (for developers)
+## 🔧 Build & Development (for developers)
 
 ### Prerequisites
 
@@ -331,20 +341,7 @@ To subsequently start the development mode, just use the following command:
 npm run dev
 ```
 
-### Screenshots
-
-<table>
-  <tr>
-    <th>Light</th>
-    <th>Dark</th>
-  </tr>
-  <tr>
-    <td><img src="assets/preview-light.png" alt="preview-light"></img></td>
-    <td><img src="assets/preview-dark.png" alt="preview-dark"></img></td>
-  </tr>
- </table>
-
-## Credits
+## 🔗 Credits
 
 - [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)
 - [edge-frfox](https://github.com/bmFtZQ/edge-frfox) by [bmFtZQ](https://github.com/bmFtZQ)
