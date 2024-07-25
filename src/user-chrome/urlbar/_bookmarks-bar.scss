@@ -1,5 +1,5 @@
 // bookmark folder style
-#PlacesToolbarItems > .bookmark-item {
+#PlacesToolbarItems>.bookmark-item {
   --toolbarbutton-border-radius: 100px !important;
   padding: var(--bookmark-block-padding) 6px !important;
 }
@@ -30,21 +30,39 @@
 }
 
 // centered bookmark item content
-#PlacesToolbarItems > .bookmark-item {
+#PlacesToolbar {
+  margin-bottom: 2px !important;
+}
+
+#PlacesToolbar,
+#PlacesToolbarItems {
+  align-items: center !important;
+}
+
+#PlacesToolbarItems>.bookmark-item {
   display: flex !important;
   align-items: center !important;
 
-  & > image {
+  // remove top & btton padding to fix centered label position
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+
+  &>image {
     margin-inline-end: 6px !important;
+    margin: auto 0;
   }
 
-  & > label {
-    margin: 0 !important;
+  &>label {
     margin-block: 0 !important;
     margin-inline: 0 !important;
+    margin: auto 0;
 
     display: flex !important;
     align-items: center !important;
+
+    height: 100% !important;
   }
 }
 
@@ -104,7 +122,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 // make folder icon size bigger like in chrome
-#PlacesToolbarItems > .bookmark-item[container="true"] > image {
+#PlacesToolbarItems>.bookmark-item[container="true"]>image {
   transform: scale(1.15) !important;
   margin-inline-end: 8px !important;
 }
