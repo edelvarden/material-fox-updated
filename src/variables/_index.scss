@@ -51,6 +51,10 @@ body {
     --#{$prefix}-#{$key}: #{$value};
   }
 
+  @each $key, $value in $global {
+    --#{$prefix}-#{$key}: #{$value};
+  }
+
   // dark mode colors
   @each $key, $value in $dark-mode {
     --#{$prefix}-#{$key}: #{$value};

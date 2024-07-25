@@ -153,7 +153,7 @@
         ) !important;
 
         @media (prefers-color-scheme: dark) {
-          background-color: #29668c !important;
+          background-color: get-var(alltabs-background-color-open) !important;
         }
       }
     }

@@ -26,15 +26,17 @@ $colors: (
   "blue-200": #aecbfa,
   "blue-100": #d2e3fc,
   "blue-50": #e8f0fe,
+);
+
+$global: (
+  "alltabs-background-color-open": cm(get-var(accent-color), get-var(tab-background-color-hover), 0.5),
 
   // --------------------------------------------------------------------------------
   // -- Shadow
   // --------------------------------------------------------------------------------
   "elevation-2": (0 2px 4px 0 rgba(0, 0, 0, 0.28)),
-  "elevation-3": (
-    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px
-  ),
+  "elevation-3": (rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px),
   "elevation-4": (rgba(0, 0, 0, 0.56) 0px 22px 70px 4px)
 );
 
@@ -142,6 +144,7 @@ $chrome-refresh-colors: (
   "content-separator-color": #444746,
   "selection-text-color": get-var("black"),
   "selection-background-color": #a8c7fa,
+  "alltabs-background-color-open": #29668c,
 );
 
 $theme-material-light: (
@@ -197,12 +200,10 @@ $theme-material-dark: (
   "secondary-button-text": get-var(accent-color),
   // menu, popups
   "menu-background-color": get-var(background-color-50),
-  "menu-background-color-hover":
-    cm(get-var(background-color-100), get-var(accent-color), 0.15),
+  "menu-background-color-hover": cm(get-var(background-color-100), get-var(accent-color), 0.15),
   "menu-border-color": cm(get-var(sys-color-outline), #444746, 0.9),
   // tab bar
-  "tab-background-color-hover":
-    cm(transparent, get-var(sys-color-primary), 0.2),
+  "tab-background-color-hover": cm(transparent, get-var(sys-color-primary), 0.2),
   "tab-separator-color": cm(transparent, get-var("white"), 0.2),
   "tab-outline-color": cm(transparent, get-var("black"), 0.1),
   "tab-icon-color": get-var(text-secondary),
