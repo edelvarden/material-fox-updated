@@ -1,5 +1,5 @@
 // radio button
-input[type="radio"],
+input[type="radio"]:not(.wallpaper-input),
 .radio-check {
   display: inline-flex !important;
   align-items: center !important;
