@@ -40,18 +40,18 @@
 // all tabs button redesign
 #alltabs-button {
   // 40px - 3px horizontal margin = 37px
-  min-width: 37px !important;
-  max-width: 37px !important;
+  min-width: 34px !important;
+  max-width: 34px !important;
   min-height: 37px !important;
   max-height: 37px !important;
 
   // move to the top left corner
-  justify-content: start !important;
-  align-items: start !important;
+  justify-content: center !important;
+  align-content: center !important;
 
   .toolbarbutton-badge-stack {
     // make the position pixel perfect, this is the top and left margin
-    transform: translate(6px, 6px) !important;
+    transform: translate(0px, 1px) !important;
 
     min-width: 28px !important;
     max-width: 28px !important;
@@ -69,16 +69,21 @@
   }
 
   .toolbarbutton-icon {
-    width: 12px !important;
-    height: 12px !important;
+    width: 16px !important;
+    height: 16px !important;
   }
 }
 
 [dir="rtl"] {
   #alltabs-button .toolbarbutton-badge-stack {
     // make the position pixel perfect, this is the top and left margin
-    transform: translate(-6px, 6px) !important;
+    transform: translate(0px, 1px) !important;
   }
+}
+
+// first tab bar padding
+#TabsToolbar-customization-target {
+  padding-inline-start: 3px !important;
 }
 
 @media (-moz-platform: macos) {

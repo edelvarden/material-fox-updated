@@ -123,3 +123,78 @@
     display: flex !important;
   }
 }
+
+// Firefox view button
+#TabsToolbar #firefox-view-button {
+  &>.toolbarbutton-icon {
+    align-items: center !important;
+    box-shadow: none !important;
+
+    fill: get-var("icon-color-secondary") !important;
+
+    transition-property: opacity, background-color !important;
+    transition-duration: get-var("shortest-duration") !important;
+    transition-timing-function: get-var("fade-in-out") !important;
+  }
+
+  &[open] >.toolbarbutton-icon {
+    fill: get-var("icon-color-primaryy") !important;
+
+    box-shadow: none !important;
+    background-color: get-var(background-color-100) !important;
+  }
+
+  &[open]:hover >.toolbarbutton-icon {
+    box-shadow: none !important;
+    background-color: get-var(background-color-100) !important;
+  }
+
+  &:hover>.toolbarbutton-icon {
+    box-shadow: none !important;
+    background-color: get-var(tab-background-color-hover) !important;
+  }
+}
+
+#TabsToolbar .toolbarbutton-1.chromeclass-toolbar-additional {
+  --toolbarbutton-inner-padding: calc((var(--tab-min-height) - 28px) / 2) !important;
+}
+
+
+@media not (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")) {
+  @media (-moz-platform: windows) {
+    #alltabs-button {
+      min-width: 46px !important;
+      max-width: 46px !important;
+    
+      & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+        width: 100% !important;
+        border-radius: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+      &:hover {
+        .toolbarbutton-badge-stack {
+          background-color: light-dark(hsla(0,0%,0%,.13), hsla(0,0%,100%,.15)) !important;
+        }
+      }
+      &:hover:active, &[open] {
+        .toolbarbutton-badge-stack {
+          background-color: light-dark(hsla(0,0%,0%,.22), hsla(0,0%,100%,.32)) !important;
+        }
+      }
+    }
+
+    :root:-moz-window-inactive #navigator-toolbox {
+      #alltabs-button {
+        opacity: .5 !important;
+
+        &:hover {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+  
+}
