@@ -340,7 +340,11 @@ toolbarseparator {
 }
 
 // compact main menu list items
-.toolbar-menupopup :is(menu, menuitem), .subview-subheader, panelview .toolbarbutton-1, .subviewbutton, .widget-overflow-list .toolbarbutton-1 {
+.toolbar-menupopup :is(menu, menuitem),
+.subview-subheader,
+panelview .toolbarbutton-1,
+.subviewbutton,
+.widget-overflow-list .toolbarbutton-1 {
   // padding: var(--arrowpanel-menuitem-padding);
   padding: 6px !important;
 }

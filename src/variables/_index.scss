@@ -8,10 +8,8 @@
 :root,
 html,
 body {
-
   // loading animation only if enabled, respects animation disable preference
   @media not (prefers-reduced-motion: reduce) {
-
     // animation durations
     @each $key, $value in $animation-durations {
       --#{$prefix}-#{$key}: #{$value};
@@ -19,7 +17,6 @@ body {
   }
 
   @media (-moz-bool-pref: meta.inspect("userChrome.ui-force-animation")) {
-
     // animation durations
     @each $key, $value in $animation-durations {
       --#{$prefix}-#{$key}: #{$value};
@@ -38,8 +35,7 @@ body {
 
   // when not chrome-refresh or when old-icons enabled
   @media not (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")),
-  (-moz-bool-pref: meta.inspect("userChrome.ui-force-old-icons")) {
-
+    (-moz-bool-pref: meta.inspect("userChrome.ui-force-old-icons")) {
     // old icons
     @each $key, $value in $icons-old {
       --#{$prefix}-#{$key}: #{$value};

@@ -6,7 +6,11 @@
     html,
     body {
       --md-accent-color: color-mix(in srgb, var(--md-white) 15%, AccentColor);
-      --md-tab-background-color-hover: color-mix(in srgb, transparent 75%, var(--md-accent-color));
+      --md-tab-background-color-hover: color-mix(
+        in srgb,
+        transparent 75%,
+        var(--md-accent-color)
+      );
       --md-tab-opacity: 0.9;
       --md-background-color-0: color-mix(
         in srgb,
@@ -55,7 +59,11 @@
         var(--md-grey-900) 15%,
         AccentColor
       );
-      --md-tab-background-color-hover: color-mix(in srgb, transparent 75%, var(--md-accent-color));
+      --md-tab-background-color-hover: color-mix(
+        in srgb,
+        transparent 75%,
+        var(--md-accent-color)
+      );
       --md-tab-opacity: 0.9;
       --md-background-color-0: color-mix(
         in srgb,

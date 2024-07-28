@@ -10,10 +10,8 @@
   }
 }
 
-
 // chrome refresh lock icon style
 @media not (-moz-bool-pref: meta.inspect("userChrome.ui-compact-url-bar")) {
-
   // lock (secure)
   #identity-box[pageproxystate="valid"] {
     &:is(.verifiedDomain, .mixedActiveBlocked) #identity-icon {
@@ -30,7 +28,6 @@
     @media not (-moz-bool-pref: meta.inspect("userChrome.ui-force-old-icons")) {
       fill: get-var(icon-color-primary) !important;
     }
-
   }
 
   #identity-icon-box {
@@ -66,14 +63,13 @@
     background-color: get-var(background-color-100) !important;
   }
 
-  #identity-box[pageproxystate=valid].notSecureText>.identity-box-button,
-  #identity-box[pageproxystate=valid].chromeUI>.identity-box-button,
-  #identity-box[pageproxystate=valid].extensionPage>.identity-box-button,
+  #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button,
+  #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
+  #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button,
   #urlbar-label-box {
     background-color: get-var(background-color-100) !important;
   }
 }
-
 
 // ----------------------------------------------------------------
 // * (Temporary disabled) New Nav Bar style

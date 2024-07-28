@@ -1,6 +1,5 @@
 // accent color mix for title bar and url bar backgrounds
 @media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
-
   #urlbar-background,
   #searchbar {
     background-color: get-var("background-color-50") !important;
@@ -8,21 +7,24 @@
 
   // specian light mode titlebar bg color for theme-chrome-refresh or theme-material
   @media (prefers-color-scheme: light) and ((-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) or (-moz-bool-pref: meta.inspect("userChrome.theme-material"))) {
-
     #navigator-toolbox,
     #toolbar-menubar,
     #TabsToolbar,
     #titlebar {
-      background-color: cm(get-var("background-color-50"),
-          get-var("accent-color"),
-          0.2) !important;
+      background-color: cm(
+        get-var("background-color-50"),
+        get-var("accent-color"),
+        0.2
+      ) !important;
     }
 
     #urlbar-background,
     #searchbar {
-      background-color: cm(get-var("background-color-50"),
-          get-var("accent-color"),
-          0.0333) !important;
+      background-color: cm(
+        get-var("background-color-50"),
+        get-var("accent-color"),
+        0.0333
+      ) !important;
     }
   }
 }
@@ -49,10 +51,8 @@
 }
 
 @media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
-
   // default titlebar bg color, when not theme-chrome-refresh or theme-material
   @media not ((-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) or (-moz-bool-pref: meta.inspect("userChrome.theme-material"))) {
-
     #navigator-toolbox,
     #toolbar-menubar,
     #TabsToolbar,
@@ -63,21 +63,21 @@
 
   // special titlebar color for theme-material (dark mode)
   @media (prefers-color-scheme: dark) and (-moz-bool-pref: meta.inspect("userChrome.theme-material")) {
-
     #navigator-toolbox,
     #toolbar-menubar,
     #TabsToolbar,
     #titlebar {
       background-color: get-var(sys-color-surface-container-lowest) !important;
-      background-image: linear-gradient(90deg,
-          cm(transparent, get-var(sys-color-tertiary), 0.2) 0%,
-          cm(transparent, get-var(sys-color-secondary), 0.2) 80%) !important;
+      background-image: linear-gradient(
+        90deg,
+        cm(transparent, get-var(sys-color-tertiary), 0.2) 0%,
+        cm(transparent, get-var(sys-color-secondary), 0.2) 80%
+      ) !important;
     }
   }
 
   // inactive titlebar bg color
   :root:-moz-window-inactive {
-
     #navigator-toolbox,
     #toolbar-menubar,
     #TabsToolbar,

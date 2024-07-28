@@ -6,9 +6,9 @@
       "@media (-moz-bool-pref: meta.inspect(\"userChrome.${1:preference-name}\")) {",
       "\t$2",
       "}",
-      "$0"
+      "$0",
     ],
-    "description": "Preference wrapper"
+    "description": "Preference wrapper",
   },
   "-moz-bool-pref ": {
     "scope": "css",
@@ -17,20 +17,20 @@
       "@media (-moz-bool-pref: \"userChrome.${1:preference-name}\") {",
       "\t$2",
       "}",
-      "$0"
+      "$0",
     ],
-    "description": "Preference wrapper"
+    "description": "Preference wrapper",
   },
   "(prefers-color-scheme: dark)": {
     "scope": "css, scss",
     "prefix": "media-dark",
     "body": ["@media (prefers-color-scheme: ${1:dark}) {", "\t$2", "}", "$0"],
-    "description": "Styles for dark mode"
+    "description": "Styles for dark mode",
   },
   "-moz-platform": {
     "scope": "scss, css",
     "prefix": "media-pl",
     "body": ["@media (-moz-platform: ${1:windows}) {", "\t$2", "}", "$0"],
-    "description": "Platform wrapper"
-  }
+    "description": "Platform wrapper",
+  },
 }

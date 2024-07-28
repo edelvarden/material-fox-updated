@@ -30,7 +30,7 @@ To start using MaterialFox UPDATED, follow these steps:
 3. **Go to** the URL `about:support`.
 4. **Find** the `Profile Folder` category and **click** the `Open Folder` button.
 5. **Download** `chrome.zip` from [**the latest release here**](https://github.com/edelvarden/material-fox-updated/releases/latest).
- 
+
 6. **Extract** the contents into your Firefox profile directory.
 7. **Restart** Firefox to apply changes.
 
@@ -109,7 +109,6 @@ To **disable** a preference:
     <td>Disable ripple effect from buttons</td>
   </tr>
 </table>
-
 
 ## Custom CSS rules
 
@@ -279,7 +278,7 @@ Here are some examples of how you can use the `custom.css` file:
 You can use the [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) to create a color theme from an image.
 
 1. **Create** the `userChrome.theme-material` preference in the `about:config` page.
-2. **Go to**  the [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) website.
+2. **Go to** the [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/) website.
 3. **Select** from the presented images, **upload** your own, or **use** the "Random color" button to **generate** a theme.
 4. **Click** the "Pick your fonts" button in the bottom right corner.
 5. **Skip** this step and **click** the "Export theme" button.

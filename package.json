@@ -1,7 +1,7 @@
 {
   "name": "material-fox-updated",
   "description": "Firefox user CSS theme, inspired by material design",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "private": true,
   "type": "module",
   "author": "https://github.com/edelvarden",
@@ -13,15 +13,15 @@
     "build": "run-s build:chrome build:content",
     "build:chrome": "sass --quiet --no-source-map --style compressed src/user-chrome.scss chrome/user-chrome.css",
     "build:content": "sass --quiet --no-source-map --style compressed src/user-content.scss chrome/user-content.css",
-    "format": "prettier --write .",
+    "format": "prettier --write ./src",
     "lint": "prettier --check .",
     "pre-commit": "prettier --write . --list-different"
   },
   "devDependencies": {
-    "husky": "^9.0.11",
+    "husky": "^9.1.3",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.8",
-    "sass": "^1.77.2",
+    "prettier": "^3.3.3",
+    "sass": "^1.77.8",
     "stylefmt": "^6.0.3"
   },
   "browserslist": [
