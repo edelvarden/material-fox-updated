@@ -120,7 +120,10 @@
   }
 
   // Remove tab outline described in https://github.com/edelvarden/material-fox-updated/issues/62
+  :root,
+  html,
+  body,
   .tab-background{
-    --tab-selected-outline-color: none !important;
+    --tab-selected-outline-color: transparent !important;
   }
 }
