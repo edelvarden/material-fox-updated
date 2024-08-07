@@ -419,10 +419,16 @@ treechildren::-moz-tree-image(title, open) {
 
 // Firefox view icon
 #firefox-view-button {
-  list-style-image: get-var("inbox-icon") !important;
+  list-style-image: url("chrome://branding/content/icon32.png") !important;
 }
 
 @media (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")) {
+  #alltabs-button {
+    list-style-image: get-var("keyboard-arrow-down-icon") !important;
+  }
+}
+
+@media (-moz-platform: macos) {
   #alltabs-button {
     list-style-image: get-var("keyboard-arrow-down-icon") !important;
   }

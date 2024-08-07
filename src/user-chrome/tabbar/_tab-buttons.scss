@@ -155,12 +155,6 @@
   }
 }
 
-#TabsToolbar .toolbarbutton-1.chromeclass-toolbar-additional {
-  --toolbarbutton-inner-padding: calc(
-    (var(--tab-min-height) - 28px) / 2
-  ) !important;
-}
-
 @media not (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")) {
   @media (-moz-platform: windows) {
     #alltabs-button {

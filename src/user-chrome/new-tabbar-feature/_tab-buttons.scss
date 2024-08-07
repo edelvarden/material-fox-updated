@@ -43,7 +43,7 @@
   min-width: 34px !important;
   max-width: 34px !important;
   min-height: 37px !important;
-  max-height: 37px !important;
+  max-height: 100% !important;
 
   // move to the top left corner
   justify-content: center !important;
@@ -71,6 +71,11 @@
   .toolbarbutton-icon {
     width: 16px !important;
     height: 16px !important;
+
+    @media (-moz-platform: macos) {
+      width: 18px !important;
+      height: 18px !important;
+    }
   }
 }
 
@@ -88,7 +93,7 @@
 
 @media (-moz-platform: macos) {
   #alltabs-button {
-    margin-right: 6px !important;
+    margin-inline-end: 3px !important;
   }
 }
 
