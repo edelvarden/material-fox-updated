@@ -1,194 +1,217 @@
-#context-back {
-  --menuitem-image: #{get-var("arrow-back-icon")};
-}
-
-#context-forward {
-  --menuitem-image: #{get-var("arrow-forward-icon")};
-}
-
-#context-reload {
-  --menuitem-image: #{get-var("refresh-icon")};
-  background-size: 20px !important;
-  background-position-x: 18px !important;
-}
-
-#context-savepage {
-  --menuitem-image: #{get-var("code-icon")};
-}
-
-#context-selectall {
-  --menuitem-image: #{get-var("code-icon")};
-}
-
-#context-take-screenshot {
-  --menuitem-image: #{get-var("code-icon")};
-}
-
-#context-viewsource {
-  --menuitem-image: #{get-var("code-icon")};
-}
-
-#context-inspect {
-  --menuitem-image: #{get-var("toolbar-icon")};
-}
-
-// --------------------------
-// Text context menu
-#context-undo {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-#context-redo {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-#context-cut {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-#context-copy {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-#context-paste {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-#context-delete {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// --------------------------
-// Image context menu
-
-// Open Image in New Tab
-#context-viewimage {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Save Image As…
-#context-saveimage {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Copy Image
-#context-copyimage-contents {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Copy Image Link
-#context-copyimage {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// View Image Info
-#context-viewimageinfo {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// --------------------------
-// Video context menu
-
-// Play
-#context-media-play {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Mute
-#context-media-mute {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Speed
-#context-media-playbackrate {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Loop
-#context-media-loop {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Full Screen
-#context-video-fullscreen {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Hide Controls
-#context-media-hidecontrols {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Watch in Picture-in-Picture
-#context-video-pictureinpicture {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Take Snapshot…
-#context-video-saveimage {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Save Video As…
-#context-savevideo {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Copy Video Link
-#context-copyvideourl {
-  --menuitem-image: #{get-var("help-icon")};
-}
-
-// Allowing set icons as background
-#context-back,
-#context-forward,
-#context-reload,
-#context-savepage,
-#context-selectall,
-#context-take-screenshot,
-#context-viewsource,
-#context-inspect,
-// text
-#context-undo,
-#context-redo #context-cut,
-#context-copy,
-#context-paste,
-#context-delete,
-// image
-#context-viewimage,
-#context-saveimage,
-#context-copyimage-contents,
-#context-copyimage,
-#context-viewimageinfo,
-// video
-#context-media-play,
-#context-media-mute,
-#context-media-playbackrate,
-#context-media-loop,
-#context-video-fullscreen,
-#context-media-hidecontrols,
-#context-video-pictureinpicture,
-#context-video-saveimage,
-#context-savevideo,
-#context-copyvideourl {
-  -moz-context-properties: fill, fill-opacity, stroke !important;
-  fill: currentColor !important;
-  stroke: currentColor;
-  background-size: 16px !important;
-  background-repeat: no-repeat !important;
-  background-image: var(--menuitem-image);
-
-  background-position: left center !important;
-  background-position-x: 20px !important;
-
-  @media (-moz-platform: linux) {
-    background-position-x: 6px !important;
+@media (-moz-bool-pref: meta.inspect("userChrome.ui-context-menu-icons")) {
+  #context-back {
+    --menuitem-image: #{get-var("arrow-back-icon")};
   }
-}
 
-#context_reloadTab,
-#context_reloadSelectedTabs,
-#toolbar-context-reloadSelectedTab,
-#context-reloadframe {
-  background-image: url("chrome://global/skin/icons/reload.svg") !important;
+  #context-forward {
+    --menuitem-image: #{get-var("arrow-forward-icon")};
+  }
+
+  #context-reload,
+  #context_reloadTab {
+    --menuitem-image: #{get-var("refresh-icon")};
+  }
+
+  #context-reload {
+    background-size: 20px !important;
+    background-position-x: 18px !important;
+  }
+
+  #context_openANewTab {
+    --menuitem-image: #{get-var("new-tab-icon")};
+  }
+
+  #context_bookmarkTab {
+    --menuitem-image: #{get-var("star-icon")};
+    -moz-context-properties: fill, fill-opacity !important;
+    fill-opacity: 0 !important;
+  }
+
+  #context-savepage {
+    --menuitem-image: #{get-var("code-icon")};
+  }
+
+  #context-selectall {
+    --menuitem-image: #{get-var("code-icon")};
+  }
+
+  #context-take-screenshot {
+    --menuitem-image: #{get-var("code-icon")};
+  }
+
+  #context-viewsource {
+    --menuitem-image: #{get-var("code-icon")};
+  }
+
+  #context-inspect {
+    --menuitem-image: #{get-var("toolbar-icon")};
+  }
+
+  #context_closeTab,
+  #context_closeDuplicateTabs,
+  #context_closeTabOptions {
+    --menuitem-image: #{get-var("close-icon")};
+  }
+
+  #context_undoCloseTab {
+    --menuitem-image: #{get-var("new-tab-icon")};
+  }
+
+  #context_reopenInContainer {
+    --menuitem-image: #{get-var("multiaccountcontainer-icon")};
+  }
+
+  #context_toggleMuteTab:not([muted="true"]) {
+    --menuitem-image: #{get-var("audio-muted-icon")};
+  }
+  #context_toggleMuteTab[muted="true"] {
+    --menuitem-image: #{get-var("audio-icon")};
+  }
+
+  // --------------------------
+  // Text context menu
+  [data-l10n-id="text-action-undo"],
+  #context-undo {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  [data-l10n-id="text-action-redo"],
+  #context-redo {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  [data-l10n-id="text-action-cut"],
+  #context-cut {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  [data-l10n-id="text-action-copy"],
+  #context-copy {
+    --menuitem-image: #{get-var("copy-icon")};
+  }
+
+  [data-l10n-id="text-action-paste"],
+  #context-paste {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  [data-l10n-id="text-action-delete"],
+  #context-delete {
+    --menuitem-image: #{get-var("trash-icon")};
+  }
+
+  [data-l10n-id="text-action-select-all"] {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // --------------------------
+  // Image context menu
+
+  // Open Image in New Tab
+  #context-viewimage {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // Copy Image
+  #context-copyimage-contents {
+    --menuitem-image: #{get-var("copy-icon")};
+  }
+
+  // Copy Image Link
+  #context-copyimage {
+    --menuitem-image: #{get-var("copy-icon")};
+  }
+
+  // View Image Info
+  #context-viewimageinfo {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // --------------------------
+  // Video context menu
+
+  // Play
+  #context-media-play {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // Mute
+  #context-media-mute {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // Speed
+  #context-media-playbackrate {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // Loop
+  #context-media-loop {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // Full Screen
+  #context-video-fullscreen {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // Hide Controls
+  #context-media-hidecontrols {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // Watch in Picture-in-Picture
+  #context-video-pictureinpicture {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // Take Snapshot…
+  #context-video-saveimage {
+    --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // Save Video As…
+  #context-savevideo,
+  #context-saveimage {
+    --menuitem-image: #{get-var("file-save-icon")};
+  }
+
+  // Copy Video Link
+  #context-copyvideourl {
+    --menuitem-image: #{get-var("copy-icon")};
+  }
+
+  // Allowing set icons as background
+  .textbox-contextmenu,
+  #contentAreaContextMenu,
+  #toolbar-context-menu,
+  #tabContextMenu {
+    :is(menuitem, menu):not(
+        [image],
+        .menu-iconic,
+        .menuitem-iconic,
+        [type="radio"],
+        [type="checkbox"],
+        [checked]
+      ),
+    #context-back,
+    #context-forward,
+    #context-reload,
+    #context-stop,
+    #context-bookmarkpage {
+      -moz-context-properties: fill, fill-opacity, stroke !important;
+      fill: currentColor !important;
+      stroke: currentColor;
+      background-size: 16px !important;
+      background-repeat: no-repeat !important;
+      background-image: var(--menuitem-image) !important;
+
+      background-position: left center !important;
+      background-position-x: 12px !important;
+
+      @media (-moz-platform: linux) {
+        background-position-x: 6px !important;
+      }
+    }
+  }
 }
