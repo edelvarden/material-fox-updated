@@ -222,7 +222,6 @@ $image-padding-end: 8px;
 
     // on hover
     &:where([_moz-menuactive="true"]):not([disabled="true"]) {
-      background-color: get-var("menu-border-color") !important;
       color: inherit !important;
     }
   }
@@ -306,6 +305,16 @@ arrowscrollbox {
 
     &[_moz-menuactive]:not([disabled="true"]) {
       background: get-var("menu-background-color-hover") !important;
+    }
+  }
+
+  menuitem {
+    &[_moz-menuactive]:not([disabled="true"]):active {
+      background-color: cm(
+        transparent,
+        get-var("menu-background-color-hover"),
+        0.5
+      ) !important;
     }
   }
 }

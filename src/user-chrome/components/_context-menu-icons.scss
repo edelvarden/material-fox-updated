@@ -12,25 +12,25 @@
   background-position-x: 18px !important;
 }
 
-// #context-savepage {
-//   --menuitem-image: #{get-var('code-icon')};
-// }
+#context-savepage {
+  --menuitem-image: #{get-var("code-icon")};
+}
 
-// #context-selectall {
-//   --menuitem-image: #{get-var('code-icon')};
-// }
+#context-selectall {
+  --menuitem-image: #{get-var("code-icon")};
+}
 
-// #context-take-screenshot {
-//   --menuitem-image: #{get-var('code-icon')};
-// }
+#context-take-screenshot {
+  --menuitem-image: #{get-var("code-icon")};
+}
 
 #context-viewsource {
   --menuitem-image: #{get-var("code-icon")};
 }
 
-// #context-inspect {
-//   --menuitem-image: #{get-var('toolbar-icon')};
-// }
+#context-inspect {
+  --menuitem-image: #{get-var("toolbar-icon")};
+}
 
 // --------------------------
 // Text context menu
@@ -184,4 +184,11 @@
   @media (-moz-platform: linux) {
     background-position-x: 6px !important;
   }
+}
+
+#context_reloadTab,
+#context_reloadSelectedTabs,
+#toolbar-context-reloadSelectedTab,
+#context-reloadframe {
+  background-image: url("chrome://global/skin/icons/reload.svg") !important;
 }
