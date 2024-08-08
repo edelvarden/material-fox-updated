@@ -2,37 +2,29 @@
   🦊 MaterialFox UPDATED
 </h1>
 
-![preview](assets/preview.png)
+<h2 align="center">
+  A Firefox user CSS theme that looks similar to Chrome.
+</h2>
 
-## 📖 Overview
-
-MaterialFox UPDATED is a user CSS theme designed for the Firefox browser, inspired by material design.
-
-## 🎯 Motivation
-
-This theme was created out of appreciation for material design and the desire to bring this visually appealing style to the Firefox browser.
-
-## ⚙️ Functionality
-
-MaterialFox UPDATED overrides the default CSS with custom styles, utilizing the CSS `!important` rule.
+![preview](docs/assets/preview.png)
 
 ## 🚀 Getting Started
 
 To start using MaterialFox UPDATED, follow these steps:
 
-1. **Go to** the URL `about:config`.
-2. **Ensure** the following preferences are `true`:
+1. **Open** Firefox and type `about:config` in the address bar, then press <kbd>Enter</kbd>.
+2. If a warning page appears, **click** `Accept the Risk and Continue` to access the `about:config` page.
+3. **Search** for the following preferences using the search bar at the top of the `about:config` page, and **ensure** the following preferences are `true`:
 
    - `toolkit.legacyUserProfileCustomizations.stylesheets`
    - `svg.context-properties.content.enabled`
    - `layout.css.color-mix.enabled`
 
-3. **Go to** the URL `about:support`.
-4. **Find** the `Profile Folder` category and **click** the `Open Folder` button.
-5. **Download** `chrome.zip` from [**the latest release here**](https://github.com/edelvarden/material-fox-updated/releases/latest).
-
-6. **Extract** the contents into your Firefox profile directory.
-7. **Restart** Firefox to apply changes.
+4. **Type** `about:support` in the address bar and press <kbd>Enter</kbd>.
+5. **Scroll down** to the `Profile Folder` section and **click** `Open Folder`.
+6. **Download** the `chrome.zip` file from the [**latest release**](https://github.com/edelvarden/material-fox-updated/releases/latest).
+7. **Extract** the contents of `chrome.zip` into your Firefox profile directory.
+8. **Restart** Firefox to apply the changes.
 
 ### Installation Script (for Advanced Users)
 
@@ -52,20 +44,20 @@ Feel free to provide **feedback**, **suggestions**, or **bug reports** on [GitHu
 
 You can **apply** visual design changes by adding some `about:config` customization options (preferences).
 
-To **set** a preference:
+To **set** a preference, **type** `about:config` in the address bar and press <kbd>Enter</kbd>.
 
-1. **Go to** `about:config`.
-2. **Create** a custom boolean preference by typing the preference name and **clicking** the plus button, for example, `userChrome.theme-default`.
+To **enable** a preference:
+
+1. **Create** a custom boolean preference by typing the preference name and **clicking** the plus button. For example, `userChrome.ui-chrome-refresh` enables the new Chrome design.
 
 To **disable** a preference:
 
-1. **Go to** `about:config`.
-2. **Search** by name and **delete** the preference or toggle its state to `false`.
-
-### Available preferences
+1. **Search** for it by name and **delete** the preference or toggle its state to `false`.
 
 > [!WARNING]  
 > Use only one preference with the prefix `theme`.
+
+### Available preferences
 
 <table>
   <tr>
@@ -74,19 +66,19 @@ To **disable** a preference:
   </tr>
     <tr>
     <td><code>userChrome.ui-chrome-refresh</code></td>
-    <td>Enabling new Chrome design which named as "Chrome Refresh".<img src="assets/preview-chrome-refresh.png" alt="preview-chrome-refresh"></img></td>
+    <td>Enable the new Chrome design named "Chrome Refresh".<img src="docs/assets/preview-chrome-refresh.png" alt="preview-chrome-refresh"></img></td>
   </tr>
   <tr>
     <td><code>userChrome.theme-chrome-refresh</code></td>
-    <td>Enabling new color scheme like in "Chrome Refresh".</img></td>
+    <td>Enable a new color scheme like in "Chrome Refresh".</img></td>
   </tr>
   <tr>
     <td><code>userChrome.theme-material</code></td>
-    <td>Enabling Material color schemes. <a href="#material-theme" _blank>Read more</a>.</img></td>
+    <td>Enable Material color schemes. <a href="#material-theme" _blank>Read more</a>.</img></td>
   </tr>
   <tr>
     <td><code>userChrome.theme-default</code></td>
-    <td>Enabling default color scheme. This can be useful if you want use with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
+    <td>Enable the default color scheme. This can be useful if you want to use it with <a href="https://addons.mozilla.org/firefox/addon/adaptive-tab-bar-colour/" _blank>Adaptive Tab Bar Color</a> or native Firefox themes</td>
   </tr>
   <tr>
     <td><code>userChrome.ui-compact-url-bar</code></td>
@@ -94,15 +86,15 @@ To **disable** a preference:
   </tr>
     <tr>
     <td><code>userChrome.ui-no-menu-icons</code></td>
-    <td>Hide menu icons</td>
+    <td>Hide the menu icons</td>
   </tr>
   <tr>
     <td><code>userChrome.ui-force-animation</code></td>
-    <td>Force enable control animation, because by default respects the user animation disable preference. <em>(Not required if you do not disable animation)</em></td>
+    <td>Force enable control animation, because it respects the user's animation disable preference by default. <em>(Not required if you do not disable animation)</em></td>
   </tr>
   <tr>
     <td><code>userChrome.ui-force-old-icons</code></td>
-    <td>Force old icons to be used even if the <code>userChrome.ui-chrome-refresh</code> preference is enabled.</td>
+    <td>Force the old icons to be used even if the <code>userChrome.ui-chrome-refresh</code> preference is enabled.</td>
   </tr>
   <tr>
     <td><code>userChrome.ui-no-ripple</code></td>
@@ -114,7 +106,7 @@ To **disable** a preference:
 
 You can also add your own user CSS rules by using the `custom.css` file. Additionally, if you want to change some colors, you can override the default variable values with your own.
 
-Follow this steps:
+Follow these steps:
 
 1. **Find and rename** the `custom_example.css` file in the root folder to `custom.css`.
 2. **Open** `custom.css` in a text editor.
@@ -133,7 +125,7 @@ body {
 5. Save the file and restart Firefox to apply changes.
 
 > [!NOTE]  
-> Using these custom CSS files can separate your changes from the source project. You can easily back up your files and not worry about overwriting your changes when updating or reinstalling the main files.
+> Using this `custom.css` file can separate your changes from the source project. You can easily back up your file and not worry about overwriting your changes when updating or reinstalling the main files.
 
 ### Available variables
 
@@ -239,7 +231,7 @@ Here are some examples of how you can use the `custom.css` file:
   }
   ```
 
-### Custom css use cases for create your own color themes
+### Custom css use cases for creating your own color themes
 
 > [!TIP]
 > You can use variables to completely recolor the theme. Here are some preset examples with code:
@@ -252,23 +244,23 @@ Here are some examples of how you can use the `custom.css` file:
   <tr>
     <td>
       <h2>System accent colors</h6>
-      Source code: <br><a href="assets/examples/theme-system-accent.css" _blank>theme-system-accent.css</a>
+      Source code: <br><a href="examples/theme-system-accent.css" _blank>theme-system-accent.css</a>
     </td>
-    <td><img src="assets/preview-accent-1.png" alt=""/><img src="assets/preview-accent-2.png" alt=""/><img src="assets/preview-accent-3.png" alt=""/></td>
+    <td><img src="docs/assets/preview-accent-1.png" alt=""/><img src="docs/assets/preview-accent-2.png" alt=""/><img src="docs/assets/preview-accent-3.png" alt=""/></td>
   </tr>
   <tr>
     <td>
       <h2>Github theme</h6>
-      Source code: <br><a href="assets/examples/theme-github.css" _blank>theme-github.css</a>
+      Source code: <br><a href="examples/theme-github.css" _blank>theme-github.css</a>
     </td>
-    <td><img src="assets/preview-github.png" alt="preview-github"></img></td>
+    <td><img src="docs/assets/preview-github.png" alt="preview-github"></img></td>
   </tr>
   <tr>
     <td>
       <h2>Dracula theme</h6>
-      Source code: <br><a href="assets/examples/theme-dracula.css" _blank>theme-dracula.css</a>
+      Source code: <br><a href="examples/theme-dracula.css" _blank>theme-dracula.css</a>
     </td>
-    <td><img src="assets/preview-dracula.png" alt="preview-dracula"/></td>
+    <td><img src="docs/assets/preview-dracula.png" alt="preview-dracula"/></td>
   </tr>
 
 </table>
@@ -284,17 +276,17 @@ You can use the [Material Theme Builder](https://material-foundation.github.io/m
 5. **Skip** this step and **click** the "Export theme" button.
 6. **Click** "Export" and **select** "Web (CSS)" from the dropdown menu.
 
-   ![material-theme-tutorial](assets/material-theme-tutorial.png)
+   ![material-theme-tutorial](docs/assets/material-theme-tutorial.png)
 
-This will download an archive of CSS files. You need only two files: `light.css` and `dark.css`. Open these in a text editor and extract the variables to your `custom.css` file. Wrap the variables in the appropriate media rule for light and dark themes.
+This will download an archive of CSS files. You only need two files: `light.css` and `dark.css`. Open these in a text editor and extract the variables to your `custom.css` file. Wrap the variables in the appropriate media rule for light and dark themes.
 
 Examples with previews
 | Example | Preview |
 | --- | --- |
-| [theme-material-blue.css](chrome/theme-material-blue.css) | ![material-blue-preview](assets/material-blue-preview.png) |
-| [theme-material-red.css](assets/examples/theme-material-red.css) | ![material-red-preview](assets/material-red-preview.png) |
-| [theme-material-yellow.css](assets/examples/theme-material-yellow.css) | ![material-yellow-preview](assets/material-yellow-preview.png) |
-| [theme-material-green.css](assets/examples/theme-material-green.css) | ![material-green-preview](assets/material-green-preview.png) |
+| [theme-material-blue.css](chrome/theme-material-blue.css) | ![material-blue-preview](docs/assets/material-blue-preview.png) |
+| [theme-material-red.css](examples/theme-material-red.css) | ![material-red-preview](docs/assets/material-red-preview.png) |
+| [theme-material-yellow.css](examples/theme-material-yellow.css) | ![material-yellow-preview](docs/assets/material-yellow-preview.png) |
+| [theme-material-green.css](examples/theme-material-green.css) | ![material-green-preview](docs/assets/material-green-preview.png) |
 
 ## 🔧 Build & Development (for developers)
 
@@ -340,7 +332,7 @@ To subsequently start the development mode, just use the following command:
 npm run dev
 ```
 
-## 🔗 Credits
+## Credits
 
 - [MaterialFox](https://github.com/muckSponge/MaterialFox) by [muckSponge](https://github.com/muckSponge)
 - [edge-frfox](https://github.com/bmFtZQ/edge-frfox) by [bmFtZQ](https://github.com/bmFtZQ)
