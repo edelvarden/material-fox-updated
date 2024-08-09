@@ -28,15 +28,17 @@
   }
 
   #context-savepage {
-    --menuitem-image: #{get-var("code-icon")};
+    --menuitem-image: #{get-var("file-save-icon")};
   }
 
+  [data-l10n-id="text-action-select-all"],
   #context-selectall {
-    --menuitem-image: #{get-var("code-icon")};
+    --menuitem-image: #{get-var("select-all-icon")};
   }
 
+  #context-video-saveimage,
   #context-take-screenshot {
-    --menuitem-image: #{get-var("code-icon")};
+    --menuitem-image: #{get-var("capture-icon")};
   }
 
   #context-viewsource {
@@ -72,17 +74,17 @@
   // Text context menu
   [data-l10n-id="text-action-undo"],
   #context-undo {
-    --menuitem-image: #{get-var("help-icon")};
+    --menuitem-image: #{get-var("undo-icon")};
   }
 
   [data-l10n-id="text-action-redo"],
   #context-redo {
-    --menuitem-image: #{get-var("help-icon")};
+    --menuitem-image: #{get-var("redo-icon")};
   }
 
   [data-l10n-id="text-action-cut"],
   #context-cut {
-    --menuitem-image: #{get-var("help-icon")};
+    --menuitem-image: #{get-var("cut-icon")};
   }
 
   [data-l10n-id="text-action-copy"],
@@ -92,16 +94,12 @@
 
   [data-l10n-id="text-action-paste"],
   #context-paste {
-    --menuitem-image: #{get-var("help-icon")};
+    --menuitem-image: #{get-var("paste-icon")};
   }
 
   [data-l10n-id="text-action-delete"],
   #context-delete {
     --menuitem-image: #{get-var("trash-icon")};
-  }
-
-  [data-l10n-id="text-action-select-all"] {
-    --menuitem-image: #{get-var("help-icon")};
   }
 
   // --------------------------
@@ -131,44 +129,39 @@
   // Video context menu
 
   // Play
-  #context-media-play {
-    --menuitem-image: #{get-var("help-icon")};
-  }
+  // #context-media-play {
+  //   --menuitem-image: #{get-var("help-icon")};
+  // }
 
-  // Mute
-  #context-media-mute {
-    --menuitem-image: #{get-var("help-icon")};
-  }
+  // // Mute
+  // #context-media-mute {
+  //   --menuitem-image: #{get-var("help-icon")};
+  // }
 
-  // Speed
-  #context-media-playbackrate {
-    --menuitem-image: #{get-var("help-icon")};
-  }
+  // // Speed
+  // #context-media-playbackrate {
+  //   --menuitem-image: #{get-var("help-icon")};
+  // }
 
-  // Loop
-  #context-media-loop {
-    --menuitem-image: #{get-var("help-icon")};
-  }
+  // // Loop
+  // #context-media-loop {
+  //   --menuitem-image: #{get-var("help-icon")};
+  // }
 
-  // Full Screen
-  #context-video-fullscreen {
-    --menuitem-image: #{get-var("help-icon")};
-  }
+  // // Full Screen
+  // #context-video-fullscreen {
+  //   --menuitem-image: #{get-var("help-icon")};
+  // }
 
-  // Hide Controls
-  #context-media-hidecontrols {
-    --menuitem-image: #{get-var("help-icon")};
-  }
+  // // Hide Controls
+  // #context-media-hidecontrols {
+  //   --menuitem-image: #{get-var("help-icon")};
+  // }
 
-  // Watch in Picture-in-Picture
-  #context-video-pictureinpicture {
-    --menuitem-image: #{get-var("help-icon")};
-  }
-
-  // Take Snapshot…
-  #context-video-saveimage {
-    --menuitem-image: #{get-var("help-icon")};
-  }
+  // // Watch in Picture-in-Picture
+  // #context-video-pictureinpicture {
+  //   --menuitem-image: #{get-var("help-icon")};
+  // }
 
   // Save Video As…
   #context-savevideo,
