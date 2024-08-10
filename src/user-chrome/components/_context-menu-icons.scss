@@ -21,6 +21,11 @@
     --menuitem-image: #{get-var("new-tab-icon")};
   }
 
+  // open link in new tab
+  #context-openlinkintab {
+    --menuitem-image: #{get-var("open-in-icon")};
+  }
+
   #context_bookmarkTab {
     --menuitem-image: #{get-var("star-icon")};
     -moz-context-properties: fill, fill-opacity !important;
@@ -31,6 +36,7 @@
     --menuitem-image: #{get-var("file-save-icon")};
   }
 
+  #context_selectAllTabs,
   [data-l10n-id="text-action-select-all"],
   #context-selectall {
     --menuitem-image: #{get-var("select-all-icon")};
@@ -50,24 +56,53 @@
   }
 
   #context_closeTab,
-  #context_closeDuplicateTabs,
   #context_closeTabOptions {
     --menuitem-image: #{get-var("close-icon")};
+  }
+
+  // close duplicate tabs
+  #context_closeDuplicateTabs {
+    --menuitem-image: #{get-var("tab-close-icon")};
   }
 
   #context_undoCloseTab {
     --menuitem-image: #{get-var("new-tab-icon")};
   }
 
+  #context-openlinkinusercontext-menu,
+  [id="placesContext_open:newcontainertab"],
   #context_reopenInContainer {
     --menuitem-image: #{get-var("multiaccountcontainer-icon")};
+  }
+
+  [id="placesContext_open:newtab"] {
+    --menuitem-image: #{get-var("new-tab-icon")};
+  }
+
+  #context-openlink,
+  [id="placesContext_open:newwindow"] {
+    --menuitem-image: #{get-var("new-window-icon")};
+  }
+
+  #context-openlinkprivate,
+  [id="placesContext_open:newprivatewindow"] {
+    --menuitem-image: #{get-var("incognito-icon")};
   }
 
   #context_toggleMuteTab:not([muted="true"]) {
     --menuitem-image: #{get-var("audio-muted-icon")};
   }
+
   #context_toggleMuteTab[muted="true"] {
     --menuitem-image: #{get-var("audio-icon")};
+  }
+
+  #context_pinTab {
+    --menuitem-image: #{get-var("pin-icon")};
+  }
+
+  #context_unpinTab {
+    --menuitem-image: #{get-var("unpin-icon")};
   }
 
   // --------------------------
@@ -82,24 +117,55 @@
     --menuitem-image: #{get-var("redo-icon")};
   }
 
+  #placesContext_cut,
   [data-l10n-id="text-action-cut"],
   #context-cut {
     --menuitem-image: #{get-var("cut-icon")};
   }
 
+  #placesContext_copy,
   [data-l10n-id="text-action-copy"],
   #context-copy {
     --menuitem-image: #{get-var("copy-icon")};
   }
 
+  #placesContext_paste_group,
   [data-l10n-id="text-action-paste"],
   #context-paste {
     --menuitem-image: #{get-var("paste-icon")};
   }
 
+  #placesContext_deleteFolder,
+  #placesContext_deleteBookmark,
   [data-l10n-id="text-action-delete"],
   #context-delete {
     --menuitem-image: #{get-var("trash-icon")};
+  }
+
+  // Edit bookmark
+  [id="placesContext_show_folder:info"],
+  [id="placesContext_show_bookmark:info"] {
+    --menuitem-image: #{get-var("edit-icon")};
+  }
+
+  // copy link
+  #context-copylink {
+    --menuitem-image: #{get-var("link-icon")};
+  }
+
+  // copy link without site tracking
+  #context-stripOnShareLink {
+    --menuitem-image: #{get-var("link-off-icon")};
+  }
+
+  // save link
+  #context-savelink {
+    --menuitem-image: #{get-var("file-save-icon")};
+  }
+
+  // share tab
+  [data-l10n-id="tab-context-share-url"] {
+    --menuitem-image: #{get-var("share-icon")};
   }
 
   // --------------------------
@@ -123,6 +189,33 @@
   // View Image Info
   #context-viewimageinfo {
     --menuitem-image: #{get-var("help-icon")};
+  }
+
+  // close tabs left
+  #context_closeTabsToTheStart {
+    --menuitem-image: #{get-var("arrow-back-icon")};
+  }
+
+  // close tabs right
+  #context_closeTabsToTheEnd {
+    --menuitem-image: #{get-var("arrow-forward-icon")};
+  }
+
+  [dir="rtl"] {
+    // close tabs left
+    #context_closeTabsToTheStart {
+      --menuitem-image: #{get-var("arrow-forward-icon")};
+    }
+
+    // close tabs right
+    #context_closeTabsToTheEnd {
+      --menuitem-image: #{get-var("arrow-back-icon")};
+    }
+  }
+
+  // duplicate tab
+  #context_duplicateTab {
+    --menuitem-image: #{get-var("tab-duplicate-icon")};
   }
 
   // --------------------------
@@ -178,7 +271,7 @@
   .textbox-contextmenu,
   #contentAreaContextMenu,
   #toolbar-context-menu,
-  #tabContextMenu {
+  :is(#placesContext, #tabContextMenu) {
     :is(menuitem, menu):not(
         [image],
         .menu-iconic,
@@ -204,6 +297,30 @@
 
       @media (-moz-platform: linux) {
         background-position-x: 6px !important;
+      }
+    }
+  }
+
+  [dir="rtl"] {
+    // Allowing set icons as background
+    .textbox-contextmenu,
+    #contentAreaContextMenu,
+    #toolbar-context-menu,
+    :is(#placesContext, #tabContextMenu) {
+      :is(menuitem, menu):not(
+          [image],
+          .menu-iconic,
+          .menuitem-iconic,
+          [type="radio"],
+          [type="checkbox"],
+          [checked]
+        ) {
+        background-position: left center !important;
+        background-position-x: calc(100% - 12px) !important;
+
+        @media (-moz-platform: linux) {
+          background-position-x: calc(100% - 6px) !important;
+        }
       }
     }
   }
