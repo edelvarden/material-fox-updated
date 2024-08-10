@@ -1,5 +1,5 @@
 name: "🎃 Bug Report"
-description: Create Bug Report
+description: Report a bug or issue
 title: "[Bug]: "
 labels: ["bug"]
 
@@ -8,17 +8,17 @@ body:
     id: description
     attributes:
       label: What happened?
-      description: General description of the problem. Add screenshots if needed
+      description: General description of the problem. Add screenshots if needed.
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: Steps to reproduce the problem
-      description: Describe step by step how to reproduce the problem
-      value: |
-        1. Open .... 
-        2. Click to ....
+      label: Steps to reproduce
+      description: Describe the steps to reproduce the problem.
+      placeholder: |
+        1. Open ....
+        2. Click on ....
         3. ...
     validations:
       required: true
@@ -26,7 +26,7 @@ body:
     id: additional
     attributes:
       label: Additional info (Optional)
-      description: OS and Firefox version if needed
-      value: |
+      description: Operating system and Firefox version, if relevant.
+      placeholder: |
         Firefox version: 
         Operating system:

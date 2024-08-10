@@ -1,5 +1,5 @@
 name: "✨ Feature Request"
-description: Create Feature Request
+description: Suggest an idea for this project
 title: "[Feature Request]: "
 labels: ["enhancement"]
 
@@ -8,14 +8,14 @@ body:
     id: description
     attributes:
       label: Description
-      description: Include clear explanation of the feature and how it works. Add screenshots if needed
+      description: Provide a clear explanation of the feature and how it should work. Add screenshots if needed.
     validations:
       required: true
   - type: textarea
     id: additional
     attributes:
       label: Additional info (Optional)
-      description: OS and Firefox version if needed
-      value: |
+      description: Operating system and Firefox version, if relevant.
+      placeholder: |
         Firefox version: 
         Operating system:
