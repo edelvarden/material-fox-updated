@@ -1,5 +1,5 @@
 param (
-    [string]$ReleasesUrl = "https://api.github.com/repos/edelvarden/material-fox-updated/releases/$env:MATERIAL_FOX_VERSION"
+  [string]$ReleasesUrl = "https://api.github.com/repos/edelvarden/material-fox-updated/releases/$env:MATERIAL_FOX_VERSION"
 )
 
 function Get-FirefoxProfileDirectory {
@@ -17,7 +17,7 @@ function Get-FirefoxProfileDirectory {
     "$env:APPDATA\Floorp"
   )
 
-# If there are multiple browsers, prompt the user to select one
+  # If there are multiple browsers, prompt the user to select one
   $selectedDirectories = @()
 
   foreach ($firefoxBrowserDirectory in $browserDirectories) {
@@ -32,7 +32,8 @@ function Get-FirefoxProfileDirectory {
 
   if ($selectedDirectories.Count -gt 1) {
     $BrowserProfile = Show-ConsoleMenu -Items $selectedDirectories -Prompt "Select a Firefox browser profile directory"
-  } else {
+  }
+  else {
     $BrowserProfile = $selectedDirectories[0]
   }
 
@@ -42,7 +43,8 @@ function Get-FirefoxProfileDirectory {
     Where-Object {
       if (Get-ChildItem $_.FullName -File -Name "*prefs.js") {
         return $true
-      } else {
+      }
+      else {
         return $false
       }
     } |
@@ -50,13 +52,15 @@ function Get-FirefoxProfileDirectory {
 
   if ($profileDirectories.Count -gt 1) {
     $ProfileName = Show-ConsoleMenu -Items $profileDirectories.Name -Prompt "Select a Firefox profile"
-  } else {
+  }
+  else {
     $ProfileName = $profileDirectories[0].Name
   }
 
   if ($ProfileName) {
     return "$profilesDirectory\$ProfileName"
-  } else {
+  }
+  else {
     Write-Warning "Couldn't retrieve the Firefox profile directory!"
     return
   }
@@ -70,36 +74,40 @@ function Show-ConsoleMenu {
     [string]$Prompt
   )
 
+  if ($Items.Count -eq 0) {
+    Write-Host "No items to display."
+    return
+  }
+
   $selectedIndex = 0
   $itemCount = $Items.Count
 
-  # Store the initial cursor position
-  $initialCursorPos = $Host.UI.RawUI.CursorPosition
-
-  # Display the prompt and menu
+  # Display the prompt and move cursor to the next line
   Write-Host "? " -ForegroundColor Yellow -NoNewline
-  Write-Host "$Prompt " -ForegroundColor White  -NoNewline
+  Write-Host "$Prompt " -ForegroundColor White -NoNewline
   Write-Host ""
 
+  # Capture the line where the menu starts
   $menuStartLine = $Host.UI.RawUI.CursorPosition.Y
-  $menuLines = @()
-
-  for ($i = 0; $i -lt $itemCount; $i++) {
-    if ($i -eq $selectedIndex) {
-      $menuLines += " > $($Items[$i])"
-    } else {
-      $menuLines += "   $($Items[$i])"
-    }
-  }
 
   # Function to redraw the menu
   function Redraw-Menu {
-    $Host.UI.RawUI.CursorPosition = @{X=0; Y=$menuStartLine}
+    $Host.UI.RawUI.CursorPosition = @{X = 0; Y = $menuStartLine }
+
+    # Clear previous menu lines
     for ($i = 0; $i -lt $itemCount; $i++) {
+      $Host.UI.RawUI.CursorPosition = @{X = 0; Y = $menuStartLine + $i }
+      Write-Host (" " * $Host.UI.RawUI.WindowSize.Width) -NoNewline
+    }
+
+    # Redraw menu
+    for ($i = 0; $i -lt $itemCount; $i++) {
+      $Host.UI.RawUI.CursorPosition = @{X = 0; Y = $menuStartLine + $i }
       if ($i -eq $selectedIndex) {
-        Write-Host $menuLines[$i].PadRight($Host.UI.RawUI.WindowSize.Width) -ForegroundColor Cyan
-      } else {
-        Write-Host $menuLines[$i].PadRight($Host.UI.RawUI.WindowSize.Width) -ForegroundColor DarkGray
+        Write-Host (" > $($Items[$i])".PadRight($Host.UI.RawUI.WindowSize.Width)) -ForegroundColor Cyan
+      }
+      else {
+        Write-Host ("   $($Items[$i])".PadRight($Host.UI.RawUI.WindowSize.Width)) -ForegroundColor DarkGray
       }
     }
   }
@@ -107,28 +115,29 @@ function Show-ConsoleMenu {
   Redraw-Menu
 
   while ($true) {
-    $key = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
+    try {
+      $key = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
+    }
+    catch {
+      # Handle Ctrl+C or other interruptions
+      Clear-Host
+      Write-Host "Interrupted. Exiting..."
+      return
+    }
 
     switch ($key) {
-      38 { # Up Arrow
+      38 {
+        # Up Arrow
         $selectedIndex = ($selectedIndex - 1) % $itemCount
         if ($selectedIndex -lt 0) { $selectedIndex = $itemCount - 1 }
       }
-      40 { # Down Arrow
+      40 {
+        # Down Arrow
         $selectedIndex = ($selectedIndex + 1) % $itemCount
       }
-      13 { # Enter
+      13 {
+        # Enter
         return $Items[$selectedIndex]
-      }
-    }
-
-    # Update the menu lines with the new selection
-    $menuLines = @()
-    for ($i = 0; $i -lt $itemCount; $i++) {
-      if ($i -eq $selectedIndex) {
-        $menuLines += " > $($Items[$i])"
-      } else {
-        $menuLines += "   $($Items[$i])"
       }
     }
 
@@ -137,45 +146,49 @@ function Show-ConsoleMenu {
 }
 
 
+
 function Show-ConfirmationDialog {
-    param (
-        [Parameter(Mandatory = $true)]
-        [string]$Message
-    )
+  param (
+    [Parameter(Mandatory = $true)]
+    [string]$Message
+  )
 
-    $selectedOption = $null
+  $selectedOption = $null
 
-    while ($null -eq $selectedOption) {
-        Write-Host "? "  -ForegroundColor Yellow -NoNewline
-        Write-Host "$Message " -ForegroundColor White -NoNewline
-        Write-Host "(y/n) > " -ForegroundColor DarkGray -NoNewline
+  while ($null -eq $selectedOption) {
+    Write-Host "? "  -ForegroundColor Yellow -NoNewline
+    Write-Host "$Message " -ForegroundColor White -NoNewline
+    Write-Host "(y/n) > " -ForegroundColor DarkGray -NoNewline
         
-        $key = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
+    $key = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown').VirtualKeyCode
 
-        switch ($key) {
-            89 { # Y key
-                $selectedOption = "yes"
-                Write-Host "yes" -ForegroundColor Green
-            }
-            78 { # N key
-                $selectedOption = "no"
-                Write-Host "no" -ForegroundColor Red
-            }
-            13 { # Enter
-                $selectedOption = "no"
-                Write-Host "no" -ForegroundColor Red
-            }
-            default {
-              break
-            }
-        }
-
-        if (-not $selectedOption) {
-            Write-Host "`b`b`b`b" -NoNewline  # Backspace characters to overwrite the " › " prompt
-        }
+    switch ($key) {
+      89 {
+        # Y key
+        $selectedOption = "yes"
+        Write-Host "yes" -ForegroundColor Green
+      }
+      78 {
+        # N key
+        $selectedOption = "no"
+        Write-Host "no" -ForegroundColor Red
+      }
+      13 {
+        # Enter
+        $selectedOption = "no"
+        Write-Host "no" -ForegroundColor Red
+      }
+      default {
+        break
+      }
     }
 
-    return $selectedOption
+    if (-not $selectedOption) {
+      Write-Host "`b`b`b`b" -NoNewline  # Backspace characters to overwrite the " › " prompt
+    }
+  }
+
+  return $selectedOption
 }
 
 function Update-FirefoxTheme {
@@ -268,7 +281,7 @@ function Invoke-Installation {
   }
   else {
     Write-Warning "The chrome folder already exists!"
-        $confirmation = Show-ConfirmationDialog -Message "Do you want to overwrite?"
+    $confirmation = Show-ConfirmationDialog -Message "Do you want to overwrite?"
 
     if ($confirmation -eq "yes") {
       $isUpdate = $true
@@ -306,7 +319,7 @@ function Invoke-Installation {
   }
 }
 
-
+Clear-Host
 Write-Host "----------------------------------------------------------------"  -ForegroundColor DarkGray
 Write-Host "MaterialFox UPDATED" -ForegroundColor White
 Write-Host "----------------------------------------------------------------" -ForegroundColor DarkGray
