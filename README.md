@@ -33,7 +33,13 @@ As an alternative to manual installation, you can use a PowerShell script.
 For **Windows**, run the following PowerShell command:
 
 ```powershell
-PowerShell -ExecutionPolicy Unrestricted -Command "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
+$env:MATERIAL_FOX_VERSION = "latest"; PowerShell -ExecutionPolicy Unrestricted -c "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
+```
+
+For Firefox version **119** or below
+
+```powershell
+$env:MATERIAL_FOX_VERSION = "tags/v1.0.7"; PowerShell -ExecutionPolicy Unrestricted -c "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
 ```
 
 ## 💬 Feedback
