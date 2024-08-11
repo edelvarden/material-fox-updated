@@ -91,6 +91,11 @@ To **disable** a preference:
     <td>Make the URL bar more compact by reducing its height.</td>
   </tr>
     <tr>
+    <td><code>userChrome.ui-context-menu-icons</code></td>
+    <td>Display context menu icons.</td>
+  </tr>
+  </tr>
+    <tr>
     <td><code>userChrome.ui-no-menu-icons</code></td>
     <td>Hide the menu icons</td>
   </tr>

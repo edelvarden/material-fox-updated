@@ -66,7 +66,7 @@
   }
 
   #context_undoCloseTab {
-    --menuitem-image: #{get-var("new-tab-icon")};
+    --menuitem-image: #{get-var("reply-icon")};
   }
 
   #context-openlinkinusercontext-menu,
@@ -103,6 +103,31 @@
 
   #context_unpinTab {
     --menuitem-image: #{get-var("unpin-icon")};
+  }
+
+  // move tab
+  #context_moveTabOptions {
+    --menuitem-image: #{get-var("swap-icon")};
+  }
+
+  #context_openTabInWindow {
+    --menuitem-image: #{get-var("new-window-icon")};
+  }
+
+  #context_moveToStart {
+    --menuitem-image: #{get-var("arrow-back-icon")};
+  }
+  #context_moveToEnd {
+    --menuitem-image: #{get-var("arrow-forward-icon")};
+  }
+
+  [dir="rtl"] {
+    #context_moveToStart {
+      --menuitem-image: #{get-var("arrow-forward-icon")};
+    }
+    #context_moveToEnd {
+      --menuitem-image: #{get-var("arrow-back-icon")};
+    }
   }
 
   // --------------------------
@@ -173,7 +198,7 @@
 
   // Open Image in New Tab
   #context-viewimage {
-    --menuitem-image: #{get-var("help-icon")};
+    --menuitem-image: #{get-var("open-in-icon")};
   }
 
   // Copy Image
@@ -183,7 +208,7 @@
 
   // Copy Image Link
   #context-copyimage {
-    --menuitem-image: #{get-var("copy-icon")};
+    --menuitem-image: #{get-var("link-icon")};
   }
 
   // View Image Info
