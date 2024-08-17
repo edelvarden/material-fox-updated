@@ -1,64 +1,68 @@
-// hide old tooltip
-#tabbrowser-tab-tooltip {
-  display: none !important;
-}
+@media not (-moz-bool-pref: meta.inspect("browser.tabs.hoverPreview.enabled")) {
 
-// show new tooltip like chrome
-.tabbrowser-tab::after {
-  content: attr(label) !important;
-  display: block !important;
-  position: fixed !important;
-  overflow: hidden !important;
-  z-index: 2 !important;
-  pointer-events: none !important;
-  opacity: 0;
+  // hide old tooltip
+  #tabbrowser-tab-tooltip {
+    display: none !important;
+  }
 
-  width: 255px;
-  max-width: 255px;
-  margin: var(--tab-min-height) 0 0 -10px;
-  padding: 16px 19px;
-  border-radius: 8px;
-  border: 1px solid;
-  border-color: get-var("menu-border-color");
-  font-size: inherit !important;
-  font-weight: 500 !important;
-  // font-size: 1rem !important;
-  line-height: 20.02px !important;
-
-  color: var(--arrowpanel-color) !important;
-  background: var(--arrowpanel-background) !important;
-  box-shadow: get-var("elevation-2") !important;
-}
-
-.tabbrowser-tab:hover::after {
-  animation-name: show-tooltip;
-  animation-duration: get-var("medium-duration");
-  animation-timing-function: get-var("point-to-point");
-  animation-fill-mode: forwards;
-  animation-delay: 0.75s;
-}
-
-@keyframes show-tooltip {
-  from {
+  // show new tooltip like chrome
+  .tabbrowser-tab::after {
+    content: attr(label) !important;
+    display: block !important;
+    position: fixed !important;
+    overflow: hidden !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
     opacity: 0;
-    transform: scale(0.9);
+
+    width: 255px;
+    max-width: 255px;
+    margin: var(--tab-min-height) 0 0 -10px;
+    padding: 16px 19px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: get-var("menu-border-color");
+    font-size: inherit !important;
+    font-weight: 500 !important;
+    // font-size: 1rem !important;
+    line-height: 20.02px !important;
+
+    color: var(--arrowpanel-color) !important;
+    background: var(--arrowpanel-background) !important;
+    box-shadow: get-var("elevation-2") !important;
   }
 
-  to {
-    transform: scale(1);
-    opacity: 1;
+  .tabbrowser-tab:hover::after {
+    animation-name: show-tooltip;
+    animation-duration: get-var("medium-duration");
+    animation-timing-function: get-var("point-to-point");
+    animation-fill-mode: forwards;
+    animation-delay: 0.75s;
   }
-}
 
-// fix visibility priority for tab tooltip (make it over nav bar and bookmarks bar)
-#titlebar {
-  z-index: 3 !important;
-}
+  @keyframes show-tooltip {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
 
-#nav-bar {
-  z-index: 2 !important;
-}
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 
-#PersonalToolbar {
-  z-index: 1 !important;
+  // fix visibility priority for tab tooltip (make it over nav bar and bookmarks bar)
+  #titlebar {
+    z-index: 3 !important;
+  }
+
+  #nav-bar {
+    z-index: 2 !important;
+  }
+
+  #PersonalToolbar {
+    z-index: 1 !important;
+  }
+
 }
