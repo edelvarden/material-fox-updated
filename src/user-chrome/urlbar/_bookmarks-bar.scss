@@ -20,7 +20,7 @@
   max-height: 28px !important;
 
   margin-top: 0 !important;
-  margin-bottom: 4px !important;
+  margin-bottom: 0 !important;
 
   align-items: center !important;
 }
@@ -30,13 +30,11 @@
 }
 
 // centered bookmark item content
-#PlacesToolbar {
-  margin-bottom: 2px !important;
-}
-
 #PlacesToolbar,
 #PlacesToolbarItems {
   align-items: center !important;
+  height: 34px !important;
+  margin-bottom: 2px !important;
 }
 
 #PlacesToolbarItems > .bookmark-item {
