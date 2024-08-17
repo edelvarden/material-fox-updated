@@ -38,8 +38,13 @@ jobs:
         run: |
           TAG_NAME="v${{ env.VERSION }}"
           echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
-          git tag $TAG_NAME
-          git push origin $TAG_NAME
+          git fetch --tags
+          if git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
+            echo "Tag $TAG_NAME already exists. Skipping tag creation."
+          else
+            git tag $TAG_NAME
+            git push origin $TAG_NAME
+          fi
 
       - name: Create and Publish Release
         uses: softprops/action-gh-release@v2
