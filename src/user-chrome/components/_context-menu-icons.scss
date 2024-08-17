@@ -44,7 +44,7 @@
 
   #context-video-saveimage,
   #context-take-screenshot {
-    --menuitem-image: #{get-var("capture-icon")};
+    --menuitem-image: #{get-var("screenshot-icon")};
   }
 
   #context-viewsource {
@@ -117,6 +117,7 @@
   #context_moveToStart {
     --menuitem-image: #{get-var("arrow-back-icon")};
   }
+
   #context_moveToEnd {
     --menuitem-image: #{get-var("arrow-forward-icon")};
   }
@@ -125,6 +126,7 @@
     #context_moveToStart {
       --menuitem-image: #{get-var("arrow-forward-icon")};
     }
+
     #context_moveToEnd {
       --menuitem-image: #{get-var("arrow-back-icon")};
     }
@@ -227,6 +229,7 @@
   }
 
   [dir="rtl"] {
+
     // close tabs left
     #context_closeTabsToTheStart {
       --menuitem-image: #{get-var("arrow-forward-icon")};
@@ -297,14 +300,13 @@
   #contentAreaContextMenu,
   #toolbar-context-menu,
   :is(#placesContext, #tabContextMenu) {
-    :is(menuitem, menu):not(
-        [image],
-        .menu-iconic,
-        .menuitem-iconic,
-        [type="radio"],
-        [type="checkbox"],
-        [checked]
-      ),
+
+    :is(menuitem, menu):not([image],
+      .menu-iconic,
+      .menuitem-iconic,
+      [type="radio"],
+      [type="checkbox"],
+      [checked]),
     #context-back,
     #context-forward,
     #context-reload,
@@ -327,19 +329,19 @@
   }
 
   [dir="rtl"] {
+
     // Allowing set icons as background
     .textbox-contextmenu,
     #contentAreaContextMenu,
     #toolbar-context-menu,
     :is(#placesContext, #tabContextMenu) {
-      :is(menuitem, menu):not(
-          [image],
-          .menu-iconic,
-          .menuitem-iconic,
-          [type="radio"],
-          [type="checkbox"],
-          [checked]
-        ) {
+
+      :is(menuitem, menu):not([image],
+        .menu-iconic,
+        .menuitem-iconic,
+        [type="radio"],
+        [type="checkbox"],
+        [checked]) {
         background-position: left center !important;
         background-position-x: calc(100% - 12px) !important;
 

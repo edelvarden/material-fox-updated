@@ -21,6 +21,10 @@ $icons: (
   "download-icon": url("icons/download.svg"),
   "account-icon": url("icons/account.svg"),
   "side-panel-icon": url("icons/side-panel.svg"),
+  "open-in-full-icon": url("icons/menu/open-in-full.svg"),
+  "mail-icon": url("icons/mail.svg"),
+  "glyphs-icon": url("icons/glyphs.svg"),
+  "file-open-icon": url("icons/file-open.svg"),
   //urlbar
   "info-icon": url("icons/info.svg"),
   "lock-icon": url("icons/lock.svg"),
@@ -69,7 +73,7 @@ $icons: (
   // menu
   "copy-icon": url("icons/menu/copy.svg"),
   "select-all-icon": url("icons/menu/select-all.svg"),
-  "capture-icon": url("icons/menu/capture.svg"),
+  "screenshot-icon": url("icons/menu/screenshot.svg"),
   "cut-icon": url("icons/menu/cut.svg"),
   "paste-icon": url("icons/menu/paste.svg"),
   "undo-icon": url("icons/menu/undo.svg"),
@@ -82,7 +86,7 @@ $icons: (
   "link-off-icon": url("icons/menu/link-off.svg"),
   "share-icon": url("icons/menu/share.svg"),
   "reply-icon": url("icons/menu/reply.svg"),
-  "swap-icon": url("icons/menu/swap.svg")
+  "swap-icon": url("icons/menu/swap.svg"),
 );
 
 $icons-old: (

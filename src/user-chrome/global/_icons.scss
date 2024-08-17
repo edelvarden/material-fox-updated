@@ -433,3 +433,25 @@ treechildren::-moz-tree-image(title, open) {
     list-style-image: get-var("keyboard-arrow-down-icon") !important;
   }
 }
+
+#fullscreen-button,
+#appMenu-fullscreen-button2 {
+  list-style-image: get-var("open-in-full-icon") !important;
+}
+
+#email-link-button {
+  list-style-image: get-var("mail-icon") !important;
+}
+
+#screenshot-button {
+  list-style-image: get-var("screenshot-icon") !important;
+}
+
+// Repair text encoding
+#characterencoding-button{
+  list-style-image: get-var("glyphs-icon") !important;
+}
+
+#open-file-button {
+  list-style-image: get-var("file-open-icon") !important;
+}
