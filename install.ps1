@@ -321,7 +321,8 @@ function Invoke-Installation {
 
 Clear-Host
 Write-Host "----------------------------------------------------------------"  -ForegroundColor DarkGray
-Write-Host "MaterialFox UPDATED" -ForegroundColor White
+Write-Host "MaterialFox UPDATED ($($env:MATERIAL_FOX_VERSION -replace 'tags/'))" -ForegroundColor White
 Write-Host "----------------------------------------------------------------" -ForegroundColor DarkGray
+
 Invoke-Installation
 pause
