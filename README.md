@@ -36,7 +36,7 @@ For **Windows**, run the following PowerShell command:
 $env:MATERIAL_FOX_VERSION = "latest"; PowerShell -ExecutionPolicy Unrestricted -c "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
 ```
 
-For Firefox version **119** or below
+For Firefox version **119** or below (Firefox ESR, Floorp or Waterfox)
 
 ```powershell
 $env:MATERIAL_FOX_VERSION = "tags/v1.0.7"; PowerShell -ExecutionPolicy Unrestricted -c "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
