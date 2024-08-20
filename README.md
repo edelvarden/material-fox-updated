@@ -42,9 +42,13 @@ For Firefox version **119** or below (Firefox ESR, Floorp or Waterfox)
 $env:MATERIAL_FOX_VERSION = "tags/v1.0.7"; PowerShell -ExecutionPolicy Unrestricted -c "iwr https://raw.githubusercontent.com/edelvarden/material-fox-updated/main/install.ps1 -useb | iex"
 ```
 
-## 💬 Feedback
+## 💖 Support & Suggestions
 
-Feel free to provide **feedback**, **suggestions**, or **bug reports** on [GitHub Issues](https://github.com/edelvarden/material-fox-updated/issues).
+If you enjoy this project and want to help me maintain it further, buying me a coffee would be greatly appreciated! [☕️](https://ko-fi.com/edelvarden)
+
+<a href='https://ko-fi.com/edelvarden' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+Your **suggestions** and **bug reports** are also welcome on [GitHub Issues](https://github.com/edelvarden/material-fox-updated/issues).
 
 ## 🎨 Manual Customization
 
