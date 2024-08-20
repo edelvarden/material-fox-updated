@@ -1,95 +1,97 @@
-// checkbox
-input[type="checkbox"],
-.checkbox-check,
-.sponsored-checkbox {
-  border-width: 2px !important;
-  border-style: solid !important;
-  border-color: get-var("menu-border-color") !important;
-  background-color: get-var("background-color-0") !important;
-  border-radius: 2px !important;
 
-  width: 18px !important;
-  height: 18px !important;
 
-  &:is([checked], :checked) {
-    background-image: get-var("check-icon") !important;
-    background-color: get-var("accent-color") !important;
-    border-color: get-var("accent-color") !important;
-  }
-}
+  // checkbox
+  input[type="checkbox"],
+  .checkbox-check,
+  .sponsored-checkbox {
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-color: get-var("menu-border-color") !important;
+    background-color: get-var("background-color-0") !important;
+    border-radius: 2px !important;
 
-input[type="checkbox"]:not(:disabled, [disabled="true"]):hover,
-checkbox:not([disabled="true"]):hover > .checkbox-check {
-  &:not([checked], :checked) {
-    background-color: get-var("background-color-50") !important;
-  }
-}
+    width: 18px !important;
+    height: 18px !important;
 
-// checkbox material hover effect
-checkbox {
-  position: relative !important;
-
-  &::after {
-    content: "";
-    width: 48px;
-    height: 48px;
-    position: absolute;
-    top: 50%;
-    left: -15px;
-    background-color: transparent;
-    border-radius: 50%;
-    z-index: 1;
-    transform: translateY(-50%);
-
-    transition-property: background-color;
-    transition-duration: get-var("medium-short-duration");
-    transition-timing-function: get-var("fast-invoke");
-  }
-}
-
-// checkbox material hover effect (rtl support)
-[dir="rtl"] {
-  checkbox {
-    &::after {
-      left: unset;
-      right: -15px;
+    &:is([checked], :checked) {
+      background-image: get-var("check-icon") !important;
+      background-color: get-var("accent-color") !important;
+      border-color: get-var("accent-color") !important;
     }
   }
-}
 
-@keyframes control-hover {
-  0% {
-    transform: scale(0.8) translateY(-50%);
+  input[type="checkbox"]:not(:disabled, [disabled="true"]):hover,
+  checkbox:not([disabled="true"]):hover>.checkbox-check {
+    &:not([checked], :checked) {
+      background-color: get-var("background-color-50") !important;
+    }
   }
 
-  100% {
-    transform: scale(1) translateY(-50%);
+  // checkbox material hover effect
+  :not(.findbar-container) > checkbox {
+    position: relative !important;
+
+    &::after {
+      content: "";
+      width: 48px;
+      height: 48px;
+      position: absolute;
+      top: 50%;
+      left: -15px;
+      background-color: transparent;
+      border-radius: 50%;
+      z-index: 1;
+      transform: translateY(-50%);
+
+      transition-property: background-color;
+      transition-duration: get-var("medium-short-duration");
+      transition-timing-function: get-var("fast-invoke");
+    }
   }
-}
 
-checkbox:not([disabled="true"]) {
-  &:hover::after {
-    background-color: get-var("accent-color-transparent");
-
-    animation-name: control-hover;
-    animation-duration: get-var("short-duration");
-    animation-timing-function: get-var("fast-invoke");
+  // checkbox material hover effect (rtl support)
+  [dir="rtl"] {
+    :not(.findbar-container) > checkbox {
+      &::after {
+        left: unset;
+        right: -15px;
+      }
+    }
   }
 
-  &:hover:active::after {
-    background-color: get-var("accent-color-transparent-active");
+  @keyframes control-hover {
+    0% {
+      transform: scale(0.8) translateY(-50%);
+    }
+
+    100% {
+      transform: scale(1) translateY(-50%);
+    }
   }
-}
 
-// hand cursor on hover
-checkbox:not([disabled="true"]) {
-  cursor: pointer !important;
+  :not(.findbar-container) > checkbox:not([disabled="true"]) {
+    &:hover::after {
+      background-color: get-var("accent-color-transparent");
 
-  // also for label, because it doesn't inherit
-  label {
+      animation-name: control-hover;
+      animation-duration: get-var("short-duration");
+      animation-timing-function: get-var("fast-invoke");
+    }
+
+    &:hover:active::after {
+      background-color: get-var("accent-color-transparent-active");
+    }
+  }
+
+  // hand cursor on hover
+  checkbox:not([disabled="true"]) {
     cursor: pointer !important;
+
+    // also for label, because it doesn't inherit
+    label {
+      cursor: pointer !important;
+    }
   }
-}
 
 // fix checkbox checkmark fill color
 .checkbox-check[checked] {

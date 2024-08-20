@@ -1,69 +1,263 @@
-// change find bar position
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:map';
+
+// Variables
+$-checkbox-selectors: (
+  CHECKBOX_HIGHLIGHT_ALL: "checkbox[anonid='highlight']",
+  CHECKBOX_MATCH_CASE: "checkbox[anonid='find-case-sensitive']",
+  CHECKBOX_MATCH_DIACRITICS: "checkbox[anonid='find-match-diacritics']",
+  CHECKBOX_WHOLE_WORDS: "checkbox[anonid='find-entire-word']",
+);
+
+// Mixins
+@mixin refined-findbar($border-radius: 8px,
+  $float: true,
+  $float-alignment: top,
+  $float-distance: 0px,
+  $buttons: true,
+  $buttons-grouped: true,
+  $order: (LABELS,
+    DESCRIPTION,
+    TEXT_BOX,
+    CHECKBOX_HIGHLIGHT_ALL,
+    CHECKBOX_MATCH_CASE,
+    CHECKBOX_MATCH_DIACRITICS,
+    CHECKBOX_WHOLE_WORDS)) {
+
+  // Keyframes
+  @keyframes findbar-scale-in {
+    0% {
+      transform: scaleY(0);
+    }
+
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
+  @keyframes findbar-scale-out {
+    0% {
+      transform: scaleY(1);
+    }
+
+    100% {
+      transform: scaleY(0);
+    }
+  }
+
+  // Findbar Styles
+  findbar {
+    $space-unit: 12px;
+    contain: content;
+    border: 1px solid var(--chrome-content-separator-color);
+    padding-inline-start: math.div($space-unit, 3);
+    color: get-var("text-primary") !important;
+    box-shadow: get-var("elevation-2") !important;
+    background: get-var("input-background-color") !important;
+    border: 1px solid get-var("menu-border-color") !important;
+
+    @if $float {
+      right: $float-distance;
+      #{$float-alignment}: $float-distance;
+      transform-origin: #{$float-alignment} center;
+      border-radius: $border-radius !important;
+    }
+
+    @else {
+      top: -1px;
+      right: 44px;
+      transform-origin: top center;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      border-top-width: 0 !important;
+    }
+
+    animation: 0.1s findbar-scale-in;
+
+    &[hidden='true'] {
+      animation: 0.1s findbar-scale-out;
+    }
+
+    // Nested Styles
+    %bordered-control {
+      border: 1px solid transparent;
+    }
+
+    .findbar-container {
+      gap: $space-unit;
+
+      &>* {
+        margin-inline-end: 0 !important;
+      }
+    }
+
+    [anonid='findbar-textbox-wrapper'] {
+      htmlNs|input {
+        @extend %bordered-control;
+
+        @if $buttons and $buttons-grouped {
+          &:not(.minimal) {
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+          }
+        }
+      }
+
+      toolbarbutton {
+        @extend %bordered-control;
+        color: var(--button-color);
+        background-color: var(--button-bgcolor);
+        border-width: 1px !important;
+        margin-inline: 0 !important;
+
+        @if $buttons and $buttons-grouped {
+          &:last-of-type {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+          }
+
+          &:not(:last-of-type) {
+            border-radius: 0 !important;
+            border-right-width: 0 !important;
+          }
+        }
+      }
+    }
+
+    // Checkbox Styles
+    checkbox {
+      @if $buttons {
+        @extend %bordered-control;
+        padding: 3px 6px;
+        border-radius: var(--toolbarbutton-border-radius);
+        color: var(--button-color);
+        background-color: var(--button-bgcolor);
+
+        &:hover {
+          background-color: var(--button-hover-bgcolor);
+        }
+
+        &:active {
+          background-color: var(--button-active-bgcolor);
+        }
+
+        &[checked='true'] {
+          color: var(--button-primary-color);
+          background-color: var(--button-primary-bgcolor);
+
+          &:hover {
+            background-color: var(--button-primary-hover-bgcolor);
+          }
+
+          &:active {
+            background-color: var(--button-primary-active-bgcolor);
+          }
+        }
+
+        &:focus-visible {
+          outline: var(--focus-outline);
+          outline-offset: var(--focus-outline-inset);
+        }
+
+        .checkbox-check {
+          display: none;
+        }
+
+        $checkbox-by-index: (
+        );
+
+      @each $name in map.keys($-checkbox-selectors) {
+        $checkbox-by-index: map.set($checkbox-by-index, list.index($order, $name), $name);
+      }
+
+      $first-checkbox: map.get($checkbox-by-index, math.min(map.keys($checkbox-by-index)...));
+      $last-checkbox: map.get($checkbox-by-index, math.max(map.keys($checkbox-by-index)...));
+
+      @if $buttons-grouped {
+        &:not(#{map.get($-checkbox-selectors, $last-checkbox)}) {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        &:not(#{map.get($-checkbox-selectors, $first-checkbox)}) {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          border-left-width: 0;
+        }
+
+        margin-inline-start: -$space-unit +1px !important;
+
+        &:is(#{map.get($-checkbox-selectors, $first-checkbox)}) {
+          margin-inline-start: -4px !important;
+        }
+
+        &:is(#{map.get($-checkbox-selectors, $last-checkbox)}) {
+          margin-inline-end: 4px !important;
+        }
+      }
+
+      @else {
+        &:not(#{map.get($-checkbox-selectors, $first-checkbox)}) {
+          margin-inline-end: -1 * math.div($space-unit, 2) !important;
+        }
+      }
+    }
+  }
+
+  // Label and Description Order
+  description.findbar-label:empty {
+    display: none;
+  }
+
+  [anonid='findbar-textbox-wrapper'] {
+    order: list.index($order, TEXT_BOX) - 1;
+  }
+
+  @each $name, $selector in $-checkbox-selectors {
+    #{$selector} {
+      order: list.index($order, $name) - 1;
+    }
+  }
+
+  label.findbar-label {
+    order: list.index($order, LABELS) - 1;
+  }
+
+  description.findbar-label {
+    order: list.index($order, DESCRIPTION) - 1;
+  }
+}
+}
+
+// Include Mixin
+@include refined-findbar();
+
+// Additional Styles
 #browser {
   position: relative !important;
 }
 
-.browserContainer > findbar {
+.browserContainer>findbar {
   position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  right: 0 !important;
-  margin: -4px 0rem 0 0 !important;
-}
-
-// reset find bar styles
-.browserContainer > findbar {
-  height: 48px !important;
-  width: 100vw !important;
-  -moz-box-align: center !important;
+  margin: -4px 0 0 0 !important;
   align-items: center !important;
-  padding: 0 !important;
-  overflow: hidden !important;
 }
-
-// hide all checkboxes
-// .findbar-container > checkbox {
-//   display: none !important;
-// }
 
 .findbar-container {
-  position: relative !important;
-  height: 48px !important;
   display: flex;
   align-items: center !important;
-  flex-direction: row-reverse !important;
-}
-
-// find bar font and colors
-.browserContainer > findbar {
-  color: get-var("text-primary") !important;
-  box-shadow: get-var("elevation-2") !important;
-  background: get-var("input-background-color") !important;
-  border: 1px solid !important;
-  border-color: get-var("menu-border-color") !important;
-  border-radius: 6px !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 0 !important;
 }
 
 .findbar-label {
   color: get-var("text-primary") !important;
   font-weight: 400 !important;
+  margin-inline-start: 8px !important;
 }
 
 .found-matches {
-  align-items: center !important;
-}
-
-// hide find bar additional text info
-.findbar-find-status {
-  display: none !important;
-}
-.findbar-find-status[status="notfound"] {
-  display: flex !important;
-}
-
-.findbar-textbox-wrapper {
-  height: 80% !important;
-  display: flex !important;
   align-items: center !important;
 }
 
@@ -71,16 +265,18 @@
   background: transparent !important;
   border: none !important;
   outline: none !important;
-}
-
-.findbar-textbox {
-  border-left: 1px solid !important;
   border-right: 1px solid !important;
   border-color: get-var("menu-border-color") !important;
   border-radius: 0 !important;
+  margin-inline-end: 6px !important;
+  box-shadow: none !important;
+
+  &:focus {
+    box-shadow: none !important;
+  }
 }
 
-// find bar buttons
+// Findbar Buttons
 .findbar-closebutton,
 .findbar-find-previous,
 .findbar-find-next {
@@ -92,47 +288,70 @@
   min-height: $button-size !important;
   min-width: $button-size !important;
 
-  & > .toolbarbutton-icon {
-    display: block !important;
+  &>.toolbarbutton-icon {
+    display: flex !important;
     max-height: $button-size !important;
     max-width: $button-size !important;
     min-height: $button-size !important;
     min-width: $button-size !important;
     padding: 4px !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
 
 .findbar-closebutton {
   margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-inline-end: 6px !important;
 }
 
 .findbar-find-previous,
 .findbar-find-next {
-  margin-inline-end: 6px !important;
+  display: flex !important;
+  align-items: center !important;
 
-  & > .toolbarbutton-icon {
-    padding: 6px !important;
+  &>.toolbarbutton-icon {
+    display: flex !important;
+    align-items: center !important;
   }
 }
 
-// fix findbar margin for checkboxes
-.findbar-container > checkbox,
+// Arrow Icons
+.findbar-find-previous {
+  list-style-image: get-var(keyboard-arrow-up-icon) !important;
+}
+
+.findbar-find-next {
+  list-style-image: get-var(keyboard-arrow-down-icon) !important;
+}
+
+// RTL Support
+[dir="rtl"] {
+  findbar {
+    left: 0 !important;
+    right: unset !important
+  }
+
+  .findbar-textbox {
+    border-left: 1px solid !important;
+    border-right: none !important;
+    border-color: get-var("menu-border-color") !important;
+    border-radius: 0 !important;
+  }
+}
+
+// Hide find bar additional text info
+.findbar-find-status {
+  display: none !important;
+}
+
+// Additional Styles for Containers and Labels
+.findbar-container {
+  margin-inline-start: 0 !important;
+  margin-inline-end: 0 !important;
+}
+
 .findbar-label {
-  margin: 0 8px !important;
-}
-
-.found-matches:not([hidden="true"]),
-.findbar-find-status[status] {
-  display: flex !important;
-  width: 140px !important;
-}
-
-.findbar-label {
-  justify-content: end !important;
-  order: 1;
-}
-
-// checkboxes
-.tabbable {
-  order: 2;
+  margin-inline-start: 8px !important;
 }
