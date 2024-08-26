@@ -1,5 +1,6 @@
 /* use variables when about:config variable userChrome.theme-github is true */
 @media (-moz-bool-pref: "userChrome.theme-github") {
+
   :root,
   html,
   body {
@@ -9,16 +10,12 @@
     --md-background-color-0: #0d1117;
     --md-background-color-50: #161b22;
     --md-background-color-100: #24292f;
-    --md-menu-background-color: #0d1117;
-    --md-menu-background-color-hover: #161b22;
+    --md-menu-background-color: #161b22;
+    --md-menu-background-color-hover: #6e768166;
     --md-menu-border-color: #31363d;
-    --md-content-separator-color: #57606a;
-    --md-selection-background-color: color-mix(
-      in srgb,
-      transparent 0.4,
-      #388bfd
-    );
-    /* make #388bfd color tranparent with 0.4 opacity */
+    --md-content-separator-color: #30363db3;
+    --md-selection-text-color: var(--md-white);
+    --md-selection-background-color: #1f6febb3;
     --md-text-on-accent: var(--md-white);
   }
 }
