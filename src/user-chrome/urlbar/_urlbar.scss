@@ -27,9 +27,7 @@ body {
 #urlbar-go-button,
 .search-go-button {
   width: auto !important;
-  height: calc(
-    var(--urlbar-height) - var(--urlbar-container-padding) * 2
-  ) !important;
+  height: calc(var(--urlbar-height) - var(--urlbar-container-padding) * 2) !important;
   border-radius: var(--urlbar-icon-border-radius) !important;
   padding: 0 8px !important;
   -moz-box-pack: center !important;
@@ -47,6 +45,7 @@ body {
 
 #urlbar {
   &[open] {
+
     #urlbar-background,
     #searchbar {
       border-radius: 16px !important;
@@ -58,7 +57,9 @@ body {
       }
     }
   }
+
   &:not([open])[focused] {
+
     #urlbar-background,
     #searchbar {
       box-shadow: none !important;
@@ -76,13 +77,16 @@ body {
 
 @media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
   #urlbar:is([open], [focused]) {
+
     #urlbar-background,
     #searchbar {
       background-color: get-var("background-color-100") !important;
     }
   }
+
   @media (prefers-color-scheme: dark) {
     #urlbar:is([open], [focused]) {
+
       #urlbar-background,
       #searchbar {
         background-color: get-var("background-color-50") !important;
@@ -97,6 +101,7 @@ body {
     color: transparent !important;
   }
 }
+
 .searchbar-textbox:focus::placeholder {
   color: transparent !important;
 }
@@ -111,4 +116,22 @@ body {
 #navigator-toolbox {
   // border-bottom: 1px solid var(--chrome-content-separator-color);
   border-bottom: 1px solid get-var("content-separator-color") !important;
+}
+
+// Url bar bg color change on hover, feat: https://github.com/edelvarden/material-fox-updated/issues/69
+#urlbar-background, #searchbar {
+  transition-property: background-color !important;
+  transition-duration: get-var("short-duration") !important;
+  transition-timing-function: get-var("point-to-point") !important;
+}
+#urlbar:not([focused]):hover #urlbar-background, #searchbar:hover {
+  background-color: get-var("menu-background-color-hover") !important;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: cm(transparent, get-var("menu-background-color-hover"), 0.7) !important;
+  }
+  
+}
+#urlbar:is([open], [focused]) #urlbar-background{
+  transition-duration: 0s !important;
 }
