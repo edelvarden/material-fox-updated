@@ -80,17 +80,7 @@ body {
 
     #urlbar-background,
     #searchbar {
-      background-color: get-var("background-color-100") !important;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    #urlbar:is([open], [focused]) {
-
-      #urlbar-background,
-      #searchbar {
-        background-color: get-var("background-color-50") !important;
-      }
+      background-color: get-var("urlbar-background-color-open") !important;
     }
   }
 }
@@ -125,12 +115,7 @@ body {
   transition-timing-function: get-var("point-to-point") !important;
 }
 #urlbar:not([focused]):hover #urlbar-background, #searchbar:hover {
-  background-color: get-var("menu-background-color-hover") !important;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: cm(transparent, get-var("menu-background-color-hover"), 0.7) !important;
-  }
-  
+  background-color: get-var("urlbar-background-color-hover") !important;
 }
 #urlbar:is([open], [focused]) #urlbar-background{
   transition-duration: 0s !important;
