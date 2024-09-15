@@ -240,7 +240,7 @@ $-checkbox-selectors: (
 
 .browserContainer>findbar {
   position: absolute !important;
-  margin: 0px 0 0 0 !important;
+  margin: 2px 2px 0 0 !important;
   align-items: center !important;
 }
 
@@ -280,9 +280,9 @@ $-checkbox-selectors: (
 .findbar-closebutton,
 .findbar-find-previous,
 .findbar-find-next {
-  $button-size: 24px;
+  $button-size: 28px;
   border-radius: 50% !important;
-  padding: 6px !important;
+  padding: 2px !important;
   max-height: $button-size !important;
   max-width: $button-size !important;
   min-height: $button-size !important;
@@ -297,6 +297,12 @@ $-checkbox-selectors: (
     padding: 4px !important;
     align-items: center !important;
     justify-content: center !important;
+  }
+}
+
+.findbar-closebutton {
+  &>.toolbarbutton-icon {
+    padding: 6px !important;
   }
 }
 
@@ -354,4 +360,39 @@ $-checkbox-selectors: (
 
 .findbar-label {
   margin-inline-start: 8px !important;
+}
+
+
+
+// Find bar height size
+.findbar-container {
+  height: 32px !important;
+}
+
+[anonid="findbar-textbox-wrapper"] {
+  height: 100% !important;
+}
+
+// Prev/Next buttons on the vertical center
+[anonid="findbar-textbox-wrapper"]>toolbarbutton {
+  margin: auto 0 !important;
+}
+
+
+// Find bar input hover effect when findbar not focused
+.findbar-textbox {
+  border-radius: 0px !important;
+  transition-property: background-color, border-radius, border-color !important;
+  transition-timing-function: get-var("fade-in-out") !important;
+  transition-duration: get-var("short-duration") !important;
+}
+
+.findbar-textbox:not(:focus):hover {
+  border-radius: 6px !important;
+  border-color: transparent !important;
+  background-color: get-var("urlbar-background-color-hover") !important;
+}
+
+.findbar-textbox:focus-visible {
+  box-shadow: none !important;
 }
