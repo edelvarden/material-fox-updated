@@ -241,7 +241,7 @@ $-checkbox-selectors: (
 // findbar position
 .browserContainer>findbar {
   position: absolute !important;
-  margin: 2px 14px 0 0 !important;
+  margin: 5px 17px 0 5px !important;
   align-items: center !important;
 }
 
@@ -388,21 +388,29 @@ $-checkbox-selectors: (
   transition-duration: get-var("short-duration") !important;
 }
 
-.findbar-textbox:not(:focus):hover {
+.findbar-textbox:not(:focus):hover, .findbar-textbox[status="notfound"] {
   border-radius: 6px !important;
   border-color: transparent !important;
   background-color: get-var("urlbar-background-color-hover") !important;
-}
-
-.findbar-textbox:focus-visible {
-  box-shadow: none !important;
 }
 
 // background color when not found
 .findbar-textbox {
   &[status="notfound"] {
     background-color: get-var("findbar-notfound-background-color") !important;
-    border-radius: 6px !important;
-    border-color: transparent !important;
+  }
+}
+
+.findbar-textbox:focus-visible {
+  box-shadow: none !important;
+}
+
+// fix find bar overflow on small screen sizes
+.findbar-container {
+  flex-wrap: wrap !important;
+}
+@media only screen and (max-width: 550px) { // hide checkboxes on extra small window size
+  .findbar-container checkbox{
+    display: none !important;
   }
 }
