@@ -73,10 +73,10 @@ $-checkbox-selectors: (
       border-top-width: 0 !important;
     }
 
-    animation: 0.1s findbar-scale-in;
+    animation: get-var("short-duration") findbar-scale-in;
 
     &[hidden='true'] {
-      animation: 0.1s findbar-scale-out;
+      animation: 0ms findbar-scale-out;
     }
 
     // Nested Styles
@@ -238,9 +238,10 @@ $-checkbox-selectors: (
   position: relative !important;
 }
 
+// findbar position
 .browserContainer>findbar {
   position: absolute !important;
-  margin: 2px 2px 0 0 !important;
+  margin: 2px 14px 0 0 !important;
   align-items: center !important;
 }
 
@@ -395,4 +396,13 @@ $-checkbox-selectors: (
 
 .findbar-textbox:focus-visible {
   box-shadow: none !important;
+}
+
+// background color when not found
+.findbar-textbox {
+  &[status="notfound"] {
+    background-color: get-var("findbar-notfound-background-color") !important;
+    border-radius: 6px !important;
+    border-color: transparent !important;
+  }
 }

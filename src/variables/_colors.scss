@@ -32,6 +32,7 @@ $global: (
   "alltabs-background-color-open": cm(get-var(accent-color), get-var(tab-background-color-hover), 0.5),
   "urlbar-background-color-hover": get-var("menu-background-color-hover"),
   "urlbar-background-color-open": get-var("background-color-100"),
+  "findbar-notfound-background-color": rgba(255, 0, 0, 0.3),
   // --------------------------------------------------------------------------------
   // -- Shadow
   // --------------------------------------------------------------------------------
