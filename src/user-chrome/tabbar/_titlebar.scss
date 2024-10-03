@@ -90,15 +90,18 @@
 
   // special unfocused background color for chrome refresh
   @media (-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) {
-    :root:-moz-window-inactive {
+    @media (prefers-color-scheme: dark) {
+      :root:-moz-window-inactive {
 
-      #navigator-toolbox,
-      #toolbar-menubar,
-      #TabsToolbar,
-      #titlebar {
-        background-color: #2b2b2b !important;
+        #navigator-toolbox,
+        #toolbar-menubar,
+        #TabsToolbar,
+        #titlebar {
+          background-color: #2b2b2b !important;
+        }
       }
     }
+    
   }
 }
 
