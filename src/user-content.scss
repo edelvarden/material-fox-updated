@@ -1,3 +1,4 @@
+@use "sass:meta";
 // only for about:* pages
 @-moz-document regexp("about:(?!blank|devtools).*") {
   @import "variables/index";
