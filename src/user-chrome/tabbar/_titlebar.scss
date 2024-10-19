@@ -155,3 +155,27 @@
     }
   }
 }
+
+// fix first tab rounded edge cutoff
+scrollbox:is([orient="horizontal"], [smoothscroll="true"], [flex="1"]) {
+  padding-inline-start: 12px !important;
+  margin-inline-start: -12px !important;
+  padding-inline-end: 12px !important;
+  margin-inline-end: -12px !important;
+}
+
+// fix transparent background behind tab scroll buttons
+#scrollbutton-up {
+  z-index: 999 !important;
+}
+
+#scrollbutton-down {
+  z-index: 999 !important;
+}
+
+spacer:is([part="overflow-start-indicator"]) {
+  margin-inline: 0px 6px !important;
+}
+spacer:is([part="overflow-end-indicator"]) {
+  margin-inline: 6px 0px !important;
+}
