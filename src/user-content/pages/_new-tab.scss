@@ -34,9 +34,9 @@
     }
   }
 
-  @media (prefers-color-scheme: dark) and (-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) {
+  @media (-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) {
     .top-site-outer .tile {
-      --newtab-background-color-secondary: #444746 !important;
+      --newtab-background-color-secondary: #{get-var("tile-background-color")} !important;
     }
   }
 
@@ -189,7 +189,7 @@
   // searchbar shadow
   .search-wrapper .search-handoff-button,
   .search-wrapper input {
-    box-shadow: get-var("elevation-2") !important;
+    box-shadow: get-var("search-input-shadow") !important;
   }
 
   // "Resent activity" start button
@@ -205,7 +205,7 @@
   // open customize-menu button
   .personalize-button {
     // color: get-var("accent-color") !important;
-    box-shadow: get-var("elevation-2") !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 1px 2px;
     // font-weight: 400 !important;
     min-width: 32px !important;
     border-radius: 100px !important;
@@ -214,13 +214,26 @@
   .icon.icon-settings {
     background-image: get-var("edit-icon") !important;
 
+    background-color: get-var("tab-background-color-hover") !important;
     @media (prefers-color-scheme: dark) {
-      background-color: get-var(tab-background-color-hover) !important;
-
       &:hover {
-        background-color: #29668c !important;
+        // background-color: #29668c !important;
+        background-color: get-var("alltabs-background-color-open") !important;
       }
     }
+  }
+
+  .top-site-outer.placeholder.add-button .tile {
+    background-color: get-var("tab-background-color-hover") !important;
+    cursor: pointer !important;
+  }
+  .top-site-outer.placeholder.add-button {
+    cursor: pointer !important;
+    user-select: none !important;
+  }
+
+  .top-site-outer .context-menu-button {
+    fill: get-var("icon-color-primary") !important;
   }
 
   // .top-sites-list item edit icon

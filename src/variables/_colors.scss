@@ -90,7 +90,12 @@ $dark-mode: (
   "content-separator-color": #606164,
   // selection colors
   "selection-text-color": get-var("white"),
-  "selection-background-color": get-var(blue-900)
+  "selection-background-color": get-var(blue-900),
+
+  // new tab search input shadow
+  "search-input-shadow": 0 2px 6px 0 #20212451,
+  // new tab tile background color
+  "tile-background-color": #444746,
 );
 
 $light-mode: (
@@ -137,7 +142,12 @@ $light-mode: (
   "urlbar-background-color-open": get-var("background-color-100"),
   // selection colors
   "selection-text-color": get-var("black"),
-  "selection-background-color": get-var("blue-200")
+  "selection-background-color": get-var("blue-200"),
+
+  // new tab search input shadow
+  "search-input-shadow": 0 1px 6px 0 #20212447,
+  // new tab tile background color
+  "tile-background-color": #e1e3e1,
 );
 
 // optional feature: Chrome refresh colors for dark mode

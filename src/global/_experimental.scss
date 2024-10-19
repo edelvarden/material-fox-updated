@@ -81,7 +81,7 @@
 
       &:not(:active, [open="true"]):hover {
         .toolbarbutton-badge-stack {
-          background-color: get-var(alltabs-background-color-open) !important;
+          background-color: get-var("alltabs-background-color-open") !important;
         }
       }
 
