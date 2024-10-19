@@ -101,7 +101,7 @@
         }
       }
     }
-    
+
   }
 }
 
@@ -145,4 +145,13 @@
 // also for other buttons which can be added to the title bar
 #TabsToolbar .toolbarbutton-1 {
   margin-bottom: 0 !important;
+}
+
+// remove unwanted opacity for tab bar when window inactive
+.browser-titlebar {
+  :root[tabsintitlebar] & {
+    &:-moz-window-inactive {
+      opacity: 1 !important;
+    }
+  }
 }
