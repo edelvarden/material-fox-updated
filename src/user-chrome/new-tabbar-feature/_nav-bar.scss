@@ -35,7 +35,7 @@
   }
 
   // remove box side paddings
-  #identity-box:not(.chromeUI) {
+  #identity-box:not(.chromeUI):not(.extensionPage) {
     #identity-icon-box.identity-box-button {
       padding-inline: unset !important;
     }
