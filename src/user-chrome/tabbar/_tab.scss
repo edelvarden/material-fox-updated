@@ -257,6 +257,11 @@ body {
   padding-inline: 0 0 !important;
 }
 
+// remove unwanted bottom spacing
+#tabbrowser-tabs {
+  min-height: unset !important;
+}
+
 // remove theme tab outline color
 #TabsToolbar {
   --lwt-tab-line-color: transparent !important;
