@@ -188,3 +188,12 @@
     fill: get-var("icon-color-secondary") !important;
   }
 }
+
+// increase close button padding when visible
+.tab-content {
+  padding-inline-end: 15px !important;
+
+  #tabbrowser-tabs[closebuttons="activetab"][orient="horizontal"] &:not([selected]) {
+    padding-inline-end: 12px !important;
+  }
+}
