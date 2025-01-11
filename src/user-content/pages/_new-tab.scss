@@ -290,6 +290,11 @@
     border-radius: 9999px !important;
   }
 
+  // hide outline when click on the home page links
+  .tile:active {
+    outline: none !important;
+  }
+
 
   // bigger font size for "new tab" page
   @media (-moz-platform: macos) {
