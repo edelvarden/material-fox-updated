@@ -281,6 +281,7 @@ treechildren::-moz-tree-image(title, open) {
 // sound icons for tab and all tabs view
 :is(.all-tabs-secondary-button, .tab-icon-overlay)[soundplaying],
 .tab-icon-sound {
+  -moz-context-properties: fill, fill-opacity !important;
   list-style-image: get-var("audio-icon") !important;
   fill: get-var("tab-icon-color") !important;
 }
@@ -289,6 +290,7 @@ treechildren::-moz-tree-image(title, open) {
 .tab-icon-overlay,
 .tab-icon-sound {
   &[muted] {
+    -moz-context-properties: fill, fill-opacity !important;
     list-style-image: get-var("audio-muted-icon") !important;
     fill: get-var("tab-icon-color") !important;
   }
@@ -298,8 +300,10 @@ treechildren::-moz-tree-image(title, open) {
 .tab-icon-overlay,
 .tab-icon-sound {
   &[activemedia-blocked] {
+    -moz-context-properties: fill, fill-opacity !important;
     list-style-image: get-var("audio-muted-icon") !important;
     fill: get-var("tab-icon-color") !important;
+    fill-opacity: 1 !important;
   }
 }
 

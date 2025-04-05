@@ -180,3 +180,8 @@
     }
   }
 }
+
+// hide the new sound icon (to fix audio button duplication)
+.tab-audio-button {
+  display: none !important;
+}
