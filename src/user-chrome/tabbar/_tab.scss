@@ -41,7 +41,7 @@ body {
 }
 
 // selected and not selected tab text color
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+@include moz-pref-media("not userChrome.theme-default") {
   .tabbrowser-tab {
     &:not(:is([visuallyselected], [selected])) {
       color: get-var("tab-label-color-inactive") !important;
@@ -59,6 +59,7 @@ body {
 
 // hide tab text and close button if pinned tab
 .tabbrowser-tab[pinned] {
+
   .tab-label-container,
   .tab-close-button {
     display: none !important;
@@ -159,7 +160,8 @@ body {
   }
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+@include moz-pref-media("not userChrome.theme-default") {
+
   html,
   body {
     --tab-background-color: #{get-var("background-color-100")} !important;
@@ -168,6 +170,7 @@ body {
   // general tab background styles with tab corners
   .tab-background {
     background: var(--tab-background-color) !important;
+
     &::before {
       box-shadow: 4px 4px 0 4px var(--tab-background-color) !important;
     }
@@ -216,15 +219,14 @@ body {
   .tabbrowser-tab[last-visible-unpinned-tab] {
     margin-inline-end: 8px !important;
   }
+
   .tabbrowser-tab[first-visible-unpinned-tab] {
     margin-inline-start: 8px !important;
   }
 }
 
 // tabs top margin if window not maximized
-#main-window[sizemode="normal"]
-  #TabsToolbar-customization-target
-  > :not(#alltabs-button) {
+#main-window[sizemode="normal"] #TabsToolbar-customization-target> :not(#alltabs-button) {
   margin-top: 8px !important;
 }
 
@@ -270,6 +272,7 @@ body {
 // fix tab background cropping
 .tab-background {
   z-index: 0 !important;
+
   &::before,
   &::after {
     z-index: 0 !important;
@@ -293,8 +296,9 @@ body {
 
 // fixes for macOS
 @media (-moz-platform: macos) {
+
   // tabs bar top margin
-  #TabsToolbar-customization-target > :not(#alltabs-button) {
+  #TabsToolbar-customization-target> :not(#alltabs-button) {
     margin-top: 8px !important;
   }
 

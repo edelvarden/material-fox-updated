@@ -1,5 +1,5 @@
 /* use variables when about:config variable userChrome.theme-github is true */
-@media (-moz-bool-pref: "userChrome.theme-github") {
+@media -moz-pref("userChrome.theme-github") {
 
   :root,
   html,

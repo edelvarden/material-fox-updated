@@ -10,6 +10,7 @@ body {
 }
 
 @media (prefers-color-scheme: light) {
+
   html,
   body {
     --#{$prefix}-circle-icon: url("icons/circle.svg");
@@ -30,7 +31,7 @@ body {
   transition-duration: get-var("short-duration"), get-var("short-duration") !important;
   transition-timing-function: get-var("fade-in-out"), ease !important;
 
-  @media (-moz-bool-pref: meta.inspect("userChrome.ui-no-ripple")) {
+  @include moz-pref-media("userChrome.ui-no-ripple") {
     transition-duration: 0ms, get-var("short-duration") !important;
   }
 }
@@ -50,17 +51,15 @@ body {
 
 // add style for exception buttons, for icon or badge-stack selectors
 @mixin ripple-effect-for-icon {
-  & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  &> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     @include ripple-effect();
   }
 
-  &:is(:active:hover, [checked], [open]):not([disabled])
-    > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  &:is(:active:hover, [checked], [open]):not([disabled])> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     --#{$prefix}-circle-size: 100%;
   }
 
-  &:not([disabled], #tabs-newtab-button, #new-tab-button):hover
-    > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  &:not([disabled], #tabs-newtab-button, #new-tab-button):hover> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     background-color: get-var("control-background-color") !important;
   }
 }
@@ -99,8 +98,9 @@ body {
 }
 
 //
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
-  @media (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")) {
+@include moz-pref-media("not userChrome.theme-default") {
+  @include moz-pref-media("userChrome.ui-chrome-refresh") {
+
     html,
     body {
       --#{$prefix}-circle-icon-refresh: url("icons/circle-refresh.svg");
@@ -110,7 +110,7 @@ body {
     #new-tab-button {
       @include ripple-effect-for-icon();
 
-      & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+      &> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
         background-image: get-var("circle-icon-refresh"),
           get-var("circle-icon-refresh") !important;
       }

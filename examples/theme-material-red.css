@@ -1,5 +1,5 @@
 /* use variables when about:config variable userChrome.theme-material-red is true */
-@media (-moz-bool-pref: "userChrome.theme-material-red") {
+@media -moz-pref("userChrome.theme-material-red") {
   /* light mode variables */
   :root {
     --md-sys-color-primary: rgb(143 76 56);

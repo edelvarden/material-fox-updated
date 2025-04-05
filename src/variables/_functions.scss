@@ -24,3 +24,24 @@ $base-font-size: 16px;
 
   @return #{var(--#{$prefix}-#{$variable-name})};
 }
+
+// Apply moz pref media rule (support `not` and `or` with two params)
+@mixin moz-pref-media($pref-names) {
+  @if str-index($pref-names, "not") == 1 {
+    $actual-pref-names: str-slice($pref-names, 5);
+    @media not (#{'-moz-pref("' + $actual-pref-names + '")'}) {
+      @content;
+    }
+  } @else if str-index($pref-names, "or") == 1 {
+    $parts: str-split($pref-names, "or");
+    $first: nth($parts, 1);
+    $second: nth($parts, 2);
+    @media (#{'-moz-pref("' + $first + '")'}) or (#{'-moz-pref("' + $second + '")'}) {
+      @content;
+    }
+  } @else {
+    @media (#{'-moz-pref("' + $pref-names + '")'}) {
+      @content;
+    }
+  }
+}

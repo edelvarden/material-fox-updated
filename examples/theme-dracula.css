@@ -1,5 +1,5 @@
 /* use variables when about:config variable userChrome.theme-dracula is true */
-@media (-moz-bool-pref: "userChrome.theme-dracula") {
+@media -moz-pref("userChrome.theme-dracula") {
   :root,
   html,
   body {

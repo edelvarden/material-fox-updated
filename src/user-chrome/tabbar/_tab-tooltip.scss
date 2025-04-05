@@ -1,4 +1,4 @@
-@media not (-moz-bool-pref: meta.inspect("browser.tabs.hoverPreview.enabled")) {
+@include moz-pref-media("not browser.tabs.hoverPreview.enabled") {
 
   // hide old tooltip
   #tabbrowser-tab-tooltip {

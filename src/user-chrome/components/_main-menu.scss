@@ -1,4 +1,4 @@
-@media not (-moz-bool-pref: meta.inspect("userChrome.ui-no-menu-icons")) {
+@include moz-pref-media("not userChrome.ui-no-menu-icons") {
   // menu icons
 
   :root {
@@ -17,38 +17,32 @@
     border-radius: 6px !important;
   }
 
-  #appMenu-zoom-controls > .toolbarbutton-text,
-  .widget-overflow-list
-    .toolbarbutton-1:not(.toolbarbutton-combined)
-    > .toolbarbutton-text,
-  .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton)
-    > .toolbarbutton-icon
-    + .toolbarbutton-text {
+  #appMenu-zoom-controls>.toolbarbutton-text,
+  .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined)>.toolbarbutton-text,
+  .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton)>.toolbarbutton-icon+.toolbarbutton-text {
     padding-inline-start: get-var("menuicon-margin-inline") !important;
   }
 
   // padding for items without icons
-  #fxa-manage-account-button > vbox,
-  #PanelUI-fxa-menu-syncnow-button > hbox {
-    padding-inline-start: calc(
-      16px + get-var("menuicon-margin-inline")
-    ) !important;
+  #fxa-manage-account-button>vbox,
+  #PanelUI-fxa-menu-syncnow-button>hbox {
+    padding-inline-start: calc(16px + get-var("menuicon-margin-inline")) !important;
   }
 
-  .subviewbutton > .toolbarbutton-icon {
+  .subviewbutton>.toolbarbutton-icon {
     width: 16px !important;
   }
 
   // fill menu icons
-  .panel-subview-body > .subviewbutton {
+  .panel-subview-body>.subviewbutton {
     -moz-context-properties: fill !important;
   }
 
-  .panel-subview-body > .subviewbutton:not([disabled]) {
+  .panel-subview-body>.subviewbutton:not([disabled]) {
     fill: get-var("icon-color-primary") !important;
   }
 
-  .panel-subview-body > .subviewbutton[disabled] {
+  .panel-subview-body>.subviewbutton[disabled] {
     fill: get-var("icon-color-secondary") !important;
     color: get-var("text-secondary") !important;
     opacity: 0.6 !important;
@@ -82,10 +76,7 @@
   #appMenu-bookmarks-button,
   #sidebar-switcher-bookmarks,
   #appMenu-library-bookmarks-button,
-  #sidebar-box[sidebarcommand="viewBookmarksSidebar"]
-    > #sidebar-header
-    > #sidebar-switcher-target
-    > #sidebar-icon {
+  #sidebar-box[sidebarcommand="viewBookmarksSidebar"]>#sidebar-header>#sidebar-switcher-target>#sidebar-icon {
     list-style-image: get-var("star-icon") !important;
 
     // make star icon without fill
@@ -95,18 +86,12 @@
 
   // history icon
   #history-panelmenu,
-  .urlbarView-row[source="history"]
-    > .urlbarView-row-inner
-    > .urlbarView-no-wrap
-    > .urlbarView-favicon,
+  .urlbarView-row[source="history"]>.urlbarView-row-inner>.urlbarView-no-wrap>.urlbarView-favicon,
   #urlbar-engine-one-off-item-history,
   #appMenu-history-button,
   #appMenu-library-history-button,
   #sidebar-switcher-history,
-  #sidebar-box[sidebarcommand="viewHistorySidebar"]
-    > #sidebar-header
-    > #sidebar-switcher-target
-    > #sidebar-icon {
+  #sidebar-box[sidebarcommand="viewHistorySidebar"]>#sidebar-header>#sidebar-switcher-target>#sidebar-icon {
     list-style-image: get-var("history-icon") !important;
   }
 
@@ -119,20 +104,9 @@
   // password icon
   #appMenu-passwords-button,
   #password-notification-icon,
-  #PopupAutoComplete
-    > richlistbox
-    > richlistitem[originaltype="generatedPassword"]
-    > .two-line-wrapper
-    > .ac-site-icon,
-  #PopupAutoComplete
-    > richlistbox
-    > richlistitem[originaltype="loginWithOrigin"]
-    > .two-line-wrapper
-    > .ac-site-icon,
-  #PopupAutoComplete
-    > richlistbox
-    > richlistitem[originaltype="login"]
-    > .ac-site-icon {
+  #PopupAutoComplete>richlistbox>richlistitem[originaltype="generatedPassword"]>.two-line-wrapper>.ac-site-icon,
+  #PopupAutoComplete>richlistbox>richlistitem[originaltype="loginWithOrigin"]>.two-line-wrapper>.ac-site-icon,
+  #PopupAutoComplete>richlistbox>richlistitem[originaltype="login"]>.ac-site-icon {
     list-style-image: get-var("key-icon") !important;
   }
 
@@ -168,7 +142,7 @@
 
   // settings icon
   #preferences-button,
-  .search-setting-button > .button-box > .button-icon,
+  .search-setting-button>.button-box>.button-icon,
   #appMenu-settings-button,
   .unified-extensions-item-open-menu.subviewbutton {
     list-style-image: get-var("settings-icon") !important;
@@ -217,10 +191,7 @@
   // search icon
   #panelMenu_searchBookmarks,
   #appMenuSearchHistory,
-  #urlbar:not(.searchButton)
-    > #urlbar-input-container
-    > #identity-box[pageproxystate="invalid"]
-    #identity-icon,
+  #urlbar:not(.searchButton)>#urlbar-input-container>#identity-box[pageproxystate="invalid"] #identity-icon,
   #allTabsMenu-searchTabs {
     list-style-image: get-var("search-icon") !important;
   }
@@ -253,6 +224,7 @@
 
   #appmenu-developer-tools-view,
   #PanelUI-developer-tools-view {
+
     // Web Developer Tools icon
     .subviewbutton[key="key_toggleToolbox"] {
       list-style-image: get-var("dev-icon") !important;
@@ -347,12 +319,12 @@
   }
 
   // Reopen all tabs icon
-  #appMenu-library-recentlyClosedTabs > .restoreallitem {
+  #appMenu-library-recentlyClosedTabs>.restoreallitem {
     list-style-image: get-var("open-in-icon") !important;
   }
 
   // Reopen all windows
-  #appMenu-library-recentlyClosedWindows > .restoreallitem {
+  #appMenu-library-recentlyClosedWindows>.restoreallitem {
     list-style-image: get-var("open-in-icon") !important;
   }
 
@@ -382,15 +354,15 @@
 #allTabsMenu-searchTabs,
 #panelMenu_showAllBookmarks,
 #PanelUI-historyMore,
-#appmenu-developer-tools-view > .subviewbutton,
+#appmenu-developer-tools-view>.subviewbutton,
 #unified-extensions-manage-extensions,
 #identity-popup-more-info,
 #identity-popup-clear-sitedata-button,
-#appMenu-library-recentlyClosedWindows > .restoreallitem,
-#appMenu-library-recentlyClosedTabs > .restoreallitem {
+#appMenu-library-recentlyClosedWindows>.restoreallitem,
+#appMenu-library-recentlyClosedTabs>.restoreallitem {
   -moz-context-properties: fill !important;
 
-  & > .toolbarbutton-icon {
+  &>.toolbarbutton-icon {
     -moz-context-properties: fill !important;
     fill: get-var("icon-color-primary") !important;
   }

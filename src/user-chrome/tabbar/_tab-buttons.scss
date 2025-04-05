@@ -2,7 +2,7 @@
 #alltabs-button {
   display: flex !important;
 
-  & > stack {
+  &>stack {
     display: flex !important;
     align-content: center !important;
   }
@@ -25,7 +25,7 @@
   margin: 0 !important;
   margin-top: auto !important;
 
-  & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+  &> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
     padding: 6px !important;
     margin: 0 !important;
     width: auto !important;
@@ -41,7 +41,7 @@
 
 // tab close
 .tab-close-button,
-.messageCloseButton > .toolbarbutton-icon {
+.messageCloseButton>.toolbarbutton-icon {
   width: auto !important;
   height: 16px !important;
   padding: 2px !important;
@@ -59,6 +59,7 @@
 
 // all tabs button
 @media (-moz-platform: windows) {
+
   // hide spacer between tabs & window nav
   .titlebar-spacer[type="post-tabs"] {
     display: none !important;
@@ -72,7 +73,7 @@
     --margin-left: 48px;
     margin: 0 0 0 var(--margin-left) !important;
 
-    & > stack {
+    &>stack {
       padding: 0 !important;
       margin: 0 !important;
       border-radius: 0 !important;
@@ -114,6 +115,7 @@
 
 // fixes for macOS
 @media (-moz-platform: macos) {
+
   // macOS fix for new tab button & all tabs button
   #new-tab-button {
     margin-inline-start: 2px !important;
@@ -135,7 +137,7 @@
 
 // Firefox view button
 #TabsToolbar #firefox-view-button {
-  & > .toolbarbutton-icon {
+  &>.toolbarbutton-icon {
     align-items: center !important;
     box-shadow: none !important;
 
@@ -146,31 +148,31 @@
     transition-timing-function: get-var("fade-in-out") !important;
   }
 
-  &[open] > .toolbarbutton-icon {
+  &[open]>.toolbarbutton-icon {
     fill: get-var("icon-color-primaryy") !important;
 
     box-shadow: none !important;
     background-color: get-var(background-color-100) !important;
   }
 
-  &[open]:hover > .toolbarbutton-icon {
+  &[open]:hover>.toolbarbutton-icon {
     box-shadow: none !important;
     background-color: get-var(background-color-100) !important;
   }
 
-  &:hover > .toolbarbutton-icon {
+  &:hover>.toolbarbutton-icon {
     box-shadow: none !important;
     background-color: get-var(tab-background-color-hover) !important;
   }
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")) {
+@include moz-pref-media("not userChrome.ui-chrome-refresh") {
   @media (-moz-platform: windows) {
     #alltabs-button {
       min-width: 46px !important;
       max-width: 46px !important;
 
-      & > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+      &> :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
         width: 100% !important;
         border-radius: 0 !important;
         display: flex !important;
@@ -180,19 +182,16 @@
 
       &:hover {
         .toolbarbutton-badge-stack {
-          background-color: light-dark(
-            hsla(0, 0%, 0%, 0.13),
-            hsla(0, 0%, 100%, 0.15)
-          ) !important;
+          background-color: light-dark(hsla(0, 0%, 0%, 0.13),
+              hsla(0, 0%, 100%, 0.15)) !important;
         }
       }
+
       &:hover:active,
       &[open] {
         .toolbarbutton-badge-stack {
-          background-color: light-dark(
-            hsla(0, 0%, 0%, 0.22),
-            hsla(0, 0%, 100%, 0.32)
-          ) !important;
+          background-color: light-dark(hsla(0, 0%, 0%, 0.22),
+              hsla(0, 0%, 100%, 0.32)) !important;
         }
       }
     }

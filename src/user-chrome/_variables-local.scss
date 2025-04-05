@@ -1,4 +1,5 @@
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+@include moz-pref-media("not userChrome.theme-default") {
+
   // accent color vars
   :root,
   html,
@@ -115,16 +116,19 @@
     --in-content-primary-button-text-color: #{get-var("text-on-accent")} !important;
     --in-content-primary-button-background: #{get-var("accent-color")} !important;
     --in-content-primary-button-background-hover: #{get-var(
-        "accent-color-hover"
-      )} !important;
-    --in-content-primary-button-background-active: #{get-var("accent-color")} !important;
+ "accent-color-hover"
+    )
   }
 
-  // Remove tab outline described in https://github.com/edelvarden/material-fox-updated/issues/62
-  :root,
-  html,
-  body,
-  .tab-background {
-    --tab-selected-outline-color: transparent !important;
-  }
+  !important;
+  --in-content-primary-button-background-active: #{get-var("accent-color")} !important;
+}
+
+// Remove tab outline described in https://github.com/edelvarden/material-fox-updated/issues/62
+:root,
+html,
+body,
+.tab-background {
+  --tab-selected-outline-color: transparent !important;
+}
 }

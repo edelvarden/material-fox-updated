@@ -14,13 +14,15 @@
   border-bottom-right-radius: 4px !important;
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+@include moz-pref-media("not userChrome.theme-default") {
+
   // urlbar suggestions item
   .urlbarView-row {
     &[selected] {
       border-left-color: get-var("accent-color") !important;
       background-color: get-var("menu-background-color-hover") !important;
     }
+
     &:not([selected]):hover {
       border-left-color: get-var("menu-background-color-hover") !important;
       background-color: get-var("menu-background-color-hover") !important;
@@ -43,7 +45,7 @@
   color: var(--color-accent-primary) !important;
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+@include moz-pref-media("not userChrome.theme-default") {
   [dir="rtl"] {
     .urlbarView-row {
       &[selected] {
@@ -55,6 +57,7 @@
       }
     }
   }
+
   // urlbar suggestions item url
   .urlbarView-url {
     color: get-var("accent-color") !important;
@@ -80,15 +83,17 @@
 .urlbarView-results {
   padding-block: 0 8px !important;
 }
+
 .urlbarView[noresults="true"] // if no results
-{
+
+  {
   .urlbarView-results {
     padding-block: 0 !important;
   }
 }
 
 // remove unnecessary border upper url bar suggestions
-#urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
+#urlbar[open]>.urlbarView>.urlbarView-body-outer>.urlbarView-body-inner {
   border-color: transparent !important;
 }
 

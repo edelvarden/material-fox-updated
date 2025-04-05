@@ -8,15 +8,18 @@
 :root,
 html,
 body {
+
   // loading animation only if enabled, respects animation disable preference
   @media not (prefers-reduced-motion: reduce) {
+
     // animation durations
     @each $key, $value in $animation-durations {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
 
-  @media (-moz-bool-pref: meta.inspect("userChrome.ui-force-animation")) {
+  @include moz-pref-media("userChrome.ui-force-animation") {
+
     // animation durations
     @each $key, $value in $animation-durations {
       --#{$prefix}-#{$key}: #{$value};
@@ -34,11 +37,13 @@ body {
   }
 
   // when not chrome-refresh or when old-icons enabled
-  @media not (-moz-bool-pref: meta.inspect("userChrome.ui-chrome-refresh")),
-    (-moz-bool-pref: meta.inspect("userChrome.ui-force-old-icons")) {
-    // old icons
-    @each $key, $value in $icons-old {
-      --#{$prefix}-#{$key}: #{$value};
+  @include moz-pref-media("not userChrome.ui-chrome-refresh") {
+    @include moz-pref-media("userChrome.ui-force-old-icons") {
+
+      // old icons
+      @each $key, $value in $icons-old {
+        --#{$prefix}-#{$key}: #{$value};
+      }
     }
   }
 
@@ -57,7 +62,8 @@ body {
   }
 
   // optional feature: Chrome refresh theme colors
-  @media (-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) {
+
+  @include moz-pref-media("userChrome.theme-chrome-refresh") {
     @each $key, $value in $chrome-refresh-colors {
       --#{$prefix}-#{$key}: #{$value};
     }
@@ -70,7 +76,7 @@ body {
     }
   }
 
-  @media (-moz-bool-pref: meta.inspect("userChrome.theme-material")) {
+  @include moz-pref-media("userChrome.theme-material") {
     @each $key, $value in $theme-material-light {
       --#{$prefix}-#{$key}: #{$value};
     }

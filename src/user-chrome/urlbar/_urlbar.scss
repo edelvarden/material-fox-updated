@@ -75,7 +75,7 @@ body {
   font-size: 14px !important;
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+@include moz-pref-media("not userChrome.theme-default") {
   #urlbar:is([open], [focused]) {
 
     #urlbar-background,
@@ -109,14 +109,18 @@ body {
 }
 
 // Url bar bg color change on hover, feat: https://github.com/edelvarden/material-fox-updated/issues/69
-#urlbar-background, #searchbar {
+#urlbar-background,
+#searchbar {
   transition-property: background-color !important;
   transition-duration: get-var("short-duration") !important;
   transition-timing-function: get-var("point-to-point") !important;
 }
-#urlbar:not([focused]):hover #urlbar-background, #searchbar:hover {
+
+#urlbar:not([focused]):hover #urlbar-background,
+#searchbar:hover {
   background-color: get-var("urlbar-background-color-hover") !important;
 }
-#urlbar:is([open], [focused]) #urlbar-background{
+
+#urlbar:is([open], [focused]) #urlbar-background {
   transition-duration: 0s !important;
 }

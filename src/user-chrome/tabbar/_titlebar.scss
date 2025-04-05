@@ -1,5 +1,5 @@
 // accent color mix for title bar and url bar backgrounds
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+@include moz-pref-media("not userChrome.theme-default") {
 
   #urlbar-background,
   #searchbar {
@@ -7,7 +7,7 @@
   }
 
   // default titlebar background color, when not theme-material
-  @media not (-moz-bool-pref: meta.inspect("userChrome.theme-material")) {
+  @include moz-pref-media("not userChrome.theme-material") {
 
     #navigator-toolbox,
     #toolbar-menubar,
@@ -21,7 +21,7 @@
 
 // default dark mode styles
 @media (prefers-color-scheme: dark) {
-  @media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+  @include moz-pref-media("not userChrome.theme-default") {
 
     #urlbar-background,
     #searchbar {
@@ -29,7 +29,7 @@
     }
 
     // default titlebar background color, when not theme-material
-    @media not (-moz-bool-pref: meta.inspect("userChrome.theme-material")) {
+    @include moz-pref-media("not userChrome.theme-material") {
 
       #navigator-toolbox,
       #toolbar-menubar,
@@ -42,41 +42,45 @@
 }
 
 // special light mode titlebar background color for theme-chrome-refresh or theme-material
-@media (prefers-color-scheme: light) and ((-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) or (-moz-bool-pref: meta.inspect("userChrome.theme-material"))) {
+@media (prefers-color-scheme: light) {
+  @include moz-pref-media("userChrome.theme-chrome-refresh or userChrome.theme-material") {
 
-  #navigator-toolbox,
-  #toolbar-menubar,
-  #TabsToolbar,
-  #titlebar {
-    background-color: cm(get-var("background-color-50"),
-        get-var("accent-color"),
-        0.2) !important;
-  }
+    #navigator-toolbox,
+    #toolbar-menubar,
+    #TabsToolbar,
+    #titlebar {
+      background-color: cm(get-var("background-color-50"),
+          get-var("accent-color"),
+          0.2) !important;
+    }
 
-  #urlbar-background,
-  #searchbar {
-    background-color: cm(get-var("background-color-50"),
-        get-var("accent-color"),
-        0.0333) !important;
+    #urlbar-background,
+    #searchbar {
+      background-color: cm(get-var("background-color-50"),
+          get-var("accent-color"),
+          0.0333) !important;
+    }
   }
 }
 
 // special dark mode titlebar color for theme-material
-@media (prefers-color-scheme: dark) and (-moz-bool-pref: meta.inspect("userChrome.theme-material")) {
+@media (prefers-color-scheme: dark) {
+  @include moz-pref-media("userChrome.theme-material") {
 
-  #navigator-toolbox,
-  #toolbar-menubar,
-  #TabsToolbar,
-  #titlebar {
-    background-color: get-var(sys-color-surface-container-lowest) !important;
-    background-image: linear-gradient(90deg,
-        cm(transparent, get-var(sys-color-tertiary), 0.2) 0%,
-        cm(transparent, get-var(sys-color-secondary), 0.2) 80%) !important;
+    #navigator-toolbox,
+    #toolbar-menubar,
+    #TabsToolbar,
+    #titlebar {
+      background-color: get-var(sys-color-surface-container-lowest) !important;
+      background-image: linear-gradient(90deg,
+          cm(transparent, get-var(sys-color-tertiary), 0.2) 0%,
+          cm(transparent, get-var(sys-color-secondary), 0.2) 80%) !important;
+    }
   }
 }
 
 // inactive titlebar background color
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+@include moz-pref-media("not userChrome.theme-default") {
   :root:-moz-window-inactive {
 
     #navigator-toolbox,
@@ -89,7 +93,7 @@
   }
 
   // special unfocused background color for chrome refresh
-  @media (-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) {
+  @include moz-pref-media("userChrome.theme-chrome-refresh") {
     @media (prefers-color-scheme: dark) {
       :root:-moz-window-inactive {
 
@@ -176,6 +180,7 @@ scrollbox:is([orient="horizontal"], [smoothscroll="true"], [flex="1"]) {
 spacer:is([part="overflow-start-indicator"]) {
   margin-inline: 0px 6px !important;
 }
+
 spacer:is([part="overflow-end-indicator"]) {
   margin-inline: 6px 0px !important;
 }

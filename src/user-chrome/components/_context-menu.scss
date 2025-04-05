@@ -4,7 +4,9 @@ $menu-side-paddings: 4px;
 // @media (-moz-platform: windows),
 //   (-moz-platform: linux),
 //   (-moz-platform: macos) {
-@media (-moz-platform: windows), (-moz-platform: linux) {
+@media (-moz-platform: windows),
+(-moz-platform: linux) {
+
   menupopup,
   panel:not(#autoscroller) {
     // menu container min width
@@ -91,10 +93,7 @@ $menu-side-paddings: 4px;
   }
 
   // #context-navigation menu items
-  #context-navigation
-    > .menuitem-iconic
-    > .menu-iconic-left
-    > .menu-iconic-icon {
+  #context-navigation>.menuitem-iconic>.menu-iconic-left>.menu-iconic-icon {
     width: 100% !important;
     height: auto !important;
     padding: 0 !important;
@@ -103,13 +102,10 @@ $menu-side-paddings: 4px;
   }
 
   // other menu items
-  #context-navigation
-    > .menuitem-iconic
-    > .menu-iconic-left
-    > .menu-iconic-icon,
-  menupopup > menu,
-  menupopup > menuitem,
-  menupopup > menucaption {
+  #context-navigation>.menuitem-iconic>.menu-iconic-left>.menu-iconic-icon,
+  menupopup>menu,
+  menupopup>menuitem,
+  menupopup>menucaption {
     $menu-item-height: 24px;
     min-height: $menu-item-height !important;
     max-height: $menu-item-height !important;
@@ -122,13 +118,12 @@ $image-width: 16px;
 $image-padding-end: 8px;
 
 @media (-moz-platform: windows) {
+
   :root,
   html,
   body {
     --#{$prefix}-menuitem-padding-with-icon: #{$default-padding};
-    --#{$prefix}-menuitem-padding-without-icon: calc(
-      #{$default-padding} + #{$image-width} + #{$image-padding-end}
-    );
+    --#{$prefix}-menuitem-padding-without-icon: calc(#{$default-padding} + #{$image-width} + #{$image-padding-end});
   }
 
   #contentAreaContextMenu {
@@ -136,12 +131,10 @@ $image-padding-end: 8px;
     //   padding-inline-start: get-var("menuitem-padding-without-icon") !important;
     // }
 
-    :is(menuitem, menu):not(
-        [image],
-        .menu-iconic,
-        .menuitem-iconic,
-        [type="checkbox"]
-      ) {
+    :is(menuitem, menu):not([image],
+      .menu-iconic,
+      .menuitem-iconic,
+      [type="checkbox"]) {
       padding-inline-start: get-var("menuitem-padding-without-icon") !important;
     }
 
@@ -153,19 +146,16 @@ $image-padding-end: 8px;
       padding-inline-start: get-var("menuitem-padding-with-icon") !important;
     }
 
-    menuitem[type="checkbox"] > .menu-iconic-left {
+    menuitem[type="checkbox"]>.menu-iconic-left {
       margin-inline-end: 0 !important;
     }
 
-    menuitem[type="checkbox"]:is([checked="true"]) > .menu-iconic-left {
+    menuitem[type="checkbox"]:is([checked="true"])>.menu-iconic-left {
       margin-inline-end: $image-padding-end !important;
     }
 
-    menuitem[checked="true"]
-      > .menu-iconic-left
-      .menu-iconic
-      > .menu-iconic-left,
-    .menuitem-iconic > .menu-iconic-left {
+    menuitem[checked="true"]>.menu-iconic-left .menu-iconic>.menu-iconic-left,
+    .menuitem-iconic>.menu-iconic-left {
       margin-inline-end: $image-padding-end !important;
     }
   }
@@ -182,14 +172,14 @@ $image-padding-end: 8px;
       position: relative !important;
 
       &::after {
-        padding-inline-start: get-var(
-          "menuitem-padding-without-icon"
-        ) !important;
+        padding-inline-start: get-var("menuitem-padding-without-icon"
+          ) !important;
       }
     }
   }
 
   [dir="rtl"] {
+
     // string style for back/forward/reload/bookmark menu items
     #context-navigation:not([hidden]) {
       .menuitem-iconic {
@@ -207,7 +197,9 @@ $image-padding-end: 8px;
   }
 }
 
-@media (-moz-platform: windows), (-moz-platform: linux) {
+@media (-moz-platform: windows),
+(-moz-platform: linux) {
+
   // menu item hover bg color
   menu,
   menuitem {
@@ -259,19 +251,16 @@ $image-padding-end: 8px;
   $menu-item-height: 27px;
 
   // other menu items
-  #context-navigation
-    > .menuitem-iconic
-    > .menu-iconic-left
-    > .menu-iconic-icon,
-  menupopup > menu,
-  menupopup > menuitem,
-  menupopup > menucaption {
+  #context-navigation>.menuitem-iconic>.menu-iconic-left>.menu-iconic-icon,
+  menupopup>menu,
+  menupopup>menuitem,
+  menupopup>menucaption {
     min-height: $menu-item-height !important;
     max-height: $menu-item-height !important;
     // padding: 4px 6px !important;
   }
 
-  #context-navigation > :is(menu, menuitem, menucaption) {
+  #context-navigation> :is(menu, menuitem, menucaption) {
     min-height: $menu-item-height !important;
     max-height: $menu-item-height !important;
   }
@@ -289,7 +278,8 @@ arrowscrollbox {
   background-image: none !important;
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+@include moz-pref-media("not userChrome.theme-default") {
+
   // fix menu item double background color
   menuitem,
   menu {
@@ -310,11 +300,9 @@ arrowscrollbox {
 
   menuitem {
     &[_moz-menuactive]:not([disabled="true"]):active {
-      background-color: cm(
-        transparent,
-        get-var("menu-background-color-hover"),
-        0.5
-      ) !important;
+      background-color: cm(transparent,
+          get-var("menu-background-color-hover"),
+          0.5) !important;
     }
   }
 }

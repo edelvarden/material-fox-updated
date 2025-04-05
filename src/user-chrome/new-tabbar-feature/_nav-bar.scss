@@ -11,7 +11,8 @@
 }
 
 // chrome refresh lock icon style
-@media not (-moz-bool-pref: meta.inspect("userChrome.ui-compact-url-bar")) {
+@include moz-pref-media("not userChrome.ui-compact-url-bar") {
+
   // lock (secure)
   #identity-box[pageproxystate="valid"] {
     &:is(.verifiedDomain, .mixedActiveBlocked) #identity-icon {
@@ -25,7 +26,7 @@
     margin-inline-end: 4px !important;
     margin-inline-start: 2px !important;
 
-    @media not (-moz-bool-pref: meta.inspect("userChrome.ui-force-old-icons")) {
+    @include moz-pref-media("not userChrome.ui-force-old-icons") {
       fill: get-var(icon-color-primary) !important;
     }
   }
@@ -63,9 +64,9 @@
     background-color: get-var(background-color-100) !important;
   }
 
-  #identity-box[pageproxystate="valid"].notSecureText > .identity-box-button,
-  #identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
-  #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button,
+  #identity-box[pageproxystate="valid"].notSecureText>.identity-box-button,
+  #identity-box[pageproxystate="valid"].chromeUI>.identity-box-button,
+  #identity-box[pageproxystate="valid"].extensionPage>.identity-box-button,
   #urlbar-label-box {
     background-color: get-var(background-color-100) !important;
   }

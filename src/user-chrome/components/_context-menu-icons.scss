@@ -1,4 +1,4 @@
-@media (-moz-bool-pref: meta.inspect("userChrome.ui-context-menu-icons")) {
+@include moz-pref-media("userChrome.ui-context-menu-icons") {
   #context-back {
     --menuitem-image: #{get-var("arrow-back-icon")};
   }

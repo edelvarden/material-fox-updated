@@ -1,5 +1,5 @@
 /* use variables when about:config variable userChrome.system-accent-colors is true */
-@media (-moz-bool-pref: "userChrome.theme-system-accent") {
+@media -moz-pref("userChrome.theme-system-accent") {
   /* use variables when dark mode */
   @media (prefers-color-scheme: dark) {
     :root,

@@ -34,7 +34,7 @@
     }
   }
 
-  @media (-moz-bool-pref: meta.inspect("userChrome.theme-chrome-refresh")) {
+  @include moz-pref-media("userChrome.theme-chrome-refresh") {
     .top-site-outer .tile {
       --newtab-background-color-secondary: #{get-var("tile-background-color")} !important;
     }
@@ -215,6 +215,7 @@
     background-image: get-var("edit-icon") !important;
 
     background-color: get-var("tab-background-color-hover") !important;
+
     @media (prefers-color-scheme: dark) {
       &:hover {
         // background-color: #29668c !important;
@@ -227,6 +228,7 @@
     background-color: get-var("tab-background-color-hover") !important;
     cursor: pointer !important;
   }
+
   .top-site-outer.placeholder.add-button {
     cursor: pointer !important;
     user-select: none !important;

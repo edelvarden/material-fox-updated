@@ -15,15 +15,12 @@ body {
 
 .tab-background {
   margin-top: var(--tab-vertical-padding) !important;
-  min-height: calc(
-    var(--tab-min-height) - var(--tab-vertical-padding)
-  ) !important;
-  max-height: calc(
-    var(--tab-min-height) - var(--tab-vertical-padding)
-  ) !important;
+  min-height: calc(var(--tab-min-height) - var(--tab-vertical-padding)) !important;
+  max-height: calc(var(--tab-min-height) - var(--tab-vertical-padding)) !important;
 }
 
 .tab-background {
+
   &::before,
   &::after {
     min-width: 12px !important;
@@ -131,7 +128,8 @@ body {
   }
 }
 
-@media not (-moz-bool-pref: meta.inspect("userChrome.theme-default")) {
+@include moz-pref-media("not userChrome.theme-default") {
+
   // hover bg opacity for not selected tab
   .tabbrowser-tab:not([selected="true"]):hover,
   .tabbrowser-tab[multiselected]:not([selected="true"]) {
@@ -143,7 +141,6 @@ body {
     &::before {
       box-shadow: 4px 4px 0 4px var(--tab-background-color) !important;
     }
-
     &::after {
       box-shadow: -4px 4px 0 4px var(--tab-background-color) !important;
     }
