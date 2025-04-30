@@ -51,8 +51,6 @@
 
 // arrow back
 .toolbarbutton-1:is(#back-button, #forward-button),
-#context-back,
-#context-forward,
 .subviewbutton-back,
 .identity-popup-expander {
   list-style-image: get-var("arrow-back-icon") !important;
@@ -76,8 +74,7 @@
 }
 
 // refresh icon
-#reload-button,
-#context-reload {
+#reload-button {
   list-style-image: get-var("refresh-icon") !important;
   -moz-box-align: center !important; // fix refresh icon cropping
   align-items: center !important;
@@ -158,7 +155,6 @@
 }
 
 #star-button,
-#context-bookmarkpage,
 #pageAction-panel-bookmark,
 #urlbar-engine-one-off-item-bookmarks {
   list-style-image: get-var("star-icon") !important;

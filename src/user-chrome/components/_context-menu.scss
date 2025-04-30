@@ -7,6 +7,14 @@ $menu-side-paddings: 4px;
 @media (-moz-platform: windows),
 (-moz-platform: linux) {
 
+  #context-back,
+  #context-forward,
+  #context-reload,
+  #context-stop,
+  #context-bookmarkpage{
+    list-style-image: none !important;
+  }
+
   menupopup,
   panel:not(#autoscroller) {
     // menu container min width
@@ -102,7 +110,7 @@ $menu-side-paddings: 4px;
   }
 
   // other menu items
-  #context-navigation>.menuitem-iconic>.menu-iconic-left>.menu-iconic-icon,
+  #context-navigation>menuitem,
   menupopup>menu,
   menupopup>menuitem,
   menupopup>menucaption {

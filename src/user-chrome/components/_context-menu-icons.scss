@@ -17,6 +17,10 @@
     background-position-x: 18px !important;
   }
 
+  #context-stop {
+    --menuitem-image: #{get-var("close-icon")};
+  }
+
   #context_openANewTab {
     --menuitem-image: #{get-var("new-tab-icon")};
   }
