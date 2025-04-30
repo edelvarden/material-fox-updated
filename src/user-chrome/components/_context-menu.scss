@@ -119,6 +119,12 @@ $image-padding-end: 8px;
 
 @media (-moz-platform: windows) {
 
+  menupopup {
+    @media (-moz-windows-mica-popups) {
+        appearance: none !important;
+    }
+  }
+
   :root,
   html,
   body {
