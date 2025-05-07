@@ -18,7 +18,6 @@ To start using MaterialFox UPDATED, follow these steps:
 
    - `toolkit.legacyUserProfileCustomizations.stylesheets`
    - `svg.context-properties.content.enabled`
-   - `layout.css.color-mix.enabled`
 
 4. **Type** `about:support` in the address bar and press <kbd>Enter</kbd>.
 5. **Scroll down** to the `Profile Folder` section and **click** `Open Folder`.
