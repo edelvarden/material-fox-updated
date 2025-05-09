@@ -87,6 +87,11 @@
   margin-inline-end: 0 !important;
 }
 
+// fix "Not secure" doesn’t fit into pill shape correctly (#118)
+#identity-box[pageproxystate="valid"]:is(.extensionPage, .notSecure, .notSecureText, .mixedActiveContent, .httpsOnlyErrorPage, .weakCipher, .mixedDisplayContent, .mixedDisplayContentLoadedActiveBlocked, .certUserOverridden, #identity-box[pageproxystate="valid"].certErrorPage) #identity-icon-box.identity-box-button {
+  padding-inline: 8px !important;
+}
+
 #identity-icon-label {
   font-family: 500 !important;
 }
