@@ -82,7 +82,7 @@ toolbarbutton menupopup[placespopup] menuseparator::before {
 @media (-moz-platform: windows) {
   menupopup,
   panel:not(#autoscroller) {
-    --panel-shadow-margin: 0 !important;
+    --panel-shadow-margin: 12px !important;
   }
 }
 
