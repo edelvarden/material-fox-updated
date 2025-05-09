@@ -1,9 +1,9 @@
 {
   "-moz-bool-pref": {
     "scope": "scss",
-    "prefix": "media-uc",
+    "prefix": "media-pref",
     "body": [
-      "@media (-moz-bool-pref: meta.inspect(\"userChrome.${1:preference-name}\")) {",
+      "@include moz-pref-media(\"userChrome.${1:preference-name}\") {",
       "\t$2",
       "}",
       "$0",
@@ -12,9 +12,9 @@
   },
   "-moz-bool-pref ": {
     "scope": "css",
-    "prefix": "media-uc",
+    "prefix": "media-pref",
     "body": [
-      "@media (-moz-bool-pref: \"userChrome.${1:preference-name}\") {",
+      "@media -moz-pref(\"userChrome.${1:preference-name}\") {",
       "\t$2",
       "}",
       "$0",
