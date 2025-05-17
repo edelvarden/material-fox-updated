@@ -107,6 +107,13 @@
 
   // top sites
   .top-site-outer {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .top-site-outer {
+
     .tile {
       border-radius: 100px !important;
       height: 44px !important;
