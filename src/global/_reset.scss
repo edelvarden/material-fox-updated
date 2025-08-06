@@ -66,9 +66,9 @@ body {
       --#{$prefix}-font-family: #{meta.inspect($font-family)};
     }
 
-    *,
-    *::before,
-    *::after {
+    *:not(hbox.titlebar-buttonbox, hbox.titlebar-buttonbox *),
+    *:not(hbox.titlebar-buttonbox, hbox.titlebar-buttonbox *)::before,
+    *:not(hbox.titlebar-buttonbox, hbox.titlebar-buttonbox *)::after {
       font-family: var(--#{$prefix}-font-family) !important;
     }
   }
