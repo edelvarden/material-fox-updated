@@ -125,3 +125,12 @@
     display: none !important;
   }
 }
+
+@include moz-pref-media("not userChrome.theme-default") {
+  #urlbar-searchmode-switcher,
+  #urlbar-searchmode-switcher[open],
+  #urlbar-searchmode-switcher[open]:hover {
+    background-color: get-var(background-color-100) !important;
+  }
+
+}
