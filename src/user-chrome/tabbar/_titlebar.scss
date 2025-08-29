@@ -2,6 +2,7 @@
 @include moz-pref-media("not userChrome.theme-default") {
 
   #urlbar-background,
+  .urlbar-background,
   #searchbar {
     background-color: get-var("background-color-50") !important;
   }
@@ -24,6 +25,7 @@
   @include moz-pref-media("not userChrome.theme-default") {
 
     #urlbar-background,
+    .urlbar-background,
     #searchbar {
       background-color: get-var("background-color-50") !important;
     }
@@ -55,6 +57,7 @@
     }
 
     #urlbar-background,
+    .urlbar-background,
     #searchbar {
       background-color: cm(get-var("background-color-50"),
           get-var("accent-color"),

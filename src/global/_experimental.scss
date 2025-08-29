@@ -64,13 +64,13 @@
     }
   }
 
-  #urlbar-background {
+  #urlbar-background, .urlbar-background {
     background-color: var(--toolbar-field-background-color) !important;
   }
 
   #urlbar:is([open], [focused]) {
 
-    #urlbar-background,
+    #urlbar-background, .urlbar-background,
     #searchbar {
       background-color: var(--toolbar-field-focus-background-color) !important;
     }

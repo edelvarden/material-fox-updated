@@ -47,6 +47,7 @@ body {
   &[open] {
 
     #urlbar-background,
+    .urlbar-background,
     #searchbar {
       border-radius: 16px !important;
       border: none !important;
@@ -61,6 +62,7 @@ body {
   &:not([open])[focused] {
 
     #urlbar-background,
+    .urlbar-background,
     #searchbar {
       box-shadow: none !important;
     }
@@ -79,6 +81,7 @@ body {
   #urlbar:is([open], [focused]) {
 
     #urlbar-background,
+    .urlbar-background,
     #searchbar {
       background-color: get-var("urlbar-background-color-open") !important;
     }
@@ -110,6 +113,7 @@ body {
 
 // Url bar bg color change on hover, feat: https://github.com/edelvarden/material-fox-updated/issues/69
 #urlbar-background,
+.urlbar-background,
 #searchbar {
   transition-property: background-color !important;
   transition-duration: get-var("short-duration") !important;
@@ -117,10 +121,12 @@ body {
 }
 
 #urlbar:not([focused]):hover #urlbar-background,
+#urlbar:not([focused]):hover .urlbar-background,
 #searchbar:hover {
   background-color: get-var("urlbar-background-color-hover") !important;
 }
 
-#urlbar:is([open], [focused]) #urlbar-background {
+#urlbar:is([open], [focused]) #urlbar-background,
+#urlbar:is([open], [focused]) .urlbar-background {
   transition-duration: 0s !important;
 }
